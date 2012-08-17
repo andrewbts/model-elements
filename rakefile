@@ -1,0 +1,22 @@
+desc "show tree of source files"
+task :tree do
+  sh "tree -P '*.java|*.scala|*.av*' -I target --noreport"
+end
+
+desc "make avro schema"
+task :schema do
+  sh "mvn avro:idl-protocol"
+end
+
+desc "clean up after avro-maven-plugin"
+task :clean do
+  rm_rf "src/main/java/edu/berkeley/path/ModelElements"
+end
+
+task :avro_help do
+  sh "avro:help"
+
+  # approximately the same as:
+  #sh "mvn help:describe -Dplugin=org.apache.avro:avro-maven-plugin"
+end
+
