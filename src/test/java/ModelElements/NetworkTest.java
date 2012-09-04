@@ -27,7 +27,7 @@
  * SUCH DAMAGE.
  */
 
-package ModelElements.test;
+package ModelElements;
 
 import org.junit.*;
 import static org.junit.Assert.*;
