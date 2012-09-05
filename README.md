@@ -19,3 +19,13 @@ Then you can do:
     avro --help
 
 This includes commands to convert between binary avro and json.
+
+## Javadocs
+
+The Avro IDL compiler transfers comments from the IDL definitions to the Java source files. Javadoc reads these commands to generate docs for the project. To run javadoc, do any of:
+
+    mvn site
+    
+    mvn javadoc:javadoc
+    
+    mvn javadoc:jar
