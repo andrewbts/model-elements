@@ -66,8 +66,9 @@ protocol ModelElements {
     string name;
     string type;
     
-    int laneCount;
+    double laneCount;
     double length;
+    int laneOffset = 0;
 
     NodeRef begin;
     NodeRef end;
@@ -95,5 +96,56 @@ protocol ModelElements {
     
     /** map key is linkId */
     map<array<double>> metersPerSecond = {};
+  }
+  
+  /** Fundamental diagram on one link at one time */
+  record FD {
+    // ### TODO units?
+    double  freeFlowSpeed;
+    double  freeFlowSpeedStdev;
+    double  congestionWaveSpeed;
+    double  congestionWaveSpeedStdev;
+    double  capacity;
+    double  capacityStdev;
+    double  jamDensity;
+    double  capacityDrop;
+  }
+  
+  /** Fundamental diagrams on each link as time series */
+  record FDProfile {
+    double dt = 300.0;
+    double startTime = 0.0;
+  
+    /** map key is linkId, array is time series, as per dt and startTime. */
+    map<array<FD>> fd = {};
+  }
+  
+  /** Demands on each link as time series */
+  record DemandProfile {
+    double dt = 300.0;
+    double startTime = 0.0;
+    // ### TODO knob etc
+    
+    /** may not be null */
+    LinkRef origin;
+
+    /** may be null */
+    LinkRef destination;
+
+    /** map key is linkId, array is time series, as per dt and startTime. */
+    map<array<double>> demand = {};
+    // ### TODO vehicle type dimension
+  }
+  
+  // ### TODO Controllers
+  
+  record Scenario {
+    string id;
+    string name;
+    
+    Network network;
+    DensityProfile initialDensityProfile;
+    FDProfile fdProfile;
+    DemandProfile demandProfile;
   }
 }

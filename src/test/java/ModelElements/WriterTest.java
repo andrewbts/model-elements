@@ -95,7 +95,7 @@ public class WriterTest {
     ln.setId("3");
     ln.setName("two");
     ln.setType("hwy");
-    ln.setLaneCount(4);
+    ln.setLaneCount(4.0);
     ln.setLength(1000.0);
     
     ln.begin = new NodeRef();
