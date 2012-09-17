@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 /** Fundamental diagram on one link at one time */
 public class FD extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FD\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FD\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}");
   @Deprecated public double freeFlowSpeed;
   @Deprecated public double freeFlowSpeedStdev;
   @Deprecated public double congestionWaveSpeed;
@@ -168,18 +168,18 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   }
 
   /** Creates a new FD RecordBuilder */
-  public static edu.berkeley.path.ModelElements.FD.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.FD.Builder();
+  public static edu.berkeley.path.model_elements.FD.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.FD.Builder();
   }
   
   /** Creates a new FD RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.FD.Builder newBuilder(edu.berkeley.path.ModelElements.FD.Builder other) {
-    return new edu.berkeley.path.ModelElements.FD.Builder(other);
+  public static edu.berkeley.path.model_elements.FD.Builder newBuilder(edu.berkeley.path.model_elements.FD.Builder other) {
+    return new edu.berkeley.path.model_elements.FD.Builder(other);
   }
   
   /** Creates a new FD RecordBuilder by copying an existing FD instance */
-  public static edu.berkeley.path.ModelElements.FD.Builder newBuilder(edu.berkeley.path.ModelElements.FD other) {
-    return new edu.berkeley.path.ModelElements.FD.Builder(other);
+  public static edu.berkeley.path.model_elements.FD.Builder newBuilder(edu.berkeley.path.model_elements.FD other) {
+    return new edu.berkeley.path.model_elements.FD.Builder(other);
   }
   
   /**
@@ -199,17 +199,17 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.FD.SCHEMA$);
+      super(edu.berkeley.path.model_elements.FD.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.FD.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.FD.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing FD instance */
-    private Builder(edu.berkeley.path.ModelElements.FD other) {
-            super(edu.berkeley.path.ModelElements.FD.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.FD other) {
+            super(edu.berkeley.path.model_elements.FD.SCHEMA$);
       if (isValidValue(fields()[0], other.freeFlowSpeed)) {
         this.freeFlowSpeed = (java.lang.Double) data().deepCopy(fields()[0].schema(), other.freeFlowSpeed);
         fieldSetFlags()[0] = true;
@@ -250,7 +250,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'freeFlowSpeed' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setFreeFlowSpeed(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setFreeFlowSpeed(double value) {
       validate(fields()[0], value);
       this.freeFlowSpeed = value;
       fieldSetFlags()[0] = true;
@@ -263,7 +263,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'freeFlowSpeed' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearFreeFlowSpeed() {
+    public edu.berkeley.path.model_elements.FD.Builder clearFreeFlowSpeed() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -274,7 +274,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'freeFlowSpeedStdev' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setFreeFlowSpeedStdev(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setFreeFlowSpeedStdev(double value) {
       validate(fields()[1], value);
       this.freeFlowSpeedStdev = value;
       fieldSetFlags()[1] = true;
@@ -287,7 +287,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'freeFlowSpeedStdev' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearFreeFlowSpeedStdev() {
+    public edu.berkeley.path.model_elements.FD.Builder clearFreeFlowSpeedStdev() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -298,7 +298,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'congestionWaveSpeed' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setCongestionWaveSpeed(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setCongestionWaveSpeed(double value) {
       validate(fields()[2], value);
       this.congestionWaveSpeed = value;
       fieldSetFlags()[2] = true;
@@ -311,7 +311,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'congestionWaveSpeed' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearCongestionWaveSpeed() {
+    public edu.berkeley.path.model_elements.FD.Builder clearCongestionWaveSpeed() {
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -322,7 +322,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'congestionWaveSpeedStdev' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setCongestionWaveSpeedStdev(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setCongestionWaveSpeedStdev(double value) {
       validate(fields()[3], value);
       this.congestionWaveSpeedStdev = value;
       fieldSetFlags()[3] = true;
@@ -335,7 +335,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'congestionWaveSpeedStdev' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearCongestionWaveSpeedStdev() {
+    public edu.berkeley.path.model_elements.FD.Builder clearCongestionWaveSpeedStdev() {
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -346,7 +346,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'capacity' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setCapacity(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setCapacity(double value) {
       validate(fields()[4], value);
       this.capacity = value;
       fieldSetFlags()[4] = true;
@@ -359,7 +359,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'capacity' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearCapacity() {
+    public edu.berkeley.path.model_elements.FD.Builder clearCapacity() {
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -370,7 +370,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'capacityStdev' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setCapacityStdev(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setCapacityStdev(double value) {
       validate(fields()[5], value);
       this.capacityStdev = value;
       fieldSetFlags()[5] = true;
@@ -383,7 +383,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'capacityStdev' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearCapacityStdev() {
+    public edu.berkeley.path.model_elements.FD.Builder clearCapacityStdev() {
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -394,7 +394,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'jamDensity' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setJamDensity(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setJamDensity(double value) {
       validate(fields()[6], value);
       this.jamDensity = value;
       fieldSetFlags()[6] = true;
@@ -407,7 +407,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'jamDensity' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearJamDensity() {
+    public edu.berkeley.path.model_elements.FD.Builder clearJamDensity() {
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -418,7 +418,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'capacityDrop' field */
-    public edu.berkeley.path.ModelElements.FD.Builder setCapacityDrop(double value) {
+    public edu.berkeley.path.model_elements.FD.Builder setCapacityDrop(double value) {
       validate(fields()[7], value);
       this.capacityDrop = value;
       fieldSetFlags()[7] = true;
@@ -431,7 +431,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Clears the value of the 'capacityDrop' field */
-    public edu.berkeley.path.ModelElements.FD.Builder clearCapacityDrop() {
+    public edu.berkeley.path.model_elements.FD.Builder clearCapacityDrop() {
       fieldSetFlags()[7] = false;
       return this;
     }

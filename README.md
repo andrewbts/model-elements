@@ -1,6 +1,6 @@
 # Model Elements Library
 
-Generates a java lib in ModelElements.jar that can be used for networks and their elements, data profiles, scenarios, and so on. These classes are very lightweight and can be used as mock classes in testing. They also can be serialized (binary or json) via avro.
+Generates a java lib in model-elements.jar that can be used for networks and their elements, data profiles, scenarios, and so on. These classes are very lightweight and can be used as mock classes in testing. They also can be serialized (binary or json) via avro.
 
 See the tests for some examples.
 

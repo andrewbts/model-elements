@@ -3,12 +3,12 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 /** seconds and milliseconds, can be absolute or relative
      (when absolute: since epoch, utc) */
 public class Time extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Time\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"doc\":\"seconds and milliseconds, can be absolute or relative\\n     (when absolute: since epoch, utc)\",\"fields\":[{\"name\":\"seconds\",\"type\":\"long\"},{\"name\":\"milliseconds\",\"type\":\"long\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Time\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"seconds and milliseconds, can be absolute or relative\\n     (when absolute: since epoch, utc)\",\"fields\":[{\"name\":\"seconds\",\"type\":\"long\"},{\"name\":\"milliseconds\",\"type\":\"long\"}]}");
   @Deprecated public long seconds;
   @Deprecated public long milliseconds;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -61,18 +61,18 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /** Creates a new Time RecordBuilder */
-  public static edu.berkeley.path.ModelElements.Time.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.Time.Builder();
+  public static edu.berkeley.path.model_elements.Time.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.Time.Builder();
   }
   
   /** Creates a new Time RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.Time.Builder newBuilder(edu.berkeley.path.ModelElements.Time.Builder other) {
-    return new edu.berkeley.path.ModelElements.Time.Builder(other);
+  public static edu.berkeley.path.model_elements.Time.Builder newBuilder(edu.berkeley.path.model_elements.Time.Builder other) {
+    return new edu.berkeley.path.model_elements.Time.Builder(other);
   }
   
   /** Creates a new Time RecordBuilder by copying an existing Time instance */
-  public static edu.berkeley.path.ModelElements.Time.Builder newBuilder(edu.berkeley.path.ModelElements.Time other) {
-    return new edu.berkeley.path.ModelElements.Time.Builder(other);
+  public static edu.berkeley.path.model_elements.Time.Builder newBuilder(edu.berkeley.path.model_elements.Time other) {
+    return new edu.berkeley.path.model_elements.Time.Builder(other);
   }
   
   /**
@@ -86,17 +86,17 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.Time.SCHEMA$);
+      super(edu.berkeley.path.model_elements.Time.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.Time.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.Time.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing Time instance */
-    private Builder(edu.berkeley.path.ModelElements.Time other) {
-            super(edu.berkeley.path.ModelElements.Time.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.Time other) {
+            super(edu.berkeley.path.model_elements.Time.SCHEMA$);
       if (isValidValue(fields()[0], other.seconds)) {
         this.seconds = (java.lang.Long) data().deepCopy(fields()[0].schema(), other.seconds);
         fieldSetFlags()[0] = true;
@@ -113,7 +113,7 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'seconds' field */
-    public edu.berkeley.path.ModelElements.Time.Builder setSeconds(long value) {
+    public edu.berkeley.path.model_elements.Time.Builder setSeconds(long value) {
       validate(fields()[0], value);
       this.seconds = value;
       fieldSetFlags()[0] = true;
@@ -126,7 +126,7 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'seconds' field */
-    public edu.berkeley.path.ModelElements.Time.Builder clearSeconds() {
+    public edu.berkeley.path.model_elements.Time.Builder clearSeconds() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -137,7 +137,7 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'milliseconds' field */
-    public edu.berkeley.path.ModelElements.Time.Builder setMilliseconds(long value) {
+    public edu.berkeley.path.model_elements.Time.Builder setMilliseconds(long value) {
       validate(fields()[1], value);
       this.milliseconds = value;
       fieldSetFlags()[1] = true;
@@ -150,7 +150,7 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'milliseconds' field */
-    public edu.berkeley.path.ModelElements.Time.Builder clearMilliseconds() {
+    public edu.berkeley.path.model_elements.Time.Builder clearMilliseconds() {
       fieldSetFlags()[1] = false;
       return this;
     }

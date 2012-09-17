@@ -27,48 +27,40 @@
  * SUCH DAMAGE.
  */
 
-package ModelElements;
+package edu.berkeley.path.model_elements;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.ModelElements.*;
+import edu.berkeley.path.model_elements.*;
 
-public class DensityProfileTest {
+public class NetworkTest {
   Network nw;
   Network.Builder nwb;
-  
-  DensityProfile dp;
-  DensityProfile.Builder dpb;
   
   @Before
   public void setup() {
     nwb = Network.newBuilder();
     nwb.setName("test network"); // there's no default for this
     nw = nwb.build(); // applies the defaults
-    
-    dpb = DensityProfile.newBuilder();
-    dpb.setId("2");
-    
-    dp = dpb.build();
-    
-    Map<CharSequence,List<Double>> vpm =
-      new HashMap<CharSequence,List<Double>>();
-          
-    dp.setVehiclesPerMeter(vpm);
-    
-    List<Double> row = new ArrayList();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
-    
-    vpm.put("1", row);
   }
 
   @Test
-  public void testDensityProfile() {
-    assertEquals((Double)2.0, dp.getVehiclesPerMeter().get("1").get(1));
+  public void testNetworkDefaults() {
+    assertEquals(new org.apache.avro.util.Utf8("1"), nw.getId());
+    assertTrue(nw.getLinks().isEmpty());
+    assertTrue(nw.getNodes().isEmpty());
+  }
+  
+  @Test
+  public void testNetworkBuilderAssignments() {
+    assertEquals("test network", nw.getName());
+  }
+  
+  @Test(expected = org.apache.avro.AvroRuntimeException.class)
+  public void testBadIndex() {
+    nw.get(1000);
   }
 }

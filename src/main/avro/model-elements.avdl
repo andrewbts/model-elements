@@ -27,14 +27,14 @@
  * SUCH DAMAGE.
  */
 
-@namespace("edu.berkeley.path.ModelElements")
+@namespace("edu.berkeley.path.model_elements")
 
 /** 
  * Description of the config and state of our networks and related data.
  *
  * Note: all units in SI (meters, seconds, etc.) except where specified.
  */
-protocol ModelElements {
+protocol model_elements {
   
   /** seconds and milliseconds, can be absolute or relative
      (when absolute: since epoch, utc) */

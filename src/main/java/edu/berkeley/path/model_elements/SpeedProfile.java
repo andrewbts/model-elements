@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 /** Speed on each link and cell at a point in time */
 public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SpeedProfile\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"doc\":\"Speed on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SpeedProfile\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"Speed on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond;
@@ -61,18 +61,18 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /** Creates a new SpeedProfile RecordBuilder */
-  public static edu.berkeley.path.ModelElements.SpeedProfile.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.SpeedProfile.Builder();
+  public static edu.berkeley.path.model_elements.SpeedProfile.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.SpeedProfile.Builder();
   }
   
   /** Creates a new SpeedProfile RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.SpeedProfile.Builder newBuilder(edu.berkeley.path.ModelElements.SpeedProfile.Builder other) {
-    return new edu.berkeley.path.ModelElements.SpeedProfile.Builder(other);
+  public static edu.berkeley.path.model_elements.SpeedProfile.Builder newBuilder(edu.berkeley.path.model_elements.SpeedProfile.Builder other) {
+    return new edu.berkeley.path.model_elements.SpeedProfile.Builder(other);
   }
   
   /** Creates a new SpeedProfile RecordBuilder by copying an existing SpeedProfile instance */
-  public static edu.berkeley.path.ModelElements.SpeedProfile.Builder newBuilder(edu.berkeley.path.ModelElements.SpeedProfile other) {
-    return new edu.berkeley.path.ModelElements.SpeedProfile.Builder(other);
+  public static edu.berkeley.path.model_elements.SpeedProfile.Builder newBuilder(edu.berkeley.path.model_elements.SpeedProfile other) {
+    return new edu.berkeley.path.model_elements.SpeedProfile.Builder(other);
   }
   
   /**
@@ -86,17 +86,17 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.SpeedProfile.SCHEMA$);
+      super(edu.berkeley.path.model_elements.SpeedProfile.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.SpeedProfile.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.SpeedProfile.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing SpeedProfile instance */
-    private Builder(edu.berkeley.path.ModelElements.SpeedProfile other) {
-            super(edu.berkeley.path.ModelElements.SpeedProfile.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.SpeedProfile other) {
+            super(edu.berkeley.path.model_elements.SpeedProfile.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -113,7 +113,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.SpeedProfile.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -126,7 +126,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder clearId() {
+    public edu.berkeley.path.model_elements.SpeedProfile.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -138,7 +138,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'metersPerSecond' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    public edu.berkeley.path.model_elements.SpeedProfile.Builder setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
       validate(fields()[1], value);
       this.metersPerSecond = value;
       fieldSetFlags()[1] = true;
@@ -151,7 +151,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'metersPerSecond' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder clearMetersPerSecond() {
+    public edu.berkeley.path.model_elements.SpeedProfile.Builder clearMetersPerSecond() {
       metersPerSecond = null;
       fieldSetFlags()[1] = false;
       return this;
