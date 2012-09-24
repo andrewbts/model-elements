@@ -90,8 +90,8 @@ protocol model_elements {
     map<array<double>> vehiclesPerMeter = {};
   }
   
-  /** Speed on each link and cell at a point in time */
-  record SpeedProfile {
+  /** Velocity on each link and cell at a point in time */
+  record VelocityProfile {
     string id;
     
     /** map key is linkId */
@@ -145,6 +145,7 @@ protocol model_elements {
     
     Network network;
     DensityProfile initialDensityProfile;
+    VelocityProfile initialVelocityProfile;
     FDProfile fdProfile;
     DemandProfile demandProfile;
   }

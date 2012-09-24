@@ -6,11 +6,12 @@
 package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 public class Scenario extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Scenario\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"network\",\"type\":{\"type\":\"record\",\"name\":\"Network\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"begin\",\"type\":{\"type\":\"record\",\"name\":\"NodeRef\",\"fields\":[{\"name\":\"nodeId\",\"type\":\"string\"}]}},{\"name\":\"end\",\"type\":\"NodeRef\"}]}},\"default\":[]}]}},{\"name\":\"initialDensityProfile\",\"type\":{\"type\":\"record\",\"name\":\"DensityProfile\",\"doc\":\"Density on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}},{\"name\":\"fdProfile\",\"type\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"Fundamental diagrams on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}},{\"name\":\"demandProfile\",\"type\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":{\"type\":\"record\",\"name\":\"LinkRef\",\"fields\":[{\"name\":\"linkId\",\"type\":\"string\"}]},\"doc\":\"may not be null\"},{\"name\":\"destination\",\"type\":\"LinkRef\",\"doc\":\"may be null\"},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Scenario\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"network\",\"type\":{\"type\":\"record\",\"name\":\"Network\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"begin\",\"type\":{\"type\":\"record\",\"name\":\"NodeRef\",\"fields\":[{\"name\":\"nodeId\",\"type\":\"string\"}]}},{\"name\":\"end\",\"type\":\"NodeRef\"}]}},\"default\":[]}]}},{\"name\":\"initialDensityProfile\",\"type\":{\"type\":\"record\",\"name\":\"DensityProfile\",\"doc\":\"Density on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}},{\"name\":\"initialVelocityProfile\",\"type\":{\"type\":\"record\",\"name\":\"VelocityProfile\",\"doc\":\"Velocity on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}},{\"name\":\"fdProfile\",\"type\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"Fundamental diagrams on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}},{\"name\":\"demandProfile\",\"type\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":{\"type\":\"record\",\"name\":\"LinkRef\",\"fields\":[{\"name\":\"linkId\",\"type\":\"string\"}]},\"doc\":\"may not be null\"},{\"name\":\"destination\",\"type\":\"LinkRef\",\"doc\":\"may be null\"},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public edu.berkeley.path.model_elements.Network network;
   @Deprecated public edu.berkeley.path.model_elements.DensityProfile initialDensityProfile;
+  @Deprecated public edu.berkeley.path.model_elements.VelocityProfile initialVelocityProfile;
   @Deprecated public edu.berkeley.path.model_elements.FDProfile fdProfile;
   @Deprecated public edu.berkeley.path.model_elements.DemandProfile demandProfile;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -21,8 +22,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: return name;
     case 2: return network;
     case 3: return initialDensityProfile;
-    case 4: return fdProfile;
-    case 5: return demandProfile;
+    case 4: return initialVelocityProfile;
+    case 5: return fdProfile;
+    case 6: return demandProfile;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -34,8 +36,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: network = (edu.berkeley.path.model_elements.Network)value$; break;
     case 3: initialDensityProfile = (edu.berkeley.path.model_elements.DensityProfile)value$; break;
-    case 4: fdProfile = (edu.berkeley.path.model_elements.FDProfile)value$; break;
-    case 5: demandProfile = (edu.berkeley.path.model_elements.DemandProfile)value$; break;
+    case 4: initialVelocityProfile = (edu.berkeley.path.model_elements.VelocityProfile)value$; break;
+    case 5: fdProfile = (edu.berkeley.path.model_elements.FDProfile)value$; break;
+    case 6: demandProfile = (edu.berkeley.path.model_elements.DemandProfile)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -101,6 +104,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
+   * Gets the value of the 'initialVelocityProfile' field.
+   */
+  public edu.berkeley.path.model_elements.VelocityProfile getInitialVelocityProfile() {
+    return initialVelocityProfile;
+  }
+
+  /**
+   * Sets the value of the 'initialVelocityProfile' field.
+   * @param value the value to set.
+   */
+  public void setInitialVelocityProfile(edu.berkeley.path.model_elements.VelocityProfile value) {
+    this.initialVelocityProfile = value;
+  }
+
+  /**
    * Gets the value of the 'fdProfile' field.
    */
   public edu.berkeley.path.model_elements.FDProfile getFdProfile() {
@@ -155,6 +173,7 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.CharSequence name;
     private edu.berkeley.path.model_elements.Network network;
     private edu.berkeley.path.model_elements.DensityProfile initialDensityProfile;
+    private edu.berkeley.path.model_elements.VelocityProfile initialVelocityProfile;
     private edu.berkeley.path.model_elements.FDProfile fdProfile;
     private edu.berkeley.path.model_elements.DemandProfile demandProfile;
 
@@ -187,13 +206,17 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
         this.initialDensityProfile = (edu.berkeley.path.model_elements.DensityProfile) data().deepCopy(fields()[3].schema(), other.initialDensityProfile);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.fdProfile)) {
-        this.fdProfile = (edu.berkeley.path.model_elements.FDProfile) data().deepCopy(fields()[4].schema(), other.fdProfile);
+      if (isValidValue(fields()[4], other.initialVelocityProfile)) {
+        this.initialVelocityProfile = (edu.berkeley.path.model_elements.VelocityProfile) data().deepCopy(fields()[4].schema(), other.initialVelocityProfile);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.demandProfile)) {
-        this.demandProfile = (edu.berkeley.path.model_elements.DemandProfile) data().deepCopy(fields()[5].schema(), other.demandProfile);
+      if (isValidValue(fields()[5], other.fdProfile)) {
+        this.fdProfile = (edu.berkeley.path.model_elements.FDProfile) data().deepCopy(fields()[5].schema(), other.fdProfile);
         fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.demandProfile)) {
+        this.demandProfile = (edu.berkeley.path.model_elements.DemandProfile) data().deepCopy(fields()[6].schema(), other.demandProfile);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -297,6 +320,31 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
       return this;
     }
 
+    /** Gets the value of the 'initialVelocityProfile' field */
+    public edu.berkeley.path.model_elements.VelocityProfile getInitialVelocityProfile() {
+      return initialVelocityProfile;
+    }
+    
+    /** Sets the value of the 'initialVelocityProfile' field */
+    public edu.berkeley.path.model_elements.Scenario.Builder setInitialVelocityProfile(edu.berkeley.path.model_elements.VelocityProfile value) {
+      validate(fields()[4], value);
+      this.initialVelocityProfile = value;
+      fieldSetFlags()[4] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'initialVelocityProfile' field has been set */
+    public boolean hasInitialVelocityProfile() {
+      return fieldSetFlags()[4];
+    }
+    
+    /** Clears the value of the 'initialVelocityProfile' field */
+    public edu.berkeley.path.model_elements.Scenario.Builder clearInitialVelocityProfile() {
+      initialVelocityProfile = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
     /** Gets the value of the 'fdProfile' field */
     public edu.berkeley.path.model_elements.FDProfile getFdProfile() {
       return fdProfile;
@@ -304,21 +352,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'fdProfile' field */
     public edu.berkeley.path.model_elements.Scenario.Builder setFdProfile(edu.berkeley.path.model_elements.FDProfile value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.fdProfile = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'fdProfile' field has been set */
     public boolean hasFdProfile() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'fdProfile' field */
     public edu.berkeley.path.model_elements.Scenario.Builder clearFdProfile() {
       fdProfile = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -329,21 +377,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'demandProfile' field */
     public edu.berkeley.path.model_elements.Scenario.Builder setDemandProfile(edu.berkeley.path.model_elements.DemandProfile value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.demandProfile = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'demandProfile' field has been set */
     public boolean hasDemandProfile() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'demandProfile' field */
     public edu.berkeley.path.model_elements.Scenario.Builder clearDemandProfile() {
       demandProfile = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -355,8 +403,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.network = fieldSetFlags()[2] ? this.network : (edu.berkeley.path.model_elements.Network) defaultValue(fields()[2]);
         record.initialDensityProfile = fieldSetFlags()[3] ? this.initialDensityProfile : (edu.berkeley.path.model_elements.DensityProfile) defaultValue(fields()[3]);
-        record.fdProfile = fieldSetFlags()[4] ? this.fdProfile : (edu.berkeley.path.model_elements.FDProfile) defaultValue(fields()[4]);
-        record.demandProfile = fieldSetFlags()[5] ? this.demandProfile : (edu.berkeley.path.model_elements.DemandProfile) defaultValue(fields()[5]);
+        record.initialVelocityProfile = fieldSetFlags()[4] ? this.initialVelocityProfile : (edu.berkeley.path.model_elements.VelocityProfile) defaultValue(fields()[4]);
+        record.fdProfile = fieldSetFlags()[5] ? this.fdProfile : (edu.berkeley.path.model_elements.FDProfile) defaultValue(fields()[5]);
+        record.demandProfile = fieldSetFlags()[6] ? this.demandProfile : (edu.berkeley.path.model_elements.DemandProfile) defaultValue(fields()[6]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
