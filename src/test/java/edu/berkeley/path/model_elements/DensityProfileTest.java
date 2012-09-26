@@ -59,7 +59,7 @@ public class DensityProfileTest {
           
     dp.setVehiclesPerMeter(vpm);
     
-    List<Double> row = new ArrayList();
+    List<Double> row = new ArrayList<Double>();
     row.add(1.0);
     row.add(2.0);
     row.add(3.0);
