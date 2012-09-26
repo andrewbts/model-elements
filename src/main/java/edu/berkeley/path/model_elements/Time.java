@@ -8,7 +8,7 @@ package edu.berkeley.path.model_elements;
 /** seconds and milliseconds, can be absolute or relative
      (when absolute: since epoch, utc) */
 public class Time extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Time\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"seconds and milliseconds, can be absolute or relative\\n     (when absolute: since epoch, utc)\",\"fields\":[{\"name\":\"seconds\",\"type\":\"long\"},{\"name\":\"milliseconds\",\"type\":\"long\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Time\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"seconds and milliseconds, can be absolute or relative\\r\\n     (when absolute: since epoch, utc)\",\"fields\":[{\"name\":\"seconds\",\"type\":\"long\"},{\"name\":\"milliseconds\",\"type\":\"long\"}]}");
   @Deprecated public long seconds;
   @Deprecated public long milliseconds;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
