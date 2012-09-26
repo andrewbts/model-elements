@@ -108,8 +108,8 @@ public class WriterTest {
 
   @Test
   public void testWriteNetworkToBinaryFile() throws IOException {
-    File file = new File("data.avro");
-      // TODO put this file elsewhere. tmpdir? or just string?
+    new File("tmp").mkdirs();
+    File file = new File("tmp/data.avro");
     
     DatumWriter<Network> writer =
       new SpecificDatumWriter<Network>(schema);
