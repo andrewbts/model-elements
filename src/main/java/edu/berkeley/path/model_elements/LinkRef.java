@@ -8,6 +8,19 @@ package edu.berkeley.path.model_elements;
 public class LinkRef extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LinkRef\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"linkId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence linkId;
+
+  /**
+   * Default constructor.
+   */
+  public LinkRef() {}
+
+  /**
+   * All-args constructor.
+   */
+  public LinkRef(java.lang.CharSequence linkId) {
+    this.linkId = linkId;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

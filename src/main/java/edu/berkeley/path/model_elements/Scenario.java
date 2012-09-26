@@ -14,6 +14,25 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public edu.berkeley.path.model_elements.VelocityProfile initialVelocityProfile;
   @Deprecated public edu.berkeley.path.model_elements.FDProfile fdProfile;
   @Deprecated public edu.berkeley.path.model_elements.DemandProfile demandProfile;
+
+  /**
+   * Default constructor.
+   */
+  public Scenario() {}
+
+  /**
+   * All-args constructor.
+   */
+  public Scenario(java.lang.CharSequence id, java.lang.CharSequence name, edu.berkeley.path.model_elements.Network network, edu.berkeley.path.model_elements.DensityProfile initialDensityProfile, edu.berkeley.path.model_elements.VelocityProfile initialVelocityProfile, edu.berkeley.path.model_elements.FDProfile fdProfile, edu.berkeley.path.model_elements.DemandProfile demandProfile) {
+    this.id = id;
+    this.name = name;
+    this.network = network;
+    this.initialDensityProfile = initialDensityProfile;
+    this.initialVelocityProfile = initialVelocityProfile;
+    this.fdProfile = fdProfile;
+    this.demandProfile = demandProfile;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

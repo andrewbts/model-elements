@@ -12,6 +12,21 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
   @Deprecated public double startTime;
   /** map key is linkId, array is time series, as per dt and startTime. */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements.FD>> fd;
+
+  /**
+   * Default constructor.
+   */
+  public FDProfile() {}
+
+  /**
+   * All-args constructor.
+   */
+  public FDProfile(java.lang.Double dt, java.lang.Double startTime, java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements.FD>> fd) {
+    this.dt = dt;
+    this.startTime = startTime;
+    this.fd = fd;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

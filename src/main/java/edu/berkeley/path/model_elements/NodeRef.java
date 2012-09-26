@@ -8,6 +8,19 @@ package edu.berkeley.path.model_elements;
 public class NodeRef extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NodeRef\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"nodeId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence nodeId;
+
+  /**
+   * Default constructor.
+   */
+  public NodeRef() {}
+
+  /**
+   * All-args constructor.
+   */
+  public NodeRef(java.lang.CharSequence nodeId) {
+    this.nodeId = nodeId;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

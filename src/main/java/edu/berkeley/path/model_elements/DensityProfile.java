@@ -11,6 +11,20 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> vehiclesPerMeter;
+
+  /**
+   * Default constructor.
+   */
+  public DensityProfile() {}
+
+  /**
+   * All-args constructor.
+   */
+  public DensityProfile(java.lang.CharSequence id, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> vehiclesPerMeter) {
+    this.id = id;
+    this.vehiclesPerMeter = vehiclesPerMeter;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

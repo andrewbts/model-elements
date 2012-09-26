@@ -8,6 +8,19 @@ package edu.berkeley.path.model_elements;
 public class NetworkRef extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NetworkRef\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"networkId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence networkId;
+
+  /**
+   * Default constructor.
+   */
+  public NetworkRef() {}
+
+  /**
+   * All-args constructor.
+   */
+  public NetworkRef(java.lang.CharSequence networkId) {
+    this.networkId = networkId;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

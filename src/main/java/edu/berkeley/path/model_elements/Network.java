@@ -11,6 +11,22 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements.Node> nodes;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements.Link> links;
+
+  /**
+   * Default constructor.
+   */
+  public Network() {}
+
+  /**
+   * All-args constructor.
+   */
+  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.util.List<edu.berkeley.path.model_elements.Node> nodes, java.util.List<edu.berkeley.path.model_elements.Link> links) {
+    this.id = id;
+    this.name = name;
+    this.nodes = nodes;
+    this.links = links;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
