@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 /** Density on each link and cell at a point in time */
 public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DensityProfile\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"doc\":\"Density on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DensityProfile\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"Density on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> vehiclesPerMeter;
@@ -61,18 +61,18 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
   }
 
   /** Creates a new DensityProfile RecordBuilder */
-  public static edu.berkeley.path.ModelElements.DensityProfile.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.DensityProfile.Builder();
+  public static edu.berkeley.path.model_elements.DensityProfile.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.DensityProfile.Builder();
   }
   
   /** Creates a new DensityProfile RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.DensityProfile.Builder newBuilder(edu.berkeley.path.ModelElements.DensityProfile.Builder other) {
-    return new edu.berkeley.path.ModelElements.DensityProfile.Builder(other);
+  public static edu.berkeley.path.model_elements.DensityProfile.Builder newBuilder(edu.berkeley.path.model_elements.DensityProfile.Builder other) {
+    return new edu.berkeley.path.model_elements.DensityProfile.Builder(other);
   }
   
   /** Creates a new DensityProfile RecordBuilder by copying an existing DensityProfile instance */
-  public static edu.berkeley.path.ModelElements.DensityProfile.Builder newBuilder(edu.berkeley.path.ModelElements.DensityProfile other) {
-    return new edu.berkeley.path.ModelElements.DensityProfile.Builder(other);
+  public static edu.berkeley.path.model_elements.DensityProfile.Builder newBuilder(edu.berkeley.path.model_elements.DensityProfile other) {
+    return new edu.berkeley.path.model_elements.DensityProfile.Builder(other);
   }
   
   /**
@@ -86,17 +86,17 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.DensityProfile.SCHEMA$);
+      super(edu.berkeley.path.model_elements.DensityProfile.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.DensityProfile.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.DensityProfile.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing DensityProfile instance */
-    private Builder(edu.berkeley.path.ModelElements.DensityProfile other) {
-            super(edu.berkeley.path.ModelElements.DensityProfile.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.DensityProfile other) {
+            super(edu.berkeley.path.model_elements.DensityProfile.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -113,7 +113,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.DensityProfile.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.DensityProfile.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -126,7 +126,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.DensityProfile.Builder clearId() {
+    public edu.berkeley.path.model_elements.DensityProfile.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -138,7 +138,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
     }
     
     /** Sets the value of the 'vehiclesPerMeter' field */
-    public edu.berkeley.path.ModelElements.DensityProfile.Builder setVehiclesPerMeter(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    public edu.berkeley.path.model_elements.DensityProfile.Builder setVehiclesPerMeter(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
       validate(fields()[1], value);
       this.vehiclesPerMeter = value;
       fieldSetFlags()[1] = true;
@@ -151,7 +151,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
     }
     
     /** Clears the value of the 'vehiclesPerMeter' field */
-    public edu.berkeley.path.ModelElements.DensityProfile.Builder clearVehiclesPerMeter() {
+    public edu.berkeley.path.model_elements.DensityProfile.Builder clearVehiclesPerMeter() {
       vehiclesPerMeter = null;
       fieldSetFlags()[1] = false;
       return this;

@@ -27,14 +27,14 @@
  * SUCH DAMAGE.
  */
 
-package ModelElements.test;
+package edu.berkeley.path.model_elements;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.ModelElements.*;
+import edu.berkeley.path.model_elements.*;
 
 public class NetworkTest {
   Network nw;

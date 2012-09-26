@@ -27,14 +27,14 @@
  * SUCH DAMAGE.
  */
 
-package ModelElements.test;
+package edu.berkeley.path.model_elements;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.ModelElements.*;
+import edu.berkeley.path.model_elements.*;
 
 import java.io.File;
 import java.io.IOException;
@@ -95,7 +95,7 @@ public class WriterTest {
     ln.setId("3");
     ln.setName("two");
     ln.setType("hwy");
-    ln.setLaneCount(4);
+    ln.setLaneCount(4.0);
     ln.setLength(1000.0);
     
     ln.begin = new NodeRef();
@@ -153,7 +153,7 @@ public class WriterTest {
     writer.write(nw, e);
     e.flush();
     
-    String actual = out.toString() + "\n";
+    String actual = out.toString();
     
 //     System.out.println("serialized:\n");
 //     System.out.println(actual);
@@ -161,6 +161,14 @@ public class WriterTest {
     
     String expected = FileUtils.readFileToString(
       new File("src/test/resources/fixtures/NetworkToJson.json"));
+
+    if (expected.endsWith("\n")) {
+        expected = expected.substring(0, expected.length() - 1);
+    }
+
+    if (expected.endsWith("\r")) {
+        expected = expected.substring(0, expected.length() - 1);
+    }
 
 //     System.out.println("fixture:\n");
 //     System.out.println(expected);

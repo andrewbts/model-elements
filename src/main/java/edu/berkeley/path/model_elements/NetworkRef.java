@@ -3,10 +3,10 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 public class NetworkRef extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NetworkRef\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"fields\":[{\"name\":\"networkId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NetworkRef\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"networkId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence networkId;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
@@ -41,18 +41,18 @@ public class NetworkRef extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   /** Creates a new NetworkRef RecordBuilder */
-  public static edu.berkeley.path.ModelElements.NetworkRef.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.NetworkRef.Builder();
+  public static edu.berkeley.path.model_elements.NetworkRef.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.NetworkRef.Builder();
   }
   
   /** Creates a new NetworkRef RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.NetworkRef.Builder newBuilder(edu.berkeley.path.ModelElements.NetworkRef.Builder other) {
-    return new edu.berkeley.path.ModelElements.NetworkRef.Builder(other);
+  public static edu.berkeley.path.model_elements.NetworkRef.Builder newBuilder(edu.berkeley.path.model_elements.NetworkRef.Builder other) {
+    return new edu.berkeley.path.model_elements.NetworkRef.Builder(other);
   }
   
   /** Creates a new NetworkRef RecordBuilder by copying an existing NetworkRef instance */
-  public static edu.berkeley.path.ModelElements.NetworkRef.Builder newBuilder(edu.berkeley.path.ModelElements.NetworkRef other) {
-    return new edu.berkeley.path.ModelElements.NetworkRef.Builder(other);
+  public static edu.berkeley.path.model_elements.NetworkRef.Builder newBuilder(edu.berkeley.path.model_elements.NetworkRef other) {
+    return new edu.berkeley.path.model_elements.NetworkRef.Builder(other);
   }
   
   /**
@@ -65,17 +65,17 @@ public class NetworkRef extends org.apache.avro.specific.SpecificRecordBase impl
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.NetworkRef.SCHEMA$);
+      super(edu.berkeley.path.model_elements.NetworkRef.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.NetworkRef.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.NetworkRef.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing NetworkRef instance */
-    private Builder(edu.berkeley.path.ModelElements.NetworkRef other) {
-            super(edu.berkeley.path.ModelElements.NetworkRef.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.NetworkRef other) {
+            super(edu.berkeley.path.model_elements.NetworkRef.SCHEMA$);
       if (isValidValue(fields()[0], other.networkId)) {
         this.networkId = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.networkId);
         fieldSetFlags()[0] = true;
@@ -88,7 +88,7 @@ public class NetworkRef extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Sets the value of the 'networkId' field */
-    public edu.berkeley.path.ModelElements.NetworkRef.Builder setNetworkId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.NetworkRef.Builder setNetworkId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.networkId = value;
       fieldSetFlags()[0] = true;
@@ -101,7 +101,7 @@ public class NetworkRef extends org.apache.avro.specific.SpecificRecordBase impl
     }
     
     /** Clears the value of the 'networkId' field */
-    public edu.berkeley.path.ModelElements.NetworkRef.Builder clearNetworkId() {
+    public edu.berkeley.path.model_elements.NetworkRef.Builder clearNetworkId() {
       networkId = null;
       fieldSetFlags()[0] = false;
       return this;

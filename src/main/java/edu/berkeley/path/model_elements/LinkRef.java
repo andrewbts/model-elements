@@ -3,10 +3,10 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 public class LinkRef extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LinkRef\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"fields\":[{\"name\":\"linkId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"LinkRef\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"linkId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence linkId;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
@@ -41,18 +41,18 @@ public class LinkRef extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   /** Creates a new LinkRef RecordBuilder */
-  public static edu.berkeley.path.ModelElements.LinkRef.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.LinkRef.Builder();
+  public static edu.berkeley.path.model_elements.LinkRef.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.LinkRef.Builder();
   }
   
   /** Creates a new LinkRef RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.LinkRef.Builder newBuilder(edu.berkeley.path.ModelElements.LinkRef.Builder other) {
-    return new edu.berkeley.path.ModelElements.LinkRef.Builder(other);
+  public static edu.berkeley.path.model_elements.LinkRef.Builder newBuilder(edu.berkeley.path.model_elements.LinkRef.Builder other) {
+    return new edu.berkeley.path.model_elements.LinkRef.Builder(other);
   }
   
   /** Creates a new LinkRef RecordBuilder by copying an existing LinkRef instance */
-  public static edu.berkeley.path.ModelElements.LinkRef.Builder newBuilder(edu.berkeley.path.ModelElements.LinkRef other) {
-    return new edu.berkeley.path.ModelElements.LinkRef.Builder(other);
+  public static edu.berkeley.path.model_elements.LinkRef.Builder newBuilder(edu.berkeley.path.model_elements.LinkRef other) {
+    return new edu.berkeley.path.model_elements.LinkRef.Builder(other);
   }
   
   /**
@@ -65,17 +65,17 @@ public class LinkRef extends org.apache.avro.specific.SpecificRecordBase impleme
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.LinkRef.SCHEMA$);
+      super(edu.berkeley.path.model_elements.LinkRef.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.LinkRef.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.LinkRef.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing LinkRef instance */
-    private Builder(edu.berkeley.path.ModelElements.LinkRef other) {
-            super(edu.berkeley.path.ModelElements.LinkRef.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.LinkRef other) {
+            super(edu.berkeley.path.model_elements.LinkRef.SCHEMA$);
       if (isValidValue(fields()[0], other.linkId)) {
         this.linkId = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.linkId);
         fieldSetFlags()[0] = true;
@@ -88,7 +88,7 @@ public class LinkRef extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Sets the value of the 'linkId' field */
-    public edu.berkeley.path.ModelElements.LinkRef.Builder setLinkId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.LinkRef.Builder setLinkId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.linkId = value;
       fieldSetFlags()[0] = true;
@@ -101,7 +101,7 @@ public class LinkRef extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Clears the value of the 'linkId' field */
-    public edu.berkeley.path.ModelElements.LinkRef.Builder clearLinkId() {
+    public edu.berkeley.path.model_elements.LinkRef.Builder clearLinkId() {
       linkId = null;
       fieldSetFlags()[0] = false;
       return this;

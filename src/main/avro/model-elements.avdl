@@ -27,14 +27,14 @@
  * SUCH DAMAGE.
  */
 
-@namespace("edu.berkeley.path.ModelElements")
+@namespace("edu.berkeley.path.model_elements")
 
 /** 
  * Description of the config and state of our networks and related data.
  *
  * Note: all units in SI (meters, seconds, etc.) except where specified.
  */
-protocol ModelElements {
+protocol model_elements {
   
   /** seconds and milliseconds, can be absolute or relative
      (when absolute: since epoch, utc) */
@@ -66,8 +66,9 @@ protocol ModelElements {
     string name;
     string type;
     
-    int laneCount;
+    double laneCount;
     double length;
+    int laneOffset = 0;
 
     NodeRef begin;
     NodeRef end;
@@ -89,11 +90,63 @@ protocol ModelElements {
     map<array<double>> vehiclesPerMeter = {};
   }
   
-  /** Speed on each link and cell at a point in time */
-  record SpeedProfile {
+  /** Velocity on each link and cell at a point in time */
+  record VelocityProfile {
     string id;
     
     /** map key is linkId */
     map<array<double>> metersPerSecond = {};
+  }
+  
+  /** Fundamental diagram on one link at one time */
+  record FD {
+    // ### TODO units?
+    double  freeFlowSpeed;
+    double  freeFlowSpeedStdev;
+    double  congestionWaveSpeed;
+    double  congestionWaveSpeedStdev;
+    double  capacity;
+    double  capacityStdev;
+    double  jamDensity;
+    double  capacityDrop;
+  }
+  
+  /** Fundamental diagrams on each link as time series */
+  record FDProfile {
+    double dt = 300.0;
+    double startTime = 0.0;
+  
+    /** map key is linkId, array is time series, as per dt and startTime. */
+    map<array<FD>> fd = {};
+  }
+  
+  /** Demands on each link as time series */
+  record DemandProfile {
+    double dt = 300.0;
+    double startTime = 0.0;
+    // ### TODO knob etc
+    
+    /** may not be null */
+    LinkRef origin;
+
+    /** may be null */
+    LinkRef destination;
+
+    /** map key is linkId, array is time series, as per dt and startTime. */
+    map<array<double>> demand = {};
+    // ### TODO vehicle type dimension
+  }
+  
+  // ### TODO Controllers
+  
+  record Scenario {
+    string id;
+    string name;
+    
+    Network network;
+    DensityProfile initialDensityProfile;
+    VelocityProfile initialVelocityProfile;
+    FDProfile fdProfile;
+    DemandProfile demandProfile;
   }
 }

@@ -27,48 +27,51 @@
  * SUCH DAMAGE.
  */
 
-package ModelElements.test;
+package edu.berkeley.path.model_elements;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.ModelElements.*;
+public class SubclassTest {
+  public class MyNode extends Node {
+    public MyNode() {
+        super();
+    }
+    
+    /**
+     * Gets the value of the 'id' field as an int.
+     */
+    public int getIntId() {
+      return Integer.valueOf(id.toString());
+    }
 
-public class DensityProfileTest {
-  Network nw;
-  Network.Builder nwb;
+    /**
+     * Sets the value of the 'id' field.
+     * @param value the value to set.
+     */
+    public void setIntId(int value) {
+      this.id = Integer.toString(value);
+    }
+  }
   
-  DensityProfile dp;
-  DensityProfile.Builder dpb;
+  MyNode nd;
   
   @Before
   public void setup() {
-    nwb = Network.newBuilder();
-    nwb.setName("test network"); // there's no default for this
-    nw = nwb.build(); // applies the defaults
-    
-    dpb = DensityProfile.newBuilder();
-    dpb.setId("2");
-    
-    dp = dpb.build();
-    
-    Map<CharSequence,List<Double>> vpm =
-      new HashMap<CharSequence,List<Double>>();
-          
-    dp.setVehiclesPerMeter(vpm);
-    
-    List<Double> row = new ArrayList();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
-    
-    vpm.put("1", row);
+    nd = new MyNode();
+    nd.setId("42");
   }
 
   @Test
-  public void testDensityProfile() {
-    assertEquals((Double)2.0, dp.getVehiclesPerMeter().get("1").get(1));
+  public void testGetIntID() {
+    assertEquals(42, nd.getIntId());
+  }
+
+  @Test
+  public void testSetIntID() {
+    nd.setIntId(43);
+    assertEquals("43", nd.getId());
   }
 }

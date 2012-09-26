@@ -3,10 +3,10 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 public class Node extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
@@ -77,18 +77,18 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /** Creates a new Node RecordBuilder */
-  public static edu.berkeley.path.ModelElements.Node.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.Node.Builder();
+  public static edu.berkeley.path.model_elements.Node.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.Node.Builder();
   }
   
   /** Creates a new Node RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.Node.Builder newBuilder(edu.berkeley.path.ModelElements.Node.Builder other) {
-    return new edu.berkeley.path.ModelElements.Node.Builder(other);
+  public static edu.berkeley.path.model_elements.Node.Builder newBuilder(edu.berkeley.path.model_elements.Node.Builder other) {
+    return new edu.berkeley.path.model_elements.Node.Builder(other);
   }
   
   /** Creates a new Node RecordBuilder by copying an existing Node instance */
-  public static edu.berkeley.path.ModelElements.Node.Builder newBuilder(edu.berkeley.path.ModelElements.Node other) {
-    return new edu.berkeley.path.ModelElements.Node.Builder(other);
+  public static edu.berkeley.path.model_elements.Node.Builder newBuilder(edu.berkeley.path.model_elements.Node other) {
+    return new edu.berkeley.path.model_elements.Node.Builder(other);
   }
   
   /**
@@ -103,17 +103,17 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.Node.SCHEMA$);
+      super(edu.berkeley.path.model_elements.Node.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.Node.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.Node.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing Node instance */
-    private Builder(edu.berkeley.path.ModelElements.Node other) {
-            super(edu.berkeley.path.ModelElements.Node.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.Node other) {
+            super(edu.berkeley.path.model_elements.Node.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -134,7 +134,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.Node.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.Node.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -147,7 +147,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.Node.Builder clearId() {
+    public edu.berkeley.path.model_elements.Node.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -159,7 +159,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'name' field */
-    public edu.berkeley.path.ModelElements.Node.Builder setName(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.Node.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -172,7 +172,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'name' field */
-    public edu.berkeley.path.ModelElements.Node.Builder clearName() {
+    public edu.berkeley.path.model_elements.Node.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -184,7 +184,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'type' field */
-    public edu.berkeley.path.ModelElements.Node.Builder setType(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.Node.Builder setType(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.type = value;
       fieldSetFlags()[2] = true;
@@ -197,7 +197,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Clears the value of the 'type' field */
-    public edu.berkeley.path.ModelElements.Node.Builder clearType() {
+    public edu.berkeley.path.model_elements.Node.Builder clearType() {
       type = null;
       fieldSetFlags()[2] = false;
       return this;

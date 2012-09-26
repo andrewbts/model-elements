@@ -3,11 +3,11 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
-/** Speed on each link and cell at a point in time */
-public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SpeedProfile\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"doc\":\"Speed on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
+/** Velocity on each link and cell at a point in time */
+public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VelocityProfile\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"Velocity on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond;
@@ -60,43 +60,43 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     this.metersPerSecond = value;
   }
 
-  /** Creates a new SpeedProfile RecordBuilder */
-  public static edu.berkeley.path.ModelElements.SpeedProfile.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.SpeedProfile.Builder();
+  /** Creates a new VelocityProfile RecordBuilder */
+  public static edu.berkeley.path.model_elements.VelocityProfile.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.VelocityProfile.Builder();
   }
   
-  /** Creates a new SpeedProfile RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.SpeedProfile.Builder newBuilder(edu.berkeley.path.ModelElements.SpeedProfile.Builder other) {
-    return new edu.berkeley.path.ModelElements.SpeedProfile.Builder(other);
+  /** Creates a new VelocityProfile RecordBuilder by copying an existing Builder */
+  public static edu.berkeley.path.model_elements.VelocityProfile.Builder newBuilder(edu.berkeley.path.model_elements.VelocityProfile.Builder other) {
+    return new edu.berkeley.path.model_elements.VelocityProfile.Builder(other);
   }
   
-  /** Creates a new SpeedProfile RecordBuilder by copying an existing SpeedProfile instance */
-  public static edu.berkeley.path.ModelElements.SpeedProfile.Builder newBuilder(edu.berkeley.path.ModelElements.SpeedProfile other) {
-    return new edu.berkeley.path.ModelElements.SpeedProfile.Builder(other);
+  /** Creates a new VelocityProfile RecordBuilder by copying an existing VelocityProfile instance */
+  public static edu.berkeley.path.model_elements.VelocityProfile.Builder newBuilder(edu.berkeley.path.model_elements.VelocityProfile other) {
+    return new edu.berkeley.path.model_elements.VelocityProfile.Builder(other);
   }
   
   /**
-   * RecordBuilder for SpeedProfile instances.
+   * RecordBuilder for VelocityProfile instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<SpeedProfile>
-    implements org.apache.avro.data.RecordBuilder<SpeedProfile> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<VelocityProfile>
+    implements org.apache.avro.data.RecordBuilder<VelocityProfile> {
 
     private java.lang.CharSequence id;
     private java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond;
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.SpeedProfile.SCHEMA$);
+      super(edu.berkeley.path.model_elements.VelocityProfile.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.SpeedProfile.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.VelocityProfile.Builder other) {
       super(other);
     }
     
-    /** Creates a Builder by copying an existing SpeedProfile instance */
-    private Builder(edu.berkeley.path.ModelElements.SpeedProfile other) {
-            super(edu.berkeley.path.ModelElements.SpeedProfile.SCHEMA$);
+    /** Creates a Builder by copying an existing VelocityProfile instance */
+    private Builder(edu.berkeley.path.model_elements.VelocityProfile other) {
+            super(edu.berkeley.path.model_elements.VelocityProfile.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -113,7 +113,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.VelocityProfile.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -126,7 +126,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder clearId() {
+    public edu.berkeley.path.model_elements.VelocityProfile.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -138,7 +138,7 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Sets the value of the 'metersPerSecond' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    public edu.berkeley.path.model_elements.VelocityProfile.Builder setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
       validate(fields()[1], value);
       this.metersPerSecond = value;
       fieldSetFlags()[1] = true;
@@ -151,16 +151,16 @@ public class SpeedProfile extends org.apache.avro.specific.SpecificRecordBase im
     }
     
     /** Clears the value of the 'metersPerSecond' field */
-    public edu.berkeley.path.ModelElements.SpeedProfile.Builder clearMetersPerSecond() {
+    public edu.berkeley.path.model_elements.VelocityProfile.Builder clearMetersPerSecond() {
       metersPerSecond = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
     @Override
-    public SpeedProfile build() {
+    public VelocityProfile build() {
       try {
-        SpeedProfile record = new SpeedProfile();
+        VelocityProfile record = new VelocityProfile();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.metersPerSecond = fieldSetFlags()[1] ? this.metersPerSecond : (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) defaultValue(fields()[1]);
         return record;

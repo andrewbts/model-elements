@@ -3,10 +3,10 @@
  * 
  * DO NOT EDIT DIRECTLY
  */
-package edu.berkeley.path.ModelElements;  
+package edu.berkeley.path.model_elements;  
 @SuppressWarnings("all")
 public class NodeRef extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NodeRef\",\"namespace\":\"edu.berkeley.path.ModelElements\",\"fields\":[{\"name\":\"nodeId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"NodeRef\",\"namespace\":\"edu.berkeley.path.model_elements\",\"fields\":[{\"name\":\"nodeId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence nodeId;
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
@@ -41,18 +41,18 @@ public class NodeRef extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   /** Creates a new NodeRef RecordBuilder */
-  public static edu.berkeley.path.ModelElements.NodeRef.Builder newBuilder() {
-    return new edu.berkeley.path.ModelElements.NodeRef.Builder();
+  public static edu.berkeley.path.model_elements.NodeRef.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements.NodeRef.Builder();
   }
   
   /** Creates a new NodeRef RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.ModelElements.NodeRef.Builder newBuilder(edu.berkeley.path.ModelElements.NodeRef.Builder other) {
-    return new edu.berkeley.path.ModelElements.NodeRef.Builder(other);
+  public static edu.berkeley.path.model_elements.NodeRef.Builder newBuilder(edu.berkeley.path.model_elements.NodeRef.Builder other) {
+    return new edu.berkeley.path.model_elements.NodeRef.Builder(other);
   }
   
   /** Creates a new NodeRef RecordBuilder by copying an existing NodeRef instance */
-  public static edu.berkeley.path.ModelElements.NodeRef.Builder newBuilder(edu.berkeley.path.ModelElements.NodeRef other) {
-    return new edu.berkeley.path.ModelElements.NodeRef.Builder(other);
+  public static edu.berkeley.path.model_elements.NodeRef.Builder newBuilder(edu.berkeley.path.model_elements.NodeRef other) {
+    return new edu.berkeley.path.model_elements.NodeRef.Builder(other);
   }
   
   /**
@@ -65,17 +65,17 @@ public class NodeRef extends org.apache.avro.specific.SpecificRecordBase impleme
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.ModelElements.NodeRef.SCHEMA$);
+      super(edu.berkeley.path.model_elements.NodeRef.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.ModelElements.NodeRef.Builder other) {
+    private Builder(edu.berkeley.path.model_elements.NodeRef.Builder other) {
       super(other);
     }
     
     /** Creates a Builder by copying an existing NodeRef instance */
-    private Builder(edu.berkeley.path.ModelElements.NodeRef other) {
-            super(edu.berkeley.path.ModelElements.NodeRef.SCHEMA$);
+    private Builder(edu.berkeley.path.model_elements.NodeRef other) {
+            super(edu.berkeley.path.model_elements.NodeRef.SCHEMA$);
       if (isValidValue(fields()[0], other.nodeId)) {
         this.nodeId = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.nodeId);
         fieldSetFlags()[0] = true;
@@ -88,7 +88,7 @@ public class NodeRef extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Sets the value of the 'nodeId' field */
-    public edu.berkeley.path.ModelElements.NodeRef.Builder setNodeId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements.NodeRef.Builder setNodeId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.nodeId = value;
       fieldSetFlags()[0] = true;
@@ -101,7 +101,7 @@ public class NodeRef extends org.apache.avro.specific.SpecificRecordBase impleme
     }
     
     /** Clears the value of the 'nodeId' field */
-    public edu.berkeley.path.ModelElements.NodeRef.Builder clearNodeId() {
+    public edu.berkeley.path.model_elements.NodeRef.Builder clearNodeId() {
       nodeId = null;
       fieldSetFlags()[0] = false;
       return this;
