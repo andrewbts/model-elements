@@ -20,3 +20,6 @@ project/plugins/project/
 .project
 .manager
 .scala_dependencies
+
+tmp/
+
