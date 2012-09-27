@@ -16,6 +16,26 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   @Deprecated public double capacityStdev;
   @Deprecated public double jamDensity;
   @Deprecated public double capacityDrop;
+
+  /**
+   * Default constructor.
+   */
+  public FD() {}
+
+  /**
+   * All-args constructor.
+   */
+  public FD(java.lang.Double freeFlowSpeed, java.lang.Double freeFlowSpeedStdev, java.lang.Double congestionWaveSpeed, java.lang.Double congestionWaveSpeedStdev, java.lang.Double capacity, java.lang.Double capacityStdev, java.lang.Double jamDensity, java.lang.Double capacityDrop) {
+    this.freeFlowSpeed = freeFlowSpeed;
+    this.freeFlowSpeedStdev = freeFlowSpeedStdev;
+    this.congestionWaveSpeed = congestionWaveSpeed;
+    this.congestionWaveSpeedStdev = congestionWaveSpeedStdev;
+    this.capacity = capacity;
+    this.capacityStdev = capacityStdev;
+    this.jamDensity = jamDensity;
+    this.capacityDrop = capacityDrop;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

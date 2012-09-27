@@ -10,6 +10,21 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
+
+  /**
+   * Default constructor.
+   */
+  public Node() {}
+
+  /**
+   * All-args constructor.
+   */
+  public Node(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type) {
+    this.id = id;
+    this.name = name;
+    this.type = type;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

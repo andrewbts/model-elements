@@ -11,6 +11,20 @@ public class Time extends org.apache.avro.specific.SpecificRecordBase implements
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Time\",\"namespace\":\"edu.berkeley.path.model_elements\",\"doc\":\"seconds and milliseconds, can be absolute or relative\\r\\n     (when absolute: since epoch, utc)\",\"fields\":[{\"name\":\"seconds\",\"type\":\"long\"},{\"name\":\"milliseconds\",\"type\":\"long\"}]}");
   @Deprecated public long seconds;
   @Deprecated public long milliseconds;
+
+  /**
+   * Default constructor.
+   */
+  public Time() {}
+
+  /**
+   * All-args constructor.
+   */
+  public Time(java.lang.Long seconds, java.lang.Long milliseconds) {
+    this.seconds = seconds;
+    this.milliseconds = milliseconds;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

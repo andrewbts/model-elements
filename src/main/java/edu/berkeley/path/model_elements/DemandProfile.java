@@ -16,6 +16,23 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
   @Deprecated public edu.berkeley.path.model_elements.LinkRef destination;
   /** map key is linkId, array is time series, as per dt and startTime. */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand;
+
+  /**
+   * Default constructor.
+   */
+  public DemandProfile() {}
+
+  /**
+   * All-args constructor.
+   */
+  public DemandProfile(java.lang.Double dt, java.lang.Double startTime, edu.berkeley.path.model_elements.LinkRef origin, edu.berkeley.path.model_elements.LinkRef destination, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand) {
+    this.dt = dt;
+    this.startTime = startTime;
+    this.origin = origin;
+    this.destination = destination;
+    this.demand = demand;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

@@ -11,6 +11,20 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond;
+
+  /**
+   * Default constructor.
+   */
+  public VelocityProfile() {}
+
+  /**
+   * All-args constructor.
+   */
+  public VelocityProfile(java.lang.CharSequence id, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond) {
+    this.id = id;
+    this.metersPerSecond = metersPerSecond;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {

@@ -15,6 +15,26 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public int laneOffset;
   @Deprecated public edu.berkeley.path.model_elements.NodeRef begin;
   @Deprecated public edu.berkeley.path.model_elements.NodeRef end;
+
+  /**
+   * Default constructor.
+   */
+  public Link() {}
+
+  /**
+   * All-args constructor.
+   */
+  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, edu.berkeley.path.model_elements.NodeRef begin, edu.berkeley.path.model_elements.NodeRef end) {
+    this.id = id;
+    this.name = name;
+    this.type = type;
+    this.laneCount = laneCount;
+    this.length = length;
+    this.laneOffset = laneOffset;
+    this.begin = begin;
+    this.end = end;
+  }
+
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
