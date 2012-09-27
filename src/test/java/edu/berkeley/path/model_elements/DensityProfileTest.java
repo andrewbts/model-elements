@@ -38,21 +38,15 @@ import edu.berkeley.path.model_elements.*;
 
 public class DensityProfileTest {
   Network nw;
-  Network.Builder nwb;
-  
   DensityProfile dp;
-  DensityProfile.Builder dpb;
   
   @Before
   public void setup() {
-    nwb = Network.newBuilder();
-    nwb.setName("test network"); // there's no default for this
-    nw = nwb.build(); // applies the defaults
+    nw = new Network();
+    nw.setName("test network");
     
-    dpb = DensityProfile.newBuilder();
-    dpb.setId("2");
-    
-    dp = dpb.build();
+    dp = new DensityProfile();
+    dp.setId("2");
     
     Map<CharSequence,List<Double>> vpm =
       new HashMap<CharSequence,List<Double>>();

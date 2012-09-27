@@ -67,13 +67,12 @@ public class WriterTest {
 
     nw.setId("42");
     nw.setName("test network");
-    nw.setNodes(
-      new GenericData.Array<Node>(2,
-        schema.getField("nodes").schema())
+
+     nw.setNodes(
+      new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
     );
     nw.setLinks(
-      new GenericData.Array<Link>(1,
-        schema.getField("links").schema())
+      new ArrayList<edu.berkeley.path.model_elements_base.Link>(1)
     );
     
     Node nd;
