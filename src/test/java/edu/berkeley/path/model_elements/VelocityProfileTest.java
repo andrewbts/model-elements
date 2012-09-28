@@ -36,17 +36,17 @@ import java.util.*;
 
 import edu.berkeley.path.model_elements.*;
 
-public class DensityProfileTest {
+public class VelocityProfileTest {
   Network nw;
-  DensityProfile dp;
+  VelocityProfile vp;
   
   @Before
   public void setup() {
     nw = new Network();
     nw.setName("test network");
     
-    dp = new DensityProfile();
-    dp.setId("2");
+    vp = new VelocityProfile();
+    vp.setId("2");
 
     nw.setNodes(
       new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
@@ -84,24 +84,24 @@ public class DensityProfileTest {
   }
 
   @Test
-  public void testPrimitiveDensityProfile() {
-    Map<CharSequence,List<Double>> vpm =
+  public void testPrimitiveVelocityProfile() {
+    Map<CharSequence,List<Double>> mps =
       new HashMap<CharSequence,List<Double>>();
           
-    dp.setVehiclesPerMeter(vpm);
+    vp.setMetersPerSecond(mps);
     
     List<Double> row = new ArrayList<Double>();
     row.add(1.0);
     row.add(2.0);
     row.add(3.0);
     
-    vpm.put("1", row);
+    mps.put("1", row);
 
-    assertEquals((Double)2.0, dp.getVehiclesPerMeter().get("1").get(1));
+    assertEquals((Double)2.0, vp.getMetersPerSecond().get("1").get(1));
   }
 
   @Test
-  public void testDensityProfile() {
+  public void testVelocityProfile() {
     Link link = nw.getLinkById(3);
     
     ArrayList<Double> row = new ArrayList<Double>();
@@ -109,8 +109,8 @@ public class DensityProfileTest {
     row.add(2.0);
     row.add(3.0);
     
-    dp.setVehiclesPerMeterOnLink(link, row);
+    vp.setMetersPerSecondOnLink(link, row);
     
-    assertEquals((Double)2.0, dp.getVehiclesPerMeterOnLink(link).get(1));
+    assertEquals((Double)2.0, vp.getMetersPerSecondOnLink(link).get(1));
   }
 }
