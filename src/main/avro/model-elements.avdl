@@ -36,10 +36,13 @@
  */
 protocol CC {
   
-  /** seconds and milliseconds, can be absolute or relative
-     (when absolute: since epoch, utc) */
-  record Time {
-    long seconds;
+  /** milliseconds, absolute, since epoch, utc */
+  record DateTime {
+    long milliseconds;
+  }
+  
+  /** milliseconds */
+  record Duration {
     long milliseconds;
   }
   
