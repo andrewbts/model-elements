@@ -117,5 +117,11 @@ public class NetworkTest {
     
     assertEquals(n1, ln3.begin);
     assertEquals(n2, ln3.end);
+    
+    HashSet<Link> links_n1_to_n2 = n1.getOutLinksToNode(n2);
+    HashSet<Link> expected_links_n1_to_n2 = new HashSet<Link>();
+    expected_links_n1_to_n2.add(ln3);
+    
+    assertEquals(expected_links_n1_to_n2, links_n1_to_n2);
   }
 }

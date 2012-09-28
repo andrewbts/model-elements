@@ -24,11 +24,10 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     }
     
     // pass 2: set references
-    for (edu.berkeley.path.model_elements_base.Node node : getNodes()) {
-    }
-    
     for (edu.berkeley.path.model_elements_base.Link link : getLinks()) {
       ((Link)link).resolveReferences(this);
+      ((Link)link).getBegin().resolveReferences((Link)link);
+      ((Link)link).getEnd().resolveReferences((Link)link);
     }
   }
 
