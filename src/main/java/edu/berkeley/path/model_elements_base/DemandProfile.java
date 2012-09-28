@@ -7,13 +7,13 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** Demands on each link as time series */
 public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":{\"type\":\"record\",\"name\":\"LinkRef\",\"fields\":[{\"name\":\"linkId\",\"type\":\"string\"}]},\"doc\":\"may not be null\"},{\"name\":\"destination\",\"type\":\"LinkRef\",\"doc\":\"may be null\"},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":\"int\",\"doc\":\"link id, may not be null\"},{\"name\":\"destination\",\"type\":\"int\",\"doc\":\"link id, may be null\",\"default\":null},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}");
   @Deprecated public double dt;
   @Deprecated public double startTime;
-  /** may not be null */
-  @Deprecated public edu.berkeley.path.model_elements_base.LinkRef origin;
-  /** may be null */
-  @Deprecated public edu.berkeley.path.model_elements_base.LinkRef destination;
+  /** link id, may not be null */
+  @Deprecated public int origin;
+  /** link id, may be null */
+  @Deprecated public int destination;
   /** map key is linkId, array is time series, as per dt and startTime. */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand;
 
@@ -25,7 +25,7 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
   /**
    * All-args constructor.
    */
-  public DemandProfile(java.lang.Double dt, java.lang.Double startTime, edu.berkeley.path.model_elements_base.LinkRef origin, edu.berkeley.path.model_elements_base.LinkRef destination, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand) {
+  public DemandProfile(java.lang.Double dt, java.lang.Double startTime, java.lang.Integer origin, java.lang.Integer destination, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand) {
     this.dt = dt;
     this.startTime = startTime;
     this.origin = origin;
@@ -51,8 +51,8 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     switch (field$) {
     case 0: dt = (java.lang.Double)value$; break;
     case 1: startTime = (java.lang.Double)value$; break;
-    case 2: origin = (edu.berkeley.path.model_elements_base.LinkRef)value$; break;
-    case 3: destination = (edu.berkeley.path.model_elements_base.LinkRef)value$; break;
+    case 2: origin = (java.lang.Integer)value$; break;
+    case 3: destination = (java.lang.Integer)value$; break;
     case 4: demand = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -90,31 +90,31 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'origin' field.
-   * may not be null   */
-  public edu.berkeley.path.model_elements_base.LinkRef getOrigin() {
+   * link id, may not be null   */
+  public java.lang.Integer getOrigin() {
     return origin;
   }
 
   /**
    * Sets the value of the 'origin' field.
-   * may not be null   * @param value the value to set.
+   * link id, may not be null   * @param value the value to set.
    */
-  public void setOrigin(edu.berkeley.path.model_elements_base.LinkRef value) {
+  public void setOrigin(java.lang.Integer value) {
     this.origin = value;
   }
 
   /**
    * Gets the value of the 'destination' field.
-   * may be null   */
-  public edu.berkeley.path.model_elements_base.LinkRef getDestination() {
+   * link id, may be null   */
+  public java.lang.Integer getDestination() {
     return destination;
   }
 
   /**
    * Sets the value of the 'destination' field.
-   * may be null   * @param value the value to set.
+   * link id, may be null   * @param value the value to set.
    */
-  public void setDestination(edu.berkeley.path.model_elements_base.LinkRef value) {
+  public void setDestination(java.lang.Integer value) {
     this.destination = value;
   }
 
@@ -156,8 +156,8 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
 
     private double dt;
     private double startTime;
-    private edu.berkeley.path.model_elements_base.LinkRef origin;
-    private edu.berkeley.path.model_elements_base.LinkRef destination;
+    private int origin;
+    private int destination;
     private java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand;
 
     /** Creates a new Builder */
@@ -182,11 +182,11 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.origin)) {
-        this.origin = (edu.berkeley.path.model_elements_base.LinkRef) data().deepCopy(fields()[2].schema(), other.origin);
+        this.origin = (java.lang.Integer) data().deepCopy(fields()[2].schema(), other.origin);
         fieldSetFlags()[2] = true;
       }
       if (isValidValue(fields()[3], other.destination)) {
-        this.destination = (edu.berkeley.path.model_elements_base.LinkRef) data().deepCopy(fields()[3].schema(), other.destination);
+        this.destination = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.destination);
         fieldSetFlags()[3] = true;
       }
       if (isValidValue(fields()[4], other.demand)) {
@@ -244,12 +244,12 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     }
 
     /** Gets the value of the 'origin' field */
-    public edu.berkeley.path.model_elements_base.LinkRef getOrigin() {
+    public java.lang.Integer getOrigin() {
       return origin;
     }
     
     /** Sets the value of the 'origin' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setOrigin(edu.berkeley.path.model_elements_base.LinkRef value) {
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setOrigin(int value) {
       validate(fields()[2], value);
       this.origin = value;
       fieldSetFlags()[2] = true;
@@ -263,18 +263,17 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     
     /** Clears the value of the 'origin' field */
     public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearOrigin() {
-      origin = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
     /** Gets the value of the 'destination' field */
-    public edu.berkeley.path.model_elements_base.LinkRef getDestination() {
+    public java.lang.Integer getDestination() {
       return destination;
     }
     
     /** Sets the value of the 'destination' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setDestination(edu.berkeley.path.model_elements_base.LinkRef value) {
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setDestination(int value) {
       validate(fields()[3], value);
       this.destination = value;
       fieldSetFlags()[3] = true;
@@ -288,7 +287,6 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     
     /** Clears the value of the 'destination' field */
     public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearDestination() {
-      destination = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -324,8 +322,8 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
         DemandProfile record = new DemandProfile();
         record.dt = fieldSetFlags()[0] ? this.dt : (java.lang.Double) defaultValue(fields()[0]);
         record.startTime = fieldSetFlags()[1] ? this.startTime : (java.lang.Double) defaultValue(fields()[1]);
-        record.origin = fieldSetFlags()[2] ? this.origin : (edu.berkeley.path.model_elements_base.LinkRef) defaultValue(fields()[2]);
-        record.destination = fieldSetFlags()[3] ? this.destination : (edu.berkeley.path.model_elements_base.LinkRef) defaultValue(fields()[3]);
+        record.origin = fieldSetFlags()[2] ? this.origin : (java.lang.Integer) defaultValue(fields()[2]);
+        record.destination = fieldSetFlags()[3] ? this.destination : (java.lang.Integer) defaultValue(fields()[3]);
         record.demand = fieldSetFlags()[4] ? this.demand : (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
