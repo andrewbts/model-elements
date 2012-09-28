@@ -114,5 +114,8 @@ public class NetworkTest {
     Node n2 = nw.getNodeById("2");
     assertTrue(n2 != null);
     assertEquals("two", n2.getName());
+    
+    assertEquals(n1, ln3.begin);
+    assertEquals(n2, ln3.end);
   }
 }

@@ -14,6 +14,7 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     linkById = new HashMap<Integer, Link>();
     nodeById = new HashMap<Integer, Node>();
     
+    // pass 1: populate the HashMaps
     for (edu.berkeley.path.model_elements_base.Node node : getNodes()) {
       nodeById.put(Integer.parseInt(node.getId().toString()), (Node)node);
     }
@@ -22,9 +23,13 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
       linkById.put(Integer.parseInt(link.getId().toString()), (Link)link);
     }
     
-    //set up link refs to point to the link etc.
+    // pass 2: set references
+    for (edu.berkeley.path.model_elements_base.Node node : getNodes()) {
+    }
     
-    // 
+    for (edu.berkeley.path.model_elements_base.Link link : getLinks()) {
+      ((Link)link).resolveReferences(this);
+    }
   }
 
   public Link getLinkById(Integer id) {
