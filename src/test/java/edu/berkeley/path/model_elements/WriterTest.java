@@ -68,7 +68,7 @@ public class WriterTest {
     nw.setId("42");
     nw.setName("test network");
 
-     nw.setNodes(
+    nw.setNodes(
       new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
     );
     nw.setLinks(

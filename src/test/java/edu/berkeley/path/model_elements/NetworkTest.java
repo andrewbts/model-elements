@@ -43,6 +43,43 @@ public class NetworkTest {
   public void setup() {
     nw = new Network();
     nw.setName("test network");
+    nw.setId("42");
+
+    nw.setNodes(
+      new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
+    );
+    nw.setLinks(
+      new ArrayList<edu.berkeley.path.model_elements_base.Link>(1)
+    );
+    
+    Node nd;
+    Link ln;
+
+    nd = new Node();
+    nd.setId("1");
+    nd.setName("one");
+    nd.setType("hwy");
+    nw.nodes.add(nd);
+
+    nd = new Node();
+    nd.setId("2");
+    nd.setName("two");
+    nd.setType("hwy");
+    nw.nodes.add(nd);
+
+    ln = new Link();
+    ln.setId("3");
+    ln.setName("three");
+    ln.setType("hwy");
+    ln.setLaneCount(4.0);
+    ln.setLength(1000.0);
+    
+    ln.begin = new NodeRef();
+    ln.begin.setNodeId("1");
+    ln.end = new NodeRef();
+    ln.end.setNodeId("2");
+    
+    nw.links.add(ln);
   }
 
   @Test
@@ -61,5 +98,23 @@ public class NetworkTest {
   @Test(expected = org.apache.avro.AvroRuntimeException.class)
   public void testBadIndex() {
     nw.get(1000);
+  }
+
+  @Test
+  public void testResolveReferences() {
+    nw.resolveReferences();
+    
+    Node n1 = nw.getNodeById(1);
+    assertTrue(n1 != null);
+    assertEquals("one", n1.getName());
+    
+    Link ln3 = nw.getLinkById(3);
+    assertTrue(ln3 != null);
+    assertEquals("three", ln3.getName());
+
+    // note that lookups by string ID work too:
+    Node n2 = nw.getNodeById("2");
+    assertTrue(n2 != null);
+    assertEquals("two", n2.getName());
   }
 }
