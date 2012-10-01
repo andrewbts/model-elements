@@ -61,8 +61,8 @@ protocol CC {
     double length;
     int laneOffset = 0;
 
-    int begin_id;
-    int end_id;
+    string beginId;
+    string endId;
   }
 
   record Network {
@@ -118,10 +118,10 @@ protocol CC {
     // ### TODO knob etc
     
     /** link id, may not be null */
-    int origin;
+    string origin;
 
     /** link id, may be null */
-    int destination = null;
+    string destination = null;
 
     /** map key is linkId, array is time series, as per dt and startTime. */
     map<array<double>> demand = {};

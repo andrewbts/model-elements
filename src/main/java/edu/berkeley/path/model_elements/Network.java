@@ -1,6 +1,6 @@
 package edu.berkeley.path.model_elements;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class Network extends edu.berkeley.path.model_elements_base.Network {
   protected HashMap<Integer, Link> linkById = null;
@@ -15,19 +15,19 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     nodeById = new HashMap<Integer, Node>();
     
     // pass 1: populate the HashMaps
-    for (edu.berkeley.path.model_elements_base.Node node : getNodes()) {
-      nodeById.put(Integer.parseInt(node.getId().toString()), (Node)node);
+    for (Node node : (List<Node>)(List<?>)getNodes()) {
+      nodeById.put(Integer.parseInt(node.getId().toString()), node);
     }
     
-    for (edu.berkeley.path.model_elements_base.Link link : getLinks()) {
-      linkById.put(Integer.parseInt(link.getId().toString()), (Link)link);
+    for (Link link : (List<Link>)(List<?>)getLinks()) {
+      linkById.put(Integer.parseInt(link.getId().toString()), link);
     }
     
     // pass 2: set references
-    for (edu.berkeley.path.model_elements_base.Link link : getLinks()) {
-      ((Link)link).resolveReferences(this);
-      ((Link)link).getBegin().resolveReferences((Link)link);
-      ((Link)link).getEnd().resolveReferences((Link)link);
+    for (Link link : (List<Link>)(List<?>)getLinks()) {
+      link.resolveReferences(this);
+      link.getBegin().resolveReferences(link);
+      link.getEnd().resolveReferences(link);
     }
   }
 

@@ -12,8 +12,18 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
     return end;
   }
   
+  public void setBegin(Node node) {
+    this.begin = node;
+    this.beginId = node.getId().toString();
+  }
+
+  public void setEnd(Node node) {
+    this.end = node;
+    this.endId = node.getId().toString();
+  }
+  
   public void resolveReferences(Network network) {
-    this.begin = network.getNodeById(begin_id);
-    this.end = network.getNodeById(end_id);
+    this.begin = network.getNodeById(Integer.parseInt(beginId.toString()));
+    this.end = network.getNodeById(Integer.parseInt(endId.toString()));
   }
 }

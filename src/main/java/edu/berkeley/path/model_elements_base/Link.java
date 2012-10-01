@@ -6,15 +6,15 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"begin_id\",\"type\":\"int\"},{\"name\":\"end_id\",\"type\":\"int\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
   @Deprecated public double laneCount;
   @Deprecated public double length;
   @Deprecated public int laneOffset;
-  @Deprecated public int begin_id;
-  @Deprecated public int end_id;
+  @Deprecated public java.lang.CharSequence beginId;
+  @Deprecated public java.lang.CharSequence endId;
 
   /**
    * Default constructor.
@@ -24,15 +24,15 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Integer begin_id, java.lang.Integer end_id) {
+  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
     this.id = id;
     this.name = name;
     this.type = type;
     this.laneCount = laneCount;
     this.length = length;
     this.laneOffset = laneOffset;
-    this.begin_id = begin_id;
-    this.end_id = end_id;
+    this.beginId = beginId;
+    this.endId = endId;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -45,8 +45,8 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 3: return laneCount;
     case 4: return length;
     case 5: return laneOffset;
-    case 6: return begin_id;
-    case 7: return end_id;
+    case 6: return beginId;
+    case 7: return endId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -60,8 +60,8 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 3: laneCount = (java.lang.Double)value$; break;
     case 4: length = (java.lang.Double)value$; break;
     case 5: laneOffset = (java.lang.Integer)value$; break;
-    case 6: begin_id = (java.lang.Integer)value$; break;
-    case 7: end_id = (java.lang.Integer)value$; break;
+    case 6: beginId = (java.lang.CharSequence)value$; break;
+    case 7: endId = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -157,33 +157,33 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
-   * Gets the value of the 'begin_id' field.
+   * Gets the value of the 'beginId' field.
    */
-  public java.lang.Integer getBeginId() {
-    return begin_id;
+  public java.lang.CharSequence getBeginId() {
+    return beginId;
   }
 
   /**
-   * Sets the value of the 'begin_id' field.
+   * Sets the value of the 'beginId' field.
    * @param value the value to set.
    */
-  public void setBeginId(java.lang.Integer value) {
-    this.begin_id = value;
+  public void setBeginId(java.lang.CharSequence value) {
+    this.beginId = value;
   }
 
   /**
-   * Gets the value of the 'end_id' field.
+   * Gets the value of the 'endId' field.
    */
-  public java.lang.Integer getEndId() {
-    return end_id;
+  public java.lang.CharSequence getEndId() {
+    return endId;
   }
 
   /**
-   * Sets the value of the 'end_id' field.
+   * Sets the value of the 'endId' field.
    * @param value the value to set.
    */
-  public void setEndId(java.lang.Integer value) {
-    this.end_id = value;
+  public void setEndId(java.lang.CharSequence value) {
+    this.endId = value;
   }
 
   /** Creates a new Link RecordBuilder */
@@ -213,8 +213,8 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     private double laneCount;
     private double length;
     private int laneOffset;
-    private int begin_id;
-    private int end_id;
+    private java.lang.CharSequence beginId;
+    private java.lang.CharSequence endId;
 
     /** Creates a new Builder */
     private Builder() {
@@ -253,12 +253,12 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         this.laneOffset = (java.lang.Integer) data().deepCopy(fields()[5].schema(), other.laneOffset);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.begin_id)) {
-        this.begin_id = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.begin_id);
+      if (isValidValue(fields()[6], other.beginId)) {
+        this.beginId = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.beginId);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.end_id)) {
-        this.end_id = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.end_id);
+      if (isValidValue(fields()[7], other.endId)) {
+        this.endId = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.endId);
         fieldSetFlags()[7] = true;
       }
     }
@@ -410,50 +410,52 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
-    /** Gets the value of the 'begin_id' field */
-    public java.lang.Integer getBeginId() {
-      return begin_id;
+    /** Gets the value of the 'beginId' field */
+    public java.lang.CharSequence getBeginId() {
+      return beginId;
     }
     
-    /** Sets the value of the 'begin_id' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setBeginId(int value) {
+    /** Sets the value of the 'beginId' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder setBeginId(java.lang.CharSequence value) {
       validate(fields()[6], value);
-      this.begin_id = value;
+      this.beginId = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
     
-    /** Checks whether the 'begin_id' field has been set */
+    /** Checks whether the 'beginId' field has been set */
     public boolean hasBeginId() {
       return fieldSetFlags()[6];
     }
     
-    /** Clears the value of the 'begin_id' field */
+    /** Clears the value of the 'beginId' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearBeginId() {
+      beginId = null;
       fieldSetFlags()[6] = false;
       return this;
     }
 
-    /** Gets the value of the 'end_id' field */
-    public java.lang.Integer getEndId() {
-      return end_id;
+    /** Gets the value of the 'endId' field */
+    public java.lang.CharSequence getEndId() {
+      return endId;
     }
     
-    /** Sets the value of the 'end_id' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setEndId(int value) {
+    /** Sets the value of the 'endId' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder setEndId(java.lang.CharSequence value) {
       validate(fields()[7], value);
-      this.end_id = value;
+      this.endId = value;
       fieldSetFlags()[7] = true;
       return this; 
     }
     
-    /** Checks whether the 'end_id' field has been set */
+    /** Checks whether the 'endId' field has been set */
     public boolean hasEndId() {
       return fieldSetFlags()[7];
     }
     
-    /** Clears the value of the 'end_id' field */
+    /** Clears the value of the 'endId' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearEndId() {
+      endId = null;
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -468,8 +470,8 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         record.laneCount = fieldSetFlags()[3] ? this.laneCount : (java.lang.Double) defaultValue(fields()[3]);
         record.length = fieldSetFlags()[4] ? this.length : (java.lang.Double) defaultValue(fields()[4]);
         record.laneOffset = fieldSetFlags()[5] ? this.laneOffset : (java.lang.Integer) defaultValue(fields()[5]);
-        record.begin_id = fieldSetFlags()[6] ? this.begin_id : (java.lang.Integer) defaultValue(fields()[6]);
-        record.end_id = fieldSetFlags()[7] ? this.end_id : (java.lang.Integer) defaultValue(fields()[7]);
+        record.beginId = fieldSetFlags()[6] ? this.beginId : (java.lang.CharSequence) defaultValue(fields()[6]);
+        record.endId = fieldSetFlags()[7] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[7]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
