@@ -32,85 +32,27 @@ package edu.berkeley.path.model_elements;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-import java.util.*;
+public class DurationTest {
+  Duration duration;
+  org.joda.time.Duration joda;
 
-import edu.berkeley.path.model_elements.*;
-
-public class DensityProfileTest {
-  Network nw;
-  DensityProfile dp;
+  @Test
+  public void testJodaToCCToJoda() {
+    joda = new org.joda.time.Duration(987654);
+    duration = Duration.fromJoda(joda);
+    
+    assertEquals(joda.getMillis(), duration.toJoda().getMillis());
+  }
   
-  @Before
-  public void setup() {
-    nw = new Network();
-    nw.setName("test network");
-    
-    dp = new DensityProfile();
-    dp.setId("2");
-
-    nw.setNodes(
-      new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
-    );
-    nw.setLinks(
-      new ArrayList<edu.berkeley.path.model_elements_base.Link>(1)
-    );
-    
-    Node nd;
-    Link ln;
-
-    nd = new Node();
-    nd.setId("1");
-    nd.setName("one");
-    nd.setType("hwy");
-    nw.nodes.add(nd);
-
-    nd = new Node();
-    nd.setId("2");
-    nd.setName("two");
-    nd.setType("hwy");
-    nw.nodes.add(nd);
-
-    ln = new Link();
-    ln.setId("3");
-    ln.setName("three");
-    ln.setType("hwy");
-    ln.setLaneCount(4.0);
-    ln.setLength(1000.0);
-    
-    ln.begin_id = 1;
-    ln.end_id = 2;
-    
-    nw.links.add(ln);
-  }
-
   @Test
-  public void testPrimitiveDensityProfile() {
-    Map<CharSequence,List<Double>> vpm =
-      new HashMap<CharSequence,List<Double>>();
-          
-    dp.setVehiclesPerMeter(vpm);
+  public void testCCToJodaToCC() {
+    duration = new Duration();
+    duration.milliseconds = 987654;
+    joda = duration.toJoda();
     
-    List<Double> row = new ArrayList<Double>();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
-    
-    vpm.put("1", row);
-
-    assertEquals((Double)2.0, dp.getVehiclesPerMeter().get("1").get(1));
+    assertEquals(duration.getMilliseconds(), Duration.fromJoda(joda).getMilliseconds());
   }
+  
+  
 
-  @Test
-  public void testDensityProfile() {
-    Link link = nw.getLinkById(3);
-    
-    ArrayList<Double> row = new ArrayList<Double>();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
-    
-    dp.setVehiclesPerMeterOnLink(link, row);
-    
-    assertEquals((Double)2.0, dp.getVehiclesPerMeterOnLink(link).get(1));
-  }
 }

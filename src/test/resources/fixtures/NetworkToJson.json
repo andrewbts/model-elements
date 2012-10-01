@@ -1,1 +1,1 @@
-{"id":"42","name":"test network","nodes":[{"id":"1","name":"one","type":"hwy"},{"id":"2","name":"two","type":"hwy"}],"links":[{"id":"3","name":"two","type":"hwy","laneCount":4.0,"length":1000.0,"laneOffset":0,"begin":{"nodeId":"1"},"end":{"nodeId":"2"}}]}
+{"id":"42","name":"test network","nodes":[{"id":"1","name":"one","type":"hwy"},{"id":"2","name":"two","type":"hwy"}],"links":[{"id":"3","name":"two","type":"hwy","laneCount":4.0,"length":1000.0,"laneOffset":0,"begin_id":1,"end_id":2}]}

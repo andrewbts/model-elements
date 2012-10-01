@@ -36,14 +36,17 @@ import java.util.*;
 
 import edu.berkeley.path.model_elements.*;
 
-public class NetworkTest {
+public class VelocityProfileTest {
   Network nw;
+  VelocityProfile vp;
   
   @Before
   public void setup() {
     nw = new Network();
     nw.setName("test network");
-    nw.setId("42");
+    
+    vp = new VelocityProfile();
+    vp.setId("2");
 
     nw.setNodes(
       new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
@@ -81,47 +84,33 @@ public class NetworkTest {
   }
 
   @Test
-  public void testNetworkDefaults() {
-// this is not relevant because the test doesn't use the builder now
-//    assertEquals(new org.apache.avro.util.Utf8("1"), nw.getId());
-//    assertTrue(nw.getLinks().isEmpty());
-//    assertTrue(nw.getNodes().isEmpty());
-  }
-  
-  @Test
-  public void testNetworkBuilderAssignments() {
-    assertEquals("test network", nw.getName());
-  }
-  
-  @Test(expected = org.apache.avro.AvroRuntimeException.class)
-  public void testBadIndex() {
-    nw.get(1000);
+  public void testPrimitiveVelocityProfile() {
+    Map<CharSequence,List<Double>> mps =
+      new HashMap<CharSequence,List<Double>>();
+          
+    vp.setMetersPerSecond(mps);
+    
+    List<Double> row = new ArrayList<Double>();
+    row.add(1.0);
+    row.add(2.0);
+    row.add(3.0);
+    
+    mps.put("1", row);
+
+    assertEquals((Double)2.0, vp.getMetersPerSecond().get("1").get(1));
   }
 
   @Test
-  public void testResolveReferences() {
-    nw.resolveReferences();
+  public void testVelocityProfile() {
+    Link link = nw.getLinkById(3);
     
-    Node n1 = nw.getNodeById(1);
-    assertTrue(n1 != null);
-    assertEquals("one", n1.getName());
+    ArrayList<Double> row = new ArrayList<Double>();
+    row.add(1.0);
+    row.add(2.0);
+    row.add(3.0);
     
-    Link ln3 = nw.getLinkById(3);
-    assertTrue(ln3 != null);
-    assertEquals("three", ln3.getName());
-
-    // note that lookups by string ID work too:
-    Node n2 = nw.getNodeById("2");
-    assertTrue(n2 != null);
-    assertEquals("two", n2.getName());
+    vp.setMetersPerSecondOnLink(link, row);
     
-    assertEquals(n1, ln3.begin);
-    assertEquals(n2, ln3.end);
-    
-    HashSet<Link> links_n1_to_n2 = n1.getOutLinksToNode(n2);
-    HashSet<Link> expected_links_n1_to_n2 = new HashSet<Link>();
-    expected_links_n1_to_n2.add(ln3);
-    
-    assertEquals(expected_links_n1_to_n2, links_n1_to_n2);
+    assertEquals((Double)2.0, vp.getMetersPerSecondOnLink(link).get(1));
   }
 }

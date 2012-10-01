@@ -67,13 +67,12 @@ public class WriterTest {
 
     nw.setId("42");
     nw.setName("test network");
+
     nw.setNodes(
-      new GenericData.Array<Node>(2,
-        schema.getField("nodes").schema())
+      new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
     );
     nw.setLinks(
-      new GenericData.Array<Link>(1,
-        schema.getField("links").schema())
+      new ArrayList<edu.berkeley.path.model_elements_base.Link>(1)
     );
     
     Node nd;
@@ -98,10 +97,8 @@ public class WriterTest {
     ln.setLaneCount(4.0);
     ln.setLength(1000.0);
     
-    ln.begin = new NodeRef();
-    ln.begin.setNodeId("1");
-    ln.end = new NodeRef();
-    ln.end.setNodeId("2");
+    ln.begin_id = 1;
+    ln.end_id = 2;
     
     nw.links.add(ln);
   }
