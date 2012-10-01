@@ -10,9 +10,6 @@
  * 2. Redistributions in binary form must reproduce the above copyright
  *    notice, this list of conditions and the following disclaimer in the
  *    documentation and/or other materials provided with the distribution.
- * 3. Neither the name of the University nor the names of its contributors
- *    may be used to endorse or promote products derived from this software
- *    without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
@@ -48,27 +45,24 @@ public class DensityProfileTest {
     dp = new DensityProfile();
     dp.setId("2");
 
-    nw.setNodes(
-      new ArrayList<edu.berkeley.path.model_elements_base.Node>(2)
-    );
-    nw.setLinks(
-      new ArrayList<edu.berkeley.path.model_elements_base.Link>(1)
-    );
+    nw.setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
+    nw.setLinks(new ArrayList<edu.berkeley.path.model_elements_base.Link>());
     
-    Node nd;
+    Node nd1;
+    Node nd2;
     Link ln;
 
-    nd = new Node();
-    nd.setId("1");
-    nd.setName("one");
-    nd.setType("hwy");
-    nw.nodes.add(nd);
+    nd1 = new Node();
+    nd1.setId("1");
+    nd1.setName("one");
+    nd1.setType("hwy");
+    nw.nodes.add(nd1);
 
-    nd = new Node();
-    nd.setId("2");
-    nd.setName("two");
-    nd.setType("hwy");
-    nw.nodes.add(nd);
+    nd2 = new Node();
+    nd2.setId("2");
+    nd2.setName("two");
+    nd2.setType("hwy");
+    nw.nodes.add(nd2);
 
     ln = new Link();
     ln.setId("3");
@@ -77,8 +71,8 @@ public class DensityProfileTest {
     ln.setLaneCount(4.0);
     ln.setLength(1000.0);
     
-    ln.begin_id = 1;
-    ln.end_id = 2;
+    ln.setBegin(nd1);
+    ln.setEnd(nd2);
     
     nw.links.add(ln);
   }
