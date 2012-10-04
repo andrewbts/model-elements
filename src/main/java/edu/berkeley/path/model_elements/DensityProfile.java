@@ -49,4 +49,12 @@ public class DensityProfile extends edu.berkeley.path.model_elements_base.Densit
 
     vehiclesPerMeter.put(link.getId(), list);
   }
+  
+  public Integer getIntegerId() {
+    return Integer.parseInt(getId().toString());
+  }
+  
+  public void setId(Integer id) {
+    setId(id.toString());
+  }
 }

@@ -52,4 +52,12 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
     this.begin = network.getNodeById(Integer.parseInt(beginId.toString()));
     this.end = network.getNodeById(Integer.parseInt(endId.toString()));
   }
+  
+  public Integer getIntegerId() {
+    return Integer.parseInt(getId().toString());
+  }
+  
+  public void setId(Integer id) {
+    setId(id.toString());
+  }
 }
