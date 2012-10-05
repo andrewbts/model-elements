@@ -37,12 +37,44 @@ public class VelocityProfile extends edu.berkeley.path.model_elements_base.Veloc
     return this.metersPerSecond.get(link.getId());
   }
   
+  public Double getMetersPerSecondOnLink(Integer id) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
+    }
+
+    return this.metersPerSecond.get(id.toString());
+  }
+  
+  public Double getMetersPerSecondOnLink(CharSequence id) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
+    }
+
+    return this.metersPerSecond.get(id);
+  }
+  
   public void setMetersPerSecondOnLink(Link link, Double val) {
     if (this.metersPerSecond == null) {
       this.metersPerSecond = new HashMap<CharSequence,Double>();
     }
 
     metersPerSecond.put(link.getId(), val);
+  }
+  
+  public void setMetersPerSecondOnLink(Integer id, Double val) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
+    }
+
+    metersPerSecond.put(id.toString(), val);
+  }
+  
+  public void setMetersPerSecondOnLink(CharSequence id, Double val) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
+    }
+
+    metersPerSecond.put(id, val);
   }
   
   public Integer getIntegerId() {

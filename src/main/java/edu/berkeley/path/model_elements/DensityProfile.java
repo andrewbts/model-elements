@@ -37,12 +37,44 @@ public class DensityProfile extends edu.berkeley.path.model_elements_base.Densit
     return this.vehiclesPerMeter.get(link.getId());
   }
   
+  public Double getVehiclesPerMeterOnLink(Integer id) {
+    if (this.vehiclesPerMeter == null) {
+      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+    }
+
+    return this.vehiclesPerMeter.get(id.toString());
+  }
+
+  public Double getVehiclesPerMeterOnLink(CharSequence id) {
+    if (this.vehiclesPerMeter == null) {
+      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+    }
+
+    return this.vehiclesPerMeter.get(id);
+  }
+
   public void setVehiclesPerMeterOnLink(Link link, Double val) {
     if (vehiclesPerMeter == null) {
       this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
     }
 
     vehiclesPerMeter.put(link.getId(), val);
+  }
+  
+  public void setVehiclesPerMeterOnLink(Integer id, Double val) {
+    if (vehiclesPerMeter == null) {
+      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+    }
+
+    vehiclesPerMeter.put(id.toString(), val);
+  }
+  
+  public void setVehiclesPerMeterOnLink(CharSequence id, Double val) {
+    if (vehiclesPerMeter == null) {
+      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+    }
+
+    vehiclesPerMeter.put(id, val);
   }
   
   public Integer getIntegerId() {
