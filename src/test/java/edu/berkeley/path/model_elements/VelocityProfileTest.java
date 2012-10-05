@@ -78,33 +78,26 @@ public class VelocityProfileTest {
   }
 
   @Test
-  public void testPrimitiveVelocityProfile() {
-    Map<CharSequence,List<Double>> mps =
-      new HashMap<CharSequence,List<Double>>();
+  public void testPrimitiveAccess() {
+    Map<CharSequence,Double> mps =
+      new HashMap<CharSequence,Double>();
           
     vp.setMetersPerSecond(mps);
     
-    List<Double> row = new ArrayList<Double>();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
-    
-    mps.put("1", row);
+    Double val = 1.23;
+    mps.put("3", val);
 
-    assertEquals((Double)2.0, vp.getMetersPerSecond().get("1").get(1));
+    assertEquals((Double)1.23, vp.getMetersPerSecond().get("3"));
   }
 
   @Test
-  public void testVelocityProfile() {
+  public void testHighLevelAccess() {
     Link link = nw.getLinkById(3);
     
-    ArrayList<Double> row = new ArrayList<Double>();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
+    Double val = 1.23;
     
-    vp.setMetersPerSecondOnLink(link, row);
+    vp.setMetersPerSecondOnLink(link, val);
     
-    assertEquals((Double)2.0, vp.getMetersPerSecondOnLink(link).get(1));
+    assertEquals((Double)1.23, vp.getMetersPerSecondOnLink(link));
   }
 }
