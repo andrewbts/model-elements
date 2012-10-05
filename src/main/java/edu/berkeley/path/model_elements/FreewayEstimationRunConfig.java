@@ -26,5 +26,5 @@
 
 package edu.berkeley.path.model_elements;
 
-public class ImputationRun extends edu.berkeley.path.model_elements_base.ImputationRun {
+public class FreewayEstimationRunConfig extends edu.berkeley.path.model_elements_base.FreewayEstimationRunConfig {
 }

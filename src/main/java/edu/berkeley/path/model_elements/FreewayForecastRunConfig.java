@@ -26,5 +26,5 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayContext extends edu.berkeley.path.model_elements_base.FreewayContext {
+public class FreewayForecastRunConfig extends edu.berkeley.path.model_elements_base.FreewayForecastRunConfig {
 }

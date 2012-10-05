@@ -187,7 +187,7 @@ protocol CC {
    * Note that a context does not include a scenario. Scenarios are read
    * dynamically using a ScenarioSource.
    */
-  record FreewayContext {
+  record FreewayContextConfig {
     string        id;
     string        name;
 
@@ -224,19 +224,22 @@ protocol CC {
    * process executions on a host. If you run again with the same parameters
    * then the id should be different. Output data references this id.
    */
-  record FreewayEstimationRun {
+  record FreewayEstimationRunConfig {
     string        id;
     string        name;
     
     /** Refers to the FreewayContext for this run (among others) */
     string        contextId;
     
+    // to add?
+    // ensemble ID?
+    
     array<long>   seeds;
     
     ProcessConfig process; 
   }
   
-  record FreewayForecastRun {
+  record FreewayForecastRunConfig {
     string        id;
     string        name;
     
@@ -248,17 +251,17 @@ protocol CC {
     ProcessConfig process; 
   }
 
-  record SimulationRun {
+  record SimulationRunConfig {
     string        id;
     string        name;
   }
   
-  record CalibrationRun {
+  record CalibrationRunConfig {
     string        id;
     string        name;
   }
   
-  record ImputationRun {
+  record ImputationRunConfig {
     string        id;
     string        name;
   }

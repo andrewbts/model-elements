@@ -26,5 +26,5 @@
 
 package edu.berkeley.path.model_elements;
 
-public class CalibrationRun extends edu.berkeley.path.model_elements_base.CalibrationRun {
+public class SimulationRunConfig extends edu.berkeley.path.model_elements_base.SimulationRunConfig {
 }
