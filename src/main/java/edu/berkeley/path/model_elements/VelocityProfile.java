@@ -49,4 +49,12 @@ public class VelocityProfile extends edu.berkeley.path.model_elements_base.Veloc
 
     metersPerSecond.put(link.getId(), list);
   }
+  
+  public Integer getIntegerId() {
+    return Integer.parseInt(getId().toString());
+  }
+  
+  public void setId(Integer id) {
+    setId(id.toString());
+  }
 }

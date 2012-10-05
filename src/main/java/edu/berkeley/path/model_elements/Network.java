@@ -42,11 +42,11 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     
     // pass 1: populate the HashMaps
     for (Node node : (List<Node>)(List<?>)getNodes()) {
-      nodeById.put(Integer.parseInt(node.getId().toString()), node);
+      nodeById.put(node.getIntegerId(), node);
     }
     
     for (Link link : (List<Link>)(List<?>)getLinks()) {
-      linkById.put(Integer.parseInt(link.getId().toString()), link);
+      linkById.put(link.getIntegerId(), link);
     }
     
     // pass 2: set references
@@ -79,6 +79,14 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
 
   public Node getNodeById(String id) {
     return getNodeById(Integer.parseInt(id));
+  }
+
+  public Integer getIntegerId() {
+    return Integer.parseInt(getId().toString());
+  }
+  
+  public void setId(Integer id) {
+    setId(id.toString());
   }
 
   // TODO methods to add, remove, set links call resolveReferences

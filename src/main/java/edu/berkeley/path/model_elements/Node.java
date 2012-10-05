@@ -92,4 +92,12 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
       links.add(link);
     }
   }
+  
+  public Integer getIntegerId() {
+    return Integer.parseInt(getId().toString());
+  }
+  
+  public void setId(Integer id) {
+    setId(id.toString());
+  }
 }
