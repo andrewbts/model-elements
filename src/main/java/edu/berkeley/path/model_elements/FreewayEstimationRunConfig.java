@@ -27,4 +27,11 @@
 package edu.berkeley.path.model_elements;
 
 public class FreewayEstimationRunConfig extends edu.berkeley.path.model_elements_base.FreewayEstimationRunConfig {
+  public Integer getIntegerId() {
+    return Integer.parseInt(getId().toString());
+  }
+  
+  public void setId(Integer id) {
+    setId(id.toString());
+  }
 }
