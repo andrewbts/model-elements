@@ -5,12 +5,12 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** Density on each link and cell at a point in time */
+/** Density on each link at a point in time */
 public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DensityProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Density on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DensityProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Density on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}");
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> vehiclesPerMeter;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> vehiclesPerMeter;
 
   /**
    * Default constructor.
@@ -20,7 +20,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
   /**
    * All-args constructor.
    */
-  public DensityProfile(java.lang.CharSequence id, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> vehiclesPerMeter) {
+  public DensityProfile(java.lang.CharSequence id, java.util.Map<java.lang.CharSequence,java.lang.Double> vehiclesPerMeter) {
     this.id = id;
     this.vehiclesPerMeter = vehiclesPerMeter;
   }
@@ -39,7 +39,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
-    case 1: vehiclesPerMeter = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>)value$; break;
+    case 1: vehiclesPerMeter = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -62,7 +62,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
   /**
    * Gets the value of the 'vehiclesPerMeter' field.
    * map key is linkId   */
-  public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getVehiclesPerMeter() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Double> getVehiclesPerMeter() {
     return vehiclesPerMeter;
   }
 
@@ -70,7 +70,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
    * Sets the value of the 'vehiclesPerMeter' field.
    * map key is linkId   * @param value the value to set.
    */
-  public void setVehiclesPerMeter(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+  public void setVehiclesPerMeter(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
     this.vehiclesPerMeter = value;
   }
 
@@ -96,7 +96,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
     implements org.apache.avro.data.RecordBuilder<DensityProfile> {
 
     private java.lang.CharSequence id;
-    private java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> vehiclesPerMeter;
+    private java.util.Map<java.lang.CharSequence,java.lang.Double> vehiclesPerMeter;
 
     /** Creates a new Builder */
     private Builder() {
@@ -116,7 +116,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.vehiclesPerMeter)) {
-        this.vehiclesPerMeter = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) data().deepCopy(fields()[1].schema(), other.vehiclesPerMeter);
+        this.vehiclesPerMeter = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[1].schema(), other.vehiclesPerMeter);
         fieldSetFlags()[1] = true;
       }
     }
@@ -147,12 +147,12 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
     }
 
     /** Gets the value of the 'vehiclesPerMeter' field */
-    public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getVehiclesPerMeter() {
+    public java.util.Map<java.lang.CharSequence,java.lang.Double> getVehiclesPerMeter() {
       return vehiclesPerMeter;
     }
     
     /** Sets the value of the 'vehiclesPerMeter' field */
-    public edu.berkeley.path.model_elements_base.DensityProfile.Builder setVehiclesPerMeter(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    public edu.berkeley.path.model_elements_base.DensityProfile.Builder setVehiclesPerMeter(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
       validate(fields()[1], value);
       this.vehiclesPerMeter = value;
       fieldSetFlags()[1] = true;
@@ -176,7 +176,7 @@ public class DensityProfile extends org.apache.avro.specific.SpecificRecordBase 
       try {
         DensityProfile record = new DensityProfile();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.vehiclesPerMeter = fieldSetFlags()[1] ? this.vehiclesPerMeter : (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) defaultValue(fields()[1]);
+        record.vehiclesPerMeter = fieldSetFlags()[1] ? this.vehiclesPerMeter : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

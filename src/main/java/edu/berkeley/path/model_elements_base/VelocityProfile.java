@@ -5,12 +5,12 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** Velocity on each link and cell at a point in time */
+/** Velocity on each link at a point in time */
 public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VelocityProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Velocity on each link and cell at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId\",\"default\":{}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VelocityProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Velocity on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}");
   @Deprecated public java.lang.CharSequence id;
   /** map key is linkId */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> metersPerSecond;
 
   /**
    * Default constructor.
@@ -20,7 +20,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
   /**
    * All-args constructor.
    */
-  public VelocityProfile(java.lang.CharSequence id, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond) {
+  public VelocityProfile(java.lang.CharSequence id, java.util.Map<java.lang.CharSequence,java.lang.Double> metersPerSecond) {
     this.id = id;
     this.metersPerSecond = metersPerSecond;
   }
@@ -39,7 +39,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
-    case 1: metersPerSecond = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>)value$; break;
+    case 1: metersPerSecond = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -62,7 +62,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
   /**
    * Gets the value of the 'metersPerSecond' field.
    * map key is linkId   */
-  public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getMetersPerSecond() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Double> getMetersPerSecond() {
     return metersPerSecond;
   }
 
@@ -70,7 +70,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
    * Sets the value of the 'metersPerSecond' field.
    * map key is linkId   * @param value the value to set.
    */
-  public void setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+  public void setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
     this.metersPerSecond = value;
   }
 
@@ -96,7 +96,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
     implements org.apache.avro.data.RecordBuilder<VelocityProfile> {
 
     private java.lang.CharSequence id;
-    private java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> metersPerSecond;
+    private java.util.Map<java.lang.CharSequence,java.lang.Double> metersPerSecond;
 
     /** Creates a new Builder */
     private Builder() {
@@ -116,7 +116,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.metersPerSecond)) {
-        this.metersPerSecond = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) data().deepCopy(fields()[1].schema(), other.metersPerSecond);
+        this.metersPerSecond = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[1].schema(), other.metersPerSecond);
         fieldSetFlags()[1] = true;
       }
     }
@@ -147,12 +147,12 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
     }
 
     /** Gets the value of the 'metersPerSecond' field */
-    public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getMetersPerSecond() {
+    public java.util.Map<java.lang.CharSequence,java.lang.Double> getMetersPerSecond() {
       return metersPerSecond;
     }
     
     /** Sets the value of the 'metersPerSecond' field */
-    public edu.berkeley.path.model_elements_base.VelocityProfile.Builder setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    public edu.berkeley.path.model_elements_base.VelocityProfile.Builder setMetersPerSecond(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
       validate(fields()[1], value);
       this.metersPerSecond = value;
       fieldSetFlags()[1] = true;
@@ -176,7 +176,7 @@ public class VelocityProfile extends org.apache.avro.specific.SpecificRecordBase
       try {
         VelocityProfile record = new VelocityProfile();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.metersPerSecond = fieldSetFlags()[1] ? this.metersPerSecond : (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) defaultValue(fields()[1]);
+        record.metersPerSecond = fieldSetFlags()[1] ? this.metersPerSecond : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[1]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

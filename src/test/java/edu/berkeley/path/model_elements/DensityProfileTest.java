@@ -78,33 +78,26 @@ public class DensityProfileTest {
   }
 
   @Test
-  public void testPrimitiveDensityProfile() {
-    Map<CharSequence,List<Double>> vpm =
-      new HashMap<CharSequence,List<Double>>();
+  public void testPrimitiveAccess() {
+    Map<CharSequence,Double> vpm =
+      new HashMap<CharSequence,Double>();
           
     dp.setVehiclesPerMeter(vpm);
     
-    List<Double> row = new ArrayList<Double>();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
-    
-    vpm.put("1", row);
+    Double val = 1.23;
+    vpm.put("3", val);
 
-    assertEquals((Double)2.0, dp.getVehiclesPerMeter().get("1").get(1));
+    assertEquals((Double)1.23, dp.getVehiclesPerMeter().get("3"));
   }
 
   @Test
-  public void testDensityProfile() {
+  public void testHighLevelAccess() {
     Link link = nw.getLinkById(3);
     
-    ArrayList<Double> row = new ArrayList<Double>();
-    row.add(1.0);
-    row.add(2.0);
-    row.add(3.0);
+    Double val = 1.23;
     
-    dp.setVehiclesPerMeterOnLink(link, row);
+    dp.setVehiclesPerMeterOnLink(link, val);
     
-    assertEquals((Double)2.0, dp.getVehiclesPerMeterOnLink(link).get(1));
+    assertEquals((Double)1.23, dp.getVehiclesPerMeterOnLink(link));
   }
 }

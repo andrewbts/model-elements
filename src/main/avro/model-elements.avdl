@@ -70,25 +70,27 @@ protocol CC {
     array<Link> links = [];
   }
   
-  /** Density on each link and cell at a point in time */
+  /** Density on each link at a point in time */
   record DensityProfile {
     string id;
     
     /** map key is linkId */
-    map<array<double>> vehiclesPerMeter = {};
+    map<double> vehiclesPerMeter = {};
   }
   
-  /** Velocity on each link and cell at a point in time */
+  /** Velocity on each link at a point in time */
   record VelocityProfile {
     string id;
     
     /** map key is linkId */
-    map<array<double>> metersPerSecond = {};
+    map<double> metersPerSecond = {};
   }
   
   /** Fundamental diagram on one link at one time */
   record FD {
     // ### TODO units?
+    // ### TODO reconcile with DB
+    
     double  freeFlowSpeed;
     double  freeFlowSpeedStdev;
     double  congestionWaveSpeed;
@@ -103,6 +105,9 @@ protocol CC {
   record FDProfile {
     double dt = 300.0;
     double startTime = 0.0;
+    
+    // ### TODO type
+    // ### TODO noise
   
     /** map key is linkId, array is time series, as per dt and startTime. */
     map<array<FD>> fd = {};
@@ -127,18 +132,137 @@ protocol CC {
   
   // ### TODO Controllers
   
+  /**
+   * A scenario represents the state of the world now and projected
+   * into the future, to the extent that can be known in advance.
+   *
+   * The configuration that belongs in a scenario and the objects that it
+   * contains are just those parameters that make an assertion about the 
+   * world, an assertion which is observable, and verifiable. So, for example,
+   * choice of CTM algorithm does not belong here, but FD parameters do,
+   * and signal control algorithms do. (The CTM choice should be in the
+   * Context.)
+   */
   record Scenario {
     string id;
     string name;
     
-    //###double dt = 300.0;
-    //###double startTime = 0.0;
-
     Network network;
     
     DensityProfile initialDensityProfile = null;
     VelocityProfile initialVelocityProfile = null;
     FDProfile fdProfile = null;
     DemandProfile demandProfile = null;
+  }
+  
+  /**
+   * Context and Run Config section
+   *
+   * Configuration that applies to one run or a group of runs.
+   *
+   * These objects correspond to the TBD Run tables.
+   */
+  
+  record EnKFParams {
+    int n_ensembles;
+  }
+  
+  enum RunMode {
+    HISTORICAL, LIVE
+  }
+  
+  enum CTMType {
+    DENSITY, VELOCITY, FUSION
+  }
+
+  /**
+   * Static configuration of a set of freeway runs.
+   *
+   * The parameters encapsulated here are separate from Scenario inputs
+   * in that they express *how* the run is modeled and executed,
+   * rather than *what* is modeled.
+   *
+   * These parameters are used by the Context subclasses.
+   *
+   * Note that a context does not include a scenario. Scenarios are read
+   * dynamically using a ScenarioSource.
+   */
+  record FreewayContextConfig {
+    string        id;
+    string        name;
+
+    RunMode       runMode;
+    EnKFParams    enkfParams;
+    CTMType       ctmType;
+    
+    Duration      dtOutput;
+    Duration      dt;
+    
+    DateTime      timeBegin;
+    DateTime      timeEnd;
+  }
+  
+  /**
+   * Encapsulates a single run of a process.
+   */
+  record ProcessConfig {
+    string        host;
+    long          pid;
+    
+    /** Note: wall clock time on host, not world time or sim time */
+    DateTime      timeBegin;
+    DateTime      timeEnd;
+  }
+  
+  /**
+   * Represents a single execution of the freeway model.
+   *
+   * Parameters here supplement the Context config with additional per-run
+   * config.
+   *
+   * The FreewayRun id should be in one-to-one correspondence with actual
+   * process executions on a host. If you run again with the same parameters
+   * then the id should be different. Output data references this id.
+   */
+  record FreewayEstimationRunConfig {
+    string        id;
+    string        name;
+    
+    /** Refers to the FreewayContext for this run (among others) */
+    string        contextId;
+    
+    // to add?
+    // ensemble ID?
+    
+    array<long>   seeds;
+    
+    ProcessConfig process; 
+  }
+  
+  record FreewayForecastRunConfig {
+    string        id;
+    string        name;
+    
+    /** Refers to the FreewayContext for this run (among others) */
+    string        contextId;
+    
+    array<long>   seeds;
+    
+    ProcessConfig process; 
+  }
+
+  record SimulationRunConfig {
+    string        id;
+    string        name;
+  }
+  
+  record CalibrationRunConfig {
+    string        id;
+    string        name;
+  }
+  
+  record ImputationRunConfig {
+    string        id;
+    string        name;
   }
 }
