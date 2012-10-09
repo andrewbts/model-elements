@@ -33,25 +33,15 @@ import java.util.*;
 
 import edu.berkeley.path.model_elements.*;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.ByteArrayOutputStream;
+import java.io.*;
 import java.nio.ByteBuffer;
 
 import org.apache.commons.io.FileUtils;
 
-import org.apache.avro.Schema;
-import org.apache.avro.file.DataFileReader;
-import org.apache.avro.file.DataFileWriter;
-import org.apache.avro.specific.SpecificData;
-import org.apache.avro.specific.SpecificDatumReader;
-import org.apache.avro.specific.SpecificDatumWriter;
-import org.apache.avro.specific.SpecificRecord;
-import org.apache.avro.generic.GenericData;
-import org.apache.avro.io.DatumReader;
-import org.apache.avro.io.DatumWriter;
-import org.apache.avro.io.EncoderFactory;
-import org.apache.avro.io.Encoder;
+import org.apache.avro.*;
+import org.apache.avro.file.*;
+import org.apache.avro.specific.*;
+import org.apache.avro.io.*;
 
 public class WriterTest {
   Network nw;
@@ -62,7 +52,7 @@ public class WriterTest {
     nw = new Network();
     schema = nw.getSchema();
 
-    nw.setId("42");
+    nw.setId(42);
     nw.setName("test network");
 
     nw.setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
@@ -73,19 +63,19 @@ public class WriterTest {
     Link ln;
 
     nd1 = new Node();
-    nd1.setId("1");
+    nd1.setId(1);
     nd1.setName("one");
     nd1.setType("hwy");
     nw.nodes.add(nd1);
 
     nd2 = new Node();
-    nd2.setId("2");
+    nd2.setId(2);
     nd2.setName("two");
     nd2.setType("hwy");
     nw.nodes.add(nd2);
 
     ln = new Link();
-    ln.setId("3");
+    ln.setId(3);
     ln.setName("three");
     ln.setType("hwy");
     ln.setLaneCount(4.0);
@@ -166,5 +156,36 @@ public class WriterTest {
 //     System.out.println("---\n");
     
     assertEquals(expected, actual);
+    
+    // Now check that we can read the string as a Network.
+    
+    // Tell Avro that we want model_elements classes instead of model_elements_base.
+    Schema.Parser parser = new Schema.Parser();
+    String schemaStr = schema.toString().replaceFirst(
+        "\"namespace\":\"edu.berkeley.path.model_elements_base\"",
+        "\"namespace\":\"edu.berkeley.path.model_elements\""
+    );
+    Schema schemaForReading = parser.parse(schemaStr);
+    
+    //System.out.println(schemaForReading);
+
+    DatumReader<Network> reader =
+      new SpecificDatumReader<Network>(schemaForReading);
+    
+    ByteArrayInputStream in = new ByteArrayInputStream(actual.getBytes());
+    DecoderFactory df = new DecoderFactory();
+    Decoder d = df.jsonDecoder(schemaForReading, in);
+    
+    Network nw2 = reader.read(null, d);
+    
+    assertEquals(nw.id, nw2.id.toString());
+    assertEquals(nw.name, nw2.name.toString());
+    assertEquals(nw.getNodes().size(), nw2.getNodes().size());
+    
+    assertEquals("edu.berkeley.path.model_elements.Node", nw.getNodes().get(0).getClass().getName());
+    
+    Node nd_in_nw = (Node)nw.getNodes().get(0);
+    Node nd_in_nw2 = (Node)nw2.getNodes().get(0);
+    assertEquals(nd_in_nw.getName(), nd_in_nw2.getName().toString());
   }
 }
