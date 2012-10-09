@@ -265,4 +265,33 @@ protocol CC {
     string        id;
     string        name;
   }
+
+  /**
+   * State of one link at one time.
+   *
+   * May contain density, velocity, or both.
+   */
+  record FreewayLinkState {
+    union { double, null } density;
+    union { double, null } velocity;
+  }
+
+  /**
+   * State of entire CTM
+   */
+  record FreewayCTMState {
+    /** map key is link id */
+    map<FreewayLinkState> linkState;
+  }
+
+  /**
+   * State of ensemble CTMs in an ordered list.
+   */
+  record FreewayCTMEnsembleState {
+    /** one entry per CTM */
+    array<FreewayCTMState> ensembleState;
+    
+    /** used by FreewayReporterBlock? */
+    map<double> quality;
+  }
 }
