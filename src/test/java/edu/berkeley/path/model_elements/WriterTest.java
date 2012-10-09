@@ -181,6 +181,11 @@ public class WriterTest {
     assertEquals(nw.id, nw2.id.toString());
     assertEquals(nw.name, nw2.name.toString());
     assertEquals(nw.getNodes().size(), nw2.getNodes().size());
-    assertEquals(nw.getNodes().get(0).getName(), nw2.getNodes().get(0).getName().toString());
+    
+    assertEquals("edu.berkeley.path.model_elements.Node", nw.getNodes().get(0).getClass().getName());
+    
+    Node nd_in_nw = (Node)nw.getNodes().get(0);
+    Node nd_in_nw2 = (Node)nw2.getNodes().get(0);
+    assertEquals(nd_in_nw.getName(), nd_in_nw2.getName().toString());
   }
 }
