@@ -159,14 +159,24 @@ public class WriterTest {
     
     // Now check that we can read the string as a Network.
     
+    // Tell Avro that we want model_elements classes instead of model_elements_base.
+    Schema.Parser parser = new Schema.Parser();
+    String schemaStr = schema.toString().replaceFirst(
+        "\"namespace\":\"edu.berkeley.path.model_elements_base\"",
+        "\"namespace\":\"edu.berkeley.path.model_elements\""
+    );
+    Schema schemaForReading = parser.parse(schemaStr);
+    
+    //System.out.println(schemaForReading);
+
     DatumReader<Network> reader =
-      new SpecificDatumReader<Network>(schema);
+      new SpecificDatumReader<Network>(schemaForReading);
     
     ByteArrayInputStream in = new ByteArrayInputStream(actual.getBytes());
     DecoderFactory df = new DecoderFactory();
-    Decoder d = df.jsonDecoder(schema, in);
+    Decoder d = df.jsonDecoder(schemaForReading, in);
     
-    edu.berkeley.path.model_elements_base.Network nw2 = reader.read(null, d);
+    Network nw2 = reader.read(null, d);
     
     assertEquals(nw.id, nw2.id.toString());
     assertEquals(nw.name, nw2.name.toString());
