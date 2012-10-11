@@ -7,10 +7,12 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * State of ensemble CTMs in an ordered list. */
 public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"quality\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"used by FreewayReporterBlock?\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"quality\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is link id\\n     *\\n     * used by FreewayReporterBlock?\"}]}");
   /** one entry per CTM */
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState> ensembleState;
-  /** used by FreewayReporterBlock? */
+  /** map key is link id
+     *
+     * used by FreewayReporterBlock? */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> quality;
 
   /**
@@ -62,14 +64,18 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
 
   /**
    * Gets the value of the 'quality' field.
-   * used by FreewayReporterBlock?   */
+   * map key is link id
+     *
+     * used by FreewayReporterBlock?   */
   public java.util.Map<java.lang.CharSequence,java.lang.Double> getQuality() {
     return quality;
   }
 
   /**
    * Sets the value of the 'quality' field.
-   * used by FreewayReporterBlock?   * @param value the value to set.
+   * map key is link id
+     *
+     * used by FreewayReporterBlock?   * @param value the value to set.
    */
   public void setQuality(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
     this.quality = value;

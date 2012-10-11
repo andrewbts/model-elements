@@ -146,6 +146,7 @@ protocol CC {
   record Scenario {
     string id;
     string name;
+    string description;
     
     Network network;
     
@@ -291,7 +292,10 @@ protocol CC {
     /** one entry per CTM */
     array<FreewayCTMState> ensembleState;
     
-    /** used by FreewayReporterBlock? */
+    /** map key is link id
+     *
+     * used by FreewayReporterBlock? */
     map<double> quality;
+    // ### TODO call this confidence?
   }
 }

@@ -15,9 +15,10 @@ package edu.berkeley.path.model_elements_base;
    * and signal control algorithms do. (The CTM choice should be in the
    * Context.) */
 public class Scenario extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Scenario\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* A scenario represents the state of the world now and projected\\n   * into the future, to the extent that can be known in advance.\\n   *\\n   * The configuration that belongs in a scenario and the objects that it\\n   * contains are just those parameters that make an assertion about the \\n   * world, an assertion which is observable, and verifiable. So, for example,\\n   * choice of CTM algorithm does not belong here, but FD parameters do,\\n   * and signal control algorithms do. (The CTM choice should be in the\\n   * Context.)\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"network\",\"type\":{\"type\":\"record\",\"name\":\"Network\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]}]}},{\"name\":\"initialDensityProfile\",\"type\":{\"type\":\"record\",\"name\":\"DensityProfile\",\"doc\":\"Density on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]},\"default\":null},{\"name\":\"initialVelocityProfile\",\"type\":{\"type\":\"record\",\"name\":\"VelocityProfile\",\"doc\":\"Velocity on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]},\"default\":null},{\"name\":\"fdProfile\",\"type\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"Fundamental diagrams on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]},\"default\":null},{\"name\":\"demandProfile\",\"type\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":\"string\",\"doc\":\"link id, may not be null\"},{\"name\":\"destination\",\"type\":\"string\",\"doc\":\"link id, may be null\",\"default\":null},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]},\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Scenario\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* A scenario represents the state of the world now and projected\\n   * into the future, to the extent that can be known in advance.\\n   *\\n   * The configuration that belongs in a scenario and the objects that it\\n   * contains are just those parameters that make an assertion about the \\n   * world, an assertion which is observable, and verifiable. So, for example,\\n   * choice of CTM algorithm does not belong here, but FD parameters do,\\n   * and signal control algorithms do. (The CTM choice should be in the\\n   * Context.)\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":\"string\"},{\"name\":\"network\",\"type\":{\"type\":\"record\",\"name\":\"Network\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]}]}},{\"name\":\"initialDensityProfile\",\"type\":{\"type\":\"record\",\"name\":\"DensityProfile\",\"doc\":\"Density on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]},\"default\":null},{\"name\":\"initialVelocityProfile\",\"type\":{\"type\":\"record\",\"name\":\"VelocityProfile\",\"doc\":\"Velocity on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]},\"default\":null},{\"name\":\"fdProfile\",\"type\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"Fundamental diagrams on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]},\"default\":null},{\"name\":\"demandProfile\",\"type\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":\"string\",\"doc\":\"link id, may not be null\"},{\"name\":\"destination\",\"type\":\"string\",\"doc\":\"link id, may be null\",\"default\":null},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]},\"default\":null}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
+  @Deprecated public java.lang.CharSequence description;
   @Deprecated public edu.berkeley.path.model_elements_base.Network network;
   @Deprecated public edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile;
   @Deprecated public edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile;
@@ -32,9 +33,10 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * All-args constructor.
    */
-  public Scenario(java.lang.CharSequence id, java.lang.CharSequence name, edu.berkeley.path.model_elements_base.Network network, edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile, edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile, edu.berkeley.path.model_elements_base.FDProfile fdProfile, edu.berkeley.path.model_elements_base.DemandProfile demandProfile) {
+  public Scenario(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, edu.berkeley.path.model_elements_base.Network network, edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile, edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile, edu.berkeley.path.model_elements_base.FDProfile fdProfile, edu.berkeley.path.model_elements_base.DemandProfile demandProfile) {
     this.id = id;
     this.name = name;
+    this.description = description;
     this.network = network;
     this.initialDensityProfile = initialDensityProfile;
     this.initialVelocityProfile = initialVelocityProfile;
@@ -48,11 +50,12 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: return id;
     case 1: return name;
-    case 2: return network;
-    case 3: return initialDensityProfile;
-    case 4: return initialVelocityProfile;
-    case 5: return fdProfile;
-    case 6: return demandProfile;
+    case 2: return description;
+    case 3: return network;
+    case 4: return initialDensityProfile;
+    case 5: return initialVelocityProfile;
+    case 6: return fdProfile;
+    case 7: return demandProfile;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -62,11 +65,12 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: network = (edu.berkeley.path.model_elements_base.Network)value$; break;
-    case 3: initialDensityProfile = (edu.berkeley.path.model_elements_base.DensityProfile)value$; break;
-    case 4: initialVelocityProfile = (edu.berkeley.path.model_elements_base.VelocityProfile)value$; break;
-    case 5: fdProfile = (edu.berkeley.path.model_elements_base.FDProfile)value$; break;
-    case 6: demandProfile = (edu.berkeley.path.model_elements_base.DemandProfile)value$; break;
+    case 2: description = (java.lang.CharSequence)value$; break;
+    case 3: network = (edu.berkeley.path.model_elements_base.Network)value$; break;
+    case 4: initialDensityProfile = (edu.berkeley.path.model_elements_base.DensityProfile)value$; break;
+    case 5: initialVelocityProfile = (edu.berkeley.path.model_elements_base.VelocityProfile)value$; break;
+    case 6: fdProfile = (edu.berkeley.path.model_elements_base.FDProfile)value$; break;
+    case 7: demandProfile = (edu.berkeley.path.model_elements_base.DemandProfile)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -99,6 +103,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
    */
   public void setName(java.lang.CharSequence value) {
     this.name = value;
+  }
+
+  /**
+   * Gets the value of the 'description' field.
+   */
+  public java.lang.CharSequence getDescription() {
+    return description;
+  }
+
+  /**
+   * Sets the value of the 'description' field.
+   * @param value the value to set.
+   */
+  public void setDescription(java.lang.CharSequence value) {
+    this.description = value;
   }
 
   /**
@@ -199,6 +218,7 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
+    private java.lang.CharSequence description;
     private edu.berkeley.path.model_elements_base.Network network;
     private edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile;
     private edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile;
@@ -226,25 +246,29 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
         this.name = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.network)) {
-        this.network = (edu.berkeley.path.model_elements_base.Network) data().deepCopy(fields()[2].schema(), other.network);
+      if (isValidValue(fields()[2], other.description)) {
+        this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.initialDensityProfile)) {
-        this.initialDensityProfile = (edu.berkeley.path.model_elements_base.DensityProfile) data().deepCopy(fields()[3].schema(), other.initialDensityProfile);
+      if (isValidValue(fields()[3], other.network)) {
+        this.network = (edu.berkeley.path.model_elements_base.Network) data().deepCopy(fields()[3].schema(), other.network);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.initialVelocityProfile)) {
-        this.initialVelocityProfile = (edu.berkeley.path.model_elements_base.VelocityProfile) data().deepCopy(fields()[4].schema(), other.initialVelocityProfile);
+      if (isValidValue(fields()[4], other.initialDensityProfile)) {
+        this.initialDensityProfile = (edu.berkeley.path.model_elements_base.DensityProfile) data().deepCopy(fields()[4].schema(), other.initialDensityProfile);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.fdProfile)) {
-        this.fdProfile = (edu.berkeley.path.model_elements_base.FDProfile) data().deepCopy(fields()[5].schema(), other.fdProfile);
+      if (isValidValue(fields()[5], other.initialVelocityProfile)) {
+        this.initialVelocityProfile = (edu.berkeley.path.model_elements_base.VelocityProfile) data().deepCopy(fields()[5].schema(), other.initialVelocityProfile);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.demandProfile)) {
-        this.demandProfile = (edu.berkeley.path.model_elements_base.DemandProfile) data().deepCopy(fields()[6].schema(), other.demandProfile);
+      if (isValidValue(fields()[6], other.fdProfile)) {
+        this.fdProfile = (edu.berkeley.path.model_elements_base.FDProfile) data().deepCopy(fields()[6].schema(), other.fdProfile);
         fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.demandProfile)) {
+        this.demandProfile = (edu.berkeley.path.model_elements_base.DemandProfile) data().deepCopy(fields()[7].schema(), other.demandProfile);
+        fieldSetFlags()[7] = true;
       }
     }
 
@@ -298,6 +322,31 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
       return this;
     }
 
+    /** Gets the value of the 'description' field */
+    public java.lang.CharSequence getDescription() {
+      return description;
+    }
+    
+    /** Sets the value of the 'description' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder setDescription(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.description = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'description' field has been set */
+    public boolean hasDescription() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'description' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder clearDescription() {
+      description = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     /** Gets the value of the 'network' field */
     public edu.berkeley.path.model_elements_base.Network getNetwork() {
       return network;
@@ -305,21 +354,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'network' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder setNetwork(edu.berkeley.path.model_elements_base.Network value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.network = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'network' field has been set */
     public boolean hasNetwork() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'network' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder clearNetwork() {
       network = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -330,21 +379,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'initialDensityProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder setInitialDensityProfile(edu.berkeley.path.model_elements_base.DensityProfile value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.initialDensityProfile = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'initialDensityProfile' field has been set */
     public boolean hasInitialDensityProfile() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'initialDensityProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder clearInitialDensityProfile() {
       initialDensityProfile = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -355,21 +404,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'initialVelocityProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder setInitialVelocityProfile(edu.berkeley.path.model_elements_base.VelocityProfile value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.initialVelocityProfile = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'initialVelocityProfile' field has been set */
     public boolean hasInitialVelocityProfile() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'initialVelocityProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder clearInitialVelocityProfile() {
       initialVelocityProfile = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -380,21 +429,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'fdProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder setFdProfile(edu.berkeley.path.model_elements_base.FDProfile value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.fdProfile = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'fdProfile' field has been set */
     public boolean hasFdProfile() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'fdProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder clearFdProfile() {
       fdProfile = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -405,21 +454,21 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Sets the value of the 'demandProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder setDemandProfile(edu.berkeley.path.model_elements_base.DemandProfile value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.demandProfile = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'demandProfile' field has been set */
     public boolean hasDemandProfile() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'demandProfile' field */
     public edu.berkeley.path.model_elements_base.Scenario.Builder clearDemandProfile() {
       demandProfile = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -429,11 +478,12 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
         Scenario record = new Scenario();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.network = fieldSetFlags()[2] ? this.network : (edu.berkeley.path.model_elements_base.Network) defaultValue(fields()[2]);
-        record.initialDensityProfile = fieldSetFlags()[3] ? this.initialDensityProfile : (edu.berkeley.path.model_elements_base.DensityProfile) defaultValue(fields()[3]);
-        record.initialVelocityProfile = fieldSetFlags()[4] ? this.initialVelocityProfile : (edu.berkeley.path.model_elements_base.VelocityProfile) defaultValue(fields()[4]);
-        record.fdProfile = fieldSetFlags()[5] ? this.fdProfile : (edu.berkeley.path.model_elements_base.FDProfile) defaultValue(fields()[5]);
-        record.demandProfile = fieldSetFlags()[6] ? this.demandProfile : (edu.berkeley.path.model_elements_base.DemandProfile) defaultValue(fields()[6]);
+        record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.network = fieldSetFlags()[3] ? this.network : (edu.berkeley.path.model_elements_base.Network) defaultValue(fields()[3]);
+        record.initialDensityProfile = fieldSetFlags()[4] ? this.initialDensityProfile : (edu.berkeley.path.model_elements_base.DensityProfile) defaultValue(fields()[4]);
+        record.initialVelocityProfile = fieldSetFlags()[5] ? this.initialVelocityProfile : (edu.berkeley.path.model_elements_base.VelocityProfile) defaultValue(fields()[5]);
+        record.fdProfile = fieldSetFlags()[6] ? this.fdProfile : (edu.berkeley.path.model_elements_base.FDProfile) defaultValue(fields()[6]);
+        record.demandProfile = fieldSetFlags()[7] ? this.demandProfile : (edu.berkeley.path.model_elements_base.DemandProfile) defaultValue(fields()[7]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
