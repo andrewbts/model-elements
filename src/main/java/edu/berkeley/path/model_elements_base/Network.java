@@ -6,9 +6,10 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Network extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Network\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Network\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
+  @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Node> nodes;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Link> links;
 
@@ -20,9 +21,10 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
   /**
    * All-args constructor.
    */
-  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.util.List<edu.berkeley.path.model_elements_base.Node> nodes, java.util.List<edu.berkeley.path.model_elements_base.Link> links) {
+  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.List<edu.berkeley.path.model_elements_base.Node> nodes, java.util.List<edu.berkeley.path.model_elements_base.Link> links) {
     this.id = id;
     this.name = name;
+    this.description = description;
     this.nodes = nodes;
     this.links = links;
   }
@@ -33,8 +35,9 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: return id;
     case 1: return name;
-    case 2: return nodes;
-    case 3: return links;
+    case 2: return description;
+    case 3: return nodes;
+    case 4: return links;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -44,8 +47,9 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: nodes = (java.util.List<edu.berkeley.path.model_elements_base.Node>)value$; break;
-    case 3: links = (java.util.List<edu.berkeley.path.model_elements_base.Link>)value$; break;
+    case 2: description = (java.lang.CharSequence)value$; break;
+    case 3: nodes = (java.util.List<edu.berkeley.path.model_elements_base.Node>)value$; break;
+    case 4: links = (java.util.List<edu.berkeley.path.model_elements_base.Link>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -78,6 +82,21 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
    */
   public void setName(java.lang.CharSequence value) {
     this.name = value;
+  }
+
+  /**
+   * Gets the value of the 'description' field.
+   */
+  public java.lang.CharSequence getDescription() {
+    return description;
+  }
+
+  /**
+   * Sets the value of the 'description' field.
+   * @param value the value to set.
+   */
+  public void setDescription(java.lang.CharSequence value) {
+    this.description = value;
   }
 
   /**
@@ -133,6 +152,7 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
+    private java.lang.CharSequence description;
     private java.util.List<edu.berkeley.path.model_elements_base.Node> nodes;
     private java.util.List<edu.berkeley.path.model_elements_base.Link> links;
 
@@ -157,13 +177,17 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
         this.name = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.nodes)) {
-        this.nodes = (java.util.List<edu.berkeley.path.model_elements_base.Node>) data().deepCopy(fields()[2].schema(), other.nodes);
+      if (isValidValue(fields()[2], other.description)) {
+        this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.links)) {
-        this.links = (java.util.List<edu.berkeley.path.model_elements_base.Link>) data().deepCopy(fields()[3].schema(), other.links);
+      if (isValidValue(fields()[3], other.nodes)) {
+        this.nodes = (java.util.List<edu.berkeley.path.model_elements_base.Node>) data().deepCopy(fields()[3].schema(), other.nodes);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.links)) {
+        this.links = (java.util.List<edu.berkeley.path.model_elements_base.Link>) data().deepCopy(fields()[4].schema(), other.links);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -217,6 +241,31 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
       return this;
     }
 
+    /** Gets the value of the 'description' field */
+    public java.lang.CharSequence getDescription() {
+      return description;
+    }
+    
+    /** Sets the value of the 'description' field */
+    public edu.berkeley.path.model_elements_base.Network.Builder setDescription(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.description = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'description' field has been set */
+    public boolean hasDescription() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'description' field */
+    public edu.berkeley.path.model_elements_base.Network.Builder clearDescription() {
+      description = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     /** Gets the value of the 'nodes' field */
     public java.util.List<edu.berkeley.path.model_elements_base.Node> getNodes() {
       return nodes;
@@ -224,21 +273,21 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     
     /** Sets the value of the 'nodes' field */
     public edu.berkeley.path.model_elements_base.Network.Builder setNodes(java.util.List<edu.berkeley.path.model_elements_base.Node> value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.nodes = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'nodes' field has been set */
     public boolean hasNodes() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'nodes' field */
     public edu.berkeley.path.model_elements_base.Network.Builder clearNodes() {
       nodes = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -249,21 +298,21 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     
     /** Sets the value of the 'links' field */
     public edu.berkeley.path.model_elements_base.Network.Builder setLinks(java.util.List<edu.berkeley.path.model_elements_base.Link> value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.links = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'links' field has been set */
     public boolean hasLinks() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'links' field */
     public edu.berkeley.path.model_elements_base.Network.Builder clearLinks() {
       links = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -273,8 +322,9 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
         Network record = new Network();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.nodes = fieldSetFlags()[2] ? this.nodes : (java.util.List<edu.berkeley.path.model_elements_base.Node>) defaultValue(fields()[2]);
-        record.links = fieldSetFlags()[3] ? this.links : (java.util.List<edu.berkeley.path.model_elements_base.Link>) defaultValue(fields()[3]);
+        record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.nodes = fieldSetFlags()[3] ? this.nodes : (java.util.List<edu.berkeley.path.model_elements_base.Node>) defaultValue(fields()[3]);
+        record.links = fieldSetFlags()[4] ? this.links : (java.util.List<edu.berkeley.path.model_elements_base.Link>) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

@@ -65,6 +65,7 @@ protocol CC {
   record Network {
     string id = "1";
     string name;
+    union { null, string } description;
 
     array<Node> nodes = [];
     array<Link> links = [];
@@ -146,7 +147,7 @@ protocol CC {
   record Scenario {
     string id;
     string name;
-    string description;
+    union { null, string } description;
     
     Network network;
     
