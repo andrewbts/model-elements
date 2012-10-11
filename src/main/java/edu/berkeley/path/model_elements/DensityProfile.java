@@ -37,7 +37,7 @@ public class DensityProfile extends edu.berkeley.path.model_elements_base.Densit
     return this.vehiclesPerMeter.get(link.getId());
   }
   
-  public Double getVehiclesPerMeterOnLink(Integer id) {
+  public Double getVehiclesPerMeterOnLink(Long id) {
     if (this.vehiclesPerMeter == null) {
       this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
     }
@@ -61,7 +61,7 @@ public class DensityProfile extends edu.berkeley.path.model_elements_base.Densit
     vehiclesPerMeter.put(link.getId(), val);
   }
   
-  public void setVehiclesPerMeterOnLink(Integer id, Double val) {
+  public void setVehiclesPerMeterOnLink(Long id, Double val) {
     if (vehiclesPerMeter == null) {
       this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
     }
@@ -77,11 +77,11 @@ public class DensityProfile extends edu.berkeley.path.model_elements_base.Densit
     vehiclesPerMeter.put(id, val);
   }
   
-  public Integer getIntegerId() {
-    return Integer.parseInt(getId().toString());
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
   }
   
-  public void setId(Integer id) {
+  public void setId(Long id) {
     setId(id.toString());
   }
 }

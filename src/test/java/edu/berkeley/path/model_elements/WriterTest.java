@@ -52,7 +52,7 @@ public class WriterTest {
     nw = new Network();
     schema = nw.getSchema();
 
-    nw.setId(42);
+    nw.setId(42L);
     nw.setName("test network");
 
     nw.setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
@@ -63,19 +63,19 @@ public class WriterTest {
     Link ln;
 
     nd1 = new Node();
-    nd1.setId(1);
+    nd1.setId(1L);
     nd1.setName("one");
     nd1.setType("hwy");
     nw.nodes.add(nd1);
 
     nd2 = new Node();
-    nd2.setId(2);
+    nd2.setId(2L);
     nd2.setName("two");
     nd2.setType("hwy");
     nw.nodes.add(nd2);
 
     ln = new Link();
-    ln.setId(3);
+    ln.setId(3L);
     ln.setName("three");
     ln.setType("hwy");
     ln.setLaneCount(4.0);

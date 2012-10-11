@@ -96,11 +96,11 @@ public class NetworkTest {
   public void testResolveReferences() {
     nw.resolveReferences();
     
-    Node n1 = nw.getNodeById(1);
+    Node n1 = nw.getNodeById(1L);
     assertTrue(n1 != null);
     assertEquals("one", n1.getName());
     
-    Link ln3 = nw.getLinkById(3);
+    Link ln3 = nw.getLinkById(3L);
     assertTrue(ln3 != null);
     assertEquals("three", ln3.getName());
 

@@ -31,6 +31,9 @@ import static org.junit.Assert.*;
 
 import java.util.*;
 
+// This isn't very intereting now that WriterTest instantiates
+// subclasses of the base classes.
+
 public class SubclassTest {
   public class MyNode extends Node {
     public MyNode() {

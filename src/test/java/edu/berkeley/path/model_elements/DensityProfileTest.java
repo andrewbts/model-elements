@@ -43,7 +43,7 @@ public class DensityProfileTest {
     nw.setName("test network");
     
     dp = new DensityProfile();
-    dp.setId("2");
+    dp.setId(2L);
 
     nw.setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
     nw.setLinks(new ArrayList<edu.berkeley.path.model_elements_base.Link>());
@@ -53,19 +53,19 @@ public class DensityProfileTest {
     Link ln;
 
     nd1 = new Node();
-    nd1.setId("1");
+    nd1.setId(1L);
     nd1.setName("one");
     nd1.setType("hwy");
     nw.nodes.add(nd1);
 
     nd2 = new Node();
-    nd2.setId("2");
+    nd2.setId(2L);
     nd2.setName("two");
     nd2.setType("hwy");
     nw.nodes.add(nd2);
 
     ln = new Link();
-    ln.setId("3");
+    ln.setId(3L);
     ln.setName("three");
     ln.setType("hwy");
     ln.setLaneCount(4.0);
@@ -92,7 +92,7 @@ public class DensityProfileTest {
 
   @Test
   public void testHighLevelAccess() {
-    Link link = nw.getLinkById(3);
+    Link link = nw.getLinkById(3L);
     
     Double val = 1.23;
     
