@@ -27,11 +27,11 @@
 package edu.berkeley.path.model_elements;
 
 public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.FreewayContextConfig {
-  public Integer getIntegerId() {
-    return Integer.parseInt(getId().toString());
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
   }
   
-  public void setId(Integer id) {
+  public void setId(Long id) {
     setId(id.toString());
   }
 }

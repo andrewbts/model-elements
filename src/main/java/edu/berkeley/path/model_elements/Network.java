@@ -29,24 +29,24 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class Network extends edu.berkeley.path.model_elements_base.Network {
-  protected HashMap<Integer, Link> linkById = null;
-  protected HashMap<Integer, Node> nodeById = null;
+  protected HashMap<Long, Link> linkById = null;
+  protected HashMap<Long, Node> nodeById = null;
   
   public Network() {
     
   }
   
   public void resolveReferences() {
-    linkById = new HashMap<Integer, Link>();
-    nodeById = new HashMap<Integer, Node>();
+    linkById = new HashMap<Long, Link>();
+    nodeById = new HashMap<Long, Node>();
     
     // pass 1: populate the HashMaps
     for (Node node : (List<Node>)(List<?>)getNodes()) {
-      nodeById.put(node.getIntegerId(), node);
+      nodeById.put(node.getLongId(), node);
     }
     
     for (Link link : (List<Link>)(List<?>)getLinks()) {
-      linkById.put(link.getIntegerId(), link);
+      linkById.put(link.getLongId(), link);
     }
     
     // pass 2: set references
@@ -57,7 +57,7 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     }
   }
 
-  public Link getLinkById(Integer id) {
+  public Link getLinkById(Long id) {
     if (linkById == null) {
       resolveReferences();
     }
@@ -65,7 +65,7 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     return linkById.get(id);
   }
 
-  public Node getNodeById(Integer id) {
+  public Node getNodeById(Long id) {
     if (nodeById == null) {
       resolveReferences();
     }
@@ -74,18 +74,18 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   }
 
   public Link getLinkById(String id) {
-    return getLinkById(Integer.parseInt(id));
+    return getLinkById(Long.parseLong(id));
   }
 
   public Node getNodeById(String id) {
-    return getNodeById(Integer.parseInt(id));
+    return getNodeById(Long.parseLong(id));
   }
 
-  public Integer getIntegerId() {
-    return Integer.parseInt(getId().toString());
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
   }
   
-  public void setId(Integer id) {
+  public void setId(Long id) {
     setId(id.toString());
   }
 

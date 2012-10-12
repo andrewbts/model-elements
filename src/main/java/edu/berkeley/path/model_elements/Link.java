@@ -49,15 +49,15 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   }
   
   public void resolveReferences(Network network) {
-    this.begin = network.getNodeById(Integer.parseInt(beginId.toString()));
-    this.end = network.getNodeById(Integer.parseInt(endId.toString()));
+    this.begin = network.getNodeById(Long.parseLong(beginId.toString()));
+    this.end = network.getNodeById(Long.parseLong(endId.toString()));
   }
   
-  public Integer getIntegerId() {
-    return Integer.parseInt(getId().toString());
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
   }
   
-  public void setId(Integer id) {
+  public void setId(Long id) {
     setId(id.toString());
   }
 }
