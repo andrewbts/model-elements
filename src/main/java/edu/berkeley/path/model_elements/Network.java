@@ -90,4 +90,19 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   }
 
   // TODO methods to add, remove, set links call resolveReferences
+  // TODO find a better way to expose List<Node> access.
+  
+  /**
+   * Set the nodes. Same as setNodes(), but works with a list of Node
+   */
+  public void setNodeList(List<Node> value) {
+    setNodes((List<edu.berkeley.path.model_elements_base.Node>)(List<?>)value);
+  }
+  
+  /**
+   * Set the links. Same as setLinks(), but works with a list of Node
+   */
+  public void setLinkList(List<Link> value) {
+    setLinks((List<edu.berkeley.path.model_elements_base.Link>)(List<?>)value);
+  }
 }
