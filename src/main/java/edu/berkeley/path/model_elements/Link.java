@@ -60,4 +60,20 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   public void setId(Long id) {
     setId(id.toString());
   }
+  
+  public Long getBeginLongId() {
+    return Long.parseLong(getBeginId().toString());
+  }
+  
+  public void setBeginLongId(Long id) {
+    setBeginId(id.toString());
+  }
+  
+  public Long getEndLongId() {
+    return Long.parseLong(getEndId().toString());
+  }
+  
+  public void setEndLongId(Long id) {
+    setEndId(id.toString());
+  }
 }
