@@ -130,6 +130,69 @@ protocol CC {
     map<array<double>> demand = {};
     // ### TODO vehicle type dimension
   }
+
+  /**
+   * Split ratio at a node, at one point in time, for one in-link, one
+   * out-link, and one vehicle type. These values are not stored
+   * in this record, but as the map keys of the SplitRatioProfile.
+   */
+  record SplitRatio {
+    /**
+     * The order that this ratio should be used when traversing.
+     */
+    int ratioOrder;
+    
+    /**
+     * The actual raio for this node, this entry and this exit link,
+     * and this vehicle type.
+     */
+    double ratio;
+  }
+  
+  /**
+   * Split ratio time series at a node. The node ID is not stored
+   * in this record, but as the map key of the SplitRatioSet.
+   */
+  record SplitRatioProfile {
+    string id;
+
+    /**
+     * if null, use the unique network in this scenario.
+     */
+    union {null, string} networkId;
+
+    /**
+     * if null, this profile governs background flow, not OD flow.
+     */
+    union {null, string} destinationNetworkId;
+
+    /**
+     * in seconds; default is 0
+     */
+    union {null, double} startTime;
+    
+    /**
+     * in seconds; default is 300 seconds
+     */
+    union {null, double} sampleRate;
+    
+    /**
+     * keys are: inLinkId, outLinkId, vehTypeId
+     */
+    map<map<map<SplitRatio>>> splitratio;
+  }
+  
+  record SplitRatioSet {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+    
+    /**
+     * map key is nodeId
+     */
+    map<SplitRatioProfile> profile;
+  }
+  
   
   // ### TODO Controllers
   
@@ -155,6 +218,7 @@ protocol CC {
     VelocityProfile initialVelocityProfile = null;
     FDProfile fdProfile = null;
     DemandProfile demandProfile = null;
+    SplitRatioSet splitratioSet = null;
   }
   
   /**
