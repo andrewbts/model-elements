@@ -8,7 +8,7 @@ package edu.berkeley.path.model_elements_base;
 /** * Split ratio time series at a node. The node ID is not stored
    * in this record, but as the map key of the SplitRatioSet. */
 public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key of the SplitRatioSet.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"networkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, use the unique network in this scenario.\"},{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\"},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\"},{\"name\":\"splitratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"SplitRatio\",\"doc\":\"* Split ratio at a node, at one point in time, for one in-link, one\\n   * out-link, and one vehicle type. These values are not stored\\n   * in this record, but as the map keys of the SplitRatioProfile.\",\"fields\":[{\"name\":\"ratioOrder\",\"type\":\"int\",\"doc\":\"* The order that this ratio should be used when traversing.\"},{\"name\":\"ratio\",\"type\":\"double\",\"doc\":\"* The actual raio for this node, this entry and this exit link,\\n     * and this vehicle type.\"}]}}}},\"doc\":\"* keys are: inLinkId, outLinkId, vehTypeId\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key of the SplitRatioSet.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"networkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, use the unique network in this scenario.\"},{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\"},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\"},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}");
   @Deprecated public java.lang.CharSequence id;
   /** * if null, use the unique network in this scenario. */
   @Deprecated public java.lang.CharSequence networkId;
@@ -18,8 +18,10 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   @Deprecated public java.lang.Double startTime;
   /** * in seconds; default is 300 seconds */
   @Deprecated public java.lang.Double sampleRate;
-  /** * keys are: inLinkId, outLinkId, vehTypeId */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> splitratio;
+  /** * time series of ratios;
+     * map keys are: inLinkId, outLinkId, vehTypeId;
+     * array index is index in time series ("RATIO_ORDER" in db) */
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> ratio;
 
   /**
    * Default constructor.
@@ -29,13 +31,13 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   /**
    * All-args constructor.
    */
-  public SplitRatioProfile(java.lang.CharSequence id, java.lang.CharSequence networkId, java.lang.CharSequence destinationNetworkId, java.lang.Double startTime, java.lang.Double sampleRate, java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> splitratio) {
+  public SplitRatioProfile(java.lang.CharSequence id, java.lang.CharSequence networkId, java.lang.CharSequence destinationNetworkId, java.lang.Double startTime, java.lang.Double sampleRate, java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> ratio) {
     this.id = id;
     this.networkId = networkId;
     this.destinationNetworkId = destinationNetworkId;
     this.startTime = startTime;
     this.sampleRate = sampleRate;
-    this.splitratio = splitratio;
+    this.ratio = ratio;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -47,7 +49,7 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     case 2: return destinationNetworkId;
     case 3: return startTime;
     case 4: return sampleRate;
-    case 5: return splitratio;
+    case 5: return ratio;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -60,7 +62,7 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     case 2: destinationNetworkId = (java.lang.CharSequence)value$; break;
     case 3: startTime = (java.lang.Double)value$; break;
     case 4: sampleRate = (java.lang.Double)value$; break;
-    case 5: splitratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>>)value$; break;
+    case 5: ratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -141,18 +143,22 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   }
 
   /**
-   * Gets the value of the 'splitratio' field.
-   * * keys are: inLinkId, outLinkId, vehTypeId   */
-  public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> getSplitratio() {
-    return splitratio;
+   * Gets the value of the 'ratio' field.
+   * * time series of ratios;
+     * map keys are: inLinkId, outLinkId, vehTypeId;
+     * array index is index in time series ("RATIO_ORDER" in db)   */
+  public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> getRatio() {
+    return ratio;
   }
 
   /**
-   * Sets the value of the 'splitratio' field.
-   * * keys are: inLinkId, outLinkId, vehTypeId   * @param value the value to set.
+   * Sets the value of the 'ratio' field.
+   * * time series of ratios;
+     * map keys are: inLinkId, outLinkId, vehTypeId;
+     * array index is index in time series ("RATIO_ORDER" in db)   * @param value the value to set.
    */
-  public void setSplitratio(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> value) {
-    this.splitratio = value;
+  public void setRatio(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> value) {
+    this.ratio = value;
   }
 
   /** Creates a new SplitRatioProfile RecordBuilder */
@@ -181,7 +187,7 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     private java.lang.CharSequence destinationNetworkId;
     private java.lang.Double startTime;
     private java.lang.Double sampleRate;
-    private java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> splitratio;
+    private java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> ratio;
 
     /** Creates a new Builder */
     private Builder() {
@@ -216,8 +222,8 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
         this.sampleRate = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.sampleRate);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.splitratio)) {
-        this.splitratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>>) data().deepCopy(fields()[5].schema(), other.splitratio);
+      if (isValidValue(fields()[5], other.ratio)) {
+        this.ratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>) data().deepCopy(fields()[5].schema(), other.ratio);
         fieldSetFlags()[5] = true;
       }
     }
@@ -347,27 +353,27 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
       return this;
     }
 
-    /** Gets the value of the 'splitratio' field */
-    public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> getSplitratio() {
-      return splitratio;
+    /** Gets the value of the 'ratio' field */
+    public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> getRatio() {
+      return ratio;
     }
     
-    /** Sets the value of the 'splitratio' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setSplitratio(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>> value) {
+    /** Sets the value of the 'ratio' field */
+    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setRatio(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> value) {
       validate(fields()[5], value);
-      this.splitratio = value;
+      this.ratio = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
     
-    /** Checks whether the 'splitratio' field has been set */
-    public boolean hasSplitratio() {
+    /** Checks whether the 'ratio' field has been set */
+    public boolean hasRatio() {
       return fieldSetFlags()[5];
     }
     
-    /** Clears the value of the 'splitratio' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearSplitratio() {
-      splitratio = null;
+    /** Clears the value of the 'ratio' field */
+    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearRatio() {
+      ratio = null;
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -381,7 +387,7 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
         record.destinationNetworkId = fieldSetFlags()[2] ? this.destinationNetworkId : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.startTime = fieldSetFlags()[3] ? this.startTime : (java.lang.Double) defaultValue(fields()[3]);
         record.sampleRate = fieldSetFlags()[4] ? this.sampleRate : (java.lang.Double) defaultValue(fields()[4]);
-        record.splitratio = fieldSetFlags()[5] ? this.splitratio : (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatio>>>) defaultValue(fields()[5]);
+        record.ratio = fieldSetFlags()[5] ? this.ratio : (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>) defaultValue(fields()[5]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

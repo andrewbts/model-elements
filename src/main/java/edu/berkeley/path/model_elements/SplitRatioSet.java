@@ -29,4 +29,11 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRatioSet {
+  public SplitRatioProfile getSplitRatioProfileAt(Node node) {
+    if (this.profile == null) {
+      this.profile = new HashMap<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>();
+    }
+    
+    return (SplitRatioProfile)this.profile.get(node.getId());
+  }
 }
