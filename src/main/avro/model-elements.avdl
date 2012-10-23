@@ -133,16 +133,9 @@ protocol CC {
 
   /**
    * Split ratio time series at a node. The node ID is not stored
-   * in this record, but as the map key of the SplitRatioSet.
+   * in this record, but as the map key in the SplitRatioSet.profile.
    */
   record SplitRatioProfile {
-    string id;
-
-    /**
-     * if null, use the unique network in this scenario.
-     */
-    union {null, string} networkId;
-
     /**
      * if null, this profile governs background flow, not OD flow.
      */
@@ -166,6 +159,10 @@ protocol CC {
     map<map<map<array<double>>>> ratio;
   }
   
+  /**
+   * Specification of split ratio time series across one or more networks,
+   * for use in a scenario.
+   */
   record SplitRatioSet {
     string id;
     union {null, string} name;
@@ -176,7 +173,6 @@ protocol CC {
      */
     map<SplitRatioProfile> profile;
   }
-  
   
   // ### TODO Controllers
   

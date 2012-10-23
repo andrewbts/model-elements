@@ -6,12 +6,9 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 /** * Split ratio time series at a node. The node ID is not stored
-   * in this record, but as the map key of the SplitRatioSet. */
+   * in this record, but as the map key in the SplitRatioSet.profile. */
 public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key of the SplitRatioSet.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"networkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, use the unique network in this scenario.\"},{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\"},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\"},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}");
-  @Deprecated public java.lang.CharSequence id;
-  /** * if null, use the unique network in this scenario. */
-  @Deprecated public java.lang.CharSequence networkId;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key in the SplitRatioSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\"},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\"},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}");
   /** * if null, this profile governs background flow, not OD flow. */
   @Deprecated public java.lang.CharSequence destinationNetworkId;
   /** * in seconds; default is 0 */
@@ -31,9 +28,7 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   /**
    * All-args constructor.
    */
-  public SplitRatioProfile(java.lang.CharSequence id, java.lang.CharSequence networkId, java.lang.CharSequence destinationNetworkId, java.lang.Double startTime, java.lang.Double sampleRate, java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> ratio) {
-    this.id = id;
-    this.networkId = networkId;
+  public SplitRatioProfile(java.lang.CharSequence destinationNetworkId, java.lang.Double startTime, java.lang.Double sampleRate, java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> ratio) {
     this.destinationNetworkId = destinationNetworkId;
     this.startTime = startTime;
     this.sampleRate = sampleRate;
@@ -44,12 +39,10 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return id;
-    case 1: return networkId;
-    case 2: return destinationNetworkId;
-    case 3: return startTime;
-    case 4: return sampleRate;
-    case 5: return ratio;
+    case 0: return destinationNetworkId;
+    case 1: return startTime;
+    case 2: return sampleRate;
+    case 3: return ratio;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -57,44 +50,12 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.CharSequence)value$; break;
-    case 1: networkId = (java.lang.CharSequence)value$; break;
-    case 2: destinationNetworkId = (java.lang.CharSequence)value$; break;
-    case 3: startTime = (java.lang.Double)value$; break;
-    case 4: sampleRate = (java.lang.Double)value$; break;
-    case 5: ratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>)value$; break;
+    case 0: destinationNetworkId = (java.lang.CharSequence)value$; break;
+    case 1: startTime = (java.lang.Double)value$; break;
+    case 2: sampleRate = (java.lang.Double)value$; break;
+    case 3: ratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
-  }
-
-  /**
-   * Gets the value of the 'id' field.
-   */
-  public java.lang.CharSequence getId() {
-    return id;
-  }
-
-  /**
-   * Sets the value of the 'id' field.
-   * @param value the value to set.
-   */
-  public void setId(java.lang.CharSequence value) {
-    this.id = value;
-  }
-
-  /**
-   * Gets the value of the 'networkId' field.
-   * * if null, use the unique network in this scenario.   */
-  public java.lang.CharSequence getNetworkId() {
-    return networkId;
-  }
-
-  /**
-   * Sets the value of the 'networkId' field.
-   * * if null, use the unique network in this scenario.   * @param value the value to set.
-   */
-  public void setNetworkId(java.lang.CharSequence value) {
-    this.networkId = value;
   }
 
   /**
@@ -182,8 +143,6 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<SplitRatioProfile>
     implements org.apache.avro.data.RecordBuilder<SplitRatioProfile> {
 
-    private java.lang.CharSequence id;
-    private java.lang.CharSequence networkId;
     private java.lang.CharSequence destinationNetworkId;
     private java.lang.Double startTime;
     private java.lang.Double sampleRate;
@@ -202,80 +161,22 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     /** Creates a Builder by copying an existing SplitRatioProfile instance */
     private Builder(edu.berkeley.path.model_elements_base.SplitRatioProfile other) {
             super(edu.berkeley.path.model_elements_base.SplitRatioProfile.SCHEMA$);
-      if (isValidValue(fields()[0], other.id)) {
-        this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
+      if (isValidValue(fields()[0], other.destinationNetworkId)) {
+        this.destinationNetworkId = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.destinationNetworkId);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.networkId)) {
-        this.networkId = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.networkId);
+      if (isValidValue(fields()[1], other.startTime)) {
+        this.startTime = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.startTime);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.destinationNetworkId)) {
-        this.destinationNetworkId = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.destinationNetworkId);
+      if (isValidValue(fields()[2], other.sampleRate)) {
+        this.sampleRate = (java.lang.Double) data().deepCopy(fields()[2].schema(), other.sampleRate);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.startTime)) {
-        this.startTime = (java.lang.Double) data().deepCopy(fields()[3].schema(), other.startTime);
+      if (isValidValue(fields()[3], other.ratio)) {
+        this.ratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>) data().deepCopy(fields()[3].schema(), other.ratio);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.sampleRate)) {
-        this.sampleRate = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.sampleRate);
-        fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.ratio)) {
-        this.ratio = (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>) data().deepCopy(fields()[5].schema(), other.ratio);
-        fieldSetFlags()[5] = true;
-      }
-    }
-
-    /** Gets the value of the 'id' field */
-    public java.lang.CharSequence getId() {
-      return id;
-    }
-    
-    /** Sets the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setId(java.lang.CharSequence value) {
-      validate(fields()[0], value);
-      this.id = value;
-      fieldSetFlags()[0] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'id' field has been set */
-    public boolean hasId() {
-      return fieldSetFlags()[0];
-    }
-    
-    /** Clears the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearId() {
-      id = null;
-      fieldSetFlags()[0] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'networkId' field */
-    public java.lang.CharSequence getNetworkId() {
-      return networkId;
-    }
-    
-    /** Sets the value of the 'networkId' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setNetworkId(java.lang.CharSequence value) {
-      validate(fields()[1], value);
-      this.networkId = value;
-      fieldSetFlags()[1] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'networkId' field has been set */
-    public boolean hasNetworkId() {
-      return fieldSetFlags()[1];
-    }
-    
-    /** Clears the value of the 'networkId' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearNetworkId() {
-      networkId = null;
-      fieldSetFlags()[1] = false;
-      return this;
     }
 
     /** Gets the value of the 'destinationNetworkId' field */
@@ -285,21 +186,21 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     
     /** Sets the value of the 'destinationNetworkId' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setDestinationNetworkId(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[0], value);
       this.destinationNetworkId = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[0] = true;
       return this; 
     }
     
     /** Checks whether the 'destinationNetworkId' field has been set */
     public boolean hasDestinationNetworkId() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[0];
     }
     
     /** Clears the value of the 'destinationNetworkId' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearDestinationNetworkId() {
       destinationNetworkId = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[0] = false;
       return this;
     }
 
@@ -310,21 +211,21 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     
     /** Sets the value of the 'startTime' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setStartTime(java.lang.Double value) {
-      validate(fields()[3], value);
+      validate(fields()[1], value);
       this.startTime = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[1] = true;
       return this; 
     }
     
     /** Checks whether the 'startTime' field has been set */
     public boolean hasStartTime() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[1];
     }
     
     /** Clears the value of the 'startTime' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearStartTime() {
       startTime = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
 
@@ -335,21 +236,21 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     
     /** Sets the value of the 'sampleRate' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setSampleRate(java.lang.Double value) {
-      validate(fields()[4], value);
+      validate(fields()[2], value);
       this.sampleRate = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'sampleRate' field has been set */
     public boolean hasSampleRate() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'sampleRate' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearSampleRate() {
       sampleRate = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -360,21 +261,21 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     
     /** Sets the value of the 'ratio' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder setRatio(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>> value) {
-      validate(fields()[5], value);
+      validate(fields()[3], value);
       this.ratio = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'ratio' field has been set */
     public boolean hasRatio() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'ratio' field */
     public edu.berkeley.path.model_elements_base.SplitRatioProfile.Builder clearRatio() {
       ratio = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -382,12 +283,10 @@ public class SplitRatioProfile extends org.apache.avro.specific.SpecificRecordBa
     public SplitRatioProfile build() {
       try {
         SplitRatioProfile record = new SplitRatioProfile();
-        record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.networkId = fieldSetFlags()[1] ? this.networkId : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.destinationNetworkId = fieldSetFlags()[2] ? this.destinationNetworkId : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.startTime = fieldSetFlags()[3] ? this.startTime : (java.lang.Double) defaultValue(fields()[3]);
-        record.sampleRate = fieldSetFlags()[4] ? this.sampleRate : (java.lang.Double) defaultValue(fields()[4]);
-        record.ratio = fieldSetFlags()[5] ? this.ratio : (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>) defaultValue(fields()[5]);
+        record.destinationNetworkId = fieldSetFlags()[0] ? this.destinationNetworkId : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.startTime = fieldSetFlags()[1] ? this.startTime : (java.lang.Double) defaultValue(fields()[1]);
+        record.sampleRate = fieldSetFlags()[2] ? this.sampleRate : (java.lang.Double) defaultValue(fields()[2]);
+        record.ratio = fieldSetFlags()[3] ? this.ratio : (java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>>>) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
