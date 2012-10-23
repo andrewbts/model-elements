@@ -328,6 +328,8 @@ protocol CC {
   record FreewayCTMState {
     /** map key is link id */
     map<FreewayLinkState> linkState;
+    
+    DateTime t;
   }
 
   /**
