@@ -196,7 +196,7 @@ protocol CC {
     string name;
     union { null, string } description;
     
-    array<Network> network;
+    array<Network> networks = [];
     
     DensityProfile initialDensityProfile = null;
     VelocityProfile initialVelocityProfile = null;

@@ -93,16 +93,38 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   // TODO find a better way to expose List<Node> access.
   
   /**
-   * Set the nodes. Same as setNodes(), but works with a list of Node
+   * Set the nodes. Same as setNodes(), but works with a list of Node.
    */
   public void setNodeList(List<Node> value) {
     setNodes((List<edu.berkeley.path.model_elements_base.Node>)(List<?>)value);
   }
   
   /**
-   * Set the links. Same as setLinks(), but works with a list of Node
+   * Set the links. Same as setLinks(), but works with a list of Link.
    */
   public void setLinkList(List<Link> value) {
     setLinks((List<edu.berkeley.path.model_elements_base.Link>)(List<?>)value);
+  }
+  
+  /**
+   * Get the nodes. Same as getNodes(), but works with a list of Node.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  public List<Node> getNodeList() {
+    if (null == getNodes()) {
+      setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
+    }
+    return (List<Node>)(List<?>)getNodes();
+  }
+  
+  /**
+   * Get the links. Same as getLinks(), but works with a list of Link.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  public List<Link> getLinkList() {
+    if (null == getLinks()) {
+      setLinks(new ArrayList<edu.berkeley.path.model_elements_base.Link>());
+    }
+    return (List<Link>)(List<?>)getLinks();
   }
 }
