@@ -7,9 +7,12 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * State of entire CTM */
 public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin id\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}}]}");
   /** map key is link id */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState> linkState;
+  /** map key is origin id */
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> queueLength;
+  @Deprecated public edu.berkeley.path.model_elements_base.DateTime t;
 
   /**
    * Default constructor.
@@ -19,8 +22,10 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
   /**
    * All-args constructor.
    */
-  public FreewayCTMState(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState> linkState) {
+  public FreewayCTMState(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState> linkState, java.util.Map<java.lang.CharSequence,java.lang.Double> queueLength, edu.berkeley.path.model_elements_base.DateTime t) {
     this.linkState = linkState;
+    this.queueLength = queueLength;
+    this.t = t;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -28,6 +33,8 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return linkState;
+    case 1: return queueLength;
+    case 2: return t;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -36,6 +43,8 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: linkState = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState>)value$; break;
+    case 1: queueLength = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
+    case 2: t = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -53,6 +62,36 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
    */
   public void setLinkState(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState> value) {
     this.linkState = value;
+  }
+
+  /**
+   * Gets the value of the 'queueLength' field.
+   * map key is origin id   */
+  public java.util.Map<java.lang.CharSequence,java.lang.Double> getQueueLength() {
+    return queueLength;
+  }
+
+  /**
+   * Sets the value of the 'queueLength' field.
+   * map key is origin id   * @param value the value to set.
+   */
+  public void setQueueLength(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
+    this.queueLength = value;
+  }
+
+  /**
+   * Gets the value of the 't' field.
+   */
+  public edu.berkeley.path.model_elements_base.DateTime getT() {
+    return t;
+  }
+
+  /**
+   * Sets the value of the 't' field.
+   * @param value the value to set.
+   */
+  public void setT(edu.berkeley.path.model_elements_base.DateTime value) {
+    this.t = value;
   }
 
   /** Creates a new FreewayCTMState RecordBuilder */
@@ -77,6 +116,8 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
     implements org.apache.avro.data.RecordBuilder<FreewayCTMState> {
 
     private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState> linkState;
+    private java.util.Map<java.lang.CharSequence,java.lang.Double> queueLength;
+    private edu.berkeley.path.model_elements_base.DateTime t;
 
     /** Creates a new Builder */
     private Builder() {
@@ -94,6 +135,14 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
       if (isValidValue(fields()[0], other.linkState)) {
         this.linkState = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState>) data().deepCopy(fields()[0].schema(), other.linkState);
         fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.queueLength)) {
+        this.queueLength = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[1].schema(), other.queueLength);
+        fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.t)) {
+        this.t = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[2].schema(), other.t);
+        fieldSetFlags()[2] = true;
       }
     }
 
@@ -122,11 +171,63 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
       return this;
     }
 
+    /** Gets the value of the 'queueLength' field */
+    public java.util.Map<java.lang.CharSequence,java.lang.Double> getQueueLength() {
+      return queueLength;
+    }
+    
+    /** Sets the value of the 'queueLength' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMState.Builder setQueueLength(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
+      validate(fields()[1], value);
+      this.queueLength = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'queueLength' field has been set */
+    public boolean hasQueueLength() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 'queueLength' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMState.Builder clearQueueLength() {
+      queueLength = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /** Gets the value of the 't' field */
+    public edu.berkeley.path.model_elements_base.DateTime getT() {
+      return t;
+    }
+    
+    /** Sets the value of the 't' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMState.Builder setT(edu.berkeley.path.model_elements_base.DateTime value) {
+      validate(fields()[2], value);
+      this.t = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 't' field has been set */
+    public boolean hasT() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 't' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMState.Builder clearT() {
+      t = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     @Override
     public FreewayCTMState build() {
       try {
         FreewayCTMState record = new FreewayCTMState();
         record.linkState = fieldSetFlags()[0] ? this.linkState : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState>) defaultValue(fields()[0]);
+        record.queueLength = fieldSetFlags()[1] ? this.queueLength : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[1]);
+        record.t = fieldSetFlags()[2] ? this.t : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

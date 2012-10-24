@@ -85,6 +85,8 @@ public class WriterTest {
     ln.setEnd(nd2);
     
     nw.links.add(ln);
+    
+    nw.setOrigins(new ArrayList<edu.berkeley.path.model_elements_base.Origin>());
   }
 
   @Test

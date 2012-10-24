@@ -26,7 +26,29 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class Scenario extends edu.berkeley.path.model_elements_base.Scenario {
+  // TODO find a better way to expose List<Network> access.
+  
+  /**
+   * Get the list of networks contained in this scenario.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  public List<Network> getNetworkList() {
+    if (null == getNetworks()) {
+      setNetworks(new ArrayList<edu.berkeley.path.model_elements_base.Network>());
+    }
+    return (List<Network>)(List<?>)getNetworks();
+  }
+
+  /**
+   * Set the list of networks contained in this scenario.
+   */
+  public void setNetworkList(List<Network> networkList) {
+    setNetworks((List<edu.berkeley.path.model_elements_base.Network>)(List<?>)networkList);
+  }
+
   public Long getLongId() {
     return Long.parseLong(getId().toString());
   }
