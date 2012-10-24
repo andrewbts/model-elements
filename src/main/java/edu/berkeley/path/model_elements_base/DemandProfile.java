@@ -7,10 +7,10 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** Demands on each link as time series */
 public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":\"string\",\"doc\":\"link id, may not be null\"},{\"name\":\"destination\",\"type\":\"string\",\"doc\":\"link id, may be null\",\"default\":null},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":\"string\",\"doc\":\"origin id, may not be null\"},{\"name\":\"destination\",\"type\":\"string\",\"doc\":\"link id, may be null\",\"default\":null},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}");
   @Deprecated public double dt;
   @Deprecated public double startTime;
-  /** link id, may not be null */
+  /** origin id, may not be null */
   @Deprecated public java.lang.CharSequence origin;
   /** link id, may be null */
   @Deprecated public java.lang.CharSequence destination;
@@ -90,14 +90,14 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'origin' field.
-   * link id, may not be null   */
+   * origin id, may not be null   */
   public java.lang.CharSequence getOrigin() {
     return origin;
   }
 
   /**
    * Sets the value of the 'origin' field.
-   * link id, may not be null   * @param value the value to set.
+   * origin id, may not be null   * @param value the value to set.
    */
   public void setOrigin(java.lang.CharSequence value) {
     this.origin = value;

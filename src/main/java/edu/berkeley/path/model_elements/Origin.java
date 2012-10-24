@@ -29,4 +29,34 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class Origin extends edu.berkeley.path.model_elements_base.Origin {
+  protected Node end;
+
+  public Node getEnd() {
+    return end;
+  }
+
+  public void setEnd(Node node) {
+    this.end = node;
+    this.endId = node.getId().toString();
+  }
+
+  public void resolveReferences(Network network) {
+    this.end = network.getNodeById(Long.parseLong(endId.toString()));
+  }
+
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
+  }
+  
+  public void setId(Long id) {
+    setId(id.toString());
+  }
+  
+  public Long getEndLongId() {
+    return Long.parseLong(getEndId().toString());
+  }
+  
+  public void setEndLongId(Long id) {
+    setEndId(id.toString());
+  }
 }

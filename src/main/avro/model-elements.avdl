@@ -133,7 +133,7 @@ protocol CC {
     double startTime = 0.0;
     // ### TODO knob etc
     
-    /** link id, may not be null */
+    /** origin id, may not be null */
     string origin;
 
     /** link id, may be null */
