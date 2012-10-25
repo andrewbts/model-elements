@@ -6,15 +6,15 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":\"int\"},{\"name\":\"detailLevel\",\"type\":\"int\"},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
   @Deprecated public double laneCount;
   @Deprecated public double length;
   @Deprecated public int laneOffset;
-  @Deprecated public int speedLimit;
-  @Deprecated public int detailLevel;
+  @Deprecated public java.lang.Integer speedLimit;
+  @Deprecated public java.lang.Integer detailLevel;
   @Deprecated public java.lang.CharSequence beginId;
   @Deprecated public java.lang.CharSequence endId;
 
@@ -251,8 +251,8 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     private double laneCount;
     private double length;
     private int laneOffset;
-    private int speedLimit;
-    private int detailLevel;
+    private java.lang.Integer speedLimit;
+    private java.lang.Integer detailLevel;
     private java.lang.CharSequence beginId;
     private java.lang.CharSequence endId;
 
@@ -464,7 +464,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'speedLimit' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setSpeedLimit(int value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setSpeedLimit(java.lang.Integer value) {
       validate(fields()[6], value);
       this.speedLimit = value;
       fieldSetFlags()[6] = true;
@@ -478,6 +478,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'speedLimit' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearSpeedLimit() {
+      speedLimit = null;
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -488,7 +489,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'detailLevel' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setDetailLevel(int value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setDetailLevel(java.lang.Integer value) {
       validate(fields()[7], value);
       this.detailLevel = value;
       fieldSetFlags()[7] = true;
@@ -502,6 +503,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'detailLevel' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearDetailLevel() {
+      detailLevel = null;
       fieldSetFlags()[7] = false;
       return this;
     }
