@@ -29,11 +29,35 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRatioSet {
+  /**
+   * Get the profile at the specified node.
+   * Creates the map if it doesn't exist, returns null if the profile doesn't exist.
+   */
   public SplitRatioProfile getSplitRatioProfileAt(Node node) {
-    if (this.profile == null) {
-      this.profile = new HashMap<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>();
+    if (null == getProfile()) {
+      setProfile(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
     }
     
-    return (SplitRatioProfile)this.profile.get(node.getId());
+    return (SplitRatioProfile)getProfile().get(node.getId());
+  }
+
+  // TODO find a better way to expose Map<> access.
+  
+  /**
+   * Set the profile map. Same as setProfiles(), but works with a map of String to SplitRatioProfile.
+   */
+  public void setProfileMap(Map<String,SplitRatioProfile> value) {
+    setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>)(Map<?,?>)value);
+  }
+
+  /**
+   * Get the profile map. Same as getProfiles(), but works with a map of SplitRatioProfile.
+   * Never returns null (creates the map if it doesn't exist).
+   */
+  public Map<String,SplitRatioProfile> getProfileMap() {
+    if (null == getProfile()) {
+      setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
+    }
+    return (Map<String,SplitRatioProfile>)(Map<?,?>)getProfile();
   }
 }
