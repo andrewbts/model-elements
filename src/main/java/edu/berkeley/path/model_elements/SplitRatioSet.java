@@ -60,4 +60,12 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
     }
     return (Map<String,SplitRatioProfile>)(Map<?,?>)getProfile();
   }
+  
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
+  }
+  
+  public void setId(Long id) {
+    setId(id.toString());
+  }
 }
