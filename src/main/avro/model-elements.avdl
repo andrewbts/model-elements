@@ -57,6 +57,9 @@ protocol CC {
     double laneCount;
     double length;
     int laneOffset = 0;
+    
+    union { null, int } speedLimit;
+    union { null, int } detailLevel;
 
     string beginId;
     string endId;

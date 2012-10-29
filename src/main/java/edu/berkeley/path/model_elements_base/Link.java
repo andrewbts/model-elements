@@ -6,13 +6,15 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
   @Deprecated public double laneCount;
   @Deprecated public double length;
   @Deprecated public int laneOffset;
+  @Deprecated public java.lang.Integer speedLimit;
+  @Deprecated public java.lang.Integer detailLevel;
   @Deprecated public java.lang.CharSequence beginId;
   @Deprecated public java.lang.CharSequence endId;
 
@@ -24,13 +26,15 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
+  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Integer speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
     this.id = id;
     this.name = name;
     this.type = type;
     this.laneCount = laneCount;
     this.length = length;
     this.laneOffset = laneOffset;
+    this.speedLimit = speedLimit;
+    this.detailLevel = detailLevel;
     this.beginId = beginId;
     this.endId = endId;
   }
@@ -45,8 +49,10 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 3: return laneCount;
     case 4: return length;
     case 5: return laneOffset;
-    case 6: return beginId;
-    case 7: return endId;
+    case 6: return speedLimit;
+    case 7: return detailLevel;
+    case 8: return beginId;
+    case 9: return endId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -60,8 +66,10 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 3: laneCount = (java.lang.Double)value$; break;
     case 4: length = (java.lang.Double)value$; break;
     case 5: laneOffset = (java.lang.Integer)value$; break;
-    case 6: beginId = (java.lang.CharSequence)value$; break;
-    case 7: endId = (java.lang.CharSequence)value$; break;
+    case 6: speedLimit = (java.lang.Integer)value$; break;
+    case 7: detailLevel = (java.lang.Integer)value$; break;
+    case 8: beginId = (java.lang.CharSequence)value$; break;
+    case 9: endId = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -157,6 +165,36 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
+   * Gets the value of the 'speedLimit' field.
+   */
+  public java.lang.Integer getSpeedLimit() {
+    return speedLimit;
+  }
+
+  /**
+   * Sets the value of the 'speedLimit' field.
+   * @param value the value to set.
+   */
+  public void setSpeedLimit(java.lang.Integer value) {
+    this.speedLimit = value;
+  }
+
+  /**
+   * Gets the value of the 'detailLevel' field.
+   */
+  public java.lang.Integer getDetailLevel() {
+    return detailLevel;
+  }
+
+  /**
+   * Sets the value of the 'detailLevel' field.
+   * @param value the value to set.
+   */
+  public void setDetailLevel(java.lang.Integer value) {
+    this.detailLevel = value;
+  }
+
+  /**
    * Gets the value of the 'beginId' field.
    */
   public java.lang.CharSequence getBeginId() {
@@ -213,6 +251,8 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     private double laneCount;
     private double length;
     private int laneOffset;
+    private java.lang.Integer speedLimit;
+    private java.lang.Integer detailLevel;
     private java.lang.CharSequence beginId;
     private java.lang.CharSequence endId;
 
@@ -253,13 +293,21 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         this.laneOffset = (java.lang.Integer) data().deepCopy(fields()[5].schema(), other.laneOffset);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.beginId)) {
-        this.beginId = (java.lang.CharSequence) data().deepCopy(fields()[6].schema(), other.beginId);
+      if (isValidValue(fields()[6], other.speedLimit)) {
+        this.speedLimit = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.speedLimit);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.endId)) {
-        this.endId = (java.lang.CharSequence) data().deepCopy(fields()[7].schema(), other.endId);
+      if (isValidValue(fields()[7], other.detailLevel)) {
+        this.detailLevel = (java.lang.Integer) data().deepCopy(fields()[7].schema(), other.detailLevel);
         fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.beginId)) {
+        this.beginId = (java.lang.CharSequence) data().deepCopy(fields()[8].schema(), other.beginId);
+        fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.endId)) {
+        this.endId = (java.lang.CharSequence) data().deepCopy(fields()[9].schema(), other.endId);
+        fieldSetFlags()[9] = true;
       }
     }
 
@@ -410,6 +458,56 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /** Gets the value of the 'speedLimit' field */
+    public java.lang.Integer getSpeedLimit() {
+      return speedLimit;
+    }
+    
+    /** Sets the value of the 'speedLimit' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder setSpeedLimit(java.lang.Integer value) {
+      validate(fields()[6], value);
+      this.speedLimit = value;
+      fieldSetFlags()[6] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'speedLimit' field has been set */
+    public boolean hasSpeedLimit() {
+      return fieldSetFlags()[6];
+    }
+    
+    /** Clears the value of the 'speedLimit' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder clearSpeedLimit() {
+      speedLimit = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'detailLevel' field */
+    public java.lang.Integer getDetailLevel() {
+      return detailLevel;
+    }
+    
+    /** Sets the value of the 'detailLevel' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder setDetailLevel(java.lang.Integer value) {
+      validate(fields()[7], value);
+      this.detailLevel = value;
+      fieldSetFlags()[7] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'detailLevel' field has been set */
+    public boolean hasDetailLevel() {
+      return fieldSetFlags()[7];
+    }
+    
+    /** Clears the value of the 'detailLevel' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder clearDetailLevel() {
+      detailLevel = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
     /** Gets the value of the 'beginId' field */
     public java.lang.CharSequence getBeginId() {
       return beginId;
@@ -417,21 +515,21 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Sets the value of the 'beginId' field */
     public edu.berkeley.path.model_elements_base.Link.Builder setBeginId(java.lang.CharSequence value) {
-      validate(fields()[6], value);
+      validate(fields()[8], value);
       this.beginId = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'beginId' field has been set */
     public boolean hasBeginId() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'beginId' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearBeginId() {
       beginId = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -442,21 +540,21 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Sets the value of the 'endId' field */
     public edu.berkeley.path.model_elements_base.Link.Builder setEndId(java.lang.CharSequence value) {
-      validate(fields()[7], value);
+      validate(fields()[9], value);
       this.endId = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'endId' field has been set */
     public boolean hasEndId() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'endId' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearEndId() {
       endId = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -470,8 +568,10 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         record.laneCount = fieldSetFlags()[3] ? this.laneCount : (java.lang.Double) defaultValue(fields()[3]);
         record.length = fieldSetFlags()[4] ? this.length : (java.lang.Double) defaultValue(fields()[4]);
         record.laneOffset = fieldSetFlags()[5] ? this.laneOffset : (java.lang.Integer) defaultValue(fields()[5]);
-        record.beginId = fieldSetFlags()[6] ? this.beginId : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.endId = fieldSetFlags()[7] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[7]);
+        record.speedLimit = fieldSetFlags()[6] ? this.speedLimit : (java.lang.Integer) defaultValue(fields()[6]);
+        record.detailLevel = fieldSetFlags()[7] ? this.detailLevel : (java.lang.Integer) defaultValue(fields()[7]);
+        record.beginId = fieldSetFlags()[8] ? this.beginId : (java.lang.CharSequence) defaultValue(fields()[8]);
+        record.endId = fieldSetFlags()[9] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[9]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
