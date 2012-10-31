@@ -130,21 +130,56 @@ protocol CC {
     map<array<FD>> fd = {};
   }
   
-  /** Demands on each link as time series */
+  /**
+   * Demand time series at a link. The origin link ID is not stored
+   * in this record, but as the map key in the DemandSet.profile.
+   */
   record DemandProfile {
-    double dt = 300.0;
-    double startTime = 0.0;
-    // ### TODO knob etc
+    /**
+     * if null, this profile governs background flow, not OD flow.
+     */
+    union {null, string} destinationNetworkId;
+
+    /**
+     * in seconds; default is 0
+     */
+    union {null, double} startTime = 0.0;
     
-    /** origin id, may not be null */
-    string origin;
-
-    /** link id, may be null */
-    string destination = null;
-
-    /** map key is linkId, array is time series, as per dt and startTime. */
-    map<array<double>> demand = {};
-    // ### TODO vehicle type dimension
+    /**
+     * in seconds; default is 300 seconds
+     */
+    union {null, double} sampleRate = 300.0;
+    
+    /**
+     * demand scale factor
+     */
+    union {null, double} knob = 1.0;
+    
+    union {null, double} std_dev_add = 0.0;
+    
+    union {null, double} std_dev_mult = 1.0;
+    
+    /**
+     * time series of flows;
+     * map keys is vehTypeId;
+     * array index is index in time series ("DEMAND_ORDER" in db)
+     */
+    map<array<double>> flow;
+  }
+  
+  /**
+   * Specification of demand time series across one or more networks,
+   * for use in a scenario.
+   */
+  record DemandSet {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+    
+    /**
+     * map key is originLinkId
+     */
+    map<DemandProfile> profile;
   }
 
   /**
@@ -160,12 +195,12 @@ protocol CC {
     /**
      * in seconds; default is 0
      */
-    union {null, double} startTime;
+    union {null, double} startTime = 0.0;
     
     /**
      * in seconds; default is 300 seconds
      */
-    union {null, double} sampleRate;
+    union {null, double} sampleRate = 300.0;
     
     /**
      * time series of ratios;
@@ -213,7 +248,7 @@ protocol CC {
     DensityProfile initialDensityProfile = null;
     VelocityProfile initialVelocityProfile = null;
     FDProfile fdProfile = null;
-    DemandProfile demandProfile = null;
+    DemandSet demandSet = null;
     SplitRatioSet splitratioSet = null;
   }
   

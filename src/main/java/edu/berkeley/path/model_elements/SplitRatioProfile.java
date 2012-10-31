@@ -81,4 +81,15 @@ public class SplitRatioProfile extends edu.berkeley.path.model_elements_base.Spl
     
     vehTypeList.add(ratio);
   }
+
+  public Long getDestinationNetworkLongId() {
+    if (null != getDestinationNetworkId()) {
+      return Long.parseLong(getDestinationNetworkId().toString());
+    }
+    return null;
+  }
+  
+  public void setDestinationNetworkLongId(Long id) {
+    setDestinationNetworkId(id.toString());
+  }
 }

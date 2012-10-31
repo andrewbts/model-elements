@@ -5,25 +5,25 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** * Specification of split ratio time series across one or more networks,
+/** * Specification of demand time series across one or more networks,
    * for use in a scenario. */
-public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of split ratio time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key in the SplitRatioSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is nodeId\"}]}");
+public class DemandSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of demand time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"std_dev_add\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"std_dev_mult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
-  /** * map key is nodeId */
-  @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile;
+  /** * map key is originLinkId */
+  @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile;
 
   /**
    * Default constructor.
    */
-  public SplitRatioSet() {}
+  public DemandSet() {}
 
   /**
    * All-args constructor.
    */
-  public SplitRatioSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile) {
+  public DemandSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -48,7 +48,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
-    case 3: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>)value$; break;
+    case 3: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -100,58 +100,58 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'profile' field.
-   * * map key is nodeId   */
-  public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> getProfile() {
+   * * map key is originLinkId   */
+  public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> getProfile() {
     return profile;
   }
 
   /**
    * Sets the value of the 'profile' field.
-   * * map key is nodeId   * @param value the value to set.
+   * * map key is originLinkId   * @param value the value to set.
    */
-  public void setProfile(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> value) {
+  public void setProfile(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> value) {
     this.profile = value;
   }
 
-  /** Creates a new SplitRatioSet RecordBuilder */
-  public static edu.berkeley.path.model_elements_base.SplitRatioSet.Builder newBuilder() {
-    return new edu.berkeley.path.model_elements_base.SplitRatioSet.Builder();
+  /** Creates a new DemandSet RecordBuilder */
+  public static edu.berkeley.path.model_elements_base.DemandSet.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements_base.DemandSet.Builder();
   }
   
-  /** Creates a new SplitRatioSet RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.model_elements_base.SplitRatioSet.Builder newBuilder(edu.berkeley.path.model_elements_base.SplitRatioSet.Builder other) {
-    return new edu.berkeley.path.model_elements_base.SplitRatioSet.Builder(other);
+  /** Creates a new DemandSet RecordBuilder by copying an existing Builder */
+  public static edu.berkeley.path.model_elements_base.DemandSet.Builder newBuilder(edu.berkeley.path.model_elements_base.DemandSet.Builder other) {
+    return new edu.berkeley.path.model_elements_base.DemandSet.Builder(other);
   }
   
-  /** Creates a new SplitRatioSet RecordBuilder by copying an existing SplitRatioSet instance */
-  public static edu.berkeley.path.model_elements_base.SplitRatioSet.Builder newBuilder(edu.berkeley.path.model_elements_base.SplitRatioSet other) {
-    return new edu.berkeley.path.model_elements_base.SplitRatioSet.Builder(other);
+  /** Creates a new DemandSet RecordBuilder by copying an existing DemandSet instance */
+  public static edu.berkeley.path.model_elements_base.DemandSet.Builder newBuilder(edu.berkeley.path.model_elements_base.DemandSet other) {
+    return new edu.berkeley.path.model_elements_base.DemandSet.Builder(other);
   }
   
   /**
-   * RecordBuilder for SplitRatioSet instances.
+   * RecordBuilder for DemandSet instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<SplitRatioSet>
-    implements org.apache.avro.data.RecordBuilder<SplitRatioSet> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DemandSet>
+    implements org.apache.avro.data.RecordBuilder<DemandSet> {
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
-    private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile;
+    private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile;
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.model_elements_base.SplitRatioSet.SCHEMA$);
+      super(edu.berkeley.path.model_elements_base.DemandSet.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.model_elements_base.SplitRatioSet.Builder other) {
+    private Builder(edu.berkeley.path.model_elements_base.DemandSet.Builder other) {
       super(other);
     }
     
-    /** Creates a Builder by copying an existing SplitRatioSet instance */
-    private Builder(edu.berkeley.path.model_elements_base.SplitRatioSet other) {
-            super(edu.berkeley.path.model_elements_base.SplitRatioSet.SCHEMA$);
+    /** Creates a Builder by copying an existing DemandSet instance */
+    private Builder(edu.berkeley.path.model_elements_base.DemandSet other) {
+            super(edu.berkeley.path.model_elements_base.DemandSet.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -165,7 +165,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
         fieldSetFlags()[2] = true;
       }
       if (isValidValue(fields()[3], other.profile)) {
-        this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>) data().deepCopy(fields()[3].schema(), other.profile);
+        this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) data().deepCopy(fields()[3].schema(), other.profile);
         fieldSetFlags()[3] = true;
       }
     }
@@ -176,7 +176,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -189,7 +189,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder clearId() {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -201,7 +201,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Sets the value of the 'name' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder setName(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -214,7 +214,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Clears the value of the 'name' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder clearName() {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -226,7 +226,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Sets the value of the 'description' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder setDescription(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder setDescription(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.description = value;
       fieldSetFlags()[2] = true;
@@ -239,19 +239,19 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Clears the value of the 'description' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder clearDescription() {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder clearDescription() {
       description = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
     /** Gets the value of the 'profile' field */
-    public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> getProfile() {
+    public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> getProfile() {
       return profile;
     }
     
     /** Sets the value of the 'profile' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder setProfile(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> value) {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder setProfile(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> value) {
       validate(fields()[3], value);
       this.profile = value;
       fieldSetFlags()[3] = true;
@@ -264,20 +264,20 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Clears the value of the 'profile' field */
-    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder clearProfile() {
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder clearProfile() {
       profile = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
     @Override
-    public SplitRatioSet build() {
+    public DemandSet build() {
       try {
-        SplitRatioSet record = new SplitRatioSet();
+        DemandSet record = new DemandSet();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.profile = fieldSetFlags()[3] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>) defaultValue(fields()[3]);
+        record.profile = fieldSetFlags()[3] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
