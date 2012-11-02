@@ -5,17 +5,18 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** Fundamental diagram on one link at one time */
+/** * Fundamental diagram parameters on one link at one time. */
 public class FD extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FD\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FD\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}");
   @Deprecated public double freeFlowSpeed;
-  @Deprecated public double freeFlowSpeedStdev;
+  @Deprecated public double criticalSpeed;
   @Deprecated public double congestionWaveSpeed;
-  @Deprecated public double congestionWaveSpeedStdev;
   @Deprecated public double capacity;
-  @Deprecated public double capacityStdev;
   @Deprecated public double jamDensity;
   @Deprecated public double capacityDrop;
+  @Deprecated public double freeFlowSpeedStd;
+  @Deprecated public double congestionWaveSpeedStd;
+  @Deprecated public double capacityStd;
 
   /**
    * Default constructor.
@@ -25,15 +26,16 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   /**
    * All-args constructor.
    */
-  public FD(java.lang.Double freeFlowSpeed, java.lang.Double freeFlowSpeedStdev, java.lang.Double congestionWaveSpeed, java.lang.Double congestionWaveSpeedStdev, java.lang.Double capacity, java.lang.Double capacityStdev, java.lang.Double jamDensity, java.lang.Double capacityDrop) {
+  public FD(java.lang.Double freeFlowSpeed, java.lang.Double criticalSpeed, java.lang.Double congestionWaveSpeed, java.lang.Double capacity, java.lang.Double jamDensity, java.lang.Double capacityDrop, java.lang.Double freeFlowSpeedStd, java.lang.Double congestionWaveSpeedStd, java.lang.Double capacityStd) {
     this.freeFlowSpeed = freeFlowSpeed;
-    this.freeFlowSpeedStdev = freeFlowSpeedStdev;
+    this.criticalSpeed = criticalSpeed;
     this.congestionWaveSpeed = congestionWaveSpeed;
-    this.congestionWaveSpeedStdev = congestionWaveSpeedStdev;
     this.capacity = capacity;
-    this.capacityStdev = capacityStdev;
     this.jamDensity = jamDensity;
     this.capacityDrop = capacityDrop;
+    this.freeFlowSpeedStd = freeFlowSpeedStd;
+    this.congestionWaveSpeedStd = congestionWaveSpeedStd;
+    this.capacityStd = capacityStd;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -41,13 +43,14 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return freeFlowSpeed;
-    case 1: return freeFlowSpeedStdev;
+    case 1: return criticalSpeed;
     case 2: return congestionWaveSpeed;
-    case 3: return congestionWaveSpeedStdev;
-    case 4: return capacity;
-    case 5: return capacityStdev;
-    case 6: return jamDensity;
-    case 7: return capacityDrop;
+    case 3: return capacity;
+    case 4: return jamDensity;
+    case 5: return capacityDrop;
+    case 6: return freeFlowSpeedStd;
+    case 7: return congestionWaveSpeedStd;
+    case 8: return capacityStd;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -56,13 +59,14 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: freeFlowSpeed = (java.lang.Double)value$; break;
-    case 1: freeFlowSpeedStdev = (java.lang.Double)value$; break;
+    case 1: criticalSpeed = (java.lang.Double)value$; break;
     case 2: congestionWaveSpeed = (java.lang.Double)value$; break;
-    case 3: congestionWaveSpeedStdev = (java.lang.Double)value$; break;
-    case 4: capacity = (java.lang.Double)value$; break;
-    case 5: capacityStdev = (java.lang.Double)value$; break;
-    case 6: jamDensity = (java.lang.Double)value$; break;
-    case 7: capacityDrop = (java.lang.Double)value$; break;
+    case 3: capacity = (java.lang.Double)value$; break;
+    case 4: jamDensity = (java.lang.Double)value$; break;
+    case 5: capacityDrop = (java.lang.Double)value$; break;
+    case 6: freeFlowSpeedStd = (java.lang.Double)value$; break;
+    case 7: congestionWaveSpeedStd = (java.lang.Double)value$; break;
+    case 8: capacityStd = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -83,18 +87,18 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   }
 
   /**
-   * Gets the value of the 'freeFlowSpeedStdev' field.
+   * Gets the value of the 'criticalSpeed' field.
    */
-  public java.lang.Double getFreeFlowSpeedStdev() {
-    return freeFlowSpeedStdev;
+  public java.lang.Double getCriticalSpeed() {
+    return criticalSpeed;
   }
 
   /**
-   * Sets the value of the 'freeFlowSpeedStdev' field.
+   * Sets the value of the 'criticalSpeed' field.
    * @param value the value to set.
    */
-  public void setFreeFlowSpeedStdev(java.lang.Double value) {
-    this.freeFlowSpeedStdev = value;
+  public void setCriticalSpeed(java.lang.Double value) {
+    this.criticalSpeed = value;
   }
 
   /**
@@ -113,21 +117,6 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   }
 
   /**
-   * Gets the value of the 'congestionWaveSpeedStdev' field.
-   */
-  public java.lang.Double getCongestionWaveSpeedStdev() {
-    return congestionWaveSpeedStdev;
-  }
-
-  /**
-   * Sets the value of the 'congestionWaveSpeedStdev' field.
-   * @param value the value to set.
-   */
-  public void setCongestionWaveSpeedStdev(java.lang.Double value) {
-    this.congestionWaveSpeedStdev = value;
-  }
-
-  /**
    * Gets the value of the 'capacity' field.
    */
   public java.lang.Double getCapacity() {
@@ -140,21 +129,6 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
    */
   public void setCapacity(java.lang.Double value) {
     this.capacity = value;
-  }
-
-  /**
-   * Gets the value of the 'capacityStdev' field.
-   */
-  public java.lang.Double getCapacityStdev() {
-    return capacityStdev;
-  }
-
-  /**
-   * Sets the value of the 'capacityStdev' field.
-   * @param value the value to set.
-   */
-  public void setCapacityStdev(java.lang.Double value) {
-    this.capacityStdev = value;
   }
 
   /**
@@ -187,6 +161,51 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     this.capacityDrop = value;
   }
 
+  /**
+   * Gets the value of the 'freeFlowSpeedStd' field.
+   */
+  public java.lang.Double getFreeFlowSpeedStd() {
+    return freeFlowSpeedStd;
+  }
+
+  /**
+   * Sets the value of the 'freeFlowSpeedStd' field.
+   * @param value the value to set.
+   */
+  public void setFreeFlowSpeedStd(java.lang.Double value) {
+    this.freeFlowSpeedStd = value;
+  }
+
+  /**
+   * Gets the value of the 'congestionWaveSpeedStd' field.
+   */
+  public java.lang.Double getCongestionWaveSpeedStd() {
+    return congestionWaveSpeedStd;
+  }
+
+  /**
+   * Sets the value of the 'congestionWaveSpeedStd' field.
+   * @param value the value to set.
+   */
+  public void setCongestionWaveSpeedStd(java.lang.Double value) {
+    this.congestionWaveSpeedStd = value;
+  }
+
+  /**
+   * Gets the value of the 'capacityStd' field.
+   */
+  public java.lang.Double getCapacityStd() {
+    return capacityStd;
+  }
+
+  /**
+   * Sets the value of the 'capacityStd' field.
+   * @param value the value to set.
+   */
+  public void setCapacityStd(java.lang.Double value) {
+    this.capacityStd = value;
+  }
+
   /** Creates a new FD RecordBuilder */
   public static edu.berkeley.path.model_elements_base.FD.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.FD.Builder();
@@ -209,13 +228,14 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     implements org.apache.avro.data.RecordBuilder<FD> {
 
     private double freeFlowSpeed;
-    private double freeFlowSpeedStdev;
+    private double criticalSpeed;
     private double congestionWaveSpeed;
-    private double congestionWaveSpeedStdev;
     private double capacity;
-    private double capacityStdev;
     private double jamDensity;
     private double capacityDrop;
+    private double freeFlowSpeedStd;
+    private double congestionWaveSpeedStd;
+    private double capacityStd;
 
     /** Creates a new Builder */
     private Builder() {
@@ -234,33 +254,37 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
         this.freeFlowSpeed = (java.lang.Double) data().deepCopy(fields()[0].schema(), other.freeFlowSpeed);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.freeFlowSpeedStdev)) {
-        this.freeFlowSpeedStdev = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.freeFlowSpeedStdev);
+      if (isValidValue(fields()[1], other.criticalSpeed)) {
+        this.criticalSpeed = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.criticalSpeed);
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.congestionWaveSpeed)) {
         this.congestionWaveSpeed = (java.lang.Double) data().deepCopy(fields()[2].schema(), other.congestionWaveSpeed);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.congestionWaveSpeedStdev)) {
-        this.congestionWaveSpeedStdev = (java.lang.Double) data().deepCopy(fields()[3].schema(), other.congestionWaveSpeedStdev);
+      if (isValidValue(fields()[3], other.capacity)) {
+        this.capacity = (java.lang.Double) data().deepCopy(fields()[3].schema(), other.capacity);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.capacity)) {
-        this.capacity = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.capacity);
+      if (isValidValue(fields()[4], other.jamDensity)) {
+        this.jamDensity = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.jamDensity);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.capacityStdev)) {
-        this.capacityStdev = (java.lang.Double) data().deepCopy(fields()[5].schema(), other.capacityStdev);
+      if (isValidValue(fields()[5], other.capacityDrop)) {
+        this.capacityDrop = (java.lang.Double) data().deepCopy(fields()[5].schema(), other.capacityDrop);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.jamDensity)) {
-        this.jamDensity = (java.lang.Double) data().deepCopy(fields()[6].schema(), other.jamDensity);
+      if (isValidValue(fields()[6], other.freeFlowSpeedStd)) {
+        this.freeFlowSpeedStd = (java.lang.Double) data().deepCopy(fields()[6].schema(), other.freeFlowSpeedStd);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.capacityDrop)) {
-        this.capacityDrop = (java.lang.Double) data().deepCopy(fields()[7].schema(), other.capacityDrop);
+      if (isValidValue(fields()[7], other.congestionWaveSpeedStd)) {
+        this.congestionWaveSpeedStd = (java.lang.Double) data().deepCopy(fields()[7].schema(), other.congestionWaveSpeedStd);
         fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.capacityStd)) {
+        this.capacityStd = (java.lang.Double) data().deepCopy(fields()[8].schema(), other.capacityStd);
+        fieldSetFlags()[8] = true;
       }
     }
 
@@ -288,26 +312,26 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
       return this;
     }
 
-    /** Gets the value of the 'freeFlowSpeedStdev' field */
-    public java.lang.Double getFreeFlowSpeedStdev() {
-      return freeFlowSpeedStdev;
+    /** Gets the value of the 'criticalSpeed' field */
+    public java.lang.Double getCriticalSpeed() {
+      return criticalSpeed;
     }
     
-    /** Sets the value of the 'freeFlowSpeedStdev' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setFreeFlowSpeedStdev(double value) {
+    /** Sets the value of the 'criticalSpeed' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder setCriticalSpeed(double value) {
       validate(fields()[1], value);
-      this.freeFlowSpeedStdev = value;
+      this.criticalSpeed = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'freeFlowSpeedStdev' field has been set */
-    public boolean hasFreeFlowSpeedStdev() {
+    /** Checks whether the 'criticalSpeed' field has been set */
+    public boolean hasCriticalSpeed() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'freeFlowSpeedStdev' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder clearFreeFlowSpeedStdev() {
+    /** Clears the value of the 'criticalSpeed' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder clearCriticalSpeed() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -336,30 +360,6 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
       return this;
     }
 
-    /** Gets the value of the 'congestionWaveSpeedStdev' field */
-    public java.lang.Double getCongestionWaveSpeedStdev() {
-      return congestionWaveSpeedStdev;
-    }
-    
-    /** Sets the value of the 'congestionWaveSpeedStdev' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCongestionWaveSpeedStdev(double value) {
-      validate(fields()[3], value);
-      this.congestionWaveSpeedStdev = value;
-      fieldSetFlags()[3] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'congestionWaveSpeedStdev' field has been set */
-    public boolean hasCongestionWaveSpeedStdev() {
-      return fieldSetFlags()[3];
-    }
-    
-    /** Clears the value of the 'congestionWaveSpeedStdev' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder clearCongestionWaveSpeedStdev() {
-      fieldSetFlags()[3] = false;
-      return this;
-    }
-
     /** Gets the value of the 'capacity' field */
     public java.lang.Double getCapacity() {
       return capacity;
@@ -367,44 +367,20 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Sets the value of the 'capacity' field */
     public edu.berkeley.path.model_elements_base.FD.Builder setCapacity(double value) {
-      validate(fields()[4], value);
+      validate(fields()[3], value);
       this.capacity = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'capacity' field has been set */
     public boolean hasCapacity() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'capacity' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCapacity() {
-      fieldSetFlags()[4] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'capacityStdev' field */
-    public java.lang.Double getCapacityStdev() {
-      return capacityStdev;
-    }
-    
-    /** Sets the value of the 'capacityStdev' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCapacityStdev(double value) {
-      validate(fields()[5], value);
-      this.capacityStdev = value;
-      fieldSetFlags()[5] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'capacityStdev' field has been set */
-    public boolean hasCapacityStdev() {
-      return fieldSetFlags()[5];
-    }
-    
-    /** Clears the value of the 'capacityStdev' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder clearCapacityStdev() {
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -415,20 +391,20 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Sets the value of the 'jamDensity' field */
     public edu.berkeley.path.model_elements_base.FD.Builder setJamDensity(double value) {
-      validate(fields()[6], value);
+      validate(fields()[4], value);
       this.jamDensity = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'jamDensity' field has been set */
     public boolean hasJamDensity() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'jamDensity' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearJamDensity() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -439,20 +415,92 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Sets the value of the 'capacityDrop' field */
     public edu.berkeley.path.model_elements_base.FD.Builder setCapacityDrop(double value) {
-      validate(fields()[7], value);
+      validate(fields()[5], value);
       this.capacityDrop = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[5] = true;
       return this; 
     }
     
     /** Checks whether the 'capacityDrop' field has been set */
     public boolean hasCapacityDrop() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[5];
     }
     
     /** Clears the value of the 'capacityDrop' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCapacityDrop() {
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'freeFlowSpeedStd' field */
+    public java.lang.Double getFreeFlowSpeedStd() {
+      return freeFlowSpeedStd;
+    }
+    
+    /** Sets the value of the 'freeFlowSpeedStd' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder setFreeFlowSpeedStd(double value) {
+      validate(fields()[6], value);
+      this.freeFlowSpeedStd = value;
+      fieldSetFlags()[6] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'freeFlowSpeedStd' field has been set */
+    public boolean hasFreeFlowSpeedStd() {
+      return fieldSetFlags()[6];
+    }
+    
+    /** Clears the value of the 'freeFlowSpeedStd' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder clearFreeFlowSpeedStd() {
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'congestionWaveSpeedStd' field */
+    public java.lang.Double getCongestionWaveSpeedStd() {
+      return congestionWaveSpeedStd;
+    }
+    
+    /** Sets the value of the 'congestionWaveSpeedStd' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder setCongestionWaveSpeedStd(double value) {
+      validate(fields()[7], value);
+      this.congestionWaveSpeedStd = value;
+      fieldSetFlags()[7] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'congestionWaveSpeedStd' field has been set */
+    public boolean hasCongestionWaveSpeedStd() {
+      return fieldSetFlags()[7];
+    }
+    
+    /** Clears the value of the 'congestionWaveSpeedStd' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder clearCongestionWaveSpeedStd() {
       fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'capacityStd' field */
+    public java.lang.Double getCapacityStd() {
+      return capacityStd;
+    }
+    
+    /** Sets the value of the 'capacityStd' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder setCapacityStd(double value) {
+      validate(fields()[8], value);
+      this.capacityStd = value;
+      fieldSetFlags()[8] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'capacityStd' field has been set */
+    public boolean hasCapacityStd() {
+      return fieldSetFlags()[8];
+    }
+    
+    /** Clears the value of the 'capacityStd' field */
+    public edu.berkeley.path.model_elements_base.FD.Builder clearCapacityStd() {
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -461,13 +509,14 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
       try {
         FD record = new FD();
         record.freeFlowSpeed = fieldSetFlags()[0] ? this.freeFlowSpeed : (java.lang.Double) defaultValue(fields()[0]);
-        record.freeFlowSpeedStdev = fieldSetFlags()[1] ? this.freeFlowSpeedStdev : (java.lang.Double) defaultValue(fields()[1]);
+        record.criticalSpeed = fieldSetFlags()[1] ? this.criticalSpeed : (java.lang.Double) defaultValue(fields()[1]);
         record.congestionWaveSpeed = fieldSetFlags()[2] ? this.congestionWaveSpeed : (java.lang.Double) defaultValue(fields()[2]);
-        record.congestionWaveSpeedStdev = fieldSetFlags()[3] ? this.congestionWaveSpeedStdev : (java.lang.Double) defaultValue(fields()[3]);
-        record.capacity = fieldSetFlags()[4] ? this.capacity : (java.lang.Double) defaultValue(fields()[4]);
-        record.capacityStdev = fieldSetFlags()[5] ? this.capacityStdev : (java.lang.Double) defaultValue(fields()[5]);
-        record.jamDensity = fieldSetFlags()[6] ? this.jamDensity : (java.lang.Double) defaultValue(fields()[6]);
-        record.capacityDrop = fieldSetFlags()[7] ? this.capacityDrop : (java.lang.Double) defaultValue(fields()[7]);
+        record.capacity = fieldSetFlags()[3] ? this.capacity : (java.lang.Double) defaultValue(fields()[3]);
+        record.jamDensity = fieldSetFlags()[4] ? this.jamDensity : (java.lang.Double) defaultValue(fields()[4]);
+        record.capacityDrop = fieldSetFlags()[5] ? this.capacityDrop : (java.lang.Double) defaultValue(fields()[5]);
+        record.freeFlowSpeedStd = fieldSetFlags()[6] ? this.freeFlowSpeedStd : (java.lang.Double) defaultValue(fields()[6]);
+        record.congestionWaveSpeedStd = fieldSetFlags()[7] ? this.congestionWaveSpeedStd : (java.lang.Double) defaultValue(fields()[7]);
+        record.capacityStd = fieldSetFlags()[8] ? this.capacityStd : (java.lang.Double) defaultValue(fields()[8]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

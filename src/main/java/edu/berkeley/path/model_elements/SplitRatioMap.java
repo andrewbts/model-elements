@@ -28,52 +28,5 @@ package edu.berkeley.path.model_elements;
 
 import java.util.*;
 
-public class DemandProfile extends edu.berkeley.path.model_elements_base.DemandProfile {
-  public void addFlowAt(Long vehTypeID, Double flow) {
-    addFlowAt(vehTypeID.toString(), flow);
-  }
-  
-  public void addFlowAt(String vehTypeID, Double flow) {
-    Map<CharSequence,List<Double>>
-      flowMap = getFlow();
-    
-    if (flowMap == null) {
-      flowMap = new HashMap<CharSequence,List<Double>>();
-      setFlow(flowMap);
-    }
-    
-    addFlowToMapAt(flowMap, vehTypeID, flow);
-  }
-
-  public static void addFlowToMapAt(
-      Map<CharSequence,List<Double>> flowMap,
-      Long vehTypeID, Double flow) {
-    addFlowToMapAt(flowMap, vehTypeID.toString(), flow);
-  }
-  
-  public static void addFlowToMapAt(
-      Map<CharSequence,List<Double>> flowMap,
-      String vehTypeID, Double flow) {
-    
-    List<Double> vehTypeList =
-      flowMap.get(vehTypeID);
-    
-    if (vehTypeList == null) {
-      vehTypeList = new ArrayList<Double>();
-      flowMap.put(vehTypeID, vehTypeList);
-    }
-    
-    vehTypeList.add(flow);
-  }
-
-  public Long getDestinationNetworkLongId() {
-    if (null != getDestinationNetworkId()) {
-      return Long.parseLong(getDestinationNetworkId().toString());
-    }
-    return null;
-  }
-  
-  public void setDestinationNetworkLongId(Long id) {
-    setDestinationNetworkId(id.toString());
-  }
+public class SplitRatioMap extends edu.berkeley.path.model_elements_base.SplitRatioMap {
 }

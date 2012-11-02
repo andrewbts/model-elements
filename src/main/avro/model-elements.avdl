@@ -88,7 +88,7 @@ protocol CC {
   }
   
   /** Density on each link at a point in time */
-  record DensityProfile {
+  record DensityProfile { // ### this should be called "Map"
     string id;
     
     /** map key is linkId */
@@ -96,55 +96,159 @@ protocol CC {
   }
   
   /** Velocity on each link at a point in time */
-  record VelocityProfile {
+  record VelocityProfile { // ### this should be called "Map"
     string id;
     
     /** map key is linkId */
     map<double> metersPerSecond = {};
   }
   
-  /** Fundamental diagram on one link at one time */
+  /**
+   * Referenced by FDSet to indicate the way the contained FDs should
+   * be interpreted.
+   */
+  record FDType {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+  }
+  
+  /**
+   * Fundamental diagram parameters on one link at one time.
+   */
   record FD {
-    // ### TODO units?
-    // ### TODO reconcile with DB
-    
-    double  freeFlowSpeed;
-    double  freeFlowSpeedStdev;
-    double  congestionWaveSpeed;
-    double  congestionWaveSpeedStdev;
-    double  capacity;
-    double  capacityStdev;
-    double  jamDensity;
-    double  capacityDrop;
+    double freeFlowSpeed;
+    double criticalSpeed;
+    double congestionWaveSpeed;
+    double capacity;
+    double jamDensity;
+    double capacityDrop;
+    double freeFlowSpeedStd;
+    double congestionWaveSpeedStd;
+    double capacityStd;
   }
   
-  /** Fundamental diagrams on each link as time series */
+  /**
+   * FD time series at a link. The link ID is not stored
+   * in this record, but as the map key in the FDSet.profile.
+   */
   record FDProfile {
-    double dt = 300.0;
-    double startTime = 0.0;
+    /**
+     * in seconds; default is 0
+     */
+    union {null, double} startTime = 0.0;
     
-    // ### TODO type
-    // ### TODO noise
-  
-    /** map key is linkId, array is time series, as per dt and startTime. */
-    map<array<FD>> fd = {};
+    /**
+     * in seconds; default is 300 seconds
+     */
+    union {null, double} sampleRate = 300.0;
+
+    /**
+     * time series of FDs;
+     * array index is index in time series ("DIAG_ORDER" in db)
+     */
+    array<FD> fd;
+  }
+
+  /**
+   * Specification of Fundamental diagram time series across one or more
+   * networks, for use in a scenario.
+   */
+  record FDSet {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+    
+    FDType type;
+    
+    /**
+     * map key is linkId
+     */
+    map<FDProfile> profile;
   }
   
-  /** Demands on each link as time series */
+  /**
+   * Used to feed a per-timestep "drip" input to freeway model.
+   * This is sliced off of FDSet at a given time.
+   *
+   * Not part of Scenario; can be used interchangeably for
+   * real-time input or for sliced up profiles from a scenario.
+   */
+  record FDMap {
+    /**
+     * map of FDs at a given time;
+     * map key is linkId
+     */
+    map<FD> fd;
+  }
+
+  /**
+   * Demand time series at a link. The origin link ID is not stored
+   * in this record, but as the map key in the DemandSet.profile.
+   */
   record DemandProfile {
-    double dt = 300.0;
-    double startTime = 0.0;
-    // ### TODO knob etc
+    /**
+     * if null, this profile governs background flow, not OD flow.
+     */
+    union {null, string} destinationNetworkId;
+
+    /**
+     * in seconds; default is 0
+     */
+    union {null, double} startTime = 0.0;
     
-    /** origin id, may not be null */
-    string origin;
-
-    /** link id, may be null */
-    string destination = null;
-
-    /** map key is linkId, array is time series, as per dt and startTime. */
-    map<array<double>> demand = {};
-    // ### TODO vehicle type dimension
+    /**
+     * in seconds; default is 300 seconds
+     */
+    union {null, double} sampleRate = 300.0;
+    
+    /**
+     * demand scale factor
+     */
+    union {null, double} knob = 1.0;
+    
+    union {null, double} stdDevAdd = 0.0;
+    
+    union {null, double} stdDevMult = 1.0;
+    
+    /**
+     * time series of flows;
+     * map keys is vehTypeId;
+     * array index is index in time series ("DEMAND_ORDER" in db)
+     */
+    map<array<double>> flow;
+  }
+  
+  /**
+   * Specification of demand time series across one or more networks,
+   * for use in a scenario.
+   */
+  record DemandSet {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+    
+    /**
+     * map key is originLinkId
+     */
+    map<DemandProfile> profile;
+  }
+  
+  /**
+   * Used to feed a per-timestep "drip" input to freeway model.
+   * This is sliced off of DemandSet at a given time.
+   *
+   * Not part of Scenario; can be used interchangeably for 
+   * real-time input or for sliced up profiles from a scenario.
+   */
+  record DemandMap {
+    /**
+     * map of flows at a given time;
+     * map keys are: originLinkId, vehTypeId;
+     */
+    map<map<double>> flow;
+    
+    // ## does this need destinationNetworkId as another map key?
   }
 
   /**
@@ -160,12 +264,12 @@ protocol CC {
     /**
      * in seconds; default is 0
      */
-    union {null, double} startTime;
+    union {null, double} startTime = 0.0;
     
     /**
      * in seconds; default is 300 seconds
      */
-    union {null, double} sampleRate;
+    union {null, double} sampleRate = 300.0;
     
     /**
      * time series of ratios;
@@ -188,6 +292,23 @@ protocol CC {
      * map key is nodeId
      */
     map<SplitRatioProfile> profile;
+  }
+  
+  /**
+   * Used to feed a per-timestep "drip" input to freeway model.
+   * This is sliced off of SplitRatioSet at a given time.
+   *
+   * Not part of Scenario; can be used interchangeably for 
+   * real-time input or for sliced up profiles from a scenario.
+   */
+  record SplitRatioMap {
+    /**
+     * map of ratios at a given time;
+     * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;
+     */
+    map<map<map<map<double>>>> ratio;
+    
+    // ## does this need destinationNetworkId as another map key?
   }
   
   // ### TODO Controllers
@@ -213,7 +334,7 @@ protocol CC {
     DensityProfile initialDensityProfile = null;
     VelocityProfile initialVelocityProfile = null;
     FDProfile fdProfile = null;
-    DemandProfile demandProfile = null;
+    DemandSet demandSet = null;
     SplitRatioSet splitratioSet = null;
   }
   

@@ -28,52 +28,44 @@ package edu.berkeley.path.model_elements;
 
 import java.util.*;
 
-public class DemandProfile extends edu.berkeley.path.model_elements_base.DemandProfile {
-  public void addFlowAt(Long vehTypeID, Double flow) {
-    addFlowAt(vehTypeID.toString(), flow);
-  }
-  
-  public void addFlowAt(String vehTypeID, Double flow) {
-    Map<CharSequence,List<Double>>
-      flowMap = getFlow();
-    
-    if (flowMap == null) {
-      flowMap = new HashMap<CharSequence,List<Double>>();
-      setFlow(flowMap);
+public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
+  /**
+   * Get the profile at the specified node.
+   * Creates the map if it doesn't exist, returns null if the profile doesn't exist.
+   */
+  public DemandProfile getDemandProfileAt(Node node) {
+    if (null == getProfile()) {
+      setProfile(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>());
     }
     
-    addFlowToMapAt(flowMap, vehTypeID, flow);
+    return (DemandProfile)getProfile().get(node.getId());
   }
 
-  public static void addFlowToMapAt(
-      Map<CharSequence,List<Double>> flowMap,
-      Long vehTypeID, Double flow) {
-    addFlowToMapAt(flowMap, vehTypeID.toString(), flow);
-  }
+  // TODO find a better way to expose Map<> access.
   
-  public static void addFlowToMapAt(
-      Map<CharSequence,List<Double>> flowMap,
-      String vehTypeID, Double flow) {
-    
-    List<Double> vehTypeList =
-      flowMap.get(vehTypeID);
-    
-    if (vehTypeList == null) {
-      vehTypeList = new ArrayList<Double>();
-      flowMap.put(vehTypeID, vehTypeList);
-    }
-    
-    vehTypeList.add(flow);
+  /**
+   * Set the profile map. Same as setProfiles(), but works with a map of String to DemandProfile.
+   */
+  public void setProfileMap(Map<String,DemandProfile> value) {
+    setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)(Map<?,?>)value);
   }
 
-  public Long getDestinationNetworkLongId() {
-    if (null != getDestinationNetworkId()) {
-      return Long.parseLong(getDestinationNetworkId().toString());
+  /**
+   * Get the profile map. Same as getProfiles(), but works with a map of DemandProfile.
+   * Never returns null (creates the map if it doesn't exist).
+   */
+  public Map<String,DemandProfile> getProfileMap() {
+    if (null == getProfile()) {
+      setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>());
     }
-    return null;
+    return (Map<String,DemandProfile>)(Map<?,?>)getProfile();
   }
   
-  public void setDestinationNetworkLongId(Long id) {
-    setDestinationNetworkId(id.toString());
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
+  }
+  
+  public void setId(Long id) {
+    setId(id.toString());
   }
 }

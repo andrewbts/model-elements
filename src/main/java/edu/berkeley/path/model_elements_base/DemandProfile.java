@@ -5,17 +5,24 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** Demands on each link as time series */
+/** * Demand time series at a link. The origin link ID is not stored
+   * in this record, but as the map key in the DemandSet.profile. */
 public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Demands on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"origin\",\"type\":\"string\",\"doc\":\"origin id, may not be null\"},{\"name\":\"destination\",\"type\":\"string\",\"doc\":\"link id, may be null\",\"default\":null},{\"name\":\"demand\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}");
-  @Deprecated public double dt;
-  @Deprecated public double startTime;
-  /** origin id, may not be null */
-  @Deprecated public java.lang.CharSequence origin;
-  /** link id, may be null */
-  @Deprecated public java.lang.CharSequence destination;
-  /** map key is linkId, array is time series, as per dt and startTime. */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}");
+  /** * if null, this profile governs background flow, not OD flow. */
+  @Deprecated public java.lang.CharSequence destinationNetworkId;
+  /** * in seconds; default is 0 */
+  @Deprecated public java.lang.Double startTime;
+  /** * in seconds; default is 300 seconds */
+  @Deprecated public java.lang.Double sampleRate;
+  /** * demand scale factor */
+  @Deprecated public java.lang.Double knob;
+  @Deprecated public java.lang.Double stdDevAdd;
+  @Deprecated public java.lang.Double stdDevMult;
+  /** * time series of flows;
+     * map keys is vehTypeId;
+     * array index is index in time series ("DEMAND_ORDER" in db) */
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> flow;
 
   /**
    * Default constructor.
@@ -25,23 +32,27 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
   /**
    * All-args constructor.
    */
-  public DemandProfile(java.lang.Double dt, java.lang.Double startTime, java.lang.CharSequence origin, java.lang.CharSequence destination, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand) {
-    this.dt = dt;
+  public DemandProfile(java.lang.CharSequence destinationNetworkId, java.lang.Double startTime, java.lang.Double sampleRate, java.lang.Double knob, java.lang.Double stdDevAdd, java.lang.Double stdDevMult, java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> flow) {
+    this.destinationNetworkId = destinationNetworkId;
     this.startTime = startTime;
-    this.origin = origin;
-    this.destination = destination;
-    this.demand = demand;
+    this.sampleRate = sampleRate;
+    this.knob = knob;
+    this.stdDevAdd = stdDevAdd;
+    this.stdDevMult = stdDevMult;
+    this.flow = flow;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return dt;
+    case 0: return destinationNetworkId;
     case 1: return startTime;
-    case 2: return origin;
-    case 3: return destination;
-    case 4: return demand;
+    case 2: return sampleRate;
+    case 3: return knob;
+    case 4: return stdDevAdd;
+    case 5: return stdDevMult;
+    case 6: return flow;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -49,88 +60,124 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: dt = (java.lang.Double)value$; break;
+    case 0: destinationNetworkId = (java.lang.CharSequence)value$; break;
     case 1: startTime = (java.lang.Double)value$; break;
-    case 2: origin = (java.lang.CharSequence)value$; break;
-    case 3: destination = (java.lang.CharSequence)value$; break;
-    case 4: demand = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>)value$; break;
+    case 2: sampleRate = (java.lang.Double)value$; break;
+    case 3: knob = (java.lang.Double)value$; break;
+    case 4: stdDevAdd = (java.lang.Double)value$; break;
+    case 5: stdDevMult = (java.lang.Double)value$; break;
+    case 6: flow = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'dt' field.
-   */
-  public java.lang.Double getDt() {
-    return dt;
+   * Gets the value of the 'destinationNetworkId' field.
+   * * if null, this profile governs background flow, not OD flow.   */
+  public java.lang.CharSequence getDestinationNetworkId() {
+    return destinationNetworkId;
   }
 
   /**
-   * Sets the value of the 'dt' field.
-   * @param value the value to set.
+   * Sets the value of the 'destinationNetworkId' field.
+   * * if null, this profile governs background flow, not OD flow.   * @param value the value to set.
    */
-  public void setDt(java.lang.Double value) {
-    this.dt = value;
+  public void setDestinationNetworkId(java.lang.CharSequence value) {
+    this.destinationNetworkId = value;
   }
 
   /**
    * Gets the value of the 'startTime' field.
-   */
+   * * in seconds; default is 0   */
   public java.lang.Double getStartTime() {
     return startTime;
   }
 
   /**
    * Sets the value of the 'startTime' field.
-   * @param value the value to set.
+   * * in seconds; default is 0   * @param value the value to set.
    */
   public void setStartTime(java.lang.Double value) {
     this.startTime = value;
   }
 
   /**
-   * Gets the value of the 'origin' field.
-   * origin id, may not be null   */
-  public java.lang.CharSequence getOrigin() {
-    return origin;
+   * Gets the value of the 'sampleRate' field.
+   * * in seconds; default is 300 seconds   */
+  public java.lang.Double getSampleRate() {
+    return sampleRate;
   }
 
   /**
-   * Sets the value of the 'origin' field.
-   * origin id, may not be null   * @param value the value to set.
+   * Sets the value of the 'sampleRate' field.
+   * * in seconds; default is 300 seconds   * @param value the value to set.
    */
-  public void setOrigin(java.lang.CharSequence value) {
-    this.origin = value;
+  public void setSampleRate(java.lang.Double value) {
+    this.sampleRate = value;
   }
 
   /**
-   * Gets the value of the 'destination' field.
-   * link id, may be null   */
-  public java.lang.CharSequence getDestination() {
-    return destination;
+   * Gets the value of the 'knob' field.
+   * * demand scale factor   */
+  public java.lang.Double getKnob() {
+    return knob;
   }
 
   /**
-   * Sets the value of the 'destination' field.
-   * link id, may be null   * @param value the value to set.
+   * Sets the value of the 'knob' field.
+   * * demand scale factor   * @param value the value to set.
    */
-  public void setDestination(java.lang.CharSequence value) {
-    this.destination = value;
+  public void setKnob(java.lang.Double value) {
+    this.knob = value;
   }
 
   /**
-   * Gets the value of the 'demand' field.
-   * map key is linkId, array is time series, as per dt and startTime.   */
-  public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getDemand() {
-    return demand;
-  }
-
-  /**
-   * Sets the value of the 'demand' field.
-   * map key is linkId, array is time series, as per dt and startTime.   * @param value the value to set.
+   * Gets the value of the 'stdDevAdd' field.
    */
-  public void setDemand(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
-    this.demand = value;
+  public java.lang.Double getStdDevAdd() {
+    return stdDevAdd;
+  }
+
+  /**
+   * Sets the value of the 'stdDevAdd' field.
+   * @param value the value to set.
+   */
+  public void setStdDevAdd(java.lang.Double value) {
+    this.stdDevAdd = value;
+  }
+
+  /**
+   * Gets the value of the 'stdDevMult' field.
+   */
+  public java.lang.Double getStdDevMult() {
+    return stdDevMult;
+  }
+
+  /**
+   * Sets the value of the 'stdDevMult' field.
+   * @param value the value to set.
+   */
+  public void setStdDevMult(java.lang.Double value) {
+    this.stdDevMult = value;
+  }
+
+  /**
+   * Gets the value of the 'flow' field.
+   * * time series of flows;
+     * map keys is vehTypeId;
+     * array index is index in time series ("DEMAND_ORDER" in db)   */
+  public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getFlow() {
+    return flow;
+  }
+
+  /**
+   * Sets the value of the 'flow' field.
+   * * time series of flows;
+     * map keys is vehTypeId;
+     * array index is index in time series ("DEMAND_ORDER" in db)   * @param value the value to set.
+   */
+  public void setFlow(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    this.flow = value;
   }
 
   /** Creates a new DemandProfile RecordBuilder */
@@ -154,11 +201,13 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<DemandProfile>
     implements org.apache.avro.data.RecordBuilder<DemandProfile> {
 
-    private double dt;
-    private double startTime;
-    private java.lang.CharSequence origin;
-    private java.lang.CharSequence destination;
-    private java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> demand;
+    private java.lang.CharSequence destinationNetworkId;
+    private java.lang.Double startTime;
+    private java.lang.Double sampleRate;
+    private java.lang.Double knob;
+    private java.lang.Double stdDevAdd;
+    private java.lang.Double stdDevMult;
+    private java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> flow;
 
     /** Creates a new Builder */
     private Builder() {
@@ -173,48 +222,57 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     /** Creates a Builder by copying an existing DemandProfile instance */
     private Builder(edu.berkeley.path.model_elements_base.DemandProfile other) {
             super(edu.berkeley.path.model_elements_base.DemandProfile.SCHEMA$);
-      if (isValidValue(fields()[0], other.dt)) {
-        this.dt = (java.lang.Double) data().deepCopy(fields()[0].schema(), other.dt);
+      if (isValidValue(fields()[0], other.destinationNetworkId)) {
+        this.destinationNetworkId = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.destinationNetworkId);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.startTime)) {
         this.startTime = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.startTime);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.origin)) {
-        this.origin = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.origin);
+      if (isValidValue(fields()[2], other.sampleRate)) {
+        this.sampleRate = (java.lang.Double) data().deepCopy(fields()[2].schema(), other.sampleRate);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.destination)) {
-        this.destination = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.destination);
+      if (isValidValue(fields()[3], other.knob)) {
+        this.knob = (java.lang.Double) data().deepCopy(fields()[3].schema(), other.knob);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.demand)) {
-        this.demand = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) data().deepCopy(fields()[4].schema(), other.demand);
+      if (isValidValue(fields()[4], other.stdDevAdd)) {
+        this.stdDevAdd = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.stdDevAdd);
         fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.stdDevMult)) {
+        this.stdDevMult = (java.lang.Double) data().deepCopy(fields()[5].schema(), other.stdDevMult);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.flow)) {
+        this.flow = (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) data().deepCopy(fields()[6].schema(), other.flow);
+        fieldSetFlags()[6] = true;
       }
     }
 
-    /** Gets the value of the 'dt' field */
-    public java.lang.Double getDt() {
-      return dt;
+    /** Gets the value of the 'destinationNetworkId' field */
+    public java.lang.CharSequence getDestinationNetworkId() {
+      return destinationNetworkId;
     }
     
-    /** Sets the value of the 'dt' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setDt(double value) {
+    /** Sets the value of the 'destinationNetworkId' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setDestinationNetworkId(java.lang.CharSequence value) {
       validate(fields()[0], value);
-      this.dt = value;
+      this.destinationNetworkId = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'dt' field has been set */
-    public boolean hasDt() {
+    /** Checks whether the 'destinationNetworkId' field has been set */
+    public boolean hasDestinationNetworkId() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'dt' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearDt() {
+    /** Clears the value of the 'destinationNetworkId' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearDestinationNetworkId() {
+      destinationNetworkId = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -225,7 +283,7 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     }
     
     /** Sets the value of the 'startTime' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setStartTime(double value) {
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setStartTime(java.lang.Double value) {
       validate(fields()[1], value);
       this.startTime = value;
       fieldSetFlags()[1] = true;
@@ -239,82 +297,133 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     
     /** Clears the value of the 'startTime' field */
     public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearStartTime() {
+      startTime = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'origin' field */
-    public java.lang.CharSequence getOrigin() {
-      return origin;
+    /** Gets the value of the 'sampleRate' field */
+    public java.lang.Double getSampleRate() {
+      return sampleRate;
     }
     
-    /** Sets the value of the 'origin' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setOrigin(java.lang.CharSequence value) {
+    /** Sets the value of the 'sampleRate' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setSampleRate(java.lang.Double value) {
       validate(fields()[2], value);
-      this.origin = value;
+      this.sampleRate = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'origin' field has been set */
-    public boolean hasOrigin() {
+    /** Checks whether the 'sampleRate' field has been set */
+    public boolean hasSampleRate() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'origin' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearOrigin() {
-      origin = null;
+    /** Clears the value of the 'sampleRate' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearSampleRate() {
+      sampleRate = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'destination' field */
-    public java.lang.CharSequence getDestination() {
-      return destination;
+    /** Gets the value of the 'knob' field */
+    public java.lang.Double getKnob() {
+      return knob;
     }
     
-    /** Sets the value of the 'destination' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setDestination(java.lang.CharSequence value) {
+    /** Sets the value of the 'knob' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setKnob(java.lang.Double value) {
       validate(fields()[3], value);
-      this.destination = value;
+      this.knob = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'destination' field has been set */
-    public boolean hasDestination() {
+    /** Checks whether the 'knob' field has been set */
+    public boolean hasKnob() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'destination' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearDestination() {
-      destination = null;
+    /** Clears the value of the 'knob' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearKnob() {
+      knob = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'demand' field */
-    public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getDemand() {
-      return demand;
+    /** Gets the value of the 'stdDevAdd' field */
+    public java.lang.Double getStdDevAdd() {
+      return stdDevAdd;
     }
     
-    /** Sets the value of the 'demand' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setDemand(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+    /** Sets the value of the 'stdDevAdd' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setStdDevAdd(java.lang.Double value) {
       validate(fields()[4], value);
-      this.demand = value;
+      this.stdDevAdd = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'demand' field has been set */
-    public boolean hasDemand() {
+    /** Checks whether the 'stdDevAdd' field has been set */
+    public boolean hasStdDevAdd() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'demand' field */
-    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearDemand() {
-      demand = null;
+    /** Clears the value of the 'stdDevAdd' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearStdDevAdd() {
+      stdDevAdd = null;
       fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'stdDevMult' field */
+    public java.lang.Double getStdDevMult() {
+      return stdDevMult;
+    }
+    
+    /** Sets the value of the 'stdDevMult' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setStdDevMult(java.lang.Double value) {
+      validate(fields()[5], value);
+      this.stdDevMult = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'stdDevMult' field has been set */
+    public boolean hasStdDevMult() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'stdDevMult' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearStdDevMult() {
+      stdDevMult = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'flow' field */
+    public java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> getFlow() {
+      return flow;
+    }
+    
+    /** Sets the value of the 'flow' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder setFlow(java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>> value) {
+      validate(fields()[6], value);
+      this.flow = value;
+      fieldSetFlags()[6] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'flow' field has been set */
+    public boolean hasFlow() {
+      return fieldSetFlags()[6];
+    }
+    
+    /** Clears the value of the 'flow' field */
+    public edu.berkeley.path.model_elements_base.DemandProfile.Builder clearFlow() {
+      flow = null;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -322,11 +431,13 @@ public class DemandProfile extends org.apache.avro.specific.SpecificRecordBase i
     public DemandProfile build() {
       try {
         DemandProfile record = new DemandProfile();
-        record.dt = fieldSetFlags()[0] ? this.dt : (java.lang.Double) defaultValue(fields()[0]);
+        record.destinationNetworkId = fieldSetFlags()[0] ? this.destinationNetworkId : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.startTime = fieldSetFlags()[1] ? this.startTime : (java.lang.Double) defaultValue(fields()[1]);
-        record.origin = fieldSetFlags()[2] ? this.origin : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.destination = fieldSetFlags()[3] ? this.destination : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.demand = fieldSetFlags()[4] ? this.demand : (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) defaultValue(fields()[4]);
+        record.sampleRate = fieldSetFlags()[2] ? this.sampleRate : (java.lang.Double) defaultValue(fields()[2]);
+        record.knob = fieldSetFlags()[3] ? this.knob : (java.lang.Double) defaultValue(fields()[3]);
+        record.stdDevAdd = fieldSetFlags()[4] ? this.stdDevAdd : (java.lang.Double) defaultValue(fields()[4]);
+        record.stdDevMult = fieldSetFlags()[5] ? this.stdDevMult : (java.lang.Double) defaultValue(fields()[5]);
+        record.flow = fieldSetFlags()[6] ? this.flow : (java.util.Map<java.lang.CharSequence,java.util.List<java.lang.Double>>) defaultValue(fields()[6]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
