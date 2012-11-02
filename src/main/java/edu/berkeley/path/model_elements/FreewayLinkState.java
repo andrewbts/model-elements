@@ -26,5 +26,9 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayLinkState
-  extends edu.berkeley.path.model_elements_base.FreewayLinkState {}
+public class FreewayLinkState extends edu.berkeley.path.model_elements_base.FreewayLinkState
+{
+	public FreewayLinkState(Double density, Double velocity) {
+		super(density, velocity);
+	}
+}
