@@ -88,7 +88,7 @@ protocol CC {
   }
   
   /** Density on each link at a point in time */
-  record DensityProfile {
+  record DensityProfile { // ### this should be called "Map"
     string id;
     
     /** map key is linkId */
@@ -96,7 +96,7 @@ protocol CC {
   }
   
   /** Velocity on each link at a point in time */
-  record VelocityProfile {
+  record VelocityProfile { // ### this should be called "Map"
     string id;
     
     /** map key is linkId */
@@ -181,6 +181,21 @@ protocol CC {
      */
     map<DemandProfile> profile;
   }
+  
+  /**
+   * Used to feed a per-timestep "drip" input to freeway model.
+   * This is sliced off of DemandSet at a given time.
+   *
+   * Not part of Scenario; can be used interchangeably for 
+   * real-time input or for sliced up profiles from a scenario.
+   */
+  record DemandMap {
+    /**
+     * map of flows;
+     * map keys are: originLinkId, vehTypeId;
+     */
+    map<map<double>> flow;
+  }
 
   /**
    * Split ratio time series at a node. The node ID is not stored
@@ -223,6 +238,21 @@ protocol CC {
      * map key is nodeId
      */
     map<SplitRatioProfile> profile;
+  }
+  
+  /**
+   * Used to feed a per-timestep "drip" input to freeway model.
+   * This is sliced off of SplitRatioSet at a given time.
+   *
+   * Not part of Scenario; can be used interchangeably for 
+   * real-time input or for sliced up profiles from a scenario.
+   */
+  record SplitRatioMap {
+    /**
+     * map of ratios;
+     * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;
+     */
+    map<map<map<map<double>>>> ratio;
   }
   
   // ### TODO Controllers
