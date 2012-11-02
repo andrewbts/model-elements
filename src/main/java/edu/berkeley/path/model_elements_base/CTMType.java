@@ -6,6 +6,6 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public enum CTMType { 
-  DENSITY, VELOCITY, FUSION  ;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"CTMType\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"symbols\":[\"DENSITY\",\"VELOCITY\",\"FUSION\"]}");
+  DENSITY, VELOCITY, DENSITY_VELOCITY_FUSION, VELOCITY_DENSITY_FUSION  ;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"enum\",\"name\":\"CTMType\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"symbols\":[\"DENSITY\",\"VELOCITY\",\"DENSITY_VELOCITY_FUSION\",\"VELOCITY_DENSITY_FUSION\"]}");
 }

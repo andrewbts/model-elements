@@ -373,7 +373,9 @@ protocol CC {
   }
   
   enum CTMType {
-    DENSITY, VELOCITY, FUSION
+    DENSITY, VELOCITY,
+    DENSITY_VELOCITY_FUSION,
+    VELOCITY_DENSITY_FUSION
   }
 
   /**
