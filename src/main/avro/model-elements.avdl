@@ -103,33 +103,85 @@ protocol CC {
     map<double> metersPerSecond = {};
   }
   
-  /** Fundamental diagram on one link at one time */
+  /**
+   * Referenced by FDSet to indicate the way the contained FDs should
+   * be interpreted.
+   */
+  record FDType {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+  }
+  
+  /**
+   * Fundamental diagram parameters on one link at one time.
+   */
   record FD {
-    // ### TODO units?
-    // ### TODO reconcile with DB
-    
-    double  freeFlowSpeed;
-    double  freeFlowSpeedStdev;
-    double  congestionWaveSpeed;
-    double  congestionWaveSpeedStdev;
-    double  capacity;
-    double  capacityStdev;
-    double  jamDensity;
-    double  capacityDrop;
+    double freeFlowSpeed;
+    double criticalSpeed;
+    double congestionWaveSpeed;
+    double capacity;
+    double jamDensity;
+    double capacityDrop;
+    double freeFlowSpeedStd;
+    double congestionWaveSpeedStd;
+    double capacityStd;
   }
   
-  /** Fundamental diagrams on each link as time series */
+  /**
+   * FD time series at a link. The link ID is not stored
+   * in this record, but as the map key in the FDSet.profile.
+   */
   record FDProfile {
-    double dt = 300.0;
-    double startTime = 0.0;
+    /**
+     * in seconds; default is 0
+     */
+    union {null, double} startTime = 0.0;
     
-    // ### TODO type
-    // ### TODO noise
-  
-    /** map key is linkId, array is time series, as per dt and startTime. */
-    map<array<FD>> fd = {};
+    /**
+     * in seconds; default is 300 seconds
+     */
+    union {null, double} sampleRate = 300.0;
+
+    /**
+     * time series of FDs;
+     * array index is index in time series ("DIAG_ORDER" in db)
+     */
+    array<FD> fd;
+  }
+
+  /**
+   * Specification of Fundamental diagram time series across one or more
+   * networks, for use in a scenario.
+   */
+  record FDSet {
+    string id;
+    union {null, string} name;
+    union {null, string} description;
+    
+    FDType type;
+    
+    /**
+     * map key is linkId
+     */
+    map<FDProfile> profile;
   }
   
+  /**
+   * Used to feed a per-timestep "drip" input to freeway model.
+   * This is sliced off of FDSet at a given time.
+   *
+   * Not part of Scenario; can be used interchangeably for
+   * real-time input or for sliced up profiles from a scenario.
+   */
+  record FDMap {
+    /**
+     * map of FDs at a given time;
+     * map key is linkId
+     */
+    map<FD> fd;
+  }
+
   /**
    * Demand time series at a link. The origin link ID is not stored
    * in this record, but as the map key in the DemandSet.profile.
@@ -191,10 +243,12 @@ protocol CC {
    */
   record DemandMap {
     /**
-     * map of flows;
+     * map of flows at a given time;
      * map keys are: originLinkId, vehTypeId;
      */
     map<map<double>> flow;
+    
+    // ## does this need destinationNetworkId as another map key?
   }
 
   /**
@@ -249,10 +303,12 @@ protocol CC {
    */
   record SplitRatioMap {
     /**
-     * map of ratios;
+     * map of ratios at a given time;
      * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;
      */
     map<map<map<map<double>>>> ratio;
+    
+    // ## does this need destinationNetworkId as another map key?
   }
   
   // ### TODO Controllers

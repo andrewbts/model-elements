@@ -11,8 +11,8 @@ package edu.berkeley.path.model_elements_base;
    * Not part of Scenario; can be used interchangeably for 
    * real-time input or for sliced up profiles from a scenario. */
 public class SplitRatioMap extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioMap\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\n   * This is sliced off of SplitRatioSet at a given time.\\n   *\\n   * Not part of Scenario; can be used interchangeably for \\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":\"double\"}}}},\"doc\":\"* map of ratios;\\n     * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;\"}]}");
-  /** * map of ratios;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioMap\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\n   * This is sliced off of SplitRatioSet at a given time.\\n   *\\n   * Not part of Scenario; can be used interchangeably for \\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":\"double\"}}}},\"doc\":\"* map of ratios at a given time;\\n     * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;\"}]}");
+  /** * map of ratios at a given time;
      * map keys are: nodeId, inLinkId, outLinkId, vehTypeId; */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.lang.Double>>>> ratio;
 
@@ -47,7 +47,7 @@ public class SplitRatioMap extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Gets the value of the 'ratio' field.
-   * * map of ratios;
+   * * map of ratios at a given time;
      * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;   */
   public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.lang.Double>>>> getRatio() {
     return ratio;
@@ -55,7 +55,7 @@ public class SplitRatioMap extends org.apache.avro.specific.SpecificRecordBase i
 
   /**
    * Sets the value of the 'ratio' field.
-   * * map of ratios;
+   * * map of ratios at a given time;
      * map keys are: nodeId, inLinkId, outLinkId, vehTypeId;   * @param value the value to set.
    */
   public void setRatio(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.lang.Double>>>> value) {

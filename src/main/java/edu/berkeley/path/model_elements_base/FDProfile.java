@@ -5,13 +5,17 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** Fundamental diagrams on each link as time series */
+/** * FD time series at a link. The link ID is not stored
+   * in this record, but as the map key in the FDSet.profile. */
 public class FDProfile extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FDProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"Fundamental diagrams on each link as time series\",\"fields\":[{\"name\":\"dt\",\"type\":\"double\",\"default\":300.0},{\"name\":\"startTime\",\"type\":\"double\",\"default\":0.0},{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"Fundamental diagram on one link at one time\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStdev\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStdev\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"capacityStdev\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"}]}}},\"doc\":\"map key is linkId, array is time series, as per dt and startTime.\",\"default\":{}}]}");
-  @Deprecated public double dt;
-  @Deprecated public double startTime;
-  /** map key is linkId, array is time series, as per dt and startTime. */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> fd;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FDProfile\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* FD time series at a link. The link ID is not stored\\n   * in this record, but as the map key in the FDSet.profile.\",\"fields\":[{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"fd\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}},\"doc\":\"* time series of FDs;\\n     * array index is index in time series (\\\"DIAG_ORDER\\\" in db)\"}]}");
+  /** * in seconds; default is 0 */
+  @Deprecated public java.lang.Double startTime;
+  /** * in seconds; default is 300 seconds */
+  @Deprecated public java.lang.Double sampleRate;
+  /** * time series of FDs;
+     * array index is index in time series ("DIAG_ORDER" in db) */
+  @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.FD> fd;
 
   /**
    * Default constructor.
@@ -21,9 +25,9 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public FDProfile(java.lang.Double dt, java.lang.Double startTime, java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> fd) {
-    this.dt = dt;
+  public FDProfile(java.lang.Double startTime, java.lang.Double sampleRate, java.util.List<edu.berkeley.path.model_elements_base.FD> fd) {
     this.startTime = startTime;
+    this.sampleRate = sampleRate;
     this.fd = fd;
   }
 
@@ -31,8 +35,8 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return dt;
-    case 1: return startTime;
+    case 0: return startTime;
+    case 1: return sampleRate;
     case 2: return fd;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
@@ -41,55 +45,57 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: dt = (java.lang.Double)value$; break;
-    case 1: startTime = (java.lang.Double)value$; break;
-    case 2: fd = (java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>>)value$; break;
+    case 0: startTime = (java.lang.Double)value$; break;
+    case 1: sampleRate = (java.lang.Double)value$; break;
+    case 2: fd = (java.util.List<edu.berkeley.path.model_elements_base.FD>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'dt' field.
-   */
-  public java.lang.Double getDt() {
-    return dt;
-  }
-
-  /**
-   * Sets the value of the 'dt' field.
-   * @param value the value to set.
-   */
-  public void setDt(java.lang.Double value) {
-    this.dt = value;
-  }
-
-  /**
    * Gets the value of the 'startTime' field.
-   */
+   * * in seconds; default is 0   */
   public java.lang.Double getStartTime() {
     return startTime;
   }
 
   /**
    * Sets the value of the 'startTime' field.
-   * @param value the value to set.
+   * * in seconds; default is 0   * @param value the value to set.
    */
   public void setStartTime(java.lang.Double value) {
     this.startTime = value;
   }
 
   /**
+   * Gets the value of the 'sampleRate' field.
+   * * in seconds; default is 300 seconds   */
+  public java.lang.Double getSampleRate() {
+    return sampleRate;
+  }
+
+  /**
+   * Sets the value of the 'sampleRate' field.
+   * * in seconds; default is 300 seconds   * @param value the value to set.
+   */
+  public void setSampleRate(java.lang.Double value) {
+    this.sampleRate = value;
+  }
+
+  /**
    * Gets the value of the 'fd' field.
-   * map key is linkId, array is time series, as per dt and startTime.   */
-  public java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> getFd() {
+   * * time series of FDs;
+     * array index is index in time series ("DIAG_ORDER" in db)   */
+  public java.util.List<edu.berkeley.path.model_elements_base.FD> getFd() {
     return fd;
   }
 
   /**
    * Sets the value of the 'fd' field.
-   * map key is linkId, array is time series, as per dt and startTime.   * @param value the value to set.
+   * * time series of FDs;
+     * array index is index in time series ("DIAG_ORDER" in db)   * @param value the value to set.
    */
-  public void setFd(java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> value) {
+  public void setFd(java.util.List<edu.berkeley.path.model_elements_base.FD> value) {
     this.fd = value;
   }
 
@@ -114,9 +120,9 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FDProfile>
     implements org.apache.avro.data.RecordBuilder<FDProfile> {
 
-    private double dt;
-    private double startTime;
-    private java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> fd;
+    private java.lang.Double startTime;
+    private java.lang.Double sampleRate;
+    private java.util.List<edu.berkeley.path.model_elements_base.FD> fd;
 
     /** Creates a new Builder */
     private Builder() {
@@ -131,42 +137,18 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
     /** Creates a Builder by copying an existing FDProfile instance */
     private Builder(edu.berkeley.path.model_elements_base.FDProfile other) {
             super(edu.berkeley.path.model_elements_base.FDProfile.SCHEMA$);
-      if (isValidValue(fields()[0], other.dt)) {
-        this.dt = (java.lang.Double) data().deepCopy(fields()[0].schema(), other.dt);
+      if (isValidValue(fields()[0], other.startTime)) {
+        this.startTime = (java.lang.Double) data().deepCopy(fields()[0].schema(), other.startTime);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.startTime)) {
-        this.startTime = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.startTime);
+      if (isValidValue(fields()[1], other.sampleRate)) {
+        this.sampleRate = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.sampleRate);
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.fd)) {
-        this.fd = (java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>>) data().deepCopy(fields()[2].schema(), other.fd);
+        this.fd = (java.util.List<edu.berkeley.path.model_elements_base.FD>) data().deepCopy(fields()[2].schema(), other.fd);
         fieldSetFlags()[2] = true;
       }
-    }
-
-    /** Gets the value of the 'dt' field */
-    public java.lang.Double getDt() {
-      return dt;
-    }
-    
-    /** Sets the value of the 'dt' field */
-    public edu.berkeley.path.model_elements_base.FDProfile.Builder setDt(double value) {
-      validate(fields()[0], value);
-      this.dt = value;
-      fieldSetFlags()[0] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'dt' field has been set */
-    public boolean hasDt() {
-      return fieldSetFlags()[0];
-    }
-    
-    /** Clears the value of the 'dt' field */
-    public edu.berkeley.path.model_elements_base.FDProfile.Builder clearDt() {
-      fieldSetFlags()[0] = false;
-      return this;
     }
 
     /** Gets the value of the 'startTime' field */
@@ -175,31 +157,57 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
     }
     
     /** Sets the value of the 'startTime' field */
-    public edu.berkeley.path.model_elements_base.FDProfile.Builder setStartTime(double value) {
-      validate(fields()[1], value);
+    public edu.berkeley.path.model_elements_base.FDProfile.Builder setStartTime(java.lang.Double value) {
+      validate(fields()[0], value);
       this.startTime = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[0] = true;
       return this; 
     }
     
     /** Checks whether the 'startTime' field has been set */
     public boolean hasStartTime() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[0];
     }
     
     /** Clears the value of the 'startTime' field */
     public edu.berkeley.path.model_elements_base.FDProfile.Builder clearStartTime() {
+      startTime = null;
+      fieldSetFlags()[0] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'sampleRate' field */
+    public java.lang.Double getSampleRate() {
+      return sampleRate;
+    }
+    
+    /** Sets the value of the 'sampleRate' field */
+    public edu.berkeley.path.model_elements_base.FDProfile.Builder setSampleRate(java.lang.Double value) {
+      validate(fields()[1], value);
+      this.sampleRate = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'sampleRate' field has been set */
+    public boolean hasSampleRate() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 'sampleRate' field */
+    public edu.berkeley.path.model_elements_base.FDProfile.Builder clearSampleRate() {
+      sampleRate = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
     /** Gets the value of the 'fd' field */
-    public java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> getFd() {
+    public java.util.List<edu.berkeley.path.model_elements_base.FD> getFd() {
       return fd;
     }
     
     /** Sets the value of the 'fd' field */
-    public edu.berkeley.path.model_elements_base.FDProfile.Builder setFd(java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>> value) {
+    public edu.berkeley.path.model_elements_base.FDProfile.Builder setFd(java.util.List<edu.berkeley.path.model_elements_base.FD> value) {
       validate(fields()[2], value);
       this.fd = value;
       fieldSetFlags()[2] = true;
@@ -222,9 +230,9 @@ public class FDProfile extends org.apache.avro.specific.SpecificRecordBase imple
     public FDProfile build() {
       try {
         FDProfile record = new FDProfile();
-        record.dt = fieldSetFlags()[0] ? this.dt : (java.lang.Double) defaultValue(fields()[0]);
-        record.startTime = fieldSetFlags()[1] ? this.startTime : (java.lang.Double) defaultValue(fields()[1]);
-        record.fd = fieldSetFlags()[2] ? this.fd : (java.util.Map<java.lang.CharSequence,java.util.List<edu.berkeley.path.model_elements_base.FD>>) defaultValue(fields()[2]);
+        record.startTime = fieldSetFlags()[0] ? this.startTime : (java.lang.Double) defaultValue(fields()[0]);
+        record.sampleRate = fieldSetFlags()[1] ? this.sampleRate : (java.lang.Double) defaultValue(fields()[1]);
+        record.fd = fieldSetFlags()[2] ? this.fd : (java.util.List<edu.berkeley.path.model_elements_base.FD>) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

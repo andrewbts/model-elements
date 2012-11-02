@@ -11,8 +11,8 @@ package edu.berkeley.path.model_elements_base;
    * Not part of Scenario; can be used interchangeably for 
    * real-time input or for sliced up profiles from a scenario. */
 public class DemandMap extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandMap\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\n   * This is sliced off of DemandSet at a given time.\\n   *\\n   * Not part of Scenario; can be used interchangeably for \\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":\"double\"}},\"doc\":\"* map of flows;\\n     * map keys are: originLinkId, vehTypeId;\"}]}");
-  /** * map of flows;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandMap\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\n   * This is sliced off of DemandSet at a given time.\\n   *\\n   * Not part of Scenario; can be used interchangeably for \\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":\"double\"}},\"doc\":\"* map of flows at a given time;\\n     * map keys are: originLinkId, vehTypeId;\"}]}");
+  /** * map of flows at a given time;
      * map keys are: originLinkId, vehTypeId; */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.lang.Double>> flow;
 
@@ -47,7 +47,7 @@ public class DemandMap extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Gets the value of the 'flow' field.
-   * * map of flows;
+   * * map of flows at a given time;
      * map keys are: originLinkId, vehTypeId;   */
   public java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.lang.Double>> getFlow() {
     return flow;
@@ -55,7 +55,7 @@ public class DemandMap extends org.apache.avro.specific.SpecificRecordBase imple
 
   /**
    * Sets the value of the 'flow' field.
-   * * map of flows;
+   * * map of flows at a given time;
      * map keys are: originLinkId, vehTypeId;   * @param value the value to set.
    */
   public void setFlow(java.util.Map<java.lang.CharSequence,java.util.Map<java.lang.CharSequence,java.lang.Double>> value) {
