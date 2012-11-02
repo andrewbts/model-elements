@@ -333,7 +333,7 @@ protocol CC {
     
     DensityProfile initialDensityProfile = null;
     VelocityProfile initialVelocityProfile = null;
-    FDProfile fdProfile = null;
+    FDSet fdSet = null;
     DemandSet demandSet = null;
     SplitRatioSet splitratioSet = null;
   }
