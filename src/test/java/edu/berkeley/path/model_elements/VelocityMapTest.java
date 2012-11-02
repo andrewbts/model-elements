@@ -33,17 +33,16 @@ import java.util.*;
 
 import edu.berkeley.path.model_elements.*;
 
-public class DensityProfileTest {
+public class VelocityMapTest {
   Network nw;
-  DensityProfile dp;
+  VelocityMap vp;
   
   @Before
   public void setup() {
     nw = new Network();
     nw.setName("test network");
     
-    dp = new DensityProfile();
-    dp.setId(2L);
+    vp = new VelocityMap();
 
     nw.setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
     nw.setLinks(new ArrayList<edu.berkeley.path.model_elements_base.Link>());
@@ -79,15 +78,15 @@ public class DensityProfileTest {
 
   @Test
   public void testPrimitiveAccess() {
-    Map<CharSequence,Double> vpm =
+    Map<CharSequence,Double> mps =
       new HashMap<CharSequence,Double>();
           
-    dp.setVehiclesPerMeter(vpm);
+    vp.setMetersPerSecond(mps);
     
     Double val = 1.23;
-    vpm.put("3", val);
+    mps.put("3", val);
 
-    assertEquals((Double)1.23, dp.getVehiclesPerMeter().get("3"));
+    assertEquals((Double)1.23, vp.getMetersPerSecond().get("3"));
   }
 
   @Test
@@ -96,8 +95,8 @@ public class DensityProfileTest {
     
     Double val = 1.23;
     
-    dp.setVehiclesPerMeterOnLink(link, val);
+    vp.setMetersPerSecondOnLink(link, val);
     
-    assertEquals((Double)1.23, dp.getVehiclesPerMeterOnLink(link));
+    assertEquals((Double)1.23, vp.getMetersPerSecondOnLink(link));
   }
 }

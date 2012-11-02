@@ -78,7 +78,7 @@ protocol CC {
   }
   
   record Network {
-    string id = "1";
+    string id;
     string name;
     union { null, string } description;
 
@@ -87,20 +87,38 @@ protocol CC {
     array<Origin> origins = [];
   }
   
-  /** Density on each link at a point in time */
-  record DensityProfile { // ### this should be called "Map"
-    string id;
-    
+  /**
+   * Density on each link at a point in time
+   */
+  record DensityMap {
     /** map key is linkId */
     map<double> vehiclesPerMeter = {};
+    // ## should this break down by destinationNetworkId and vehTypeId ?
   }
   
-  /** Velocity on each link at a point in time */
-  record VelocityProfile { // ### this should be called "Map"
+  record DensitySet {
     string id;
+    string name;
+    union { null, string } description;
     
+    DensityMap density;
+  }
+  
+  /**
+   * Velocity on each link at a point in time
+   */
+  record VelocityMap {
     /** map key is linkId */
     map<double> metersPerSecond = {};
+    // ## should this break down by destinationNetworkId and vehTypeId ?
+  }
+  
+  record VelocitySet {
+    string id;
+    string name;
+    union { null, string } description;
+    
+    VelocityMap velocity;
   }
   
   /**
@@ -331,9 +349,9 @@ protocol CC {
     
     array<Network> networks = [];
     
-    DensityProfile initialDensityProfile = null;
-    VelocityProfile initialVelocityProfile = null;
-    FDProfile fdProfile = null;
+    DensitySet initialDensity = null;
+    VelocitySet initialVelocity = null;
+    FDSet fdSet = null;
     DemandSet demandSet = null;
     SplitRatioSet splitratioSet = null;
   }

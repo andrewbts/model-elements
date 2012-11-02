@@ -15,14 +15,14 @@ package edu.berkeley.path.model_elements_base;
    * and signal control algorithms do. (The CTM choice should be in the
    * Context.) */
 public class Scenario extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Scenario\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* A scenario represents the state of the world now and projected\\n   * into the future, to the extent that can be known in advance.\\n   *\\n   * The configuration that belongs in a scenario and the objects that it\\n   * contains are just those parameters that make an assertion about the \\n   * world, an assertion which is observable, and verifiable. So, for example,\\n   * choice of CTM algorithm does not belong here, but FD parameters do,\\n   * and signal control algorithms do. (The CTM choice should be in the\\n   * Context.)\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"networks\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Network\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"1\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"origins\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Origin\",\"doc\":\"* Represents a traffic source. In the DB this is a link with\\n   * terminal node at the begin.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\",\"doc\":\"id of the node that traffic flows into from the origin\"}]}},\"default\":[]}]}},\"default\":[]},{\"name\":\"initialDensityProfile\",\"type\":{\"type\":\"record\",\"name\":\"DensityProfile\",\"doc\":\"Density on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]},\"default\":null},{\"name\":\"initialVelocityProfile\",\"type\":{\"type\":\"record\",\"name\":\"VelocityProfile\",\"doc\":\"Velocity on each link at a point in time\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]},\"default\":null},{\"name\":\"fdProfile\",\"type\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"* FD time series at a link. The link ID is not stored\\n   * in this record, but as the map key in the FDSet.profile.\",\"fields\":[{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"fd\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}},\"doc\":\"* time series of FDs;\\n     * array index is index in time series (\\\"DIAG_ORDER\\\" in db)\"}]},\"default\":null},{\"name\":\"demandSet\",\"type\":{\"type\":\"record\",\"name\":\"DemandSet\",\"doc\":\"* Specification of demand time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"}]},\"default\":null},{\"name\":\"splitratioSet\",\"type\":{\"type\":\"record\",\"name\":\"SplitRatioSet\",\"doc\":\"* Specification of split ratio time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key in the SplitRatioSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is nodeId\"}]},\"default\":null}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Scenario\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* A scenario represents the state of the world now and projected\\n   * into the future, to the extent that can be known in advance.\\n   *\\n   * The configuration that belongs in a scenario and the objects that it\\n   * contains are just those parameters that make an assertion about the \\n   * world, an assertion which is observable, and verifiable. So, for example,\\n   * choice of CTM algorithm does not belong here, but FD parameters do,\\n   * and signal control algorithms do. (The CTM choice should be in the\\n   * Context.)\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"networks\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Network\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"origins\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Origin\",\"doc\":\"* Represents a traffic source. In the DB this is a link with\\n   * terminal node at the begin.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\",\"doc\":\"id of the node that traffic flows into from the origin\"}]}},\"default\":[]}]}},\"default\":[]},{\"name\":\"initialDensity\",\"type\":{\"type\":\"record\",\"name\":\"DensitySet\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"density\",\"type\":{\"type\":\"record\",\"name\":\"DensityMap\",\"doc\":\"* Density on each link at a point in time\",\"fields\":[{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}}]},\"default\":null},{\"name\":\"initialVelocity\",\"type\":{\"type\":\"record\",\"name\":\"VelocitySet\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"velocity\",\"type\":{\"type\":\"record\",\"name\":\"VelocityMap\",\"doc\":\"* Velocity on each link at a point in time\",\"fields\":[{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}}]},\"default\":null},{\"name\":\"fdSet\",\"type\":{\"type\":\"record\",\"name\":\"FDSet\",\"doc\":\"* Specification of Fundamental diagram time series across one or more\\n   * networks, for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"type\",\"type\":{\"type\":\"record\",\"name\":\"FDType\",\"doc\":\"* Referenced by FDSet to indicate the way the contained FDs should\\n   * be interpreted.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"* FD time series at a link. The link ID is not stored\\n   * in this record, but as the map key in the FDSet.profile.\",\"fields\":[{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"fd\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}},\"doc\":\"* time series of FDs;\\n     * array index is index in time series (\\\"DIAG_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is linkId\"}]},\"default\":null},{\"name\":\"demandSet\",\"type\":{\"type\":\"record\",\"name\":\"DemandSet\",\"doc\":\"* Specification of demand time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"}]},\"default\":null},{\"name\":\"splitratioSet\",\"type\":{\"type\":\"record\",\"name\":\"SplitRatioSet\",\"doc\":\"* Specification of split ratio time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key in the SplitRatioSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is nodeId\"}]},\"default\":null}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Network> networks;
-  @Deprecated public edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile;
-  @Deprecated public edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile;
-  @Deprecated public edu.berkeley.path.model_elements_base.FDProfile fdProfile;
+  @Deprecated public edu.berkeley.path.model_elements_base.DensitySet initialDensity;
+  @Deprecated public edu.berkeley.path.model_elements_base.VelocitySet initialVelocity;
+  @Deprecated public edu.berkeley.path.model_elements_base.FDSet fdSet;
   @Deprecated public edu.berkeley.path.model_elements_base.DemandSet demandSet;
   @Deprecated public edu.berkeley.path.model_elements_base.SplitRatioSet splitratioSet;
 
@@ -34,14 +34,14 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * All-args constructor.
    */
-  public Scenario(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.List<edu.berkeley.path.model_elements_base.Network> networks, edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile, edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile, edu.berkeley.path.model_elements_base.FDProfile fdProfile, edu.berkeley.path.model_elements_base.DemandSet demandSet, edu.berkeley.path.model_elements_base.SplitRatioSet splitratioSet) {
+  public Scenario(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.List<edu.berkeley.path.model_elements_base.Network> networks, edu.berkeley.path.model_elements_base.DensitySet initialDensity, edu.berkeley.path.model_elements_base.VelocitySet initialVelocity, edu.berkeley.path.model_elements_base.FDSet fdSet, edu.berkeley.path.model_elements_base.DemandSet demandSet, edu.berkeley.path.model_elements_base.SplitRatioSet splitratioSet) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.networks = networks;
-    this.initialDensityProfile = initialDensityProfile;
-    this.initialVelocityProfile = initialVelocityProfile;
-    this.fdProfile = fdProfile;
+    this.initialDensity = initialDensity;
+    this.initialVelocity = initialVelocity;
+    this.fdSet = fdSet;
     this.demandSet = demandSet;
     this.splitratioSet = splitratioSet;
   }
@@ -54,9 +54,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: return name;
     case 2: return description;
     case 3: return networks;
-    case 4: return initialDensityProfile;
-    case 5: return initialVelocityProfile;
-    case 6: return fdProfile;
+    case 4: return initialDensity;
+    case 5: return initialVelocity;
+    case 6: return fdSet;
     case 7: return demandSet;
     case 8: return splitratioSet;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -70,9 +70,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
     case 3: networks = (java.util.List<edu.berkeley.path.model_elements_base.Network>)value$; break;
-    case 4: initialDensityProfile = (edu.berkeley.path.model_elements_base.DensityProfile)value$; break;
-    case 5: initialVelocityProfile = (edu.berkeley.path.model_elements_base.VelocityProfile)value$; break;
-    case 6: fdProfile = (edu.berkeley.path.model_elements_base.FDProfile)value$; break;
+    case 4: initialDensity = (edu.berkeley.path.model_elements_base.DensitySet)value$; break;
+    case 5: initialVelocity = (edu.berkeley.path.model_elements_base.VelocitySet)value$; break;
+    case 6: fdSet = (edu.berkeley.path.model_elements_base.FDSet)value$; break;
     case 7: demandSet = (edu.berkeley.path.model_elements_base.DemandSet)value$; break;
     case 8: splitratioSet = (edu.berkeley.path.model_elements_base.SplitRatioSet)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -140,48 +140,48 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
   }
 
   /**
-   * Gets the value of the 'initialDensityProfile' field.
+   * Gets the value of the 'initialDensity' field.
    */
-  public edu.berkeley.path.model_elements_base.DensityProfile getInitialDensityProfile() {
-    return initialDensityProfile;
+  public edu.berkeley.path.model_elements_base.DensitySet getInitialDensity() {
+    return initialDensity;
   }
 
   /**
-   * Sets the value of the 'initialDensityProfile' field.
+   * Sets the value of the 'initialDensity' field.
    * @param value the value to set.
    */
-  public void setInitialDensityProfile(edu.berkeley.path.model_elements_base.DensityProfile value) {
-    this.initialDensityProfile = value;
+  public void setInitialDensity(edu.berkeley.path.model_elements_base.DensitySet value) {
+    this.initialDensity = value;
   }
 
   /**
-   * Gets the value of the 'initialVelocityProfile' field.
+   * Gets the value of the 'initialVelocity' field.
    */
-  public edu.berkeley.path.model_elements_base.VelocityProfile getInitialVelocityProfile() {
-    return initialVelocityProfile;
+  public edu.berkeley.path.model_elements_base.VelocitySet getInitialVelocity() {
+    return initialVelocity;
   }
 
   /**
-   * Sets the value of the 'initialVelocityProfile' field.
+   * Sets the value of the 'initialVelocity' field.
    * @param value the value to set.
    */
-  public void setInitialVelocityProfile(edu.berkeley.path.model_elements_base.VelocityProfile value) {
-    this.initialVelocityProfile = value;
+  public void setInitialVelocity(edu.berkeley.path.model_elements_base.VelocitySet value) {
+    this.initialVelocity = value;
   }
 
   /**
-   * Gets the value of the 'fdProfile' field.
+   * Gets the value of the 'fdSet' field.
    */
-  public edu.berkeley.path.model_elements_base.FDProfile getFdProfile() {
-    return fdProfile;
+  public edu.berkeley.path.model_elements_base.FDSet getFdSet() {
+    return fdSet;
   }
 
   /**
-   * Sets the value of the 'fdProfile' field.
+   * Sets the value of the 'fdSet' field.
    * @param value the value to set.
    */
-  public void setFdProfile(edu.berkeley.path.model_elements_base.FDProfile value) {
-    this.fdProfile = value;
+  public void setFdSet(edu.berkeley.path.model_elements_base.FDSet value) {
+    this.fdSet = value;
   }
 
   /**
@@ -239,9 +239,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
     private java.util.List<edu.berkeley.path.model_elements_base.Network> networks;
-    private edu.berkeley.path.model_elements_base.DensityProfile initialDensityProfile;
-    private edu.berkeley.path.model_elements_base.VelocityProfile initialVelocityProfile;
-    private edu.berkeley.path.model_elements_base.FDProfile fdProfile;
+    private edu.berkeley.path.model_elements_base.DensitySet initialDensity;
+    private edu.berkeley.path.model_elements_base.VelocitySet initialVelocity;
+    private edu.berkeley.path.model_elements_base.FDSet fdSet;
     private edu.berkeley.path.model_elements_base.DemandSet demandSet;
     private edu.berkeley.path.model_elements_base.SplitRatioSet splitratioSet;
 
@@ -274,16 +274,16 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
         this.networks = (java.util.List<edu.berkeley.path.model_elements_base.Network>) data().deepCopy(fields()[3].schema(), other.networks);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.initialDensityProfile)) {
-        this.initialDensityProfile = (edu.berkeley.path.model_elements_base.DensityProfile) data().deepCopy(fields()[4].schema(), other.initialDensityProfile);
+      if (isValidValue(fields()[4], other.initialDensity)) {
+        this.initialDensity = (edu.berkeley.path.model_elements_base.DensitySet) data().deepCopy(fields()[4].schema(), other.initialDensity);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.initialVelocityProfile)) {
-        this.initialVelocityProfile = (edu.berkeley.path.model_elements_base.VelocityProfile) data().deepCopy(fields()[5].schema(), other.initialVelocityProfile);
+      if (isValidValue(fields()[5], other.initialVelocity)) {
+        this.initialVelocity = (edu.berkeley.path.model_elements_base.VelocitySet) data().deepCopy(fields()[5].schema(), other.initialVelocity);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.fdProfile)) {
-        this.fdProfile = (edu.berkeley.path.model_elements_base.FDProfile) data().deepCopy(fields()[6].schema(), other.fdProfile);
+      if (isValidValue(fields()[6], other.fdSet)) {
+        this.fdSet = (edu.berkeley.path.model_elements_base.FDSet) data().deepCopy(fields()[6].schema(), other.fdSet);
         fieldSetFlags()[6] = true;
       }
       if (isValidValue(fields()[7], other.demandSet)) {
@@ -396,77 +396,77 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
       return this;
     }
 
-    /** Gets the value of the 'initialDensityProfile' field */
-    public edu.berkeley.path.model_elements_base.DensityProfile getInitialDensityProfile() {
-      return initialDensityProfile;
+    /** Gets the value of the 'initialDensity' field */
+    public edu.berkeley.path.model_elements_base.DensitySet getInitialDensity() {
+      return initialDensity;
     }
     
-    /** Sets the value of the 'initialDensityProfile' field */
-    public edu.berkeley.path.model_elements_base.Scenario.Builder setInitialDensityProfile(edu.berkeley.path.model_elements_base.DensityProfile value) {
+    /** Sets the value of the 'initialDensity' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder setInitialDensity(edu.berkeley.path.model_elements_base.DensitySet value) {
       validate(fields()[4], value);
-      this.initialDensityProfile = value;
+      this.initialDensity = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'initialDensityProfile' field has been set */
-    public boolean hasInitialDensityProfile() {
+    /** Checks whether the 'initialDensity' field has been set */
+    public boolean hasInitialDensity() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'initialDensityProfile' field */
-    public edu.berkeley.path.model_elements_base.Scenario.Builder clearInitialDensityProfile() {
-      initialDensityProfile = null;
+    /** Clears the value of the 'initialDensity' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder clearInitialDensity() {
+      initialDensity = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'initialVelocityProfile' field */
-    public edu.berkeley.path.model_elements_base.VelocityProfile getInitialVelocityProfile() {
-      return initialVelocityProfile;
+    /** Gets the value of the 'initialVelocity' field */
+    public edu.berkeley.path.model_elements_base.VelocitySet getInitialVelocity() {
+      return initialVelocity;
     }
     
-    /** Sets the value of the 'initialVelocityProfile' field */
-    public edu.berkeley.path.model_elements_base.Scenario.Builder setInitialVelocityProfile(edu.berkeley.path.model_elements_base.VelocityProfile value) {
+    /** Sets the value of the 'initialVelocity' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder setInitialVelocity(edu.berkeley.path.model_elements_base.VelocitySet value) {
       validate(fields()[5], value);
-      this.initialVelocityProfile = value;
+      this.initialVelocity = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
     
-    /** Checks whether the 'initialVelocityProfile' field has been set */
-    public boolean hasInitialVelocityProfile() {
+    /** Checks whether the 'initialVelocity' field has been set */
+    public boolean hasInitialVelocity() {
       return fieldSetFlags()[5];
     }
     
-    /** Clears the value of the 'initialVelocityProfile' field */
-    public edu.berkeley.path.model_elements_base.Scenario.Builder clearInitialVelocityProfile() {
-      initialVelocityProfile = null;
+    /** Clears the value of the 'initialVelocity' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder clearInitialVelocity() {
+      initialVelocity = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'fdProfile' field */
-    public edu.berkeley.path.model_elements_base.FDProfile getFdProfile() {
-      return fdProfile;
+    /** Gets the value of the 'fdSet' field */
+    public edu.berkeley.path.model_elements_base.FDSet getFdSet() {
+      return fdSet;
     }
     
-    /** Sets the value of the 'fdProfile' field */
-    public edu.berkeley.path.model_elements_base.Scenario.Builder setFdProfile(edu.berkeley.path.model_elements_base.FDProfile value) {
+    /** Sets the value of the 'fdSet' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder setFdSet(edu.berkeley.path.model_elements_base.FDSet value) {
       validate(fields()[6], value);
-      this.fdProfile = value;
+      this.fdSet = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
     
-    /** Checks whether the 'fdProfile' field has been set */
-    public boolean hasFdProfile() {
+    /** Checks whether the 'fdSet' field has been set */
+    public boolean hasFdSet() {
       return fieldSetFlags()[6];
     }
     
-    /** Clears the value of the 'fdProfile' field */
-    public edu.berkeley.path.model_elements_base.Scenario.Builder clearFdProfile() {
-      fdProfile = null;
+    /** Clears the value of the 'fdSet' field */
+    public edu.berkeley.path.model_elements_base.Scenario.Builder clearFdSet() {
+      fdSet = null;
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -529,9 +529,9 @@ public class Scenario extends org.apache.avro.specific.SpecificRecordBase implem
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.networks = fieldSetFlags()[3] ? this.networks : (java.util.List<edu.berkeley.path.model_elements_base.Network>) defaultValue(fields()[3]);
-        record.initialDensityProfile = fieldSetFlags()[4] ? this.initialDensityProfile : (edu.berkeley.path.model_elements_base.DensityProfile) defaultValue(fields()[4]);
-        record.initialVelocityProfile = fieldSetFlags()[5] ? this.initialVelocityProfile : (edu.berkeley.path.model_elements_base.VelocityProfile) defaultValue(fields()[5]);
-        record.fdProfile = fieldSetFlags()[6] ? this.fdProfile : (edu.berkeley.path.model_elements_base.FDProfile) defaultValue(fields()[6]);
+        record.initialDensity = fieldSetFlags()[4] ? this.initialDensity : (edu.berkeley.path.model_elements_base.DensitySet) defaultValue(fields()[4]);
+        record.initialVelocity = fieldSetFlags()[5] ? this.initialVelocity : (edu.berkeley.path.model_elements_base.VelocitySet) defaultValue(fields()[5]);
+        record.fdSet = fieldSetFlags()[6] ? this.fdSet : (edu.berkeley.path.model_elements_base.FDSet) defaultValue(fields()[6]);
         record.demandSet = fieldSetFlags()[7] ? this.demandSet : (edu.berkeley.path.model_elements_base.DemandSet) defaultValue(fields()[7]);
         record.splitratioSet = fieldSetFlags()[8] ? this.splitratioSet : (edu.berkeley.path.model_elements_base.SplitRatioSet) defaultValue(fields()[8]);
         return record;
