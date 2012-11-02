@@ -28,60 +28,52 @@ package edu.berkeley.path.model_elements;
 
 import java.util.*;
 
-public class DensityProfile extends edu.berkeley.path.model_elements_base.DensityProfile {
-  public Double getVehiclesPerMeterOnLink(Link link) {
-    if (this.vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+public class VelocityMap extends edu.berkeley.path.model_elements_base.VelocityMap {
+  public Double getMetersPerSecondOnLink(Link link) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
     }
 
-    return this.vehiclesPerMeter.get(link.getId());
+    return this.metersPerSecond.get(link.getId());
   }
   
-  public Double getVehiclesPerMeterOnLink(Long id) {
-    if (this.vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+  public Double getMetersPerSecondOnLink(Long id) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
     }
 
-    return this.vehiclesPerMeter.get(id.toString());
-  }
-
-  public Double getVehiclesPerMeterOnLink(CharSequence id) {
-    if (this.vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
-
-    return this.vehiclesPerMeter.get(id);
-  }
-
-  public void setVehiclesPerMeterOnLink(Link link, Double val) {
-    if (vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
-
-    vehiclesPerMeter.put(link.getId(), val);
+    return this.metersPerSecond.get(id.toString());
   }
   
-  public void setVehiclesPerMeterOnLink(Long id, Double val) {
-    if (vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+  public Double getMetersPerSecondOnLink(CharSequence id) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
     }
 
-    vehiclesPerMeter.put(id.toString(), val);
+    return this.metersPerSecond.get(id);
   }
   
-  public void setVehiclesPerMeterOnLink(CharSequence id, Double val) {
-    if (vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
+  public void setMetersPerSecondOnLink(Link link, Double val) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
     }
 
-    vehiclesPerMeter.put(id, val);
+    metersPerSecond.put(link.getId(), val);
   }
   
-  public Long getLongId() {
-    return Long.parseLong(getId().toString());
+  public void setMetersPerSecondOnLink(Long id, Double val) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
+    }
+
+    metersPerSecond.put(id.toString(), val);
   }
   
-  public void setId(Long id) {
-    setId(id.toString());
+  public void setMetersPerSecondOnLink(CharSequence id, Double val) {
+    if (this.metersPerSecond == null) {
+      this.metersPerSecond = new HashMap<CharSequence,Double>();
+    }
+
+    metersPerSecond.put(id, val);
   }
 }

@@ -28,55 +28,7 @@ package edu.berkeley.path.model_elements;
 
 import java.util.*;
 
-public class VelocityProfile extends edu.berkeley.path.model_elements_base.VelocityProfile {
-  public Double getMetersPerSecondOnLink(Link link) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    return this.metersPerSecond.get(link.getId());
-  }
-  
-  public Double getMetersPerSecondOnLink(Long id) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    return this.metersPerSecond.get(id.toString());
-  }
-  
-  public Double getMetersPerSecondOnLink(CharSequence id) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    return this.metersPerSecond.get(id);
-  }
-  
-  public void setMetersPerSecondOnLink(Link link, Double val) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    metersPerSecond.put(link.getId(), val);
-  }
-  
-  public void setMetersPerSecondOnLink(Long id, Double val) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    metersPerSecond.put(id.toString(), val);
-  }
-  
-  public void setMetersPerSecondOnLink(CharSequence id, Double val) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    metersPerSecond.put(id, val);
-  }
-  
+public class DensitySet extends edu.berkeley.path.model_elements_base.DensitySet {
   public Long getLongId() {
     return Long.parseLong(getId().toString());
   }
