@@ -32,6 +32,8 @@ import static org.junit.Assert.*;
 import java.util.*;
 
 import edu.berkeley.path.model_elements.*;
+import edu.berkeley.path.model_elements_base.NodeType;
+import edu.berkeley.path.model_elements_base.LinkType;
 
 public class NetworkTest {
   Network nw;
@@ -52,19 +54,19 @@ public class NetworkTest {
     nd1 = new Node();
     nd1.setId("1");
     nd1.setName("one");
-    nd1.setType("hwy");
+    nd1.setType(NodeType.Highway);
     nw.nodes.add(nd1);
 
     nd2 = new Node();
     nd2.setId("2");
     nd2.setName("two");
-    nd2.setType("hwy");
+    nd2.setType(NodeType.Highway);
     nw.nodes.add(nd2);
 
     ln = new Link();
     ln.setId("3");
     ln.setName("three");
-    ln.setType("hwy");
+    ln.setType(LinkType.Highway);
     ln.setLaneCount(4.0);
     ln.setLength(1000.0);
     

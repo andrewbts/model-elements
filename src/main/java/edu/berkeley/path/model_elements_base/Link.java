@@ -6,10 +6,10 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":{\"type\":\"enum\",\"name\":\"LinkType\",\"symbols\":[\"Freeway\",\"Highway\",\"On_Ramp\",\"Off_Ramp\",\"Interconnect\",\"HOV\",\"HOT\",\"Toll_Lane\",\"Heavy_Vehicle_Lane\",\"Bus_Lane\",\"Street\",\"Intersection_Approach\",\"Left_Turn_Pocket\",\"Right_Turn_Pocket\"]}},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
-  @Deprecated public java.lang.CharSequence type;
+  @Deprecated public edu.berkeley.path.model_elements_base.LinkType type;
   @Deprecated public double laneCount;
   @Deprecated public double length;
   @Deprecated public int laneOffset;
@@ -26,7 +26,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Integer speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
+  public Link(java.lang.CharSequence id, java.lang.CharSequence name, edu.berkeley.path.model_elements_base.LinkType type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Integer speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -62,7 +62,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: type = (java.lang.CharSequence)value$; break;
+    case 2: type = (edu.berkeley.path.model_elements_base.LinkType)value$; break;
     case 3: laneCount = (java.lang.Double)value$; break;
     case 4: length = (java.lang.Double)value$; break;
     case 5: laneOffset = (java.lang.Integer)value$; break;
@@ -107,7 +107,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * Gets the value of the 'type' field.
    */
-  public java.lang.CharSequence getType() {
+  public edu.berkeley.path.model_elements_base.LinkType getType() {
     return type;
   }
 
@@ -115,7 +115,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'type' field.
    * @param value the value to set.
    */
-  public void setType(java.lang.CharSequence value) {
+  public void setType(edu.berkeley.path.model_elements_base.LinkType value) {
     this.type = value;
   }
 
@@ -247,7 +247,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
-    private java.lang.CharSequence type;
+    private edu.berkeley.path.model_elements_base.LinkType type;
     private double laneCount;
     private double length;
     private int laneOffset;
@@ -278,7 +278,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.type)) {
-        this.type = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.type);
+        this.type = (edu.berkeley.path.model_elements_base.LinkType) data().deepCopy(fields()[2].schema(), other.type);
         fieldSetFlags()[2] = true;
       }
       if (isValidValue(fields()[3], other.laneCount)) {
@@ -362,12 +362,12 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
 
     /** Gets the value of the 'type' field */
-    public java.lang.CharSequence getType() {
+    public edu.berkeley.path.model_elements_base.LinkType getType() {
       return type;
     }
     
     /** Sets the value of the 'type' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setType(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setType(edu.berkeley.path.model_elements_base.LinkType value) {
       validate(fields()[2], value);
       this.type = value;
       fieldSetFlags()[2] = true;
@@ -564,7 +564,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         Link record = new Link();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.type = fieldSetFlags()[2] ? this.type : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.type = fieldSetFlags()[2] ? this.type : (edu.berkeley.path.model_elements_base.LinkType) defaultValue(fields()[2]);
         record.laneCount = fieldSetFlags()[3] ? this.laneCount : (java.lang.Double) defaultValue(fields()[3]);
         record.length = fieldSetFlags()[4] ? this.length : (java.lang.Double) defaultValue(fields()[4]);
         record.laneOffset = fieldSetFlags()[5] ? this.laneOffset : (java.lang.Integer) defaultValue(fields()[5]);

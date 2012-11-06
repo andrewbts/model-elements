@@ -43,16 +43,47 @@ protocol CC {
     long milliseconds;
   }
   
+  /**
+   * Type of node. Names are same as in DB, but with
+   * spaces replaced by underscores.
+   */
+  enum NodeType {
+    Freeway,
+    Highway,
+    Signalized_Intersection,
+    Stop_Intersection,
+    Simple,
+    Terminal,
+    Other
+  }
+  
   record Node {
     string id;
     string name;
-    string type;
+    NodeType type;
+  }
+  
+  enum LinkType {
+    Freeway,
+    Highway,
+    On_Ramp,
+    Off_Ramp,
+    Interconnect,
+    HOV,
+    HOT,
+    Toll_Lane,
+    Heavy_Vehicle_Lane,
+    Bus_Lane,
+    Street,
+    Intersection_Approach,
+    Left_Turn_Pocket,
+    Right_Turn_Pocket
   }
   
   record Link {
     string id;
     string name;
-    string type;
+    LinkType type;
     
     double laneCount;
     double length;

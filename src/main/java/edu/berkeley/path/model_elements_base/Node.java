@@ -6,10 +6,10 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Node extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":{\"type\":\"enum\",\"name\":\"NodeType\",\"doc\":\"* Type of node. Names are same as in DB, but with\\n   * spaces replaced by underscores.\",\"symbols\":[\"Freeway\",\"Highway\",\"Signalized_Intersection\",\"Stop_Intersection\",\"Simple\",\"Terminal\",\"Other\"]}}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
-  @Deprecated public java.lang.CharSequence type;
+  @Deprecated public edu.berkeley.path.model_elements_base.NodeType type;
 
   /**
    * Default constructor.
@@ -19,7 +19,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Node(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type) {
+  public Node(java.lang.CharSequence id, java.lang.CharSequence name, edu.berkeley.path.model_elements_base.NodeType type) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -41,7 +41,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: type = (java.lang.CharSequence)value$; break;
+    case 2: type = (edu.berkeley.path.model_elements_base.NodeType)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -79,7 +79,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * Gets the value of the 'type' field.
    */
-  public java.lang.CharSequence getType() {
+  public edu.berkeley.path.model_elements_base.NodeType getType() {
     return type;
   }
 
@@ -87,7 +87,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'type' field.
    * @param value the value to set.
    */
-  public void setType(java.lang.CharSequence value) {
+  public void setType(edu.berkeley.path.model_elements_base.NodeType value) {
     this.type = value;
   }
 
@@ -114,7 +114,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
-    private java.lang.CharSequence type;
+    private edu.berkeley.path.model_elements_base.NodeType type;
 
     /** Creates a new Builder */
     private Builder() {
@@ -138,7 +138,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.type)) {
-        this.type = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.type);
+        this.type = (edu.berkeley.path.model_elements_base.NodeType) data().deepCopy(fields()[2].schema(), other.type);
         fieldSetFlags()[2] = true;
       }
     }
@@ -194,12 +194,12 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
 
     /** Gets the value of the 'type' field */
-    public java.lang.CharSequence getType() {
+    public edu.berkeley.path.model_elements_base.NodeType getType() {
       return type;
     }
     
     /** Sets the value of the 'type' field */
-    public edu.berkeley.path.model_elements_base.Node.Builder setType(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.Node.Builder setType(edu.berkeley.path.model_elements_base.NodeType value) {
       validate(fields()[2], value);
       this.type = value;
       fieldSetFlags()[2] = true;
@@ -224,7 +224,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
         Node record = new Node();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.type = fieldSetFlags()[2] ? this.type : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.type = fieldSetFlags()[2] ? this.type : (edu.berkeley.path.model_elements_base.NodeType) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
