@@ -118,4 +118,11 @@ public class NetworkTest {
     
     assertEquals(expected_links_n1_to_n2, links_n1_to_n2);
   }
+  
+  @Test
+  public void testTerminal() {
+    Node n1 = nw.getNodeById(1L);
+    assertTrue(n1 != null);
+    assertEquals(false, n1.isTerminal());
+  }
 }

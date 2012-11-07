@@ -100,4 +100,8 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
   public void setId(Long id) {
     setId(id.toString());
   }
+  
+  public boolean isTerminal() {
+    return getType() == "Terminal";
+  }
 }
