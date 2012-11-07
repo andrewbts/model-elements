@@ -32,8 +32,6 @@ import static org.junit.Assert.*;
 import java.util.*;
 
 import edu.berkeley.path.model_elements.*;
-import edu.berkeley.path.model_elements_base.NodeType;
-import edu.berkeley.path.model_elements_base.LinkType;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -67,19 +65,19 @@ public class WriterTest {
     nd1 = new Node();
     nd1.setId(1L);
     nd1.setName("one");
-    nd1.setType(NodeType.Highway);
+    nd1.setType("Highway");
     nw.nodes.add(nd1);
 
     nd2 = new Node();
     nd2.setId(2L);
     nd2.setName("two");
-    nd2.setType(NodeType.Highway);
+    nd2.setType("Highway");
     nw.nodes.add(nd2);
 
     ln = new Link();
     ln.setId(3L);
     ln.setName("three");
-    ln.setType(LinkType.Highway);
+    ln.setType("Highway");
     ln.setLaneCount(4.0);
     ln.setLength(1000.0);
     
@@ -126,7 +124,6 @@ public class WriterTest {
     // TODO assert something
   }
 
-  @Ignore
   @Test
   public void testWriteNetworkToJson() throws IOException {
     ByteArrayOutputStream out = new ByteArrayOutputStream();

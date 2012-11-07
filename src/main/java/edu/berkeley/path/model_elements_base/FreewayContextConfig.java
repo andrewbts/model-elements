@@ -16,12 +16,12 @@ package edu.berkeley.path.model_elements_base;
    * Note that a context does not include a scenario. Scenarios are read
    * dynamically using a ScenarioSource. */
 public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\n   *\\n   * The parameters encapsulated here are separate from Scenario inputs\\n   * in that they express *how* the run is modeled and executed,\\n   * rather than *what* is modeled.\\n   *\\n   * These parameters are used by the Context subclasses.\\n   *\\n   * Note that a context does not include a scenario. Scenarios are read\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":{\"type\":\"enum\",\"name\":\"RunMode\",\"symbols\":[\"HISTORICAL\",\"LIVE\"]}},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}},{\"name\":\"ctmType\",\"type\":{\"type\":\"enum\",\"name\":\"CTMType\",\"symbols\":[\"DENSITY\",\"VELOCITY\",\"DENSITY_VELOCITY_FUSION\",\"VELOCITY_DENSITY_FUSION\"]}},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\n   *\\n   * The parameters encapsulated here are separate from Scenario inputs\\n   * in that they express *how* the run is modeled and executed,\\n   * rather than *what* is modeled.\\n   *\\n   * These parameters are used by the Context subclasses.\\n   *\\n   * Note that a context does not include a scenario. Scenarios are read\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
-  @Deprecated public edu.berkeley.path.model_elements_base.RunMode runMode;
+  @Deprecated public java.lang.CharSequence runMode;
   @Deprecated public edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
-  @Deprecated public edu.berkeley.path.model_elements_base.CTMType ctmType;
+  @Deprecated public java.lang.CharSequence ctmType;
   @Deprecated public edu.berkeley.path.model_elements_base.Duration dtOutput;
   @Deprecated public edu.berkeley.path.model_elements_base.Duration dt;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime timeBegin;
@@ -35,7 +35,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   /**
    * All-args constructor.
    */
-  public FreewayContextConfig(java.lang.CharSequence id, java.lang.CharSequence name, edu.berkeley.path.model_elements_base.RunMode runMode, edu.berkeley.path.model_elements_base.EnKFParams enkfParams, edu.berkeley.path.model_elements_base.CTMType ctmType, edu.berkeley.path.model_elements_base.Duration dtOutput, edu.berkeley.path.model_elements_base.Duration dt, edu.berkeley.path.model_elements_base.DateTime timeBegin, edu.berkeley.path.model_elements_base.DateTime timeEnd) {
+  public FreewayContextConfig(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence runMode, edu.berkeley.path.model_elements_base.EnKFParams enkfParams, java.lang.CharSequence ctmType, edu.berkeley.path.model_elements_base.Duration dtOutput, edu.berkeley.path.model_elements_base.Duration dt, edu.berkeley.path.model_elements_base.DateTime timeBegin, edu.berkeley.path.model_elements_base.DateTime timeEnd) {
     this.id = id;
     this.name = name;
     this.runMode = runMode;
@@ -69,9 +69,9 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: runMode = (edu.berkeley.path.model_elements_base.RunMode)value$; break;
+    case 2: runMode = (java.lang.CharSequence)value$; break;
     case 3: enkfParams = (edu.berkeley.path.model_elements_base.EnKFParams)value$; break;
-    case 4: ctmType = (edu.berkeley.path.model_elements_base.CTMType)value$; break;
+    case 4: ctmType = (java.lang.CharSequence)value$; break;
     case 5: dtOutput = (edu.berkeley.path.model_elements_base.Duration)value$; break;
     case 6: dt = (edu.berkeley.path.model_elements_base.Duration)value$; break;
     case 7: timeBegin = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
@@ -113,7 +113,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   /**
    * Gets the value of the 'runMode' field.
    */
-  public edu.berkeley.path.model_elements_base.RunMode getRunMode() {
+  public java.lang.CharSequence getRunMode() {
     return runMode;
   }
 
@@ -121,7 +121,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
    * Sets the value of the 'runMode' field.
    * @param value the value to set.
    */
-  public void setRunMode(edu.berkeley.path.model_elements_base.RunMode value) {
+  public void setRunMode(java.lang.CharSequence value) {
     this.runMode = value;
   }
 
@@ -143,7 +143,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   /**
    * Gets the value of the 'ctmType' field.
    */
-  public edu.berkeley.path.model_elements_base.CTMType getCtmType() {
+  public java.lang.CharSequence getCtmType() {
     return ctmType;
   }
 
@@ -151,7 +151,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
    * Sets the value of the 'ctmType' field.
    * @param value the value to set.
    */
-  public void setCtmType(edu.berkeley.path.model_elements_base.CTMType value) {
+  public void setCtmType(java.lang.CharSequence value) {
     this.ctmType = value;
   }
 
@@ -238,9 +238,9 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
-    private edu.berkeley.path.model_elements_base.RunMode runMode;
+    private java.lang.CharSequence runMode;
     private edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
-    private edu.berkeley.path.model_elements_base.CTMType ctmType;
+    private java.lang.CharSequence ctmType;
     private edu.berkeley.path.model_elements_base.Duration dtOutput;
     private edu.berkeley.path.model_elements_base.Duration dt;
     private edu.berkeley.path.model_elements_base.DateTime timeBegin;
@@ -268,7 +268,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.runMode)) {
-        this.runMode = (edu.berkeley.path.model_elements_base.RunMode) data().deepCopy(fields()[2].schema(), other.runMode);
+        this.runMode = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.runMode);
         fieldSetFlags()[2] = true;
       }
       if (isValidValue(fields()[3], other.enkfParams)) {
@@ -276,7 +276,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         fieldSetFlags()[3] = true;
       }
       if (isValidValue(fields()[4], other.ctmType)) {
-        this.ctmType = (edu.berkeley.path.model_elements_base.CTMType) data().deepCopy(fields()[4].schema(), other.ctmType);
+        this.ctmType = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.ctmType);
         fieldSetFlags()[4] = true;
       }
       if (isValidValue(fields()[5], other.dtOutput)) {
@@ -348,12 +348,12 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
 
     /** Gets the value of the 'runMode' field */
-    public edu.berkeley.path.model_elements_base.RunMode getRunMode() {
+    public java.lang.CharSequence getRunMode() {
       return runMode;
     }
     
     /** Sets the value of the 'runMode' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setRunMode(edu.berkeley.path.model_elements_base.RunMode value) {
+    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setRunMode(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.runMode = value;
       fieldSetFlags()[2] = true;
@@ -398,12 +398,12 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
 
     /** Gets the value of the 'ctmType' field */
-    public edu.berkeley.path.model_elements_base.CTMType getCtmType() {
+    public java.lang.CharSequence getCtmType() {
       return ctmType;
     }
     
     /** Sets the value of the 'ctmType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setCtmType(edu.berkeley.path.model_elements_base.CTMType value) {
+    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setCtmType(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.ctmType = value;
       fieldSetFlags()[4] = true;
@@ -528,9 +528,9 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         FreewayContextConfig record = new FreewayContextConfig();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.runMode = fieldSetFlags()[2] ? this.runMode : (edu.berkeley.path.model_elements_base.RunMode) defaultValue(fields()[2]);
+        record.runMode = fieldSetFlags()[2] ? this.runMode : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.enkfParams = fieldSetFlags()[3] ? this.enkfParams : (edu.berkeley.path.model_elements_base.EnKFParams) defaultValue(fields()[3]);
-        record.ctmType = fieldSetFlags()[4] ? this.ctmType : (edu.berkeley.path.model_elements_base.CTMType) defaultValue(fields()[4]);
+        record.ctmType = fieldSetFlags()[4] ? this.ctmType : (java.lang.CharSequence) defaultValue(fields()[4]);
         record.dtOutput = fieldSetFlags()[5] ? this.dtOutput : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[5]);
         record.dt = fieldSetFlags()[6] ? this.dt : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[6]);
         record.timeBegin = fieldSetFlags()[7] ? this.timeBegin : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[7]);
