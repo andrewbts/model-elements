@@ -26,5 +26,12 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayCTMEnsembleState
-  extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState {}
+import java.util.*;
+
+public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState {
+	
+	public List<FreewayCTMState> getStates() {
+		return (List<FreewayCTMState>)(List<?>)getEnsembleState();
+	}
+	
+}

@@ -26,5 +26,24 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayCTMState
-  extends edu.berkeley.path.model_elements_base.FreewayCTMState {}
+import java.util.*;
+import java.util.Map.Entry;
+
+public class FreewayCTMState extends edu.berkeley.path.model_elements_base.FreewayCTMState {
+	
+	/**
+	 * Create and return a map from links to link states. The map is created from the
+	 * internal map from string link ids to link states.
+	 * @param network Network to which this state pertains
+	 * @return Map from links to link states
+	 */
+	public Map<Link, FreewayLinkState> createLinkStateMap(Network network) {
+		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> charMap = getLinkState();
+		Map<Link, FreewayLinkState> map = new HashMap<Link, FreewayLinkState>(charMap.size());
+		for (Entry<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> e : charMap.entrySet()) {
+			map.put(network.getLinkById(e.getKey().toString()), (FreewayLinkState)e.getValue());
+		}
+		return map;
+	}
+	
+}
