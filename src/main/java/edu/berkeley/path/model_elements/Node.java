@@ -104,4 +104,8 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
   public boolean isTerminal() {
     return getType() == "Terminal";
   }
+  
+  public String getNameString() {
+    return (name == null) ? null : name.toString();
+  }
 }

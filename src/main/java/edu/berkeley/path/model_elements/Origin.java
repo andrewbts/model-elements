@@ -59,4 +59,8 @@ public class Origin extends edu.berkeley.path.model_elements_base.Origin {
   public void setEndLongId(Long id) {
     setEndId(id.toString());
   }
+  
+  public String getNameString() {
+    return (name == null) ? null : name.toString();
+  }
 }

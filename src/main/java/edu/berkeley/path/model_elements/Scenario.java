@@ -56,4 +56,8 @@ public class Scenario extends edu.berkeley.path.model_elements_base.Scenario {
   public void setId(Long id) {
     setId(id.toString());
   }
+  
+  public String getNameString() {
+    return (name == null) ? null : name.toString();
+  }
 }
