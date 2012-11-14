@@ -38,12 +38,17 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 	 * @return Map from links to link states
 	 */
 	public Map<Link, FreewayLinkState> createLinkStateMap(Network network) {
-		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> charMap = getLinkState();
+		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> charMap = super.getLinkState();
 		Map<Link, FreewayLinkState> map = new HashMap<Link, FreewayLinkState>(charMap.size());
 		for (Entry<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> e : charMap.entrySet()) {
 			map.put(network.getLinkById(e.getKey().toString()), (FreewayLinkState)e.getValue());
 		}
 		return map;
+	}
+
+	@Override
+	public Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> getLinkState() {
+		throw new UnsupportedOperationException("Use createLinkStateMap instead.");
 	}
 	
 }
