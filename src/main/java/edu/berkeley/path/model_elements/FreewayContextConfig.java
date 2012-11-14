@@ -27,11 +27,54 @@
 package edu.berkeley.path.model_elements;
 
 public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.FreewayContextConfig {
-  public Long getLongId() {
-    return Long.parseLong(getId().toString());
-  }
-  
-  public void setId(Long id) {
-    setId(id.toString());
-  }
+	public Long getLongId() {
+		return Long.parseLong(getId().toString());
+	}
+
+	public void setId(Long id) {
+		setId(id.toString());
+	}
+
+	@Override
+	public CharSequence getCtmType() {
+		throw new UnsupportedOperationException("Use method getCTMTypeEnum instead.");
+	}
+
+	@Override
+	public void setCtmType(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
+	}
+
+	public CTMType getCTMTypeEnum() {
+		CharSequence type = super.getCtmType();
+		
+		if (type.equals("Density")) return CTMType.DENSITY;
+		if (type.equals("Velocity")) return CTMType.VELOCITY;
+		if (type.equals("DensityVelocityFusion")) return CTMType.DENSITY_VELOCITY_FUSION;
+		if (type.equals("VelocityDensityFusion")) return CTMType.VELOCITY_DENSITY_FUSION;
+		
+		throw new UnsupportedOperationException("Unknown CTM type string '" + type + "' encountered.");
+	}
+	
+	public void setCTMTypeEnum(CTMType type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case DENSITY:
+			typeString = "Density";
+			break;
+		case VELOCITY:
+			typeString = "Velocity";
+			break;
+		case DENSITY_VELOCITY_FUSION:
+			typeString = "DensityVelocityFusion";
+			break;
+		case VELOCITY_DENSITY_FUSION:
+			typeString = "VelocityDensityFusion";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown CTM type " + type + ".");			
+		}
+		super.setCtmType(typeString);
+	}
+
 }
