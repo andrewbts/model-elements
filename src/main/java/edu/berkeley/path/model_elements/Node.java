@@ -108,4 +108,8 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
   public String getNameString() {
     return (name == null) ? null : name.toString();
   }
+  
+  public String getTypeString() {
+    return (type == null) ? null : type.toString();
+  }
 }
