@@ -73,6 +73,8 @@ protocol CC {
     string id;
     string name;
 
+    string beginId;
+
     /** id of the node that traffic flows into from the origin */
     string endId;
   }

@@ -29,18 +29,29 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class Origin extends edu.berkeley.path.model_elements_base.Origin {
+  protected Node begin;
   protected Node end;
+  
+  public Node getBegin() {
+    return begin;
+  }
 
   public Node getEnd() {
     return end;
+  }
+  
+  public void setBegin(Node node) {
+    this.begin = node;
+    this.beginId = node.getId().toString();
   }
 
   public void setEnd(Node node) {
     this.end = node;
     this.endId = node.getId().toString();
   }
-
+  
   public void resolveReferences(Network network) {
+    this.begin = network.getNodeById(Long.parseLong(beginId.toString()));
     this.end = network.getNodeById(Long.parseLong(endId.toString()));
   }
 
@@ -50,6 +61,14 @@ public class Origin extends edu.berkeley.path.model_elements_base.Origin {
   
   public void setId(Long id) {
     setId(id.toString());
+  }
+  
+  public Long getBeginLongId() {
+    return Long.parseLong(getBeginId().toString());
+  }
+  
+  public void setBeginLongId(Long id) {
+    setBeginId(id.toString());
   }
   
   public Long getEndLongId() {

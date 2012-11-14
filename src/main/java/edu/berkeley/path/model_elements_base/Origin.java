@@ -8,9 +8,10 @@ package edu.berkeley.path.model_elements_base;
 /** * Represents a traffic source. In the DB this is a link with
    * terminal node at the begin. */
 public class Origin extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Origin\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Represents a traffic source. In the DB this is a link with\\n   * terminal node at the begin.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\",\"doc\":\"id of the node that traffic flows into from the origin\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Origin\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Represents a traffic source. In the DB this is a link with\\n   * terminal node at the begin.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\",\"doc\":\"id of the node that traffic flows into from the origin\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
+  @Deprecated public java.lang.CharSequence beginId;
   /** id of the node that traffic flows into from the origin */
   @Deprecated public java.lang.CharSequence endId;
 
@@ -22,9 +23,10 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * All-args constructor.
    */
-  public Origin(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence endId) {
+  public Origin(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
     this.id = id;
     this.name = name;
+    this.beginId = beginId;
     this.endId = endId;
   }
 
@@ -34,7 +36,8 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
     switch (field$) {
     case 0: return id;
     case 1: return name;
-    case 2: return endId;
+    case 2: return beginId;
+    case 3: return endId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -44,7 +47,8 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
-    case 2: endId = (java.lang.CharSequence)value$; break;
+    case 2: beginId = (java.lang.CharSequence)value$; break;
+    case 3: endId = (java.lang.CharSequence)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -77,6 +81,21 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
    */
   public void setName(java.lang.CharSequence value) {
     this.name = value;
+  }
+
+  /**
+   * Gets the value of the 'beginId' field.
+   */
+  public java.lang.CharSequence getBeginId() {
+    return beginId;
+  }
+
+  /**
+   * Sets the value of the 'beginId' field.
+   * @param value the value to set.
+   */
+  public void setBeginId(java.lang.CharSequence value) {
+    this.beginId = value;
   }
 
   /**
@@ -117,6 +136,7 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
+    private java.lang.CharSequence beginId;
     private java.lang.CharSequence endId;
 
     /** Creates a new Builder */
@@ -140,9 +160,13 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
         this.name = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.name);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.endId)) {
-        this.endId = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.endId);
+      if (isValidValue(fields()[2], other.beginId)) {
+        this.beginId = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.beginId);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.endId)) {
+        this.endId = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.endId);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -196,6 +220,31 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
       return this;
     }
 
+    /** Gets the value of the 'beginId' field */
+    public java.lang.CharSequence getBeginId() {
+      return beginId;
+    }
+    
+    /** Sets the value of the 'beginId' field */
+    public edu.berkeley.path.model_elements_base.Origin.Builder setBeginId(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.beginId = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'beginId' field has been set */
+    public boolean hasBeginId() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'beginId' field */
+    public edu.berkeley.path.model_elements_base.Origin.Builder clearBeginId() {
+      beginId = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     /** Gets the value of the 'endId' field */
     public java.lang.CharSequence getEndId() {
       return endId;
@@ -203,21 +252,21 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
     
     /** Sets the value of the 'endId' field */
     public edu.berkeley.path.model_elements_base.Origin.Builder setEndId(java.lang.CharSequence value) {
-      validate(fields()[2], value);
+      validate(fields()[3], value);
       this.endId = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[3] = true;
       return this; 
     }
     
     /** Checks whether the 'endId' field has been set */
     public boolean hasEndId() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[3];
     }
     
     /** Clears the value of the 'endId' field */
     public edu.berkeley.path.model_elements_base.Origin.Builder clearEndId() {
       endId = null;
-      fieldSetFlags()[2] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -227,7 +276,8 @@ public class Origin extends org.apache.avro.specific.SpecificRecordBase implemen
         Origin record = new Origin();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.endId = fieldSetFlags()[2] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.beginId = fieldSetFlags()[2] ? this.beginId : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.endId = fieldSetFlags()[3] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
