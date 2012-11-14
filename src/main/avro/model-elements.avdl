@@ -54,10 +54,9 @@ protocol CC {
     string name;
     string type;
     
-    double laneCount;
-    double length;
-    int laneOffset = 0;
-    
+    union { null, double } laneCount;
+    union { null, double } length;
+    union { null, int } laneOffset;
     union { null, int } speedLimit;
     union { null, int } detailLevel;
 
