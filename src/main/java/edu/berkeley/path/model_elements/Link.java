@@ -84,4 +84,8 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   public String getTypeString() {
     return (type == null) ? null : type.toString();
   }
+  
+  public boolean isOrigin() {
+    return getBegin().isTerminal();
+  }
 }

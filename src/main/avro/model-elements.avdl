@@ -64,20 +64,6 @@ protocol CC {
     string endId;
   }
 
-  /**
-   * Represents a traffic source. In the DB this is a link with
-   * terminal node at the begin.
-   */
-  record Origin {
-    string id;
-    string name;
-
-    string beginId;
-
-    /** id of the node that traffic flows into from the origin */
-    string endId;
-  }
-  
   record Network {
     string id;
     string name;
@@ -85,7 +71,6 @@ protocol CC {
 
     array<Node> nodes = [];
     array<Link> links = [];
-    array<Origin> origins = [];
   }
   
   /**
@@ -477,7 +462,7 @@ protocol CC {
     /** map key is link id */
     map<FreewayLinkState> linkState;
     
-    /** map key is origin id */
+    /** map key is origin link id */
     map<double> queueLength;
     
     DateTime t;

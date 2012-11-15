@@ -31,7 +31,6 @@ import java.util.*;
 public class Network extends edu.berkeley.path.model_elements_base.Network {
   protected HashMap<Long, Link> linkById = null;
   protected HashMap<Long, Node> nodeById = null;
-  protected HashMap<Long, Origin> originById = null;
   
   public Network() {
     
@@ -40,7 +39,6 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   public void resolveReferences() {
     linkById = new HashMap<Long, Link>();
     nodeById = new HashMap<Long, Node>();
-    originById = new HashMap<Long, Origin>();
     
     // pass 1: populate the HashMaps
     for (Node node : getNodeList()) {
@@ -50,22 +48,12 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     for (Link link : getLinkList()) {
       linkById.put(link.getLongId(), link);
     }
-    
-    for (Origin origin : getOriginList()) {
-      originById.put(origin.getLongId(), origin);
-    }
-    
+        
     // pass 2: set references
     for (Link link : getLinkList()) {
       link.resolveReferences(this);
       link.getBegin().resolveReferences(link);
       link.getEnd().resolveReferences(link);
-    }
-
-    for (Origin origin : getOriginList()) {
-      origin.resolveReferences(this);
-      // this doesn't make sense, so don't do it:
-      // origin.getEnd().resolveReferences(origin);
     }
   }
 
@@ -85,24 +73,12 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
     return nodeById.get(id);
   }
 
-  public Origin getOriginById(Long id) {
-    if (originById == null) {
-      resolveReferences();
-    }
-    
-    return originById.get(id);
-  }
-
   public Link getLinkById(String id) {
     return getLinkById(Long.parseLong(id));
   }
 
   public Node getNodeById(String id) {
     return getNodeById(Long.parseLong(id));
-  }
-
-  public Origin getOriginById(String id) {
-    return getOriginById(Long.parseLong(id));
   }
 
   public Long getLongId() {
@@ -131,13 +107,6 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   }
   
   /**
-   * Set the origins. Same as setOrigins(), but works with a list of Origin.
-   */
-  public void setOriginList(List<Origin> value) {
-    setOrigins((List<edu.berkeley.path.model_elements_base.Origin>)(List<?>)value);
-  }
-  
-  /**
    * Get the nodes. Same as getNodes(), but works with a list of Node.
    * Never returns null (creates the list if it doesn't exist).
    */
@@ -157,17 +126,6 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
       setLinks(new ArrayList<edu.berkeley.path.model_elements_base.Link>());
     }
     return (List<Link>)(List<?>)getLinks();
-  }
-  
-  /**
-   * Get the origins. Same as getOrigins(), but works with a list of Origin.
-   * Never returns null (creates the list if it doesn't exist).
-   */
-  public List<Origin> getOriginList() {
-    if (null == getOrigins()) {
-      setOrigins(new ArrayList<edu.berkeley.path.model_elements_base.Origin>());
-    }
-    return (List<Origin>)(List<?>)getOrigins();
   }
   
   public String getNameString() {
