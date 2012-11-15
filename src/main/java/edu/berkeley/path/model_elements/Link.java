@@ -49,8 +49,8 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   }
   
   public void resolveReferences(Network network) {
-    this.begin = network.getNodeById(Long.parseLong(beginId.toString()));
-    this.end = network.getNodeById(Long.parseLong(endId.toString()));
+    this.begin = network.getNodeById(getBeginLongId());
+    this.end = network.getNodeById(getEndLongId());
   }
   
   public Long getLongId() {
