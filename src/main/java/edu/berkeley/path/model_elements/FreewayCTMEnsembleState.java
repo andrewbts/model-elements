@@ -31,7 +31,12 @@ import java.util.*;
 public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState {
 	
 	public List<FreewayCTMState> getStates() {
-		return (List<FreewayCTMState>)(List<?>)getEnsembleState();
+		return (List<FreewayCTMState>)(List<?>)super.getEnsembleState();
+	}
+
+	@Override
+	public List<edu.berkeley.path.model_elements_base.FreewayCTMState> getEnsembleState() {
+		throw new UnsupportedOperationException("Use getStates instead.");
 	}
 	
 }
