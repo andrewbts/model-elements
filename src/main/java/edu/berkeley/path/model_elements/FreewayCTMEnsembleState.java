@@ -29,10 +29,26 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState {
-	
+		
+	/**
+	 * Create model_elements_base part of this from model_elements input.
+	 * @param ensembleState List of CTM states
+	 * @param quality TBD
+	 */	
+	public FreewayCTMEnsembleState(List<FreewayCTMState> ensembleState, Map<CharSequence, Double> quality) {
+		
+		super();
+		
+		@SuppressWarnings("unchecked")
+		List<edu.berkeley.path.model_elements_base.FreewayCTMState> ensemble = 
+			(List<edu.berkeley.path.model_elements_base.FreewayCTMState>)(List<?>)ensembleState;
+		
+		super.setEnsembleState(ensemble);		
+		super.setQuality(quality); // TODO: what is the meaning of this field?
+	}
+
 	@SuppressWarnings("unchecked")
 	public List<FreewayCTMState> getStates() {
-		// this case could throw if FreewayCTMEnsembleState was constructed incorrectly
 		return (List<FreewayCTMState>)(List<?>)super.getEnsembleState();
 	}
 
