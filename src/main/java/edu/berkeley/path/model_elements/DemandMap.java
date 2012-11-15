@@ -29,4 +29,13 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap {
+	
+	public double getTotalDemand(Link originLink) {
+		Map<CharSequence, Double> vehicleTypeDemands = getFlow().get(originLink.getId());
+		double total = 0d;
+		for (Double demand : vehicleTypeDemands.values())
+			total += demand;
+		return total;
+	}
+	
 }
