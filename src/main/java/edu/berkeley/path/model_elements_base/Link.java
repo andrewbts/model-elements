@@ -6,13 +6,13 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"]},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
-  @Deprecated public double laneCount;
-  @Deprecated public double length;
-  @Deprecated public int laneOffset;
+  @Deprecated public java.lang.Double laneCount;
+  @Deprecated public java.lang.Double length;
+  @Deprecated public java.lang.Integer laneOffset;
   @Deprecated public java.lang.Integer speedLimit;
   @Deprecated public java.lang.Integer detailLevel;
   @Deprecated public java.lang.CharSequence beginId;
@@ -248,9 +248,9 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence type;
-    private double laneCount;
-    private double length;
-    private int laneOffset;
+    private java.lang.Double laneCount;
+    private java.lang.Double length;
+    private java.lang.Integer laneOffset;
     private java.lang.Integer speedLimit;
     private java.lang.Integer detailLevel;
     private java.lang.CharSequence beginId;
@@ -392,7 +392,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'laneCount' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setLaneCount(double value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setLaneCount(java.lang.Double value) {
       validate(fields()[3], value);
       this.laneCount = value;
       fieldSetFlags()[3] = true;
@@ -406,6 +406,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'laneCount' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearLaneCount() {
+      laneCount = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -416,7 +417,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'length' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setLength(double value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setLength(java.lang.Double value) {
       validate(fields()[4], value);
       this.length = value;
       fieldSetFlags()[4] = true;
@@ -430,6 +431,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'length' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearLength() {
+      length = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -440,7 +442,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'laneOffset' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setLaneOffset(int value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setLaneOffset(java.lang.Integer value) {
       validate(fields()[5], value);
       this.laneOffset = value;
       fieldSetFlags()[5] = true;
@@ -454,6 +456,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'laneOffset' field */
     public edu.berkeley.path.model_elements_base.Link.Builder clearLaneOffset() {
+      laneOffset = null;
       fieldSetFlags()[5] = false;
       return this;
     }

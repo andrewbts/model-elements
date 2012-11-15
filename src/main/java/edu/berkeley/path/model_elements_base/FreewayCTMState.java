@@ -7,10 +7,10 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * State of entire CTM */
 public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin id\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}}]}");
   /** map key is link id */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState> linkState;
-  /** map key is origin id */
+  /** map key is origin link id */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> queueLength;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime t;
 
@@ -66,14 +66,14 @@ public class FreewayCTMState extends org.apache.avro.specific.SpecificRecordBase
 
   /**
    * Gets the value of the 'queueLength' field.
-   * map key is origin id   */
+   * map key is origin link id   */
   public java.util.Map<java.lang.CharSequence,java.lang.Double> getQueueLength() {
     return queueLength;
   }
 
   /**
    * Sets the value of the 'queueLength' field.
-   * map key is origin id   * @param value the value to set.
+   * map key is origin link id   * @param value the value to set.
    */
   public void setQueueLength(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
     this.queueLength = value;

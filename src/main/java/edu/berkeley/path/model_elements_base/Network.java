@@ -6,13 +6,12 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Network extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Network\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"double\"},{\"name\":\"length\",\"type\":\"double\"},{\"name\":\"laneOffset\",\"type\":\"int\",\"default\":0},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"origins\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Origin\",\"doc\":\"* Represents a traffic source. In the DB this is a link with\\n   * terminal node at the begin.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\",\"doc\":\"id of the node that traffic flows into from the origin\"}]}},\"default\":[]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Network\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"]},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Node> nodes;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Link> links;
-  @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Origin> origins;
 
   /**
    * Default constructor.
@@ -22,13 +21,12 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
   /**
    * All-args constructor.
    */
-  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.List<edu.berkeley.path.model_elements_base.Node> nodes, java.util.List<edu.berkeley.path.model_elements_base.Link> links, java.util.List<edu.berkeley.path.model_elements_base.Origin> origins) {
+  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.List<edu.berkeley.path.model_elements_base.Node> nodes, java.util.List<edu.berkeley.path.model_elements_base.Link> links) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.nodes = nodes;
     this.links = links;
-    this.origins = origins;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -40,7 +38,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     case 2: return description;
     case 3: return nodes;
     case 4: return links;
-    case 5: return origins;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -53,7 +50,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     case 2: description = (java.lang.CharSequence)value$; break;
     case 3: nodes = (java.util.List<edu.berkeley.path.model_elements_base.Node>)value$; break;
     case 4: links = (java.util.List<edu.berkeley.path.model_elements_base.Link>)value$; break;
-    case 5: origins = (java.util.List<edu.berkeley.path.model_elements_base.Origin>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -133,21 +129,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     this.links = value;
   }
 
-  /**
-   * Gets the value of the 'origins' field.
-   */
-  public java.util.List<edu.berkeley.path.model_elements_base.Origin> getOrigins() {
-    return origins;
-  }
-
-  /**
-   * Sets the value of the 'origins' field.
-   * @param value the value to set.
-   */
-  public void setOrigins(java.util.List<edu.berkeley.path.model_elements_base.Origin> value) {
-    this.origins = value;
-  }
-
   /** Creates a new Network RecordBuilder */
   public static edu.berkeley.path.model_elements_base.Network.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.Network.Builder();
@@ -174,7 +155,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     private java.lang.CharSequence description;
     private java.util.List<edu.berkeley.path.model_elements_base.Node> nodes;
     private java.util.List<edu.berkeley.path.model_elements_base.Link> links;
-    private java.util.List<edu.berkeley.path.model_elements_base.Origin> origins;
 
     /** Creates a new Builder */
     private Builder() {
@@ -208,10 +188,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
       if (isValidValue(fields()[4], other.links)) {
         this.links = (java.util.List<edu.berkeley.path.model_elements_base.Link>) data().deepCopy(fields()[4].schema(), other.links);
         fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.origins)) {
-        this.origins = (java.util.List<edu.berkeley.path.model_elements_base.Origin>) data().deepCopy(fields()[5].schema(), other.origins);
-        fieldSetFlags()[5] = true;
       }
     }
 
@@ -340,31 +316,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
       return this;
     }
 
-    /** Gets the value of the 'origins' field */
-    public java.util.List<edu.berkeley.path.model_elements_base.Origin> getOrigins() {
-      return origins;
-    }
-    
-    /** Sets the value of the 'origins' field */
-    public edu.berkeley.path.model_elements_base.Network.Builder setOrigins(java.util.List<edu.berkeley.path.model_elements_base.Origin> value) {
-      validate(fields()[5], value);
-      this.origins = value;
-      fieldSetFlags()[5] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'origins' field has been set */
-    public boolean hasOrigins() {
-      return fieldSetFlags()[5];
-    }
-    
-    /** Clears the value of the 'origins' field */
-    public edu.berkeley.path.model_elements_base.Network.Builder clearOrigins() {
-      origins = null;
-      fieldSetFlags()[5] = false;
-      return this;
-    }
-
     @Override
     public Network build() {
       try {
@@ -374,7 +325,6 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.nodes = fieldSetFlags()[3] ? this.nodes : (java.util.List<edu.berkeley.path.model_elements_base.Node>) defaultValue(fields()[3]);
         record.links = fieldSetFlags()[4] ? this.links : (java.util.List<edu.berkeley.path.model_elements_base.Link>) defaultValue(fields()[4]);
-        record.origins = fieldSetFlags()[5] ? this.origins : (java.util.List<edu.berkeley.path.model_elements_base.Origin>) defaultValue(fields()[5]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
