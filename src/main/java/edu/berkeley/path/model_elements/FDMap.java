@@ -27,4 +27,9 @@
 package edu.berkeley.path.model_elements;
 
 public class FDMap extends edu.berkeley.path.model_elements_base.FDMap {
+	
+	public FD getLinkFD(Link link) {
+		return (FD)super.getFd().get(link.getId());
+	}
+	
 }
