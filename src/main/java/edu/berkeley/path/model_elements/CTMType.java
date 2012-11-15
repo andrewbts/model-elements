@@ -26,29 +26,13 @@
 
 package edu.berkeley.path.model_elements;
 
-import java.util.*;
-import java.util.Map.Entry;
+/**
+ * Type of cell transmission model, i.e., what each link state value represents:
+ * density (rho-CTM), velocity (v-CTM), density-augmented-with-velocity (rho+v-CTM), etc
+ * @author amoylan
+ */
+public enum CTMType {
 
-public class FreewayCTMState extends edu.berkeley.path.model_elements_base.FreewayCTMState {
-	
-	/**
-	 * Create and return a map from links to link states. The map is created from the
-	 * internal map from string link ids to link states.
-	 * @param network Network to which this state pertains
-	 * @return Map from links to link states
-	 */
-	public Map<Link, FreewayLinkState> createLinkStateMap(Network network) {
-		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> charMap = super.getLinkState();
-		Map<Link, FreewayLinkState> map = new HashMap<Link, FreewayLinkState>(charMap.size());
-		for (Entry<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> e : charMap.entrySet()) {
-			map.put(network.getLinkById(e.getKey().toString()), (FreewayLinkState)e.getValue());
-		}
-		return map;
-	}
-
-	@Override
-	public Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> getLinkState() {
-		throw new UnsupportedOperationException("Use createLinkStateMap instead.");
-	}
+	DENSITY, VELOCITY, DENSITY_VELOCITY_FUSION, VELOCITY_DENSITY_FUSION
 	
 }

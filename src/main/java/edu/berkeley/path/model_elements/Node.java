@@ -102,7 +102,7 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
   }
   
   public boolean isTerminal() {
-    return getType() == "Terminal";
+    return getType().equals("Terminal");
   }
   
   public String getNameString() {
