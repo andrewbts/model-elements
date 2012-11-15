@@ -30,11 +30,14 @@ import java.util.*;
 
 public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState {
 	
+	@SuppressWarnings("unchecked")
 	public List<FreewayCTMState> getStates() {
+		// this case could throw if FreewayCTMEnsembleState was constructed incorrectly
 		return (List<FreewayCTMState>)(List<?>)super.getEnsembleState();
 	}
 
 	@Override
+	@Deprecated
 	public List<edu.berkeley.path.model_elements_base.FreewayCTMState> getEnsembleState() {
 		throw new UnsupportedOperationException("Use getStates instead.");
 	}
