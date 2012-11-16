@@ -45,10 +45,39 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 		}
 		return map;
 	}
+	
+	/**
+	 * Get current link state for a single specified link
+	 * @param link Link whose state to get, shoudl not be an origin link
+	 * @return Current link state
+	 */
+	public FreewayLinkState getCurrentLinkState(Link link) {
+		if (link.isOrigin())
+			throw new IllegalArgumentException("Specified link was an origin link not a normal link.");
+		return (FreewayLinkState)super.getLinkState().get(link.getId());
+	}
 
 	@Override
+	@Deprecated
 	public Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> getLinkState() {
 		throw new UnsupportedOperationException("Use createLinkStateMap instead.");
+	}
+	
+	/**
+	 * Get current queue length for a single specified origin link
+	 * @param link Link to get queue length, should be an origin link
+	 * @return Current queue length in units of vehicles
+	 */
+	public double getOriginLinkQueueLength(Link link) {
+		if (!link.isOrigin())
+			throw new IllegalArgumentException("Specified link was not an origin link.");
+		return super.getQueueLength().get(link.getId()).doubleValue();		
+	}
+
+	@Override
+	@Deprecated
+	public Map<CharSequence, Double> getQueueLength() {
+		throw new UnsupportedOperationException("Use getOriginLinkQueueLength to get individual queue lengths instead.");
 	}
 	
 }
