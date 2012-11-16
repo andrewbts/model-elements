@@ -31,6 +31,11 @@ import java.util.Map.Entry;
 
 public class FreewayCTMState extends edu.berkeley.path.model_elements_base.FreewayCTMState {
 	
+	@SuppressWarnings("unchecked")
+	public FreewayCTMState(Map<CharSequence, FreewayLinkState> linkStateMap, Map<CharSequence, Double> originStateMap, DateTime t) {
+		super((Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?, ?>)linkStateMap, originStateMap, t);
+	}
+
 	/**
 	 * Create and return a map from links to link states. The map is created from the
 	 * internal map from string link ids to link states.
