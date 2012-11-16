@@ -35,16 +35,9 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 		setId(id.toString());
 	}
 
-	@Override
-	public CharSequence getCtmType() {
-		throw new UnsupportedOperationException("Use method getCTMTypeEnum instead.");
-	}
-
-	@Override
-	public void setCtmType(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
-	}
-
+	/**
+	 * @return CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
+	 */
 	public CTMType getCTMTypeEnum() {
 		CharSequence type = super.getCtmType();
 		
@@ -56,6 +49,15 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 		throw new UnsupportedOperationException("Unknown CTM type string '" + type + "' encountered.");
 	}
 	
+	@Override
+	@Deprecated
+	public CharSequence getCtmType() {
+		throw new UnsupportedOperationException("Use method getCTMTypeEnum instead.");
+	}
+	
+	/**
+	 * @param type CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
+	 */
 	public void setCTMTypeEnum(CTMType type) {
 		CharSequence typeString = null;
 		switch (type) {
@@ -75,6 +77,12 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 			throw new IllegalArgumentException("Unknown CTM type " + type + ".");			
 		}
 		super.setCtmType(typeString);
+	}
+	
+	@Override
+	@Deprecated
+	public void setCtmType(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
 	}
 
 }
