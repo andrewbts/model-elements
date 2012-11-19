@@ -78,11 +78,5 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 			throw new IllegalArgumentException("Specified link was not an origin link.");
 		return super.getQueueLength().get(link.getId()).doubleValue();		
 	}
-
-	@Override
-	@Deprecated
-	public Map<CharSequence, Double> getQueueLength() {
-		throw new UnsupportedOperationException("Use getOriginLinkQueueLength to get individual queue lengths instead.");
-	}
 	
 }
