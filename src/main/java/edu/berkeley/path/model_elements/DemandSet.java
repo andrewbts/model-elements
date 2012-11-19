@@ -46,7 +46,8 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
   /**
    * Set the profile map. Same as setProfiles(), but works with a map of String to DemandProfile.
    */
-  public void setProfileMap(Map<String,DemandProfile> value) {
+  @SuppressWarnings("unchecked")
+public void setProfileMap(Map<String,DemandProfile> value) {
     setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)(Map<?,?>)value);
   }
 
@@ -54,7 +55,8 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
    * Get the profile map. Same as getProfiles(), but works with a map of DemandProfile.
    * Never returns null (creates the map if it doesn't exist).
    */
-  public Map<String,DemandProfile> getProfileMap() {
+  @SuppressWarnings("unchecked")
+public Map<String,DemandProfile> getProfileMap() {
     if (null == getProfile()) {
       setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>());
     }

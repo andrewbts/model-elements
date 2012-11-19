@@ -40,12 +40,12 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   
   public void setBegin(Node node) {
     this.begin = node;
-    this.beginId = node.getId().toString();
+    this.setBeginId(node.getId().toString());
   }
 
   public void setEnd(Node node) {
     this.end = node;
-    this.endId = node.getId().toString();
+    this.setEndId(node.getId().toString());
   }
   
   public void resolveReferences(Network network) {
@@ -78,11 +78,11 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   }
   
   public String getNameString() {
-    return (name == null) ? null : name.toString();
+    return (getName() == null) ? null : getName().toString();
   }
   
   public String getTypeString() {
-    return (type == null) ? null : type.toString();
+    return (getType() == null) ? null : getType().toString();
   }
   
   public boolean isOrigin() {
