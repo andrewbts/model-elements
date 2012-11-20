@@ -464,8 +464,6 @@ protocol CC {
     
     /** map key is origin link id */
     map<double> queueLength;
-    
-    DateTime t;
   }
 
   /**
@@ -474,6 +472,8 @@ protocol CC {
   record FreewayCTMEnsembleState {
     /** one entry per CTM */
     array<FreewayCTMState> ensembleState;
+    
+    DateTime t;
     
     /** map key is link id
      *

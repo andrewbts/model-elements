@@ -7,9 +7,10 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * State of ensemble CTMs in an ordered list. */
 public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"quality\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is link id\\n     *\\n     * used by FreewayReporterBlock?\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\n   *\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"quality\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is link id\\n     *\\n     * used by FreewayReporterBlock?\"}]}");
   /** one entry per CTM */
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState> ensembleState;
+  @Deprecated public edu.berkeley.path.model_elements_base.DateTime t;
   /** map key is link id
      *
      * used by FreewayReporterBlock? */
@@ -23,8 +24,9 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
   /**
    * All-args constructor.
    */
-  public FreewayCTMEnsembleState(java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState> ensembleState, java.util.Map<java.lang.CharSequence,java.lang.Double> quality) {
+  public FreewayCTMEnsembleState(java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState> ensembleState, edu.berkeley.path.model_elements_base.DateTime t, java.util.Map<java.lang.CharSequence,java.lang.Double> quality) {
     this.ensembleState = ensembleState;
+    this.t = t;
     this.quality = quality;
   }
 
@@ -33,7 +35,8 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return ensembleState;
-    case 1: return quality;
+    case 1: return t;
+    case 2: return quality;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -42,7 +45,8 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: ensembleState = (java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState>)value$; break;
-    case 1: quality = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
+    case 1: t = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
+    case 2: quality = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -60,6 +64,21 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
    */
   public void setEnsembleState(java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState> value) {
     this.ensembleState = value;
+  }
+
+  /**
+   * Gets the value of the 't' field.
+   */
+  public edu.berkeley.path.model_elements_base.DateTime getT() {
+    return t;
+  }
+
+  /**
+   * Sets the value of the 't' field.
+   * @param value the value to set.
+   */
+  public void setT(edu.berkeley.path.model_elements_base.DateTime value) {
+    this.t = value;
   }
 
   /**
@@ -103,6 +122,7 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
     implements org.apache.avro.data.RecordBuilder<FreewayCTMEnsembleState> {
 
     private java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState> ensembleState;
+    private edu.berkeley.path.model_elements_base.DateTime t;
     private java.util.Map<java.lang.CharSequence,java.lang.Double> quality;
 
     /** Creates a new Builder */
@@ -122,9 +142,13 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
         this.ensembleState = (java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState>) data().deepCopy(fields()[0].schema(), other.ensembleState);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.quality)) {
-        this.quality = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[1].schema(), other.quality);
+      if (isValidValue(fields()[1], other.t)) {
+        this.t = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[1].schema(), other.t);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.quality)) {
+        this.quality = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[2].schema(), other.quality);
+        fieldSetFlags()[2] = true;
       }
     }
 
@@ -153,6 +177,31 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
       return this;
     }
 
+    /** Gets the value of the 't' field */
+    public edu.berkeley.path.model_elements_base.DateTime getT() {
+      return t;
+    }
+    
+    /** Sets the value of the 't' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState.Builder setT(edu.berkeley.path.model_elements_base.DateTime value) {
+      validate(fields()[1], value);
+      this.t = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 't' field has been set */
+    public boolean hasT() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 't' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState.Builder clearT() {
+      t = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
     /** Gets the value of the 'quality' field */
     public java.util.Map<java.lang.CharSequence,java.lang.Double> getQuality() {
       return quality;
@@ -160,21 +209,21 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
     
     /** Sets the value of the 'quality' field */
     public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState.Builder setQuality(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.quality = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'quality' field has been set */
     public boolean hasQuality() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'quality' field */
     public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState.Builder clearQuality() {
       quality = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -183,7 +232,8 @@ public class FreewayCTMEnsembleState extends org.apache.avro.specific.SpecificRe
       try {
         FreewayCTMEnsembleState record = new FreewayCTMEnsembleState();
         record.ensembleState = fieldSetFlags()[0] ? this.ensembleState : (java.util.List<edu.berkeley.path.model_elements_base.FreewayCTMState>) defaultValue(fields()[0]);
-        record.quality = fieldSetFlags()[1] ? this.quality : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[1]);
+        record.t = fieldSetFlags()[1] ? this.t : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[1]);
+        record.quality = fieldSetFlags()[2] ? this.quality : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
