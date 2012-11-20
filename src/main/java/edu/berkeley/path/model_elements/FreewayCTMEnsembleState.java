@@ -44,7 +44,8 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 			(List<edu.berkeley.path.model_elements_base.FreewayCTMState>)(List<?>)ensembleState;
 		
 		super.setEnsembleState(ensemble);		
-		super.setQuality(quality); // TODO: what is the meaning of this field?
+		super.setT(t);
+		super.setQuality(quality); // TODO: what is the meaning of this field?		
 	}
 
 	@SuppressWarnings("unchecked")
