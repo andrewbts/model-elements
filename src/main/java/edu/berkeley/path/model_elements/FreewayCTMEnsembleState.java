@@ -35,7 +35,7 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	 * @param ensembleState List of CTM states
 	 * @param quality TBD
 	 */	
-	public FreewayCTMEnsembleState(List<FreewayCTMState> ensembleState, Map<CharSequence, Double> quality) {
+	public FreewayCTMEnsembleState(List<FreewayCTMState> ensembleState, DateTime t, Map<CharSequence, Double> quality) {
 		
 		super();
 		
