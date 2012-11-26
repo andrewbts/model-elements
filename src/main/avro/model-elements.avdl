@@ -373,6 +373,7 @@ protocol CC {
     string        runMode;
     EnKFParams    enkfParams;
     string        ctmType;
+    string        fdType;
     
     Duration      dtOutput;
     Duration      dt;

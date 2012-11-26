@@ -16,12 +16,13 @@ package edu.berkeley.path.model_elements_base;
    * Note that a context does not include a scenario. Scenarios are read
    * dynamically using a ScenarioSource. */
 public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\n   *\\n   * The parameters encapsulated here are separate from Scenario inputs\\n   * in that they express *how* the run is modeled and executed,\\n   * rather than *what* is modeled.\\n   *\\n   * These parameters are used by the Context subclasses.\\n   *\\n   * Note that a context does not include a scenario. Scenarios are read\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\n   *\\n   * The parameters encapsulated here are separate from Scenario inputs\\n   * in that they express *how* the run is modeled and executed,\\n   * rather than *what* is modeled.\\n   *\\n   * These parameters are used by the Context subclasses.\\n   *\\n   * Note that a context does not include a scenario. Scenarios are read\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"fdType\",\"type\":\"string\"},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence runMode;
   @Deprecated public edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
   @Deprecated public java.lang.CharSequence ctmType;
+  @Deprecated public java.lang.CharSequence fdType;
   @Deprecated public edu.berkeley.path.model_elements_base.Duration dtOutput;
   @Deprecated public edu.berkeley.path.model_elements_base.Duration dt;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime timeBegin;
@@ -35,12 +36,13 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   /**
    * All-args constructor.
    */
-  public FreewayContextConfig(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence runMode, edu.berkeley.path.model_elements_base.EnKFParams enkfParams, java.lang.CharSequence ctmType, edu.berkeley.path.model_elements_base.Duration dtOutput, edu.berkeley.path.model_elements_base.Duration dt, edu.berkeley.path.model_elements_base.DateTime timeBegin, edu.berkeley.path.model_elements_base.DateTime timeEnd) {
+  public FreewayContextConfig(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence runMode, edu.berkeley.path.model_elements_base.EnKFParams enkfParams, java.lang.CharSequence ctmType, java.lang.CharSequence fdType, edu.berkeley.path.model_elements_base.Duration dtOutput, edu.berkeley.path.model_elements_base.Duration dt, edu.berkeley.path.model_elements_base.DateTime timeBegin, edu.berkeley.path.model_elements_base.DateTime timeEnd) {
     this.id = id;
     this.name = name;
     this.runMode = runMode;
     this.enkfParams = enkfParams;
     this.ctmType = ctmType;
+    this.fdType = fdType;
     this.dtOutput = dtOutput;
     this.dt = dt;
     this.timeBegin = timeBegin;
@@ -56,10 +58,11 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     case 2: return runMode;
     case 3: return enkfParams;
     case 4: return ctmType;
-    case 5: return dtOutput;
-    case 6: return dt;
-    case 7: return timeBegin;
-    case 8: return timeEnd;
+    case 5: return fdType;
+    case 6: return dtOutput;
+    case 7: return dt;
+    case 8: return timeBegin;
+    case 9: return timeEnd;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -72,10 +75,11 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     case 2: runMode = (java.lang.CharSequence)value$; break;
     case 3: enkfParams = (edu.berkeley.path.model_elements_base.EnKFParams)value$; break;
     case 4: ctmType = (java.lang.CharSequence)value$; break;
-    case 5: dtOutput = (edu.berkeley.path.model_elements_base.Duration)value$; break;
-    case 6: dt = (edu.berkeley.path.model_elements_base.Duration)value$; break;
-    case 7: timeBegin = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
-    case 8: timeEnd = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
+    case 5: fdType = (java.lang.CharSequence)value$; break;
+    case 6: dtOutput = (edu.berkeley.path.model_elements_base.Duration)value$; break;
+    case 7: dt = (edu.berkeley.path.model_elements_base.Duration)value$; break;
+    case 8: timeBegin = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
+    case 9: timeEnd = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -153,6 +157,21 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
    */
   public void setCtmType(java.lang.CharSequence value) {
     this.ctmType = value;
+  }
+
+  /**
+   * Gets the value of the 'fdType' field.
+   */
+  public java.lang.CharSequence getFdType() {
+    return fdType;
+  }
+
+  /**
+   * Sets the value of the 'fdType' field.
+   * @param value the value to set.
+   */
+  public void setFdType(java.lang.CharSequence value) {
+    this.fdType = value;
   }
 
   /**
@@ -241,6 +260,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     private java.lang.CharSequence runMode;
     private edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
     private java.lang.CharSequence ctmType;
+    private java.lang.CharSequence fdType;
     private edu.berkeley.path.model_elements_base.Duration dtOutput;
     private edu.berkeley.path.model_elements_base.Duration dt;
     private edu.berkeley.path.model_elements_base.DateTime timeBegin;
@@ -279,21 +299,25 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         this.ctmType = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.ctmType);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.dtOutput)) {
-        this.dtOutput = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[5].schema(), other.dtOutput);
+      if (isValidValue(fields()[5], other.fdType)) {
+        this.fdType = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.fdType);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.dt)) {
-        this.dt = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[6].schema(), other.dt);
+      if (isValidValue(fields()[6], other.dtOutput)) {
+        this.dtOutput = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[6].schema(), other.dtOutput);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.timeBegin)) {
-        this.timeBegin = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[7].schema(), other.timeBegin);
+      if (isValidValue(fields()[7], other.dt)) {
+        this.dt = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[7].schema(), other.dt);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.timeEnd)) {
-        this.timeEnd = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[8].schema(), other.timeEnd);
+      if (isValidValue(fields()[8], other.timeBegin)) {
+        this.timeBegin = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[8].schema(), other.timeBegin);
         fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.timeEnd)) {
+        this.timeEnd = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[9].schema(), other.timeEnd);
+        fieldSetFlags()[9] = true;
       }
     }
 
@@ -422,6 +446,31 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
       return this;
     }
 
+    /** Gets the value of the 'fdType' field */
+    public java.lang.CharSequence getFdType() {
+      return fdType;
+    }
+    
+    /** Sets the value of the 'fdType' field */
+    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setFdType(java.lang.CharSequence value) {
+      validate(fields()[5], value);
+      this.fdType = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'fdType' field has been set */
+    public boolean hasFdType() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'fdType' field */
+    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearFdType() {
+      fdType = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
     /** Gets the value of the 'dtOutput' field */
     public edu.berkeley.path.model_elements_base.Duration getDtOutput() {
       return dtOutput;
@@ -429,21 +478,21 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     
     /** Sets the value of the 'dtOutput' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setDtOutput(edu.berkeley.path.model_elements_base.Duration value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.dtOutput = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this; 
     }
     
     /** Checks whether the 'dtOutput' field has been set */
     public boolean hasDtOutput() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
     
     /** Clears the value of the 'dtOutput' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearDtOutput() {
       dtOutput = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -454,21 +503,21 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     
     /** Sets the value of the 'dt' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setDt(edu.berkeley.path.model_elements_base.Duration value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.dt = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this; 
     }
     
     /** Checks whether the 'dt' field has been set */
     public boolean hasDt() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
     
     /** Clears the value of the 'dt' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearDt() {
       dt = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -479,21 +528,21 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     
     /** Sets the value of the 'timeBegin' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setTimeBegin(edu.berkeley.path.model_elements_base.DateTime value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.timeBegin = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this; 
     }
     
     /** Checks whether the 'timeBegin' field has been set */
     public boolean hasTimeBegin() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
     
     /** Clears the value of the 'timeBegin' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearTimeBegin() {
       timeBegin = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -504,21 +553,21 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     
     /** Sets the value of the 'timeEnd' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setTimeEnd(edu.berkeley.path.model_elements_base.DateTime value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.timeEnd = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'timeEnd' field has been set */
     public boolean hasTimeEnd() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'timeEnd' field */
     public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearTimeEnd() {
       timeEnd = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -531,10 +580,11 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         record.runMode = fieldSetFlags()[2] ? this.runMode : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.enkfParams = fieldSetFlags()[3] ? this.enkfParams : (edu.berkeley.path.model_elements_base.EnKFParams) defaultValue(fields()[3]);
         record.ctmType = fieldSetFlags()[4] ? this.ctmType : (java.lang.CharSequence) defaultValue(fields()[4]);
-        record.dtOutput = fieldSetFlags()[5] ? this.dtOutput : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[5]);
-        record.dt = fieldSetFlags()[6] ? this.dt : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[6]);
-        record.timeBegin = fieldSetFlags()[7] ? this.timeBegin : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[7]);
-        record.timeEnd = fieldSetFlags()[8] ? this.timeEnd : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[8]);
+        record.fdType = fieldSetFlags()[5] ? this.fdType : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.dtOutput = fieldSetFlags()[6] ? this.dtOutput : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[6]);
+        record.dt = fieldSetFlags()[7] ? this.dt : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[7]);
+        record.timeBegin = fieldSetFlags()[8] ? this.timeBegin : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[8]);
+        record.timeEnd = fieldSetFlags()[9] ? this.timeEnd : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[9]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
