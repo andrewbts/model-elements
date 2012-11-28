@@ -496,7 +496,7 @@ protocol CC {
     union { double, null } speedError;
     union { double, null } freeFlowSpeed;
     union { double, null } funcLoopFact;
-    array<union { double, null }> g_factor_lane;
+    array<union { double, null }> gFactorLane;
   }
   
   /**

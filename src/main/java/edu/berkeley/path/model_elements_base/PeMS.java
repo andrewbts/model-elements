@@ -7,7 +7,7 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * PeMS sensor datum as output by PeMS filter. */
 public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMS\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor datum as output by PeMS filter.\",\"fields\":[{\"name\":\"vdsId\",\"type\":\"long\"},{\"name\":\"timeMeasured\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"densityError\",\"type\":[\"double\",\"null\"]},{\"name\":\"speed\",\"type\":[\"double\",\"null\"]},{\"name\":\"speedError\",\"type\":[\"double\",\"null\"]},{\"name\":\"freeFlowSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"funcLoopFact\",\"type\":[\"double\",\"null\"]},{\"name\":\"g_factor_lane\",\"type\":{\"type\":\"array\",\"items\":[\"double\",\"null\"]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMS\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor datum as output by PeMS filter.\",\"fields\":[{\"name\":\"vdsId\",\"type\":\"long\"},{\"name\":\"timeMeasured\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"densityError\",\"type\":[\"double\",\"null\"]},{\"name\":\"speed\",\"type\":[\"double\",\"null\"]},{\"name\":\"speedError\",\"type\":[\"double\",\"null\"]},{\"name\":\"freeFlowSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"funcLoopFact\",\"type\":[\"double\",\"null\"]},{\"name\":\"gFactorLane\",\"type\":{\"type\":\"array\",\"items\":[\"double\",\"null\"]}}]}");
   @Deprecated public long vdsId;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime timeMeasured;
   @Deprecated public java.lang.Double flow;
@@ -17,7 +17,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public java.lang.Double speedError;
   @Deprecated public java.lang.Double freeFlowSpeed;
   @Deprecated public java.lang.Double funcLoopFact;
-  @Deprecated public java.util.List<java.lang.Double> g_factor_lane;
+  @Deprecated public java.util.List<java.lang.Double> gFactorLane;
 
   /**
    * Default constructor.
@@ -27,7 +27,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public PeMS(java.lang.Long vdsId, edu.berkeley.path.model_elements_base.DateTime timeMeasured, java.lang.Double flow, java.lang.Double density, java.lang.Double densityError, java.lang.Double speed, java.lang.Double speedError, java.lang.Double freeFlowSpeed, java.lang.Double funcLoopFact, java.util.List<java.lang.Double> g_factor_lane) {
+  public PeMS(java.lang.Long vdsId, edu.berkeley.path.model_elements_base.DateTime timeMeasured, java.lang.Double flow, java.lang.Double density, java.lang.Double densityError, java.lang.Double speed, java.lang.Double speedError, java.lang.Double freeFlowSpeed, java.lang.Double funcLoopFact, java.util.List<java.lang.Double> gFactorLane) {
     this.vdsId = vdsId;
     this.timeMeasured = timeMeasured;
     this.flow = flow;
@@ -37,7 +37,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
     this.speedError = speedError;
     this.freeFlowSpeed = freeFlowSpeed;
     this.funcLoopFact = funcLoopFact;
-    this.g_factor_lane = g_factor_lane;
+    this.gFactorLane = gFactorLane;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -53,7 +53,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
     case 6: return speedError;
     case 7: return freeFlowSpeed;
     case 8: return funcLoopFact;
-    case 9: return g_factor_lane;
+    case 9: return gFactorLane;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -70,7 +70,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
     case 6: speedError = (java.lang.Double)value$; break;
     case 7: freeFlowSpeed = (java.lang.Double)value$; break;
     case 8: funcLoopFact = (java.lang.Double)value$; break;
-    case 9: g_factor_lane = (java.util.List<java.lang.Double>)value$; break;
+    case 9: gFactorLane = (java.util.List<java.lang.Double>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -211,18 +211,18 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
   }
 
   /**
-   * Gets the value of the 'g_factor_lane' field.
+   * Gets the value of the 'gFactorLane' field.
    */
   public java.util.List<java.lang.Double> getGFactorLane() {
-    return g_factor_lane;
+    return gFactorLane;
   }
 
   /**
-   * Sets the value of the 'g_factor_lane' field.
+   * Sets the value of the 'gFactorLane' field.
    * @param value the value to set.
    */
   public void setGFactorLane(java.util.List<java.lang.Double> value) {
-    this.g_factor_lane = value;
+    this.gFactorLane = value;
   }
 
   /** Creates a new PeMS RecordBuilder */
@@ -255,7 +255,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.Double speedError;
     private java.lang.Double freeFlowSpeed;
     private java.lang.Double funcLoopFact;
-    private java.util.List<java.lang.Double> g_factor_lane;
+    private java.util.List<java.lang.Double> gFactorLane;
 
     /** Creates a new Builder */
     private Builder() {
@@ -306,8 +306,8 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
         this.funcLoopFact = (java.lang.Double) data().deepCopy(fields()[8].schema(), other.funcLoopFact);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.g_factor_lane)) {
-        this.g_factor_lane = (java.util.List<java.lang.Double>) data().deepCopy(fields()[9].schema(), other.g_factor_lane);
+      if (isValidValue(fields()[9], other.gFactorLane)) {
+        this.gFactorLane = (java.util.List<java.lang.Double>) data().deepCopy(fields()[9].schema(), other.gFactorLane);
         fieldSetFlags()[9] = true;
       }
     }
@@ -536,27 +536,27 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
-    /** Gets the value of the 'g_factor_lane' field */
+    /** Gets the value of the 'gFactorLane' field */
     public java.util.List<java.lang.Double> getGFactorLane() {
-      return g_factor_lane;
+      return gFactorLane;
     }
     
-    /** Sets the value of the 'g_factor_lane' field */
+    /** Sets the value of the 'gFactorLane' field */
     public edu.berkeley.path.model_elements_base.PeMS.Builder setGFactorLane(java.util.List<java.lang.Double> value) {
       validate(fields()[9], value);
-      this.g_factor_lane = value;
+      this.gFactorLane = value;
       fieldSetFlags()[9] = true;
       return this; 
     }
     
-    /** Checks whether the 'g_factor_lane' field has been set */
+    /** Checks whether the 'gFactorLane' field has been set */
     public boolean hasGFactorLane() {
       return fieldSetFlags()[9];
     }
     
-    /** Clears the value of the 'g_factor_lane' field */
+    /** Clears the value of the 'gFactorLane' field */
     public edu.berkeley.path.model_elements_base.PeMS.Builder clearGFactorLane() {
-      g_factor_lane = null;
+      gFactorLane = null;
       fieldSetFlags()[9] = false;
       return this;
     }
@@ -574,7 +574,7 @@ public class PeMS extends org.apache.avro.specific.SpecificRecordBase implements
         record.speedError = fieldSetFlags()[6] ? this.speedError : (java.lang.Double) defaultValue(fields()[6]);
         record.freeFlowSpeed = fieldSetFlags()[7] ? this.freeFlowSpeed : (java.lang.Double) defaultValue(fields()[7]);
         record.funcLoopFact = fieldSetFlags()[8] ? this.funcLoopFact : (java.lang.Double) defaultValue(fields()[8]);
-        record.g_factor_lane = fieldSetFlags()[9] ? this.g_factor_lane : (java.util.List<java.lang.Double>) defaultValue(fields()[9]);
+        record.gFactorLane = fieldSetFlags()[9] ? this.gFactorLane : (java.util.List<java.lang.Double>) defaultValue(fields()[9]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
