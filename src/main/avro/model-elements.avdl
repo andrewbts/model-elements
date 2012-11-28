@@ -482,4 +482,27 @@ protocol CC {
     map<double> quality;
     // ### TODO call this confidence?
   }
+  
+  /**
+   * PeMS sensor datum as output by PeMS filter.
+   */
+  record PeMS {
+    long vdsId;
+    DateTime timeMeasured;
+    union { double, null } flow;
+    union { double, null } density;
+    union { double, null } densityError;
+    union { double, null } speed;
+    union { double, null } speedError;
+    union { double, null } freeFlowSpeed;
+    union { double, null } funcLoopFact;
+    array<union { double, null }> g_factor_lane;
+  }
+  
+  /**
+   * PeMS sensor (the VDS station info, rather than the sensor data).
+   */
+  record PeMSVDS {
+    // ### TODO
+  }
 }
