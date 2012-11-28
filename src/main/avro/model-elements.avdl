@@ -484,7 +484,8 @@ protocol CC {
   }
   
   /**
-   * PeMS sensor datum as output by PeMS filter.
+   * PeMS sensor datum as output by PeMS filter, for a specific
+   * station and time.
    */
   record PeMS {
     long vdsId;
@@ -499,6 +500,32 @@ protocol CC {
     array<union { double, null }> gFactorLane;
   }
   
+  /**
+   * PeMS sensor data map, organized by VDS.
+   */
+  record PeMSMap {
+    /**
+     * Key is VDS id.
+     */
+    map<PeMS> pems;
+  }
+
+  /**
+   * PeMS sensor data profile (time history).
+   */
+  record PeMSProfile {
+    array<PeMS> pems;
+  }
+
+  /**
+   * PeMS sensor data set, organized as a time-series
+   * of maps. This makes sense because filtered pems data
+   * is generated at multiples of 30 seconds.
+   */
+  record PeMSSet {
+    array<PeMSMap> pemsSeries;
+  }
+
   /**
    * PeMS sensor (the VDS station info, rather than the sensor data).
    */
