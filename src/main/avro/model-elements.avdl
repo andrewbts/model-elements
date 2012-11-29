@@ -526,10 +526,10 @@ protocol CC {
   /**
    * PeMS sensor data set, organized as a time-series
    * of maps. This makes sense because filtered pems data
-   * is generated at multiples of 30 seconds.
+   * is generated at multiples of 30 seconds: 00:00, 00:30, ...
    */
   record PeMSSet {
-    array<PeMSMap> pemsSeries;
+    array<PeMSMap> pemsMap;
   }
 
   /**
@@ -538,7 +538,7 @@ protocol CC {
   record PeMSStation {
     long Id;
     long fwyNum;
-    string direction; // maybe should be bytes? 'fixed direction(1)'
+    string direction;
     long district;
     long county;
     long city;
