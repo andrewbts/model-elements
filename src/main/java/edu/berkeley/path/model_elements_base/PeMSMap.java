@@ -7,8 +7,9 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * PeMS sensor data map, organized by VDS. */
 public class PeMSMap extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSMap\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor data map, organized by VDS.\",\"fields\":[{\"name\":\"pems\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"PeMS\",\"doc\":\"* PeMS sensor datum as output by PeMS filter, for a specific\\n   * station and time.\",\"fields\":[{\"name\":\"vdsId\",\"type\":\"long\"},{\"name\":\"timeMeasured\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"densityError\",\"type\":[\"double\",\"null\"]},{\"name\":\"speed\",\"type\":[\"double\",\"null\"]},{\"name\":\"speedError\",\"type\":[\"double\",\"null\"]},{\"name\":\"freeFlowSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"funcLoopFact\",\"type\":[\"double\",\"null\"]},{\"name\":\"gFactorLane\",\"type\":{\"type\":\"array\",\"items\":[\"double\",\"null\"]}}]}},\"doc\":\"* Key is VDS id.\"}]}");
-  /** * Key is VDS id. */
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSMap\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor data map, organized by VDS.\",\"fields\":[{\"name\":\"pems\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"PeMS\",\"doc\":\"* PeMS sensor datum as output by PeMS filter, for a specific\\n   * station and time.\",\"fields\":[{\"name\":\"vdsId\",\"type\":\"long\"},{\"name\":\"timeMeasured\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"densityError\",\"type\":[\"double\",\"null\"]},{\"name\":\"speed\",\"type\":[\"double\",\"null\"]},{\"name\":\"speedError\",\"type\":[\"double\",\"null\"]},{\"name\":\"freeFlowSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"funcLoopFact\",\"type\":[\"double\",\"null\"]},{\"name\":\"gFactorLane\",\"type\":{\"type\":\"array\",\"items\":[\"double\",\"null\"]}}]}},\"doc\":\"* Key is VDS id. Represents the state of the sensors at\\n     * one point in time.\"}]}");
+  /** * Key is VDS id. Represents the state of the sensors at
+     * one point in time. */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.PeMS> pems;
 
   /**
@@ -42,14 +43,16 @@ public class PeMSMap extends org.apache.avro.specific.SpecificRecordBase impleme
 
   /**
    * Gets the value of the 'pems' field.
-   * * Key is VDS id.   */
+   * * Key is VDS id. Represents the state of the sensors at
+     * one point in time.   */
   public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.PeMS> getPems() {
     return pems;
   }
 
   /**
    * Sets the value of the 'pems' field.
-   * * Key is VDS id.   * @param value the value to set.
+   * * Key is VDS id. Represents the state of the sensors at
+     * one point in time.   * @param value the value to set.
    */
   public void setPems(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.PeMS> value) {
     this.pems = value;

@@ -26,5 +26,5 @@
 
 package edu.berkeley.path.model_elements;
 
-public class PeMSVDS extends edu.berkeley.path.model_elements_base.PeMSVDS {
+public class PeMSStation extends edu.berkeley.path.model_elements_base.PeMSStation {
 }

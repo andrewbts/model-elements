@@ -26,5 +26,13 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.List;
+
 public class PeMSProfile extends edu.berkeley.path.model_elements_base.PeMSProfile {
+  /**
+   * Set the pems etries Same as setPems(), but works with a list of PeMS.
+   */
+  public void setPemsList(List<PeMS> value) {
+    setPems((List<edu.berkeley.path.model_elements_base.PeMS>)(List<?>)value);
+  }
 }

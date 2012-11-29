@@ -26,6 +26,10 @@
 
 @namespace("edu.berkeley.path.model_elements_base")
 
+// ## TODO use imports to break up this file:
+// ## import idl "foo.avdl";
+// ## import schema "foo.avsc";
+
 /** 
  * Description of the config and state of our networks and related data.
  *
@@ -505,13 +509,15 @@ protocol CC {
    */
   record PeMSMap {
     /**
-     * Key is VDS id.
+     * Key is VDS id. Represents the state of the sensors at
+     * one point in time.
      */
     map<PeMS> pems;
   }
 
   /**
-   * PeMS sensor data profile (time history).
+   * PeMS sensor data profile. Represents the time history of
+   * one sensor.
    */
   record PeMSProfile {
     array<PeMS> pems;
@@ -529,7 +535,25 @@ protocol CC {
   /**
    * PeMS sensor (the VDS station info, rather than the sensor data).
    */
-  record PeMSVDS {
-    // ### TODO
+  record PeMSStation {
+    long Id;
+    long fwyNum;
+    string direction; // maybe should be bytes? 'fixed direction(1)'
+    long district;
+    long county;
+    long city;
+    double statePostmile;
+    double absPostmile;
+    double latitude;
+    double longitude;
+    double detectorLength;
+    string detectorType;
+    string detectorName;
+    int laneCount;
+    string userId1;
+    string userId2;
+    string userId3;
+    string userId4;
+    // ## TODO geom
   }
 }
