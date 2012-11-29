@@ -48,8 +48,9 @@ public class PeMSTest {
     pems = new PeMS();
     
     jodaDateTime = new org.joda.time.DateTime(
-      2012, 11, 27, 13, 30, // YYYY, MM, DD, HH, MM
-      org.joda.time.DateTimeZone.forID("UTC")
+      // YYYY, MM, DD, HH, MM
+         2012, 11, 27, 13, 30,
+      org.joda.time.DateTimeZone.forID("America/Los_Angeles")
     );
     datetime = DateTime.fromJoda(jodaDateTime);
     
