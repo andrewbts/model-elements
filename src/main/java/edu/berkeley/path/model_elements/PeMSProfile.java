@@ -27,12 +27,24 @@
 package edu.berkeley.path.model_elements;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class PeMSProfile extends edu.berkeley.path.model_elements_base.PeMSProfile {
   /**
-   * Set the pems etries Same as setPems(), but works with a list of PeMS.
+   * Set the pems entries. Same as setPems(), but works with a list of PeMS.
    */
   public void setPemsList(List<PeMS> value) {
     setPems((List<edu.berkeley.path.model_elements_base.PeMS>)(List<?>)value);
+  }
+  
+  /**
+   * Get the pems entries. Same as getPems(), but returns a list of PeMS.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  public List<PeMS> getPemsList() {
+    if (null == getPems()) {
+      setPems(new ArrayList<edu.berkeley.path.model_elements_base.PeMS>());
+    }
+    return (List<PeMS>)(List<?>)getPems();
   }
 }

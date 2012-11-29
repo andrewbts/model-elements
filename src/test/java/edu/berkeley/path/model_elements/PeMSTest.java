@@ -52,10 +52,9 @@ public class PeMSTest {
          2012, 11, 27, 13, 30,
       org.joda.time.DateTimeZone.forID("America/Los_Angeles")
     );
-    datetime = DateTime.fromJoda(jodaDateTime);
     
     pems.setVdsId(100L);
-    pems.setTimeMeasured(datetime);
+    pems.setJodaTimeMeasured(jodaDateTime);
     pems.setFlow(10.0);
     pems.setDensity(1.23);
     pems.setDensityError(0.2);
