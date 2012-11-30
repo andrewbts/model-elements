@@ -9,11 +9,20 @@ package edu.berkeley.path.model_elements_base;
    * is present, then it represents a daily aggregate.
    * */
 public class PeMSStationAggregate extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSStationAggregate\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Represents both the 5 minute and 1 hour aggregated data. If delay map\\n   * is present, then it represents a daily aggregate.\\n   *\",\"fields\":[{\"name\":\"vdsId\",\"type\":\"long\"},{\"name\":\"timeMeasured\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"total\",\"type\":{\"type\":\"record\",\"name\":\"PeMSAggregate\",\"doc\":\"* Used in both the 5 minute and 1 hour case for per-lane\\n   * and per-station aggregated data, and in the 1 day case\\n   * for per-station aggregated data.\\n   *\",\"fields\":[{\"name\":\"samples\",\"type\":[\"long\",\"null\"]},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgOccupancy\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"observed\",\"type\":[\"double\",\"null\"]}]}},{\"name\":\"byLane\",\"type\":{\"type\":\"array\",\"items\":\"PeMSAggregate\"}},{\"name\":\"delay\",\"type\":[{\"type\":\"map\",\"values\":\"float\"},\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSStationAggregate\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Represents both the 5 minute and 1 hour aggregated data. If delay map\\n   * is present, then it represents a daily aggregate.\\n   *\",\"fields\":[{\"name\":\"vdsId\",\"type\":\"long\"},{\"name\":\"timeMeasured\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"total\",\"type\":{\"type\":\"record\",\"name\":\"PeMSAggregate\",\"doc\":\"* Used in both the 5 minute and 1 hour case for per-lane\\n   * and per-station aggregated data, and in the 1 day case\\n   * for per-station aggregated data.\\n   *\",\"fields\":[{\"name\":\"samples\",\"type\":[\"long\",\"null\"]},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgOccupancy\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"observed\",\"type\":[\"double\",\"null\"]}]},\"doc\":\"* Aggregated at this station, across lanes.\\n     *\"},{\"name\":\"byLane\",\"type\":[{\"type\":\"array\",\"items\":\"PeMSAggregate\"},\"null\"],\"doc\":\"* Aggregated by lane at this station.\\n     * Field is null for 1 day aggregates.\\n     *\"},{\"name\":\"delay\",\"type\":[{\"type\":\"map\",\"values\":\"float\"},\"null\"],\"doc\":\"* Average delay over the station length, for a threshold speed.\\n     * Keys are speeds in mph: \\\"35\\\", \\\"40\\\", ... \\\"60\\\".\\n     * Field is null for 5 minute aggregates.\\n     *\"}]}");
   @Deprecated public long vdsId;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime timeMeasured;
+  /** * Aggregated at this station, across lanes.
+     * */
   @Deprecated public edu.berkeley.path.model_elements_base.PeMSAggregate total;
+  /** * Aggregated by lane at this station.
+     * Field is null for 1 day aggregates.
+     * */
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.PeMSAggregate> byLane;
+  /** * Average delay over the station length, for a threshold speed.
+     * Keys are speeds in mph: "35", "40", ... "60".
+     * Field is null for 5 minute aggregates.
+     * */
   @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Float> delay;
 
   /**
@@ -89,14 +98,16 @@ public class PeMSStationAggregate extends org.apache.avro.specific.SpecificRecor
 
   /**
    * Gets the value of the 'total' field.
-   */
+   * * Aggregated at this station, across lanes.
+     *   */
   public edu.berkeley.path.model_elements_base.PeMSAggregate getTotal() {
     return total;
   }
 
   /**
    * Sets the value of the 'total' field.
-   * @param value the value to set.
+   * * Aggregated at this station, across lanes.
+     *   * @param value the value to set.
    */
   public void setTotal(edu.berkeley.path.model_elements_base.PeMSAggregate value) {
     this.total = value;
@@ -104,14 +115,18 @@ public class PeMSStationAggregate extends org.apache.avro.specific.SpecificRecor
 
   /**
    * Gets the value of the 'byLane' field.
-   */
+   * * Aggregated by lane at this station.
+     * Field is null for 1 day aggregates.
+     *   */
   public java.util.List<edu.berkeley.path.model_elements_base.PeMSAggregate> getByLane() {
     return byLane;
   }
 
   /**
    * Sets the value of the 'byLane' field.
-   * @param value the value to set.
+   * * Aggregated by lane at this station.
+     * Field is null for 1 day aggregates.
+     *   * @param value the value to set.
    */
   public void setByLane(java.util.List<edu.berkeley.path.model_elements_base.PeMSAggregate> value) {
     this.byLane = value;
@@ -119,14 +134,20 @@ public class PeMSStationAggregate extends org.apache.avro.specific.SpecificRecor
 
   /**
    * Gets the value of the 'delay' field.
-   */
+   * * Average delay over the station length, for a threshold speed.
+     * Keys are speeds in mph: "35", "40", ... "60".
+     * Field is null for 5 minute aggregates.
+     *   */
   public java.util.Map<java.lang.CharSequence,java.lang.Float> getDelay() {
     return delay;
   }
 
   /**
    * Sets the value of the 'delay' field.
-   * @param value the value to set.
+   * * Average delay over the station length, for a threshold speed.
+     * Keys are speeds in mph: "35", "40", ... "60".
+     * Field is null for 5 minute aggregates.
+     *   * @param value the value to set.
    */
   public void setDelay(java.util.Map<java.lang.CharSequence,java.lang.Float> value) {
     this.delay = value;

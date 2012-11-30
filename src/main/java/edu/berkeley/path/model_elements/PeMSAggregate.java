@@ -29,4 +29,19 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class PeMSAggregate extends edu.berkeley.path.model_elements_base.PeMSAggregate {
+  /**
+   * Passed to reader methods to select which degree of aggregation.
+   * The value of the enum is a string which references a table.
+   **/
+  public enum AggregationLevel {
+    PEMS_5MIN ("PEMS_5MIN"),
+    PEMS_1HOUR("PEMS_1HOUR"),
+    PEMS_1DAY ("PEMS_1DAY");
+
+    public final String table;
+
+    private AggregationLevel(String table) {
+      this.table = table;
+    }
+  }
 }

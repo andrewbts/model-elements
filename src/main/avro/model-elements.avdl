@@ -576,15 +576,22 @@ protocol CC {
     long vdsId;
     DateTime timeMeasured;
     
-    // Aggregated at this station.
+    /**
+     * Aggregated at this station, across lanes.
+     **/
     PeMSAggregate total;
     
-    // Aggregated by lane at this station.
-    array<PeMSAggregate> byLane;
+    /**
+     * Aggregated by lane at this station.
+     * Field is null for 1 day aggregates.
+     **/
+    union { array<PeMSAggregate>, null } byLane;
     
-    // Average delay over the station length, for a threshold speed.
-    // Keys are speeds in mph: "35", "40", ... "60".
-    // Field is null for 5 minute and 1 hour aggregates.
+    /**
+     * Average delay over the station length, for a threshold speed.
+     * Keys are speeds in mph: "35", "40", ... "60".
+     * Field is null for 5 minute aggregates.
+     **/
     union { map<float>, null } delay;
   }
 }
