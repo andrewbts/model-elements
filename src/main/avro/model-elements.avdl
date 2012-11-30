@@ -592,6 +592,6 @@ protocol CC {
      * Keys are speeds in mph: "35", "40", ... "60".
      * Field is null for 5 minute aggregates.
      **/
-    union { map<float>, null } delay;
+    union { map<double>, null } delay;
   }
 }
