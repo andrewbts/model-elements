@@ -26,22 +26,24 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class PeMSSet extends edu.berkeley.path.model_elements_base.PeMSSet {
   /**
-   * Set the pems entries. Same as setPems(), but works with a list of PeMS.
+   * Set the list of pems maps. Same as setPemsMap(), but works with a list of PeMSMap.
    */
-  public void setPemsList(List<PeMS> value) {
-    setPems((List<edu.berkeley.path.model_elements_base.PeMS>)(List<?>)value);
+  public void setPemsMapList(List<PeMSMap> value) {
+    setPemsMap((List<edu.berkeley.path.model_elements_base.PeMSMap>)(List<?>)value);
   }
   
   /**
-   * Get the pems entries. Same as getPems(), but returns a list of PeMS.
+   * Get the list of pems maps. Same as getPemsMap(), but returns a list of PeMSMap.
    * Never returns null (creates the list if it doesn't exist).
    */
-  public List<PeMS> getPemsList() {
-    if (null == getPems()) {
-      setPems(new ArrayList<edu.berkeley.path.model_elements_base.PeMS>());
+  public List<PeMSMap> getPemsMapList() {
+    if (null == getPemsMap()) {
+      setPemsMap(new ArrayList<edu.berkeley.path.model_elements_base.PeMSMap>());
     }
-    return (List<PeMS>)(List<?>)getPems();
+    return (List<PeMSMap>)(List<?>)getPemsMap();
   }
 }

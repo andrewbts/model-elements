@@ -26,5 +26,26 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class PeMSMap extends edu.berkeley.path.model_elements_base.PeMSMap {
+  /**
+   * Set the pems map entries. Same as setPems(), but works with a map of PeMS.
+   */
+  public void setMap(Map<CharSequence, PeMS> value) {
+    setPems(
+      (Map<CharSequence,edu.berkeley.path.model_elements_base.PeMS>)
+        (Map<CharSequence,?>)value);
+  }
+  
+  /**
+   * Get the pems map entries. Same as getPems(), but returns a map of PeMS.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  public Map<CharSequence,PeMS> getMap() {
+    if (null == getPems()) {
+      setPems(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.PeMS>());
+    }
+    return (Map<CharSequence,PeMS>)(Map<CharSequence,?>)getPems();
+  }
 }
