@@ -537,11 +537,11 @@ protocol CC {
    */
   record PeMSStation {
     long Id;
-    long fwyNum;
+    int fwyNum;
     string direction;
-    long district;
-    long county;
-    long city;
+    int district;
+    string county;
+    string city;
     double statePostmile;
     double absPostmile;
     double latitude;
@@ -550,10 +550,7 @@ protocol CC {
     string detectorType;
     string detectorName;
     int laneCount;
-    string userId1;
-    string userId2;
-    string userId3;
-    string userId4;
+    array<string> userId;
     // ## TODO geom
   }
 }

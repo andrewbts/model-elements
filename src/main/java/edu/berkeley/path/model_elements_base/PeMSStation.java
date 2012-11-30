@@ -7,13 +7,13 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * PeMS sensor (the VDS station info, rather than the sensor data). */
 public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSStation\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor (the VDS station info, rather than the sensor data).\",\"fields\":[{\"name\":\"Id\",\"type\":\"long\"},{\"name\":\"fwyNum\",\"type\":\"long\"},{\"name\":\"direction\",\"type\":\"string\"},{\"name\":\"district\",\"type\":\"long\"},{\"name\":\"county\",\"type\":\"long\"},{\"name\":\"city\",\"type\":\"long\"},{\"name\":\"statePostmile\",\"type\":\"double\"},{\"name\":\"absPostmile\",\"type\":\"double\"},{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"detectorLength\",\"type\":\"double\"},{\"name\":\"detectorType\",\"type\":\"string\"},{\"name\":\"detectorName\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"int\"},{\"name\":\"userId1\",\"type\":\"string\"},{\"name\":\"userId2\",\"type\":\"string\"},{\"name\":\"userId3\",\"type\":\"string\"},{\"name\":\"userId4\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSStation\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor (the VDS station info, rather than the sensor data).\",\"fields\":[{\"name\":\"Id\",\"type\":\"long\"},{\"name\":\"fwyNum\",\"type\":\"int\"},{\"name\":\"direction\",\"type\":\"string\"},{\"name\":\"district\",\"type\":\"int\"},{\"name\":\"county\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"statePostmile\",\"type\":\"double\"},{\"name\":\"absPostmile\",\"type\":\"double\"},{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"detectorLength\",\"type\":\"double\"},{\"name\":\"detectorType\",\"type\":\"string\"},{\"name\":\"detectorName\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"int\"},{\"name\":\"userId\",\"type\":{\"type\":\"array\",\"items\":\"string\"}}]}");
   @Deprecated public long Id;
-  @Deprecated public long fwyNum;
+  @Deprecated public int fwyNum;
   @Deprecated public java.lang.CharSequence direction;
-  @Deprecated public long district;
-  @Deprecated public long county;
-  @Deprecated public long city;
+  @Deprecated public int district;
+  @Deprecated public java.lang.CharSequence county;
+  @Deprecated public java.lang.CharSequence city;
   @Deprecated public double statePostmile;
   @Deprecated public double absPostmile;
   @Deprecated public double latitude;
@@ -22,10 +22,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   @Deprecated public java.lang.CharSequence detectorType;
   @Deprecated public java.lang.CharSequence detectorName;
   @Deprecated public int laneCount;
-  @Deprecated public java.lang.CharSequence userId1;
-  @Deprecated public java.lang.CharSequence userId2;
-  @Deprecated public java.lang.CharSequence userId3;
-  @Deprecated public java.lang.CharSequence userId4;
+  @Deprecated public java.util.List<java.lang.CharSequence> userId;
 
   /**
    * Default constructor.
@@ -35,7 +32,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * All-args constructor.
    */
-  public PeMSStation(java.lang.Long Id, java.lang.Long fwyNum, java.lang.CharSequence direction, java.lang.Long district, java.lang.Long county, java.lang.Long city, java.lang.Double statePostmile, java.lang.Double absPostmile, java.lang.Double latitude, java.lang.Double longitude, java.lang.Double detectorLength, java.lang.CharSequence detectorType, java.lang.CharSequence detectorName, java.lang.Integer laneCount, java.lang.CharSequence userId1, java.lang.CharSequence userId2, java.lang.CharSequence userId3, java.lang.CharSequence userId4) {
+  public PeMSStation(java.lang.Long Id, java.lang.Integer fwyNum, java.lang.CharSequence direction, java.lang.Integer district, java.lang.CharSequence county, java.lang.CharSequence city, java.lang.Double statePostmile, java.lang.Double absPostmile, java.lang.Double latitude, java.lang.Double longitude, java.lang.Double detectorLength, java.lang.CharSequence detectorType, java.lang.CharSequence detectorName, java.lang.Integer laneCount, java.util.List<java.lang.CharSequence> userId) {
     this.Id = Id;
     this.fwyNum = fwyNum;
     this.direction = direction;
@@ -50,10 +47,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     this.detectorType = detectorType;
     this.detectorName = detectorName;
     this.laneCount = laneCount;
-    this.userId1 = userId1;
-    this.userId2 = userId2;
-    this.userId3 = userId3;
-    this.userId4 = userId4;
+    this.userId = userId;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -74,10 +68,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     case 11: return detectorType;
     case 12: return detectorName;
     case 13: return laneCount;
-    case 14: return userId1;
-    case 15: return userId2;
-    case 16: return userId3;
-    case 17: return userId4;
+    case 14: return userId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -86,11 +77,11 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: Id = (java.lang.Long)value$; break;
-    case 1: fwyNum = (java.lang.Long)value$; break;
+    case 1: fwyNum = (java.lang.Integer)value$; break;
     case 2: direction = (java.lang.CharSequence)value$; break;
-    case 3: district = (java.lang.Long)value$; break;
-    case 4: county = (java.lang.Long)value$; break;
-    case 5: city = (java.lang.Long)value$; break;
+    case 3: district = (java.lang.Integer)value$; break;
+    case 4: county = (java.lang.CharSequence)value$; break;
+    case 5: city = (java.lang.CharSequence)value$; break;
     case 6: statePostmile = (java.lang.Double)value$; break;
     case 7: absPostmile = (java.lang.Double)value$; break;
     case 8: latitude = (java.lang.Double)value$; break;
@@ -99,10 +90,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     case 11: detectorType = (java.lang.CharSequence)value$; break;
     case 12: detectorName = (java.lang.CharSequence)value$; break;
     case 13: laneCount = (java.lang.Integer)value$; break;
-    case 14: userId1 = (java.lang.CharSequence)value$; break;
-    case 15: userId2 = (java.lang.CharSequence)value$; break;
-    case 16: userId3 = (java.lang.CharSequence)value$; break;
-    case 17: userId4 = (java.lang.CharSequence)value$; break;
+    case 14: userId = (java.util.List<java.lang.CharSequence>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -125,7 +113,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'fwyNum' field.
    */
-  public java.lang.Long getFwyNum() {
+  public java.lang.Integer getFwyNum() {
     return fwyNum;
   }
 
@@ -133,7 +121,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'fwyNum' field.
    * @param value the value to set.
    */
-  public void setFwyNum(java.lang.Long value) {
+  public void setFwyNum(java.lang.Integer value) {
     this.fwyNum = value;
   }
 
@@ -155,7 +143,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * Gets the value of the 'district' field.
    */
-  public java.lang.Long getDistrict() {
+  public java.lang.Integer getDistrict() {
     return district;
   }
 
@@ -163,14 +151,14 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'district' field.
    * @param value the value to set.
    */
-  public void setDistrict(java.lang.Long value) {
+  public void setDistrict(java.lang.Integer value) {
     this.district = value;
   }
 
   /**
    * Gets the value of the 'county' field.
    */
-  public java.lang.Long getCounty() {
+  public java.lang.CharSequence getCounty() {
     return county;
   }
 
@@ -178,14 +166,14 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'county' field.
    * @param value the value to set.
    */
-  public void setCounty(java.lang.Long value) {
+  public void setCounty(java.lang.CharSequence value) {
     this.county = value;
   }
 
   /**
    * Gets the value of the 'city' field.
    */
-  public java.lang.Long getCity() {
+  public java.lang.CharSequence getCity() {
     return city;
   }
 
@@ -193,7 +181,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
    * Sets the value of the 'city' field.
    * @param value the value to set.
    */
-  public void setCity(java.lang.Long value) {
+  public void setCity(java.lang.CharSequence value) {
     this.city = value;
   }
 
@@ -318,63 +306,18 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   }
 
   /**
-   * Gets the value of the 'userId1' field.
+   * Gets the value of the 'userId' field.
    */
-  public java.lang.CharSequence getUserId1() {
-    return userId1;
+  public java.util.List<java.lang.CharSequence> getUserId() {
+    return userId;
   }
 
   /**
-   * Sets the value of the 'userId1' field.
+   * Sets the value of the 'userId' field.
    * @param value the value to set.
    */
-  public void setUserId1(java.lang.CharSequence value) {
-    this.userId1 = value;
-  }
-
-  /**
-   * Gets the value of the 'userId2' field.
-   */
-  public java.lang.CharSequence getUserId2() {
-    return userId2;
-  }
-
-  /**
-   * Sets the value of the 'userId2' field.
-   * @param value the value to set.
-   */
-  public void setUserId2(java.lang.CharSequence value) {
-    this.userId2 = value;
-  }
-
-  /**
-   * Gets the value of the 'userId3' field.
-   */
-  public java.lang.CharSequence getUserId3() {
-    return userId3;
-  }
-
-  /**
-   * Sets the value of the 'userId3' field.
-   * @param value the value to set.
-   */
-  public void setUserId3(java.lang.CharSequence value) {
-    this.userId3 = value;
-  }
-
-  /**
-   * Gets the value of the 'userId4' field.
-   */
-  public java.lang.CharSequence getUserId4() {
-    return userId4;
-  }
-
-  /**
-   * Sets the value of the 'userId4' field.
-   * @param value the value to set.
-   */
-  public void setUserId4(java.lang.CharSequence value) {
-    this.userId4 = value;
+  public void setUserId(java.util.List<java.lang.CharSequence> value) {
+    this.userId = value;
   }
 
   /** Creates a new PeMSStation RecordBuilder */
@@ -399,11 +342,11 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     implements org.apache.avro.data.RecordBuilder<PeMSStation> {
 
     private long Id;
-    private long fwyNum;
+    private int fwyNum;
     private java.lang.CharSequence direction;
-    private long district;
-    private long county;
-    private long city;
+    private int district;
+    private java.lang.CharSequence county;
+    private java.lang.CharSequence city;
     private double statePostmile;
     private double absPostmile;
     private double latitude;
@@ -412,10 +355,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     private java.lang.CharSequence detectorType;
     private java.lang.CharSequence detectorName;
     private int laneCount;
-    private java.lang.CharSequence userId1;
-    private java.lang.CharSequence userId2;
-    private java.lang.CharSequence userId3;
-    private java.lang.CharSequence userId4;
+    private java.util.List<java.lang.CharSequence> userId;
 
     /** Creates a new Builder */
     private Builder() {
@@ -435,7 +375,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.fwyNum)) {
-        this.fwyNum = (java.lang.Long) data().deepCopy(fields()[1].schema(), other.fwyNum);
+        this.fwyNum = (java.lang.Integer) data().deepCopy(fields()[1].schema(), other.fwyNum);
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.direction)) {
@@ -443,15 +383,15 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
         fieldSetFlags()[2] = true;
       }
       if (isValidValue(fields()[3], other.district)) {
-        this.district = (java.lang.Long) data().deepCopy(fields()[3].schema(), other.district);
+        this.district = (java.lang.Integer) data().deepCopy(fields()[3].schema(), other.district);
         fieldSetFlags()[3] = true;
       }
       if (isValidValue(fields()[4], other.county)) {
-        this.county = (java.lang.Long) data().deepCopy(fields()[4].schema(), other.county);
+        this.county = (java.lang.CharSequence) data().deepCopy(fields()[4].schema(), other.county);
         fieldSetFlags()[4] = true;
       }
       if (isValidValue(fields()[5], other.city)) {
-        this.city = (java.lang.Long) data().deepCopy(fields()[5].schema(), other.city);
+        this.city = (java.lang.CharSequence) data().deepCopy(fields()[5].schema(), other.city);
         fieldSetFlags()[5] = true;
       }
       if (isValidValue(fields()[6], other.statePostmile)) {
@@ -486,21 +426,9 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
         this.laneCount = (java.lang.Integer) data().deepCopy(fields()[13].schema(), other.laneCount);
         fieldSetFlags()[13] = true;
       }
-      if (isValidValue(fields()[14], other.userId1)) {
-        this.userId1 = (java.lang.CharSequence) data().deepCopy(fields()[14].schema(), other.userId1);
+      if (isValidValue(fields()[14], other.userId)) {
+        this.userId = (java.util.List<java.lang.CharSequence>) data().deepCopy(fields()[14].schema(), other.userId);
         fieldSetFlags()[14] = true;
-      }
-      if (isValidValue(fields()[15], other.userId2)) {
-        this.userId2 = (java.lang.CharSequence) data().deepCopy(fields()[15].schema(), other.userId2);
-        fieldSetFlags()[15] = true;
-      }
-      if (isValidValue(fields()[16], other.userId3)) {
-        this.userId3 = (java.lang.CharSequence) data().deepCopy(fields()[16].schema(), other.userId3);
-        fieldSetFlags()[16] = true;
-      }
-      if (isValidValue(fields()[17], other.userId4)) {
-        this.userId4 = (java.lang.CharSequence) data().deepCopy(fields()[17].schema(), other.userId4);
-        fieldSetFlags()[17] = true;
       }
     }
 
@@ -529,12 +457,12 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     }
 
     /** Gets the value of the 'fwyNum' field */
-    public java.lang.Long getFwyNum() {
+    public java.lang.Integer getFwyNum() {
       return fwyNum;
     }
     
     /** Sets the value of the 'fwyNum' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setFwyNum(long value) {
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setFwyNum(int value) {
       validate(fields()[1], value);
       this.fwyNum = value;
       fieldSetFlags()[1] = true;
@@ -578,12 +506,12 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     }
 
     /** Gets the value of the 'district' field */
-    public java.lang.Long getDistrict() {
+    public java.lang.Integer getDistrict() {
       return district;
     }
     
     /** Sets the value of the 'district' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setDistrict(long value) {
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setDistrict(int value) {
       validate(fields()[3], value);
       this.district = value;
       fieldSetFlags()[3] = true;
@@ -602,12 +530,12 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     }
 
     /** Gets the value of the 'county' field */
-    public java.lang.Long getCounty() {
+    public java.lang.CharSequence getCounty() {
       return county;
     }
     
     /** Sets the value of the 'county' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setCounty(long value) {
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setCounty(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.county = value;
       fieldSetFlags()[4] = true;
@@ -621,17 +549,18 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Clears the value of the 'county' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearCounty() {
+      county = null;
       fieldSetFlags()[4] = false;
       return this;
     }
 
     /** Gets the value of the 'city' field */
-    public java.lang.Long getCity() {
+    public java.lang.CharSequence getCity() {
       return city;
     }
     
     /** Sets the value of the 'city' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setCity(long value) {
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setCity(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.city = value;
       fieldSetFlags()[5] = true;
@@ -645,6 +574,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Clears the value of the 'city' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearCity() {
+      city = null;
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -843,103 +773,28 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
       return this;
     }
 
-    /** Gets the value of the 'userId1' field */
-    public java.lang.CharSequence getUserId1() {
-      return userId1;
+    /** Gets the value of the 'userId' field */
+    public java.util.List<java.lang.CharSequence> getUserId() {
+      return userId;
     }
     
-    /** Sets the value of the 'userId1' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setUserId1(java.lang.CharSequence value) {
+    /** Sets the value of the 'userId' field */
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setUserId(java.util.List<java.lang.CharSequence> value) {
       validate(fields()[14], value);
-      this.userId1 = value;
+      this.userId = value;
       fieldSetFlags()[14] = true;
       return this; 
     }
     
-    /** Checks whether the 'userId1' field has been set */
-    public boolean hasUserId1() {
+    /** Checks whether the 'userId' field has been set */
+    public boolean hasUserId() {
       return fieldSetFlags()[14];
     }
     
-    /** Clears the value of the 'userId1' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearUserId1() {
-      userId1 = null;
+    /** Clears the value of the 'userId' field */
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearUserId() {
+      userId = null;
       fieldSetFlags()[14] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'userId2' field */
-    public java.lang.CharSequence getUserId2() {
-      return userId2;
-    }
-    
-    /** Sets the value of the 'userId2' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setUserId2(java.lang.CharSequence value) {
-      validate(fields()[15], value);
-      this.userId2 = value;
-      fieldSetFlags()[15] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'userId2' field has been set */
-    public boolean hasUserId2() {
-      return fieldSetFlags()[15];
-    }
-    
-    /** Clears the value of the 'userId2' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearUserId2() {
-      userId2 = null;
-      fieldSetFlags()[15] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'userId3' field */
-    public java.lang.CharSequence getUserId3() {
-      return userId3;
-    }
-    
-    /** Sets the value of the 'userId3' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setUserId3(java.lang.CharSequence value) {
-      validate(fields()[16], value);
-      this.userId3 = value;
-      fieldSetFlags()[16] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'userId3' field has been set */
-    public boolean hasUserId3() {
-      return fieldSetFlags()[16];
-    }
-    
-    /** Clears the value of the 'userId3' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearUserId3() {
-      userId3 = null;
-      fieldSetFlags()[16] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'userId4' field */
-    public java.lang.CharSequence getUserId4() {
-      return userId4;
-    }
-    
-    /** Sets the value of the 'userId4' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setUserId4(java.lang.CharSequence value) {
-      validate(fields()[17], value);
-      this.userId4 = value;
-      fieldSetFlags()[17] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'userId4' field has been set */
-    public boolean hasUserId4() {
-      return fieldSetFlags()[17];
-    }
-    
-    /** Clears the value of the 'userId4' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearUserId4() {
-      userId4 = null;
-      fieldSetFlags()[17] = false;
       return this;
     }
 
@@ -948,11 +803,11 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
       try {
         PeMSStation record = new PeMSStation();
         record.Id = fieldSetFlags()[0] ? this.Id : (java.lang.Long) defaultValue(fields()[0]);
-        record.fwyNum = fieldSetFlags()[1] ? this.fwyNum : (java.lang.Long) defaultValue(fields()[1]);
+        record.fwyNum = fieldSetFlags()[1] ? this.fwyNum : (java.lang.Integer) defaultValue(fields()[1]);
         record.direction = fieldSetFlags()[2] ? this.direction : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.district = fieldSetFlags()[3] ? this.district : (java.lang.Long) defaultValue(fields()[3]);
-        record.county = fieldSetFlags()[4] ? this.county : (java.lang.Long) defaultValue(fields()[4]);
-        record.city = fieldSetFlags()[5] ? this.city : (java.lang.Long) defaultValue(fields()[5]);
+        record.district = fieldSetFlags()[3] ? this.district : (java.lang.Integer) defaultValue(fields()[3]);
+        record.county = fieldSetFlags()[4] ? this.county : (java.lang.CharSequence) defaultValue(fields()[4]);
+        record.city = fieldSetFlags()[5] ? this.city : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.statePostmile = fieldSetFlags()[6] ? this.statePostmile : (java.lang.Double) defaultValue(fields()[6]);
         record.absPostmile = fieldSetFlags()[7] ? this.absPostmile : (java.lang.Double) defaultValue(fields()[7]);
         record.latitude = fieldSetFlags()[8] ? this.latitude : (java.lang.Double) defaultValue(fields()[8]);
@@ -961,10 +816,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
         record.detectorType = fieldSetFlags()[11] ? this.detectorType : (java.lang.CharSequence) defaultValue(fields()[11]);
         record.detectorName = fieldSetFlags()[12] ? this.detectorName : (java.lang.CharSequence) defaultValue(fields()[12]);
         record.laneCount = fieldSetFlags()[13] ? this.laneCount : (java.lang.Integer) defaultValue(fields()[13]);
-        record.userId1 = fieldSetFlags()[14] ? this.userId1 : (java.lang.CharSequence) defaultValue(fields()[14]);
-        record.userId2 = fieldSetFlags()[15] ? this.userId2 : (java.lang.CharSequence) defaultValue(fields()[15]);
-        record.userId3 = fieldSetFlags()[16] ? this.userId3 : (java.lang.CharSequence) defaultValue(fields()[16]);
-        record.userId4 = fieldSetFlags()[17] ? this.userId4 : (java.lang.CharSequence) defaultValue(fields()[17]);
+        record.userId = fieldSetFlags()[14] ? this.userId : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[14]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
