@@ -29,4 +29,18 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class PeMSStationAggregate extends edu.berkeley.path.model_elements_base.PeMSStationAggregate {
+  /**
+   * Gets the value of the 'timeMeasured' field.
+   */
+  public org.joda.time.DateTime getJodaTimeMeasured() {
+    return ((DateTime)timeMeasured).toJoda();
+  }
+
+  /**
+   * Sets the value of the 'timeMeasured' field.
+   * @param value the value to set.
+   */
+  public void setJodaTimeMeasured(org.joda.time.DateTime value) {
+    this.timeMeasured = DateTime.fromJoda(value);
+  }
 }
