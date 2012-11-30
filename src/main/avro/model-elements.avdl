@@ -536,21 +536,55 @@ protocol CC {
    * PeMS sensor (the VDS station info, rather than the sensor data).
    */
   record PeMSStation {
-    long Id;
-    int fwyNum;
-    string direction;
-    int district;
-    string county;
-    string city;
-    double statePostmile;
-    double absPostmile;
-    double latitude;
-    double longitude;
-    double detectorLength;
-    string detectorType;
-    string detectorName;
-    int laneCount;
+    long      Id;
+    int       fwyNum;
+    string    direction;
+    int       district;
+    string    county;
+    string    city;
+    double    statePostmile;
+    double    absPostmile;
+    double    latitude;
+    double    longitude;
+    double    detectorLength;
+    string    detectorType;
+    string    detectorName;
+    int       laneCount;
+    
     array<string> userId;
     // ## TODO geom
+  }
+  
+  /**
+   * Used in both the 5 minute and 1 hour case for per-lane
+   * and per-station aggregated data, and in the 1 day case
+   * for per-station aggregated data.
+   **/
+  record PeMSAggregate {
+    union { long, null }    samples;
+    union { double, null }  flow;
+    union { double, null }  avgOccupancy;
+    union { double, null }  avgSpeed;
+    union { double, null }  observed;
+  }
+  
+  /**
+   * Represents both the 5 minute and 1 hour aggregated data. If delay map
+   * is present, then it represents a daily aggregate.
+   **/
+  record PeMSStationAggregate {
+    long vdsId;
+    DateTime timeMeasured;
+    
+    // Aggregated at this station.
+    PeMSAggregate total;
+    
+    // Aggregated by lane at this station.
+    array<PeMSAggregate> byLane;
+    
+    // Average delay over the station length, for a threshold speed.
+    // Keys are speeds in mph: "35", "40", ... "60".
+    // Field is null for 5 minute and 1 hour aggregates.
+    union { map<float>, null } delay;
   }
 }
