@@ -478,13 +478,45 @@ protocol CC {
     /** one entry per CTM */
     array<FreewayCTMState> ensembleState;
     
-    DateTime t;
+    DateTime t; // ## rename "time" for consistency
     
     /** map key is link id
      *
      * used by FreewayReporterBlock? */
     map<double> quality;
     // ### TODO call this confidence?
+  }
+  
+  record FreewayCTMReport {
+    long runID;
+    
+    /** Model time, of course */
+    DateTime time;
+    
+    FreewayCTMState mean;
+    FreewayCTMState stdDev;
+    FDMap fd;
+    
+    /**
+     * map of mean flow into each link
+     * map may be empty for certain reporting cycles
+     * map key is linkId
+     */
+    map<double> inFlowMean;
+    map<double> inFlowStdDev;
+    
+    /**
+     * map of mean flow out of each link
+     * map may be empty for certain reporting cycles
+     * map key is linkId
+     */
+    map<double> outFlowMean;
+    map<double> outFlowStdDev;
+  }
+  
+  record FreewayCTMEnsembleReport {
+    long runID;
+    FreewayCTMEnsembleState ensembleState;
   }
   
   /**
