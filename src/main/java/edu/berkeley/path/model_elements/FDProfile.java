@@ -26,5 +26,24 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class FDProfile extends edu.berkeley.path.model_elements_base.FDProfile {
+  /**
+   * Set the FDs. Same as setFd(), but works with a list of FD.
+   */
+  public void setFdList(List<FD> value) {
+    setFd((List<edu.berkeley.path.model_elements_base.FD>)(List<?>)value);
+  }
+  
+  /**
+   * Get the FDs. Same as getFD(), but works with a list of FD.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  public List<FD> getFdList() {
+    if (null == getFd()) {
+      setFd(new ArrayList<edu.berkeley.path.model_elements_base.FD>());
+    }
+    return (List<FD>)(List<?>)getFd();
+  }
 }

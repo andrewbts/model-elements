@@ -26,10 +26,31 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class FDMap extends edu.berkeley.path.model_elements_base.FDMap {
 	
 	public FD getLinkFD(Link link) {
 		return (FD)super.getFd().get(link.getId());
 	}
 	
+  /**
+   * Set the fd map. Same as setFd(), but works with String keys.
+   */
+  @SuppressWarnings("unchecked")
+  public void setFdMap(Map<String,FD> value) {
+    setFd((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FD>)(Map<?,?>)value);
+  }
+
+  /**
+   * Get the fd map. Same as getFd(), but works with String keys.
+   * Never returns null (creates the map if it doesn't exist).
+   */
+  @SuppressWarnings("unchecked")
+  public Map<String,FD> getFdMap() {
+    if (null == getFd()) {
+      setFd(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FD>());
+    }
+    return (Map<String,FD>)(Map<?,?>)getFd();
+  }
 }
