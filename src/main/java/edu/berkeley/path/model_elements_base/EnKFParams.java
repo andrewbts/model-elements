@@ -11,8 +11,23 @@ package edu.berkeley.path.model_elements_base;
    *
    * These objects correspond to the TBD Run tables. */
 public class EnKFParams extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EnKFParams\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}");
-  @Deprecated public int n_ensembles;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"EnKFParams\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"confidenceDefault\",\"type\":\"double\"},{\"name\":\"confidenceHasMeasurement\",\"type\":\"double\"},{\"name\":\"confidenceNoMeasurement\",\"type\":\"double\"},{\"name\":\"localizationDistance\",\"type\":\"double\"},{\"name\":\"useLocalization\",\"type\":\"boolean\"},{\"name\":\"modelNoiseMean\",\"type\":\"double\"},{\"name\":\"modelNoiseStdev\",\"type\":\"double\"},{\"name\":\"navteqNoiseMean\",\"type\":\"double\"},{\"name\":\"navteqNoiseStdev\",\"type\":\"double\"},{\"name\":\"navteqPercentage\",\"type\":\"double\"},{\"name\":\"PemsBlackList\",\"type\":{\"type\":\"array\",\"items\":\"int\"}},{\"name\":\"pemsNoiseMean\",\"type\":\"double\"},{\"name\":\"pemsNoiseStdev\",\"type\":\"double\"},{\"name\":\"telenavNoiseMean\",\"type\":\"double\"},{\"name\":\"telenavNoiseStdev\",\"type\":\"double\"},{\"name\":\"telenavPercentage\",\"type\":\"double\"}]}");
+  @Deprecated public double confidenceDefault;
+  @Deprecated public double confidenceHasMeasurement;
+  @Deprecated public double confidenceNoMeasurement;
+  @Deprecated public double localizationDistance;
+  @Deprecated public boolean useLocalization;
+  @Deprecated public double modelNoiseMean;
+  @Deprecated public double modelNoiseStdev;
+  @Deprecated public double navteqNoiseMean;
+  @Deprecated public double navteqNoiseStdev;
+  @Deprecated public double navteqPercentage;
+  @Deprecated public java.util.List<java.lang.Integer> PemsBlackList;
+  @Deprecated public double pemsNoiseMean;
+  @Deprecated public double pemsNoiseStdev;
+  @Deprecated public double telenavNoiseMean;
+  @Deprecated public double telenavNoiseStdev;
+  @Deprecated public double telenavPercentage;
 
   /**
    * Default constructor.
@@ -22,15 +37,45 @@ public class EnKFParams extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * All-args constructor.
    */
-  public EnKFParams(java.lang.Integer n_ensembles) {
-    this.n_ensembles = n_ensembles;
+  public EnKFParams(java.lang.Double confidenceDefault, java.lang.Double confidenceHasMeasurement, java.lang.Double confidenceNoMeasurement, java.lang.Double localizationDistance, java.lang.Boolean useLocalization, java.lang.Double modelNoiseMean, java.lang.Double modelNoiseStdev, java.lang.Double navteqNoiseMean, java.lang.Double navteqNoiseStdev, java.lang.Double navteqPercentage, java.util.List<java.lang.Integer> PemsBlackList, java.lang.Double pemsNoiseMean, java.lang.Double pemsNoiseStdev, java.lang.Double telenavNoiseMean, java.lang.Double telenavNoiseStdev, java.lang.Double telenavPercentage) {
+    this.confidenceDefault = confidenceDefault;
+    this.confidenceHasMeasurement = confidenceHasMeasurement;
+    this.confidenceNoMeasurement = confidenceNoMeasurement;
+    this.localizationDistance = localizationDistance;
+    this.useLocalization = useLocalization;
+    this.modelNoiseMean = modelNoiseMean;
+    this.modelNoiseStdev = modelNoiseStdev;
+    this.navteqNoiseMean = navteqNoiseMean;
+    this.navteqNoiseStdev = navteqNoiseStdev;
+    this.navteqPercentage = navteqPercentage;
+    this.PemsBlackList = PemsBlackList;
+    this.pemsNoiseMean = pemsNoiseMean;
+    this.pemsNoiseStdev = pemsNoiseStdev;
+    this.telenavNoiseMean = telenavNoiseMean;
+    this.telenavNoiseStdev = telenavNoiseStdev;
+    this.telenavPercentage = telenavPercentage;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return n_ensembles;
+    case 0: return confidenceDefault;
+    case 1: return confidenceHasMeasurement;
+    case 2: return confidenceNoMeasurement;
+    case 3: return localizationDistance;
+    case 4: return useLocalization;
+    case 5: return modelNoiseMean;
+    case 6: return modelNoiseStdev;
+    case 7: return navteqNoiseMean;
+    case 8: return navteqNoiseStdev;
+    case 9: return navteqPercentage;
+    case 10: return PemsBlackList;
+    case 11: return pemsNoiseMean;
+    case 12: return pemsNoiseStdev;
+    case 13: return telenavNoiseMean;
+    case 14: return telenavNoiseStdev;
+    case 15: return telenavPercentage;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -38,24 +83,264 @@ public class EnKFParams extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: n_ensembles = (java.lang.Integer)value$; break;
+    case 0: confidenceDefault = (java.lang.Double)value$; break;
+    case 1: confidenceHasMeasurement = (java.lang.Double)value$; break;
+    case 2: confidenceNoMeasurement = (java.lang.Double)value$; break;
+    case 3: localizationDistance = (java.lang.Double)value$; break;
+    case 4: useLocalization = (java.lang.Boolean)value$; break;
+    case 5: modelNoiseMean = (java.lang.Double)value$; break;
+    case 6: modelNoiseStdev = (java.lang.Double)value$; break;
+    case 7: navteqNoiseMean = (java.lang.Double)value$; break;
+    case 8: navteqNoiseStdev = (java.lang.Double)value$; break;
+    case 9: navteqPercentage = (java.lang.Double)value$; break;
+    case 10: PemsBlackList = (java.util.List<java.lang.Integer>)value$; break;
+    case 11: pemsNoiseMean = (java.lang.Double)value$; break;
+    case 12: pemsNoiseStdev = (java.lang.Double)value$; break;
+    case 13: telenavNoiseMean = (java.lang.Double)value$; break;
+    case 14: telenavNoiseStdev = (java.lang.Double)value$; break;
+    case 15: telenavPercentage = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
 
   /**
-   * Gets the value of the 'n_ensembles' field.
+   * Gets the value of the 'confidenceDefault' field.
    */
-  public java.lang.Integer getNEnsembles() {
-    return n_ensembles;
+  public java.lang.Double getConfidenceDefault() {
+    return confidenceDefault;
   }
 
   /**
-   * Sets the value of the 'n_ensembles' field.
+   * Sets the value of the 'confidenceDefault' field.
    * @param value the value to set.
    */
-  public void setNEnsembles(java.lang.Integer value) {
-    this.n_ensembles = value;
+  public void setConfidenceDefault(java.lang.Double value) {
+    this.confidenceDefault = value;
+  }
+
+  /**
+   * Gets the value of the 'confidenceHasMeasurement' field.
+   */
+  public java.lang.Double getConfidenceHasMeasurement() {
+    return confidenceHasMeasurement;
+  }
+
+  /**
+   * Sets the value of the 'confidenceHasMeasurement' field.
+   * @param value the value to set.
+   */
+  public void setConfidenceHasMeasurement(java.lang.Double value) {
+    this.confidenceHasMeasurement = value;
+  }
+
+  /**
+   * Gets the value of the 'confidenceNoMeasurement' field.
+   */
+  public java.lang.Double getConfidenceNoMeasurement() {
+    return confidenceNoMeasurement;
+  }
+
+  /**
+   * Sets the value of the 'confidenceNoMeasurement' field.
+   * @param value the value to set.
+   */
+  public void setConfidenceNoMeasurement(java.lang.Double value) {
+    this.confidenceNoMeasurement = value;
+  }
+
+  /**
+   * Gets the value of the 'localizationDistance' field.
+   */
+  public java.lang.Double getLocalizationDistance() {
+    return localizationDistance;
+  }
+
+  /**
+   * Sets the value of the 'localizationDistance' field.
+   * @param value the value to set.
+   */
+  public void setLocalizationDistance(java.lang.Double value) {
+    this.localizationDistance = value;
+  }
+
+  /**
+   * Gets the value of the 'useLocalization' field.
+   */
+  public java.lang.Boolean getUseLocalization() {
+    return useLocalization;
+  }
+
+  /**
+   * Sets the value of the 'useLocalization' field.
+   * @param value the value to set.
+   */
+  public void setUseLocalization(java.lang.Boolean value) {
+    this.useLocalization = value;
+  }
+
+  /**
+   * Gets the value of the 'modelNoiseMean' field.
+   */
+  public java.lang.Double getModelNoiseMean() {
+    return modelNoiseMean;
+  }
+
+  /**
+   * Sets the value of the 'modelNoiseMean' field.
+   * @param value the value to set.
+   */
+  public void setModelNoiseMean(java.lang.Double value) {
+    this.modelNoiseMean = value;
+  }
+
+  /**
+   * Gets the value of the 'modelNoiseStdev' field.
+   */
+  public java.lang.Double getModelNoiseStdev() {
+    return modelNoiseStdev;
+  }
+
+  /**
+   * Sets the value of the 'modelNoiseStdev' field.
+   * @param value the value to set.
+   */
+  public void setModelNoiseStdev(java.lang.Double value) {
+    this.modelNoiseStdev = value;
+  }
+
+  /**
+   * Gets the value of the 'navteqNoiseMean' field.
+   */
+  public java.lang.Double getNavteqNoiseMean() {
+    return navteqNoiseMean;
+  }
+
+  /**
+   * Sets the value of the 'navteqNoiseMean' field.
+   * @param value the value to set.
+   */
+  public void setNavteqNoiseMean(java.lang.Double value) {
+    this.navteqNoiseMean = value;
+  }
+
+  /**
+   * Gets the value of the 'navteqNoiseStdev' field.
+   */
+  public java.lang.Double getNavteqNoiseStdev() {
+    return navteqNoiseStdev;
+  }
+
+  /**
+   * Sets the value of the 'navteqNoiseStdev' field.
+   * @param value the value to set.
+   */
+  public void setNavteqNoiseStdev(java.lang.Double value) {
+    this.navteqNoiseStdev = value;
+  }
+
+  /**
+   * Gets the value of the 'navteqPercentage' field.
+   */
+  public java.lang.Double getNavteqPercentage() {
+    return navteqPercentage;
+  }
+
+  /**
+   * Sets the value of the 'navteqPercentage' field.
+   * @param value the value to set.
+   */
+  public void setNavteqPercentage(java.lang.Double value) {
+    this.navteqPercentage = value;
+  }
+
+  /**
+   * Gets the value of the 'PemsBlackList' field.
+   */
+  public java.util.List<java.lang.Integer> getPemsBlackList() {
+    return PemsBlackList;
+  }
+
+  /**
+   * Sets the value of the 'PemsBlackList' field.
+   * @param value the value to set.
+   */
+  public void setPemsBlackList(java.util.List<java.lang.Integer> value) {
+    this.PemsBlackList = value;
+  }
+
+  /**
+   * Gets the value of the 'pemsNoiseMean' field.
+   */
+  public java.lang.Double getPemsNoiseMean() {
+    return pemsNoiseMean;
+  }
+
+  /**
+   * Sets the value of the 'pemsNoiseMean' field.
+   * @param value the value to set.
+   */
+  public void setPemsNoiseMean(java.lang.Double value) {
+    this.pemsNoiseMean = value;
+  }
+
+  /**
+   * Gets the value of the 'pemsNoiseStdev' field.
+   */
+  public java.lang.Double getPemsNoiseStdev() {
+    return pemsNoiseStdev;
+  }
+
+  /**
+   * Sets the value of the 'pemsNoiseStdev' field.
+   * @param value the value to set.
+   */
+  public void setPemsNoiseStdev(java.lang.Double value) {
+    this.pemsNoiseStdev = value;
+  }
+
+  /**
+   * Gets the value of the 'telenavNoiseMean' field.
+   */
+  public java.lang.Double getTelenavNoiseMean() {
+    return telenavNoiseMean;
+  }
+
+  /**
+   * Sets the value of the 'telenavNoiseMean' field.
+   * @param value the value to set.
+   */
+  public void setTelenavNoiseMean(java.lang.Double value) {
+    this.telenavNoiseMean = value;
+  }
+
+  /**
+   * Gets the value of the 'telenavNoiseStdev' field.
+   */
+  public java.lang.Double getTelenavNoiseStdev() {
+    return telenavNoiseStdev;
+  }
+
+  /**
+   * Sets the value of the 'telenavNoiseStdev' field.
+   * @param value the value to set.
+   */
+  public void setTelenavNoiseStdev(java.lang.Double value) {
+    this.telenavNoiseStdev = value;
+  }
+
+  /**
+   * Gets the value of the 'telenavPercentage' field.
+   */
+  public java.lang.Double getTelenavPercentage() {
+    return telenavPercentage;
+  }
+
+  /**
+   * Sets the value of the 'telenavPercentage' field.
+   * @param value the value to set.
+   */
+  public void setTelenavPercentage(java.lang.Double value) {
+    this.telenavPercentage = value;
   }
 
   /** Creates a new EnKFParams RecordBuilder */
@@ -79,7 +364,22 @@ public class EnKFParams extends org.apache.avro.specific.SpecificRecordBase impl
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<EnKFParams>
     implements org.apache.avro.data.RecordBuilder<EnKFParams> {
 
-    private int n_ensembles;
+    private double confidenceDefault;
+    private double confidenceHasMeasurement;
+    private double confidenceNoMeasurement;
+    private double localizationDistance;
+    private boolean useLocalization;
+    private double modelNoiseMean;
+    private double modelNoiseStdev;
+    private double navteqNoiseMean;
+    private double navteqNoiseStdev;
+    private double navteqPercentage;
+    private java.util.List<java.lang.Integer> PemsBlackList;
+    private double pemsNoiseMean;
+    private double pemsNoiseStdev;
+    private double telenavNoiseMean;
+    private double telenavNoiseStdev;
+    private double telenavPercentage;
 
     /** Creates a new Builder */
     private Builder() {
@@ -94,33 +394,454 @@ public class EnKFParams extends org.apache.avro.specific.SpecificRecordBase impl
     /** Creates a Builder by copying an existing EnKFParams instance */
     private Builder(edu.berkeley.path.model_elements_base.EnKFParams other) {
             super(edu.berkeley.path.model_elements_base.EnKFParams.SCHEMA$);
-      if (isValidValue(fields()[0], other.n_ensembles)) {
-        this.n_ensembles = (java.lang.Integer) data().deepCopy(fields()[0].schema(), other.n_ensembles);
+      if (isValidValue(fields()[0], other.confidenceDefault)) {
+        this.confidenceDefault = (java.lang.Double) data().deepCopy(fields()[0].schema(), other.confidenceDefault);
         fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.confidenceHasMeasurement)) {
+        this.confidenceHasMeasurement = (java.lang.Double) data().deepCopy(fields()[1].schema(), other.confidenceHasMeasurement);
+        fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.confidenceNoMeasurement)) {
+        this.confidenceNoMeasurement = (java.lang.Double) data().deepCopy(fields()[2].schema(), other.confidenceNoMeasurement);
+        fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.localizationDistance)) {
+        this.localizationDistance = (java.lang.Double) data().deepCopy(fields()[3].schema(), other.localizationDistance);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.useLocalization)) {
+        this.useLocalization = (java.lang.Boolean) data().deepCopy(fields()[4].schema(), other.useLocalization);
+        fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.modelNoiseMean)) {
+        this.modelNoiseMean = (java.lang.Double) data().deepCopy(fields()[5].schema(), other.modelNoiseMean);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.modelNoiseStdev)) {
+        this.modelNoiseStdev = (java.lang.Double) data().deepCopy(fields()[6].schema(), other.modelNoiseStdev);
+        fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.navteqNoiseMean)) {
+        this.navteqNoiseMean = (java.lang.Double) data().deepCopy(fields()[7].schema(), other.navteqNoiseMean);
+        fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.navteqNoiseStdev)) {
+        this.navteqNoiseStdev = (java.lang.Double) data().deepCopy(fields()[8].schema(), other.navteqNoiseStdev);
+        fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.navteqPercentage)) {
+        this.navteqPercentage = (java.lang.Double) data().deepCopy(fields()[9].schema(), other.navteqPercentage);
+        fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.PemsBlackList)) {
+        this.PemsBlackList = (java.util.List<java.lang.Integer>) data().deepCopy(fields()[10].schema(), other.PemsBlackList);
+        fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.pemsNoiseMean)) {
+        this.pemsNoiseMean = (java.lang.Double) data().deepCopy(fields()[11].schema(), other.pemsNoiseMean);
+        fieldSetFlags()[11] = true;
+      }
+      if (isValidValue(fields()[12], other.pemsNoiseStdev)) {
+        this.pemsNoiseStdev = (java.lang.Double) data().deepCopy(fields()[12].schema(), other.pemsNoiseStdev);
+        fieldSetFlags()[12] = true;
+      }
+      if (isValidValue(fields()[13], other.telenavNoiseMean)) {
+        this.telenavNoiseMean = (java.lang.Double) data().deepCopy(fields()[13].schema(), other.telenavNoiseMean);
+        fieldSetFlags()[13] = true;
+      }
+      if (isValidValue(fields()[14], other.telenavNoiseStdev)) {
+        this.telenavNoiseStdev = (java.lang.Double) data().deepCopy(fields()[14].schema(), other.telenavNoiseStdev);
+        fieldSetFlags()[14] = true;
+      }
+      if (isValidValue(fields()[15], other.telenavPercentage)) {
+        this.telenavPercentage = (java.lang.Double) data().deepCopy(fields()[15].schema(), other.telenavPercentage);
+        fieldSetFlags()[15] = true;
       }
     }
 
-    /** Gets the value of the 'n_ensembles' field */
-    public java.lang.Integer getNEnsembles() {
-      return n_ensembles;
+    /** Gets the value of the 'confidenceDefault' field */
+    public java.lang.Double getConfidenceDefault() {
+      return confidenceDefault;
     }
     
-    /** Sets the value of the 'n_ensembles' field */
-    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setNEnsembles(int value) {
+    /** Sets the value of the 'confidenceDefault' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setConfidenceDefault(double value) {
       validate(fields()[0], value);
-      this.n_ensembles = value;
+      this.confidenceDefault = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'n_ensembles' field has been set */
-    public boolean hasNEnsembles() {
+    /** Checks whether the 'confidenceDefault' field has been set */
+    public boolean hasConfidenceDefault() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'n_ensembles' field */
-    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearNEnsembles() {
+    /** Clears the value of the 'confidenceDefault' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearConfidenceDefault() {
       fieldSetFlags()[0] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'confidenceHasMeasurement' field */
+    public java.lang.Double getConfidenceHasMeasurement() {
+      return confidenceHasMeasurement;
+    }
+    
+    /** Sets the value of the 'confidenceHasMeasurement' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setConfidenceHasMeasurement(double value) {
+      validate(fields()[1], value);
+      this.confidenceHasMeasurement = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'confidenceHasMeasurement' field has been set */
+    public boolean hasConfidenceHasMeasurement() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 'confidenceHasMeasurement' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearConfidenceHasMeasurement() {
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'confidenceNoMeasurement' field */
+    public java.lang.Double getConfidenceNoMeasurement() {
+      return confidenceNoMeasurement;
+    }
+    
+    /** Sets the value of the 'confidenceNoMeasurement' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setConfidenceNoMeasurement(double value) {
+      validate(fields()[2], value);
+      this.confidenceNoMeasurement = value;
+      fieldSetFlags()[2] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'confidenceNoMeasurement' field has been set */
+    public boolean hasConfidenceNoMeasurement() {
+      return fieldSetFlags()[2];
+    }
+    
+    /** Clears the value of the 'confidenceNoMeasurement' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearConfidenceNoMeasurement() {
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'localizationDistance' field */
+    public java.lang.Double getLocalizationDistance() {
+      return localizationDistance;
+    }
+    
+    /** Sets the value of the 'localizationDistance' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setLocalizationDistance(double value) {
+      validate(fields()[3], value);
+      this.localizationDistance = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'localizationDistance' field has been set */
+    public boolean hasLocalizationDistance() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'localizationDistance' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearLocalizationDistance() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'useLocalization' field */
+    public java.lang.Boolean getUseLocalization() {
+      return useLocalization;
+    }
+    
+    /** Sets the value of the 'useLocalization' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setUseLocalization(boolean value) {
+      validate(fields()[4], value);
+      this.useLocalization = value;
+      fieldSetFlags()[4] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'useLocalization' field has been set */
+    public boolean hasUseLocalization() {
+      return fieldSetFlags()[4];
+    }
+    
+    /** Clears the value of the 'useLocalization' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearUseLocalization() {
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'modelNoiseMean' field */
+    public java.lang.Double getModelNoiseMean() {
+      return modelNoiseMean;
+    }
+    
+    /** Sets the value of the 'modelNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setModelNoiseMean(double value) {
+      validate(fields()[5], value);
+      this.modelNoiseMean = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modelNoiseMean' field has been set */
+    public boolean hasModelNoiseMean() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'modelNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearModelNoiseMean() {
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'modelNoiseStdev' field */
+    public java.lang.Double getModelNoiseStdev() {
+      return modelNoiseStdev;
+    }
+    
+    /** Sets the value of the 'modelNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setModelNoiseStdev(double value) {
+      validate(fields()[6], value);
+      this.modelNoiseStdev = value;
+      fieldSetFlags()[6] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modelNoiseStdev' field has been set */
+    public boolean hasModelNoiseStdev() {
+      return fieldSetFlags()[6];
+    }
+    
+    /** Clears the value of the 'modelNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearModelNoiseStdev() {
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'navteqNoiseMean' field */
+    public java.lang.Double getNavteqNoiseMean() {
+      return navteqNoiseMean;
+    }
+    
+    /** Sets the value of the 'navteqNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setNavteqNoiseMean(double value) {
+      validate(fields()[7], value);
+      this.navteqNoiseMean = value;
+      fieldSetFlags()[7] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'navteqNoiseMean' field has been set */
+    public boolean hasNavteqNoiseMean() {
+      return fieldSetFlags()[7];
+    }
+    
+    /** Clears the value of the 'navteqNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearNavteqNoiseMean() {
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'navteqNoiseStdev' field */
+    public java.lang.Double getNavteqNoiseStdev() {
+      return navteqNoiseStdev;
+    }
+    
+    /** Sets the value of the 'navteqNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setNavteqNoiseStdev(double value) {
+      validate(fields()[8], value);
+      this.navteqNoiseStdev = value;
+      fieldSetFlags()[8] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'navteqNoiseStdev' field has been set */
+    public boolean hasNavteqNoiseStdev() {
+      return fieldSetFlags()[8];
+    }
+    
+    /** Clears the value of the 'navteqNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearNavteqNoiseStdev() {
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'navteqPercentage' field */
+    public java.lang.Double getNavteqPercentage() {
+      return navteqPercentage;
+    }
+    
+    /** Sets the value of the 'navteqPercentage' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setNavteqPercentage(double value) {
+      validate(fields()[9], value);
+      this.navteqPercentage = value;
+      fieldSetFlags()[9] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'navteqPercentage' field has been set */
+    public boolean hasNavteqPercentage() {
+      return fieldSetFlags()[9];
+    }
+    
+    /** Clears the value of the 'navteqPercentage' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearNavteqPercentage() {
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'PemsBlackList' field */
+    public java.util.List<java.lang.Integer> getPemsBlackList() {
+      return PemsBlackList;
+    }
+    
+    /** Sets the value of the 'PemsBlackList' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setPemsBlackList(java.util.List<java.lang.Integer> value) {
+      validate(fields()[10], value);
+      this.PemsBlackList = value;
+      fieldSetFlags()[10] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'PemsBlackList' field has been set */
+    public boolean hasPemsBlackList() {
+      return fieldSetFlags()[10];
+    }
+    
+    /** Clears the value of the 'PemsBlackList' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearPemsBlackList() {
+      PemsBlackList = null;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'pemsNoiseMean' field */
+    public java.lang.Double getPemsNoiseMean() {
+      return pemsNoiseMean;
+    }
+    
+    /** Sets the value of the 'pemsNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setPemsNoiseMean(double value) {
+      validate(fields()[11], value);
+      this.pemsNoiseMean = value;
+      fieldSetFlags()[11] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'pemsNoiseMean' field has been set */
+    public boolean hasPemsNoiseMean() {
+      return fieldSetFlags()[11];
+    }
+    
+    /** Clears the value of the 'pemsNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearPemsNoiseMean() {
+      fieldSetFlags()[11] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'pemsNoiseStdev' field */
+    public java.lang.Double getPemsNoiseStdev() {
+      return pemsNoiseStdev;
+    }
+    
+    /** Sets the value of the 'pemsNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setPemsNoiseStdev(double value) {
+      validate(fields()[12], value);
+      this.pemsNoiseStdev = value;
+      fieldSetFlags()[12] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'pemsNoiseStdev' field has been set */
+    public boolean hasPemsNoiseStdev() {
+      return fieldSetFlags()[12];
+    }
+    
+    /** Clears the value of the 'pemsNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearPemsNoiseStdev() {
+      fieldSetFlags()[12] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'telenavNoiseMean' field */
+    public java.lang.Double getTelenavNoiseMean() {
+      return telenavNoiseMean;
+    }
+    
+    /** Sets the value of the 'telenavNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setTelenavNoiseMean(double value) {
+      validate(fields()[13], value);
+      this.telenavNoiseMean = value;
+      fieldSetFlags()[13] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'telenavNoiseMean' field has been set */
+    public boolean hasTelenavNoiseMean() {
+      return fieldSetFlags()[13];
+    }
+    
+    /** Clears the value of the 'telenavNoiseMean' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearTelenavNoiseMean() {
+      fieldSetFlags()[13] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'telenavNoiseStdev' field */
+    public java.lang.Double getTelenavNoiseStdev() {
+      return telenavNoiseStdev;
+    }
+    
+    /** Sets the value of the 'telenavNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setTelenavNoiseStdev(double value) {
+      validate(fields()[14], value);
+      this.telenavNoiseStdev = value;
+      fieldSetFlags()[14] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'telenavNoiseStdev' field has been set */
+    public boolean hasTelenavNoiseStdev() {
+      return fieldSetFlags()[14];
+    }
+    
+    /** Clears the value of the 'telenavNoiseStdev' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearTelenavNoiseStdev() {
+      fieldSetFlags()[14] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'telenavPercentage' field */
+    public java.lang.Double getTelenavPercentage() {
+      return telenavPercentage;
+    }
+    
+    /** Sets the value of the 'telenavPercentage' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder setTelenavPercentage(double value) {
+      validate(fields()[15], value);
+      this.telenavPercentage = value;
+      fieldSetFlags()[15] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'telenavPercentage' field has been set */
+    public boolean hasTelenavPercentage() {
+      return fieldSetFlags()[15];
+    }
+    
+    /** Clears the value of the 'telenavPercentage' field */
+    public edu.berkeley.path.model_elements_base.EnKFParams.Builder clearTelenavPercentage() {
+      fieldSetFlags()[15] = false;
       return this;
     }
 
@@ -128,7 +849,22 @@ public class EnKFParams extends org.apache.avro.specific.SpecificRecordBase impl
     public EnKFParams build() {
       try {
         EnKFParams record = new EnKFParams();
-        record.n_ensembles = fieldSetFlags()[0] ? this.n_ensembles : (java.lang.Integer) defaultValue(fields()[0]);
+        record.confidenceDefault = fieldSetFlags()[0] ? this.confidenceDefault : (java.lang.Double) defaultValue(fields()[0]);
+        record.confidenceHasMeasurement = fieldSetFlags()[1] ? this.confidenceHasMeasurement : (java.lang.Double) defaultValue(fields()[1]);
+        record.confidenceNoMeasurement = fieldSetFlags()[2] ? this.confidenceNoMeasurement : (java.lang.Double) defaultValue(fields()[2]);
+        record.localizationDistance = fieldSetFlags()[3] ? this.localizationDistance : (java.lang.Double) defaultValue(fields()[3]);
+        record.useLocalization = fieldSetFlags()[4] ? this.useLocalization : (java.lang.Boolean) defaultValue(fields()[4]);
+        record.modelNoiseMean = fieldSetFlags()[5] ? this.modelNoiseMean : (java.lang.Double) defaultValue(fields()[5]);
+        record.modelNoiseStdev = fieldSetFlags()[6] ? this.modelNoiseStdev : (java.lang.Double) defaultValue(fields()[6]);
+        record.navteqNoiseMean = fieldSetFlags()[7] ? this.navteqNoiseMean : (java.lang.Double) defaultValue(fields()[7]);
+        record.navteqNoiseStdev = fieldSetFlags()[8] ? this.navteqNoiseStdev : (java.lang.Double) defaultValue(fields()[8]);
+        record.navteqPercentage = fieldSetFlags()[9] ? this.navteqPercentage : (java.lang.Double) defaultValue(fields()[9]);
+        record.PemsBlackList = fieldSetFlags()[10] ? this.PemsBlackList : (java.util.List<java.lang.Integer>) defaultValue(fields()[10]);
+        record.pemsNoiseMean = fieldSetFlags()[11] ? this.pemsNoiseMean : (java.lang.Double) defaultValue(fields()[11]);
+        record.pemsNoiseStdev = fieldSetFlags()[12] ? this.pemsNoiseStdev : (java.lang.Double) defaultValue(fields()[12]);
+        record.telenavNoiseMean = fieldSetFlags()[13] ? this.telenavNoiseMean : (java.lang.Double) defaultValue(fields()[13]);
+        record.telenavNoiseStdev = fieldSetFlags()[14] ? this.telenavNoiseStdev : (java.lang.Double) defaultValue(fields()[14]);
+        record.telenavPercentage = fieldSetFlags()[15] ? this.telenavPercentage : (java.lang.Double) defaultValue(fields()[15]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

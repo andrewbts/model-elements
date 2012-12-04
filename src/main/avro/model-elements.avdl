@@ -355,7 +355,22 @@ protocol CC {
    */
   
   record EnKFParams {
-    int n_ensembles;
+    double confidenceDefault;
+    double confidenceHasMeasurement;
+    double confidenceNoMeasurement;
+    double localizationDistance;
+    boolean useLocalization;
+    double modelNoiseMean;
+    double modelNoiseStdev;
+    double navteqNoiseMean;
+    double navteqNoiseStdev;
+    double navteqPercentage;
+    array<int> PemsBlackList;
+    double pemsNoiseMean;
+    double pemsNoiseStdev;
+    double telenavNoiseMean;
+    double telenavNoiseStdev;
+    double telenavPercentage;
   }
   
   /**
@@ -379,9 +394,15 @@ protocol CC {
      **/
     string        runMode;
     
-    EnKFParams    enkfParams;
+    /**
+     * forecast, estimation
+     **/
+    string        workflow;
+
     string        ctmType;
     string        fdType;
+    string        enkfType;
+    EnKFParams    enkfParams;
     
     Duration      dtOutput;
     Duration      dt;
