@@ -27,8 +27,87 @@
 package edu.berkeley.path.model_elements;
 
 import java.util.*;
+import org.joda.time.Interval;
+import java.util.Map.Entry;
 
 public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
+  /**
+   * Slice off an interval of time and return the matching items as a DemandMap.
+   * If, for a given link and vtype, the time interval contains more than one demand,
+   * ignore all but the last. (This method does not change the DemandMap.)
+   **/
+  public DemandMap slice(Interval interval) {
+    DemandMap demandMap = new DemandMap();
+    
+    for (Entry<String, DemandProfile> entryForLink : getProfileMap().entrySet()) {
+      String linkId = entryForLink.getKey();
+      DemandProfile profile = entryForLink.getValue();
+      Double dt = profile.getSampleRate(); // defaults?
+      Double t0 = profile.getStartTime(); // defaults?
+      List<Double> someTimeSeries = profile.getFlowMap().values().iterator().next();
+      Integer nSamples = someTimeSeries.size();
+        // assume all vtypes have same size time series!
+      
+      if (nSamples == 0) {
+        demandMap.getFlowMap().put(linkId, null);
+        continue;
+      }
+      
+      org.joda.time.DateTime midnight = interval.getStart().withTimeAtStartOfDay(); // DST?
+      org.joda.time.DateTime dataStart = midnight.plusSeconds((int)Math.round(t0));
+      org.joda.time.DateTime dataEnd = dataStart.plusSeconds((int)Math.round(dt * (nSamples-1)));
+      Interval dataInterval = new Interval(dataStart, dataEnd);
+      Interval overlap = dataInterval.overlap(interval);
+      
+      Integer index;
+      if (overlap == null) {
+        if (interval.isBefore(dataInterval)) {
+          index = 0;
+        }
+        else {
+          index = nSamples-1;
+        }
+      }
+      else {
+        org.joda.time.DateTime dataFound = overlap.getEnd();
+        org.joda.time.Duration timeFromStart = 
+         (new Interval(dataStart, dataFound)).toDuration();
+        Double steps = timeFromStart.getMillis() / (1000 * dt);
+        index = (int)Math.round(steps);
+        
+        if (index < 0) {
+          index = 0;
+        }
+        else if (index > nSamples-1) {
+          index = nSamples-1;
+        }
+      }
+      
+      for (Entry<String,List<Double>> entryForVtype: profile.getFlowMap().entrySet()) {
+        String vtype = entryForVtype.getKey();
+        List<Double> timeSeries = entryForVtype.getValue();
+        
+        Double flowAtTime = timeSeries.get(index);
+        // if null?
+        
+        Double knob = profile.getKnob();
+        if (knob != null) {
+          flowAtTime *= knob; // Ok?
+          // what about stddev add/mult?
+        }
+        
+        Map<String, Double>demandMapAtLink = demandMap.getFlowMap().get(linkId);
+        if (demandMapAtLink == null) {
+          demandMapAtLink = new HashMap<String, Double>();
+          demandMap.getFlowMap().put(linkId, demandMapAtLink);
+        }
+        demandMapAtLink.put(vtype, flowAtTime);
+      }
+    }
+  
+    return demandMap;
+  }
+  
   /**
    * Get the profile at the specified node.
    * Creates the map if it doesn't exist, returns null if the profile doesn't exist.
@@ -47,7 +126,7 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
    * Set the profile map. Same as setProfiles(), but works with a map of String to DemandProfile.
    */
   @SuppressWarnings("unchecked")
-public void setProfileMap(Map<String,DemandProfile> value) {
+  public void setProfileMap(Map<String,DemandProfile> value) {
     setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)(Map<?,?>)value);
   }
 
@@ -56,7 +135,7 @@ public void setProfileMap(Map<String,DemandProfile> value) {
    * Never returns null (creates the map if it doesn't exist).
    */
   @SuppressWarnings("unchecked")
-public Map<String,DemandProfile> getProfileMap() {
+  public Map<String,DemandProfile> getProfileMap() {
     if (null == getProfile()) {
       setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>());
     }

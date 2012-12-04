@@ -38,4 +38,23 @@ public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap {
 		return total;
 	}
 	
+  /**
+   * Set the flow map. Same as setFlow(), but works with String keys.
+   */
+  @SuppressWarnings("unchecked")
+  public void setFlowMap(Map<String,Map<String,Double>> value) {
+    setFlow((Map<java.lang.CharSequence,Map<java.lang.CharSequence,Double>>)(Map<?,?>)value);
+  }
+
+  /**
+   * Get the flow map. Same as getFlow(), but works with String keys.
+   * Never returns null (creates the map if it doesn't exist).
+   */
+  @SuppressWarnings("unchecked")
+  public Map<String,Map<String,Double>> getFlowMap() {
+    if (null == getFlow()) {
+      setFlow(new HashMap<java.lang.CharSequence,Map<java.lang.CharSequence,Double>>());
+    }
+    return (Map<String,Map<String,Double>>)(Map<?,?>)getFlow();
+  }
 }
