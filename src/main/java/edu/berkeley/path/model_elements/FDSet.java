@@ -26,5 +26,36 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
+  // TODO find a better way to expose Map<> access.
+  
+  /**
+   * Set the profile map. Same as setProfile(), but works with a map of String to FDProfile.
+   */
+  @SuppressWarnings("unchecked")
+  public void setProfileMap(Map<String,FDProfile> value) {
+    setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>)(Map<?,?>)value);
+  }
+
+  /**
+   * Get the profile map. Same as getProfile(), but works with a map of String to FDProfile.
+   * Never returns null (creates the map if it doesn't exist).
+   */
+  @SuppressWarnings("unchecked")
+  public Map<String,FDProfile> getProfileMap() {
+    if (null == getProfile()) {
+      setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>());
+    }
+    return (Map<String,FDProfile>)(Map<?,?>)getProfile();
+  }
+  
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
+  }
+  
+  public void setId(Long id) {
+    setId(id.toString());
+  }
 }
