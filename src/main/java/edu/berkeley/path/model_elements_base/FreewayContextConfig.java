@@ -16,9 +16,11 @@ package edu.berkeley.path.model_elements_base;
    * Note that a context does not include a scenario. Scenarios are read
    * dynamically using a ScenarioSource. */
 public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\n   *\\n   * The parameters encapsulated here are separate from Scenario inputs\\n   * in that they express *how* the run is modeled and executed,\\n   * rather than *what* is modeled.\\n   *\\n   * These parameters are used by the Context subclasses.\\n   *\\n   * Note that a context does not include a scenario. Scenarios are read\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"fdType\",\"type\":\"string\"},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\n   *\\n   * The parameters encapsulated here are separate from Scenario inputs\\n   * in that they express *how* the run is modeled and executed,\\n   * rather than *what* is modeled.\\n   *\\n   * These parameters are used by the Context subclasses.\\n   *\\n   * Note that a context does not include a scenario. Scenarios are read\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\",\"doc\":\"* historical, live\\n     *\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\n   *\\n   * Configuration that applies to one run or a group of runs.\\n   *\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"n_ensembles\",\"type\":\"int\"}]}},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"fdType\",\"type\":\"string\"},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
+  /** * historical, live
+     * */
   @Deprecated public java.lang.CharSequence runMode;
   @Deprecated public edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
   @Deprecated public java.lang.CharSequence ctmType;
@@ -116,14 +118,16 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
 
   /**
    * Gets the value of the 'runMode' field.
-   */
+   * * historical, live
+     *   */
   public java.lang.CharSequence getRunMode() {
     return runMode;
   }
 
   /**
    * Sets the value of the 'runMode' field.
-   * @param value the value to set.
+   * * historical, live
+     *   * @param value the value to set.
    */
   public void setRunMode(java.lang.CharSequence value) {
     this.runMode = value;

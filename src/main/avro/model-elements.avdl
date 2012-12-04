@@ -374,7 +374,11 @@ protocol CC {
     string        id;
     string        name;
 
+    /**
+     * historical, live
+     **/
     string        runMode;
+    
     EnKFParams    enkfParams;
     string        ctmType;
     string        fdType;
@@ -568,7 +572,7 @@ protocol CC {
    * PeMS sensor (the VDS station info, rather than the sensor data).
    */
   record PeMSStation {
-    long      Id;
+    long      Id; // ### should be id
     int       fwyNum;
     string    direction;
     int       district;
