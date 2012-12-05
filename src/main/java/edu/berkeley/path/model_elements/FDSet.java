@@ -58,31 +58,8 @@ public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
       org.joda.time.DateTime dataStart = midnight.plusSeconds((int)Math.round(t0));
       org.joda.time.DateTime dataEnd = dataStart.plusSeconds((int)Math.round(dt * (nSamples-1)));
       Interval dataInterval = new Interval(dataStart, dataEnd);
-      Interval overlap = dataInterval.overlap(interval);
-      
-      Integer index;
-      if (overlap == null) {
-        if (interval.isBefore(dataInterval)) {
-          index = 0;
-        }
-        else {
-          index = nSamples-1;
-        }
-      }
-      else {
-        org.joda.time.DateTime dataFound = overlap.getEnd();
-        org.joda.time.Duration timeFromStart = 
-         (new Interval(dataStart, dataFound)).toDuration();
-        Double steps = timeFromStart.getMillis() / (1000 * dt);
-        index = (int)Math.round(steps);
-        
-        if (index < 0) {
-          index = 0;
-        }
-        else if (index > nSamples-1) {
-          index = nSamples-1;
-        }
-      }
+
+      Integer index = ProfileUtil.getIndex(interval, dataInterval, nSamples, dt);
       
       FD fdAtTime = timeSeries.get(index);
       fdMap.getFdMap().put(linkId, fdAtTime);
