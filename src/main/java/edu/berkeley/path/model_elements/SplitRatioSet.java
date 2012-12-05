@@ -27,8 +27,105 @@
 package edu.berkeley.path.model_elements;
 
 import java.util.*;
+import org.joda.time.Interval;
+import java.util.Map.Entry;
 
 public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRatioSet {
+  /**
+   * Slice off an interval of time and return the matching items as a SplitRatioMap.
+   * If, for a given node, in-link, out-link, and vtype, the time interval contains
+   * more than one ratio, ignore all but the last. (This method does not change the
+   * SplitRatioSet.) If the interval is disjoint from the profile interval, then use the
+   * first item (if the interval is earlier) or the last item (if later).
+   **/
+  public SplitRatioMap slice(Interval interval) {
+    SplitRatioMap srMap = new SplitRatioMap();
+    
+    for (Entry<String, SplitRatioProfile> entryForNode : getProfileMap().entrySet()) {
+      String nodeId = entryForNode.getKey();
+      SplitRatioProfile profile = entryForNode.getValue();
+      Double dt = profile.getSampleRate(); // defaults?
+      Double t0 = profile.getStartTime(); // defaults?
+
+      Integer nSamples = 0;
+      
+      Map<String,Map<String,Map<String,List<Double>>>> ratioMap = profile.getRatioMap();
+      Map<String,Map<String,List<Double>>> firstMML = ratioMap.values().iterator().next();
+
+      if (firstMML != null) {
+        Map<String,List<Double>> firstML = firstMML.values().iterator().next();
+        
+        if (firstML != null) {
+          List<Double> firstL = firstML.values().iterator().next();
+          
+          nSamples = firstL.size();
+          // assume all time series have same size!
+        }
+      }
+      
+      if (nSamples == 0) {
+        srMap.getRatioMap().put(nodeId, null);
+        continue;
+      }
+      
+      Integer index = ProfileUtil.getIndex(interval, t0, dt, nSamples);
+      
+      for (
+        Entry<String,Map<String,Map<String,List<Double>>>>
+          entryForInLink : profile.getRatioMap().entrySet()) {
+
+        String inLinkId = entryForInLink.getKey();
+        
+        for (
+          Entry<String,Map<String,List<Double>>>
+            entryForOutLink : entryForInLink.getValue().entrySet()) {
+
+          String outLinkId = entryForOutLink.getKey();
+        
+          for (
+            Entry<String,List<Double>>
+              entryForVtype : entryForOutLink.getValue().entrySet()) {
+          
+            String vtype = entryForVtype.getKey();
+            
+            List<Double> timeSeries = entryForVtype.getValue();
+
+            Double ratioAtTime = timeSeries.get(index);
+            // if null?
+
+            Map<String,Map<String,Map<String,Double>>>
+              srMapAtNode = srMap.getRatioMap().get(nodeId);
+
+            if (srMapAtNode == null) {
+              srMapAtNode = new HashMap<String,Map<String,Map<String,Double>>>();
+              srMap.getRatioMap().put(nodeId, srMapAtNode);
+            }
+            
+            Map<String,Map<String,Double>>
+              srMapAtNodeAtInLink = srMapAtNode.get(inLinkId);
+
+            if (srMapAtNodeAtInLink == null) {
+              srMapAtNodeAtInLink = new HashMap<String,Map<String,Double>>();
+              srMapAtNode.put(inLinkId, srMapAtNodeAtInLink);
+            }
+
+            Map<String,Double>
+              srMapAtNodeAtInLinkAtOutLink = srMapAtNodeAtInLink.get(outLinkId);
+
+            if (srMapAtNodeAtInLinkAtOutLink == null) {
+              srMapAtNodeAtInLinkAtOutLink = new HashMap<String,Double>();
+              srMapAtNodeAtInLink.put(outLinkId, srMapAtNodeAtInLinkAtOutLink);
+            }
+            
+            srMapAtNodeAtInLinkAtOutLink.put(vtype, ratioAtTime);
+          }
+        }
+      }
+    }
+    
+    return srMap;
+  }
+  
   /**
    * Get the profile at the specified node.
    * Creates the map if it doesn't exist, returns null if the profile doesn't exist.
