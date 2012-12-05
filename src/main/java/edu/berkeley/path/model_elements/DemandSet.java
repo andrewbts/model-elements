@@ -34,7 +34,9 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
   /**
    * Slice off an interval of time and return the matching items as a DemandMap.
    * If, for a given link and vtype, the time interval contains more than one demand,
-   * ignore all but the last. (This method does not change the DemandMap.)
+   * ignore all but the last. (This method does not change the DemandSet.)
+   * If the interval is disjoint from the profile interval, then use the
+   * first item (if the interval is earlier) or the last item (if later).
    **/
   public DemandMap slice(Interval interval) {
     DemandMap demandMap = new DemandMap();
