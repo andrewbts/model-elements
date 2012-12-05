@@ -82,6 +82,26 @@ public class SplitRatioProfile extends edu.berkeley.path.model_elements_base.Spl
     vehTypeList.add(ratio);
   }
 
+  /**
+   * Set the ratio map. Same as setRatio(), but works with String keys.
+   */
+  @SuppressWarnings("unchecked")
+  public void setRatioMap(Map<String,Map<String,Map<String,List<Double>>>> value) {
+    setRatio((Map<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>>)(Map<?,?>)value);
+  }
+
+  /**
+   * Get the ratio map. Same as getRatio(), but works with String keys.
+   * Never returns null (creates the map if it doesn't exist).
+   */
+  @SuppressWarnings("unchecked")
+  public Map<String,Map<String,Map<String,List<Double>>>> getRatioMap() {
+    if (null == getRatio()) {
+      setRatio(new HashMap<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>>());
+    }
+    return (Map<String,Map<String,Map<String,List<Double>>>>)(Map<?,?>)getRatio();
+  }
+
   public Long getDestinationNetworkLongId() {
     if (null != getDestinationNetworkId()) {
       return Long.parseLong(getDestinationNetworkId().toString());
