@@ -54,12 +54,7 @@ public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
         continue;
       }
       
-      org.joda.time.DateTime midnight = interval.getStart().withTimeAtStartOfDay(); // DST?
-      org.joda.time.DateTime dataStart = midnight.plusSeconds((int)Math.round(t0));
-      org.joda.time.DateTime dataEnd = dataStart.plusSeconds((int)Math.round(dt * (nSamples-1)));
-      Interval dataInterval = new Interval(dataStart, dataEnd);
-
-      Integer index = ProfileUtil.getIndex(interval, dataInterval, nSamples, dt);
+      Integer index = ProfileUtil.getIndex(interval, t0, dt, nSamples);
       
       FD fdAtTime = timeSeries.get(index);
       fdMap.getFdMap().put(linkId, fdAtTime);

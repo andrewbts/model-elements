@@ -30,24 +30,29 @@ import org.joda.time.Interval;
 
 class ProfileUtil {
   /**
-   * Compute the index of the last profile entry that is within both
-   * intervals. If the intervals are disjoint, default to the first
-   * or last index in the data.
+   * Compute the index of the last profile entry that is the
+   * interval. If the interval doesn't include a data point, default to
+   * the first or last index in the data.
    * 
    * @param interval      time range where a match is desired
-   * @param dataInterval  time range where data is available
-   * @param nSamples      number of steps of data contained in profile
+   * @param t0            time of start of data, in seconds from midnight
    * @param dt            time step size, in seconds
+   * @param nSamples      number of steps of data contained in profile
    * @return index of matching data
    **/
   public static Integer getIndex(
       Interval interval,
-      Interval dataInterval,
-      Integer nSamples,
-      Double dt) {
+      Double t0,
+      Double dt,
+      Integer nSamples) {
     
     Integer index;
 
+    org.joda.time.DateTime midnight = interval.getStart().withTimeAtStartOfDay(); // DST?
+    org.joda.time.DateTime dataStart = midnight.plusSeconds((int)Math.round(t0));
+    org.joda.time.DateTime dataEnd = dataStart.plusSeconds((int)Math.round(dt * (nSamples-1)));
+    Interval dataInterval = new Interval(dataStart, dataEnd);
+    
     Interval overlap = dataInterval.overlap(interval);
 
     if (overlap == null) {
