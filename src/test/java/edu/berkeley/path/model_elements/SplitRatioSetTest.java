@@ -147,6 +147,54 @@ public class SplitRatioSetTest {
       srm.getRatioMap().get("101").get("202").get("301").get("truck"));
     assertEquals((Double)2213.3,
       srm.getRatioMap().get("101").get("202").get("302").get("truck"));
+    
+    // test rounding down
+    dt = org.joda.time.Duration.standardMinutes(14);
+    interval = new Interval(timeBegin, dt);
+    srm = srs.slice(interval);
+    //System.out.println("during:\n" + srm);
+    
+    assertEquals((Double)1102.2,
+      srm.getRatioMap().get("101").get("201").get("301").get("car"));
+    assertEquals((Double)1202.2,
+      srm.getRatioMap().get("101").get("201").get("302").get("car"));
+    assertEquals((Double)2102.2,
+      srm.getRatioMap().get("101").get("202").get("301").get("car"));
+    assertEquals((Double)2202.2,
+      srm.getRatioMap().get("101").get("202").get("302").get("car"));
+
+    assertEquals((Double)1112.2,
+      srm.getRatioMap().get("101").get("201").get("301").get("truck"));
+    assertEquals((Double)1212.2,
+      srm.getRatioMap().get("101").get("201").get("302").get("truck"));
+    assertEquals((Double)2112.2,
+      srm.getRatioMap().get("101").get("202").get("301").get("truck"));
+    assertEquals((Double)2212.2,
+      srm.getRatioMap().get("101").get("202").get("302").get("truck"));
+
+    // test rounding up
+    dt = org.joda.time.Duration.standardMinutes(15);
+    interval = new Interval(timeBegin, dt);
+    srm = srs.slice(interval);
+    //System.out.println("during:\n" + srm);
+    
+    assertEquals((Double)1103.3,
+      srm.getRatioMap().get("101").get("201").get("301").get("car"));
+    assertEquals((Double)1203.3,
+      srm.getRatioMap().get("101").get("201").get("302").get("car"));
+    assertEquals((Double)2103.3,
+      srm.getRatioMap().get("101").get("202").get("301").get("car"));
+    assertEquals((Double)2203.3,
+      srm.getRatioMap().get("101").get("202").get("302").get("car"));
+
+    assertEquals((Double)1113.3,
+      srm.getRatioMap().get("101").get("201").get("301").get("truck"));
+    assertEquals((Double)1213.3,
+      srm.getRatioMap().get("101").get("201").get("302").get("truck"));
+    assertEquals((Double)2113.3,
+      srm.getRatioMap().get("101").get("202").get("301").get("truck"));
+    assertEquals((Double)2213.3,
+      srm.getRatioMap().get("101").get("202").get("302").get("truck"));
   }
 
   @Test

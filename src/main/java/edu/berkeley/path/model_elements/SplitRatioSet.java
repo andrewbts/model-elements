@@ -37,6 +37,8 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
    * more than one ratio, ignore all but the last. (This method does not change the
    * SplitRatioSet.) If the interval is disjoint from the profile interval, then use the
    * first item (if the interval is earlier) or the last item (if later).
+   * If the interval does not exactly match the time coordinates of the data,
+   * round to the nearest time point.
    **/
   public SplitRatioMap slice(Interval interval) {
     SplitRatioMap srMap = new SplitRatioMap();
