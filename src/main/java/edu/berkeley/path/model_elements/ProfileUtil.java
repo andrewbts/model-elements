@@ -33,6 +33,9 @@ class ProfileUtil {
    * Compute the index of the last profile entry that is the
    * interval. If the interval doesn't include a data point, default to
    * the first or last index in the data.
+   * Note that the endpoints of the interval are rounded to the nearest
+   * time point defined by t0, dt, and nSamples.
+   * (It might be useful, as an option, to floor instead of round.)
    * 
    * @param interval      time range where a match is desired
    * @param t0            time of start of data, in seconds from midnight
