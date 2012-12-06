@@ -60,6 +60,11 @@ protocol CC {
     
     union { null, double } laneCount;
     union { null, double } length;
+    
+    /**
+     * index of the first lane of this link in case the road is
+     * divided into paralell links.
+     */
     union { null, int } laneOffset;
     union { null, int } speedLimit;
     union { null, int } detailLevel;
@@ -123,6 +128,7 @@ protocol CC {
   
   /**
    * Fundamental diagram parameters on one link at one time.
+   * Flow and density values are per lane in SI units.
    */
   record FD {
     double freeFlowSpeed;
