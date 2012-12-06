@@ -6,14 +6,16 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"]},{\"name\":\"speedLimit\",\"type\":[\"null\",\"int\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"],\"doc\":\"* index of the first lane of this link in case the road is\\n     * divided into paralell links.\"},{\"name\":\"speedLimit\",\"type\":[\"null\",\"double\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
   @Deprecated public java.lang.Double laneCount;
   @Deprecated public java.lang.Double length;
+  /** * index of the first lane of this link in case the road is
+     * divided into paralell links. */
   @Deprecated public java.lang.Integer laneOffset;
-  @Deprecated public java.lang.Integer speedLimit;
+  @Deprecated public java.lang.Double speedLimit;
   @Deprecated public java.lang.Integer detailLevel;
   @Deprecated public java.lang.CharSequence beginId;
   @Deprecated public java.lang.CharSequence endId;
@@ -26,7 +28,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Integer speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
+  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Double speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -66,7 +68,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 3: laneCount = (java.lang.Double)value$; break;
     case 4: length = (java.lang.Double)value$; break;
     case 5: laneOffset = (java.lang.Integer)value$; break;
-    case 6: speedLimit = (java.lang.Integer)value$; break;
+    case 6: speedLimit = (java.lang.Double)value$; break;
     case 7: detailLevel = (java.lang.Integer)value$; break;
     case 8: beginId = (java.lang.CharSequence)value$; break;
     case 9: endId = (java.lang.CharSequence)value$; break;
@@ -151,14 +153,16 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
 
   /**
    * Gets the value of the 'laneOffset' field.
-   */
+   * * index of the first lane of this link in case the road is
+     * divided into paralell links.   */
   public java.lang.Integer getLaneOffset() {
     return laneOffset;
   }
 
   /**
    * Sets the value of the 'laneOffset' field.
-   * @param value the value to set.
+   * * index of the first lane of this link in case the road is
+     * divided into paralell links.   * @param value the value to set.
    */
   public void setLaneOffset(java.lang.Integer value) {
     this.laneOffset = value;
@@ -167,7 +171,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * Gets the value of the 'speedLimit' field.
    */
-  public java.lang.Integer getSpeedLimit() {
+  public java.lang.Double getSpeedLimit() {
     return speedLimit;
   }
 
@@ -175,7 +179,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
    * Sets the value of the 'speedLimit' field.
    * @param value the value to set.
    */
-  public void setSpeedLimit(java.lang.Integer value) {
+  public void setSpeedLimit(java.lang.Double value) {
     this.speedLimit = value;
   }
 
@@ -251,7 +255,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.Double laneCount;
     private java.lang.Double length;
     private java.lang.Integer laneOffset;
-    private java.lang.Integer speedLimit;
+    private java.lang.Double speedLimit;
     private java.lang.Integer detailLevel;
     private java.lang.CharSequence beginId;
     private java.lang.CharSequence endId;
@@ -294,7 +298,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         fieldSetFlags()[5] = true;
       }
       if (isValidValue(fields()[6], other.speedLimit)) {
-        this.speedLimit = (java.lang.Integer) data().deepCopy(fields()[6].schema(), other.speedLimit);
+        this.speedLimit = (java.lang.Double) data().deepCopy(fields()[6].schema(), other.speedLimit);
         fieldSetFlags()[6] = true;
       }
       if (isValidValue(fields()[7], other.detailLevel)) {
@@ -462,12 +466,12 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     }
 
     /** Gets the value of the 'speedLimit' field */
-    public java.lang.Integer getSpeedLimit() {
+    public java.lang.Double getSpeedLimit() {
       return speedLimit;
     }
     
     /** Sets the value of the 'speedLimit' field */
-    public edu.berkeley.path.model_elements_base.Link.Builder setSpeedLimit(java.lang.Integer value) {
+    public edu.berkeley.path.model_elements_base.Link.Builder setSpeedLimit(java.lang.Double value) {
       validate(fields()[6], value);
       this.speedLimit = value;
       fieldSetFlags()[6] = true;
@@ -571,7 +575,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         record.laneCount = fieldSetFlags()[3] ? this.laneCount : (java.lang.Double) defaultValue(fields()[3]);
         record.length = fieldSetFlags()[4] ? this.length : (java.lang.Double) defaultValue(fields()[4]);
         record.laneOffset = fieldSetFlags()[5] ? this.laneOffset : (java.lang.Integer) defaultValue(fields()[5]);
-        record.speedLimit = fieldSetFlags()[6] ? this.speedLimit : (java.lang.Integer) defaultValue(fields()[6]);
+        record.speedLimit = fieldSetFlags()[6] ? this.speedLimit : (java.lang.Double) defaultValue(fields()[6]);
         record.detailLevel = fieldSetFlags()[7] ? this.detailLevel : (java.lang.Integer) defaultValue(fields()[7]);
         record.beginId = fieldSetFlags()[8] ? this.beginId : (java.lang.CharSequence) defaultValue(fields()[8]);
         record.endId = fieldSetFlags()[9] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[9]);
