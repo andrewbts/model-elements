@@ -364,6 +364,7 @@ protocol CC {
     double confidenceDefault;
     double confidenceHasMeasurement;
     double confidenceNoMeasurement;
+    double confidenceMeasurementLifetime;
     double localizationDistance;
     boolean useLocalization;
     double modelNoiseMean;
