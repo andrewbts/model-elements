@@ -26,5 +26,30 @@
 
 package edu.berkeley.path.model_elements;
 
+
 public class EnKFParams extends edu.berkeley.path.model_elements_base.EnKFParams {
+	
+	public EnKFParams(boolean MMDefaults) {
+
+		if (MMDefaults == true ) {
+         // Assign Default Mobile Millennium values for all attributes
+        super.setModelNoiseMean( 0.5);
+        super.setModelNoiseStdev(2.0);
+        super.setPemsNoiseMean(0.0);
+        super.setPemsNoiseStdev(4.0);
+        super.setNavteqNoiseMean(0.0);
+        super.setNavteqNoiseStdev(4.0);
+        super.setTelenavNoiseMean(0.0);
+        super.setTelenavNoiseStdev(4.0);
+        super.setPemsBlackList(null);
+        super.setTelenavPercentage(100.0);
+        super.setNavteqPercentage(100.0);
+        super.setUseLocalization(true);
+        super.setLocalizationDistance(100.0);
+        super.setConfidenceNoMeasurement(0.0);
+        super.setConfidenceDefault(0.025);
+        super.setConfidenceHasMeasurement( 0.5);
+        // super.setConfidenceMeasurementLifetime(180.0);	
+		}
+	}
 }
