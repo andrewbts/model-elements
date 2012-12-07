@@ -34,6 +34,52 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	public void setId(Long id) {
 		setId(id.toString());
 	}
+	
+	/**
+	 * @return FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
+	 */
+	public FDTypeEnum getFDTypeEnum() {
+		CharSequence type = super.getFdType();
+		
+		if (type.equals("Greenshields")) return FDTypeEnum.GREENSHIELDS;
+		if (type.equals("DaganzoNewell")) return FDTypeEnum.DAGANZO_NEWELL;
+		if (type.equals("Smulders")) return FDTypeEnum.SMULDERS;
+		
+		throw new UnsupportedOperationException("Unknown FD type string '" + type + "' encountered.");
+	}
+	
+	@Override
+	@Deprecated
+	public CharSequence getFdType() {
+		throw new UnsupportedOperationException("Use method getFDTypeEnum instead.");
+	}
+	
+	/**
+	 * @param type FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
+	 */
+	public void setFDTypeEnum(FDTypeEnum type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case GREENSHIELDS:
+			typeString = "Greenshields";
+			break;
+		case DAGANZO_NEWELL:
+			typeString = "DaganzoNewell";
+			break;
+		case SMULDERS:
+			typeString = "Smulders";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown FD type " + type + ".");			
+		}
+		super.setFdType(typeString);
+	}
+	
+	@Override
+	@Deprecated
+	public void setFdType(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setFDTypeEnum instead.");
+	}
 
 	/**
 	 * @return CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
