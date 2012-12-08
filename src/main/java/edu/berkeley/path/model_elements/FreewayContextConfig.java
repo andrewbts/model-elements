@@ -34,6 +34,52 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	public void setId(Long id) {
 		setId(id.toString());
 	}
+	
+	/**
+	 * @return FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
+	 */
+	public FDTypeEnum getFDTypeEnum() {
+		CharSequence type = super.getFdType();
+		
+		if (type.equals("Greenshields")) return FDTypeEnum.GREENSHIELDS;
+		if (type.equals("DaganzoNewell")) return FDTypeEnum.DAGANZO_NEWELL;
+		if (type.equals("Smulders")) return FDTypeEnum.SMULDERS;
+		
+		throw new UnsupportedOperationException("Unknown FD type string '" + type + "' encountered.");
+	}
+	
+	@Override
+	@Deprecated
+	public CharSequence getFdType() {
+		throw new UnsupportedOperationException("Use method getFDTypeEnum instead.");
+	}
+	
+	/**
+	 * @param type FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
+	 */
+	public void setFDTypeEnum(FDTypeEnum type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case GREENSHIELDS:
+			typeString = "Greenshields";
+			break;
+		case DAGANZO_NEWELL:
+			typeString = "DaganzoNewell";
+			break;
+		case SMULDERS:
+			typeString = "Smulders";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown FD type " + type + ".");			
+		}
+		super.setFdType(typeString);
+	}
+	
+	@Override
+	@Deprecated
+	public void setFdType(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setFDTypeEnum instead.");
+	}
 
 	/**
 	 * @return CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
@@ -53,6 +99,62 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	@Deprecated
 	public CharSequence getCtmType() {
 		throw new UnsupportedOperationException("Use method getCTMTypeEnum instead.");
+	}
+	
+	@Override
+	public EnKFParams getEnkfParams() {
+		return (EnKFParams)super.getEnkfParams();
+	}
+	
+	@Override
+	@Deprecated
+	public CharSequence getEnkfType() {
+		throw new UnsupportedOperationException("Use method getEnKFTypeEnum instead.");
+	}
+	
+	/**
+	 * @return EnKF type (), an element of the EnKFType enum
+	 */
+	public EnKFType getEnKFTypeEnum() {
+		CharSequence type = super.getEnkfType();
+
+		if (type.equals("SIMPLEAVERAGE")) return EnKFType.SIMPLEAVERAGE;
+		if (type.equals("GLOBALJAMA")) return EnKFType.GLOBALJAMA;
+		if (type.equals("GLOBALBLAS")) return EnKFType.GLOBALBLAS;
+		if (type.equals("LOCALJAMA")) return EnKFType.LOCALJAMA;
+		if (type.equals("LOCALBLAS")) return EnKFType.LOCALBLAS;
+		
+		throw new UnsupportedOperationException("Unknown EnKF type string '" + type + "' encountered.");
+	}
+	
+	@Override
+	@Deprecated
+	public CharSequence getRunMode() {
+		throw new UnsupportedOperationException("Use method getRunModeTypeEnum instead.");
+	}
+	
+	public RunMode getRunModeEnum() {
+		CharSequence type = super.getRunMode();
+
+		if (type.equals("HISTORICAL")) return RunMode.HISTORICAL;
+		if (type.equals("LIVE")) return RunMode.LIVE;
+		
+		throw new UnsupportedOperationException("Unknown Run Mode type string '" + type + "' encountered.");
+	}
+	
+	@Override
+	@Deprecated
+	public CharSequence getWorkflow() {
+		throw new UnsupportedOperationException("Use method getWorkflowEnum instead.");
+	}
+	
+	public Workflow getWorkflowEnum() {
+		CharSequence type = super.getWorkflow();
+
+		if (type.equals("ESTIMATION")) return Workflow.ESTIMATION;
+		if (type.equals("FORECAST")) return Workflow.FORECAST;
+		
+		throw new UnsupportedOperationException("Unknown Workflow string '" + type + "' encountered.");
 	}
 	
 	/**
@@ -83,6 +185,79 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	@Deprecated
 	public void setCtmType(CharSequence value) {
 		throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
+	}
+
+	@Override
+	@Deprecated
+	public void setEnkfType(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setEnKFTypeEnum instead.");
+	}
+	
+	public void setEnkfTypeEnum(EnKFType type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case SIMPLEAVERAGE:
+			typeString = "SIMPLEAVERAGE";
+			break;
+		case GLOBALJAMA:
+			typeString = "GLOBALJAMA";
+			break;
+		case GLOBALBLAS:
+			typeString = "GLOBALBLAS";
+			break;
+		case LOCALJAMA:
+			typeString = "LOCALJAMA";
+			break;
+		case LOCALBLAS:
+			typeString = "LOCALBLAS";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown EnKF Type " + type + ".");			
+		}
+		super.setEnkfType(typeString);
+	}
+	
+	@Override
+	@Deprecated
+	public void setRunMode(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setRunModeEnum instead.");
+	}
+	
+	public void setRunModeEnum(RunMode type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case HISTORICAL:
+			typeString = "HISTORICAL";
+			break;
+		case LIVE:
+			typeString = "LIVE";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown RunMode " + type + ".");			
+		}
+		super.setRunMode(typeString);
+	}
+	
+	
+	@Override
+	@Deprecated
+	public void setWorkflow(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setWorkflowEnum instead.");
+	}
+	
+	public void setWorkflowEnum(Workflow type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case ESTIMATION:
+			typeString = "ESTIMATION";
+			break;
+		case FORECAST:
+			typeString = "FORECAST";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown Workflow " + type + ".");			
+		}
+		super.setWorkflow(typeString);
 	}
 
 }
