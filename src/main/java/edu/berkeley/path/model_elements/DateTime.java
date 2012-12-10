@@ -27,17 +27,14 @@
 package edu.berkeley.path.model_elements;
 
 public class DateTime extends edu.berkeley.path.model_elements_base.DateTime {
-	
+
 	public static DateTime fromJoda(org.joda.time.DateTime joda) {
-		long ms = joda.getMillis();
-		DateTime datetime = new DateTime();
-		datetime.setMilliseconds(ms);
-		return datetime;
+		return new DateTime(joda.getMillis());
 	}
 
 	public DateTime(long milliseconds) {
 		super(milliseconds);
-	}	
+	}
 
 	public DateTime() {
 		super();
@@ -46,5 +43,5 @@ public class DateTime extends edu.berkeley.path.model_elements_base.DateTime {
 	public org.joda.time.DateTime toJoda() {
 		return new org.joda.time.DateTime(getMilliseconds());
 	}
-	
+
 }
