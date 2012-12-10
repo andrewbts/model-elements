@@ -33,7 +33,7 @@ public class EnKFParams extends edu.berkeley.path.model_elements_base.EnKFParams
 
 		if (MMDefaults == true ) {
          // Assign Default Mobile Millennium values for all attributes
-        super.setModelNoiseMean( 0.5);
+        super.setModelNoiseMean(0.5);
         super.setModelNoiseStdev(2.0);
         super.setPemsNoiseMean(0.0);
         super.setPemsNoiseStdev(4.0);
@@ -48,8 +48,8 @@ public class EnKFParams extends edu.berkeley.path.model_elements_base.EnKFParams
         super.setLocalizationDistance(100.0);
         super.setConfidenceNoMeasurement(0.0);
         super.setConfidenceDefault(0.025);
-        super.setConfidenceHasMeasurement( 0.5);
-        // super.setConfidenceMeasurementLifetime(180.0);	
+        super.setConfidenceHasMeasurement(0.5);
+        super.setConfidenceMeasurementLifetime(180.0);	
 		}
 	}
 }
