@@ -36,10 +36,10 @@ import edu.berkeley.path.model_elements.*;
  */
 public class MMNetworks {
 	
-	private static String examplesDirectory = "examples/mm-networks";
+	public static String examplesDirectory = "examples/mm-networks";
 
 	private static String getNidDirectory(int nid) {
-		return examplesDirectory + Integer.toString(nid);
+		return examplesDirectory + "/nid" + Integer.toString(nid);
 	}
 	
 	public static Network getNetwork(int nid) throws IOException {
