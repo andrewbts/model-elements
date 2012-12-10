@@ -29,14 +29,27 @@ package edu.berkeley.path.model_elements;
 public class Duration extends edu.berkeley.path.model_elements_base.Duration {
 
 	public static Duration fromJoda(org.joda.time.Duration joda) {
-		long ms = joda.getMillis();
-		Duration duration = new Duration();
-		duration.setMilliseconds(ms);
-		return duration;
+		return fromMilliseconds(joda.getMillis());
+		
 	}
 
 	public org.joda.time.Duration toJoda() {
 		return new org.joda.time.Duration(getMilliseconds());
+	}
+	
+	public static Duration fromMilliseconds(long ms) {
+		Duration duration = new Duration();
+		duration.setMilliseconds(ms);
+		return duration;
+	}
+	
+	/**
+	 * Create from a non-integer number of seconds
+	 * @param s Time in seconds
+	 * @return Duration rounded to the nearest millisecond
+	 */
+	public static Duration fromSeconds(double s) {
+		return fromMilliseconds((long) (1000d * s));
 	}
 
 }
