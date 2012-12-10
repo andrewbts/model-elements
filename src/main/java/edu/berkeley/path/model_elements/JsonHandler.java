@@ -96,7 +96,9 @@ public class JsonHandler {
 	// A few special cases to read easily from a directory:
 	
 	public static Network readNetworkFromDirectory(String directory) throws IOException {
-		return readFromFile(Network.SCHEMA$, directory + "/Network.json");
+		Network network = readFromFile(Network.SCHEMA$, directory + "/Network.json");
+		network.resolveReferences();
+		return network;
 	}
 	
 	public static DemandMap readDemandMapFromDirectory(String directory) throws IOException {
