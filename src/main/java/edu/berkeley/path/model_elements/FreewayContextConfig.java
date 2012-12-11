@@ -39,7 +39,7 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	 * @return FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
 	 */
 	public FDTypeEnum getFDTypeEnum() {
-		CharSequence type = super.getFdType();
+		String type = super.getFdType().toString();
 		
 		if (type.equals("Greenshields")) return FDTypeEnum.GREENSHIELDS;
 		if (type.equals("DaganzoNewell")) return FDTypeEnum.DAGANZO_NEWELL;
