@@ -29,14 +29,28 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class Node extends edu.berkeley.path.model_elements_base.Node {
-	protected HashMap<Node, HashSet<Link>> outLinksToNode;
-	protected HashMap<Node, HashSet<Link>> inLinksFromNode;
+	@Deprecated private HashMap<Node, HashSet<Link>> outLinksToNode;
+	@Deprecated private HashMap<Node, HashSet<Link>> inLinksFromNode;
+		
+	protected HashMap<Node, HashSet<Link>> getOutLinksToNodeMap() {
+		if (this.outLinksToNode == null)
+			this.outLinksToNode = new HashMap<Node, HashSet<Link>>();
+
+		return outLinksToNode;
+	}
+
+	protected HashMap<Node, HashSet<Link>> getInLinksFromNodeMap() {
+		if (this.inLinksFromNode == null)
+			this.inLinksFromNode = new HashMap<Node, HashSet<Link>>();
+
+		return inLinksFromNode;
+	}
 
 	public HashSet<Link> getAllOutLinks() {
 		HashSet<Link> links = new HashSet<Link>();
 
-		for (Node node : this.outLinksToNode.keySet()) {
-			for (Link link : this.outLinksToNode.get(node)) {
+		for (Node node : getOutLinksToNodeMap().keySet()) {
+			for (Link link : getOutLinksToNodeMap().get(node)) {
 				links.add(link);
 			}
 		}
@@ -47,47 +61,41 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
 	public HashSet<Link> getAllInLinks() {
 		HashSet<Link> links = new HashSet<Link>();
 
-		for (Node node : this.inLinksFromNode.keySet()) {
-			for (Link link : this.inLinksFromNode.get(node)) {
+		for (Node node : this.getInLinksFromNodeMap().keySet())
+			for (Link link : this.getInLinksFromNodeMap().get(node))
 				links.add(link);
-			}
-		}
 
 		return links;
 	}
 
 	public HashSet<Link> getOutLinksToNode(Node node) {
-		return outLinksToNode.get(node);
+		return getOutLinksToNodeMap().get(node);
 	}
 
 	public HashSet<Link> getInLinksFromNode(Node node) {
-		return inLinksFromNode.get(node);
+		return getInLinksFromNodeMap().get(node);
 	}
 
 	public void resolveReferences(Link link) {
 		HashSet<Link> links;
 
 		if (link.begin == this) {
-			if (this.outLinksToNode == null) {
-				this.outLinksToNode = new HashMap<Node, HashSet<Link>>();
-			}
-
-			links = this.outLinksToNode.get(link.end);
+			
+			links = this.getOutLinksToNodeMap().get(link.end);
 			if (links == null) {
 				links = new HashSet<Link>();
-				this.outLinksToNode.put(link.end, links);
+				this.getOutLinksToNodeMap().put(link.end, links);
 			}
 			links.add(link);
+			
 		} else if (link.end == this) {
-			if (this.inLinksFromNode == null) {
-				this.inLinksFromNode = new HashMap<Node, HashSet<Link>>();
-			}
-
-			links = this.inLinksFromNode.get(link.begin);
+			
+			links = this.getInLinksFromNodeMap().get(link.begin);
 			if (links == null) {
 				links = new HashSet<Link>();
-				this.inLinksFromNode.put(link.begin, links);
+				this.getInLinksFromNodeMap().put(link.begin, links);
 			}
+			
 			links.add(link);
 		}
 	}
@@ -105,10 +113,10 @@ public class Node extends edu.berkeley.path.model_elements_base.Node {
 	}
 
 	public String getNameString() {
-		return (name == null) ? null : name.toString();
+		return (getName() == null) ? null : getName().toString();
 	}
 
 	public String getTypeString() {
-		return (type == null) ? null : type.toString();
+		return (getType() == null) ? null : getType().toString();
 	}
 }
