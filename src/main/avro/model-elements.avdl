@@ -408,6 +408,9 @@ protocol CC {
 
     string        ctmType;
     string        fdType;
+    double        additiveModelNoiseMean;
+    double        additiveModelNoiseStdDev;
+    
     string        enkfType;
     EnKFParams    enkfParams;
     
