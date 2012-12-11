@@ -26,6 +26,8 @@
 
 package edu.berkeley.path.model_elements;
 
+import edu.berkeley.path.model_elements_base.DateTime;
+
 public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.FreewayContextConfig {
 	public Long getLongId() {
 		return Long.parseLong(getId().toString());
@@ -259,5 +261,12 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 		}
 		super.setWorkflow(typeString);
 	}
+
+	@Override
+	public edu.berkeley.path.model_elements.DateTime getTimeBegin() {
+		return (edu.berkeley.path.model_elements.DateTime) (super.getTimeBegin());
+	}
+	
+	
 
 }
