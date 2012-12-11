@@ -407,7 +407,12 @@ protocol CC {
     string        workflow;
 
     string        ctmType;
+    int           ensembleSize;
     string        fdType;
+    double        additiveModelNoiseMean;
+    double        additiveModelNoiseStdDev;
+    double        initialDensityFraction;    
+    
     string        enkfType;
     EnKFParams    enkfParams;
     

@@ -26,6 +26,8 @@
 
 package edu.berkeley.path.model_elements;
 
+import edu.berkeley.path.model_elements_base.DateTime;
+
 public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.FreewayContextConfig {
 	public Long getLongId() {
 		return Long.parseLong(getId().toString());
@@ -39,7 +41,7 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	 * @return FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
 	 */
 	public FDTypeEnum getFDTypeEnum() {
-		CharSequence type = super.getFdType();
+		String type = super.getFdType().toString();
 		
 		if (type.equals("Greenshields")) return FDTypeEnum.GREENSHIELDS;
 		if (type.equals("DaganzoNewell")) return FDTypeEnum.DAGANZO_NEWELL;
@@ -85,7 +87,7 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	 * @return CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
 	 */
 	public CTMType getCTMTypeEnum() {
-		CharSequence type = super.getCtmType();
+		String type = super.getCtmType().toString();
 		
 		if (type.equals("Density")) return CTMType.DENSITY;
 		if (type.equals("Velocity")) return CTMType.VELOCITY;
@@ -116,7 +118,7 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	 * @return EnKF type (), an element of the EnKFType enum
 	 */
 	public EnKFType getEnKFTypeEnum() {
-		CharSequence type = super.getEnkfType();
+		String type = super.getEnkfType().toString();
 
 		if (type.equals("SIMPLEAVERAGE")) return EnKFType.SIMPLEAVERAGE;
 		if (type.equals("GLOBALJAMA")) return EnKFType.GLOBALJAMA;
@@ -134,7 +136,7 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	}
 	
 	public RunMode getRunModeEnum() {
-		CharSequence type = super.getRunMode();
+		String type = super.getRunMode().toString();
 
 		if (type.equals("HISTORICAL")) return RunMode.HISTORICAL;
 		if (type.equals("LIVE")) return RunMode.LIVE;
@@ -149,7 +151,7 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	}
 	
 	public Workflow getWorkflowEnum() {
-		CharSequence type = super.getWorkflow();
+		String type = super.getWorkflow().toString();
 
 		if (type.equals("ESTIMATION")) return Workflow.ESTIMATION;
 		if (type.equals("FORECAST")) return Workflow.FORECAST;
@@ -259,5 +261,12 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 		}
 		super.setWorkflow(typeString);
 	}
+
+	@Override
+	public edu.berkeley.path.model_elements.DateTime getTimeBegin() {
+		return (edu.berkeley.path.model_elements.DateTime) (super.getTimeBegin());
+	}
+	
+	
 
 }

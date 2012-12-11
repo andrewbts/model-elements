@@ -24,40 +24,42 @@
  * SUCH DAMAGE.
  */
 
-package edu.berkeley.path.model_elements;
+package edu.berkeley.path.model_elements.examples;
 
-import java.util.ArrayList;
+import java.io.IOException;
 
-public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams {
+import edu.berkeley.path.model_elements.*;
+
+/**
+ * Utilities to import converted Mobile Millenium networks from .json format
+ * @author amoylan
+ */
+public class MMNetworks {
 	
-	public EnKFParams() {
-		super();
+	public static String examplesDirectory = "examples/mm-networks";
+
+	private static String getNidDirectory(int nid) {
+		return examplesDirectory + "/nid" + Integer.toString(nid);
 	}
-
-	public static EnKFParams createWithMMDefaults() {
-		
-		EnKFParams params = new EnKFParams();
-
-		// Assign Default Mobile Millenium values for all attributes
-		params.setModelNoiseMean(0.5);
-		params.setModelNoiseStdev(2.0);
-		params.setPemsNoiseMean(0.0);
-		params.setPemsNoiseStdev(4.0);
-		params.setNavteqNoiseMean(0.0);
-		params.setNavteqNoiseStdev(4.0);
-		params.setTelenavNoiseMean(0.0);
-		params.setTelenavNoiseStdev(4.0);
-		params.setPemsBlackList(new ArrayList<Integer>());
-		params.setTelenavPercentage(100.0);
-		params.setNavteqPercentage(100.0);
-		params.setUseLocalization(true);
-		params.setLocalizationDistance(100.0);
-		params.setConfidenceNoMeasurement(0.0);
-		params.setConfidenceDefault(0.025);
-		params.setConfidenceHasMeasurement(0.5);
-		params.setConfidenceMeasurementLifetime(180.0);
-		
-		return params;
-
+	
+	public static Network getNetwork(int nid) throws IOException {
+		return JsonHandler.readNetworkFromDirectory(getNidDirectory(nid));
 	}
+	
+	public static FDMap getFDMap(int nid) throws IOException {
+		return JsonHandler.readFDMapFromDirectory(getNidDirectory(nid));
+	}
+	
+	public static DemandMap getDemandMap(int nid) throws IOException {
+		return JsonHandler.readDemandMapFromDirectory(getNidDirectory(nid));
+	}
+	
+	public static SplitRatioMap getSplitRatioMap(int nid) throws IOException {
+		return JsonHandler.readSplitRatioMapFromDirectory(getNidDirectory(nid));
+	}
+	
+	public static FreewayContextConfig getFreewayContextConfig(int nid) throws IOException {
+		return JsonHandler.readFreewayContextConfigFromDirectory(getNidDirectory(nid));
+	}
+	
 }
