@@ -461,6 +461,8 @@ protocol CC {
     
     DateTime      timeBegin;
     DateTime      timeEnd;
+    
+    SensorSet     sensors;
   }
   
   /**
