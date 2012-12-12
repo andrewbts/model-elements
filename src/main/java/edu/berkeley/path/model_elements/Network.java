@@ -95,14 +95,16 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   /**
    * Set the nodes. Same as setNodes(), but works with a list of Node.
    */
-  public void setNodeList(List<Node> value) {
+  @SuppressWarnings("unchecked")
+public void setNodeList(List<Node> value) {
     setNodes((List<edu.berkeley.path.model_elements_base.Node>)(List<?>)value);
   }
   
   /**
    * Set the links. Same as setLinks(), but works with a list of Link.
    */
-  public void setLinkList(List<Link> value) {
+  @SuppressWarnings("unchecked")
+public void setLinkList(List<Link> value) {
     setLinks((List<edu.berkeley.path.model_elements_base.Link>)(List<?>)value);
   }
   
@@ -110,7 +112,8 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
    * Get the nodes. Same as getNodes(), but works with a list of Node.
    * Never returns null (creates the list if it doesn't exist).
    */
-  public List<Node> getNodeList() {
+  @SuppressWarnings("unchecked")
+public List<Node> getNodeList() {
     if (null == getNodes()) {
       setNodes(new ArrayList<edu.berkeley.path.model_elements_base.Node>());
     }
@@ -121,7 +124,8 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
    * Get the links. Same as getLinks(), but works with a list of Link.
    * Never returns null (creates the list if it doesn't exist).
    */
-  public List<Link> getLinkList() {
+  @SuppressWarnings("unchecked")
+public List<Link> getLinkList() {
     if (null == getLinks()) {
       setLinks(new ArrayList<edu.berkeley.path.model_elements_base.Link>());
     }
@@ -129,6 +133,6 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   }
   
   public String getNameString() {
-    return (name == null) ? null : name.toString();
+    return (getName() == null) ? null : getName().toString();
   }
 }
