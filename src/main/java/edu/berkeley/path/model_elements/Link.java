@@ -88,4 +88,8 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   public boolean isOrigin() {
     return getBegin().isTerminal();
   }
+  
+  public boolean isSinkLink() {
+    return getEnd().isTerminal();
+  }
 }
