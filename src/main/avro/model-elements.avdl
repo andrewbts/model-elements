@@ -349,7 +349,7 @@ protocol CC {
   }
 
   /**
-   * Set of sensors residing on liks in potentially  multiple  networks.
+   * Set of sensors residing on links in potentially multiple networks.
    */
   record SensorSet {
     string id;
