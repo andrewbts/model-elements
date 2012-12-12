@@ -26,8 +26,6 @@
 
 package edu.berkeley.path.model_elements;
 
-import edu.berkeley.path.model_elements_base.DateTime;
-
 public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.FreewayContextConfig {
 	public Long getLongId() {
 		return Long.parseLong(getId().toString());
@@ -131,6 +129,22 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	
 	@Override
 	@Deprecated
+	public CharSequence getFeed() {
+		throw new UnsupportedOperationException("Use method getFeedEnum instead.");
+	}
+	
+	public Feed getFeedEnum() {
+		String type = super.getFeed().toString();
+
+		if (type.equals("PEMS")) return Feed.PEMS;
+		if (type.equals("PROBEA")) return Feed.PROBEA;
+		if (type.equals("PROBEB")) return Feed.PROBEB;
+		
+		throw new UnsupportedOperationException("Unknown Run Mode type string '" + type + "' encountered.");
+	}
+	
+	@Override
+	@Deprecated
 	public CharSequence getRunMode() {
 		throw new UnsupportedOperationException("Use method getRunModeTypeEnum instead.");
 	}
@@ -217,6 +231,30 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 			throw new IllegalArgumentException("Unknown EnKF Type " + type + ".");			
 		}
 		super.setEnkfType(typeString);
+	}
+	
+	@Override
+	@Deprecated
+	public void setFeed(CharSequence value) {
+		throw new UnsupportedOperationException("Use method setFeedEnum instead.");
+	}
+	
+	public void setFeedEnum(Feed type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case PEMS:
+			typeString = "PEMS";
+			break;
+		case PROBEA:
+			typeString = "PROBEA";
+			break;
+		case PROBEB:
+			typeString = "PROBEB";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown Feed " + type + ".");			
+		}
+		super.setFeed(typeString);
 	}
 	
 	@Override

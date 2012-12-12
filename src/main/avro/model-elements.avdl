@@ -440,6 +440,11 @@ protocol CC {
      * forecast, estimation
      **/
     string        workflow;
+    
+    /**
+    * probea, probeb, pems
+    **/
+    string        feed;
 
     string        ctmType;
     int           ensembleSize;
