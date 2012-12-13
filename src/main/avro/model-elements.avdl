@@ -326,20 +326,11 @@ protocol CC {
   }
 
   /**
-   * Referenced by Sensor to indicate the way the sensor behaves.
-   */
-  record SensorType {
-    string id;
-    union {null, string} name;
-    union {null, string} description;
-  }
-
-  /**
    * Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.
    */
   record Sensor {
     string id;
-    SensorType type;
+    string type; // "Loop", etc
     union {null, string} entity_id;  // ID of original detector, e.g. VDS ID
     union {null, string} measurement_feed_id; // data feed associated with this sensor
     string link_id;
