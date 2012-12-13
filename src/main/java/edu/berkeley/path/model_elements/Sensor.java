@@ -28,13 +28,13 @@ package edu.berkeley.path.model_elements;
 
 public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 
-  public Long getLongLinkId() {
-    return Long.parseLong(getLinkId().toString());
-  }
-  
-  public void setLinkId(Long id) {
-    setLinkId(id.toString());
-  }
+	public Long getLongLinkId() {
+		return Long.parseLong(getLinkId().toString());
+	}
+
+	public void setLinkId(Long id) {
+		setLinkId(id.toString());
+	}
   
 	/**
 	 * @return Sensor type (Loop, etc)
