@@ -7,9 +7,9 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc. */
 public class Sensor extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sensor\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"type\",\"type\":{\"type\":\"record\",\"name\":\"SensorType\",\"doc\":\"* Referenced by Sensor to indicate the way the sensor behaves.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}},{\"name\":\"entity_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"measurement_feed_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"link_id\",\"type\":\"string\"},{\"name\":\"link_offset\",\"type\":\"double\",\"default\":0},{\"name\":\"lane_num\",\"type\":\"double\",\"default\":1},{\"name\":\"health_status\",\"type\":\"double\",\"default\":1}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sensor\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"entity_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"measurement_feed_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"link_id\",\"type\":\"string\"},{\"name\":\"link_offset\",\"type\":\"double\",\"default\":0},{\"name\":\"lane_num\",\"type\":\"double\",\"default\":1},{\"name\":\"health_status\",\"type\":\"double\",\"default\":1}]}");
   @Deprecated public java.lang.CharSequence id;
-  @Deprecated public edu.berkeley.path.model_elements_base.SensorType type;
+  @Deprecated public java.lang.CharSequence type;
   @Deprecated public java.lang.CharSequence entity_id;
   @Deprecated public java.lang.CharSequence measurement_feed_id;
   @Deprecated public java.lang.CharSequence link_id;
@@ -25,7 +25,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * All-args constructor.
    */
-  public Sensor(java.lang.CharSequence id, edu.berkeley.path.model_elements_base.SensorType type, java.lang.CharSequence entity_id, java.lang.CharSequence measurement_feed_id, java.lang.CharSequence link_id, java.lang.Double link_offset, java.lang.Double lane_num, java.lang.Double health_status) {
+  public Sensor(java.lang.CharSequence id, java.lang.CharSequence type, java.lang.CharSequence entity_id, java.lang.CharSequence measurement_feed_id, java.lang.CharSequence link_id, java.lang.Double link_offset, java.lang.Double lane_num, java.lang.Double health_status) {
     this.id = id;
     this.type = type;
     this.entity_id = entity_id;
@@ -56,7 +56,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
-    case 1: type = (edu.berkeley.path.model_elements_base.SensorType)value$; break;
+    case 1: type = (java.lang.CharSequence)value$; break;
     case 2: entity_id = (java.lang.CharSequence)value$; break;
     case 3: measurement_feed_id = (java.lang.CharSequence)value$; break;
     case 4: link_id = (java.lang.CharSequence)value$; break;
@@ -85,7 +85,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Gets the value of the 'type' field.
    */
-  public edu.berkeley.path.model_elements_base.SensorType getType() {
+  public java.lang.CharSequence getType() {
     return type;
   }
 
@@ -93,7 +93,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
    * Sets the value of the 'type' field.
    * @param value the value to set.
    */
-  public void setType(edu.berkeley.path.model_elements_base.SensorType value) {
+  public void setType(java.lang.CharSequence value) {
     this.type = value;
   }
 
@@ -209,7 +209,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
     implements org.apache.avro.data.RecordBuilder<Sensor> {
 
     private java.lang.CharSequence id;
-    private edu.berkeley.path.model_elements_base.SensorType type;
+    private java.lang.CharSequence type;
     private java.lang.CharSequence entity_id;
     private java.lang.CharSequence measurement_feed_id;
     private java.lang.CharSequence link_id;
@@ -235,7 +235,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.type)) {
-        this.type = (edu.berkeley.path.model_elements_base.SensorType) data().deepCopy(fields()[1].schema(), other.type);
+        this.type = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.type);
         fieldSetFlags()[1] = true;
       }
       if (isValidValue(fields()[2], other.entity_id)) {
@@ -290,12 +290,12 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
     }
 
     /** Gets the value of the 'type' field */
-    public edu.berkeley.path.model_elements_base.SensorType getType() {
+    public java.lang.CharSequence getType() {
       return type;
     }
     
     /** Sets the value of the 'type' field */
-    public edu.berkeley.path.model_elements_base.Sensor.Builder setType(edu.berkeley.path.model_elements_base.SensorType value) {
+    public edu.berkeley.path.model_elements_base.Sensor.Builder setType(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.type = value;
       fieldSetFlags()[1] = true;
@@ -466,7 +466,7 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
       try {
         Sensor record = new Sensor();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.type = fieldSetFlags()[1] ? this.type : (edu.berkeley.path.model_elements_base.SensorType) defaultValue(fields()[1]);
+        record.type = fieldSetFlags()[1] ? this.type : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.entity_id = fieldSetFlags()[2] ? this.entity_id : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.measurement_feed_id = fieldSetFlags()[3] ? this.measurement_feed_id : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.link_id = fieldSetFlags()[4] ? this.link_id : (java.lang.CharSequence) defaultValue(fields()[4]);
