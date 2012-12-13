@@ -35,4 +35,67 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
   public void setLinkId(Long id) {
     setLinkId(id.toString());
   }
+  
+	/**
+	 * @return Sensor type (Loop, etc)
+	 */
+	public SensorTypeEnum getTypeEnum() {
+		String type = super.getType().toString();
+
+		if (type.equals("Loop"))
+			return SensorTypeEnum.LOOP;
+		if (type.equals("Camera"))
+			return SensorTypeEnum.CAMERA;
+		if (type.equals("Magnetic"))
+			return SensorTypeEnum.MAGNETIC;
+		if (type.equals("RADAR"))
+			return SensorTypeEnum.RADAR;
+		if (type.equals("TMC"))
+			return SensorTypeEnum.TMC;
+
+		throw new UnsupportedOperationException("Unknown sensor type string '"
+				+ type + "' encountered.");
+	}
+
+	@Override
+	@Deprecated
+	public CharSequence getType() {
+		throw new UnsupportedOperationException(
+				"Use method getSensorTypeEnum instead.");
+	}
+
+	/**
+	 * @param type Sensor type (Loop, etc), an element of the SensorTypeEnum enumeration
+	 */
+	public void setTypeEnum(SensorTypeEnum type) {
+		CharSequence typeString = null;
+		switch (type) {
+		case LOOP:
+			typeString = "Loop";
+			break;
+		case MAGNETIC:
+			typeString = "Magnetic";
+			break;
+		case RADAR:
+			typeString = "RADAR";
+			break;
+		case TMC:
+			typeString = "TMC";
+			break;
+		case CAMERA:
+			typeString = "Camera";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown sensor type " + type + ".");
+		}
+		super.setType(typeString);
+	}
+
+	@Override
+	@Deprecated
+	public void setType(CharSequence value) {
+		throw new UnsupportedOperationException(
+				"Use method setSensorTypeEnum instead.");
+	}
+  
 }
