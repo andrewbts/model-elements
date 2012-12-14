@@ -479,9 +479,23 @@ protocol CC {
     union { double, null } density;
     union { double, null } velocity;
   }
+  
+  /**
+   * In- and out-flow state of one link at one time.
+   *
+   * The in- and out-flows are a quantity of interest computed by a CTM,
+   * though not needed for either estimation of future time steps of a CTM.
+   */
+  record FreewayLinkFlowState {
+    double inFlow;
+    double outFlow;
+  }
 
   /**
-   * State of entire CTM
+   * State of entire CTM, comprising:
+   * state of each link,
+   * state of each origin queue, and
+   * optionally the in- and out-flows of each link.
    */
   record FreewayCTMState {
     /** map key is link id */
@@ -489,6 +503,9 @@ protocol CC {
     
     /** map key is origin link id */
     map<double> queueLength;
+    
+    /** map key is link id */
+    union {null, map<FreewayLinkFlowState>} linkFlowState;
   }
 
   /**

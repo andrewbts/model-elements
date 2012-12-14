@@ -32,8 +32,15 @@ import java.util.Map.Entry;
 public class FreewayCTMState extends edu.berkeley.path.model_elements_base.FreewayCTMState {
 	
 	@SuppressWarnings("unchecked")
-	public FreewayCTMState(Map<CharSequence, FreewayLinkState> linkStateMap, Map<CharSequence, Double> originStateMap) {
-		super((Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?, ?>)linkStateMap, originStateMap);
+	public FreewayCTMState(
+			Map<CharSequence, FreewayLinkState> linkStateMap, 
+			Map<CharSequence, Double> originStateMap, 
+			Map<CharSequence, FreewayLinkFlowState> linkFlowStateMap) {
+		super(
+				(Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?, ?>) linkStateMap, 
+				originStateMap,
+				(Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState>)(Map<?, ?>) linkFlowStateMap
+				);
 	}
 
 	/**
