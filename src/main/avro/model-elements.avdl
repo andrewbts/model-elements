@@ -407,56 +407,6 @@ protocol CC {
   }
   
   /**
-   * Static configuration of a set of freeway runs.
-   *
-   * The parameters encapsulated here are separate from Scenario inputs
-   * in that they express *how* the run is modeled and executed,
-   * rather than *what* is modeled.
-   *
-   * These parameters are used by the Context subclasses.
-   *
-   * Note that a context does not include a scenario. Scenarios are read
-   * dynamically using a ScenarioSource.
-   */
-  record FreewayContextConfig {
-    string        id;
-    string        name;
-
-    /**
-     * historical, live
-     **/
-    string        runMode;
-    
-    /**
-     * forecast, estimation
-     **/
-    string        workflow;
-    
-    /**
-    * probea, probeb, pems
-    **/
-    string        feed;
-
-    string        ctmType;
-    int           ensembleSize;
-    string        fdType;
-    double        additiveModelNoiseMean;
-    double        additiveModelNoiseStdDev;
-    double        initialDensityFraction;    
-    
-    string        enkfType;
-    EnKFParams    enkfParams;
-    
-    Duration      dtOutput;
-    Duration      dt;
-    
-    DateTime      timeBegin;
-    DateTime      timeEnd;
-    
-    SensorSet     sensorSet;
-  }
-  
-  /**
    * Encapsulates a single run of a process.
    */
   record ProcessConfig {
@@ -553,7 +503,7 @@ protocol CC {
     /** map key is link id
      *
      * used by FreewayReporterBlock? */
-    map<double> quality;
+    union {null, map<double>} quality;
     // ### TODO call this confidence?
   }
   
@@ -695,6 +645,62 @@ protocol CC {
      * Field is null for 5 minute aggregates.
      **/
     union { map<double>, null } delay;
+  }
+  
+  /**
+   * Static configuration of a set of freeway runs.
+   *
+   * The parameters encapsulated here are separate from Scenario inputs
+   * in that they express *how* the run is modeled and executed,
+   * rather than *what* is modeled.
+   *
+   * These parameters are used by the Context subclasses.
+   *
+   * Note that a context does not include a scenario. Scenarios are read
+   * dynamically using a ScenarioSource.
+   */
+  record FreewayContextConfig {
+    string        id;
+    string        name;
+
+    /**
+     * historical, live
+     **/
+    string        runMode;
+    
+    /**
+     * forecast, estimation
+     **/
+    string        workflow;
+    
+    /**
+    * probea, probeb, pems
+    **/
+    string        feed;
+
+    string        ctmType;
+    int           ensembleSize;
+    string        fdType;
+    double        additiveModelNoiseMean;
+    double        additiveModelNoiseStdDev;
+    double        initialDensityFraction;    
+    
+    string        enkfType;
+    EnKFParams    enkfParams;
+    
+    Duration      dtOutput;
+    Duration      dt;
+    
+    DateTime      timeBegin;
+    DateTime      timeEnd;
+    
+    SensorSet     sensorSet;
+    
+    // initial condition: specify either a single state, a whole ensemble, or none
+    union {null, FreewayCTMEnsembleState}     initialEnsembleState;
+    union {null, FreewayCTMState}             initialState;
+    // additive noise to apply to the initial state ensemble
+    double                                    initialStateUncertainty = 0.0;
   }
 
 }
