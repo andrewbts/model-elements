@@ -27,4 +27,16 @@
 package edu.berkeley.path.model_elements;
 
 public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.FreewayCTMReport {
+
+	/**
+	 * Check whether this report is a "full" statistics report
+	 * including flow information, which will be the case when
+	 * the report is generated after a CTM step. Otherwise, it will
+	 * be generated after an EnKF step, in which case there are 
+	 * no flow statistics.
+	 */
+	public boolean hasFlowStatistics() {
+		return getInFlowMean() != null;
+	}
+
 }
