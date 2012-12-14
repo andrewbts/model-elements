@@ -59,6 +59,36 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 	}
 	
 	/**
+	 * Create and return a map from links to link flow states. The map is created from the
+	 * internal map from string link ids to link flow states (if it exists).
+	 * @param network Network to which this state pertains
+	 * @return Map from links to link flow states
+	 */
+	public Map<Link, FreewayLinkFlowState> createLinkFlowStateMap(Network network) {
+		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> charMap = super.getLinkFlowState();
+		if (charMap == null)
+			return null;
+		
+		Map<Link, FreewayLinkFlowState> map = new HashMap<Link, FreewayLinkFlowState>(charMap.size());
+		for (Entry<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> e : charMap.entrySet()) {
+			map.put(network.getLinkById(e.getKey().toString()), (FreewayLinkFlowState)e.getValue());		
+		}
+		
+		return map;
+	}
+			
+	@Override
+	@Deprecated
+	public Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> getLinkFlowState() {
+		throw new UnsupportedOperationException("Use createLinkFlowStateMap instead.");
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Map<CharSequence, FreewayLinkFlowState> getLinkFlowStateMap() {
+		return (Map<CharSequence, FreewayLinkFlowState>) (Map<?, ?>) super.getLinkFlowState();
+	}
+
+	/**
 	 * Get current link state for a single specified link
 	 * @param link Link whose state to get, shoudl not be an origin link
 	 * @return Current link state
