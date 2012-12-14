@@ -304,7 +304,15 @@ public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.
 	public edu.berkeley.path.model_elements.DateTime getTimeBegin() {
 		return (edu.berkeley.path.model_elements.DateTime) (super.getTimeBegin());
 	}
-	
-	
+
+	@Override
+	public FreewayCTMEnsembleState getInitialEnsembleState() {
+		return (FreewayCTMEnsembleState) super.getInitialEnsembleState();
+	}
+
+	@Override
+	public FreewayCTMState getInitialState() {
+		return (FreewayCTMState) super.getInitialState();
+	}
 
 }

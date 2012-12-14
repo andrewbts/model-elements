@@ -77,6 +77,6 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 		if (!link.isOrigin())
 			throw new IllegalArgumentException("Specified link was not an origin link.");
 		return super.getQueueLength().get(link.getId()).doubleValue();		
-	}
+	}	
 	
 }
