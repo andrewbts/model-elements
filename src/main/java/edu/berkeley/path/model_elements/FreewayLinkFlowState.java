@@ -26,6 +26,10 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.FreewayCTMReport {
-
+public class FreewayLinkFlowState extends edu.berkeley.path.model_elements_base.FreewayLinkFlowState {
+	
+	public FreewayLinkFlowState(Double inFlow, Double outFlow) {
+		super(inFlow, outFlow);
+	}
+	
 }
