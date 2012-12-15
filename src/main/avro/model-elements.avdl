@@ -534,22 +534,11 @@ protocol CC {
     FreewayCTMState stdDev;
     FDMap fd;
     
-    /**
-     * map of mean flow into each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId
+    /* whether this is a full report including flow stats (after a CTM step),
+     * or not (after an EnKF step)
      */
-    map<double> inFlowMean;
-    map<double> inFlowStdDev;
-    
-    /**
-     * map of mean flow out of each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId
-     */
-    map<double> outFlowMean;
-    map<double> outFlowStdDev;
-  }
+    boolean includesFlows;
+}
   
   record FreewayCTMEnsembleReport {
     long runID;

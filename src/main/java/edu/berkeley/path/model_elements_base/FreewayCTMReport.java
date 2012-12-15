@@ -6,23 +6,14 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runID\",\"type\":\"long\"},{\"name\":\"time\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]},\"doc\":\"Model time, of course\"},{\"name\":\"mean\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},{\"name\":\"stdDev\",\"type\":\"FreewayCTMState\"},{\"name\":\"fd\",\"type\":{\"type\":\"record\",\"name\":\"FDMap\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\r\\n   * This is sliced off of FDSet at a given time.\\r\\n   *\\r\\n   * Not part of Scenario; can be used interchangeably for\\r\\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}},\"doc\":\"* map of FDs at a given time;\\r\\n     * map key is linkId\"}]}},{\"name\":\"inFlowMean\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"* map of mean flow into each link\\r\\n     * map may be empty for certain reporting cycles\\r\\n     * map key is linkId\"},{\"name\":\"inFlowStdDev\",\"type\":{\"type\":\"map\",\"values\":\"double\"}},{\"name\":\"outFlowMean\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"* map of mean flow out of each link\\r\\n     * map may be empty for certain reporting cycles\\r\\n     * map key is linkId\"},{\"name\":\"outFlowStdDev\",\"type\":{\"type\":\"map\",\"values\":\"double\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runID\",\"type\":\"long\"},{\"name\":\"time\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]},\"doc\":\"Model time, of course\"},{\"name\":\"mean\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},{\"name\":\"stdDev\",\"type\":\"FreewayCTMState\"},{\"name\":\"fd\",\"type\":{\"type\":\"record\",\"name\":\"FDMap\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\r\\n   * This is sliced off of FDSet at a given time.\\r\\n   *\\r\\n   * Not part of Scenario; can be used interchangeably for\\r\\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}},\"doc\":\"* map of FDs at a given time;\\r\\n     * map key is linkId\"}]}},{\"name\":\"includesFlows\",\"type\":\"boolean\"}]}");
   @Deprecated public long runID;
   /** Model time, of course */
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime time;
   @Deprecated public edu.berkeley.path.model_elements_base.FreewayCTMState mean;
   @Deprecated public edu.berkeley.path.model_elements_base.FreewayCTMState stdDev;
   @Deprecated public edu.berkeley.path.model_elements_base.FDMap fd;
-  /** * map of mean flow into each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> inFlowMean;
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> inFlowStdDev;
-  /** * map of mean flow out of each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId */
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> outFlowMean;
-  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Double> outFlowStdDev;
+  @Deprecated public boolean includesFlows;
 
   /**
    * Default constructor.
@@ -32,16 +23,13 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   /**
    * All-args constructor.
    */
-  public FreewayCTMReport(java.lang.Long runID, edu.berkeley.path.model_elements_base.DateTime time, edu.berkeley.path.model_elements_base.FreewayCTMState mean, edu.berkeley.path.model_elements_base.FreewayCTMState stdDev, edu.berkeley.path.model_elements_base.FDMap fd, java.util.Map<java.lang.CharSequence,java.lang.Double> inFlowMean, java.util.Map<java.lang.CharSequence,java.lang.Double> inFlowStdDev, java.util.Map<java.lang.CharSequence,java.lang.Double> outFlowMean, java.util.Map<java.lang.CharSequence,java.lang.Double> outFlowStdDev) {
+  public FreewayCTMReport(java.lang.Long runID, edu.berkeley.path.model_elements_base.DateTime time, edu.berkeley.path.model_elements_base.FreewayCTMState mean, edu.berkeley.path.model_elements_base.FreewayCTMState stdDev, edu.berkeley.path.model_elements_base.FDMap fd, java.lang.Boolean includesFlows) {
     this.runID = runID;
     this.time = time;
     this.mean = mean;
     this.stdDev = stdDev;
     this.fd = fd;
-    this.inFlowMean = inFlowMean;
-    this.inFlowStdDev = inFlowStdDev;
-    this.outFlowMean = outFlowMean;
-    this.outFlowStdDev = outFlowStdDev;
+    this.includesFlows = includesFlows;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -53,10 +41,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
     case 2: return mean;
     case 3: return stdDev;
     case 4: return fd;
-    case 5: return inFlowMean;
-    case 6: return inFlowStdDev;
-    case 7: return outFlowMean;
-    case 8: return outFlowStdDev;
+    case 5: return includesFlows;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -69,10 +54,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
     case 2: mean = (edu.berkeley.path.model_elements_base.FreewayCTMState)value$; break;
     case 3: stdDev = (edu.berkeley.path.model_elements_base.FreewayCTMState)value$; break;
     case 4: fd = (edu.berkeley.path.model_elements_base.FDMap)value$; break;
-    case 5: inFlowMean = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
-    case 6: inFlowStdDev = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
-    case 7: outFlowMean = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
-    case 8: outFlowStdDev = (java.util.Map<java.lang.CharSequence,java.lang.Double>)value$; break;
+    case 5: includesFlows = (java.lang.Boolean)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -153,71 +135,18 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
-   * Gets the value of the 'inFlowMean' field.
-   * * map of mean flow into each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId   */
-  public java.util.Map<java.lang.CharSequence,java.lang.Double> getInFlowMean() {
-    return inFlowMean;
-  }
-
-  /**
-   * Sets the value of the 'inFlowMean' field.
-   * * map of mean flow into each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId   * @param value the value to set.
+   * Gets the value of the 'includesFlows' field.
    */
-  public void setInFlowMean(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-    this.inFlowMean = value;
+  public java.lang.Boolean getIncludesFlows() {
+    return includesFlows;
   }
 
   /**
-   * Gets the value of the 'inFlowStdDev' field.
-   */
-  public java.util.Map<java.lang.CharSequence,java.lang.Double> getInFlowStdDev() {
-    return inFlowStdDev;
-  }
-
-  /**
-   * Sets the value of the 'inFlowStdDev' field.
+   * Sets the value of the 'includesFlows' field.
    * @param value the value to set.
    */
-  public void setInFlowStdDev(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-    this.inFlowStdDev = value;
-  }
-
-  /**
-   * Gets the value of the 'outFlowMean' field.
-   * * map of mean flow out of each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId   */
-  public java.util.Map<java.lang.CharSequence,java.lang.Double> getOutFlowMean() {
-    return outFlowMean;
-  }
-
-  /**
-   * Sets the value of the 'outFlowMean' field.
-   * * map of mean flow out of each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId   * @param value the value to set.
-   */
-  public void setOutFlowMean(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-    this.outFlowMean = value;
-  }
-
-  /**
-   * Gets the value of the 'outFlowStdDev' field.
-   */
-  public java.util.Map<java.lang.CharSequence,java.lang.Double> getOutFlowStdDev() {
-    return outFlowStdDev;
-  }
-
-  /**
-   * Sets the value of the 'outFlowStdDev' field.
-   * @param value the value to set.
-   */
-  public void setOutFlowStdDev(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-    this.outFlowStdDev = value;
+  public void setIncludesFlows(java.lang.Boolean value) {
+    this.includesFlows = value;
   }
 
   /** Creates a new FreewayCTMReport RecordBuilder */
@@ -246,10 +175,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
     private edu.berkeley.path.model_elements_base.FreewayCTMState mean;
     private edu.berkeley.path.model_elements_base.FreewayCTMState stdDev;
     private edu.berkeley.path.model_elements_base.FDMap fd;
-    private java.util.Map<java.lang.CharSequence,java.lang.Double> inFlowMean;
-    private java.util.Map<java.lang.CharSequence,java.lang.Double> inFlowStdDev;
-    private java.util.Map<java.lang.CharSequence,java.lang.Double> outFlowMean;
-    private java.util.Map<java.lang.CharSequence,java.lang.Double> outFlowStdDev;
+    private boolean includesFlows;
 
     /** Creates a new Builder */
     private Builder() {
@@ -284,21 +210,9 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
         this.fd = (edu.berkeley.path.model_elements_base.FDMap) data().deepCopy(fields()[4].schema(), other.fd);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.inFlowMean)) {
-        this.inFlowMean = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[5].schema(), other.inFlowMean);
+      if (isValidValue(fields()[5], other.includesFlows)) {
+        this.includesFlows = (java.lang.Boolean) data().deepCopy(fields()[5].schema(), other.includesFlows);
         fieldSetFlags()[5] = true;
-      }
-      if (isValidValue(fields()[6], other.inFlowStdDev)) {
-        this.inFlowStdDev = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[6].schema(), other.inFlowStdDev);
-        fieldSetFlags()[6] = true;
-      }
-      if (isValidValue(fields()[7], other.outFlowMean)) {
-        this.outFlowMean = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[7].schema(), other.outFlowMean);
-        fieldSetFlags()[7] = true;
-      }
-      if (isValidValue(fields()[8], other.outFlowStdDev)) {
-        this.outFlowStdDev = (java.util.Map<java.lang.CharSequence,java.lang.Double>) data().deepCopy(fields()[8].schema(), other.outFlowStdDev);
-        fieldSetFlags()[8] = true;
       }
     }
 
@@ -426,103 +340,27 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
       return this;
     }
 
-    /** Gets the value of the 'inFlowMean' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Double> getInFlowMean() {
-      return inFlowMean;
+    /** Gets the value of the 'includesFlows' field */
+    public java.lang.Boolean getIncludesFlows() {
+      return includesFlows;
     }
     
-    /** Sets the value of the 'inFlowMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setInFlowMean(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
+    /** Sets the value of the 'includesFlows' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setIncludesFlows(boolean value) {
       validate(fields()[5], value);
-      this.inFlowMean = value;
+      this.includesFlows = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
     
-    /** Checks whether the 'inFlowMean' field has been set */
-    public boolean hasInFlowMean() {
+    /** Checks whether the 'includesFlows' field has been set */
+    public boolean hasIncludesFlows() {
       return fieldSetFlags()[5];
     }
     
-    /** Clears the value of the 'inFlowMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearInFlowMean() {
-      inFlowMean = null;
+    /** Clears the value of the 'includesFlows' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearIncludesFlows() {
       fieldSetFlags()[5] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'inFlowStdDev' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Double> getInFlowStdDev() {
-      return inFlowStdDev;
-    }
-    
-    /** Sets the value of the 'inFlowStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setInFlowStdDev(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-      validate(fields()[6], value);
-      this.inFlowStdDev = value;
-      fieldSetFlags()[6] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'inFlowStdDev' field has been set */
-    public boolean hasInFlowStdDev() {
-      return fieldSetFlags()[6];
-    }
-    
-    /** Clears the value of the 'inFlowStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearInFlowStdDev() {
-      inFlowStdDev = null;
-      fieldSetFlags()[6] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'outFlowMean' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Double> getOutFlowMean() {
-      return outFlowMean;
-    }
-    
-    /** Sets the value of the 'outFlowMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setOutFlowMean(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-      validate(fields()[7], value);
-      this.outFlowMean = value;
-      fieldSetFlags()[7] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'outFlowMean' field has been set */
-    public boolean hasOutFlowMean() {
-      return fieldSetFlags()[7];
-    }
-    
-    /** Clears the value of the 'outFlowMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearOutFlowMean() {
-      outFlowMean = null;
-      fieldSetFlags()[7] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'outFlowStdDev' field */
-    public java.util.Map<java.lang.CharSequence,java.lang.Double> getOutFlowStdDev() {
-      return outFlowStdDev;
-    }
-    
-    /** Sets the value of the 'outFlowStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setOutFlowStdDev(java.util.Map<java.lang.CharSequence,java.lang.Double> value) {
-      validate(fields()[8], value);
-      this.outFlowStdDev = value;
-      fieldSetFlags()[8] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'outFlowStdDev' field has been set */
-    public boolean hasOutFlowStdDev() {
-      return fieldSetFlags()[8];
-    }
-    
-    /** Clears the value of the 'outFlowStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearOutFlowStdDev() {
-      outFlowStdDev = null;
-      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -535,10 +373,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
         record.mean = fieldSetFlags()[2] ? this.mean : (edu.berkeley.path.model_elements_base.FreewayCTMState) defaultValue(fields()[2]);
         record.stdDev = fieldSetFlags()[3] ? this.stdDev : (edu.berkeley.path.model_elements_base.FreewayCTMState) defaultValue(fields()[3]);
         record.fd = fieldSetFlags()[4] ? this.fd : (edu.berkeley.path.model_elements_base.FDMap) defaultValue(fields()[4]);
-        record.inFlowMean = fieldSetFlags()[5] ? this.inFlowMean : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[5]);
-        record.inFlowStdDev = fieldSetFlags()[6] ? this.inFlowStdDev : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[6]);
-        record.outFlowMean = fieldSetFlags()[7] ? this.outFlowMean : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[7]);
-        record.outFlowStdDev = fieldSetFlags()[8] ? this.outFlowStdDev : (java.util.Map<java.lang.CharSequence,java.lang.Double>) defaultValue(fields()[8]);
+        record.includesFlows = fieldSetFlags()[5] ? this.includesFlows : (java.lang.Boolean) defaultValue(fields()[5]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
