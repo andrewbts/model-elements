@@ -407,56 +407,6 @@ protocol CC {
   }
   
   /**
-   * Static configuration of a set of freeway runs.
-   *
-   * The parameters encapsulated here are separate from Scenario inputs
-   * in that they express *how* the run is modeled and executed,
-   * rather than *what* is modeled.
-   *
-   * These parameters are used by the Context subclasses.
-   *
-   * Note that a context does not include a scenario. Scenarios are read
-   * dynamically using a ScenarioSource.
-   */
-  record FreewayContextConfig {
-    string        id;
-    string        name;
-
-    /**
-     * historical, live
-     **/
-    string        runMode;
-    
-    /**
-     * forecast, estimation
-     **/
-    string        workflow;
-    
-    /**
-    * probea, probeb, pems
-    **/
-    string        feed;
-
-    string        ctmType;
-    int           ensembleSize;
-    string        fdType;
-    double        additiveModelNoiseMean;
-    double        additiveModelNoiseStdDev;
-    double        initialDensityFraction;    
-    
-    string        enkfType;
-    EnKFParams    enkfParams;
-    
-    Duration      dtOutput;
-    Duration      dt;
-    
-    DateTime      timeBegin;
-    DateTime      timeEnd;
-    
-    SensorSet     sensorSet;
-  }
-  
-  /**
    * Encapsulates a single run of a process.
    */
   record ProcessConfig {
@@ -529,9 +479,23 @@ protocol CC {
     union { double, null } density;
     union { double, null } velocity;
   }
+  
+  /**
+   * In- and out-flow state of one link at one time.
+   *
+   * The in- and out-flows are a quantity of interest computed by a CTM,
+   * though not needed for either estimation of future time steps of a CTM.
+   */
+  record FreewayLinkFlowState {
+    double inFlow;
+    double outFlow;
+  }
 
   /**
-   * State of entire CTM
+   * State of entire CTM, comprising:
+   * state of each link,
+   * state of each origin queue, and
+   * optionally the in- and out-flows of each link.
    */
   record FreewayCTMState {
     /** map key is link id */
@@ -539,6 +503,9 @@ protocol CC {
     
     /** map key is origin link id */
     map<double> queueLength;
+    
+    /** map key is link id */
+    union {null, map<FreewayLinkFlowState>} linkFlowState;
   }
 
   /**
@@ -553,7 +520,7 @@ protocol CC {
     /** map key is link id
      *
      * used by FreewayReporterBlock? */
-    map<double> quality;
+    union {null, map<double>} quality;
     // ### TODO call this confidence?
   }
   
@@ -567,22 +534,11 @@ protocol CC {
     FreewayCTMState stdDev;
     FDMap fd;
     
-    /**
-     * map of mean flow into each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId
+    /* whether this is a full report including flow stats (after a CTM step),
+     * or not (after an EnKF step)
      */
-    map<double> inFlowMean;
-    map<double> inFlowStdDev;
-    
-    /**
-     * map of mean flow out of each link
-     * map may be empty for certain reporting cycles
-     * map key is linkId
-     */
-    map<double> outFlowMean;
-    map<double> outFlowStdDev;
-  }
+    boolean includesFlows;
+}
   
   record FreewayCTMEnsembleReport {
     long runID;
@@ -695,6 +651,62 @@ protocol CC {
      * Field is null for 5 minute aggregates.
      **/
     union { map<double>, null } delay;
+  }
+  
+  /**
+   * Static configuration of a set of freeway runs.
+   *
+   * The parameters encapsulated here are separate from Scenario inputs
+   * in that they express *how* the run is modeled and executed,
+   * rather than *what* is modeled.
+   *
+   * These parameters are used by the Context subclasses.
+   *
+   * Note that a context does not include a scenario. Scenarios are read
+   * dynamically using a ScenarioSource.
+   */
+  record FreewayContextConfig {
+    string        id;
+    string        name;
+
+    /**
+     * historical, live
+     **/
+    string        runMode;
+    
+    /**
+     * forecast, estimation
+     **/
+    string        workflow;
+    
+    /**
+    * probea, probeb, pems
+    **/
+    string        feed;
+
+    string        ctmType;
+    int           ensembleSize;
+    string        fdType;
+    double        additiveModelNoiseMean;
+    double        additiveModelNoiseStdDev;
+    double        initialDensityFraction;    
+    
+    string        enkfType;
+    EnKFParams    enkfParams;
+    
+    Duration      dtOutput;
+    Duration      dt;
+    
+    DateTime      timeBegin;
+    DateTime      timeEnd;
+    
+    SensorSet     sensorSet;
+    
+    // initial condition: specify either a single state, a whole ensemble, or none
+    union {null, FreewayCTMEnsembleState}     initialEnsembleState;
+    union {null, FreewayCTMState}             initialState;
+    // additive noise to apply to the initial state ensemble
+    double                                    initialStateUncertainty = 0.0;
   }
 
 }

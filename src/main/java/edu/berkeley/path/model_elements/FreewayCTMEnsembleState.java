@@ -48,6 +48,16 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 		super.setQuality(quality); // TODO: what is the meaning of this field?		
 	}
 
+	/**
+	 * Create ensemble state of size n by replicating the specified initial state n times.
+	 */
+	public FreewayCTMEnsembleState(FreewayCTMState initialState, Integer n, DateTime timeBegin, Map<CharSequence, Double> quality) {
+		this(new ArrayList<FreewayCTMState>(n), timeBegin, quality);
+		List<FreewayCTMState> ensemble = getStates();
+		for (int i = 0; i < n; ++i)
+			ensemble.add(initialState);		
+	}
+
 	@SuppressWarnings("unchecked")
 	public List<FreewayCTMState> getStates() {
 		return (List<FreewayCTMState>)(List<?>)super.getEnsembleState();
@@ -58,5 +68,10 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	public List<edu.berkeley.path.model_elements_base.FreewayCTMState> getEnsembleState() {
 		throw new UnsupportedOperationException("Use getStates instead.");
 	}
-	
+
+	@Override
+	public DateTime getT() {
+		return (DateTime) super.getT();
+	}	
+		
 }
