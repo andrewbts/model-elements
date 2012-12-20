@@ -352,6 +352,12 @@ protocol CC {
   
   // ### TODO Controllers
   
+  record Project {
+    string id;
+    string name;
+    union { null, string } description;
+  }
+  
   /**
    * A scenario represents the state of the world now and projected
    * into the future, to the extent that can be known in advance.
