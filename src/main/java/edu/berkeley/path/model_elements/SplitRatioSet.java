@@ -167,4 +167,8 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
   public void setId(Long id) {
     setId(id.toString());
   }
+  
+  public Long getLongProjectId() {
+    return Long.parseLong(getProjectId().toString());
+  }
 }
