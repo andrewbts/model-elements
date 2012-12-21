@@ -131,15 +131,15 @@ protocol CC {
    * Flow and density values are per lane in SI units.
    */
   record FD {
-    double freeFlowSpeed;
-    double criticalSpeed;
-    double congestionWaveSpeed;
-    double capacity;
-    double jamDensity;
-    double capacityDrop;
-    double freeFlowSpeedStd;
-    double congestionWaveSpeedStd;
-    double capacityStd;
+    union {null, double} freeFlowSpeed;
+    union {null, double} criticalSpeed;
+    union {null, double} congestionWaveSpeed;
+    union {null, double} capacity;
+    union {null, double} jamDensity;
+    union {null, double} capacityDrop;
+    union {null, double} freeFlowSpeedStd;
+    union {null, double} congestionWaveSpeedStd;
+    union {null, double} capacityStd;
   }
   
   /**
