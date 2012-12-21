@@ -8,10 +8,11 @@ package edu.berkeley.path.model_elements_base;
 /** * Specification of demand time series across one or more networks,
    * for use in a scenario. */
 public class DemandSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of demand time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of demand time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
+  @Deprecated public java.lang.CharSequence projectId;
   /** * map key is originLinkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile;
 
@@ -23,10 +24,11 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public DemandSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile) {
+  public DemandSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.projectId = projectId;
     this.profile = profile;
   }
 
@@ -37,7 +39,8 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: return id;
     case 1: return name;
     case 2: return description;
-    case 3: return profile;
+    case 3: return projectId;
+    case 4: return profile;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -48,7 +51,8 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
-    case 3: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)value$; break;
+    case 3: projectId = (java.lang.CharSequence)value$; break;
+    case 4: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -99,6 +103,21 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /**
+   * Gets the value of the 'projectId' field.
+   */
+  public java.lang.CharSequence getProjectId() {
+    return projectId;
+  }
+
+  /**
+   * Sets the value of the 'projectId' field.
+   * @param value the value to set.
+   */
+  public void setProjectId(java.lang.CharSequence value) {
+    this.projectId = value;
+  }
+
+  /**
    * Gets the value of the 'profile' field.
    * * map key is originLinkId   */
   public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> getProfile() {
@@ -137,6 +156,7 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
+    private java.lang.CharSequence projectId;
     private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile;
 
     /** Creates a new Builder */
@@ -164,9 +184,13 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
         this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.profile)) {
-        this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) data().deepCopy(fields()[3].schema(), other.profile);
+      if (isValidValue(fields()[3], other.projectId)) {
+        this.projectId = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.projectId);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.profile)) {
+        this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) data().deepCopy(fields()[4].schema(), other.profile);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -245,6 +269,31 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /** Gets the value of the 'projectId' field */
+    public java.lang.CharSequence getProjectId() {
+      return projectId;
+    }
+    
+    /** Sets the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder setProjectId(java.lang.CharSequence value) {
+      validate(fields()[3], value);
+      this.projectId = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'projectId' field has been set */
+    public boolean hasProjectId() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder clearProjectId() {
+      projectId = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     /** Gets the value of the 'profile' field */
     public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> getProfile() {
       return profile;
@@ -252,21 +301,21 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     
     /** Sets the value of the 'profile' field */
     public edu.berkeley.path.model_elements_base.DemandSet.Builder setProfile(java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.profile = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'profile' field has been set */
     public boolean hasProfile() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'profile' field */
     public edu.berkeley.path.model_elements_base.DemandSet.Builder clearProfile() {
       profile = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -277,7 +326,8 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.profile = fieldSetFlags()[3] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) defaultValue(fields()[3]);
+        record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.profile = fieldSetFlags()[4] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

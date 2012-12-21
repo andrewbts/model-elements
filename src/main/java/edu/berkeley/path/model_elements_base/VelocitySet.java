@@ -6,10 +6,11 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VelocitySet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"velocity\",\"type\":{\"type\":\"record\",\"name\":\"VelocityMap\",\"doc\":\"* Velocity on each link at a point in time\",\"fields\":[{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VelocitySet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"velocity\",\"type\":{\"type\":\"record\",\"name\":\"VelocityMap\",\"doc\":\"* Velocity on each link at a point in time\",\"fields\":[{\"name\":\"metersPerSecond\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
+  @Deprecated public java.lang.CharSequence projectId;
   @Deprecated public edu.berkeley.path.model_elements_base.VelocityMap velocity;
 
   /**
@@ -20,10 +21,11 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * All-args constructor.
    */
-  public VelocitySet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, edu.berkeley.path.model_elements_base.VelocityMap velocity) {
+  public VelocitySet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, edu.berkeley.path.model_elements_base.VelocityMap velocity) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.projectId = projectId;
     this.velocity = velocity;
   }
 
@@ -34,7 +36,8 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
     case 0: return id;
     case 1: return name;
     case 2: return description;
-    case 3: return velocity;
+    case 3: return projectId;
+    case 4: return velocity;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -45,7 +48,8 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
-    case 3: velocity = (edu.berkeley.path.model_elements_base.VelocityMap)value$; break;
+    case 3: projectId = (java.lang.CharSequence)value$; break;
+    case 4: velocity = (edu.berkeley.path.model_elements_base.VelocityMap)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -96,6 +100,21 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
   }
 
   /**
+   * Gets the value of the 'projectId' field.
+   */
+  public java.lang.CharSequence getProjectId() {
+    return projectId;
+  }
+
+  /**
+   * Sets the value of the 'projectId' field.
+   * @param value the value to set.
+   */
+  public void setProjectId(java.lang.CharSequence value) {
+    this.projectId = value;
+  }
+
+  /**
    * Gets the value of the 'velocity' field.
    */
   public edu.berkeley.path.model_elements_base.VelocityMap getVelocity() {
@@ -134,6 +153,7 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
+    private java.lang.CharSequence projectId;
     private edu.berkeley.path.model_elements_base.VelocityMap velocity;
 
     /** Creates a new Builder */
@@ -161,9 +181,13 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
         this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.velocity)) {
-        this.velocity = (edu.berkeley.path.model_elements_base.VelocityMap) data().deepCopy(fields()[3].schema(), other.velocity);
+      if (isValidValue(fields()[3], other.projectId)) {
+        this.projectId = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.projectId);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.velocity)) {
+        this.velocity = (edu.berkeley.path.model_elements_base.VelocityMap) data().deepCopy(fields()[4].schema(), other.velocity);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -242,6 +266,31 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
       return this;
     }
 
+    /** Gets the value of the 'projectId' field */
+    public java.lang.CharSequence getProjectId() {
+      return projectId;
+    }
+    
+    /** Sets the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.VelocitySet.Builder setProjectId(java.lang.CharSequence value) {
+      validate(fields()[3], value);
+      this.projectId = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'projectId' field has been set */
+    public boolean hasProjectId() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.VelocitySet.Builder clearProjectId() {
+      projectId = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     /** Gets the value of the 'velocity' field */
     public edu.berkeley.path.model_elements_base.VelocityMap getVelocity() {
       return velocity;
@@ -249,21 +298,21 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Sets the value of the 'velocity' field */
     public edu.berkeley.path.model_elements_base.VelocitySet.Builder setVelocity(edu.berkeley.path.model_elements_base.VelocityMap value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.velocity = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'velocity' field has been set */
     public boolean hasVelocity() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'velocity' field */
     public edu.berkeley.path.model_elements_base.VelocitySet.Builder clearVelocity() {
       velocity = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -274,7 +323,8 @@ public class VelocitySet extends org.apache.avro.specific.SpecificRecordBase imp
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.velocity = fieldSetFlags()[3] ? this.velocity : (edu.berkeley.path.model_elements_base.VelocityMap) defaultValue(fields()[3]);
+        record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.velocity = fieldSetFlags()[4] ? this.velocity : (edu.berkeley.path.model_elements_base.VelocityMap) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
