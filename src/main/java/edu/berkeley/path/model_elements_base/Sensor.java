@@ -7,14 +7,14 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc. */
 public class Sensor extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sensor\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"entity_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"measurement_feed_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"link_id\",\"type\":\"string\"},{\"name\":\"link_offset\",\"type\":\"double\",\"default\":0},{\"name\":\"lane_num\",\"type\":\"double\",\"default\":1},{\"name\":\"health_status\",\"type\":\"double\",\"default\":1}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sensor\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"]},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"]},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"default\":1}]}");
   @Deprecated public java.lang.CharSequence type;
-  @Deprecated public java.lang.CharSequence entity_id;
-  @Deprecated public java.lang.CharSequence measurement_feed_id;
-  @Deprecated public java.lang.CharSequence link_id;
-  @Deprecated public double link_offset;
-  @Deprecated public double lane_num;
-  @Deprecated public double health_status;
+  @Deprecated public java.lang.CharSequence entityId;
+  @Deprecated public java.lang.CharSequence measurementFeedId;
+  @Deprecated public java.lang.CharSequence linkId;
+  @Deprecated public double linkOffset;
+  @Deprecated public double laneNum;
+  @Deprecated public double healthStatus;
 
   /**
    * Default constructor.
@@ -24,14 +24,14 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * All-args constructor.
    */
-  public Sensor(java.lang.CharSequence type, java.lang.CharSequence entity_id, java.lang.CharSequence measurement_feed_id, java.lang.CharSequence link_id, java.lang.Double link_offset, java.lang.Double lane_num, java.lang.Double health_status) {
+  public Sensor(java.lang.CharSequence type, java.lang.CharSequence entityId, java.lang.CharSequence measurementFeedId, java.lang.CharSequence linkId, java.lang.Double linkOffset, java.lang.Double laneNum, java.lang.Double healthStatus) {
     this.type = type;
-    this.entity_id = entity_id;
-    this.measurement_feed_id = measurement_feed_id;
-    this.link_id = link_id;
-    this.link_offset = link_offset;
-    this.lane_num = lane_num;
-    this.health_status = health_status;
+    this.entityId = entityId;
+    this.measurementFeedId = measurementFeedId;
+    this.linkId = linkId;
+    this.linkOffset = linkOffset;
+    this.laneNum = laneNum;
+    this.healthStatus = healthStatus;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -39,12 +39,12 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return type;
-    case 1: return entity_id;
-    case 2: return measurement_feed_id;
-    case 3: return link_id;
-    case 4: return link_offset;
-    case 5: return lane_num;
-    case 6: return health_status;
+    case 1: return entityId;
+    case 2: return measurementFeedId;
+    case 3: return linkId;
+    case 4: return linkOffset;
+    case 5: return laneNum;
+    case 6: return healthStatus;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -53,12 +53,12 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: type = (java.lang.CharSequence)value$; break;
-    case 1: entity_id = (java.lang.CharSequence)value$; break;
-    case 2: measurement_feed_id = (java.lang.CharSequence)value$; break;
-    case 3: link_id = (java.lang.CharSequence)value$; break;
-    case 4: link_offset = (java.lang.Double)value$; break;
-    case 5: lane_num = (java.lang.Double)value$; break;
-    case 6: health_status = (java.lang.Double)value$; break;
+    case 1: entityId = (java.lang.CharSequence)value$; break;
+    case 2: measurementFeedId = (java.lang.CharSequence)value$; break;
+    case 3: linkId = (java.lang.CharSequence)value$; break;
+    case 4: linkOffset = (java.lang.Double)value$; break;
+    case 5: laneNum = (java.lang.Double)value$; break;
+    case 6: healthStatus = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -79,93 +79,93 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
   }
 
   /**
-   * Gets the value of the 'entity_id' field.
+   * Gets the value of the 'entityId' field.
    */
   public java.lang.CharSequence getEntityId() {
-    return entity_id;
+    return entityId;
   }
 
   /**
-   * Sets the value of the 'entity_id' field.
+   * Sets the value of the 'entityId' field.
    * @param value the value to set.
    */
   public void setEntityId(java.lang.CharSequence value) {
-    this.entity_id = value;
+    this.entityId = value;
   }
 
   /**
-   * Gets the value of the 'measurement_feed_id' field.
+   * Gets the value of the 'measurementFeedId' field.
    */
   public java.lang.CharSequence getMeasurementFeedId() {
-    return measurement_feed_id;
+    return measurementFeedId;
   }
 
   /**
-   * Sets the value of the 'measurement_feed_id' field.
+   * Sets the value of the 'measurementFeedId' field.
    * @param value the value to set.
    */
   public void setMeasurementFeedId(java.lang.CharSequence value) {
-    this.measurement_feed_id = value;
+    this.measurementFeedId = value;
   }
 
   /**
-   * Gets the value of the 'link_id' field.
+   * Gets the value of the 'linkId' field.
    */
   public java.lang.CharSequence getLinkId() {
-    return link_id;
+    return linkId;
   }
 
   /**
-   * Sets the value of the 'link_id' field.
+   * Sets the value of the 'linkId' field.
    * @param value the value to set.
    */
   public void setLinkId(java.lang.CharSequence value) {
-    this.link_id = value;
+    this.linkId = value;
   }
 
   /**
-   * Gets the value of the 'link_offset' field.
+   * Gets the value of the 'linkOffset' field.
    */
   public java.lang.Double getLinkOffset() {
-    return link_offset;
+    return linkOffset;
   }
 
   /**
-   * Sets the value of the 'link_offset' field.
+   * Sets the value of the 'linkOffset' field.
    * @param value the value to set.
    */
   public void setLinkOffset(java.lang.Double value) {
-    this.link_offset = value;
+    this.linkOffset = value;
   }
 
   /**
-   * Gets the value of the 'lane_num' field.
+   * Gets the value of the 'laneNum' field.
    */
   public java.lang.Double getLaneNum() {
-    return lane_num;
+    return laneNum;
   }
 
   /**
-   * Sets the value of the 'lane_num' field.
+   * Sets the value of the 'laneNum' field.
    * @param value the value to set.
    */
   public void setLaneNum(java.lang.Double value) {
-    this.lane_num = value;
+    this.laneNum = value;
   }
 
   /**
-   * Gets the value of the 'health_status' field.
+   * Gets the value of the 'healthStatus' field.
    */
   public java.lang.Double getHealthStatus() {
-    return health_status;
+    return healthStatus;
   }
 
   /**
-   * Sets the value of the 'health_status' field.
+   * Sets the value of the 'healthStatus' field.
    * @param value the value to set.
    */
   public void setHealthStatus(java.lang.Double value) {
-    this.health_status = value;
+    this.healthStatus = value;
   }
 
   /** Creates a new Sensor RecordBuilder */
@@ -190,12 +190,12 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
     implements org.apache.avro.data.RecordBuilder<Sensor> {
 
     private java.lang.CharSequence type;
-    private java.lang.CharSequence entity_id;
-    private java.lang.CharSequence measurement_feed_id;
-    private java.lang.CharSequence link_id;
-    private double link_offset;
-    private double lane_num;
-    private double health_status;
+    private java.lang.CharSequence entityId;
+    private java.lang.CharSequence measurementFeedId;
+    private java.lang.CharSequence linkId;
+    private double linkOffset;
+    private double laneNum;
+    private double healthStatus;
 
     /** Creates a new Builder */
     private Builder() {
@@ -214,28 +214,28 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
         this.type = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.type);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.entity_id)) {
-        this.entity_id = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.entity_id);
+      if (isValidValue(fields()[1], other.entityId)) {
+        this.entityId = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.entityId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.measurement_feed_id)) {
-        this.measurement_feed_id = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.measurement_feed_id);
+      if (isValidValue(fields()[2], other.measurementFeedId)) {
+        this.measurementFeedId = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.measurementFeedId);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.link_id)) {
-        this.link_id = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.link_id);
+      if (isValidValue(fields()[3], other.linkId)) {
+        this.linkId = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.linkId);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.link_offset)) {
-        this.link_offset = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.link_offset);
+      if (isValidValue(fields()[4], other.linkOffset)) {
+        this.linkOffset = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.linkOffset);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.lane_num)) {
-        this.lane_num = (java.lang.Double) data().deepCopy(fields()[5].schema(), other.lane_num);
+      if (isValidValue(fields()[5], other.laneNum)) {
+        this.laneNum = (java.lang.Double) data().deepCopy(fields()[5].schema(), other.laneNum);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.health_status)) {
-        this.health_status = (java.lang.Double) data().deepCopy(fields()[6].schema(), other.health_status);
+      if (isValidValue(fields()[6], other.healthStatus)) {
+        this.healthStatus = (java.lang.Double) data().deepCopy(fields()[6].schema(), other.healthStatus);
         fieldSetFlags()[6] = true;
       }
     }
@@ -265,148 +265,148 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
       return this;
     }
 
-    /** Gets the value of the 'entity_id' field */
+    /** Gets the value of the 'entityId' field */
     public java.lang.CharSequence getEntityId() {
-      return entity_id;
+      return entityId;
     }
     
-    /** Sets the value of the 'entity_id' field */
+    /** Sets the value of the 'entityId' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder setEntityId(java.lang.CharSequence value) {
       validate(fields()[1], value);
-      this.entity_id = value;
+      this.entityId = value;
       fieldSetFlags()[1] = true;
       return this; 
     }
     
-    /** Checks whether the 'entity_id' field has been set */
+    /** Checks whether the 'entityId' field has been set */
     public boolean hasEntityId() {
       return fieldSetFlags()[1];
     }
     
-    /** Clears the value of the 'entity_id' field */
+    /** Clears the value of the 'entityId' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder clearEntityId() {
-      entity_id = null;
+      entityId = null;
       fieldSetFlags()[1] = false;
       return this;
     }
 
-    /** Gets the value of the 'measurement_feed_id' field */
+    /** Gets the value of the 'measurementFeedId' field */
     public java.lang.CharSequence getMeasurementFeedId() {
-      return measurement_feed_id;
+      return measurementFeedId;
     }
     
-    /** Sets the value of the 'measurement_feed_id' field */
+    /** Sets the value of the 'measurementFeedId' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder setMeasurementFeedId(java.lang.CharSequence value) {
       validate(fields()[2], value);
-      this.measurement_feed_id = value;
+      this.measurementFeedId = value;
       fieldSetFlags()[2] = true;
       return this; 
     }
     
-    /** Checks whether the 'measurement_feed_id' field has been set */
+    /** Checks whether the 'measurementFeedId' field has been set */
     public boolean hasMeasurementFeedId() {
       return fieldSetFlags()[2];
     }
     
-    /** Clears the value of the 'measurement_feed_id' field */
+    /** Clears the value of the 'measurementFeedId' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder clearMeasurementFeedId() {
-      measurement_feed_id = null;
+      measurementFeedId = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
-    /** Gets the value of the 'link_id' field */
+    /** Gets the value of the 'linkId' field */
     public java.lang.CharSequence getLinkId() {
-      return link_id;
+      return linkId;
     }
     
-    /** Sets the value of the 'link_id' field */
+    /** Sets the value of the 'linkId' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder setLinkId(java.lang.CharSequence value) {
       validate(fields()[3], value);
-      this.link_id = value;
+      this.linkId = value;
       fieldSetFlags()[3] = true;
       return this; 
     }
     
-    /** Checks whether the 'link_id' field has been set */
+    /** Checks whether the 'linkId' field has been set */
     public boolean hasLinkId() {
       return fieldSetFlags()[3];
     }
     
-    /** Clears the value of the 'link_id' field */
+    /** Clears the value of the 'linkId' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder clearLinkId() {
-      link_id = null;
+      linkId = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
-    /** Gets the value of the 'link_offset' field */
+    /** Gets the value of the 'linkOffset' field */
     public java.lang.Double getLinkOffset() {
-      return link_offset;
+      return linkOffset;
     }
     
-    /** Sets the value of the 'link_offset' field */
+    /** Sets the value of the 'linkOffset' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder setLinkOffset(double value) {
       validate(fields()[4], value);
-      this.link_offset = value;
+      this.linkOffset = value;
       fieldSetFlags()[4] = true;
       return this; 
     }
     
-    /** Checks whether the 'link_offset' field has been set */
+    /** Checks whether the 'linkOffset' field has been set */
     public boolean hasLinkOffset() {
       return fieldSetFlags()[4];
     }
     
-    /** Clears the value of the 'link_offset' field */
+    /** Clears the value of the 'linkOffset' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder clearLinkOffset() {
       fieldSetFlags()[4] = false;
       return this;
     }
 
-    /** Gets the value of the 'lane_num' field */
+    /** Gets the value of the 'laneNum' field */
     public java.lang.Double getLaneNum() {
-      return lane_num;
+      return laneNum;
     }
     
-    /** Sets the value of the 'lane_num' field */
+    /** Sets the value of the 'laneNum' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder setLaneNum(double value) {
       validate(fields()[5], value);
-      this.lane_num = value;
+      this.laneNum = value;
       fieldSetFlags()[5] = true;
       return this; 
     }
     
-    /** Checks whether the 'lane_num' field has been set */
+    /** Checks whether the 'laneNum' field has been set */
     public boolean hasLaneNum() {
       return fieldSetFlags()[5];
     }
     
-    /** Clears the value of the 'lane_num' field */
+    /** Clears the value of the 'laneNum' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder clearLaneNum() {
       fieldSetFlags()[5] = false;
       return this;
     }
 
-    /** Gets the value of the 'health_status' field */
+    /** Gets the value of the 'healthStatus' field */
     public java.lang.Double getHealthStatus() {
-      return health_status;
+      return healthStatus;
     }
     
-    /** Sets the value of the 'health_status' field */
+    /** Sets the value of the 'healthStatus' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder setHealthStatus(double value) {
       validate(fields()[6], value);
-      this.health_status = value;
+      this.healthStatus = value;
       fieldSetFlags()[6] = true;
       return this; 
     }
     
-    /** Checks whether the 'health_status' field has been set */
+    /** Checks whether the 'healthStatus' field has been set */
     public boolean hasHealthStatus() {
       return fieldSetFlags()[6];
     }
     
-    /** Clears the value of the 'health_status' field */
+    /** Clears the value of the 'healthStatus' field */
     public edu.berkeley.path.model_elements_base.Sensor.Builder clearHealthStatus() {
       fieldSetFlags()[6] = false;
       return this;
@@ -417,12 +417,12 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
       try {
         Sensor record = new Sensor();
         record.type = fieldSetFlags()[0] ? this.type : (java.lang.CharSequence) defaultValue(fields()[0]);
-        record.entity_id = fieldSetFlags()[1] ? this.entity_id : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.measurement_feed_id = fieldSetFlags()[2] ? this.measurement_feed_id : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.link_id = fieldSetFlags()[3] ? this.link_id : (java.lang.CharSequence) defaultValue(fields()[3]);
-        record.link_offset = fieldSetFlags()[4] ? this.link_offset : (java.lang.Double) defaultValue(fields()[4]);
-        record.lane_num = fieldSetFlags()[5] ? this.lane_num : (java.lang.Double) defaultValue(fields()[5]);
-        record.health_status = fieldSetFlags()[6] ? this.health_status : (java.lang.Double) defaultValue(fields()[6]);
+        record.entityId = fieldSetFlags()[1] ? this.entityId : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.measurementFeedId = fieldSetFlags()[2] ? this.measurementFeedId : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.linkId = fieldSetFlags()[3] ? this.linkId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.linkOffset = fieldSetFlags()[4] ? this.linkOffset : (java.lang.Double) defaultValue(fields()[4]);
+        record.laneNum = fieldSetFlags()[5] ? this.laneNum : (java.lang.Double) defaultValue(fields()[5]);
+        record.healthStatus = fieldSetFlags()[6] ? this.healthStatus : (java.lang.Double) defaultValue(fields()[6]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

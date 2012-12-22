@@ -336,12 +336,12 @@ protocol CC {
    */
   record Sensor {
     string type; // "Loop", etc
-    union {null, string} entity_id;  // ID of original detector, e.g. VDS ID
-    union {null, string} measurement_feed_id; // data feed associated with this sensor
-    string link_id; // ### todo: camel case for consistency
-    double link_offset = 0;
-    double lane_num = 1;
-    double health_status = 1; // healthy by default
+    union {null, string} entityId;  // ID of original detector, e.g. VDS ID
+    union {null, string} measurementFeedId; // data feed associated with this sensor
+    string linkId;
+    double linkOffset = 0;
+    double laneNum = 1;
+    double healthStatus = 1; // healthy by default
   }
 
   /**
