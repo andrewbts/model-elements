@@ -64,13 +64,6 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 				+ type + "' encountered.");
 	}
 
-	@Override
-	@Deprecated
-	public CharSequence getType() {
-		throw new UnsupportedOperationException(
-				"Use method getSensorTypeEnum instead.");
-	}
-
 	/**
 	 * @param type Sensor type (Loop, etc), an element of the SensorTypeEnum enumeration
 	 */
@@ -97,12 +90,4 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 		}
 		super.setType(typeString);
 	}
-
-	@Override
-	@Deprecated
-	public void setType(CharSequence value) {
-		throw new UnsupportedOperationException(
-				"Use method setSensorTypeEnum instead.");
-	}
-  
 }
