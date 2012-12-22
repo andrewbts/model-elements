@@ -42,7 +42,15 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 	public void setLinkId(Long id) {
 		setLinkId(id.toString());
 	}
+	
+	public Long getLongMeasurementFeedId() {
+		return Long.parseLong(getMeasurementFeedId().toString());
+	}
   
+	public void setMeasurementFeedId(Long id) {
+		setMeasurementFeedId(id.toString());
+	}
+	
 	/**
 	 * @return Sensor type (Loop, etc)
 	 */
