@@ -27,14 +27,6 @@
 package edu.berkeley.path.model_elements;
 
 public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
-  public Long getLongId() {
-    return Long.parseLong(getId().toString());
-  }
-  
-  public void setId(Long id) {
-    setId(id.toString());
-  }
-  
 	public Long getLongLinkId() {
 		return Long.parseLong(getLinkId().toString());
 	}
