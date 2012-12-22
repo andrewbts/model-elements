@@ -5,15 +5,20 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** * Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc. */
+/** * Sensor that can describe loop detector, magnetic detector, TMC,
+   * camera, radar, etc. */
 public class Sensor extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sensor\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"]},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"]},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"default\":1}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Sensor\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC,\\n   * camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\",\"doc\":\"* \\\"Loop\\\", etc. Translated to numeric type in the DB.\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"],\"doc\":\"* ID of original detector, e.g. VDS ID\"},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"],\"doc\":\"* data feed associated with this sensor\"},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"doc\":\"* healthy by default\",\"default\":1}]}");
+  /** * "Loop", etc. Translated to numeric type in the DB. */
   @Deprecated public java.lang.CharSequence type;
+  /** * ID of original detector, e.g. VDS ID */
   @Deprecated public java.lang.CharSequence entityId;
+  /** * data feed associated with this sensor */
   @Deprecated public java.lang.CharSequence measurementFeedId;
   @Deprecated public java.lang.CharSequence linkId;
   @Deprecated public double linkOffset;
   @Deprecated public double laneNum;
+  /** * healthy by default */
   @Deprecated public double healthStatus;
 
   /**
@@ -65,14 +70,14 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'type' field.
-   */
+   * * "Loop", etc. Translated to numeric type in the DB.   */
   public java.lang.CharSequence getType() {
     return type;
   }
 
   /**
    * Sets the value of the 'type' field.
-   * @param value the value to set.
+   * * "Loop", etc. Translated to numeric type in the DB.   * @param value the value to set.
    */
   public void setType(java.lang.CharSequence value) {
     this.type = value;
@@ -80,14 +85,14 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'entityId' field.
-   */
+   * * ID of original detector, e.g. VDS ID   */
   public java.lang.CharSequence getEntityId() {
     return entityId;
   }
 
   /**
    * Sets the value of the 'entityId' field.
-   * @param value the value to set.
+   * * ID of original detector, e.g. VDS ID   * @param value the value to set.
    */
   public void setEntityId(java.lang.CharSequence value) {
     this.entityId = value;
@@ -95,14 +100,14 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'measurementFeedId' field.
-   */
+   * * data feed associated with this sensor   */
   public java.lang.CharSequence getMeasurementFeedId() {
     return measurementFeedId;
   }
 
   /**
    * Sets the value of the 'measurementFeedId' field.
-   * @param value the value to set.
+   * * data feed associated with this sensor   * @param value the value to set.
    */
   public void setMeasurementFeedId(java.lang.CharSequence value) {
     this.measurementFeedId = value;
@@ -155,14 +160,14 @@ public class Sensor extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * Gets the value of the 'healthStatus' field.
-   */
+   * * healthy by default   */
   public java.lang.Double getHealthStatus() {
     return healthStatus;
   }
 
   /**
    * Sets the value of the 'healthStatus' field.
-   * @param value the value to set.
+   * * healthy by default   * @param value the value to set.
    */
   public void setHealthStatus(java.lang.Double value) {
     this.healthStatus = value;

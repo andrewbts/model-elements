@@ -332,16 +332,33 @@ protocol CC {
   }
 
   /**
-   * Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.
+   * Sensor that can describe loop detector, magnetic detector, TMC,
+   * camera, radar, etc.
    */
   record Sensor {
-    string type; // "Loop", etc
-    union {null, string} entityId;  // ID of original detector, e.g. VDS ID
-    union {null, string} measurementFeedId; // data feed associated with this sensor
+    /**
+     * "Loop", etc. Translated to numeric type in the DB.
+     */
+    string type;
+
+    /**
+     * ID of original detector, e.g. VDS ID
+     */
+    union {null, string} entityId;
+
+    /**
+     * data feed associated with this sensor
+     */
+    union {null, string} measurementFeedId;
+
     string linkId;
     double linkOffset = 0;
     double laneNum = 1;
-    double healthStatus = 1; // healthy by default
+
+    /**
+     * healthy by default
+     */
+    double healthStatus = 1;
   }
 
   /**
