@@ -42,6 +42,10 @@ public class SensorSet extends edu.berkeley.path.model_elements_base.SensorSet {
     return Long.parseLong(getProjectId().toString());
   }
   
+  public void setProjectId(Long id) {
+    setProjectId(id.toString());
+  }
+  
 	@SuppressWarnings("unchecked")
 	public void setSensorList(List<Sensor> sensors) {
 		super.setSensors((List<edu.berkeley.path.model_elements_base.Sensor>) (List<?>) sensors);
