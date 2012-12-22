@@ -51,17 +51,5 @@ public class SensorSet extends edu.berkeley.path.model_elements_base.SensorSet {
 	public List<Sensor> getSensorList() {
 		return (List<Sensor>) (List<?>) getSensors();
 	}
-
-	@Deprecated
-	@Override
-	public List<edu.berkeley.path.model_elements_base.Sensor> getSensors() {
-		throw new UnsupportedOperationException("Use getSensorList instead.");
-	}
-
-	@Deprecated
-	@Override
-	public void setSensors(List<edu.berkeley.path.model_elements_base.Sensor> value) {
-		throw new UnsupportedOperationException("Use setSensorList instead.");
-	}
   
 }
