@@ -27,4 +27,11 @@
 package edu.berkeley.path.model_elements;
 
 public class FDType extends edu.berkeley.path.model_elements_base.FDType {
+  public Long getLongId() {
+    return Long.parseLong(getId().toString());
+  }
+  
+  public void setId(Long id) {
+    setId(id.toString());
+  }
 }

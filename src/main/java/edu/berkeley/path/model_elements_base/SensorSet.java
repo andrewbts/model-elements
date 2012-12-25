@@ -7,10 +7,11 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * Set of sensors residing on links in potentially multiple networks. */
 public class SensorSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SensorSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Set of sensors residing on links in potentially multiple networks.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"sensors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Sensor\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"entity_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"measurement_feed_id\",\"type\":[\"null\",\"string\"]},{\"name\":\"link_id\",\"type\":\"string\"},{\"name\":\"link_offset\",\"type\":\"double\",\"default\":0},{\"name\":\"lane_num\",\"type\":\"double\",\"default\":1},{\"name\":\"health_status\",\"type\":\"double\",\"default\":1}]}}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SensorSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Set of sensors residing on links in potentially multiple networks.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"sensors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Sensor\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC,\\n   * camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\",\"doc\":\"* \\\"Loop\\\", etc. Translated to numeric type in the DB.\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"],\"doc\":\"* ID of original detector, e.g. VDS ID\"},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"],\"doc\":\"* data feed associated with this sensor\"},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"doc\":\"* healthy by default\",\"default\":1}]}}}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
+  @Deprecated public java.lang.CharSequence projectId;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors;
 
   /**
@@ -21,10 +22,11 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public SensorSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors) {
+  public SensorSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.projectId = projectId;
     this.sensors = sensors;
   }
 
@@ -35,7 +37,8 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: return id;
     case 1: return name;
     case 2: return description;
-    case 3: return sensors;
+    case 3: return projectId;
+    case 4: return sensors;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -46,7 +49,8 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
-    case 3: sensors = (java.util.List<edu.berkeley.path.model_elements_base.Sensor>)value$; break;
+    case 3: projectId = (java.lang.CharSequence)value$; break;
+    case 4: sensors = (java.util.List<edu.berkeley.path.model_elements_base.Sensor>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -97,6 +101,21 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
   }
 
   /**
+   * Gets the value of the 'projectId' field.
+   */
+  public java.lang.CharSequence getProjectId() {
+    return projectId;
+  }
+
+  /**
+   * Sets the value of the 'projectId' field.
+   * @param value the value to set.
+   */
+  public void setProjectId(java.lang.CharSequence value) {
+    this.projectId = value;
+  }
+
+  /**
    * Gets the value of the 'sensors' field.
    */
   public java.util.List<edu.berkeley.path.model_elements_base.Sensor> getSensors() {
@@ -135,6 +154,7 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
+    private java.lang.CharSequence projectId;
     private java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors;
 
     /** Creates a new Builder */
@@ -162,9 +182,13 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
         this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.sensors)) {
-        this.sensors = (java.util.List<edu.berkeley.path.model_elements_base.Sensor>) data().deepCopy(fields()[3].schema(), other.sensors);
+      if (isValidValue(fields()[3], other.projectId)) {
+        this.projectId = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.projectId);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.sensors)) {
+        this.sensors = (java.util.List<edu.berkeley.path.model_elements_base.Sensor>) data().deepCopy(fields()[4].schema(), other.sensors);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -243,6 +267,31 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /** Gets the value of the 'projectId' field */
+    public java.lang.CharSequence getProjectId() {
+      return projectId;
+    }
+    
+    /** Sets the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.SensorSet.Builder setProjectId(java.lang.CharSequence value) {
+      validate(fields()[3], value);
+      this.projectId = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'projectId' field has been set */
+    public boolean hasProjectId() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.SensorSet.Builder clearProjectId() {
+      projectId = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     /** Gets the value of the 'sensors' field */
     public java.util.List<edu.berkeley.path.model_elements_base.Sensor> getSensors() {
       return sensors;
@@ -250,21 +299,21 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     
     /** Sets the value of the 'sensors' field */
     public edu.berkeley.path.model_elements_base.SensorSet.Builder setSensors(java.util.List<edu.berkeley.path.model_elements_base.Sensor> value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.sensors = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'sensors' field has been set */
     public boolean hasSensors() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'sensors' field */
     public edu.berkeley.path.model_elements_base.SensorSet.Builder clearSensors() {
       sensors = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -275,7 +324,8 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.sensors = fieldSetFlags()[3] ? this.sensors : (java.util.List<edu.berkeley.path.model_elements_base.Sensor>) defaultValue(fields()[3]);
+        record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.sensors = fieldSetFlags()[4] ? this.sensors : (java.util.List<edu.berkeley.path.model_elements_base.Sensor>) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

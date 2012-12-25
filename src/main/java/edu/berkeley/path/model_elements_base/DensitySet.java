@@ -6,10 +6,11 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class DensitySet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DensitySet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"density\",\"type\":{\"type\":\"record\",\"name\":\"DensityMap\",\"doc\":\"* Density on each link at a point in time\",\"fields\":[{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DensitySet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"density\",\"type\":{\"type\":\"record\",\"name\":\"DensityMap\",\"doc\":\"* Density on each link at a point in time\",\"fields\":[{\"name\":\"vehiclesPerMeter\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is linkId\",\"default\":{}}]}}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
+  @Deprecated public java.lang.CharSequence projectId;
   @Deprecated public edu.berkeley.path.model_elements_base.DensityMap density;
 
   /**
@@ -20,10 +21,11 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * All-args constructor.
    */
-  public DensitySet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, edu.berkeley.path.model_elements_base.DensityMap density) {
+  public DensitySet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, edu.berkeley.path.model_elements_base.DensityMap density) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.projectId = projectId;
     this.density = density;
   }
 
@@ -34,7 +36,8 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
     case 0: return id;
     case 1: return name;
     case 2: return description;
-    case 3: return density;
+    case 3: return projectId;
+    case 4: return density;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -45,7 +48,8 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
-    case 3: density = (edu.berkeley.path.model_elements_base.DensityMap)value$; break;
+    case 3: projectId = (java.lang.CharSequence)value$; break;
+    case 4: density = (edu.berkeley.path.model_elements_base.DensityMap)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -96,6 +100,21 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
   }
 
   /**
+   * Gets the value of the 'projectId' field.
+   */
+  public java.lang.CharSequence getProjectId() {
+    return projectId;
+  }
+
+  /**
+   * Sets the value of the 'projectId' field.
+   * @param value the value to set.
+   */
+  public void setProjectId(java.lang.CharSequence value) {
+    this.projectId = value;
+  }
+
+  /**
    * Gets the value of the 'density' field.
    */
   public edu.berkeley.path.model_elements_base.DensityMap getDensity() {
@@ -134,6 +153,7 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
+    private java.lang.CharSequence projectId;
     private edu.berkeley.path.model_elements_base.DensityMap density;
 
     /** Creates a new Builder */
@@ -161,9 +181,13 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
         this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.density)) {
-        this.density = (edu.berkeley.path.model_elements_base.DensityMap) data().deepCopy(fields()[3].schema(), other.density);
+      if (isValidValue(fields()[3], other.projectId)) {
+        this.projectId = (java.lang.CharSequence) data().deepCopy(fields()[3].schema(), other.projectId);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.density)) {
+        this.density = (edu.berkeley.path.model_elements_base.DensityMap) data().deepCopy(fields()[4].schema(), other.density);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -242,6 +266,31 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
       return this;
     }
 
+    /** Gets the value of the 'projectId' field */
+    public java.lang.CharSequence getProjectId() {
+      return projectId;
+    }
+    
+    /** Sets the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.DensitySet.Builder setProjectId(java.lang.CharSequence value) {
+      validate(fields()[3], value);
+      this.projectId = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'projectId' field has been set */
+    public boolean hasProjectId() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'projectId' field */
+    public edu.berkeley.path.model_elements_base.DensitySet.Builder clearProjectId() {
+      projectId = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     /** Gets the value of the 'density' field */
     public edu.berkeley.path.model_elements_base.DensityMap getDensity() {
       return density;
@@ -249,21 +298,21 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
     
     /** Sets the value of the 'density' field */
     public edu.berkeley.path.model_elements_base.DensitySet.Builder setDensity(edu.berkeley.path.model_elements_base.DensityMap value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.density = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this; 
     }
     
     /** Checks whether the 'density' field has been set */
     public boolean hasDensity() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
     
     /** Clears the value of the 'density' field */
     public edu.berkeley.path.model_elements_base.DensitySet.Builder clearDensity() {
       density = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -274,7 +323,8 @@ public class DensitySet extends org.apache.avro.specific.SpecificRecordBase impl
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
-        record.density = fieldSetFlags()[3] ? this.density : (edu.berkeley.path.model_elements_base.DensityMap) defaultValue(fields()[3]);
+        record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
+        record.density = fieldSetFlags()[4] ? this.density : (edu.berkeley.path.model_elements_base.DensityMap) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

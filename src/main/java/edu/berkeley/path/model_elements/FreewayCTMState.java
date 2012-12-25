@@ -116,4 +116,17 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 		return super.getQueueLength().get(link.getId()).doubleValue();		
 	}	
 	
+  /**
+   * Gets the linkState map.
+   **/
+  public Map<CharSequence,FreewayLinkState> getLinkStateMap() {
+    return (Map<CharSequence,FreewayLinkState>)(Map<?,?>)linkState;
+  }
+
+  /**
+   * Gets the queueLength map.
+   **/
+  public Map<CharSequence,Double> getQueueLengthMap() {
+    return queueLength;
+  }
 }

@@ -88,6 +88,10 @@ public class Network extends edu.berkeley.path.model_elements_base.Network {
   public void setId(Long id) {
     setId(id.toString());
   }
+  
+  public Long getLongProjectId() {
+    return Long.parseLong(getProjectId().toString());
+  }
 
   // TODO methods to add, remove, set links call resolveReferences
   // TODO find a better way to expose List<Node> access.

@@ -8,16 +8,16 @@ package edu.berkeley.path.model_elements_base;
 /** * Fundamental diagram parameters on one link at one time.
    * Flow and density values are per lane in SI units. */
 public class FD extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FD\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":\"double\"},{\"name\":\"criticalSpeed\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeed\",\"type\":\"double\"},{\"name\":\"capacity\",\"type\":\"double\"},{\"name\":\"jamDensity\",\"type\":\"double\"},{\"name\":\"capacityDrop\",\"type\":\"double\"},{\"name\":\"freeFlowSpeedStd\",\"type\":\"double\"},{\"name\":\"congestionWaveSpeedStd\",\"type\":\"double\"},{\"name\":\"capacityStd\",\"type\":\"double\"}]}");
-  @Deprecated public double freeFlowSpeed;
-  @Deprecated public double criticalSpeed;
-  @Deprecated public double congestionWaveSpeed;
-  @Deprecated public double capacity;
-  @Deprecated public double jamDensity;
-  @Deprecated public double capacityDrop;
-  @Deprecated public double freeFlowSpeedStd;
-  @Deprecated public double congestionWaveSpeedStd;
-  @Deprecated public double capacityStd;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FD\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"criticalSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacity\",\"type\":[\"null\",\"double\"]},{\"name\":\"jamDensity\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityDrop\",\"type\":[\"null\",\"double\"]},{\"name\":\"freeFlowSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityStd\",\"type\":[\"null\",\"double\"]}]}");
+  @Deprecated public java.lang.Double freeFlowSpeed;
+  @Deprecated public java.lang.Double criticalSpeed;
+  @Deprecated public java.lang.Double congestionWaveSpeed;
+  @Deprecated public java.lang.Double capacity;
+  @Deprecated public java.lang.Double jamDensity;
+  @Deprecated public java.lang.Double capacityDrop;
+  @Deprecated public java.lang.Double freeFlowSpeedStd;
+  @Deprecated public java.lang.Double congestionWaveSpeedStd;
+  @Deprecated public java.lang.Double capacityStd;
 
   /**
    * Default constructor.
@@ -228,15 +228,15 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FD>
     implements org.apache.avro.data.RecordBuilder<FD> {
 
-    private double freeFlowSpeed;
-    private double criticalSpeed;
-    private double congestionWaveSpeed;
-    private double capacity;
-    private double jamDensity;
-    private double capacityDrop;
-    private double freeFlowSpeedStd;
-    private double congestionWaveSpeedStd;
-    private double capacityStd;
+    private java.lang.Double freeFlowSpeed;
+    private java.lang.Double criticalSpeed;
+    private java.lang.Double congestionWaveSpeed;
+    private java.lang.Double capacity;
+    private java.lang.Double jamDensity;
+    private java.lang.Double capacityDrop;
+    private java.lang.Double freeFlowSpeedStd;
+    private java.lang.Double congestionWaveSpeedStd;
+    private java.lang.Double capacityStd;
 
     /** Creates a new Builder */
     private Builder() {
@@ -295,7 +295,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'freeFlowSpeed' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setFreeFlowSpeed(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setFreeFlowSpeed(java.lang.Double value) {
       validate(fields()[0], value);
       this.freeFlowSpeed = value;
       fieldSetFlags()[0] = true;
@@ -309,6 +309,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'freeFlowSpeed' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearFreeFlowSpeed() {
+      freeFlowSpeed = null;
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -319,7 +320,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'criticalSpeed' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCriticalSpeed(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setCriticalSpeed(java.lang.Double value) {
       validate(fields()[1], value);
       this.criticalSpeed = value;
       fieldSetFlags()[1] = true;
@@ -333,6 +334,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'criticalSpeed' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCriticalSpeed() {
+      criticalSpeed = null;
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -343,7 +345,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'congestionWaveSpeed' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCongestionWaveSpeed(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setCongestionWaveSpeed(java.lang.Double value) {
       validate(fields()[2], value);
       this.congestionWaveSpeed = value;
       fieldSetFlags()[2] = true;
@@ -357,6 +359,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'congestionWaveSpeed' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCongestionWaveSpeed() {
+      congestionWaveSpeed = null;
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -367,7 +370,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'capacity' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCapacity(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setCapacity(java.lang.Double value) {
       validate(fields()[3], value);
       this.capacity = value;
       fieldSetFlags()[3] = true;
@@ -381,6 +384,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'capacity' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCapacity() {
+      capacity = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -391,7 +395,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'jamDensity' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setJamDensity(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setJamDensity(java.lang.Double value) {
       validate(fields()[4], value);
       this.jamDensity = value;
       fieldSetFlags()[4] = true;
@@ -405,6 +409,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'jamDensity' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearJamDensity() {
+      jamDensity = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -415,7 +420,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'capacityDrop' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCapacityDrop(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setCapacityDrop(java.lang.Double value) {
       validate(fields()[5], value);
       this.capacityDrop = value;
       fieldSetFlags()[5] = true;
@@ -429,6 +434,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'capacityDrop' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCapacityDrop() {
+      capacityDrop = null;
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -439,7 +445,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'freeFlowSpeedStd' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setFreeFlowSpeedStd(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setFreeFlowSpeedStd(java.lang.Double value) {
       validate(fields()[6], value);
       this.freeFlowSpeedStd = value;
       fieldSetFlags()[6] = true;
@@ -453,6 +459,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'freeFlowSpeedStd' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearFreeFlowSpeedStd() {
+      freeFlowSpeedStd = null;
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -463,7 +470,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'congestionWaveSpeedStd' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCongestionWaveSpeedStd(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setCongestionWaveSpeedStd(java.lang.Double value) {
       validate(fields()[7], value);
       this.congestionWaveSpeedStd = value;
       fieldSetFlags()[7] = true;
@@ -477,6 +484,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'congestionWaveSpeedStd' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCongestionWaveSpeedStd() {
+      congestionWaveSpeedStd = null;
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -487,7 +495,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     }
     
     /** Sets the value of the 'capacityStd' field */
-    public edu.berkeley.path.model_elements_base.FD.Builder setCapacityStd(double value) {
+    public edu.berkeley.path.model_elements_base.FD.Builder setCapacityStd(java.lang.Double value) {
       validate(fields()[8], value);
       this.capacityStd = value;
       fieldSetFlags()[8] = true;
@@ -501,6 +509,7 @@ public class FD extends org.apache.avro.specific.SpecificRecordBase implements o
     
     /** Clears the value of the 'capacityStd' field */
     public edu.berkeley.path.model_elements_base.FD.Builder clearCapacityStd() {
+      capacityStd = null;
       fieldSetFlags()[8] = false;
       return this;
     }

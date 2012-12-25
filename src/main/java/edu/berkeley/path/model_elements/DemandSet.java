@@ -125,4 +125,8 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
   public void setId(Long id) {
     setId(id.toString());
   }
+  
+  public Long getLongProjectId() {
+    return Long.parseLong(getProjectId().toString());
+  }
 }

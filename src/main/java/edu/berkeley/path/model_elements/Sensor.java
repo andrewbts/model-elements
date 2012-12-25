@@ -27,7 +27,6 @@
 package edu.berkeley.path.model_elements;
 
 public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
-
 	public Long getLongLinkId() {
 		return Long.parseLong(getLinkId().toString());
 	}
@@ -35,7 +34,15 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 	public void setLinkId(Long id) {
 		setLinkId(id.toString());
 	}
+	
+	public Long getLongMeasurementFeedId() {
+		return Long.parseLong(getMeasurementFeedId().toString());
+	}
   
+	public void setMeasurementFeedId(Long id) {
+		setMeasurementFeedId(id.toString());
+	}
+	
 	/**
 	 * @return Sensor type (Loop, etc)
 	 */
@@ -55,13 +62,6 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 
 		throw new UnsupportedOperationException("Unknown sensor type string '"
 				+ type + "' encountered.");
-	}
-
-	@Override
-	@Deprecated
-	public CharSequence getType() {
-		throw new UnsupportedOperationException(
-				"Use method getSensorTypeEnum instead.");
 	}
 
 	/**
@@ -90,12 +90,4 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 		}
 		super.setType(typeString);
 	}
-
-	@Override
-	@Deprecated
-	public void setType(CharSequence value) {
-		throw new UnsupportedOperationException(
-				"Use method setSensorTypeEnum instead.");
-	}
-  
 }

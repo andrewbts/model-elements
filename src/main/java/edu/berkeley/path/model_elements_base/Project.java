@@ -5,10 +5,8 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** * Referenced by FDSet to indicate the way the contained FDs should
-   * be interpreted. */
-public class FDType extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FDType\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Referenced by FDSet to indicate the way the contained FDs should\\n   * be interpreted.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}");
+public class Project extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Project\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
@@ -16,12 +14,12 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
   /**
    * Default constructor.
    */
-  public FDType() {}
+  public Project() {}
 
   /**
    * All-args constructor.
    */
-  public FDType(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description) {
+  public Project(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -93,26 +91,26 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     this.description = value;
   }
 
-  /** Creates a new FDType RecordBuilder */
-  public static edu.berkeley.path.model_elements_base.FDType.Builder newBuilder() {
-    return new edu.berkeley.path.model_elements_base.FDType.Builder();
+  /** Creates a new Project RecordBuilder */
+  public static edu.berkeley.path.model_elements_base.Project.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements_base.Project.Builder();
   }
   
-  /** Creates a new FDType RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.model_elements_base.FDType.Builder newBuilder(edu.berkeley.path.model_elements_base.FDType.Builder other) {
-    return new edu.berkeley.path.model_elements_base.FDType.Builder(other);
+  /** Creates a new Project RecordBuilder by copying an existing Builder */
+  public static edu.berkeley.path.model_elements_base.Project.Builder newBuilder(edu.berkeley.path.model_elements_base.Project.Builder other) {
+    return new edu.berkeley.path.model_elements_base.Project.Builder(other);
   }
   
-  /** Creates a new FDType RecordBuilder by copying an existing FDType instance */
-  public static edu.berkeley.path.model_elements_base.FDType.Builder newBuilder(edu.berkeley.path.model_elements_base.FDType other) {
-    return new edu.berkeley.path.model_elements_base.FDType.Builder(other);
+  /** Creates a new Project RecordBuilder by copying an existing Project instance */
+  public static edu.berkeley.path.model_elements_base.Project.Builder newBuilder(edu.berkeley.path.model_elements_base.Project other) {
+    return new edu.berkeley.path.model_elements_base.Project.Builder(other);
   }
   
   /**
-   * RecordBuilder for FDType instances.
+   * RecordBuilder for Project instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FDType>
-    implements org.apache.avro.data.RecordBuilder<FDType> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Project>
+    implements org.apache.avro.data.RecordBuilder<Project> {
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
@@ -120,17 +118,17 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.model_elements_base.FDType.SCHEMA$);
+      super(edu.berkeley.path.model_elements_base.Project.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.model_elements_base.FDType.Builder other) {
+    private Builder(edu.berkeley.path.model_elements_base.Project.Builder other) {
       super(other);
     }
     
-    /** Creates a Builder by copying an existing FDType instance */
-    private Builder(edu.berkeley.path.model_elements_base.FDType other) {
-            super(edu.berkeley.path.model_elements_base.FDType.SCHEMA$);
+    /** Creates a Builder by copying an existing Project instance */
+    private Builder(edu.berkeley.path.model_elements_base.Project other) {
+            super(edu.berkeley.path.model_elements_base.Project.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -151,7 +149,7 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.FDType.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.Project.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -164,7 +162,7 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.FDType.Builder clearId() {
+    public edu.berkeley.path.model_elements_base.Project.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -176,7 +174,7 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Sets the value of the 'name' field */
-    public edu.berkeley.path.model_elements_base.FDType.Builder setName(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.Project.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -189,7 +187,7 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Clears the value of the 'name' field */
-    public edu.berkeley.path.model_elements_base.FDType.Builder clearName() {
+    public edu.berkeley.path.model_elements_base.Project.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -201,7 +199,7 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Sets the value of the 'description' field */
-    public edu.berkeley.path.model_elements_base.FDType.Builder setDescription(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.Project.Builder setDescription(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.description = value;
       fieldSetFlags()[2] = true;
@@ -214,16 +212,16 @@ public class FDType extends org.apache.avro.specific.SpecificRecordBase implemen
     }
     
     /** Clears the value of the 'description' field */
-    public edu.berkeley.path.model_elements_base.FDType.Builder clearDescription() {
+    public edu.berkeley.path.model_elements_base.Project.Builder clearDescription() {
       description = null;
       fieldSetFlags()[2] = false;
       return this;
     }
 
     @Override
-    public FDType build() {
+    public Project build() {
       try {
-        FDType record = new FDType();
+        Project record = new Project();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);

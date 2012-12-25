@@ -77,6 +77,7 @@ protocol CC {
     string id;
     string name;
     union { null, string } description;
+    union { null, string } projectId;
 
     array<Node> nodes = [];
     array<Link> links = [];
@@ -95,6 +96,7 @@ protocol CC {
     string id;
     string name;
     union { null, string } description;
+    union { null, string } projectId;
     
     DensityMap density;
   }
@@ -112,6 +114,7 @@ protocol CC {
     string id;
     string name;
     union { null, string } description;
+    union { null, string } projectId;
     
     VelocityMap velocity;
   }
@@ -131,15 +134,15 @@ protocol CC {
    * Flow and density values are per lane in SI units.
    */
   record FD {
-    double freeFlowSpeed;
-    double criticalSpeed;
-    double congestionWaveSpeed;
-    double capacity;
-    double jamDensity;
-    double capacityDrop;
-    double freeFlowSpeedStd;
-    double congestionWaveSpeedStd;
-    double capacityStd;
+    union {null, double} freeFlowSpeed;
+    union {null, double} criticalSpeed;
+    union {null, double} congestionWaveSpeed;
+    union {null, double} capacity;
+    union {null, double} jamDensity;
+    union {null, double} capacityDrop;
+    union {null, double} freeFlowSpeedStd;
+    union {null, double} congestionWaveSpeedStd;
+    union {null, double} capacityStd;
   }
   
   /**
@@ -172,6 +175,7 @@ protocol CC {
     string id;
     union {null, string} name;
     union {null, string} description;
+    union { null, string } projectId;
     
     FDType type;
     
@@ -241,6 +245,7 @@ protocol CC {
     string id;
     union {null, string} name;
     union {null, string} description;
+    union { null, string } projectId;
     
     /**
      * map key is originLinkId
@@ -301,6 +306,7 @@ protocol CC {
     string id;
     union {null, string} name;
     union {null, string} description;
+    union { null, string } projectId;
     
     /**
      * map key is nodeId
@@ -326,17 +332,33 @@ protocol CC {
   }
 
   /**
-   * Sensor that can describe loop detector, magnetic detector, TMC, camera, radar, etc.
+   * Sensor that can describe loop detector, magnetic detector, TMC,
+   * camera, radar, etc.
    */
   record Sensor {
-    string id;
-    string type; // "Loop", etc
-    union {null, string} entity_id;  // ID of original detector, e.g. VDS ID
-    union {null, string} measurement_feed_id; // data feed associated with this sensor
-    string link_id;
-    double link_offset = 0;
-    double lane_num = 1;
-    double health_status = 1; // healthy by default
+    /**
+     * "Loop", etc. Translated to numeric type in the DB.
+     */
+    string type;
+
+    /**
+     * ID of original detector, e.g. VDS ID
+     */
+    union {null, string} entityId;
+
+    /**
+     * data feed associated with this sensor
+     */
+    union {null, string} measurementFeedId;
+
+    string linkId;
+    double linkOffset = 0;
+    double laneNum = 1;
+
+    /**
+     * healthy by default
+     */
+    double healthStatus = 1;
   }
 
   /**
@@ -346,11 +368,20 @@ protocol CC {
     string id;
     union {null, string} name;
     union {null, string} description;
+
+    union { null, string } projectId;
+    
     array<Sensor> sensors;
   }
    
   
   // ### TODO Controllers
+  
+  record Project {
+    string id;
+    string name;
+    union { null, string } description;
+  }
   
   /**
    * A scenario represents the state of the world now and projected
@@ -367,6 +398,7 @@ protocol CC {
     string id;
     string name;
     union { null, string } description;
+    union { null, string } projectId;
     
     array<Network> networks = [];
     

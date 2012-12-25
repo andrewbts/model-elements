@@ -38,6 +38,14 @@ public class SensorSet extends edu.berkeley.path.model_elements_base.SensorSet {
     setId(id.toString());
   }
   
+  public Long getLongProjectId() {
+    return Long.parseLong(getProjectId().toString());
+  }
+  
+  public void setProjectId(Long id) {
+    setProjectId(id.toString());
+  }
+  
 	@SuppressWarnings("unchecked")
 	public void setSensorList(List<Sensor> sensors) {
 		super.setSensors((List<edu.berkeley.path.model_elements_base.Sensor>) (List<?>) sensors);
@@ -46,18 +54,6 @@ public class SensorSet extends edu.berkeley.path.model_elements_base.SensorSet {
 	@SuppressWarnings("unchecked")
 	public List<Sensor> getSensorList() {
 		return (List<Sensor>) (List<?>) getSensors();
-	}
-
-	@Deprecated
-	@Override
-	public List<edu.berkeley.path.model_elements_base.Sensor> getSensors() {
-		throw new UnsupportedOperationException("Use getSensorList instead.");
-	}
-
-	@Deprecated
-	@Override
-	public void setSensors(List<edu.berkeley.path.model_elements_base.Sensor> value) {
-		throw new UnsupportedOperationException("Use setSensorList instead.");
 	}
   
 }
