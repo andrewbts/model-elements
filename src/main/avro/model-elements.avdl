@@ -564,12 +564,7 @@ protocol CC {
     
     FreewayCTMState mean;
     FreewayCTMState stdDev;
-    FDMap fd;
-    
-    /* whether this is a full report including flow stats (after a CTM step),
-     * or not (after an EnKF step)
-     */
-    boolean includesFlows;
+    FDMap fd;    
 }
   
   record FreewayCTMEnsembleReport {
