@@ -129,4 +129,12 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
   public Map<CharSequence,Double> getQueueLengthMap() {
     return queueLength;
   }
+
+	/**
+	 * @return Whether this CTM state includes a flow map
+	 */
+	public boolean includesFlowMap() {
+		return super.getLinkFlowState() != null;
+	}
+	
 }
