@@ -36,7 +36,12 @@ public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.Free
 	 * @return Whether this report includes in/out flow information
 	 */
 	public boolean includesFlows() {
-		return (getMean().getLinkFlowState() != null);
+		return (getMean().includesFlowMap());
+	}
+
+	@Override
+	public FreewayCTMState getMean() {
+		return (FreewayCTMState)super.getMean();
 	}
 	
 }
