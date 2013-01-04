@@ -98,6 +98,17 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 			throw new IllegalArgumentException("Specified link was an origin link not a normal link.");
 		return (FreewayLinkState)super.getLinkState().get(link.getId());
 	}
+	
+	/**
+	 * Get current link flow state for a single specified link or origin link.
+	 * @param link Link or origin link whose flow state to get
+	 * @return Current link flow state
+	 * @throws UnsupportedOperationException if this CTM state doesn't include flow data
+	 */
+	public FreewayLinkFlowState getCurrentLinkFlowState(Link link) {
+		if (!includesFlowMap()) throw new UnsupportedOperationException("CTM state does not include link flow data.");
+		return (FreewayLinkFlowState)super.getLinkFlowState().get(link.getId());
+	}
 
 	@Override
 	@Deprecated
@@ -119,6 +130,7 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
   /**
    * Gets the linkState map.
    **/
+  @SuppressWarnings("unchecked")
   public Map<CharSequence,FreewayLinkState> getLinkStateMap() {
     return (Map<CharSequence,FreewayLinkState>)(Map<?,?>)linkState;
   }

@@ -44,4 +44,9 @@ public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.Free
 		return (FreewayCTMState)super.getMean();
 	}
 	
+	@Override
+	public FreewayCTMState getStdDev() {
+		return (FreewayCTMState)super.getStdDev();
+	}
+	
 }
