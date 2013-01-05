@@ -136,6 +136,19 @@ public List<Link> getLinkList() {
     return (List<Link>)(List<?>)getLinks();
   }
   
+	/**
+	 * Get the list of links that are origin links. Creates and returns a sub-list of getLinkList.
+	 * @return List of origin links
+	 */
+	public List<Link> createOriginLinkList() {
+		List<Link> originLinks = new ArrayList<Link>();
+		for (Link link : getLinkList()) {
+			if (link.isOrigin())
+				originLinks.add(link);
+		}
+		return originLinks;
+	}
+  
   public String getNameString() {
     return (getName() == null) ? null : getName().toString();
   }

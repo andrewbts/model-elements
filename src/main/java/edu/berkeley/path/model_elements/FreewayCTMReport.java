@@ -28,4 +28,25 @@ package edu.berkeley.path.model_elements;
 
 public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.FreewayCTMReport {
 
+	/**
+	 * Check whether in/out flow information is present for each link. Note
+	 * that this simply checks whether the map from links to flow information
+	 * exists, and does not check whether it includes a non-null entry for
+	 * every link.
+	 * @return Whether this report includes in/out flow information
+	 */
+	public boolean includesFlows() {
+		return (getMean().includesFlowMap());
+	}
+
+	@Override
+	public FreewayCTMState getMean() {
+		return (FreewayCTMState)super.getMean();
+	}
+	
+	@Override
+	public FreewayCTMState getStdDev() {
+		return (FreewayCTMState)super.getStdDev();
+	}
+	
 }
