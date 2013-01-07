@@ -716,6 +716,8 @@ protocol CC {
     string        fdType;
     double        additiveModelNoiseMean;
     double        additiveModelNoiseStdDev;
+    double        additiveVelocityFunctionNoiseMean;
+    double        additiveVelocityFunctionNoiseStdDev;
     double        initialDensityFraction;    
     
     string        enkfType;
