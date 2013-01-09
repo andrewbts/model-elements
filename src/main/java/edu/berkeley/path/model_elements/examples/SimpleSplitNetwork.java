@@ -26,6 +26,9 @@
 
 package edu.berkeley.path.model_elements.examples;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.berkeley.path.model_elements.*;
 
 /**
@@ -46,11 +49,26 @@ public class SimpleSplitNetwork {
 	
 
 	/**
-	 * Construct all components of network 
+	 * Construct all components of network and network conditions 
 	 */
 	private static void initialize() {
 		
-		network = null;
+		// create network
+		network = new Network();
+		network.setDescription("Simple Split Network corresponding to test network in Mathematica reference implementation");
+		network.setName("Simple Split Network");
+		network.setId(0L); // is this OK?
+		network.setProjectId(null);
+		
+		// network nodes and links
+		List<Node> nodes = new ArrayList<Node>();
+		List<Link> links = new ArrayList<Link>();
+		
+		
+		
+		network.setNodeList(nodes);
+		network.setLinkList(links);
+		
 		fdMap = null;
 		demandMap = null;
 		splitRatioMap = null;
