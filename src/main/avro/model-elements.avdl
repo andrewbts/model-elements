@@ -81,6 +81,8 @@ protocol CC {
 
     array<Node> nodes = [];
     array<Link> links = [];
+
+    long modstamp;
   }
   
   /**
@@ -183,6 +185,8 @@ protocol CC {
      * map key is linkId
      */
     map<FDProfile> profile;
+
+    long modstamp;
   }
   
   /**
@@ -251,6 +255,8 @@ protocol CC {
      * map key is originLinkId
      */
     map<DemandProfile> profile;
+
+    long modstamp;
   }
   
   /**
@@ -312,6 +318,8 @@ protocol CC {
      * map key is nodeId
      */
     map<SplitRatioProfile> profile;
+
+    long modstamp;
   }
   
   /**
@@ -372,6 +380,8 @@ protocol CC {
     union { null, string } projectId;
     
     array<Sensor> sensors;
+
+    long modstamp;
   }
    
   
@@ -381,6 +391,8 @@ protocol CC {
     string id;
     string name;
     union { null, string } description;
+
+    long modstamp;
   }
   
   /**
@@ -408,6 +420,8 @@ protocol CC {
     DemandSet demandSet = null;
     SplitRatioSet splitratioSet = null;
     SensorSet sensorSet = null;
+
+    long modstamp;
   }
   
   /**
