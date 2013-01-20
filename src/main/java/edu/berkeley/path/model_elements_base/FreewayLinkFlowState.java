@@ -10,7 +10,7 @@ package edu.berkeley.path.model_elements_base;
    * The in- and out-flows are a quantity of interest computed by a CTM,
    * though not needed for either estimation of future time steps of a CTM. */
 public class FreewayLinkFlowState extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* In- and out-flow state of one link at one time.\\n   *\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}");
   @Deprecated public double inFlow;
   @Deprecated public double outFlow;
 
