@@ -8,13 +8,14 @@ package edu.berkeley.path.model_elements_base;
 /** * Specification of demand time series across one or more networks,
    * for use in a scenario. */
 public class DemandSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of demand time series across one or more networks,\\r\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\r\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\r\\n     * map keys is vehTypeId;\\r\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"DemandSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of demand time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"DemandProfile\",\"doc\":\"* Demand time series at a link. The origin link ID is not stored\\n   * in this record, but as the map key in the DemandSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"knob\",\"type\":[\"null\",\"double\"],\"doc\":\"* demand scale factor\",\"default\":1.0},{\"name\":\"stdDevAdd\",\"type\":[\"null\",\"double\"],\"default\":0.0},{\"name\":\"stdDevMult\",\"type\":[\"null\",\"double\"],\"default\":1.0},{\"name\":\"flow\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}},\"doc\":\"* time series of flows;\\n     * map keys is vehTypeId;\\n     * array index is index in time series (\\\"DEMAND_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is originLinkId\"},{\"name\":\"modstamp\",\"type\":\"long\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.lang.CharSequence projectId;
   /** * map key is originLinkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile;
+  @Deprecated public long modstamp;
 
   /**
    * Default constructor.
@@ -24,12 +25,13 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public DemandSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile) {
+  public DemandSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile, java.lang.Long modstamp) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.projectId = projectId;
     this.profile = profile;
+    this.modstamp = modstamp;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -41,6 +43,7 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 2: return description;
     case 3: return projectId;
     case 4: return profile;
+    case 5: return modstamp;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -53,6 +56,7 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 2: description = (java.lang.CharSequence)value$; break;
     case 3: projectId = (java.lang.CharSequence)value$; break;
     case 4: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)value$; break;
+    case 5: modstamp = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -132,6 +136,21 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     this.profile = value;
   }
 
+  /**
+   * Gets the value of the 'modstamp' field.
+   */
+  public java.lang.Long getModstamp() {
+    return modstamp;
+  }
+
+  /**
+   * Sets the value of the 'modstamp' field.
+   * @param value the value to set.
+   */
+  public void setModstamp(java.lang.Long value) {
+    this.modstamp = value;
+  }
+
   /** Creates a new DemandSet RecordBuilder */
   public static edu.berkeley.path.model_elements_base.DemandSet.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.DemandSet.Builder();
@@ -158,6 +177,7 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
     private java.lang.CharSequence description;
     private java.lang.CharSequence projectId;
     private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile> profile;
+    private long modstamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -191,6 +211,10 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
       if (isValidValue(fields()[4], other.profile)) {
         this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) data().deepCopy(fields()[4].schema(), other.profile);
         fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.modstamp)) {
+        this.modstamp = (java.lang.Long) data().deepCopy(fields()[5].schema(), other.modstamp);
+        fieldSetFlags()[5] = true;
       }
     }
 
@@ -319,6 +343,30 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /** Gets the value of the 'modstamp' field */
+    public java.lang.Long getModstamp() {
+      return modstamp;
+    }
+    
+    /** Sets the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder setModstamp(long value) {
+      validate(fields()[5], value);
+      this.modstamp = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modstamp' field has been set */
+    public boolean hasModstamp() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.DemandSet.Builder clearModstamp() {
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
     @Override
     public DemandSet build() {
       try {
@@ -328,6 +376,7 @@ public class DemandSet extends org.apache.avro.specific.SpecificRecordBase imple
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.profile = fieldSetFlags()[4] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>) defaultValue(fields()[4]);
+        record.modstamp = fieldSetFlags()[5] ? this.modstamp : (java.lang.Long) defaultValue(fields()[5]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
