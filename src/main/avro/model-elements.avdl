@@ -573,7 +573,7 @@ protocol CC {
   }
   
   record FreewayCTMReport {
-    long runID;
+    long runId;
     string networkId;
     
     /** Model time, of course */
@@ -591,7 +591,7 @@ protocol CC {
 }
   
   record FreewayCTMEnsembleReport {
-    long runID;
+    long runId;
     string networkId;
 
     FreewayCTMEnsembleState ensembleState;

@@ -6,8 +6,8 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runID\",\"type\":\"long\"},{\"name\":\"networkId\",\"type\":\"string\"},{\"name\":\"ensembleState\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"quality\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\"}],\"doc\":\"map key is link id\\r\\n     *\\r\\n     * used by FreewayReporterBlock?\"}]}}]}");
-  @Deprecated public long runID;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runId\",\"type\":\"long\"},{\"name\":\"networkId\",\"type\":\"string\"},{\"name\":\"ensembleState\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"quality\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\"}],\"doc\":\"map key is link id\\r\\n     *\\r\\n     * used by FreewayReporterBlock?\"}]}}]}");
+  @Deprecated public long runId;
   @Deprecated public java.lang.CharSequence networkId;
   @Deprecated public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState;
 
@@ -19,8 +19,8 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   /**
    * All-args constructor.
    */
-  public FreewayCTMEnsembleReport(java.lang.Long runID, java.lang.CharSequence networkId, edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState) {
-    this.runID = runID;
+  public FreewayCTMEnsembleReport(java.lang.Long runId, java.lang.CharSequence networkId, edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState) {
+    this.runId = runId;
     this.networkId = networkId;
     this.ensembleState = ensembleState;
   }
@@ -29,7 +29,7 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return runID;
+    case 0: return runId;
     case 1: return networkId;
     case 2: return ensembleState;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -39,7 +39,7 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: runID = (java.lang.Long)value$; break;
+    case 0: runId = (java.lang.Long)value$; break;
     case 1: networkId = (java.lang.CharSequence)value$; break;
     case 2: ensembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -47,18 +47,18 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   }
 
   /**
-   * Gets the value of the 'runID' field.
+   * Gets the value of the 'runId' field.
    */
-  public java.lang.Long getRunID() {
-    return runID;
+  public java.lang.Long getRunId() {
+    return runId;
   }
 
   /**
-   * Sets the value of the 'runID' field.
+   * Sets the value of the 'runId' field.
    * @param value the value to set.
    */
-  public void setRunID(java.lang.Long value) {
-    this.runID = value;
+  public void setRunId(java.lang.Long value) {
+    this.runId = value;
   }
 
   /**
@@ -112,7 +112,7 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FreewayCTMEnsembleReport>
     implements org.apache.avro.data.RecordBuilder<FreewayCTMEnsembleReport> {
 
-    private long runID;
+    private long runId;
     private java.lang.CharSequence networkId;
     private edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState;
 
@@ -129,8 +129,8 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
     /** Creates a Builder by copying an existing FreewayCTMEnsembleReport instance */
     private Builder(edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport other) {
             super(edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.SCHEMA$);
-      if (isValidValue(fields()[0], other.runID)) {
-        this.runID = (java.lang.Long) data().deepCopy(fields()[0].schema(), other.runID);
+      if (isValidValue(fields()[0], other.runId)) {
+        this.runId = (java.lang.Long) data().deepCopy(fields()[0].schema(), other.runId);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.networkId)) {
@@ -143,26 +143,26 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
       }
     }
 
-    /** Gets the value of the 'runID' field */
-    public java.lang.Long getRunID() {
-      return runID;
+    /** Gets the value of the 'runId' field */
+    public java.lang.Long getRunId() {
+      return runId;
     }
     
-    /** Sets the value of the 'runID' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder setRunID(long value) {
+    /** Sets the value of the 'runId' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder setRunId(long value) {
       validate(fields()[0], value);
-      this.runID = value;
+      this.runId = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'runID' field has been set */
-    public boolean hasRunID() {
+    /** Checks whether the 'runId' field has been set */
+    public boolean hasRunId() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'runID' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder clearRunID() {
+    /** Clears the value of the 'runId' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder clearRunId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -221,7 +221,7 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
     public FreewayCTMEnsembleReport build() {
       try {
         FreewayCTMEnsembleReport record = new FreewayCTMEnsembleReport();
-        record.runID = fieldSetFlags()[0] ? this.runID : (java.lang.Long) defaultValue(fields()[0]);
+        record.runId = fieldSetFlags()[0] ? this.runId : (java.lang.Long) defaultValue(fields()[0]);
         record.networkId = fieldSetFlags()[1] ? this.networkId : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.ensembleState = fieldSetFlags()[2] ? this.ensembleState : (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) defaultValue(fields()[2]);
         return record;

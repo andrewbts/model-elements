@@ -6,8 +6,8 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runID\",\"type\":\"long\"},{\"name\":\"networkId\",\"type\":\"string\"},{\"name\":\"time\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]},\"doc\":\"Model time, of course\"},{\"name\":\"mean\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},{\"name\":\"stdDev\",\"type\":\"FreewayCTMState\"},{\"name\":\"fd\",\"type\":{\"type\":\"record\",\"name\":\"FDMap\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\r\\n   * This is sliced off of FDSet at a given time.\\r\\n   *\\r\\n   * Not part of Scenario; can be used interchangeably for\\r\\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"criticalSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacity\",\"type\":[\"null\",\"double\"]},{\"name\":\"jamDensity\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityDrop\",\"type\":[\"null\",\"double\"]},{\"name\":\"freeFlowSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityStd\",\"type\":[\"null\",\"double\"]}]}},\"doc\":\"* map of FDs at a given time;\\r\\n     * map key is linkId\"}]}},{\"name\":\"includesFlows\",\"type\":\"boolean\"}]}");
-  @Deprecated public long runID;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runId\",\"type\":\"long\"},{\"name\":\"networkId\",\"type\":\"string\"},{\"name\":\"time\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]},\"doc\":\"Model time, of course\"},{\"name\":\"mean\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},{\"name\":\"stdDev\",\"type\":\"FreewayCTMState\"},{\"name\":\"fd\",\"type\":{\"type\":\"record\",\"name\":\"FDMap\",\"doc\":\"* Used to feed a per-timestep \\\"drip\\\" input to freeway model.\\r\\n   * This is sliced off of FDSet at a given time.\\r\\n   *\\r\\n   * Not part of Scenario; can be used interchangeably for\\r\\n   * real-time input or for sliced up profiles from a scenario.\",\"fields\":[{\"name\":\"fd\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"criticalSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacity\",\"type\":[\"null\",\"double\"]},{\"name\":\"jamDensity\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityDrop\",\"type\":[\"null\",\"double\"]},{\"name\":\"freeFlowSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityStd\",\"type\":[\"null\",\"double\"]}]}},\"doc\":\"* map of FDs at a given time;\\r\\n     * map key is linkId\"}]}},{\"name\":\"includesFlows\",\"type\":\"boolean\"}]}");
+  @Deprecated public long runId;
   @Deprecated public java.lang.CharSequence networkId;
   /** Model time, of course */
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime time;
@@ -24,8 +24,8 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   /**
    * All-args constructor.
    */
-  public FreewayCTMReport(java.lang.Long runID, java.lang.CharSequence networkId, edu.berkeley.path.model_elements_base.DateTime time, edu.berkeley.path.model_elements_base.FreewayCTMState mean, edu.berkeley.path.model_elements_base.FreewayCTMState stdDev, edu.berkeley.path.model_elements_base.FDMap fd, java.lang.Boolean includesFlows) {
-    this.runID = runID;
+  public FreewayCTMReport(java.lang.Long runId, java.lang.CharSequence networkId, edu.berkeley.path.model_elements_base.DateTime time, edu.berkeley.path.model_elements_base.FreewayCTMState mean, edu.berkeley.path.model_elements_base.FreewayCTMState stdDev, edu.berkeley.path.model_elements_base.FDMap fd, java.lang.Boolean includesFlows) {
+    this.runId = runId;
     this.networkId = networkId;
     this.time = time;
     this.mean = mean;
@@ -38,7 +38,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   // Used by DatumWriter.  Applications should not call. 
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return runID;
+    case 0: return runId;
     case 1: return networkId;
     case 2: return time;
     case 3: return mean;
@@ -52,7 +52,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: runID = (java.lang.Long)value$; break;
+    case 0: runId = (java.lang.Long)value$; break;
     case 1: networkId = (java.lang.CharSequence)value$; break;
     case 2: time = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
     case 3: mean = (edu.berkeley.path.model_elements_base.FreewayCTMState)value$; break;
@@ -64,18 +64,18 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
-   * Gets the value of the 'runID' field.
+   * Gets the value of the 'runId' field.
    */
-  public java.lang.Long getRunID() {
-    return runID;
+  public java.lang.Long getRunId() {
+    return runId;
   }
 
   /**
-   * Sets the value of the 'runID' field.
+   * Sets the value of the 'runId' field.
    * @param value the value to set.
    */
-  public void setRunID(java.lang.Long value) {
-    this.runID = value;
+  public void setRunId(java.lang.Long value) {
+    this.runId = value;
   }
 
   /**
@@ -189,7 +189,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FreewayCTMReport>
     implements org.apache.avro.data.RecordBuilder<FreewayCTMReport> {
 
-    private long runID;
+    private long runId;
     private java.lang.CharSequence networkId;
     private edu.berkeley.path.model_elements_base.DateTime time;
     private edu.berkeley.path.model_elements_base.FreewayCTMState mean;
@@ -210,8 +210,8 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
     /** Creates a Builder by copying an existing FreewayCTMReport instance */
     private Builder(edu.berkeley.path.model_elements_base.FreewayCTMReport other) {
             super(edu.berkeley.path.model_elements_base.FreewayCTMReport.SCHEMA$);
-      if (isValidValue(fields()[0], other.runID)) {
-        this.runID = (java.lang.Long) data().deepCopy(fields()[0].schema(), other.runID);
+      if (isValidValue(fields()[0], other.runId)) {
+        this.runId = (java.lang.Long) data().deepCopy(fields()[0].schema(), other.runId);
         fieldSetFlags()[0] = true;
       }
       if (isValidValue(fields()[1], other.networkId)) {
@@ -240,26 +240,26 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
       }
     }
 
-    /** Gets the value of the 'runID' field */
-    public java.lang.Long getRunID() {
-      return runID;
+    /** Gets the value of the 'runId' field */
+    public java.lang.Long getRunId() {
+      return runId;
     }
     
-    /** Sets the value of the 'runID' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setRunID(long value) {
+    /** Sets the value of the 'runId' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder setRunId(long value) {
       validate(fields()[0], value);
-      this.runID = value;
+      this.runId = value;
       fieldSetFlags()[0] = true;
       return this; 
     }
     
-    /** Checks whether the 'runID' field has been set */
-    public boolean hasRunID() {
+    /** Checks whether the 'runId' field has been set */
+    public boolean hasRunId() {
       return fieldSetFlags()[0];
     }
     
-    /** Clears the value of the 'runID' field */
-    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearRunID() {
+    /** Clears the value of the 'runId' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMReport.Builder clearRunId() {
       fieldSetFlags()[0] = false;
       return this;
     }
@@ -417,7 +417,7 @@ public class FreewayCTMReport extends org.apache.avro.specific.SpecificRecordBas
     public FreewayCTMReport build() {
       try {
         FreewayCTMReport record = new FreewayCTMReport();
-        record.runID = fieldSetFlags()[0] ? this.runID : (java.lang.Long) defaultValue(fields()[0]);
+        record.runId = fieldSetFlags()[0] ? this.runId : (java.lang.Long) defaultValue(fields()[0]);
         record.networkId = fieldSetFlags()[1] ? this.networkId : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.time = fieldSetFlags()[2] ? this.time : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[2]);
         record.mean = fieldSetFlags()[3] ? this.mean : (edu.berkeley.path.model_elements_base.FreewayCTMState) defaultValue(fields()[3]);
