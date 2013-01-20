@@ -10,7 +10,7 @@ package edu.berkeley.path.model_elements_base;
    * for per-station aggregated data.
    * */
 public class PeMSAggregate extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSAggregate\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Used in both the 5 minute and 1 hour case for per-lane\\n   * and per-station aggregated data, and in the 1 day case\\n   * for per-station aggregated data.\\n   *\",\"fields\":[{\"name\":\"samples\",\"type\":[\"long\",\"null\"]},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgOccupancy\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"observed\",\"type\":[\"double\",\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSAggregate\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Used in both the 5 minute and 1 hour case for per-lane\\r\\n   * and per-station aggregated data, and in the 1 day case\\r\\n   * for per-station aggregated data.\\r\\n   *\",\"fields\":[{\"name\":\"samples\",\"type\":[\"long\",\"null\"]},{\"name\":\"flow\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgOccupancy\",\"type\":[\"double\",\"null\"]},{\"name\":\"avgSpeed\",\"type\":[\"double\",\"null\"]},{\"name\":\"observed\",\"type\":[\"double\",\"null\"]}]}");
   @Deprecated public java.lang.Long samples;
   @Deprecated public java.lang.Double flow;
   @Deprecated public java.lang.Double avgOccupancy;
