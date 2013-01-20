@@ -6,13 +6,14 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Network extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Network\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"],\"doc\":\"* index of the first lane of this link in case the road is\\r\\n     * divided into paralell links.\"},{\"name\":\"speedLimit\",\"type\":[\"null\",\"double\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Network\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"nodes\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Node\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"}]}},\"default\":[]},{\"name\":\"links\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Link\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"],\"doc\":\"* index of the first lane of this link in case the road is\\n     * divided into paralell links.\"},{\"name\":\"speedLimit\",\"type\":[\"null\",\"double\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}},\"default\":[]},{\"name\":\"modstamp\",\"type\":\"long\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.lang.CharSequence projectId;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Node> nodes;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Link> links;
+  @Deprecated public long modstamp;
 
   /**
    * Default constructor.
@@ -22,13 +23,14 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
   /**
    * All-args constructor.
    */
-  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.List<edu.berkeley.path.model_elements_base.Node> nodes, java.util.List<edu.berkeley.path.model_elements_base.Link> links) {
+  public Network(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.List<edu.berkeley.path.model_elements_base.Node> nodes, java.util.List<edu.berkeley.path.model_elements_base.Link> links, java.lang.Long modstamp) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.projectId = projectId;
     this.nodes = nodes;
     this.links = links;
+    this.modstamp = modstamp;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -41,6 +43,7 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     case 3: return projectId;
     case 4: return nodes;
     case 5: return links;
+    case 6: return modstamp;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -54,6 +57,7 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     case 3: projectId = (java.lang.CharSequence)value$; break;
     case 4: nodes = (java.util.List<edu.berkeley.path.model_elements_base.Node>)value$; break;
     case 5: links = (java.util.List<edu.berkeley.path.model_elements_base.Link>)value$; break;
+    case 6: modstamp = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -148,6 +152,21 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     this.links = value;
   }
 
+  /**
+   * Gets the value of the 'modstamp' field.
+   */
+  public java.lang.Long getModstamp() {
+    return modstamp;
+  }
+
+  /**
+   * Sets the value of the 'modstamp' field.
+   * @param value the value to set.
+   */
+  public void setModstamp(java.lang.Long value) {
+    this.modstamp = value;
+  }
+
   /** Creates a new Network RecordBuilder */
   public static edu.berkeley.path.model_elements_base.Network.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.Network.Builder();
@@ -175,6 +194,7 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
     private java.lang.CharSequence projectId;
     private java.util.List<edu.berkeley.path.model_elements_base.Node> nodes;
     private java.util.List<edu.berkeley.path.model_elements_base.Link> links;
+    private long modstamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -212,6 +232,10 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
       if (isValidValue(fields()[5], other.links)) {
         this.links = (java.util.List<edu.berkeley.path.model_elements_base.Link>) data().deepCopy(fields()[5].schema(), other.links);
         fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.modstamp)) {
+        this.modstamp = (java.lang.Long) data().deepCopy(fields()[6].schema(), other.modstamp);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -365,6 +389,30 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
       return this;
     }
 
+    /** Gets the value of the 'modstamp' field */
+    public java.lang.Long getModstamp() {
+      return modstamp;
+    }
+    
+    /** Sets the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.Network.Builder setModstamp(long value) {
+      validate(fields()[6], value);
+      this.modstamp = value;
+      fieldSetFlags()[6] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modstamp' field has been set */
+    public boolean hasModstamp() {
+      return fieldSetFlags()[6];
+    }
+    
+    /** Clears the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.Network.Builder clearModstamp() {
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
     @Override
     public Network build() {
       try {
@@ -375,6 +423,7 @@ public class Network extends org.apache.avro.specific.SpecificRecordBase impleme
         record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.nodes = fieldSetFlags()[4] ? this.nodes : (java.util.List<edu.berkeley.path.model_elements_base.Node>) defaultValue(fields()[4]);
         record.links = fieldSetFlags()[5] ? this.links : (java.util.List<edu.berkeley.path.model_elements_base.Link>) defaultValue(fields()[5]);
+        record.modstamp = fieldSetFlags()[6] ? this.modstamp : (java.lang.Long) defaultValue(fields()[6]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

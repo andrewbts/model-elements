@@ -51,8 +51,8 @@ protocol CC {
     string id;
     string name;
     string type;
-    //double latitude;
-    //double longitude;
+    double latitude;
+    double longitude;
   }
   
   record Link {
@@ -84,7 +84,7 @@ protocol CC {
     array<Node> nodes = [];
     array<Link> links = [];
 
-    //long modstamp;
+    long modstamp;
   }
   
   /**
@@ -188,7 +188,7 @@ protocol CC {
      */
     map<FDProfile> profile;
 
-    //long modstamp;
+    long modstamp;
   }
   
   /**
@@ -258,7 +258,7 @@ protocol CC {
      */
     map<DemandProfile> profile;
 
-    //long modstamp;
+    long modstamp;
   }
   
   /**
@@ -321,7 +321,7 @@ protocol CC {
      */
     map<SplitRatioProfile> profile;
 
-    //long modstamp;
+    long modstamp;
   }
   
   /**
@@ -383,7 +383,7 @@ protocol CC {
     
     array<Sensor> sensors;
 
-    //long modstamp;
+    long modstamp;
   }
    
   
@@ -394,7 +394,7 @@ protocol CC {
     string name;
     union { null, string } description;
 
-    //long modstamp;
+    long modstamp;
   }
   
   /**
@@ -423,7 +423,7 @@ protocol CC {
     SplitRatioSet splitratioSet = null;
     SensorSet sensorSet = null;
 
-    //long modstamp;
+    long modstamp;
   }
   
   /**

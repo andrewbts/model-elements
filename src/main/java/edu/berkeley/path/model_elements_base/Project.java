@@ -6,10 +6,11 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Project extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Project\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Project\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"modstamp\",\"type\":\"long\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
+  @Deprecated public long modstamp;
 
   /**
    * Default constructor.
@@ -19,10 +20,11 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
   /**
    * All-args constructor.
    */
-  public Project(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description) {
+  public Project(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.Long modstamp) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.modstamp = modstamp;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -32,6 +34,7 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
     case 0: return id;
     case 1: return name;
     case 2: return description;
+    case 3: return modstamp;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -42,6 +45,7 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: description = (java.lang.CharSequence)value$; break;
+    case 3: modstamp = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -91,6 +95,21 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
     this.description = value;
   }
 
+  /**
+   * Gets the value of the 'modstamp' field.
+   */
+  public java.lang.Long getModstamp() {
+    return modstamp;
+  }
+
+  /**
+   * Sets the value of the 'modstamp' field.
+   * @param value the value to set.
+   */
+  public void setModstamp(java.lang.Long value) {
+    this.modstamp = value;
+  }
+
   /** Creates a new Project RecordBuilder */
   public static edu.berkeley.path.model_elements_base.Project.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.Project.Builder();
@@ -115,6 +134,7 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence description;
+    private long modstamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -140,6 +160,10 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
       if (isValidValue(fields()[2], other.description)) {
         this.description = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.description);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.modstamp)) {
+        this.modstamp = (java.lang.Long) data().deepCopy(fields()[3].schema(), other.modstamp);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -218,6 +242,30 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
       return this;
     }
 
+    /** Gets the value of the 'modstamp' field */
+    public java.lang.Long getModstamp() {
+      return modstamp;
+    }
+    
+    /** Sets the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.Project.Builder setModstamp(long value) {
+      validate(fields()[3], value);
+      this.modstamp = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modstamp' field has been set */
+    public boolean hasModstamp() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.Project.Builder clearModstamp() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     @Override
     public Project build() {
       try {
@@ -225,6 +273,7 @@ public class Project extends org.apache.avro.specific.SpecificRecordBase impleme
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.modstamp = fieldSetFlags()[3] ? this.modstamp : (java.lang.Long) defaultValue(fields()[3]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
