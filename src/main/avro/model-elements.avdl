@@ -51,6 +51,8 @@ protocol CC {
     string id;
     string name;
     string type;
+    //double latitude;
+    //double longitude;
   }
   
   record Link {
@@ -81,6 +83,8 @@ protocol CC {
 
     array<Node> nodes = [];
     array<Link> links = [];
+
+    //long modstamp;
   }
   
   /**
@@ -183,6 +187,8 @@ protocol CC {
      * map key is linkId
      */
     map<FDProfile> profile;
+
+    //long modstamp;
   }
   
   /**
@@ -251,6 +257,8 @@ protocol CC {
      * map key is originLinkId
      */
     map<DemandProfile> profile;
+
+    //long modstamp;
   }
   
   /**
@@ -312,6 +320,8 @@ protocol CC {
      * map key is nodeId
      */
     map<SplitRatioProfile> profile;
+
+    //long modstamp;
   }
   
   /**
@@ -372,6 +382,8 @@ protocol CC {
     union { null, string } projectId;
     
     array<Sensor> sensors;
+
+    //long modstamp;
   }
    
   
@@ -381,6 +393,8 @@ protocol CC {
     string id;
     string name;
     union { null, string } description;
+
+    //long modstamp;
   }
   
   /**
@@ -408,6 +422,8 @@ protocol CC {
     DemandSet demandSet = null;
     SplitRatioSet splitratioSet = null;
     SensorSet sensorSet = null;
+
+    //long modstamp;
   }
   
   /**
@@ -557,18 +573,27 @@ protocol CC {
   }
   
   record FreewayCTMReport {
-    long runID;
+    long runId;
+    string networkId;
     
     /** Model time, of course */
     DateTime time;
     
     FreewayCTMState mean;
     FreewayCTMState stdDev;
-    FDMap fd;    
+    FDMap fd;
+   
+    /* whether this is a full report including flow stats (after a CTM step),
+     * or not (after an EnKF step)
+     */
+    boolean includesFlows;
+      
 }
   
   record FreewayCTMEnsembleReport {
-    long runID;
+    long runId;
+    string networkId;
+
     FreewayCTMEnsembleState ensembleState;
   }
   
@@ -679,6 +704,37 @@ protocol CC {
      **/
     union { map<double>, null } delay;
   }
+
+  /**
+   * One data point in the output of the Path Inference Filter.
+   *
+   * This record is designed to hold one of the results of a query 
+   * by run_id, network_id, link_id, and time interval. Hence the record
+   * itself contains none of those, which the caller should keep track of.
+   * (Or maybe we should have a PifProbeCoordSet to do that.)
+   **/
+  record PifProbeCoord {
+    /**
+     * time of measurement
+     **/
+    DateTime  time;
+    
+    /**
+     * offset, in meters, in the direction of travel, in the queried link.
+     **/
+    double offset;
+    
+    /**
+     * measured speed, in meters per second
+     **/
+    double speed;
+    
+    /**
+     * probability that this point was placed correctly, in the range 0..1.
+     **/
+    double probability;
+  }
+  
   
   /**
    * Static configuration of a set of freeway runs.

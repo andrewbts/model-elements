@@ -29,7 +29,9 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState {
-		
+	
+	public FreewayCTMEnsembleState() {};
+	
 	/**
 	 * Create model_elements_base part of this from model_elements input.
 	 * @param ensembleState List of CTM states
@@ -62,6 +64,11 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	public List<FreewayCTMState> getStates() {
 		return (List<FreewayCTMState>)(List<?>)super.getEnsembleState();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public void setStates(List<FreewayCTMState> value) {
+		setEnsembleState((List<edu.berkeley.path.model_elements_base.FreewayCTMState>)(List<?>)value);
+	}
 
 	@Override
 	@Deprecated
@@ -72,6 +79,23 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	@Override
 	public DateTime getT() {
 		return (DateTime) super.getT();
-	}	
+	}
+	
+	/**
+     * Gets the value of the 'time' field.
+	 * Remove this method after we rename the field from 't' to 'time'.
+	 */
+	public DateTime getTime() {
+	   return (DateTime)getT();
+	}
+
+	/**
+	 * Sets the value of the 'time' field.
+	 * Remove this method after we rename the field from 't' to 'time'.
+	 * @param value the value to set.
+	 */
+	public void setTime(DateTime value) {
+	   setT(value);
+	}
 		
 }

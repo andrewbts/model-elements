@@ -28,6 +28,8 @@ package edu.berkeley.path.model_elements;
 
 public class FreewayLinkFlowState extends edu.berkeley.path.model_elements_base.FreewayLinkFlowState {
 	
+	public FreewayLinkFlowState() {}
+	
 	public FreewayLinkFlowState(Double inFlow, Double outFlow) {
 		super(inFlow, outFlow);
 	}

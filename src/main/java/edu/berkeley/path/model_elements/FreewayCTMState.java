@@ -31,6 +31,8 @@ import java.util.Map.Entry;
 
 public class FreewayCTMState extends edu.berkeley.path.model_elements_base.FreewayCTMState {
 	
+	public FreewayCTMState() {}
+	
 	@SuppressWarnings("unchecked")
 	public FreewayCTMState(
 			Map<CharSequence, FreewayLinkState> linkStateMap, 
@@ -88,6 +90,11 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 		return (Map<CharSequence, FreewayLinkFlowState>) (Map<?, ?>) super.getLinkFlowState();
 	}
 
+	@SuppressWarnings("unchecked")
+	public void setLinkFlowStateMap(Map<CharSequence, FreewayLinkFlowState> map) {
+		super.setLinkFlowState((Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState>) (Map<?, ?>)map);
+	}
+
 	/**
 	 * Get current link state for a single specified link
 	 * @param link Link whose state to get, shoudl not be an origin link
@@ -134,6 +141,14 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
   public Map<CharSequence,FreewayLinkState> getLinkStateMap() {
     return (Map<CharSequence,FreewayLinkState>)(Map<?,?>)linkState;
   }
+  
+  /**
+   * Sets the linkState map.
+   **/
+  public void setLinkStateMap(Map<CharSequence,FreewayLinkState> map) {
+		setLinkState((Map<CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?,?>)map);
+  }
+
 
   /**
    * Gets the queueLength map.
