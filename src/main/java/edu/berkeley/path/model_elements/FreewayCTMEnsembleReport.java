@@ -27,4 +27,11 @@
 package edu.berkeley.path.model_elements;
 
 public class FreewayCTMEnsembleReport extends edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport {
+ 	  public Long getNetworkLongId() {
+	    return Long.parseLong(getNetworkId().toString());
+	  }
+		  
+	  public void setNetworkId(Long id) {
+	    setNetworkId(id.toString());
+	  }
 }

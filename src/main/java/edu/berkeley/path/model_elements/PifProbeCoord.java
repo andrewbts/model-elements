@@ -26,11 +26,20 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayLinkState extends edu.berkeley.path.model_elements_base.FreewayLinkState
-{
-	public FreewayLinkState() {}
-	
-	public FreewayLinkState(Double density, Double velocity) {
-		super(density, velocity);
-	}
+public class PifProbeCoord extends edu.berkeley.path.model_elements_base.PifProbeCoord {
+  /**
+   * Gets the value of the 'time' field.
+   */
+  public org.joda.time.DateTime getJodaTime() {
+    return ((DateTime)time).toJoda();
+  }
+
+  /**
+   * Sets the value of the 'time' field.
+   * @param value the value to set.
+   */
+  public void setJodaTime(org.joda.time.DateTime value) {
+    this.time = DateTime.fromJoda(value);
+  }
 }
+

@@ -49,4 +49,27 @@ public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.Free
 		return (FreewayCTMState)super.getStdDev();
 	}
 	
+	 public Long getNetworkLongId() {
+		return Long.parseLong(getNetworkId().toString());
+	 }
+		  
+	 public void setNetworkId(Long id) {
+	    setNetworkId(id.toString());
+	 }
+
+	 /**
+	  * Gets the value of the 'time' field.
+	  */
+	 public org.joda.time.DateTime getJodaTime() {
+	    return ((DateTime)time).toJoda();
+	 }
+
+	 /**
+	  * Sets the value of the 'time' field.
+	  * @param value the value to set.
+	  */
+	 public void setJodaTime(org.joda.time.DateTime value) {
+	    this.time = DateTime.fromJoda(value);
+	 }
+	
 }

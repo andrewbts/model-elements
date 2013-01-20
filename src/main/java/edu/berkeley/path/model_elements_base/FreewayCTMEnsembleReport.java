@@ -6,8 +6,9 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runID\",\"type\":\"long\"},{\"name\":\"ensembleState\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"quality\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\"}],\"doc\":\"map key is link id\\r\\n     *\\r\\n     * used by FreewayReporterBlock?\"}]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleReport\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"runID\",\"type\":\"long\"},{\"name\":\"networkId\",\"type\":\"string\"},{\"name\":\"ensembleState\",\"type\":{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"quality\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\"}],\"doc\":\"map key is link id\\r\\n     *\\r\\n     * used by FreewayReporterBlock?\"}]}}]}");
   @Deprecated public long runID;
+  @Deprecated public java.lang.CharSequence networkId;
   @Deprecated public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState;
 
   /**
@@ -18,8 +19,9 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   /**
    * All-args constructor.
    */
-  public FreewayCTMEnsembleReport(java.lang.Long runID, edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState) {
+  public FreewayCTMEnsembleReport(java.lang.Long runID, java.lang.CharSequence networkId, edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState) {
     this.runID = runID;
+    this.networkId = networkId;
     this.ensembleState = ensembleState;
   }
 
@@ -28,7 +30,8 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return runID;
-    case 1: return ensembleState;
+    case 1: return networkId;
+    case 2: return ensembleState;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -37,7 +40,8 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: runID = (java.lang.Long)value$; break;
-    case 1: ensembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState)value$; break;
+    case 1: networkId = (java.lang.CharSequence)value$; break;
+    case 2: ensembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -55,6 +59,21 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
    */
   public void setRunID(java.lang.Long value) {
     this.runID = value;
+  }
+
+  /**
+   * Gets the value of the 'networkId' field.
+   */
+  public java.lang.CharSequence getNetworkId() {
+    return networkId;
+  }
+
+  /**
+   * Sets the value of the 'networkId' field.
+   * @param value the value to set.
+   */
+  public void setNetworkId(java.lang.CharSequence value) {
+    this.networkId = value;
   }
 
   /**
@@ -94,6 +113,7 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
     implements org.apache.avro.data.RecordBuilder<FreewayCTMEnsembleReport> {
 
     private long runID;
+    private java.lang.CharSequence networkId;
     private edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState ensembleState;
 
     /** Creates a new Builder */
@@ -113,9 +133,13 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
         this.runID = (java.lang.Long) data().deepCopy(fields()[0].schema(), other.runID);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.ensembleState)) {
-        this.ensembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) data().deepCopy(fields()[1].schema(), other.ensembleState);
+      if (isValidValue(fields()[1], other.networkId)) {
+        this.networkId = (java.lang.CharSequence) data().deepCopy(fields()[1].schema(), other.networkId);
         fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.ensembleState)) {
+        this.ensembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) data().deepCopy(fields()[2].schema(), other.ensembleState);
+        fieldSetFlags()[2] = true;
       }
     }
 
@@ -143,6 +167,31 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
       return this;
     }
 
+    /** Gets the value of the 'networkId' field */
+    public java.lang.CharSequence getNetworkId() {
+      return networkId;
+    }
+    
+    /** Sets the value of the 'networkId' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder setNetworkId(java.lang.CharSequence value) {
+      validate(fields()[1], value);
+      this.networkId = value;
+      fieldSetFlags()[1] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'networkId' field has been set */
+    public boolean hasNetworkId() {
+      return fieldSetFlags()[1];
+    }
+    
+    /** Clears the value of the 'networkId' field */
+    public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder clearNetworkId() {
+      networkId = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
     /** Gets the value of the 'ensembleState' field */
     public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState getEnsembleState() {
       return ensembleState;
@@ -150,21 +199,21 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
     
     /** Sets the value of the 'ensembleState' field */
     public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder setEnsembleState(edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.ensembleState = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this; 
     }
     
     /** Checks whether the 'ensembleState' field has been set */
     public boolean hasEnsembleState() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
     
     /** Clears the value of the 'ensembleState' field */
     public edu.berkeley.path.model_elements_base.FreewayCTMEnsembleReport.Builder clearEnsembleState() {
       ensembleState = null;
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -173,7 +222,8 @@ public class FreewayCTMEnsembleReport extends org.apache.avro.specific.SpecificR
       try {
         FreewayCTMEnsembleReport record = new FreewayCTMEnsembleReport();
         record.runID = fieldSetFlags()[0] ? this.runID : (java.lang.Long) defaultValue(fields()[0]);
-        record.ensembleState = fieldSetFlags()[1] ? this.ensembleState : (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) defaultValue(fields()[1]);
+        record.networkId = fieldSetFlags()[1] ? this.networkId : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.ensembleState = fieldSetFlags()[2] ? this.ensembleState : (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

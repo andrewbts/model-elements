@@ -8,7 +8,7 @@ package edu.berkeley.path.model_elements_base;
 /** * Specification of Fundamental diagram time series across one or more
    * networks, for use in a scenario. */
 public class FDSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FDSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of Fundamental diagram time series across one or more\\r\\n   * networks, for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"type\",\"type\":{\"type\":\"record\",\"name\":\"FDType\",\"doc\":\"* Referenced by FDSet to indicate the way the contained FDs should\\r\\n   * be interpreted.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"* FD time series at a link. The link ID is not stored\\r\\n   * in this record, but as the map key in the FDSet.profile.\",\"fields\":[{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"fd\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"criticalSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacity\",\"type\":[\"null\",\"double\"]},{\"name\":\"jamDensity\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityDrop\",\"type\":[\"null\",\"double\"]},{\"name\":\"freeFlowSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityStd\",\"type\":[\"null\",\"double\"]}]}},\"doc\":\"* time series of FDs;\\r\\n     * array index is index in time series (\\\"DIAG_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is linkId\"},{\"name\":\"modstamp\",\"type\":\"long\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FDSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of Fundamental diagram time series across one or more\\r\\n   * networks, for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"type\",\"type\":{\"type\":\"record\",\"name\":\"FDType\",\"doc\":\"* Referenced by FDSet to indicate the way the contained FDs should\\r\\n   * be interpreted.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]}]}},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FDProfile\",\"doc\":\"* FD time series at a link. The link ID is not stored\\r\\n   * in this record, but as the map key in the FDSet.profile.\",\"fields\":[{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"fd\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FD\",\"doc\":\"* Fundamental diagram parameters on one link at one time.\\r\\n   * Flow and density values are per lane in SI units.\",\"fields\":[{\"name\":\"freeFlowSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"criticalSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeed\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacity\",\"type\":[\"null\",\"double\"]},{\"name\":\"jamDensity\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityDrop\",\"type\":[\"null\",\"double\"]},{\"name\":\"freeFlowSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"congestionWaveSpeedStd\",\"type\":[\"null\",\"double\"]},{\"name\":\"capacityStd\",\"type\":[\"null\",\"double\"]}]}},\"doc\":\"* time series of FDs;\\r\\n     * array index is index in time series (\\\"DIAG_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is linkId\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
@@ -16,7 +16,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
   @Deprecated public edu.berkeley.path.model_elements_base.FDType type;
   /** * map key is linkId */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile> profile;
-  @Deprecated public long modstamp;
 
   /**
    * Default constructor.
@@ -26,14 +25,13 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
   /**
    * All-args constructor.
    */
-  public FDSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, edu.berkeley.path.model_elements_base.FDType type, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile> profile, java.lang.Long modstamp) {
+  public FDSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, edu.berkeley.path.model_elements_base.FDType type, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile> profile) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.projectId = projectId;
     this.type = type;
     this.profile = profile;
-    this.modstamp = modstamp;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -46,7 +44,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
     case 3: return projectId;
     case 4: return type;
     case 5: return profile;
-    case 6: return modstamp;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -60,7 +57,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
     case 3: projectId = (java.lang.CharSequence)value$; break;
     case 4: type = (edu.berkeley.path.model_elements_base.FDType)value$; break;
     case 5: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>)value$; break;
-    case 6: modstamp = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -155,21 +151,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
     this.profile = value;
   }
 
-  /**
-   * Gets the value of the 'modstamp' field.
-   */
-  public java.lang.Long getModstamp() {
-    return modstamp;
-  }
-
-  /**
-   * Sets the value of the 'modstamp' field.
-   * @param value the value to set.
-   */
-  public void setModstamp(java.lang.Long value) {
-    this.modstamp = value;
-  }
-
   /** Creates a new FDSet RecordBuilder */
   public static edu.berkeley.path.model_elements_base.FDSet.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.FDSet.Builder();
@@ -197,7 +178,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
     private java.lang.CharSequence projectId;
     private edu.berkeley.path.model_elements_base.FDType type;
     private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile> profile;
-    private long modstamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -235,10 +215,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
       if (isValidValue(fields()[5], other.profile)) {
         this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>) data().deepCopy(fields()[5].schema(), other.profile);
         fieldSetFlags()[5] = true;
-      }
-      if (isValidValue(fields()[6], other.modstamp)) {
-        this.modstamp = (java.lang.Long) data().deepCopy(fields()[6].schema(), other.modstamp);
-        fieldSetFlags()[6] = true;
       }
     }
 
@@ -392,30 +368,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
       return this;
     }
 
-    /** Gets the value of the 'modstamp' field */
-    public java.lang.Long getModstamp() {
-      return modstamp;
-    }
-    
-    /** Sets the value of the 'modstamp' field */
-    public edu.berkeley.path.model_elements_base.FDSet.Builder setModstamp(long value) {
-      validate(fields()[6], value);
-      this.modstamp = value;
-      fieldSetFlags()[6] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'modstamp' field has been set */
-    public boolean hasModstamp() {
-      return fieldSetFlags()[6];
-    }
-    
-    /** Clears the value of the 'modstamp' field */
-    public edu.berkeley.path.model_elements_base.FDSet.Builder clearModstamp() {
-      fieldSetFlags()[6] = false;
-      return this;
-    }
-
     @Override
     public FDSet build() {
       try {
@@ -426,7 +378,6 @@ public class FDSet extends org.apache.avro.specific.SpecificRecordBase implement
         record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.type = fieldSetFlags()[4] ? this.type : (edu.berkeley.path.model_elements_base.FDType) defaultValue(fields()[4]);
         record.profile = fieldSetFlags()[5] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>) defaultValue(fields()[5]);
-        record.modstamp = fieldSetFlags()[6] ? this.modstamp : (java.lang.Long) defaultValue(fields()[6]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
