@@ -8,13 +8,14 @@ package edu.berkeley.path.model_elements_base;
 /** * Specification of split ratio time series across one or more networks,
    * for use in a scenario. */
 public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of split ratio time series across one or more networks,\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\n   * in this record, but as the map key in the SplitRatioSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is nodeId\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SplitRatioSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Specification of split ratio time series across one or more networks,\\r\\n   * for use in a scenario.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"profile\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"SplitRatioProfile\",\"doc\":\"* Split ratio time series at a node. The node ID is not stored\\r\\n   * in this record, but as the map key in the SplitRatioSet.profile.\",\"fields\":[{\"name\":\"destinationNetworkId\",\"type\":[\"null\",\"string\"],\"doc\":\"* if null, this profile governs background flow, not OD flow.\"},{\"name\":\"startTime\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 0\",\"default\":0.0},{\"name\":\"sampleRate\",\"type\":[\"null\",\"double\"],\"doc\":\"* in seconds; default is 300 seconds\",\"default\":300.0},{\"name\":\"ratio\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"map\",\"values\":{\"type\":\"array\",\"items\":\"double\"}}}},\"doc\":\"* time series of ratios;\\r\\n     * map keys are: inLinkId, outLinkId, vehTypeId;\\r\\n     * array index is index in time series (\\\"RATIO_ORDER\\\" in db)\"}]}},\"doc\":\"* map key is nodeId\"},{\"name\":\"modstamp\",\"type\":\"long\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.lang.CharSequence projectId;
   /** * map key is nodeId */
   @Deprecated public java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile;
+  @Deprecated public long modstamp;
 
   /**
    * Default constructor.
@@ -24,12 +25,13 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
   /**
    * All-args constructor.
    */
-  public SplitRatioSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile) {
+  public SplitRatioSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile, java.lang.Long modstamp) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.projectId = projectId;
     this.profile = profile;
+    this.modstamp = modstamp;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -41,6 +43,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     case 2: return description;
     case 3: return projectId;
     case 4: return profile;
+    case 5: return modstamp;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -53,6 +56,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     case 2: description = (java.lang.CharSequence)value$; break;
     case 3: projectId = (java.lang.CharSequence)value$; break;
     case 4: profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>)value$; break;
+    case 5: modstamp = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -132,6 +136,21 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     this.profile = value;
   }
 
+  /**
+   * Gets the value of the 'modstamp' field.
+   */
+  public java.lang.Long getModstamp() {
+    return modstamp;
+  }
+
+  /**
+   * Sets the value of the 'modstamp' field.
+   * @param value the value to set.
+   */
+  public void setModstamp(java.lang.Long value) {
+    this.modstamp = value;
+  }
+
   /** Creates a new SplitRatioSet RecordBuilder */
   public static edu.berkeley.path.model_elements_base.SplitRatioSet.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.SplitRatioSet.Builder();
@@ -158,6 +177,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
     private java.lang.CharSequence description;
     private java.lang.CharSequence projectId;
     private java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile> profile;
+    private long modstamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -191,6 +211,10 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
       if (isValidValue(fields()[4], other.profile)) {
         this.profile = (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>) data().deepCopy(fields()[4].schema(), other.profile);
         fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.modstamp)) {
+        this.modstamp = (java.lang.Long) data().deepCopy(fields()[5].schema(), other.modstamp);
+        fieldSetFlags()[5] = true;
       }
     }
 
@@ -319,6 +343,30 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
       return this;
     }
 
+    /** Gets the value of the 'modstamp' field */
+    public java.lang.Long getModstamp() {
+      return modstamp;
+    }
+    
+    /** Sets the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder setModstamp(long value) {
+      validate(fields()[5], value);
+      this.modstamp = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modstamp' field has been set */
+    public boolean hasModstamp() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.SplitRatioSet.Builder clearModstamp() {
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
     @Override
     public SplitRatioSet build() {
       try {
@@ -328,6 +376,7 @@ public class SplitRatioSet extends org.apache.avro.specific.SpecificRecordBase i
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.profile = fieldSetFlags()[4] ? this.profile : (java.util.Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>) defaultValue(fields()[4]);
+        record.modstamp = fieldSetFlags()[5] ? this.modstamp : (java.lang.Long) defaultValue(fields()[5]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

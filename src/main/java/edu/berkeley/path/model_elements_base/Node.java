@@ -6,10 +6,12 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Node extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
+  @Deprecated public double latitude;
+  @Deprecated public double longitude;
 
   /**
    * Default constructor.
@@ -19,10 +21,12 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Node(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type) {
+  public Node(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double latitude, java.lang.Double longitude) {
     this.id = id;
     this.name = name;
     this.type = type;
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -32,6 +36,8 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     case 0: return id;
     case 1: return name;
     case 2: return type;
+    case 3: return latitude;
+    case 4: return longitude;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -42,6 +48,8 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: name = (java.lang.CharSequence)value$; break;
     case 2: type = (java.lang.CharSequence)value$; break;
+    case 3: latitude = (java.lang.Double)value$; break;
+    case 4: longitude = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -91,6 +99,36 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     this.type = value;
   }
 
+  /**
+   * Gets the value of the 'latitude' field.
+   */
+  public java.lang.Double getLatitude() {
+    return latitude;
+  }
+
+  /**
+   * Sets the value of the 'latitude' field.
+   * @param value the value to set.
+   */
+  public void setLatitude(java.lang.Double value) {
+    this.latitude = value;
+  }
+
+  /**
+   * Gets the value of the 'longitude' field.
+   */
+  public java.lang.Double getLongitude() {
+    return longitude;
+  }
+
+  /**
+   * Sets the value of the 'longitude' field.
+   * @param value the value to set.
+   */
+  public void setLongitude(java.lang.Double value) {
+    this.longitude = value;
+  }
+
   /** Creates a new Node RecordBuilder */
   public static edu.berkeley.path.model_elements_base.Node.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.Node.Builder();
@@ -115,6 +153,8 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence type;
+    private double latitude;
+    private double longitude;
 
     /** Creates a new Builder */
     private Builder() {
@@ -140,6 +180,14 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
       if (isValidValue(fields()[2], other.type)) {
         this.type = (java.lang.CharSequence) data().deepCopy(fields()[2].schema(), other.type);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.latitude)) {
+        this.latitude = (java.lang.Double) data().deepCopy(fields()[3].schema(), other.latitude);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.longitude)) {
+        this.longitude = (java.lang.Double) data().deepCopy(fields()[4].schema(), other.longitude);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -218,6 +266,54 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /** Gets the value of the 'latitude' field */
+    public java.lang.Double getLatitude() {
+      return latitude;
+    }
+    
+    /** Sets the value of the 'latitude' field */
+    public edu.berkeley.path.model_elements_base.Node.Builder setLatitude(double value) {
+      validate(fields()[3], value);
+      this.latitude = value;
+      fieldSetFlags()[3] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'latitude' field has been set */
+    public boolean hasLatitude() {
+      return fieldSetFlags()[3];
+    }
+    
+    /** Clears the value of the 'latitude' field */
+    public edu.berkeley.path.model_elements_base.Node.Builder clearLatitude() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'longitude' field */
+    public java.lang.Double getLongitude() {
+      return longitude;
+    }
+    
+    /** Sets the value of the 'longitude' field */
+    public edu.berkeley.path.model_elements_base.Node.Builder setLongitude(double value) {
+      validate(fields()[4], value);
+      this.longitude = value;
+      fieldSetFlags()[4] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'longitude' field has been set */
+    public boolean hasLongitude() {
+      return fieldSetFlags()[4];
+    }
+    
+    /** Clears the value of the 'longitude' field */
+    public edu.berkeley.path.model_elements_base.Node.Builder clearLongitude() {
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
     @Override
     public Node build() {
       try {
@@ -225,6 +321,8 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.type = fieldSetFlags()[2] ? this.type : (java.lang.CharSequence) defaultValue(fields()[2]);
+        record.latitude = fieldSetFlags()[3] ? this.latitude : (java.lang.Double) defaultValue(fields()[3]);
+        record.longitude = fieldSetFlags()[4] ? this.longitude : (java.lang.Double) defaultValue(fields()[4]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

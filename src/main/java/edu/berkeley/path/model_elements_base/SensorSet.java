@@ -7,12 +7,13 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * Set of sensors residing on links in potentially multiple networks. */
 public class SensorSet extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SensorSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Set of sensors residing on links in potentially multiple networks.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"sensors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Sensor\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC,\\n   * camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\",\"doc\":\"* \\\"Loop\\\", etc. Translated to numeric type in the DB.\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"],\"doc\":\"* ID of original detector, e.g. VDS ID\"},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"],\"doc\":\"* data feed associated with this sensor\"},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"doc\":\"* healthy by default\",\"default\":1}]}}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"SensorSet\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Set of sensors residing on links in potentially multiple networks.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"sensors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Sensor\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC,\\r\\n   * camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\",\"doc\":\"* \\\"Loop\\\", etc. Translated to numeric type in the DB.\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"],\"doc\":\"* ID of original detector, e.g. VDS ID\"},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"],\"doc\":\"* data feed associated with this sensor\"},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"doc\":\"* healthy by default\",\"default\":1}]}}},{\"name\":\"modstamp\",\"type\":\"long\"}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence description;
   @Deprecated public java.lang.CharSequence projectId;
   @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors;
+  @Deprecated public long modstamp;
 
   /**
    * Default constructor.
@@ -22,12 +23,13 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
   /**
    * All-args constructor.
    */
-  public SensorSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors) {
+  public SensorSet(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence description, java.lang.CharSequence projectId, java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors, java.lang.Long modstamp) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.projectId = projectId;
     this.sensors = sensors;
+    this.modstamp = modstamp;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -39,6 +41,7 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 2: return description;
     case 3: return projectId;
     case 4: return sensors;
+    case 5: return modstamp;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -51,6 +54,7 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     case 2: description = (java.lang.CharSequence)value$; break;
     case 3: projectId = (java.lang.CharSequence)value$; break;
     case 4: sensors = (java.util.List<edu.berkeley.path.model_elements_base.Sensor>)value$; break;
+    case 5: modstamp = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -130,6 +134,21 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     this.sensors = value;
   }
 
+  /**
+   * Gets the value of the 'modstamp' field.
+   */
+  public java.lang.Long getModstamp() {
+    return modstamp;
+  }
+
+  /**
+   * Sets the value of the 'modstamp' field.
+   * @param value the value to set.
+   */
+  public void setModstamp(java.lang.Long value) {
+    this.modstamp = value;
+  }
+
   /** Creates a new SensorSet RecordBuilder */
   public static edu.berkeley.path.model_elements_base.SensorSet.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.SensorSet.Builder();
@@ -156,6 +175,7 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
     private java.lang.CharSequence description;
     private java.lang.CharSequence projectId;
     private java.util.List<edu.berkeley.path.model_elements_base.Sensor> sensors;
+    private long modstamp;
 
     /** Creates a new Builder */
     private Builder() {
@@ -189,6 +209,10 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
       if (isValidValue(fields()[4], other.sensors)) {
         this.sensors = (java.util.List<edu.berkeley.path.model_elements_base.Sensor>) data().deepCopy(fields()[4].schema(), other.sensors);
         fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.modstamp)) {
+        this.modstamp = (java.lang.Long) data().deepCopy(fields()[5].schema(), other.modstamp);
+        fieldSetFlags()[5] = true;
       }
     }
 
@@ -317,6 +341,30 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
       return this;
     }
 
+    /** Gets the value of the 'modstamp' field */
+    public java.lang.Long getModstamp() {
+      return modstamp;
+    }
+    
+    /** Sets the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.SensorSet.Builder setModstamp(long value) {
+      validate(fields()[5], value);
+      this.modstamp = value;
+      fieldSetFlags()[5] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'modstamp' field has been set */
+    public boolean hasModstamp() {
+      return fieldSetFlags()[5];
+    }
+    
+    /** Clears the value of the 'modstamp' field */
+    public edu.berkeley.path.model_elements_base.SensorSet.Builder clearModstamp() {
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
     @Override
     public SensorSet build() {
       try {
@@ -326,6 +374,7 @@ public class SensorSet extends org.apache.avro.specific.SpecificRecordBase imple
         record.description = fieldSetFlags()[2] ? this.description : (java.lang.CharSequence) defaultValue(fields()[2]);
         record.projectId = fieldSetFlags()[3] ? this.projectId : (java.lang.CharSequence) defaultValue(fields()[3]);
         record.sensors = fieldSetFlags()[4] ? this.sensors : (java.util.List<edu.berkeley.path.model_elements_base.Sensor>) defaultValue(fields()[4]);
+        record.modstamp = fieldSetFlags()[5] ? this.modstamp : (java.lang.Long) defaultValue(fields()[5]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
