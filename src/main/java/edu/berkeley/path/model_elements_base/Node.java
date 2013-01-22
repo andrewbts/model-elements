@@ -6,12 +6,12 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Node extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Node\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"latitude\",\"type\":[\"null\",\"double\"]},{\"name\":\"longitude\",\"type\":[\"null\",\"double\"]}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
-  @Deprecated public double latitude;
-  @Deprecated public double longitude;
+  @Deprecated public java.lang.Double latitude;
+  @Deprecated public java.lang.Double longitude;
 
   /**
    * Default constructor.
@@ -153,8 +153,8 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
     private java.lang.CharSequence type;
-    private double latitude;
-    private double longitude;
+    private java.lang.Double latitude;
+    private java.lang.Double longitude;
 
     /** Creates a new Builder */
     private Builder() {
@@ -272,7 +272,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'latitude' field */
-    public edu.berkeley.path.model_elements_base.Node.Builder setLatitude(double value) {
+    public edu.berkeley.path.model_elements_base.Node.Builder setLatitude(java.lang.Double value) {
       validate(fields()[3], value);
       this.latitude = value;
       fieldSetFlags()[3] = true;
@@ -286,6 +286,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'latitude' field */
     public edu.berkeley.path.model_elements_base.Node.Builder clearLatitude() {
+      latitude = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -296,7 +297,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     }
     
     /** Sets the value of the 'longitude' field */
-    public edu.berkeley.path.model_elements_base.Node.Builder setLongitude(double value) {
+    public edu.berkeley.path.model_elements_base.Node.Builder setLongitude(java.lang.Double value) {
       validate(fields()[4], value);
       this.longitude = value;
       fieldSetFlags()[4] = true;
@@ -310,6 +311,7 @@ public class Node extends org.apache.avro.specific.SpecificRecordBase implements
     
     /** Clears the value of the 'longitude' field */
     public edu.berkeley.path.model_elements_base.Node.Builder clearLongitude() {
+      longitude = null;
       fieldSetFlags()[4] = false;
       return this;
     }
