@@ -51,8 +51,8 @@ protocol CC {
     string id;
     string name;
     string type;
-    double latitude;
-    double longitude;
+    union {null, double} latitude;
+    union {null, double} longitude;
   }
   
   record Link {
