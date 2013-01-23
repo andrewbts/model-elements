@@ -35,6 +35,7 @@ public class Scenario extends edu.berkeley.path.model_elements_base.Scenario {
    * Get the list of networks contained in this scenario.
    * Never returns null (creates the list if it doesn't exist).
    */
+  @SuppressWarnings("unchecked")
   public List<Network> getNetworkList() {
     if (null == getNetworks()) {
       setNetworks(new ArrayList<edu.berkeley.path.model_elements_base.Network>());
@@ -45,6 +46,7 @@ public class Scenario extends edu.berkeley.path.model_elements_base.Scenario {
   /**
    * Set the list of networks contained in this scenario.
    */
+  @SuppressWarnings("unchecked")
   public void setNetworkList(List<Network> networkList) {
     setNetworks((List<edu.berkeley.path.model_elements_base.Network>)(List<?>)networkList);
   }
