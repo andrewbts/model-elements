@@ -64,7 +64,7 @@ public class Scenario extends edu.berkeley.path.model_elements_base.Scenario {
   }
   
   public String getNameString() {
-    return (name == null) ? null : name.toString();
+    return (getName() == null) ? null : getName().toString();
   }
 
 	@Override
