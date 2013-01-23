@@ -30,7 +30,12 @@ import java.util.*;
 import org.joda.time.Interval;
 import java.util.Map.Entry;
 
-public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
+public class FDSet extends edu.berkeley.path.model_elements_base.FDSet implements FDMapProvider {
+	
+	@Override
+	public FDMap getFDMap(Interval interval) {
+		return slice(interval);
+	}
 	
   /**
    * Slice off an interval of time and return the matching items as a FDMap.

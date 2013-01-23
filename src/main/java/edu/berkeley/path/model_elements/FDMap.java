@@ -28,7 +28,9 @@ package edu.berkeley.path.model_elements;
 
 import java.util.*;
 
-public class FDMap extends edu.berkeley.path.model_elements_base.FDMap {
+import org.joda.time.Interval;
+
+public class FDMap extends edu.berkeley.path.model_elements_base.FDMap implements FDMapProvider {
 	
 	public FD getLinkFD(Link link) {
 		return (FD)super.getFd().get(link.getId());
@@ -53,4 +55,13 @@ public class FDMap extends edu.berkeley.path.model_elements_base.FDMap {
     }
     return (Map<String,FD>)(Map<?,?>)getFd();
   }
+
+	/**
+	 * An FDMap can act as an FDMapProvider by simply returning itself.
+	 */
+	@Override
+	public FDMap getFDMap(Interval interval) {
+		return this;
+	}
+	
 }

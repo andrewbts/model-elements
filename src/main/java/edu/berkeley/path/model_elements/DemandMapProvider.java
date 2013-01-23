@@ -26,37 +26,19 @@
 
 package edu.berkeley.path.model_elements;
 
-import java.util.*;
-
 import org.joda.time.Interval;
 
-public class SplitRatioMap extends edu.berkeley.path.model_elements_base.SplitRatioMap implements SplitRatioMapProvider {
-  /**
-   * Set the ratio map. Same as setRatio(), but works with String keys.
-   */
-  @SuppressWarnings("unchecked")
-  public void setRatioMap(Map<String,Map<String,Map<String,Map<String,Double>>>> value) {
-    setRatio((Map<CharSequence,Map<CharSequence,Map<CharSequence,Map<CharSequence,Double>>>>)(Map<?,?>)value);
-  }
+/**
+ * Object that can provide a model elements DemandMap to apply to a given time interval.
+ * @author amoylan
+ */
+public interface DemandMapProvider {
 
-  /**
-   * Get the ratio map. Same as getRatio(), but works with String keys.
-   * Never returns null (creates the map if it doesn't exist).
-   */
-  @SuppressWarnings("unchecked")
-  public Map<String,Map<String,Map<String,Map<String,Double>>>> getRatioMap() {
-    if (null == getRatio()) {
-      setRatio(new HashMap<CharSequence,Map<CharSequence,Map<CharSequence,Map<CharSequence,Double>>>>());
-    }
-    return (Map<String,Map<String,Map<String,Map<String,Double>>>>)(Map<?,?>)getRatio();
-  }
-  
 	/**
-	 * A SplitRatioMap can act as a SplitRatioMapProvider by simply returning itself.
-	 */
-	@Override
-	public SplitRatioMap getSplitRatioMap(Interval interval) {
-		return this;
-	}
+	 * Get a DemandMap corresponding to the specified time interval.
+	 * Implementors may slice the map from a time-space Set of maps,
+	 * return a fixed map, retrieve one from DB, etc.
+	 **/
+	public DemandMap getDemandMap(Interval interval);
 
 }

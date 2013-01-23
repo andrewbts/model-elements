@@ -28,7 +28,9 @@ package edu.berkeley.path.model_elements;
 
 import java.util.*;
 
-public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap {
+import org.joda.time.Interval;
+
+public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap implements DemandMapProvider {
 	
 	public double getTotalDemand(Link originLink) {
 		Map<CharSequence, Double> vehicleTypeDemands = getFlow().get(originLink.getId());
@@ -57,4 +59,13 @@ public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap {
     }
     return (Map<String,Map<String,Double>>)(Map<?,?>)getFlow();
   }
+  
+	/**
+	 * A DemandMap can act as an DemandMapProvider by simply returning itself.
+	 */
+	@Override
+	public DemandMap getDemandMap(Interval interval) {
+		return this;
+	}
+
 }

@@ -30,7 +30,13 @@ import java.util.*;
 import org.joda.time.Interval;
 import java.util.Map.Entry;
 
-public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRatioSet {
+public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRatioSet implements SplitRatioMapProvider {
+	
+	@Override
+	public SplitRatioMap getSplitRatioMap(Interval interval) {
+		return slice(interval);
+	}
+		
   /**
    * Slice off an interval of time and return the matching items as a SplitRatioMap.
    * If, for a given node, in-link, out-link, and vtype, the time interval contains
@@ -171,4 +177,5 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
   public Long getLongProjectId() {
     return Long.parseLong(getProjectId().toString());
   }
+
 }
