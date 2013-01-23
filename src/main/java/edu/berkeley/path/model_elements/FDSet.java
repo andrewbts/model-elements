@@ -31,6 +31,7 @@ import org.joda.time.Interval;
 import java.util.Map.Entry;
 
 public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
+	
   /**
    * Slice off an interval of time and return the matching items as a FDMap.
    * If, for a given link, the time interval contains more than one FD,
@@ -54,18 +55,18 @@ public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
       if (nSamples == 0) {
         fdMap.getFdMap().put(linkId, null);
         continue;
-      }
+      }      
+      // now timeSeries can't be null
       
       Integer index = ProfileUtil.getIndex(interval, t0, dt, nSamples);
       
+      @SuppressWarnings("null") 
       FD fdAtTime = timeSeries.get(index);
       fdMap.getFdMap().put(linkId, fdAtTime);
     }
   
     return fdMap;
   }
-  
-  // TODO find a better way to expose Map<> access.
   
   /**
    * Set the profile map. Same as setProfile(), but works with a map of String to FDProfile.
@@ -98,4 +99,5 @@ public class FDSet extends edu.berkeley.path.model_elements_base.FDSet {
   public Long getLongProjectId() {
     return Long.parseLong(getProjectId().toString());
   }
+  
 }
