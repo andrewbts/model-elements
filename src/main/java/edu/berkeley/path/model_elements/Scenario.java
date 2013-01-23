@@ -66,4 +66,25 @@ public class Scenario extends edu.berkeley.path.model_elements_base.Scenario {
   public String getNameString() {
     return (name == null) ? null : name.toString();
   }
+
+	@Override
+	public FDSet getFdSet() {
+		return (FDSet) super.getFdSet();
+	}
+
+	@Override
+	public DemandSet getDemandSet() {
+		return (DemandSet) super.getDemandSet();
+	}
+
+	@Override
+	public SplitRatioSet getSplitratioSet() {
+		return (SplitRatioSet) super.getSplitratioSet();
+	}
+
+	@Override
+	public SensorSet getSensorSet() {
+		return (SensorSet) super.getSensorSet();
+	}
+  
 }
