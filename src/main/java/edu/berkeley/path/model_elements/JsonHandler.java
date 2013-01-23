@@ -48,6 +48,13 @@ import org.apache.avro.specific.SpecificDatumWriter;
  */
 public class JsonHandler {
 
+	/**
+	 * Serialize the specified model elements object to JSON and write to the specified file.
+	 * @param <T> Model elements type derived from Avro-built type
+	 * @param obj Model elements object
+	 * @param filename Filename ending in ".json" to write obj to
+	 * @throws IOException
+	 */
 	public static <T extends GenericContainer> void writeToFile(T obj, String filename) throws IOException {
 		
 	    Schema schema = obj.getSchema();
