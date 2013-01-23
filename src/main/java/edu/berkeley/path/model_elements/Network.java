@@ -148,6 +148,33 @@ public List<Link> getLinkList() {
 		}
 		return originLinks;
 	}
+	
+	/**
+	 * Get the list of links that are sink links. Creates and returns a sub-list of getLinkList.
+	 * @return List of sink links
+	 */
+	public List<Link> createSinkLinkList() {
+		List<Link> sinkLinks = new ArrayList<Link>();
+		for (Link link : getLinkList()) {
+			if (link.isSinkLink())
+				sinkLinks.add(link);
+		}
+		return sinkLinks;
+	}
+	
+	/**
+	 * Get the list of links that are normal links, i.e. neither origin links nor sink links.
+	 * Creates and returns a sub-list of getLinkList.
+	 * @return List of normal non-origin, non-sink links
+	 */
+	public List<Link> createNormalLinkList() {
+		List<Link> normalLinks = new ArrayList<Link>();
+		for (Link link : getLinkList()) {
+			if (!link.isSinkLink() && !link.isOrigin())
+				normalLinks.add(link);
+		}
+		return normalLinks;
+	}
   
   public String getNameString() {
     return (getName() == null) ? null : getName().toString();
