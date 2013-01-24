@@ -41,6 +41,8 @@ import org.apache.avro.io.Encoder;
 import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.avro.specific.SpecificDatumWriter;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 
 /**
  * Read and write model elements objects from/to .json files. 
@@ -80,24 +82,31 @@ public class JsonHandler {
 	 */
 	public static <T extends GenericContainer> T readFromFile(Schema schema, String filename) throws IOException {
 		
-		// Joel's trick: Tell Avro to create model_elements classes instead of model_elements_base classes
-	    Schema.Parser parser = new Schema.Parser();
-	    String schemaStr = schema.toString().replaceFirst(
-	        "\"namespace\":\"edu.berkeley.path.model_elements_base\"",
-	        "\"namespace\":\"edu.berkeley.path.model_elements\"");
-		Schema schemaForReading = parser.parse(schemaStr);
+		Schema schemaForReading = getDerivedSchema(schema);
 
 		DatumReader<T> reader = new SpecificDatumReader<T>(schemaForReading);
 
-		FileInputStream file = new FileInputStream(new File(filename));
-		Decoder decoder = new DecoderFactory().jsonDecoder(schemaForReading, file);				
+		String fileContents = FileUtils.readFileToString(new File(filename));
+		fileContents = fileContents.replaceAll("\"edu.berkeley.path.model_elements_base.", "\"edu.berkeley.path.model_elements.");
+		Decoder decoder = new DecoderFactory().jsonDecoder(schemaForReading, IOUtils.toInputStream(fileContents));				
 		
 		T obj = reader.read(null, decoder);
 		
-		file.close();
-		
 		return(obj);
 
+	}
+	
+	/**
+	 * Joel's trick to tell Avro to create/write model_elements classes instead of model_elements_base classes
+	 * @param baseSchema Schema of model-elements-base object
+	 * @return Schema to use for reading/writing JSON
+	 */
+	public static Schema getDerivedSchema(Schema baseSchema) {
+		Schema.Parser parser = new Schema.Parser();
+	    String schemaStr = baseSchema.toString().replaceFirst(
+	        "\"namespace\":\"edu.berkeley.path.model_elements_base\"",
+	        "\"namespace\":\"edu.berkeley.path.model_elements\"");
+		return parser.parse(schemaStr);
 	}
 	
 	// A few special cases to read easily from a directory:
