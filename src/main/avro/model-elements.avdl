@@ -785,7 +785,7 @@ protocol CC {
     DateTime      timeBegin;
     DateTime      timeEnd;
     
-    SensorSet     sensorSet;
+    union {null, SensorSet}     sensorSet;
     
     // initial condition: specify either a single state, a whole ensemble, or none
     union {null, FreewayCTMEnsembleState}     initialEnsembleState;
