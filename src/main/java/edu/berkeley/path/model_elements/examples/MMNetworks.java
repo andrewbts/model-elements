@@ -58,8 +58,8 @@ public class MMNetworks {
 		return JsonHandler.readSplitRatioMapFromDirectory(getNidDirectory(nid));
 	}
 	
-	public static FreewayContextConfig getFreewayContextConfig(int nid) throws IOException {
-		return JsonHandler.readFreewayContextConfigFromDirectory(getNidDirectory(nid));
+	public static RunConfig getRunConfig(int nid) throws IOException {
+		return JsonHandler.readRunConfigFromDirectory(getNidDirectory(nid));
 	}
 	
 }

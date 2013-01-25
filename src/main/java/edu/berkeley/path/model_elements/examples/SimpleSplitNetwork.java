@@ -43,7 +43,7 @@ public class SimpleSplitNetwork {
 	private static FDMap fdMap;
 	private static DemandMap demandMap;
 	private static SplitRatioMap splitRatioMap;
-	private static FreewayContextConfig config;
+	private static RunConfig config;
 	
 	private static boolean initialized = false;
 	
@@ -100,7 +100,7 @@ public class SimpleSplitNetwork {
 		return splitRatioMap;
 	}
 	
-	public static FreewayContextConfig getFreewayContextConfig() {
+	public static RunConfig getRunConfig() {
 		if (!initialized) initialize();
 		return config;
 	}
