@@ -26,7 +26,7 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayContextConfig extends edu.berkeley.path.model_elements_base.FreewayContextConfig {
+public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	public Long getLongId() {
 		return Long.parseLong(getId().toString());
 	}

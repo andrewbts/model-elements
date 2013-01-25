@@ -737,18 +737,12 @@ protocol CC {
   
   
   /**
-   * Static configuration of a set of freeway runs.
-   *
-   * The parameters encapsulated here are separate from Scenario inputs
-   * in that they express *how* the run is modeled and executed,
-   * rather than *what* is modeled.
-   *
-   * These parameters are used by the Context subclasses.
-   *
-   * Note that a context does not include a scenario. Scenarios are read
-   * dynamically using a ScenarioSource.
+   * Configuration of a freeway run.
+   * Includes algorithm parameters for CTM & EnKF,
+   * start/stop time etc,
+   * and input/output parameters such as where to write reports to.
    */
-  record FreewayContextConfig {
+  record RunConfig {
     string        id;
     string        name;
 
@@ -774,14 +768,23 @@ protocol CC {
     double        additiveModelNoiseStdDev;
     double        additiveVelocityFunctionNoiseMean;
     double        additiveVelocityFunctionNoiseStdDev;
+    
     double        initialDensityFraction;    
     
     string        enkfType;
     EnKFParams    enkfParams;
     
+    // reporting
     Duration      dtOutput;
-    Duration      dt;
+    boolean		reportStatisticsAfterCTM;
+    boolean		reportEnsembleAfterCTM;
+    boolean		reportStatisticsAfterEnKF;
+    boolean		reportEnsembleAfterEnKF;
+    boolean		reportToDB;
+    boolean		reportToDirectory;
+    string		reportDirectory = "";
     
+    Duration      dt;
     DateTime      timeBegin;
     DateTime      timeEnd;
     
