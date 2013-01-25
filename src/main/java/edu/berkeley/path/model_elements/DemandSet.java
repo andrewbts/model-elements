@@ -30,8 +30,14 @@ import java.util.*;
 import org.joda.time.Interval;
 import java.util.Map.Entry;
 
-public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
-  /**
+public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet implements DemandMapProvider {
+  
+	@Override
+	public DemandMap getDemandMap(Interval interval) {
+		return slice(interval);
+	}
+	
+	/**
    * Slice off an interval of time and return the matching items as a DemandMap.
    * If, for a given link and vtype, the time interval contains more than one demand,
    * ignore all but the last. (This method does not change the DemandSet.)
@@ -95,8 +101,6 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
     
     return (DemandProfile)getProfile().get(node.getId());
   }
-
-  // TODO find a better way to expose Map<> access.
   
   /**
    * Set the profile map. Same as setProfiles(), but works with a map of String to DemandProfile.
@@ -129,4 +133,5 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet {
   public Long getLongProjectId() {
     return Long.parseLong(getProjectId().toString());
   }
+
 }

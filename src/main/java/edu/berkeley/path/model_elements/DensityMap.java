@@ -29,51 +29,37 @@ package edu.berkeley.path.model_elements;
 import java.util.*;
 
 public class DensityMap extends edu.berkeley.path.model_elements_base.DensityMap {
-  public Double getVehiclesPerMeterOnLink(Link link) {
-    if (this.vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
 
-    return this.vehiclesPerMeter.get(link.getId());
-  }
-  
-  public Double getVehiclesPerMeterOnLink(Long id) {
-    if (this.vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
+	public Double getVehiclesPerMeterOnLink(Link link) {
+		return getVehiclesPerMeter().get(link.getId());
+	}
 
-    return this.vehiclesPerMeter.get(id.toString());
-  }
+	public Double getVehiclesPerMeterOnLink(Long id) {
+		return getVehiclesPerMeter().get(id.toString());
+	}
 
-  public Double getVehiclesPerMeterOnLink(CharSequence id) {
-    if (this.vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
+	public Double getVehiclesPerMeterOnLink(CharSequence id) {
+		return getVehiclesPerMeter().get(id);
+	}
 
-    return this.vehiclesPerMeter.get(id);
-  }
+	public void setVehiclesPerMeterOnLink(Link link, Double val) {
+		getVehiclesPerMeter().put(link.getId(), val);
+	}
 
-  public void setVehiclesPerMeterOnLink(Link link, Double val) {
-    if (vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
+	public void setVehiclesPerMeterOnLink(Long id, Double val) {
+		getVehiclesPerMeter().put(id.toString(), val);
+	}
 
-    vehiclesPerMeter.put(link.getId(), val);
-  }
-  
-  public void setVehiclesPerMeterOnLink(Long id, Double val) {
-    if (vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
+	public void setVehiclesPerMeterOnLink(CharSequence id, Double val) {
+		getVehiclesPerMeter().put(id, val);
+	}
 
-    vehiclesPerMeter.put(id.toString(), val);
-  }
-  
-  public void setVehiclesPerMeterOnLink(CharSequence id, Double val) {
-    if (vehiclesPerMeter == null) {
-      this.vehiclesPerMeter = new HashMap<CharSequence,Double>();
-    }
+	@Override
+	public Map<CharSequence, Double> getVehiclesPerMeter() {
+		if (super.getVehiclesPerMeter() == null) {
+			super.setVehiclesPerMeter(new HashMap<CharSequence, Double>());
+		}
+		return super.getVehiclesPerMeter();
+	}
 
-    vehiclesPerMeter.put(id, val);
-  }
 }
