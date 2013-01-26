@@ -129,8 +129,8 @@ public class JsonHandler {
 		return readFromFile(FDMap.SCHEMA$, directory + "/FDMap.json");
 	}
 	
-	public static FreewayContextConfig readFreewayContextConfigFromDirectory(String directory) throws IOException {
-		return readFromFile(FreewayContextConfig.SCHEMA$, directory + "/FreewayContextConfig.json");
+	public static RunConfig readRunConfigFromDirectory(String directory) throws IOException {
+		return readFromFile(RunConfig.SCHEMA$, directory + "/RunConfig.json");
 	}
 
 }

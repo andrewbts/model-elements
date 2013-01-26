@@ -5,18 +5,12 @@
  */
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
-/** * Static configuration of a set of freeway runs.
-   *
-   * The parameters encapsulated here are separate from Scenario inputs
-   * in that they express *how* the run is modeled and executed,
-   * rather than *what* is modeled.
-   *
-   * These parameters are used by the Context subclasses.
-   *
-   * Note that a context does not include a scenario. Scenarios are read
-   * dynamically using a ScenarioSource. */
-public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"FreewayContextConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Static configuration of a set of freeway runs.\\r\\n   *\\r\\n   * The parameters encapsulated here are separate from Scenario inputs\\r\\n   * in that they express *how* the run is modeled and executed,\\r\\n   * rather than *what* is modeled.\\r\\n   *\\r\\n   * These parameters are used by the Context subclasses.\\r\\n   *\\r\\n   * Note that a context does not include a scenario. Scenarios are read\\r\\n   * dynamically using a ScenarioSource.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\",\"doc\":\"* historical, live\\r\\n     *\"},{\"name\":\"workflow\",\"type\":\"string\",\"doc\":\"* forecast, estimation\\r\\n     *\"},{\"name\":\"feed\",\"type\":\"string\",\"doc\":\"* probea, probeb, pems\\r\\n    *\"},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"ensembleSize\",\"type\":\"int\"},{\"name\":\"fdType\",\"type\":\"string\"},{\"name\":\"additiveModelNoiseMean\",\"type\":\"double\"},{\"name\":\"additiveModelNoiseStdDev\",\"type\":\"double\"},{\"name\":\"additiveVelocityFunctionNoiseMean\",\"type\":\"double\"},{\"name\":\"additiveVelocityFunctionNoiseStdDev\",\"type\":\"double\"},{\"name\":\"initialDensityFraction\",\"type\":\"double\"},{\"name\":\"enkfType\",\"type\":\"string\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\r\\n   *\\r\\n   * Configuration that applies to one run or a group of runs.\\r\\n   *\\r\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"confidenceDefault\",\"type\":\"double\"},{\"name\":\"confidenceHasMeasurement\",\"type\":\"double\"},{\"name\":\"confidenceNoMeasurement\",\"type\":\"double\"},{\"name\":\"confidenceMeasurementLifetime\",\"type\":\"double\"},{\"name\":\"localizationDistance\",\"type\":\"double\"},{\"name\":\"useLocalization\",\"type\":\"boolean\"},{\"name\":\"modelNoiseMean\",\"type\":\"double\"},{\"name\":\"modelNoiseStdev\",\"type\":\"double\"},{\"name\":\"navteqNoiseMean\",\"type\":\"double\"},{\"name\":\"navteqNoiseStdev\",\"type\":\"double\"},{\"name\":\"navteqPercentage\",\"type\":\"double\"},{\"name\":\"PemsBlackList\",\"type\":{\"type\":\"array\",\"items\":\"int\"}},{\"name\":\"pemsNoiseMean\",\"type\":\"double\"},{\"name\":\"pemsNoiseStdev\",\"type\":\"double\"},{\"name\":\"telenavNoiseMean\",\"type\":\"double\"},{\"name\":\"telenavNoiseStdev\",\"type\":\"double\"},{\"name\":\"telenavPercentage\",\"type\":\"double\"}]}},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"},{\"name\":\"sensorSet\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SensorSet\",\"doc\":\"* Set of sensors residing on links in potentially multiple networks.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"sensors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Sensor\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC,\\r\\n   * camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\",\"doc\":\"* \\\"Loop\\\", etc. Translated to numeric type in the DB.\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"],\"doc\":\"* ID of original detector, e.g. VDS ID\"},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"],\"doc\":\"* data feed associated with this sensor\"},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"doc\":\"* healthy by default\",\"default\":1}]}}},{\"name\":\"modstamp\",\"type\":\"long\"}]}]},{\"name\":\"initialEnsembleState\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":\"DateTime\"},{\"name\":\"quality\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\"}],\"doc\":\"map key is link id\\r\\n     *\\r\\n     * used by FreewayReporterBlock?\"}]}]},{\"name\":\"initialState\",\"type\":[\"null\",\"FreewayCTMState\"]},{\"name\":\"initialStateUncertainty\",\"type\":\"double\",\"default\":0.0}]}");
+/** * Configuration of a freeway run.
+   * Includes algorithm parameters for CTM & EnKF,
+   * start/stop time etc,
+   * and input/output parameters such as where to write reports to. */
+public class RunConfig extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"RunConfig\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* Configuration of a freeway run.\\r\\n   * Includes algorithm parameters for CTM & EnKF,\\r\\n   * start/stop time etc,\\r\\n   * and input/output parameters such as where to write reports to.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"runMode\",\"type\":\"string\",\"doc\":\"* historical, live\\r\\n     *\"},{\"name\":\"workflow\",\"type\":\"string\",\"doc\":\"* forecast, estimation\\r\\n     *\"},{\"name\":\"feed\",\"type\":\"string\",\"doc\":\"* probea, probeb, pems\\r\\n    *\"},{\"name\":\"ctmType\",\"type\":\"string\"},{\"name\":\"ensembleSize\",\"type\":\"int\"},{\"name\":\"fdType\",\"type\":\"string\"},{\"name\":\"additiveModelNoiseMean\",\"type\":\"double\"},{\"name\":\"additiveModelNoiseStdDev\",\"type\":\"double\"},{\"name\":\"additiveVelocityFunctionNoiseMean\",\"type\":\"double\"},{\"name\":\"additiveVelocityFunctionNoiseStdDev\",\"type\":\"double\"},{\"name\":\"initialDensityFraction\",\"type\":\"double\"},{\"name\":\"enkfType\",\"type\":\"string\"},{\"name\":\"enkfParams\",\"type\":{\"type\":\"record\",\"name\":\"EnKFParams\",\"doc\":\"* Context and Run Config section\\r\\n   *\\r\\n   * Configuration that applies to one run or a group of runs.\\r\\n   *\\r\\n   * These objects correspond to the TBD Run tables.\",\"fields\":[{\"name\":\"confidenceDefault\",\"type\":\"double\"},{\"name\":\"confidenceHasMeasurement\",\"type\":\"double\"},{\"name\":\"confidenceNoMeasurement\",\"type\":\"double\"},{\"name\":\"confidenceMeasurementLifetime\",\"type\":\"double\"},{\"name\":\"localizationDistance\",\"type\":\"double\"},{\"name\":\"useLocalization\",\"type\":\"boolean\"},{\"name\":\"modelNoiseMean\",\"type\":\"double\"},{\"name\":\"modelNoiseStdev\",\"type\":\"double\"},{\"name\":\"navteqNoiseMean\",\"type\":\"double\"},{\"name\":\"navteqNoiseStdev\",\"type\":\"double\"},{\"name\":\"navteqPercentage\",\"type\":\"double\"},{\"name\":\"PemsBlackList\",\"type\":{\"type\":\"array\",\"items\":\"int\"}},{\"name\":\"pemsNoiseMean\",\"type\":\"double\"},{\"name\":\"pemsNoiseStdev\",\"type\":\"double\"},{\"name\":\"telenavNoiseMean\",\"type\":\"double\"},{\"name\":\"telenavNoiseStdev\",\"type\":\"double\"},{\"name\":\"telenavPercentage\",\"type\":\"double\"}]}},{\"name\":\"dtOutput\",\"type\":{\"type\":\"record\",\"name\":\"Duration\",\"doc\":\"milliseconds\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"reportStatisticsAfterCTM\",\"type\":\"boolean\"},{\"name\":\"reportEnsembleAfterCTM\",\"type\":\"boolean\"},{\"name\":\"reportStatisticsAfterEnKF\",\"type\":\"boolean\"},{\"name\":\"reportEnsembleAfterEnKF\",\"type\":\"boolean\"},{\"name\":\"reportToDB\",\"type\":\"boolean\"},{\"name\":\"reportToDirectory\",\"type\":\"boolean\"},{\"name\":\"reportDirectory\",\"type\":\"string\",\"default\":\"\"},{\"name\":\"dt\",\"type\":\"Duration\"},{\"name\":\"timeBegin\",\"type\":{\"type\":\"record\",\"name\":\"DateTime\",\"doc\":\"milliseconds, absolute, since epoch, utc\",\"fields\":[{\"name\":\"milliseconds\",\"type\":\"long\"}]}},{\"name\":\"timeEnd\",\"type\":\"DateTime\"},{\"name\":\"sensorSet\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"SensorSet\",\"doc\":\"* Set of sensors residing on links in potentially multiple networks.\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":[\"null\",\"string\"]},{\"name\":\"description\",\"type\":[\"null\",\"string\"]},{\"name\":\"projectId\",\"type\":[\"null\",\"string\"]},{\"name\":\"sensors\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Sensor\",\"doc\":\"* Sensor that can describe loop detector, magnetic detector, TMC,\\r\\n   * camera, radar, etc.\",\"fields\":[{\"name\":\"type\",\"type\":\"string\",\"doc\":\"* \\\"Loop\\\", etc. Translated to numeric type in the DB.\"},{\"name\":\"entityId\",\"type\":[\"null\",\"string\"],\"doc\":\"* ID of original detector, e.g. VDS ID\"},{\"name\":\"measurementFeedId\",\"type\":[\"null\",\"string\"],\"doc\":\"* data feed associated with this sensor\"},{\"name\":\"linkId\",\"type\":\"string\"},{\"name\":\"linkOffset\",\"type\":\"double\",\"default\":0},{\"name\":\"laneNum\",\"type\":\"double\",\"default\":1},{\"name\":\"healthStatus\",\"type\":\"double\",\"doc\":\"* healthy by default\",\"default\":1}]}}},{\"name\":\"modstamp\",\"type\":\"long\"}]}]},{\"name\":\"initialEnsembleState\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"FreewayCTMEnsembleState\",\"doc\":\"* State of ensemble CTMs in an ordered list.\",\"fields\":[{\"name\":\"ensembleState\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"FreewayCTMState\",\"doc\":\"* State of entire CTM, comprising:\\r\\n   * state of each link,\\r\\n   * state of each origin queue, and\\r\\n   * optionally the in- and out-flows of each link.\",\"fields\":[{\"name\":\"linkState\",\"type\":{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkState\",\"doc\":\"* State of one link at one time.\\r\\n   *\\r\\n   * May contain density, velocity, or both.\",\"fields\":[{\"name\":\"density\",\"type\":[\"double\",\"null\"]},{\"name\":\"velocity\",\"type\":[\"double\",\"null\"]}]}},\"doc\":\"map key is link id\"},{\"name\":\"queueLength\",\"type\":{\"type\":\"map\",\"values\":\"double\"},\"doc\":\"map key is origin link id\"},{\"name\":\"linkFlowState\",\"type\":[\"null\",{\"type\":\"map\",\"values\":{\"type\":\"record\",\"name\":\"FreewayLinkFlowState\",\"doc\":\"* In- and out-flow state of one link at one time.\\r\\n   *\\r\\n   * The in- and out-flows are a quantity of interest computed by a CTM,\\r\\n   * though not needed for either estimation of future time steps of a CTM.\",\"fields\":[{\"name\":\"inFlow\",\"type\":\"double\"},{\"name\":\"outFlow\",\"type\":\"double\"}]}}],\"doc\":\"map key is link id\"}]}},\"doc\":\"one entry per CTM\"},{\"name\":\"t\",\"type\":\"DateTime\"},{\"name\":\"quality\",\"type\":[\"null\",{\"type\":\"map\",\"values\":\"double\"}],\"doc\":\"map key is link id\\r\\n     *\\r\\n     * used by FreewayReporterBlock?\"}]}]},{\"name\":\"initialState\",\"type\":[\"null\",\"FreewayCTMState\"]},{\"name\":\"initialStateUncertainty\",\"type\":\"double\",\"default\":0.0}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   /** * historical, live
@@ -39,6 +33,13 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   @Deprecated public java.lang.CharSequence enkfType;
   @Deprecated public edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
   @Deprecated public edu.berkeley.path.model_elements_base.Duration dtOutput;
+  @Deprecated public boolean reportStatisticsAfterCTM;
+  @Deprecated public boolean reportEnsembleAfterCTM;
+  @Deprecated public boolean reportStatisticsAfterEnKF;
+  @Deprecated public boolean reportEnsembleAfterEnKF;
+  @Deprecated public boolean reportToDB;
+  @Deprecated public boolean reportToDirectory;
+  @Deprecated public java.lang.CharSequence reportDirectory;
   @Deprecated public edu.berkeley.path.model_elements_base.Duration dt;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime timeBegin;
   @Deprecated public edu.berkeley.path.model_elements_base.DateTime timeEnd;
@@ -50,12 +51,12 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   /**
    * Default constructor.
    */
-  public FreewayContextConfig() {}
+  public RunConfig() {}
 
   /**
    * All-args constructor.
    */
-  public FreewayContextConfig(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence runMode, java.lang.CharSequence workflow, java.lang.CharSequence feed, java.lang.CharSequence ctmType, java.lang.Integer ensembleSize, java.lang.CharSequence fdType, java.lang.Double additiveModelNoiseMean, java.lang.Double additiveModelNoiseStdDev, java.lang.Double additiveVelocityFunctionNoiseMean, java.lang.Double additiveVelocityFunctionNoiseStdDev, java.lang.Double initialDensityFraction, java.lang.CharSequence enkfType, edu.berkeley.path.model_elements_base.EnKFParams enkfParams, edu.berkeley.path.model_elements_base.Duration dtOutput, edu.berkeley.path.model_elements_base.Duration dt, edu.berkeley.path.model_elements_base.DateTime timeBegin, edu.berkeley.path.model_elements_base.DateTime timeEnd, edu.berkeley.path.model_elements_base.SensorSet sensorSet, edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState initialEnsembleState, edu.berkeley.path.model_elements_base.FreewayCTMState initialState, java.lang.Double initialStateUncertainty) {
+  public RunConfig(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence runMode, java.lang.CharSequence workflow, java.lang.CharSequence feed, java.lang.CharSequence ctmType, java.lang.Integer ensembleSize, java.lang.CharSequence fdType, java.lang.Double additiveModelNoiseMean, java.lang.Double additiveModelNoiseStdDev, java.lang.Double additiveVelocityFunctionNoiseMean, java.lang.Double additiveVelocityFunctionNoiseStdDev, java.lang.Double initialDensityFraction, java.lang.CharSequence enkfType, edu.berkeley.path.model_elements_base.EnKFParams enkfParams, edu.berkeley.path.model_elements_base.Duration dtOutput, java.lang.Boolean reportStatisticsAfterCTM, java.lang.Boolean reportEnsembleAfterCTM, java.lang.Boolean reportStatisticsAfterEnKF, java.lang.Boolean reportEnsembleAfterEnKF, java.lang.Boolean reportToDB, java.lang.Boolean reportToDirectory, java.lang.CharSequence reportDirectory, edu.berkeley.path.model_elements_base.Duration dt, edu.berkeley.path.model_elements_base.DateTime timeBegin, edu.berkeley.path.model_elements_base.DateTime timeEnd, edu.berkeley.path.model_elements_base.SensorSet sensorSet, edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState initialEnsembleState, edu.berkeley.path.model_elements_base.FreewayCTMState initialState, java.lang.Double initialStateUncertainty) {
     this.id = id;
     this.name = name;
     this.runMode = runMode;
@@ -72,6 +73,13 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     this.enkfType = enkfType;
     this.enkfParams = enkfParams;
     this.dtOutput = dtOutput;
+    this.reportStatisticsAfterCTM = reportStatisticsAfterCTM;
+    this.reportEnsembleAfterCTM = reportEnsembleAfterCTM;
+    this.reportStatisticsAfterEnKF = reportStatisticsAfterEnKF;
+    this.reportEnsembleAfterEnKF = reportEnsembleAfterEnKF;
+    this.reportToDB = reportToDB;
+    this.reportToDirectory = reportToDirectory;
+    this.reportDirectory = reportDirectory;
     this.dt = dt;
     this.timeBegin = timeBegin;
     this.timeEnd = timeEnd;
@@ -101,13 +109,20 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     case 13: return enkfType;
     case 14: return enkfParams;
     case 15: return dtOutput;
-    case 16: return dt;
-    case 17: return timeBegin;
-    case 18: return timeEnd;
-    case 19: return sensorSet;
-    case 20: return initialEnsembleState;
-    case 21: return initialState;
-    case 22: return initialStateUncertainty;
+    case 16: return reportStatisticsAfterCTM;
+    case 17: return reportEnsembleAfterCTM;
+    case 18: return reportStatisticsAfterEnKF;
+    case 19: return reportEnsembleAfterEnKF;
+    case 20: return reportToDB;
+    case 21: return reportToDirectory;
+    case 22: return reportDirectory;
+    case 23: return dt;
+    case 24: return timeBegin;
+    case 25: return timeEnd;
+    case 26: return sensorSet;
+    case 27: return initialEnsembleState;
+    case 28: return initialState;
+    case 29: return initialStateUncertainty;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -131,13 +146,20 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     case 13: enkfType = (java.lang.CharSequence)value$; break;
     case 14: enkfParams = (edu.berkeley.path.model_elements_base.EnKFParams)value$; break;
     case 15: dtOutput = (edu.berkeley.path.model_elements_base.Duration)value$; break;
-    case 16: dt = (edu.berkeley.path.model_elements_base.Duration)value$; break;
-    case 17: timeBegin = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
-    case 18: timeEnd = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
-    case 19: sensorSet = (edu.berkeley.path.model_elements_base.SensorSet)value$; break;
-    case 20: initialEnsembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState)value$; break;
-    case 21: initialState = (edu.berkeley.path.model_elements_base.FreewayCTMState)value$; break;
-    case 22: initialStateUncertainty = (java.lang.Double)value$; break;
+    case 16: reportStatisticsAfterCTM = (java.lang.Boolean)value$; break;
+    case 17: reportEnsembleAfterCTM = (java.lang.Boolean)value$; break;
+    case 18: reportStatisticsAfterEnKF = (java.lang.Boolean)value$; break;
+    case 19: reportEnsembleAfterEnKF = (java.lang.Boolean)value$; break;
+    case 20: reportToDB = (java.lang.Boolean)value$; break;
+    case 21: reportToDirectory = (java.lang.Boolean)value$; break;
+    case 22: reportDirectory = (java.lang.CharSequence)value$; break;
+    case 23: dt = (edu.berkeley.path.model_elements_base.Duration)value$; break;
+    case 24: timeBegin = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
+    case 25: timeEnd = (edu.berkeley.path.model_elements_base.DateTime)value$; break;
+    case 26: sensorSet = (edu.berkeley.path.model_elements_base.SensorSet)value$; break;
+    case 27: initialEnsembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState)value$; break;
+    case 28: initialState = (edu.berkeley.path.model_elements_base.FreewayCTMState)value$; break;
+    case 29: initialStateUncertainty = (java.lang.Double)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -389,6 +411,111 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
   }
 
   /**
+   * Gets the value of the 'reportStatisticsAfterCTM' field.
+   */
+  public java.lang.Boolean getReportStatisticsAfterCTM() {
+    return reportStatisticsAfterCTM;
+  }
+
+  /**
+   * Sets the value of the 'reportStatisticsAfterCTM' field.
+   * @param value the value to set.
+   */
+  public void setReportStatisticsAfterCTM(java.lang.Boolean value) {
+    this.reportStatisticsAfterCTM = value;
+  }
+
+  /**
+   * Gets the value of the 'reportEnsembleAfterCTM' field.
+   */
+  public java.lang.Boolean getReportEnsembleAfterCTM() {
+    return reportEnsembleAfterCTM;
+  }
+
+  /**
+   * Sets the value of the 'reportEnsembleAfterCTM' field.
+   * @param value the value to set.
+   */
+  public void setReportEnsembleAfterCTM(java.lang.Boolean value) {
+    this.reportEnsembleAfterCTM = value;
+  }
+
+  /**
+   * Gets the value of the 'reportStatisticsAfterEnKF' field.
+   */
+  public java.lang.Boolean getReportStatisticsAfterEnKF() {
+    return reportStatisticsAfterEnKF;
+  }
+
+  /**
+   * Sets the value of the 'reportStatisticsAfterEnKF' field.
+   * @param value the value to set.
+   */
+  public void setReportStatisticsAfterEnKF(java.lang.Boolean value) {
+    this.reportStatisticsAfterEnKF = value;
+  }
+
+  /**
+   * Gets the value of the 'reportEnsembleAfterEnKF' field.
+   */
+  public java.lang.Boolean getReportEnsembleAfterEnKF() {
+    return reportEnsembleAfterEnKF;
+  }
+
+  /**
+   * Sets the value of the 'reportEnsembleAfterEnKF' field.
+   * @param value the value to set.
+   */
+  public void setReportEnsembleAfterEnKF(java.lang.Boolean value) {
+    this.reportEnsembleAfterEnKF = value;
+  }
+
+  /**
+   * Gets the value of the 'reportToDB' field.
+   */
+  public java.lang.Boolean getReportToDB() {
+    return reportToDB;
+  }
+
+  /**
+   * Sets the value of the 'reportToDB' field.
+   * @param value the value to set.
+   */
+  public void setReportToDB(java.lang.Boolean value) {
+    this.reportToDB = value;
+  }
+
+  /**
+   * Gets the value of the 'reportToDirectory' field.
+   */
+  public java.lang.Boolean getReportToDirectory() {
+    return reportToDirectory;
+  }
+
+  /**
+   * Sets the value of the 'reportToDirectory' field.
+   * @param value the value to set.
+   */
+  public void setReportToDirectory(java.lang.Boolean value) {
+    this.reportToDirectory = value;
+  }
+
+  /**
+   * Gets the value of the 'reportDirectory' field.
+   */
+  public java.lang.CharSequence getReportDirectory() {
+    return reportDirectory;
+  }
+
+  /**
+   * Sets the value of the 'reportDirectory' field.
+   * @param value the value to set.
+   */
+  public void setReportDirectory(java.lang.CharSequence value) {
+    this.reportDirectory = value;
+  }
+
+  /**
    * Gets the value of the 'dt' field.
    */
   public edu.berkeley.path.model_elements_base.Duration getDt() {
@@ -493,26 +620,26 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     this.initialStateUncertainty = value;
   }
 
-  /** Creates a new FreewayContextConfig RecordBuilder */
-  public static edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder newBuilder() {
-    return new edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder();
+  /** Creates a new RunConfig RecordBuilder */
+  public static edu.berkeley.path.model_elements_base.RunConfig.Builder newBuilder() {
+    return new edu.berkeley.path.model_elements_base.RunConfig.Builder();
   }
   
-  /** Creates a new FreewayContextConfig RecordBuilder by copying an existing Builder */
-  public static edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder newBuilder(edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder other) {
-    return new edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder(other);
+  /** Creates a new RunConfig RecordBuilder by copying an existing Builder */
+  public static edu.berkeley.path.model_elements_base.RunConfig.Builder newBuilder(edu.berkeley.path.model_elements_base.RunConfig.Builder other) {
+    return new edu.berkeley.path.model_elements_base.RunConfig.Builder(other);
   }
   
-  /** Creates a new FreewayContextConfig RecordBuilder by copying an existing FreewayContextConfig instance */
-  public static edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder newBuilder(edu.berkeley.path.model_elements_base.FreewayContextConfig other) {
-    return new edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder(other);
+  /** Creates a new RunConfig RecordBuilder by copying an existing RunConfig instance */
+  public static edu.berkeley.path.model_elements_base.RunConfig.Builder newBuilder(edu.berkeley.path.model_elements_base.RunConfig other) {
+    return new edu.berkeley.path.model_elements_base.RunConfig.Builder(other);
   }
   
   /**
-   * RecordBuilder for FreewayContextConfig instances.
+   * RecordBuilder for RunConfig instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<FreewayContextConfig>
-    implements org.apache.avro.data.RecordBuilder<FreewayContextConfig> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<RunConfig>
+    implements org.apache.avro.data.RecordBuilder<RunConfig> {
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence name;
@@ -530,6 +657,13 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     private java.lang.CharSequence enkfType;
     private edu.berkeley.path.model_elements_base.EnKFParams enkfParams;
     private edu.berkeley.path.model_elements_base.Duration dtOutput;
+    private boolean reportStatisticsAfterCTM;
+    private boolean reportEnsembleAfterCTM;
+    private boolean reportStatisticsAfterEnKF;
+    private boolean reportEnsembleAfterEnKF;
+    private boolean reportToDB;
+    private boolean reportToDirectory;
+    private java.lang.CharSequence reportDirectory;
     private edu.berkeley.path.model_elements_base.Duration dt;
     private edu.berkeley.path.model_elements_base.DateTime timeBegin;
     private edu.berkeley.path.model_elements_base.DateTime timeEnd;
@@ -540,17 +674,17 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
 
     /** Creates a new Builder */
     private Builder() {
-      super(edu.berkeley.path.model_elements_base.FreewayContextConfig.SCHEMA$);
+      super(edu.berkeley.path.model_elements_base.RunConfig.SCHEMA$);
     }
     
     /** Creates a Builder by copying an existing Builder */
-    private Builder(edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder other) {
+    private Builder(edu.berkeley.path.model_elements_base.RunConfig.Builder other) {
       super(other);
     }
     
-    /** Creates a Builder by copying an existing FreewayContextConfig instance */
-    private Builder(edu.berkeley.path.model_elements_base.FreewayContextConfig other) {
-            super(edu.berkeley.path.model_elements_base.FreewayContextConfig.SCHEMA$);
+    /** Creates a Builder by copying an existing RunConfig instance */
+    private Builder(edu.berkeley.path.model_elements_base.RunConfig other) {
+            super(edu.berkeley.path.model_elements_base.RunConfig.SCHEMA$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = (java.lang.CharSequence) data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
@@ -615,33 +749,61 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         this.dtOutput = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[15].schema(), other.dtOutput);
         fieldSetFlags()[15] = true;
       }
-      if (isValidValue(fields()[16], other.dt)) {
-        this.dt = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[16].schema(), other.dt);
+      if (isValidValue(fields()[16], other.reportStatisticsAfterCTM)) {
+        this.reportStatisticsAfterCTM = (java.lang.Boolean) data().deepCopy(fields()[16].schema(), other.reportStatisticsAfterCTM);
         fieldSetFlags()[16] = true;
       }
-      if (isValidValue(fields()[17], other.timeBegin)) {
-        this.timeBegin = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[17].schema(), other.timeBegin);
+      if (isValidValue(fields()[17], other.reportEnsembleAfterCTM)) {
+        this.reportEnsembleAfterCTM = (java.lang.Boolean) data().deepCopy(fields()[17].schema(), other.reportEnsembleAfterCTM);
         fieldSetFlags()[17] = true;
       }
-      if (isValidValue(fields()[18], other.timeEnd)) {
-        this.timeEnd = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[18].schema(), other.timeEnd);
+      if (isValidValue(fields()[18], other.reportStatisticsAfterEnKF)) {
+        this.reportStatisticsAfterEnKF = (java.lang.Boolean) data().deepCopy(fields()[18].schema(), other.reportStatisticsAfterEnKF);
         fieldSetFlags()[18] = true;
       }
-      if (isValidValue(fields()[19], other.sensorSet)) {
-        this.sensorSet = (edu.berkeley.path.model_elements_base.SensorSet) data().deepCopy(fields()[19].schema(), other.sensorSet);
+      if (isValidValue(fields()[19], other.reportEnsembleAfterEnKF)) {
+        this.reportEnsembleAfterEnKF = (java.lang.Boolean) data().deepCopy(fields()[19].schema(), other.reportEnsembleAfterEnKF);
         fieldSetFlags()[19] = true;
       }
-      if (isValidValue(fields()[20], other.initialEnsembleState)) {
-        this.initialEnsembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) data().deepCopy(fields()[20].schema(), other.initialEnsembleState);
+      if (isValidValue(fields()[20], other.reportToDB)) {
+        this.reportToDB = (java.lang.Boolean) data().deepCopy(fields()[20].schema(), other.reportToDB);
         fieldSetFlags()[20] = true;
       }
-      if (isValidValue(fields()[21], other.initialState)) {
-        this.initialState = (edu.berkeley.path.model_elements_base.FreewayCTMState) data().deepCopy(fields()[21].schema(), other.initialState);
+      if (isValidValue(fields()[21], other.reportToDirectory)) {
+        this.reportToDirectory = (java.lang.Boolean) data().deepCopy(fields()[21].schema(), other.reportToDirectory);
         fieldSetFlags()[21] = true;
       }
-      if (isValidValue(fields()[22], other.initialStateUncertainty)) {
-        this.initialStateUncertainty = (java.lang.Double) data().deepCopy(fields()[22].schema(), other.initialStateUncertainty);
+      if (isValidValue(fields()[22], other.reportDirectory)) {
+        this.reportDirectory = (java.lang.CharSequence) data().deepCopy(fields()[22].schema(), other.reportDirectory);
         fieldSetFlags()[22] = true;
+      }
+      if (isValidValue(fields()[23], other.dt)) {
+        this.dt = (edu.berkeley.path.model_elements_base.Duration) data().deepCopy(fields()[23].schema(), other.dt);
+        fieldSetFlags()[23] = true;
+      }
+      if (isValidValue(fields()[24], other.timeBegin)) {
+        this.timeBegin = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[24].schema(), other.timeBegin);
+        fieldSetFlags()[24] = true;
+      }
+      if (isValidValue(fields()[25], other.timeEnd)) {
+        this.timeEnd = (edu.berkeley.path.model_elements_base.DateTime) data().deepCopy(fields()[25].schema(), other.timeEnd);
+        fieldSetFlags()[25] = true;
+      }
+      if (isValidValue(fields()[26], other.sensorSet)) {
+        this.sensorSet = (edu.berkeley.path.model_elements_base.SensorSet) data().deepCopy(fields()[26].schema(), other.sensorSet);
+        fieldSetFlags()[26] = true;
+      }
+      if (isValidValue(fields()[27], other.initialEnsembleState)) {
+        this.initialEnsembleState = (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) data().deepCopy(fields()[27].schema(), other.initialEnsembleState);
+        fieldSetFlags()[27] = true;
+      }
+      if (isValidValue(fields()[28], other.initialState)) {
+        this.initialState = (edu.berkeley.path.model_elements_base.FreewayCTMState) data().deepCopy(fields()[28].schema(), other.initialState);
+        fieldSetFlags()[28] = true;
+      }
+      if (isValidValue(fields()[29], other.initialStateUncertainty)) {
+        this.initialStateUncertainty = (java.lang.Double) data().deepCopy(fields()[29].schema(), other.initialStateUncertainty);
+        fieldSetFlags()[29] = true;
       }
     }
 
@@ -651,7 +813,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setId(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -664,7 +826,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'id' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearId() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -676,7 +838,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'name' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setName(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.name = value;
       fieldSetFlags()[1] = true;
@@ -689,7 +851,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'name' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearName() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearName() {
       name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -701,7 +863,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'runMode' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setRunMode(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setRunMode(java.lang.CharSequence value) {
       validate(fields()[2], value);
       this.runMode = value;
       fieldSetFlags()[2] = true;
@@ -714,7 +876,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'runMode' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearRunMode() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearRunMode() {
       runMode = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -726,7 +888,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'workflow' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setWorkflow(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setWorkflow(java.lang.CharSequence value) {
       validate(fields()[3], value);
       this.workflow = value;
       fieldSetFlags()[3] = true;
@@ -739,7 +901,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'workflow' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearWorkflow() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearWorkflow() {
       workflow = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -751,7 +913,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'feed' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setFeed(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setFeed(java.lang.CharSequence value) {
       validate(fields()[4], value);
       this.feed = value;
       fieldSetFlags()[4] = true;
@@ -764,7 +926,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'feed' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearFeed() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearFeed() {
       feed = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -776,7 +938,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'ctmType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setCtmType(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setCtmType(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.ctmType = value;
       fieldSetFlags()[5] = true;
@@ -789,7 +951,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'ctmType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearCtmType() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearCtmType() {
       ctmType = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -801,7 +963,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'ensembleSize' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setEnsembleSize(int value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setEnsembleSize(int value) {
       validate(fields()[6], value);
       this.ensembleSize = value;
       fieldSetFlags()[6] = true;
@@ -814,7 +976,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'ensembleSize' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearEnsembleSize() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearEnsembleSize() {
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -825,7 +987,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'fdType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setFdType(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setFdType(java.lang.CharSequence value) {
       validate(fields()[7], value);
       this.fdType = value;
       fieldSetFlags()[7] = true;
@@ -838,7 +1000,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'fdType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearFdType() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearFdType() {
       fdType = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -850,7 +1012,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'additiveModelNoiseMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setAdditiveModelNoiseMean(double value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setAdditiveModelNoiseMean(double value) {
       validate(fields()[8], value);
       this.additiveModelNoiseMean = value;
       fieldSetFlags()[8] = true;
@@ -863,7 +1025,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'additiveModelNoiseMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearAdditiveModelNoiseMean() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearAdditiveModelNoiseMean() {
       fieldSetFlags()[8] = false;
       return this;
     }
@@ -874,7 +1036,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'additiveModelNoiseStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setAdditiveModelNoiseStdDev(double value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setAdditiveModelNoiseStdDev(double value) {
       validate(fields()[9], value);
       this.additiveModelNoiseStdDev = value;
       fieldSetFlags()[9] = true;
@@ -887,7 +1049,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'additiveModelNoiseStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearAdditiveModelNoiseStdDev() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearAdditiveModelNoiseStdDev() {
       fieldSetFlags()[9] = false;
       return this;
     }
@@ -898,7 +1060,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'additiveVelocityFunctionNoiseMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setAdditiveVelocityFunctionNoiseMean(double value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setAdditiveVelocityFunctionNoiseMean(double value) {
       validate(fields()[10], value);
       this.additiveVelocityFunctionNoiseMean = value;
       fieldSetFlags()[10] = true;
@@ -911,7 +1073,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'additiveVelocityFunctionNoiseMean' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearAdditiveVelocityFunctionNoiseMean() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearAdditiveVelocityFunctionNoiseMean() {
       fieldSetFlags()[10] = false;
       return this;
     }
@@ -922,7 +1084,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'additiveVelocityFunctionNoiseStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setAdditiveVelocityFunctionNoiseStdDev(double value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setAdditiveVelocityFunctionNoiseStdDev(double value) {
       validate(fields()[11], value);
       this.additiveVelocityFunctionNoiseStdDev = value;
       fieldSetFlags()[11] = true;
@@ -935,7 +1097,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'additiveVelocityFunctionNoiseStdDev' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearAdditiveVelocityFunctionNoiseStdDev() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearAdditiveVelocityFunctionNoiseStdDev() {
       fieldSetFlags()[11] = false;
       return this;
     }
@@ -946,7 +1108,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'initialDensityFraction' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setInitialDensityFraction(double value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setInitialDensityFraction(double value) {
       validate(fields()[12], value);
       this.initialDensityFraction = value;
       fieldSetFlags()[12] = true;
@@ -959,7 +1121,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'initialDensityFraction' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearInitialDensityFraction() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearInitialDensityFraction() {
       fieldSetFlags()[12] = false;
       return this;
     }
@@ -970,7 +1132,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'enkfType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setEnkfType(java.lang.CharSequence value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setEnkfType(java.lang.CharSequence value) {
       validate(fields()[13], value);
       this.enkfType = value;
       fieldSetFlags()[13] = true;
@@ -983,7 +1145,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'enkfType' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearEnkfType() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearEnkfType() {
       enkfType = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -995,7 +1157,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'enkfParams' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setEnkfParams(edu.berkeley.path.model_elements_base.EnKFParams value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setEnkfParams(edu.berkeley.path.model_elements_base.EnKFParams value) {
       validate(fields()[14], value);
       this.enkfParams = value;
       fieldSetFlags()[14] = true;
@@ -1008,7 +1170,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'enkfParams' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearEnkfParams() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearEnkfParams() {
       enkfParams = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1020,7 +1182,7 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'dtOutput' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setDtOutput(edu.berkeley.path.model_elements_base.Duration value) {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setDtOutput(edu.berkeley.path.model_elements_base.Duration value) {
       validate(fields()[15], value);
       this.dtOutput = value;
       fieldSetFlags()[15] = true;
@@ -1033,9 +1195,178 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Clears the value of the 'dtOutput' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearDtOutput() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearDtOutput() {
       dtOutput = null;
       fieldSetFlags()[15] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportStatisticsAfterCTM' field */
+    public java.lang.Boolean getReportStatisticsAfterCTM() {
+      return reportStatisticsAfterCTM;
+    }
+    
+    /** Sets the value of the 'reportStatisticsAfterCTM' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportStatisticsAfterCTM(boolean value) {
+      validate(fields()[16], value);
+      this.reportStatisticsAfterCTM = value;
+      fieldSetFlags()[16] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportStatisticsAfterCTM' field has been set */
+    public boolean hasReportStatisticsAfterCTM() {
+      return fieldSetFlags()[16];
+    }
+    
+    /** Clears the value of the 'reportStatisticsAfterCTM' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportStatisticsAfterCTM() {
+      fieldSetFlags()[16] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportEnsembleAfterCTM' field */
+    public java.lang.Boolean getReportEnsembleAfterCTM() {
+      return reportEnsembleAfterCTM;
+    }
+    
+    /** Sets the value of the 'reportEnsembleAfterCTM' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportEnsembleAfterCTM(boolean value) {
+      validate(fields()[17], value);
+      this.reportEnsembleAfterCTM = value;
+      fieldSetFlags()[17] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportEnsembleAfterCTM' field has been set */
+    public boolean hasReportEnsembleAfterCTM() {
+      return fieldSetFlags()[17];
+    }
+    
+    /** Clears the value of the 'reportEnsembleAfterCTM' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportEnsembleAfterCTM() {
+      fieldSetFlags()[17] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportStatisticsAfterEnKF' field */
+    public java.lang.Boolean getReportStatisticsAfterEnKF() {
+      return reportStatisticsAfterEnKF;
+    }
+    
+    /** Sets the value of the 'reportStatisticsAfterEnKF' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportStatisticsAfterEnKF(boolean value) {
+      validate(fields()[18], value);
+      this.reportStatisticsAfterEnKF = value;
+      fieldSetFlags()[18] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportStatisticsAfterEnKF' field has been set */
+    public boolean hasReportStatisticsAfterEnKF() {
+      return fieldSetFlags()[18];
+    }
+    
+    /** Clears the value of the 'reportStatisticsAfterEnKF' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportStatisticsAfterEnKF() {
+      fieldSetFlags()[18] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportEnsembleAfterEnKF' field */
+    public java.lang.Boolean getReportEnsembleAfterEnKF() {
+      return reportEnsembleAfterEnKF;
+    }
+    
+    /** Sets the value of the 'reportEnsembleAfterEnKF' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportEnsembleAfterEnKF(boolean value) {
+      validate(fields()[19], value);
+      this.reportEnsembleAfterEnKF = value;
+      fieldSetFlags()[19] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportEnsembleAfterEnKF' field has been set */
+    public boolean hasReportEnsembleAfterEnKF() {
+      return fieldSetFlags()[19];
+    }
+    
+    /** Clears the value of the 'reportEnsembleAfterEnKF' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportEnsembleAfterEnKF() {
+      fieldSetFlags()[19] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportToDB' field */
+    public java.lang.Boolean getReportToDB() {
+      return reportToDB;
+    }
+    
+    /** Sets the value of the 'reportToDB' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportToDB(boolean value) {
+      validate(fields()[20], value);
+      this.reportToDB = value;
+      fieldSetFlags()[20] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportToDB' field has been set */
+    public boolean hasReportToDB() {
+      return fieldSetFlags()[20];
+    }
+    
+    /** Clears the value of the 'reportToDB' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportToDB() {
+      fieldSetFlags()[20] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportToDirectory' field */
+    public java.lang.Boolean getReportToDirectory() {
+      return reportToDirectory;
+    }
+    
+    /** Sets the value of the 'reportToDirectory' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportToDirectory(boolean value) {
+      validate(fields()[21], value);
+      this.reportToDirectory = value;
+      fieldSetFlags()[21] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportToDirectory' field has been set */
+    public boolean hasReportToDirectory() {
+      return fieldSetFlags()[21];
+    }
+    
+    /** Clears the value of the 'reportToDirectory' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportToDirectory() {
+      fieldSetFlags()[21] = false;
+      return this;
+    }
+
+    /** Gets the value of the 'reportDirectory' field */
+    public java.lang.CharSequence getReportDirectory() {
+      return reportDirectory;
+    }
+    
+    /** Sets the value of the 'reportDirectory' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setReportDirectory(java.lang.CharSequence value) {
+      validate(fields()[22], value);
+      this.reportDirectory = value;
+      fieldSetFlags()[22] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'reportDirectory' field has been set */
+    public boolean hasReportDirectory() {
+      return fieldSetFlags()[22];
+    }
+    
+    /** Clears the value of the 'reportDirectory' field */
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearReportDirectory() {
+      reportDirectory = null;
+      fieldSetFlags()[22] = false;
       return this;
     }
 
@@ -1045,22 +1376,22 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'dt' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setDt(edu.berkeley.path.model_elements_base.Duration value) {
-      validate(fields()[16], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setDt(edu.berkeley.path.model_elements_base.Duration value) {
+      validate(fields()[23], value);
       this.dt = value;
-      fieldSetFlags()[16] = true;
+      fieldSetFlags()[23] = true;
       return this; 
     }
     
     /** Checks whether the 'dt' field has been set */
     public boolean hasDt() {
-      return fieldSetFlags()[16];
+      return fieldSetFlags()[23];
     }
     
     /** Clears the value of the 'dt' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearDt() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearDt() {
       dt = null;
-      fieldSetFlags()[16] = false;
+      fieldSetFlags()[23] = false;
       return this;
     }
 
@@ -1070,22 +1401,22 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'timeBegin' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setTimeBegin(edu.berkeley.path.model_elements_base.DateTime value) {
-      validate(fields()[17], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setTimeBegin(edu.berkeley.path.model_elements_base.DateTime value) {
+      validate(fields()[24], value);
       this.timeBegin = value;
-      fieldSetFlags()[17] = true;
+      fieldSetFlags()[24] = true;
       return this; 
     }
     
     /** Checks whether the 'timeBegin' field has been set */
     public boolean hasTimeBegin() {
-      return fieldSetFlags()[17];
+      return fieldSetFlags()[24];
     }
     
     /** Clears the value of the 'timeBegin' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearTimeBegin() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearTimeBegin() {
       timeBegin = null;
-      fieldSetFlags()[17] = false;
+      fieldSetFlags()[24] = false;
       return this;
     }
 
@@ -1095,22 +1426,22 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'timeEnd' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setTimeEnd(edu.berkeley.path.model_elements_base.DateTime value) {
-      validate(fields()[18], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setTimeEnd(edu.berkeley.path.model_elements_base.DateTime value) {
+      validate(fields()[25], value);
       this.timeEnd = value;
-      fieldSetFlags()[18] = true;
+      fieldSetFlags()[25] = true;
       return this; 
     }
     
     /** Checks whether the 'timeEnd' field has been set */
     public boolean hasTimeEnd() {
-      return fieldSetFlags()[18];
+      return fieldSetFlags()[25];
     }
     
     /** Clears the value of the 'timeEnd' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearTimeEnd() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearTimeEnd() {
       timeEnd = null;
-      fieldSetFlags()[18] = false;
+      fieldSetFlags()[25] = false;
       return this;
     }
 
@@ -1120,22 +1451,22 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'sensorSet' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setSensorSet(edu.berkeley.path.model_elements_base.SensorSet value) {
-      validate(fields()[19], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setSensorSet(edu.berkeley.path.model_elements_base.SensorSet value) {
+      validate(fields()[26], value);
       this.sensorSet = value;
-      fieldSetFlags()[19] = true;
+      fieldSetFlags()[26] = true;
       return this; 
     }
     
     /** Checks whether the 'sensorSet' field has been set */
     public boolean hasSensorSet() {
-      return fieldSetFlags()[19];
+      return fieldSetFlags()[26];
     }
     
     /** Clears the value of the 'sensorSet' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearSensorSet() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearSensorSet() {
       sensorSet = null;
-      fieldSetFlags()[19] = false;
+      fieldSetFlags()[26] = false;
       return this;
     }
 
@@ -1145,22 +1476,22 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'initialEnsembleState' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setInitialEnsembleState(edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState value) {
-      validate(fields()[20], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setInitialEnsembleState(edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState value) {
+      validate(fields()[27], value);
       this.initialEnsembleState = value;
-      fieldSetFlags()[20] = true;
+      fieldSetFlags()[27] = true;
       return this; 
     }
     
     /** Checks whether the 'initialEnsembleState' field has been set */
     public boolean hasInitialEnsembleState() {
-      return fieldSetFlags()[20];
+      return fieldSetFlags()[27];
     }
     
     /** Clears the value of the 'initialEnsembleState' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearInitialEnsembleState() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearInitialEnsembleState() {
       initialEnsembleState = null;
-      fieldSetFlags()[20] = false;
+      fieldSetFlags()[27] = false;
       return this;
     }
 
@@ -1170,22 +1501,22 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'initialState' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setInitialState(edu.berkeley.path.model_elements_base.FreewayCTMState value) {
-      validate(fields()[21], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setInitialState(edu.berkeley.path.model_elements_base.FreewayCTMState value) {
+      validate(fields()[28], value);
       this.initialState = value;
-      fieldSetFlags()[21] = true;
+      fieldSetFlags()[28] = true;
       return this; 
     }
     
     /** Checks whether the 'initialState' field has been set */
     public boolean hasInitialState() {
-      return fieldSetFlags()[21];
+      return fieldSetFlags()[28];
     }
     
     /** Clears the value of the 'initialState' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearInitialState() {
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearInitialState() {
       initialState = null;
-      fieldSetFlags()[21] = false;
+      fieldSetFlags()[28] = false;
       return this;
     }
 
@@ -1195,28 +1526,28 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
     }
     
     /** Sets the value of the 'initialStateUncertainty' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder setInitialStateUncertainty(double value) {
-      validate(fields()[22], value);
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder setInitialStateUncertainty(double value) {
+      validate(fields()[29], value);
       this.initialStateUncertainty = value;
-      fieldSetFlags()[22] = true;
+      fieldSetFlags()[29] = true;
       return this; 
     }
     
     /** Checks whether the 'initialStateUncertainty' field has been set */
     public boolean hasInitialStateUncertainty() {
-      return fieldSetFlags()[22];
+      return fieldSetFlags()[29];
     }
     
     /** Clears the value of the 'initialStateUncertainty' field */
-    public edu.berkeley.path.model_elements_base.FreewayContextConfig.Builder clearInitialStateUncertainty() {
-      fieldSetFlags()[22] = false;
+    public edu.berkeley.path.model_elements_base.RunConfig.Builder clearInitialStateUncertainty() {
+      fieldSetFlags()[29] = false;
       return this;
     }
 
     @Override
-    public FreewayContextConfig build() {
+    public RunConfig build() {
       try {
-        FreewayContextConfig record = new FreewayContextConfig();
+        RunConfig record = new RunConfig();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
         record.runMode = fieldSetFlags()[2] ? this.runMode : (java.lang.CharSequence) defaultValue(fields()[2]);
@@ -1233,13 +1564,20 @@ public class FreewayContextConfig extends org.apache.avro.specific.SpecificRecor
         record.enkfType = fieldSetFlags()[13] ? this.enkfType : (java.lang.CharSequence) defaultValue(fields()[13]);
         record.enkfParams = fieldSetFlags()[14] ? this.enkfParams : (edu.berkeley.path.model_elements_base.EnKFParams) defaultValue(fields()[14]);
         record.dtOutput = fieldSetFlags()[15] ? this.dtOutput : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[15]);
-        record.dt = fieldSetFlags()[16] ? this.dt : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[16]);
-        record.timeBegin = fieldSetFlags()[17] ? this.timeBegin : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[17]);
-        record.timeEnd = fieldSetFlags()[18] ? this.timeEnd : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[18]);
-        record.sensorSet = fieldSetFlags()[19] ? this.sensorSet : (edu.berkeley.path.model_elements_base.SensorSet) defaultValue(fields()[19]);
-        record.initialEnsembleState = fieldSetFlags()[20] ? this.initialEnsembleState : (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) defaultValue(fields()[20]);
-        record.initialState = fieldSetFlags()[21] ? this.initialState : (edu.berkeley.path.model_elements_base.FreewayCTMState) defaultValue(fields()[21]);
-        record.initialStateUncertainty = fieldSetFlags()[22] ? this.initialStateUncertainty : (java.lang.Double) defaultValue(fields()[22]);
+        record.reportStatisticsAfterCTM = fieldSetFlags()[16] ? this.reportStatisticsAfterCTM : (java.lang.Boolean) defaultValue(fields()[16]);
+        record.reportEnsembleAfterCTM = fieldSetFlags()[17] ? this.reportEnsembleAfterCTM : (java.lang.Boolean) defaultValue(fields()[17]);
+        record.reportStatisticsAfterEnKF = fieldSetFlags()[18] ? this.reportStatisticsAfterEnKF : (java.lang.Boolean) defaultValue(fields()[18]);
+        record.reportEnsembleAfterEnKF = fieldSetFlags()[19] ? this.reportEnsembleAfterEnKF : (java.lang.Boolean) defaultValue(fields()[19]);
+        record.reportToDB = fieldSetFlags()[20] ? this.reportToDB : (java.lang.Boolean) defaultValue(fields()[20]);
+        record.reportToDirectory = fieldSetFlags()[21] ? this.reportToDirectory : (java.lang.Boolean) defaultValue(fields()[21]);
+        record.reportDirectory = fieldSetFlags()[22] ? this.reportDirectory : (java.lang.CharSequence) defaultValue(fields()[22]);
+        record.dt = fieldSetFlags()[23] ? this.dt : (edu.berkeley.path.model_elements_base.Duration) defaultValue(fields()[23]);
+        record.timeBegin = fieldSetFlags()[24] ? this.timeBegin : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[24]);
+        record.timeEnd = fieldSetFlags()[25] ? this.timeEnd : (edu.berkeley.path.model_elements_base.DateTime) defaultValue(fields()[25]);
+        record.sensorSet = fieldSetFlags()[26] ? this.sensorSet : (edu.berkeley.path.model_elements_base.SensorSet) defaultValue(fields()[26]);
+        record.initialEnsembleState = fieldSetFlags()[27] ? this.initialEnsembleState : (edu.berkeley.path.model_elements_base.FreewayCTMEnsembleState) defaultValue(fields()[27]);
+        record.initialState = fieldSetFlags()[28] ? this.initialState : (edu.berkeley.path.model_elements_base.FreewayCTMState) defaultValue(fields()[28]);
+        record.initialStateUncertainty = fieldSetFlags()[29] ? this.initialStateUncertainty : (java.lang.Double) defaultValue(fields()[29]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

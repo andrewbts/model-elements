@@ -455,70 +455,6 @@ protocol CC {
   }
   
   /**
-   * Encapsulates a single run of a process.
-   */
-  record ProcessConfig {
-    string        host;
-    long          pid;
-    
-    /** Note: wall clock time on host, not world time or sim time */
-    DateTime      timeBegin;
-    DateTime      timeEnd;
-  }
-  
-  /**
-   * Represents a single execution of the freeway model.
-   *
-   * Parameters here supplement the Context config with additional per-run
-   * config.
-   *
-   * The FreewayRun id should be in one-to-one correspondence with actual
-   * process executions on a host. If you run again with the same parameters
-   * then the id should be different. Output data references this id.
-   */
-  record FreewayEstimationRunConfig {
-    string        id;
-    string        name;
-    
-    /** Refers to the FreewayContext for this run (among others) */
-    string        contextId;
-    
-    // to add?
-    // ensemble ID?
-    
-    array<long>   seeds;
-    
-    ProcessConfig process; 
-  }
-  
-  record FreewayForecastRunConfig {
-    string        id;
-    string        name;
-    
-    /** Refers to the FreewayContext for this run (among others) */
-    string        contextId;
-    
-    array<long>   seeds;
-    
-    ProcessConfig process; 
-  }
-
-  record SimulationRunConfig {
-    string        id;
-    string        name;
-  }
-  
-  record CalibrationRunConfig {
-    string        id;
-    string        name;
-  }
-  
-  record ImputationRunConfig {
-    string        id;
-    string        name;
-  }
-
-  /**
    * State of one link at one time.
    *
    * May contain density, velocity, or both.
@@ -737,18 +673,12 @@ protocol CC {
   
   
   /**
-   * Static configuration of a set of freeway runs.
-   *
-   * The parameters encapsulated here are separate from Scenario inputs
-   * in that they express *how* the run is modeled and executed,
-   * rather than *what* is modeled.
-   *
-   * These parameters are used by the Context subclasses.
-   *
-   * Note that a context does not include a scenario. Scenarios are read
-   * dynamically using a ScenarioSource.
+   * Configuration of a freeway run.
+   * Includes algorithm parameters for CTM & EnKF,
+   * start/stop time etc,
+   * and input/output parameters such as where to write reports to.
    */
-  record FreewayContextConfig {
+  record RunConfig {
     string        id;
     string        name;
 
@@ -774,14 +704,23 @@ protocol CC {
     double        additiveModelNoiseStdDev;
     double        additiveVelocityFunctionNoiseMean;
     double        additiveVelocityFunctionNoiseStdDev;
+    
     double        initialDensityFraction;    
     
     string        enkfType;
     EnKFParams    enkfParams;
     
+    // reporting
     Duration      dtOutput;
-    Duration      dt;
+    boolean		reportStatisticsAfterCTM;
+    boolean		reportEnsembleAfterCTM;
+    boolean		reportStatisticsAfterEnKF;
+    boolean		reportEnsembleAfterEnKF;
+    boolean		reportToDB;
+    boolean		reportToDirectory;
+    string		reportDirectory = "";
     
+    Duration      dt;
     DateTime      timeBegin;
     DateTime      timeEnd;
     
