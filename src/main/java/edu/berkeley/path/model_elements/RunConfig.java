@@ -198,9 +198,9 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 	
 	@Override
-	@Deprecated
+	//@Deprecated
 	public void setCtmType(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
+		;//throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
 	}
 
 	@Override
@@ -258,9 +258,9 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 	
 	@Override
-	@Deprecated
+	//@Deprecated
 	public void setRunMode(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setRunModeEnum instead.");
+		;//throw new UnsupportedOperationException("Use method setRunModeEnum instead.");
 	}
 	
 	public void setRunModeEnum(RunMode type) {
