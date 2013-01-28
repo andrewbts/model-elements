@@ -32,7 +32,8 @@ public class PeMSSet extends edu.berkeley.path.model_elements_base.PeMSSet {
   /**
    * Set the list of pems maps. Same as setPemsMap(), but works with a list of PeMSMap.
    */
-  public void setPemsMapList(List<PeMSMap> value) {
+  @SuppressWarnings("unchecked")
+public void setPemsMapList(List<PeMSMap> value) {
     setPemsMap((List<edu.berkeley.path.model_elements_base.PeMSMap>)(List<?>)value);
   }
   
@@ -40,7 +41,8 @@ public class PeMSSet extends edu.berkeley.path.model_elements_base.PeMSSet {
    * Get the list of pems maps. Same as getPemsMap(), but returns a list of PeMSMap.
    * Never returns null (creates the list if it doesn't exist).
    */
-  public List<PeMSMap> getPemsMapList() {
+  @SuppressWarnings("unchecked")
+public List<PeMSMap> getPemsMapList() {
     if (null == getPemsMap()) {
       setPemsMap(new ArrayList<edu.berkeley.path.model_elements_base.PeMSMap>());
     }

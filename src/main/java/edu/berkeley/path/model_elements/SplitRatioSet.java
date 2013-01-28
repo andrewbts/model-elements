@@ -151,7 +151,8 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
   /**
    * Set the profile map. Same as setProfiles(), but works with a map of String to SplitRatioProfile.
    */
-  public void setProfileMap(Map<String,SplitRatioProfile> value) {
+  @SuppressWarnings("unchecked")
+public void setProfileMap(Map<String,SplitRatioProfile> value) {
     setProfile((Map<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>)(Map<?,?>)value);
   }
 
@@ -159,7 +160,8 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
    * Get the profile map. Same as getProfiles(), but works with a map of SplitRatioProfile.
    * Never returns null (creates the map if it doesn't exist).
    */
-  public Map<String,SplitRatioProfile> getProfileMap() {
+  @SuppressWarnings("unchecked")
+public Map<String,SplitRatioProfile> getProfileMap() {
     if (null == getProfile()) {
       setProfile(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
     }

@@ -31,7 +31,7 @@ public class PifProbeCoord extends edu.berkeley.path.model_elements_base.PifProb
    * Gets the value of the 'time' field.
    */
   public org.joda.time.DateTime getJodaTime() {
-    return ((DateTime)time).toJoda();
+    return ((DateTime)getTime()).toJoda();
   }
 
   /**
@@ -39,7 +39,7 @@ public class PifProbeCoord extends edu.berkeley.path.model_elements_base.PifProb
    * @param value the value to set.
    */
   public void setJodaTime(org.joda.time.DateTime value) {
-    this.time = DateTime.fromJoda(value);
+    setTime(DateTime.fromJoda(value));
   }
 }
 

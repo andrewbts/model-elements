@@ -27,7 +27,6 @@
 package edu.berkeley.path.model_elements;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 

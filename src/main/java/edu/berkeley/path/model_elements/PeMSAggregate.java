@@ -26,8 +26,6 @@
 
 package edu.berkeley.path.model_elements;
 
-import java.util.*;
-
 public class PeMSAggregate extends edu.berkeley.path.model_elements_base.PeMSAggregate {
   /**
    * Passed to reader methods to select which degree of aggregation.

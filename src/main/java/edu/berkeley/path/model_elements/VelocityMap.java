@@ -30,50 +30,35 @@ import java.util.*;
 
 public class VelocityMap extends edu.berkeley.path.model_elements_base.VelocityMap {
   public Double getMetersPerSecondOnLink(Link link) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    return this.metersPerSecond.get(link.getId());
+    return this.getMetersPerSecond().get(link.getId());
   }
   
   public Double getMetersPerSecondOnLink(Long id) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    return this.metersPerSecond.get(id.toString());
+    return this.getMetersPerSecond().get(id.toString());
   }
   
   public Double getMetersPerSecondOnLink(CharSequence id) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    return this.metersPerSecond.get(id);
+    return this.getMetersPerSecond().get(id);
   }
   
   public void setMetersPerSecondOnLink(Link link, Double val) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    metersPerSecond.put(link.getId(), val);
+    getMetersPerSecond().put(link.getId(), val);
   }
   
   public void setMetersPerSecondOnLink(Long id, Double val) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    metersPerSecond.put(id.toString(), val);
+	  getMetersPerSecond().put(id.toString(), val);
   }
   
   public void setMetersPerSecondOnLink(CharSequence id, Double val) {
-    if (this.metersPerSecond == null) {
-      this.metersPerSecond = new HashMap<CharSequence,Double>();
-    }
-
-    metersPerSecond.put(id, val);
+    getMetersPerSecond().put(id, val);
   }
+
+	@Override
+	public Map<CharSequence, Double> getMetersPerSecond() {
+		if (super.getMetersPerSecond() == null) {
+			super.setMetersPerSecond(new HashMap<CharSequence, Double>());
+		}
+		return super.getMetersPerSecond();
+	}
+  
 }

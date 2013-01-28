@@ -26,8 +26,6 @@
 
 package edu.berkeley.path.model_elements;
 
-import java.util.*;
-
 public class DensitySet extends edu.berkeley.path.model_elements_base.DensitySet {
   public Long getLongId() {
     return Long.parseLong(getId().toString());

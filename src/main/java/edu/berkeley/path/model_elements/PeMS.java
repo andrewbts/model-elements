@@ -31,7 +31,7 @@ public class PeMS extends edu.berkeley.path.model_elements_base.PeMS {
    * Gets the value of the 'timeMeasured' field.
    */
   public org.joda.time.DateTime getJodaTimeMeasured() {
-    return ((DateTime)timeMeasured).toJoda();
+    return ((DateTime)getTimeMeasured()).toJoda();
   }
 
   /**
@@ -39,6 +39,6 @@ public class PeMS extends edu.berkeley.path.model_elements_base.PeMS {
    * @param value the value to set.
    */
   public void setJodaTimeMeasured(org.joda.time.DateTime value) {
-    this.timeMeasured = DateTime.fromJoda(value);
+    setTimeMeasured(DateTime.fromJoda(value));
   }
 }
