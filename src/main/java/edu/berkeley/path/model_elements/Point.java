@@ -26,54 +26,5 @@
 
 package edu.berkeley.path.model_elements;
 
-public class PeMSStation extends edu.berkeley.path.model_elements_base.PeMSStation {
-  /**
-   * Gets the value of the 'longitude' field of the node's point,
-   * creating the Point instance if needed.
-   */
-  public java.lang.Double getLongitude() {
-		if (getPoint() == null) {
-			setPoint(new Point());
-		}
-    return getPoint().getLongitude();
-  }
-
-  /**
-   * Sets the value of the 'longitude' field of the node's point,
-   * creating the Point instance if needed.
-   * @param value the value to set.
-   */
-  public void setLongitude(java.lang.Double value) {
-		if (value != null) {
-			if (getPoint() == null) {
-				setPoint(new Point());
-			}
-			getPoint().setLongitude(value);
-		}
-  }
-	
-  /**
-   * Gets the value of the 'latitude' field of the node's point,
-   * creating the Point instance if needed.
-   */
-  public java.lang.Double getLatitude() {
-		if (getPoint() == null) {
-			setPoint(new Point());
-		}
-    return getPoint().getLatitude();
-  }
-
-  /**
-   * Sets the value of the 'latitude' field of the node's point,
-   * creating the Point instance if needed.
-   * @param value the value to set.
-   */
-  public void setLatitude(java.lang.Double value) {
-		if (value != null) {
-			if (getPoint() == null) {
-				setPoint(new Point());
-			}
-			getPoint().setLatitude(value);
-		}
-  }
+public class Point extends edu.berkeley.path.model_elements_base.Point {
 }

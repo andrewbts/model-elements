@@ -6,7 +6,7 @@
 package edu.berkeley.path.model_elements_base;  
 @SuppressWarnings("all")
 public class Link extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"],\"doc\":\"* index of the first lane of this link in case the road is\\r\\n     * divided into paralell links.\"},{\"name\":\"speedLimit\",\"type\":[\"null\",\"double\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Link\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":[\"null\",\"double\"]},{\"name\":\"length\",\"type\":[\"null\",\"double\"]},{\"name\":\"laneOffset\",\"type\":[\"null\",\"int\"],\"doc\":\"* index of the first lane of this link in case the road is\\r\\n     * divided into paralell links.\"},{\"name\":\"speedLimit\",\"type\":[\"null\",\"double\"]},{\"name\":\"detailLevel\",\"type\":[\"null\",\"int\"]},{\"name\":\"beginId\",\"type\":\"string\"},{\"name\":\"endId\",\"type\":\"string\"},{\"name\":\"points\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Point\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\",\"default\":0.0},{\"name\":\"longitude\",\"type\":\"double\",\"default\":0.0}]}}}]}");
   @Deprecated public java.lang.CharSequence id;
   @Deprecated public java.lang.CharSequence name;
   @Deprecated public java.lang.CharSequence type;
@@ -19,6 +19,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   @Deprecated public java.lang.Integer detailLevel;
   @Deprecated public java.lang.CharSequence beginId;
   @Deprecated public java.lang.CharSequence endId;
+  @Deprecated public java.util.List<edu.berkeley.path.model_elements_base.Point> points;
 
   /**
    * Default constructor.
@@ -28,7 +29,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
   /**
    * All-args constructor.
    */
-  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Double speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId) {
+  public Link(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence type, java.lang.Double laneCount, java.lang.Double length, java.lang.Integer laneOffset, java.lang.Double speedLimit, java.lang.Integer detailLevel, java.lang.CharSequence beginId, java.lang.CharSequence endId, java.util.List<edu.berkeley.path.model_elements_base.Point> points) {
     this.id = id;
     this.name = name;
     this.type = type;
@@ -39,6 +40,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     this.detailLevel = detailLevel;
     this.beginId = beginId;
     this.endId = endId;
+    this.points = points;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -55,6 +57,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 7: return detailLevel;
     case 8: return beginId;
     case 9: return endId;
+    case 10: return points;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -72,6 +75,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     case 7: detailLevel = (java.lang.Integer)value$; break;
     case 8: beginId = (java.lang.CharSequence)value$; break;
     case 9: endId = (java.lang.CharSequence)value$; break;
+    case 10: points = (java.util.List<edu.berkeley.path.model_elements_base.Point>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -228,6 +232,21 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     this.endId = value;
   }
 
+  /**
+   * Gets the value of the 'points' field.
+   */
+  public java.util.List<edu.berkeley.path.model_elements_base.Point> getPoints() {
+    return points;
+  }
+
+  /**
+   * Sets the value of the 'points' field.
+   * @param value the value to set.
+   */
+  public void setPoints(java.util.List<edu.berkeley.path.model_elements_base.Point> value) {
+    this.points = value;
+  }
+
   /** Creates a new Link RecordBuilder */
   public static edu.berkeley.path.model_elements_base.Link.Builder newBuilder() {
     return new edu.berkeley.path.model_elements_base.Link.Builder();
@@ -259,6 +278,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
     private java.lang.Integer detailLevel;
     private java.lang.CharSequence beginId;
     private java.lang.CharSequence endId;
+    private java.util.List<edu.berkeley.path.model_elements_base.Point> points;
 
     /** Creates a new Builder */
     private Builder() {
@@ -312,6 +332,10 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
       if (isValidValue(fields()[9], other.endId)) {
         this.endId = (java.lang.CharSequence) data().deepCopy(fields()[9].schema(), other.endId);
         fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.points)) {
+        this.points = (java.util.List<edu.berkeley.path.model_elements_base.Point>) data().deepCopy(fields()[10].schema(), other.points);
+        fieldSetFlags()[10] = true;
       }
     }
 
@@ -565,6 +589,31 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
       return this;
     }
 
+    /** Gets the value of the 'points' field */
+    public java.util.List<edu.berkeley.path.model_elements_base.Point> getPoints() {
+      return points;
+    }
+    
+    /** Sets the value of the 'points' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder setPoints(java.util.List<edu.berkeley.path.model_elements_base.Point> value) {
+      validate(fields()[10], value);
+      this.points = value;
+      fieldSetFlags()[10] = true;
+      return this; 
+    }
+    
+    /** Checks whether the 'points' field has been set */
+    public boolean hasPoints() {
+      return fieldSetFlags()[10];
+    }
+    
+    /** Clears the value of the 'points' field */
+    public edu.berkeley.path.model_elements_base.Link.Builder clearPoints() {
+      points = null;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
     @Override
     public Link build() {
       try {
@@ -579,6 +628,7 @@ public class Link extends org.apache.avro.specific.SpecificRecordBase implements
         record.detailLevel = fieldSetFlags()[7] ? this.detailLevel : (java.lang.Integer) defaultValue(fields()[7]);
         record.beginId = fieldSetFlags()[8] ? this.beginId : (java.lang.CharSequence) defaultValue(fields()[8]);
         record.endId = fieldSetFlags()[9] ? this.endId : (java.lang.CharSequence) defaultValue(fields()[9]);
+        record.points = fieldSetFlags()[10] ? this.points : (java.util.List<edu.berkeley.path.model_elements_base.Point>) defaultValue(fields()[10]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

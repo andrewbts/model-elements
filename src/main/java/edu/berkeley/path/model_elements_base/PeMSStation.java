@@ -7,7 +7,7 @@ package edu.berkeley.path.model_elements_base;
 @SuppressWarnings("all")
 /** * PeMS sensor (the VDS station info, rather than the sensor data). */
 public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSStation\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor (the VDS station info, rather than the sensor data).\",\"fields\":[{\"name\":\"Id\",\"type\":\"long\"},{\"name\":\"fwyNum\",\"type\":\"int\"},{\"name\":\"direction\",\"type\":\"string\"},{\"name\":\"district\",\"type\":\"int\"},{\"name\":\"county\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"statePostmile\",\"type\":\"double\"},{\"name\":\"absPostmile\",\"type\":\"double\"},{\"name\":\"latitude\",\"type\":\"double\"},{\"name\":\"longitude\",\"type\":\"double\"},{\"name\":\"detectorLength\",\"type\":\"double\"},{\"name\":\"detectorType\",\"type\":\"string\"},{\"name\":\"detectorName\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"int\"},{\"name\":\"userId\",\"type\":{\"type\":\"array\",\"items\":\"string\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PeMSStation\",\"namespace\":\"edu.berkeley.path.model_elements_base\",\"doc\":\"* PeMS sensor (the VDS station info, rather than the sensor data).\",\"fields\":[{\"name\":\"Id\",\"type\":\"long\"},{\"name\":\"fwyNum\",\"type\":\"int\"},{\"name\":\"direction\",\"type\":\"string\"},{\"name\":\"district\",\"type\":\"int\"},{\"name\":\"county\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"statePostmile\",\"type\":\"double\"},{\"name\":\"absPostmile\",\"type\":\"double\"},{\"name\":\"point\",\"type\":{\"type\":\"record\",\"name\":\"Point\",\"fields\":[{\"name\":\"latitude\",\"type\":\"double\",\"default\":0.0},{\"name\":\"longitude\",\"type\":\"double\",\"default\":0.0}]}},{\"name\":\"detectorLength\",\"type\":\"double\"},{\"name\":\"detectorType\",\"type\":\"string\"},{\"name\":\"detectorName\",\"type\":\"string\"},{\"name\":\"laneCount\",\"type\":\"int\"},{\"name\":\"userId\",\"type\":{\"type\":\"array\",\"items\":\"string\"}}]}");
   @Deprecated public long Id;
   @Deprecated public int fwyNum;
   @Deprecated public java.lang.CharSequence direction;
@@ -16,8 +16,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   @Deprecated public java.lang.CharSequence city;
   @Deprecated public double statePostmile;
   @Deprecated public double absPostmile;
-  @Deprecated public double latitude;
-  @Deprecated public double longitude;
+  @Deprecated public edu.berkeley.path.model_elements_base.Point point;
   @Deprecated public double detectorLength;
   @Deprecated public java.lang.CharSequence detectorType;
   @Deprecated public java.lang.CharSequence detectorName;
@@ -32,7 +31,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * All-args constructor.
    */
-  public PeMSStation(java.lang.Long Id, java.lang.Integer fwyNum, java.lang.CharSequence direction, java.lang.Integer district, java.lang.CharSequence county, java.lang.CharSequence city, java.lang.Double statePostmile, java.lang.Double absPostmile, java.lang.Double latitude, java.lang.Double longitude, java.lang.Double detectorLength, java.lang.CharSequence detectorType, java.lang.CharSequence detectorName, java.lang.Integer laneCount, java.util.List<java.lang.CharSequence> userId) {
+  public PeMSStation(java.lang.Long Id, java.lang.Integer fwyNum, java.lang.CharSequence direction, java.lang.Integer district, java.lang.CharSequence county, java.lang.CharSequence city, java.lang.Double statePostmile, java.lang.Double absPostmile, edu.berkeley.path.model_elements_base.Point point, java.lang.Double detectorLength, java.lang.CharSequence detectorType, java.lang.CharSequence detectorName, java.lang.Integer laneCount, java.util.List<java.lang.CharSequence> userId) {
     this.Id = Id;
     this.fwyNum = fwyNum;
     this.direction = direction;
@@ -41,8 +40,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     this.city = city;
     this.statePostmile = statePostmile;
     this.absPostmile = absPostmile;
-    this.latitude = latitude;
-    this.longitude = longitude;
+    this.point = point;
     this.detectorLength = detectorLength;
     this.detectorType = detectorType;
     this.detectorName = detectorName;
@@ -62,13 +60,12 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     case 5: return city;
     case 6: return statePostmile;
     case 7: return absPostmile;
-    case 8: return latitude;
-    case 9: return longitude;
-    case 10: return detectorLength;
-    case 11: return detectorType;
-    case 12: return detectorName;
-    case 13: return laneCount;
-    case 14: return userId;
+    case 8: return point;
+    case 9: return detectorLength;
+    case 10: return detectorType;
+    case 11: return detectorName;
+    case 12: return laneCount;
+    case 13: return userId;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -84,13 +81,12 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     case 5: city = (java.lang.CharSequence)value$; break;
     case 6: statePostmile = (java.lang.Double)value$; break;
     case 7: absPostmile = (java.lang.Double)value$; break;
-    case 8: latitude = (java.lang.Double)value$; break;
-    case 9: longitude = (java.lang.Double)value$; break;
-    case 10: detectorLength = (java.lang.Double)value$; break;
-    case 11: detectorType = (java.lang.CharSequence)value$; break;
-    case 12: detectorName = (java.lang.CharSequence)value$; break;
-    case 13: laneCount = (java.lang.Integer)value$; break;
-    case 14: userId = (java.util.List<java.lang.CharSequence>)value$; break;
+    case 8: point = (edu.berkeley.path.model_elements_base.Point)value$; break;
+    case 9: detectorLength = (java.lang.Double)value$; break;
+    case 10: detectorType = (java.lang.CharSequence)value$; break;
+    case 11: detectorName = (java.lang.CharSequence)value$; break;
+    case 12: laneCount = (java.lang.Integer)value$; break;
+    case 13: userId = (java.util.List<java.lang.CharSequence>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -216,33 +212,18 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
   }
 
   /**
-   * Gets the value of the 'latitude' field.
+   * Gets the value of the 'point' field.
    */
-  public java.lang.Double getLatitude() {
-    return latitude;
+  public edu.berkeley.path.model_elements_base.Point getPoint() {
+    return point;
   }
 
   /**
-   * Sets the value of the 'latitude' field.
+   * Sets the value of the 'point' field.
    * @param value the value to set.
    */
-  public void setLatitude(java.lang.Double value) {
-    this.latitude = value;
-  }
-
-  /**
-   * Gets the value of the 'longitude' field.
-   */
-  public java.lang.Double getLongitude() {
-    return longitude;
-  }
-
-  /**
-   * Sets the value of the 'longitude' field.
-   * @param value the value to set.
-   */
-  public void setLongitude(java.lang.Double value) {
-    this.longitude = value;
+  public void setPoint(edu.berkeley.path.model_elements_base.Point value) {
+    this.point = value;
   }
 
   /**
@@ -349,8 +330,7 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     private java.lang.CharSequence city;
     private double statePostmile;
     private double absPostmile;
-    private double latitude;
-    private double longitude;
+    private edu.berkeley.path.model_elements_base.Point point;
     private double detectorLength;
     private java.lang.CharSequence detectorType;
     private java.lang.CharSequence detectorName;
@@ -402,33 +382,29 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
         this.absPostmile = (java.lang.Double) data().deepCopy(fields()[7].schema(), other.absPostmile);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.latitude)) {
-        this.latitude = (java.lang.Double) data().deepCopy(fields()[8].schema(), other.latitude);
+      if (isValidValue(fields()[8], other.point)) {
+        this.point = (edu.berkeley.path.model_elements_base.Point) data().deepCopy(fields()[8].schema(), other.point);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.longitude)) {
-        this.longitude = (java.lang.Double) data().deepCopy(fields()[9].schema(), other.longitude);
+      if (isValidValue(fields()[9], other.detectorLength)) {
+        this.detectorLength = (java.lang.Double) data().deepCopy(fields()[9].schema(), other.detectorLength);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.detectorLength)) {
-        this.detectorLength = (java.lang.Double) data().deepCopy(fields()[10].schema(), other.detectorLength);
+      if (isValidValue(fields()[10], other.detectorType)) {
+        this.detectorType = (java.lang.CharSequence) data().deepCopy(fields()[10].schema(), other.detectorType);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.detectorType)) {
-        this.detectorType = (java.lang.CharSequence) data().deepCopy(fields()[11].schema(), other.detectorType);
+      if (isValidValue(fields()[11], other.detectorName)) {
+        this.detectorName = (java.lang.CharSequence) data().deepCopy(fields()[11].schema(), other.detectorName);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.detectorName)) {
-        this.detectorName = (java.lang.CharSequence) data().deepCopy(fields()[12].schema(), other.detectorName);
+      if (isValidValue(fields()[12], other.laneCount)) {
+        this.laneCount = (java.lang.Integer) data().deepCopy(fields()[12].schema(), other.laneCount);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.laneCount)) {
-        this.laneCount = (java.lang.Integer) data().deepCopy(fields()[13].schema(), other.laneCount);
+      if (isValidValue(fields()[13], other.userId)) {
+        this.userId = (java.util.List<java.lang.CharSequence>) data().deepCopy(fields()[13].schema(), other.userId);
         fieldSetFlags()[13] = true;
-      }
-      if (isValidValue(fields()[14], other.userId)) {
-        this.userId = (java.util.List<java.lang.CharSequence>) data().deepCopy(fields()[14].schema(), other.userId);
-        fieldSetFlags()[14] = true;
       }
     }
 
@@ -627,51 +603,28 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
       return this;
     }
 
-    /** Gets the value of the 'latitude' field */
-    public java.lang.Double getLatitude() {
-      return latitude;
+    /** Gets the value of the 'point' field */
+    public edu.berkeley.path.model_elements_base.Point getPoint() {
+      return point;
     }
     
-    /** Sets the value of the 'latitude' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setLatitude(double value) {
+    /** Sets the value of the 'point' field */
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setPoint(edu.berkeley.path.model_elements_base.Point value) {
       validate(fields()[8], value);
-      this.latitude = value;
+      this.point = value;
       fieldSetFlags()[8] = true;
       return this; 
     }
     
-    /** Checks whether the 'latitude' field has been set */
-    public boolean hasLatitude() {
+    /** Checks whether the 'point' field has been set */
+    public boolean hasPoint() {
       return fieldSetFlags()[8];
     }
     
-    /** Clears the value of the 'latitude' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearLatitude() {
+    /** Clears the value of the 'point' field */
+    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearPoint() {
+      point = null;
       fieldSetFlags()[8] = false;
-      return this;
-    }
-
-    /** Gets the value of the 'longitude' field */
-    public java.lang.Double getLongitude() {
-      return longitude;
-    }
-    
-    /** Sets the value of the 'longitude' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder setLongitude(double value) {
-      validate(fields()[9], value);
-      this.longitude = value;
-      fieldSetFlags()[9] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'longitude' field has been set */
-    public boolean hasLongitude() {
-      return fieldSetFlags()[9];
-    }
-    
-    /** Clears the value of the 'longitude' field */
-    public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearLongitude() {
-      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -682,20 +635,20 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Sets the value of the 'detectorLength' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder setDetectorLength(double value) {
-      validate(fields()[10], value);
+      validate(fields()[9], value);
       this.detectorLength = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[9] = true;
       return this; 
     }
     
     /** Checks whether the 'detectorLength' field has been set */
     public boolean hasDetectorLength() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[9];
     }
     
     /** Clears the value of the 'detectorLength' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearDetectorLength() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -706,21 +659,21 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Sets the value of the 'detectorType' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder setDetectorType(java.lang.CharSequence value) {
-      validate(fields()[11], value);
+      validate(fields()[10], value);
       this.detectorType = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[10] = true;
       return this; 
     }
     
     /** Checks whether the 'detectorType' field has been set */
     public boolean hasDetectorType() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[10];
     }
     
     /** Clears the value of the 'detectorType' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearDetectorType() {
       detectorType = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -731,21 +684,21 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Sets the value of the 'detectorName' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder setDetectorName(java.lang.CharSequence value) {
-      validate(fields()[12], value);
+      validate(fields()[11], value);
       this.detectorName = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[11] = true;
       return this; 
     }
     
     /** Checks whether the 'detectorName' field has been set */
     public boolean hasDetectorName() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[11];
     }
     
     /** Clears the value of the 'detectorName' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearDetectorName() {
       detectorName = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -756,20 +709,20 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Sets the value of the 'laneCount' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder setLaneCount(int value) {
-      validate(fields()[13], value);
+      validate(fields()[12], value);
       this.laneCount = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[12] = true;
       return this; 
     }
     
     /** Checks whether the 'laneCount' field has been set */
     public boolean hasLaneCount() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[12];
     }
     
     /** Clears the value of the 'laneCount' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearLaneCount() {
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -780,21 +733,21 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
     
     /** Sets the value of the 'userId' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder setUserId(java.util.List<java.lang.CharSequence> value) {
-      validate(fields()[14], value);
+      validate(fields()[13], value);
       this.userId = value;
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[13] = true;
       return this; 
     }
     
     /** Checks whether the 'userId' field has been set */
     public boolean hasUserId() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[13];
     }
     
     /** Clears the value of the 'userId' field */
     public edu.berkeley.path.model_elements_base.PeMSStation.Builder clearUserId() {
       userId = null;
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -810,13 +763,12 @@ public class PeMSStation extends org.apache.avro.specific.SpecificRecordBase imp
         record.city = fieldSetFlags()[5] ? this.city : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.statePostmile = fieldSetFlags()[6] ? this.statePostmile : (java.lang.Double) defaultValue(fields()[6]);
         record.absPostmile = fieldSetFlags()[7] ? this.absPostmile : (java.lang.Double) defaultValue(fields()[7]);
-        record.latitude = fieldSetFlags()[8] ? this.latitude : (java.lang.Double) defaultValue(fields()[8]);
-        record.longitude = fieldSetFlags()[9] ? this.longitude : (java.lang.Double) defaultValue(fields()[9]);
-        record.detectorLength = fieldSetFlags()[10] ? this.detectorLength : (java.lang.Double) defaultValue(fields()[10]);
-        record.detectorType = fieldSetFlags()[11] ? this.detectorType : (java.lang.CharSequence) defaultValue(fields()[11]);
-        record.detectorName = fieldSetFlags()[12] ? this.detectorName : (java.lang.CharSequence) defaultValue(fields()[12]);
-        record.laneCount = fieldSetFlags()[13] ? this.laneCount : (java.lang.Integer) defaultValue(fields()[13]);
-        record.userId = fieldSetFlags()[14] ? this.userId : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[14]);
+        record.point = fieldSetFlags()[8] ? this.point : (edu.berkeley.path.model_elements_base.Point) defaultValue(fields()[8]);
+        record.detectorLength = fieldSetFlags()[9] ? this.detectorLength : (java.lang.Double) defaultValue(fields()[9]);
+        record.detectorType = fieldSetFlags()[10] ? this.detectorType : (java.lang.CharSequence) defaultValue(fields()[10]);
+        record.detectorName = fieldSetFlags()[11] ? this.detectorName : (java.lang.CharSequence) defaultValue(fields()[11]);
+        record.laneCount = fieldSetFlags()[12] ? this.laneCount : (java.lang.Integer) defaultValue(fields()[12]);
+        record.userId = fieldSetFlags()[13] ? this.userId : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[13]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
