@@ -71,12 +71,6 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	}
 
 	@Override
-	@Deprecated
-	public List<edu.berkeley.path.model_elements_base.FreewayCTMState> getEnsembleState() {
-		throw new UnsupportedOperationException("Use getStates instead.");
-	}
-
-	@Override
 	public DateTime getT() {
 		return (DateTime) super.getT();
 	}
@@ -86,7 +80,7 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	 * Remove this method after we rename the field from 't' to 'time'.
 	 */
 	public DateTime getTime() {
-	   return (DateTime)getT();
+	   return getT();
 	}
 
 	/**
