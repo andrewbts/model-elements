@@ -66,12 +66,16 @@ public class WriterTest {
     nd1.setId(1L);
     nd1.setName("one");
     nd1.setType("Highway");
+    nd1.setLongitude(0.0);
+    nd1.setLatitude(0.0);
     nw.nodes.add(nd1);
 
     nd2 = new Node();
     nd2.setId(2L);
     nd2.setName("two");
     nd2.setType("Highway");
+    nd2.setLongitude(0.0);
+    nd2.setLatitude(0.0);
     nw.nodes.add(nd2);
 
     ln = new Link();
@@ -83,7 +87,18 @@ public class WriterTest {
     
     ln.setBegin(nd1);
     ln.setEnd(nd2);
+
+    Point p0 = new Point();
+    p0.setLongitude(-75.97469);
+    p0.setLatitude(40.90164);
+
+    Point p1 = new Point();
+    p1.setLongitude(-76.97469);
+    p1.setLatitude(41.90164);
     
+    ln.getPointList().add(p0);
+    ln.getPointList().add(p1);
+
     nw.links.add(ln);
   }
 

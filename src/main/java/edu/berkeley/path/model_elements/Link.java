@@ -26,6 +26,8 @@
 
 package edu.berkeley.path.model_elements;
 
+import java.util.*;
+
 public class Link extends edu.berkeley.path.model_elements_base.Link {
   protected Node begin;
   protected Node end;
@@ -91,5 +93,25 @@ public class Link extends edu.berkeley.path.model_elements_base.Link {
   
   public boolean isSinkLink() {
     return getEnd().isTerminal();
+  }
+
+  /**
+   * Set the points. Same as setPoints(), but works with a list of Point.
+   */
+  @SuppressWarnings("unchecked")
+public void setPointList(List<Point> value) {
+    setPoints((List<edu.berkeley.path.model_elements_base.Point>)(List<?>)value);
+  }
+  
+  /**
+   * Get the points. Same as getPoints(), but works with a list of Point.
+   * Never returns null (creates the list if it doesn't exist).
+   */
+  @SuppressWarnings("unchecked")
+public List<Point> getPointList() {
+    if (null == getPoints()) {
+      setPoints(new ArrayList<edu.berkeley.path.model_elements_base.Point>());
+    }
+    return (List<Point>)(List<?>)getPoints();
   }
 }
