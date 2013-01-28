@@ -47,13 +47,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		
 		throw new UnsupportedOperationException("Unknown FD type string '" + type + "' encountered.");
 	}
-	
-	@Override
-	@Deprecated
-	public CharSequence getFdType() {
-		throw new UnsupportedOperationException("Use method getFDTypeEnum instead.");
-	}
-	
+		
 	/**
 	 * @param type FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
 	 */
@@ -75,12 +69,6 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		super.setFdType(typeString);
 	}
 	
-	@Override
-	@Deprecated
-	public void setFdType(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setFDTypeEnum instead.");
-	}
-
 	/**
 	 * @return CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
 	 */
@@ -94,22 +82,10 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		
 		throw new UnsupportedOperationException("Unknown CTM type string '" + type + "' encountered.");
 	}
-	
-	@Override
-	@Deprecated
-	public CharSequence getCtmType() {
-		throw new UnsupportedOperationException("Use method getCTMTypeEnum instead.");
-	}
-	
+		
 	@Override
 	public EnKFParams getEnkfParams() {
 		return (EnKFParams)super.getEnkfParams();
-	}
-	
-	@Override
-	@Deprecated
-	public CharSequence getEnkfType() {
-		throw new UnsupportedOperationException("Use method getEnKFTypeEnum instead.");
 	}
 	
 	/**
@@ -126,13 +102,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		
 		throw new UnsupportedOperationException("Unknown EnKF type string '" + type + "' encountered.");
 	}
-	
-	@Override
-	@Deprecated
-	public CharSequence getFeed() {
-		throw new UnsupportedOperationException("Use method getFeedEnum instead.");
-	}
-	
+		
 	public Feed getFeedEnum() {
 		String type = super.getFeed().toString();
 
@@ -142,13 +112,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		
 		throw new UnsupportedOperationException("Unknown Run Mode type string '" + type + "' encountered.");
 	}
-	
-	@Override
-	@Deprecated
-	public CharSequence getRunMode() {
-		throw new UnsupportedOperationException("Use method getRunModeTypeEnum instead.");
-	}
-	
+		
 	public RunMode getRunModeEnum() {
 		String type = super.getRunMode().toString();
 
@@ -157,13 +121,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		
 		throw new UnsupportedOperationException("Unknown Run Mode type string '" + type + "' encountered.");
 	}
-	
-	@Override
-	@Deprecated
-	public CharSequence getWorkflow() {
-		throw new UnsupportedOperationException("Use method getWorkflowEnum instead.");
-	}
-	
+		
 	public Workflow getWorkflowEnum() {
 		String type = super.getWorkflow().toString();
 
@@ -196,19 +154,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		}
 		super.setCtmType(typeString);
 	}
-	
-	@Override
-	//@Deprecated
-	public void setCtmType(CharSequence value) {
-		;//throw new UnsupportedOperationException("Use method setCTMTypeEnum instead.");
-	}
-
-	@Override
-	@Deprecated
-	public void setEnkfType(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setEnKFTypeEnum instead.");
-	}
-	
+		
 	public void setEnkfTypeEnum(EnKFType type) {
 		CharSequence typeString = null;
 		switch (type) {
@@ -232,13 +178,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		}
 		super.setEnkfType(typeString);
 	}
-	
-	@Override
-	@Deprecated
-	public void setFeed(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setFeedEnum instead.");
-	}
-	
+		
 	public void setFeedEnum(Feed type) {
 		CharSequence typeString = null;
 		switch (type) {
@@ -256,13 +196,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		}
 		super.setFeed(typeString);
 	}
-	
-	@Override
-	//@Deprecated
-	public void setRunMode(CharSequence value) {
-		;//throw new UnsupportedOperationException("Use method setRunModeEnum instead.");
-	}
-	
+		
 	public void setRunModeEnum(RunMode type) {
 		CharSequence typeString = null;
 		switch (type) {
@@ -278,13 +212,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		super.setRunMode(typeString);
 	}
 	
-	
-	@Override
-	@Deprecated
-	public void setWorkflow(CharSequence value) {
-		throw new UnsupportedOperationException("Use method setWorkflowEnum instead.");
-	}
-	
+		
 	public void setWorkflowEnum(Workflow type) {
 		CharSequence typeString = null;
 		switch (type) {
