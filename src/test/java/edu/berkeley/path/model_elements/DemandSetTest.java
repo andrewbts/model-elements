@@ -36,7 +36,7 @@ import org.joda.time.Interval;
 public class DemandSetTest {
   DemandSet ds;
   
-  @Before
+@Before
   public void setup() {
     ds = new DemandSet();
     ds.setId(1L);
@@ -44,7 +44,9 @@ public class DemandSetTest {
     
     Map<String,DemandProfile> dpm = ds.getProfileMap();
     
-    String[] linkIds = { "101", "102", "103" };
+    @SuppressWarnings("unused")
+	String[] linkIds = { "101", "102", "103" };
+    @SuppressWarnings("unused")
     String[] vtypeIds = { "car", "truck" };
     
     DemandProfile dp101 = new DemandProfile();

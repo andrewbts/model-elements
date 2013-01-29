@@ -44,7 +44,7 @@ public class DateTimeTest {
   @Test
   public void testCCToJodaToCC() {
     datetime = new DateTime();
-    datetime.milliseconds = 987654;
+    datetime.setMilliseconds(987654L);
     joda = datetime.toJoda();
     
     assertEquals(datetime.getMilliseconds(), DateTime.fromJoda(joda).getMilliseconds());

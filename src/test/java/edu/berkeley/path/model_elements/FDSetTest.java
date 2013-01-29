@@ -44,7 +44,8 @@ public class FDSetTest {
     
     Map<String,FDProfile> fdpm = fds.getProfileMap();
     
-    String[] linkIds = { "101", "102", "103" };
+    @SuppressWarnings("unused")
+	String[] linkIds = { "101", "102", "103" };
     FD fd;
     
     FDProfile fdp101 = new FDProfile();

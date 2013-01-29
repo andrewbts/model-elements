@@ -31,8 +31,6 @@ import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.model_elements.*;
-
 public class VelocityMapTest {
   Network nw;
   VelocityMap vp;
@@ -55,13 +53,13 @@ public class VelocityMapTest {
     nd1.setId(1L);
     nd1.setName("one");
     nd1.setType("Highway");
-    nw.nodes.add(nd1);
+    nw.getNodes().add(nd1);
 
     nd2 = new Node();
     nd2.setId(2L);
     nd2.setName("two");
     nd2.setType("Highway");
-    nw.nodes.add(nd2);
+    nw.getNodes().add(nd2);
 
     ln = new Link();
     ln.setId(3L);
@@ -73,7 +71,7 @@ public class VelocityMapTest {
     ln.setBegin(nd1);
     ln.setEnd(nd2);
     
-    nw.links.add(ln);
+    nw.getLinks().add(ln);
   }
 
   @Test

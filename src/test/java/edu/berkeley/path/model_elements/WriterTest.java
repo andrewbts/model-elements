@@ -31,8 +31,6 @@ import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.model_elements.*;
-
 import java.io.*;
 import java.nio.ByteBuffer;
 
@@ -68,7 +66,7 @@ public class WriterTest {
     nd1.setType("Highway");
     nd1.setLongitude(0.0);
     nd1.setLatitude(0.0);
-    nw.nodes.add(nd1);
+    nw.getNodes().add(nd1);
 
     nd2 = new Node();
     nd2.setId(2L);
@@ -76,7 +74,7 @@ public class WriterTest {
     nd2.setType("Highway");
     nd2.setLongitude(0.0);
     nd2.setLatitude(0.0);
-    nw.nodes.add(nd2);
+    nw.getNodes().add(nd2);
 
     ln = new Link();
     ln.setId(3L);
@@ -99,7 +97,7 @@ public class WriterTest {
     ln.getPointList().add(p0);
     ln.getPointList().add(p1);
 
-    nw.links.add(ln);
+    nw.getLinks().add(ln);
   }
 
   @Test
@@ -193,8 +191,8 @@ public class WriterTest {
     
     Network nw2 = reader.read(null, d);
     
-    assertEquals(nw.id, nw2.id.toString());
-    assertEquals(nw.name, nw2.name.toString());
+    assertEquals(nw.getId(), nw2.getId().toString());
+    assertEquals(nw.getName(), nw2.getName().toString());
     assertEquals(nw.getNodes().size(), nw2.getNodes().size());
     
     assertEquals("edu.berkeley.path.model_elements.Node", nw.getNodes().get(0).getClass().getName());
