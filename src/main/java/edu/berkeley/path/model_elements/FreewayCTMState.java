@@ -78,13 +78,7 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 		
 		return map;
 	}
-			
-	@Override
-	@Deprecated
-	public Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> getLinkFlowState() {
-		throw new UnsupportedOperationException("Use createLinkFlowStateMap instead.");
-	}
-	
+				
 	@SuppressWarnings("unchecked")
 	public Map<CharSequence, FreewayLinkFlowState> getLinkFlowStateMap() {
 		return (Map<CharSequence, FreewayLinkFlowState>) (Map<?, ?>) super.getLinkFlowState();
@@ -116,12 +110,6 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 		if (!includesFlowMap()) throw new UnsupportedOperationException("CTM state does not include link flow data.");
 		return (FreewayLinkFlowState)super.getLinkFlowState().get(link.getId());
 	}
-
-	@Override
-	@Deprecated
-	public Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> getLinkState() {
-		throw new UnsupportedOperationException("Use createLinkStateMap instead.");
-	}
 	
 	/**
 	 * Get current queue length for a single specified origin link
@@ -139,23 +127,17 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
    **/
   @SuppressWarnings("unchecked")
   public Map<CharSequence,FreewayLinkState> getLinkStateMap() {
-    return (Map<CharSequence,FreewayLinkState>)(Map<?,?>)linkState;
+    return (Map<CharSequence,FreewayLinkState>)(Map<?,?>)getLinkState();
   }
   
   /**
    * Sets the linkState map.
    **/
+  @SuppressWarnings("unchecked")
   public void setLinkStateMap(Map<CharSequence,FreewayLinkState> map) {
 		setLinkState((Map<CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?,?>)map);
   }
 
-
-  /**
-   * Gets the queueLength map.
-   **/
-  public Map<CharSequence,Double> getQueueLengthMap() {
-    return queueLength;
-  }
 
 	/**
 	 * @return Whether this CTM state includes a flow map

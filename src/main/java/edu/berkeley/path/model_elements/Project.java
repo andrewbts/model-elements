@@ -26,8 +26,6 @@
 
 package edu.berkeley.path.model_elements;
 
-import java.util.*;
-
 public class Project extends edu.berkeley.path.model_elements_base.Project {
   public Long getLongId() {
     return Long.parseLong(getId().toString());
@@ -38,6 +36,6 @@ public class Project extends edu.berkeley.path.model_elements_base.Project {
   }
   
   public String getNameString() {
-    return (name == null) ? null : name.toString();
+    return (getName() == null) ? null : getName().toString();
   }
 }

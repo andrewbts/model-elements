@@ -31,8 +31,6 @@ import static org.junit.Assert.*;
 
 import java.util.*;
 
-import edu.berkeley.path.model_elements.*;
-
 public class NetworkTest {
   Network nw;
   
@@ -53,13 +51,13 @@ public class NetworkTest {
     nd1.setId("1");
     nd1.setName("one");
     nd1.setType("Highway");
-    nw.nodes.add(nd1);
+    nw.getNodes().add(nd1);
 
     nd2 = new Node();
     nd2.setId("2");
     nd2.setName("two");
     nd2.setType("Highway");
-    nw.nodes.add(nd2);
+    nw.getNodes().add(nd2);
 
     ln = new Link();
     ln.setId("3");
@@ -71,7 +69,7 @@ public class NetworkTest {
     ln.setBegin(nd1);
     ln.setEnd(nd2);
     
-    nw.links.add(ln);
+    nw.getLinks().add(ln);
   }
 
   @Test
@@ -98,15 +96,18 @@ public class NetworkTest {
     
     Node n1 = nw.getNodeById(1L);
     assertTrue(n1 != null);
+    assert(n1 != null);
     assertEquals("one", n1.getName());
     
     Link ln3 = nw.getLinkById(3L);
     assertTrue(ln3 != null);
+    assert(ln3 != null);
     assertEquals("three", ln3.getName());
 
     // note that lookups by string ID work too:
     Node n2 = nw.getNodeById("2");
     assertTrue(n2 != null);
+    assert(n2 != null);
     assertEquals("two", n2.getName());
     
     assertEquals(n1, ln3.begin);
@@ -123,6 +124,7 @@ public class NetworkTest {
   public void testTerminal() {
     Node n1 = nw.getNodeById(1L);
     assertTrue(n1 != null);
+    assert(n1 != null);
     assertEquals(false, n1.isTerminal());
   }
 }

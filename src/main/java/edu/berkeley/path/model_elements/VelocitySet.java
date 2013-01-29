@@ -26,8 +26,6 @@
 
 package edu.berkeley.path.model_elements;
 
-import java.util.*;
-
 public class VelocitySet extends edu.berkeley.path.model_elements_base.VelocitySet {
   public Long getLongId() {
     return Long.parseLong(getId().toString());

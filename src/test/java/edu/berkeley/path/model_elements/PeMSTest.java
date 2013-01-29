@@ -27,6 +27,7 @@
 package edu.berkeley.path.model_elements;
 
 import org.junit.*;
+
 import static org.junit.Assert.*;
 import java.util.*;
 
@@ -38,11 +39,7 @@ public class PeMSTest {
   @Test
   public void testProfile() {
     PeMS pems;
-    PeMSMap map;
     PeMSProfile profile;
-    PeMSSet set;
-    
-    DateTime datetime;
     org.joda.time.DateTime jodaDateTime;
 
     pems = new PeMS();
@@ -70,8 +67,7 @@ public class PeMSTest {
     pems.setGFactorLane(gf);
     
     profile = new PeMSProfile();
-    profile.setPems(new ArrayList());
-    
+    profile.setPemsList(new ArrayList<PeMS>());    
     profile.getPems().add(pems);
     
     assertEquals((Double)2.0, profile.getPems().get(0).getGFactorLane().get(1));

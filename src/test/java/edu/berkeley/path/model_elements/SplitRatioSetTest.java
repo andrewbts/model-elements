@@ -44,9 +44,13 @@ public class SplitRatioSetTest {
     
     Map<String,SplitRatioProfile> srpm = srs.getProfileMap();
     
-    String[] nodeIds = { "101" };
+    @SuppressWarnings("unused")
+	String[] nodeIds = { "101" };
+    @SuppressWarnings("unused")
     String[] inLinkIds = { "201", "202" };
+    @SuppressWarnings("unused")
     String[] outLinkIds = { "301", "302" };
+    @SuppressWarnings("unused")
     String[] vtypeIds = { "car", "truck" };
     
     SplitRatioProfile srp101 = new SplitRatioProfile();

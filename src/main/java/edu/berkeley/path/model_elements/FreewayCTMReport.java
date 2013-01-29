@@ -61,7 +61,7 @@ public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.Free
 	  * Gets the value of the 'time' field.
 	  */
 	 public org.joda.time.DateTime getJodaTime() {
-	    return ((DateTime)time).toJoda();
+	    return ((DateTime)getTime()).toJoda();
 	 }
 
 	 /**
@@ -69,7 +69,7 @@ public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.Free
 	  * @param value the value to set.
 	  */
 	 public void setJodaTime(org.joda.time.DateTime value) {
-	    this.time = DateTime.fromJoda(value);
+	    setTime(DateTime.fromJoda(value));
 	 }
 	
 }

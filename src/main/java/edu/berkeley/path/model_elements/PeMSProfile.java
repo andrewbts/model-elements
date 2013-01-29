@@ -33,7 +33,8 @@ public class PeMSProfile extends edu.berkeley.path.model_elements_base.PeMSProfi
   /**
    * Set the pems entries. Same as setPems(), but works with a list of PeMS.
    */
-  public void setPemsList(List<PeMS> value) {
+  @SuppressWarnings("unchecked")
+public void setPemsList(List<PeMS> value) {
     setPems((List<edu.berkeley.path.model_elements_base.PeMS>)(List<?>)value);
   }
   
@@ -41,7 +42,8 @@ public class PeMSProfile extends edu.berkeley.path.model_elements_base.PeMSProfi
    * Get the pems entries. Same as getPems(), but returns a list of PeMS.
    * Never returns null (creates the list if it doesn't exist).
    */
-  public List<PeMS> getPemsList() {
+  @SuppressWarnings("unchecked")
+public List<PeMS> getPemsList() {
     if (null == getPems()) {
       setPems(new ArrayList<edu.berkeley.path.model_elements_base.PeMS>());
     }

@@ -33,7 +33,7 @@ public class PeMSStationAggregate extends edu.berkeley.path.model_elements_base.
    * Gets the value of the 'timeMeasured' field.
    */
   public org.joda.time.DateTime getJodaTimeMeasured() {
-    return ((DateTime)timeMeasured).toJoda();
+    return ((DateTime)getTimeMeasured()).toJoda();
   }
 
   /**
@@ -41,14 +41,15 @@ public class PeMSStationAggregate extends edu.berkeley.path.model_elements_base.
    * @param value the value to set.
    */
   public void setJodaTimeMeasured(org.joda.time.DateTime value) {
-    this.timeMeasured = DateTime.fromJoda(value);
+    setTimeMeasured(DateTime.fromJoda(value));
   }
   
   /**
    * Set the list of aggregates by lane. Same as setByLane(), but works
    * with a list of PeMSAggregate.
    */
-  public void setByLaneList(List<PeMSAggregate> value) {
+  @SuppressWarnings("unchecked")
+public void setByLaneList(List<PeMSAggregate> value) {
     setByLane((List<edu.berkeley.path.model_elements_base.PeMSAggregate>)(List<?>)value);
   }
 
@@ -58,7 +59,8 @@ public class PeMSStationAggregate extends edu.berkeley.path.model_elements_base.
    * 
    * Never returns null (creates the list if it doesn't exist).
    */
-  public List<PeMSAggregate> getByLaneList() {
+  @SuppressWarnings("unchecked")
+public List<PeMSAggregate> getByLaneList() {
     if (null == getByLane()) {
       setByLane(new ArrayList<edu.berkeley.path.model_elements_base.PeMSAggregate>());
     }

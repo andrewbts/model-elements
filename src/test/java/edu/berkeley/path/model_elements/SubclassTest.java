@@ -29,8 +29,6 @@ package edu.berkeley.path.model_elements;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-import java.util.*;
-
 // This isn't very intereting now that WriterTest instantiates
 // subclasses of the base classes.
 
@@ -44,7 +42,7 @@ public class SubclassTest {
      * Gets the value of the 'id' field as an int.
      */
     public int getIntId() {
-      return Integer.valueOf(id.toString());
+      return Integer.valueOf(getId().toString());
     }
 
     /**
@@ -52,7 +50,7 @@ public class SubclassTest {
      * @param value the value to set.
      */
     public void setIntId(int value) {
-      this.id = Integer.toString(value);
+      setId(Integer.toString(value));
     }
   }
   

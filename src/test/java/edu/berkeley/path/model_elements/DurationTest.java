@@ -44,7 +44,7 @@ public class DurationTest {
   @Test
   public void testCCToJodaToCC() {
     duration = new Duration();
-    duration.milliseconds = 987654;
+    duration.setMilliseconds(987654L);
     joda = duration.toJoda();
     
     assertEquals(duration.getMilliseconds(), Duration.fromJoda(joda).getMilliseconds());
