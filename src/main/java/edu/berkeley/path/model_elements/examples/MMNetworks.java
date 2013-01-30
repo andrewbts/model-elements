@@ -39,7 +39,7 @@ public class MMNetworks {
 	public static String examplesDirectory = "examples/mm-networks";
 
 	private static String getNidDirectory(int nid) {
-		return examplesDirectory + "/nid" + Integer.toString(nid);
+		return examplesDirectory + "/" + Integer.toString(nid);
 	}
 	
 	public static Network getNetwork(int nid) throws IOException {
