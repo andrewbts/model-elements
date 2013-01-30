@@ -23,3 +23,5 @@ project/plugins/project/
 
 tmp/
 
+# avro-generated java classes
+src/main/java/edu/berkeley/path/model_elements_base
