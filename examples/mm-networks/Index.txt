@@ -1,0 +1,26 @@
+Index of numbered example scenarios, mainly derived from imported MM networks. Used for testing Freeway.
+
+Unless otherwise stated these scenarios are valid and should work for simulation or estimation. Some scenarios may be deliberately invalid for the purposes of testing failure behaviours.
+
+
+28:
+MM network 28
+
+28000001:
+Modified version of MM network 28 with some missing split ratios at junctions, to test automatic allocation matrix code in Freeway.
+
+179:
+MM network 179
+
+181:
+MM network 181
+
+183:
+MM network 183
+
+249:
+MM network 249
+
+335:
+MM network 335
+
