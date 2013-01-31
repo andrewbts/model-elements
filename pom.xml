@@ -87,6 +87,7 @@
               <excludes>
                 <exclude>**/mapred/tether/**</exclude>
               </excludes>
+              <stringType>String</stringType>
               <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
               <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
               <testSourceDirectory>${project.basedir}/src/test/avro/</testSourceDirectory>
