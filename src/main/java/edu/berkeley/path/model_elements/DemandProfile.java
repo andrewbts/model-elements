@@ -34,11 +34,10 @@ public class DemandProfile extends edu.berkeley.path.model_elements_base.DemandP
   }
   
   public void addFlowAt(String vehTypeID, Double flow) {
-    Map<CharSequence,List<Double>>
-      flowMap = getFlow();
+    Map<String, List<Double>> flowMap = getFlow();
     
     if (flowMap == null) {
-      flowMap = new HashMap<CharSequence,List<Double>>();
+      flowMap = new HashMap<String ,List<Double>>();
       setFlow(flowMap);
     }
     
@@ -46,13 +45,13 @@ public class DemandProfile extends edu.berkeley.path.model_elements_base.DemandP
   }
 
   public static void addFlowToMapAt(
-      Map<CharSequence,List<Double>> flowMap,
+      Map<String, List<Double>> flowMap,
       Long vehTypeID, Double flow) {
     addFlowToMapAt(flowMap, vehTypeID.toString(), flow);
   }
   
   public static void addFlowToMapAt(
-      Map<CharSequence,List<Double>> flowMap,
+      Map<String ,List<Double>> flowMap,
       String vehTypeID, Double flow) {
     
     List<Double> vehTypeList =
@@ -67,23 +66,14 @@ public class DemandProfile extends edu.berkeley.path.model_elements_base.DemandP
   }
   
   /**
-   * Set the flow map. Same as setFlow(), but works with a map of String to List<Double>.
+   * Get the flow map. Never returns null (creates the map if it doesn't exist).
    */
-  @SuppressWarnings("unchecked")
-  public void setFlowMap(Map<String,List<Double>> value) {
-    setFlow((Map<java.lang.CharSequence,List<Double>>)(Map<?,List<Double>>)value);
-  }
-
-  /**
-   * Get the flow map. Same as getFlow(), but works with a map of String to List<Double>.
-   * Never returns null (creates the map if it doesn't exist).
-   */
-  @SuppressWarnings("unchecked")
-  public Map<String,List<Double>> getFlowMap() {
-    if (null == getFlow()) {
-      setFlow(new HashMap<java.lang.CharSequence,List<Double>>());
+  @Override
+  public Map<String,List<Double>> getFlow() {
+    if (null == super.getFlow()) {
+      setFlow(new HashMap<java.lang.String,List<Double>>());
     }
-    return (Map<String,List<Double>>)(Map<?,List<Double>>)getFlow();
+    return super.getFlow();
   }
 
   public Long getDestinationNetworkLongId() {

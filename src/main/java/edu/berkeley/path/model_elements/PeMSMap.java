@@ -33,10 +33,10 @@ public class PeMSMap extends edu.berkeley.path.model_elements_base.PeMSMap {
    * Set the pems map entries. Same as setPems(), but works with a map of PeMS.
    */
   @SuppressWarnings("unchecked")
-public void setMap(Map<CharSequence, PeMS> value) {
+public void setMap(Map<String, PeMS> value) {
     setPems(
-      (Map<CharSequence,edu.berkeley.path.model_elements_base.PeMS>)
-        (Map<CharSequence,?>)value);
+      (Map<String,edu.berkeley.path.model_elements_base.PeMS>)
+        (Map<String,?>)value);
   }
   
   /**
@@ -44,10 +44,10 @@ public void setMap(Map<CharSequence, PeMS> value) {
    * Never returns null (creates the list if it doesn't exist).
    */
   @SuppressWarnings("unchecked")
-public Map<CharSequence,PeMS> getMap() {
+public Map<String,PeMS> getMap() {
     if (null == getPems()) {
-      setPems(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.PeMS>());
+      setPems(new HashMap<String,edu.berkeley.path.model_elements_base.PeMS>());
     }
-    return (Map<CharSequence,PeMS>)(Map<CharSequence,?>)getPems();
+    return (Map<String,PeMS>)(Map<String,?>)getPems();
   }
 }

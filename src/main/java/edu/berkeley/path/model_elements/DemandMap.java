@@ -33,33 +33,13 @@ import org.joda.time.Interval;
 public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap implements DemandMapProvider {
 	
 	public double getTotalDemand(Link originLink) {
-		Map<CharSequence, Double> vehicleTypeDemands = getFlow().get(originLink.getId());
+		Map<String, Double> vehicleTypeDemands = getFlow().get(originLink.getId());
 		double total = 0d;
 		for (Double demand : vehicleTypeDemands.values())
 			total += demand;
 		return total;
 	}
-	
-  /**
-   * Set the flow map. Same as setFlow(), but works with String keys.
-   */
-  @SuppressWarnings("unchecked")
-  public void setFlowMap(Map<String,Map<String,Double>> value) {
-    setFlow((Map<java.lang.CharSequence,Map<java.lang.CharSequence,Double>>)(Map<?,?>)value);
-  }
-
-  /**
-   * Get the flow map. Same as getFlow(), but works with String keys.
-   * Never returns null (creates the map if it doesn't exist).
-   */
-  @SuppressWarnings("unchecked")
-  public Map<String,Map<String,Double>> getFlowMap() {
-    if (null == getFlow()) {
-      setFlow(new HashMap<java.lang.CharSequence,Map<java.lang.CharSequence,Double>>());
-    }
-    return (Map<String,Map<String,Double>>)(Map<?,?>)getFlow();
-  }
-  
+	  
 	/**
 	 * A DemandMap can act as an DemandMapProvider by simply returning itself.
 	 */
@@ -67,5 +47,18 @@ public class DemandMap extends edu.berkeley.path.model_elements_base.DemandMap i
 	public DemandMap getDemandMap(Interval interval) {
 		return this;
 	}
+	
+	/**
+	 * Get the flow map. Same as getFlow(), but works with String keys.
+	 * Never returns null (creates the map if it doesn't exist).
+	 */
+	@Override
+	public Map<String,Map<String,Double>> getFlow() {
+	  if (null == super.getFlow()) {
+	    setFlow(new HashMap<java.lang.String,Map<java.lang.String,Double>>());
+	  }
+	  return super.getFlow();
+	}
+
 
 }

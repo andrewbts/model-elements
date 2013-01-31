@@ -37,7 +37,7 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	 * @param ensembleState List of CTM states
 	 * @param quality TBD
 	 */	
-	public FreewayCTMEnsembleState(List<FreewayCTMState> ensembleState, DateTime t, Map<CharSequence, Double> quality) {
+	public FreewayCTMEnsembleState(List<FreewayCTMState> ensembleState, DateTime t, Map<String, Double> quality) {
 		
 		super();
 		
@@ -53,7 +53,7 @@ public class FreewayCTMEnsembleState extends edu.berkeley.path.model_elements_ba
 	/**
 	 * Create ensemble state of size n by replicating the specified initial state n times.
 	 */
-	public FreewayCTMEnsembleState(FreewayCTMState initialState, Integer n, DateTime timeBegin, Map<CharSequence, Double> quality) {
+	public FreewayCTMEnsembleState(FreewayCTMState initialState, Integer n, DateTime timeBegin, Map<String, Double> quality) {
 		this(new ArrayList<FreewayCTMState>(n), timeBegin, quality);
 		List<FreewayCTMState> ensemble = getStates();
 		for (int i = 0; i < n; ++i)

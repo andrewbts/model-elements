@@ -140,7 +140,7 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
    */
   public SplitRatioProfile getSplitRatioProfileAt(Node node) {
     if (null == getProfile()) {
-      setProfile(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
+      setProfile(new HashMap<String,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
     }
     
     return (SplitRatioProfile)getProfile().get(node.getId());
@@ -153,7 +153,7 @@ public class SplitRatioSet extends edu.berkeley.path.model_elements_base.SplitRa
    */
   @SuppressWarnings("unchecked")
 public void setProfileMap(Map<String,SplitRatioProfile> value) {
-    setProfile((Map<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>)(Map<?,?>)value);
+    setProfile((Map<String,edu.berkeley.path.model_elements_base.SplitRatioProfile>)(Map<?,?>)value);
   }
 
   /**
@@ -163,7 +163,7 @@ public void setProfileMap(Map<String,SplitRatioProfile> value) {
   @SuppressWarnings("unchecked")
 public Map<String,SplitRatioProfile> getProfileMap() {
     if (null == getProfile()) {
-      setProfile(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
+      setProfile(new HashMap<String,edu.berkeley.path.model_elements_base.SplitRatioProfile>());
     }
     return (Map<String,SplitRatioProfile>)(Map<?,?>)getProfile();
   }

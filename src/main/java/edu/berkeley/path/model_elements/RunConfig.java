@@ -52,7 +52,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	 * @param type FD type (Greenshields, etc), an element of the FDTypeEnum enumeration
 	 */
 	public void setFDTypeEnum(FDTypeEnum type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case GREENSHIELDS:
 			typeString = "Greenshields";
@@ -135,7 +135,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	 * @param type CTM type (rho-CTM, v-CTM, etc), an element of the CTMType enum
 	 */
 	public void setCTMTypeEnum(CTMType type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case DENSITY:
 			typeString = "Density";
@@ -156,7 +156,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 		
 	public void setEnkfTypeEnum(EnKFType type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case SIMPLEAVERAGE:
 			typeString = "SIMPLEAVERAGE";
@@ -180,7 +180,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 		
 	public void setFeedEnum(Feed type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case PEMS:
 			typeString = "PEMS";
@@ -198,7 +198,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 		
 	public void setRunModeEnum(RunMode type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case HISTORICAL:
 			typeString = "HISTORICAL";
@@ -214,7 +214,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	
 		
 	public void setWorkflowEnum(Workflow type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case ESTIMATION:
 			typeString = "ESTIMATION";

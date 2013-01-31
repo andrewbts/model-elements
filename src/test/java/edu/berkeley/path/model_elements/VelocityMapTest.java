@@ -76,8 +76,8 @@ public class VelocityMapTest {
 
   @Test
   public void testPrimitiveAccess() {
-    Map<CharSequence,Double> mps =
-      new HashMap<CharSequence,Double>();
+    Map<String,Double> mps =
+      new HashMap<String,Double>();
           
     vp.setMetersPerSecond(mps);
     

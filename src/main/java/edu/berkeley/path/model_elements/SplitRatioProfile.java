@@ -34,11 +34,11 @@ public class SplitRatioProfile extends edu.berkeley.path.model_elements_base.Spl
   }
   
   public void addRatioAt(String inLinkID, String outLinkID, String vehTypeID, Double ratio) {
-    Map<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>>
+    Map<String,Map<String,Map<String,List<Double>>>>
       ratioMap = getRatio();
     
     if (ratioMap == null) {
-      ratioMap = new HashMap<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>>();
+      ratioMap = new HashMap<String,Map<String,Map<String,List<Double>>>>();
       setRatio(ratioMap);
     }
     
@@ -46,28 +46,28 @@ public class SplitRatioProfile extends edu.berkeley.path.model_elements_base.Spl
   }
 
   public static void addRatioToMapAt(
-      Map<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>> ratioMap,
+      Map<String,Map<String,Map<String,List<Double>>>> ratioMap,
       Long inLinkID, Long outLinkID, Long vehTypeID, Double ratio) {
     addRatioToMapAt(ratioMap, inLinkID.toString(), outLinkID.toString(), vehTypeID.toString(), ratio);
   }
   
   public static void addRatioToMapAt(
-      Map<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>> ratioMap,
+      Map<String,Map<String,Map<String,List<Double>>>> ratioMap,
       String inLinkID, String outLinkID, String vehTypeID, Double ratio) {
     
-    Map<CharSequence,Map<CharSequence,List<Double>>> inLinkMap =
+    Map<String,Map<String,List<Double>>> inLinkMap =
       ratioMap.get(inLinkID);
     
     if (inLinkMap == null) {
-      inLinkMap = new HashMap<CharSequence,Map<CharSequence,List<Double>>>();
+      inLinkMap = new HashMap<String,Map<String,List<Double>>>();
       ratioMap.put(inLinkID, inLinkMap);
     }
 
-    Map<CharSequence,List<Double>> outLinkMap =
+    Map<String,List<Double>> outLinkMap =
       inLinkMap.get(outLinkID);
     
     if (outLinkMap == null) {
-      outLinkMap = new HashMap<CharSequence,List<Double>>();
+      outLinkMap = new HashMap<String,List<Double>>();
       inLinkMap.put(outLinkID, outLinkMap);
     }
 
@@ -87,7 +87,7 @@ public class SplitRatioProfile extends edu.berkeley.path.model_elements_base.Spl
    */
   @SuppressWarnings("unchecked")
   public void setRatioMap(Map<String,Map<String,Map<String,List<Double>>>> value) {
-    setRatio((Map<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>>)(Map<?,?>)value);
+    setRatio((Map<String,Map<String,Map<String,List<Double>>>>)(Map<?,?>)value);
   }
 
   /**
@@ -97,7 +97,7 @@ public class SplitRatioProfile extends edu.berkeley.path.model_elements_base.Spl
   @SuppressWarnings("unchecked")
   public Map<String,Map<String,Map<String,List<Double>>>> getRatioMap() {
     if (null == getRatio()) {
-      setRatio(new HashMap<CharSequence,Map<CharSequence,Map<CharSequence,List<Double>>>>());
+      setRatio(new HashMap<String,Map<String,Map<String,List<Double>>>>());
     }
     return (Map<String,Map<String,Map<String,List<Double>>>>)(Map<?,?>)getRatio();
   }

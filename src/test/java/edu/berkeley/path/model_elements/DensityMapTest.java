@@ -76,8 +76,8 @@ public class DensityMapTest {
 
   @Test
   public void testPrimitiveAccess() {
-    Map<CharSequence,Double> vpm =
-      new HashMap<CharSequence,Double>();
+    Map<String,Double> vpm =
+      new HashMap<String,Double>();
           
     dp.setVehiclesPerMeter(vpm);
     

@@ -50,14 +50,14 @@ public class DensityMap extends edu.berkeley.path.model_elements_base.DensityMap
 		getVehiclesPerMeter().put(id.toString(), val);
 	}
 
-	public void setVehiclesPerMeterOnLink(CharSequence id, Double val) {
+	public void setVehiclesPerMeterOnLink(String id, Double val) {
 		getVehiclesPerMeter().put(id, val);
 	}
 
 	@Override
-	public Map<CharSequence, Double> getVehiclesPerMeter() {
+	public Map<String, Double> getVehiclesPerMeter() {
 		if (super.getVehiclesPerMeter() == null) {
-			super.setVehiclesPerMeter(new HashMap<CharSequence, Double>());
+			super.setVehiclesPerMeter(new HashMap<String, Double>());
 		}
 		return super.getVehiclesPerMeter();
 	}

@@ -54,7 +54,7 @@ public class DemandSetTest {
     dp101.setSampleRate(600.0); // 10 min
     dp101.setStartTime(7.0 * 60 * 60); // 7 am
 
-    Map<String,List<Double>> fm101 = dp101.getFlowMap();
+    Map<String,List<Double>> fm101 = dp101.getFlow();
     fm101.put("car", Arrays.asList(0.0, 1.1, 2.2, 3.3, 4.4));
     fm101.put("truck", Arrays.asList(10.0, 11.1, 12.2, 13.3, 14.4));
 
@@ -63,7 +63,7 @@ public class DemandSetTest {
     dp102.setSampleRate(600.0); // 10 min
     dp102.setStartTime(7.0 * 60 * 60); // 7 am
     
-    Map<String,List<Double>> fm102 = dp102.getFlowMap();
+    Map<String,List<Double>> fm102 = dp102.getFlow();
     fm102.put("car", Arrays.asList(0.0, 1.1, 2.2, 3.3, 4.4));
     fm102.put("truck", Arrays.asList(10.0, 11.1, 12.2, 13.3, 14.4));
 
@@ -72,7 +72,7 @@ public class DemandSetTest {
     dp103.setSampleRate(600.0); // 10 min
     dp103.setStartTime(7.0 * 60 * 60); // 7 am
 
-    Map<String,List<Double>> fm103 = dp103.getFlowMap();
+    Map<String,List<Double>> fm103 = dp103.getFlow();
     fm103.put("car", Arrays.asList(0.0, 1.1, 2.2, 3.3, 4.4));
     fm103.put("truck", Arrays.asList(10.0, 11.1, 12.2, 13.3, 14.4));
   }
@@ -97,7 +97,7 @@ public class DemandSetTest {
     DemandMap dm = ds.slice(interval);
     //System.out.println("before:\n" + dm);
     
-    assertEquals((Double)0.0, dm.getFlowMap().get("101").get("car"));
+    assertEquals((Double)0.0, dm.getFlow().get("101").get("car"));
   }
 
   @Test
@@ -115,7 +115,7 @@ public class DemandSetTest {
     DemandMap dm = ds.slice(interval);
     //System.out.println("during:\n" + dm);
     
-    assertEquals((Double)3.3, dm.getFlowMap().get("101").get("car"));
+    assertEquals((Double)3.3, dm.getFlow().get("101").get("car"));
   }
 
   @Test
@@ -133,6 +133,6 @@ public class DemandSetTest {
     DemandMap dm = ds.slice(interval);
     //System.out.println("after:\n" + dm);
 
-    assertEquals((Double)4.4, dm.getFlowMap().get("101").get("car"));
+    assertEquals((Double)4.4, dm.getFlow().get("101").get("car"));
   }
 }
