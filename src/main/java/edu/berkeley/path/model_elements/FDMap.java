@@ -41,7 +41,7 @@ public class FDMap extends edu.berkeley.path.model_elements_base.FDMap implement
    */
   @SuppressWarnings("unchecked")
   public void setFdMap(Map<String,FD> value) {
-    setFd((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FD>)(Map<?,?>)value);
+    setFd((Map<java.lang.String,edu.berkeley.path.model_elements_base.FD>)(Map<?,?>)value);
   }
 
   /**
@@ -51,7 +51,7 @@ public class FDMap extends edu.berkeley.path.model_elements_base.FDMap implement
   @SuppressWarnings("unchecked")
   public Map<String,FD> getFdMap() {
     if (null == getFd()) {
-      setFd(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FD>());
+      setFd(new HashMap<java.lang.String,edu.berkeley.path.model_elements_base.FD>());
     }
     return (Map<String,FD>)(Map<?,?>)getFd();
   }

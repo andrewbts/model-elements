@@ -68,7 +68,7 @@ public class Sensor extends edu.berkeley.path.model_elements_base.Sensor {
 	 * @param type Sensor type (Loop, etc), an element of the SensorTypeEnum enumeration
 	 */
 	public void setTypeEnum(SensorTypeEnum type) {
-		CharSequence typeString = null;
+		String typeString = null;
 		switch (type) {
 		case LOOP:
 			typeString = "Loop";

@@ -54,18 +54,18 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet i
       DemandProfile profile = entryForLink.getValue();
       Double dt = profile.getSampleRate(); // defaults?
       Double t0 = profile.getStartTime(); // defaults?
-      List<Double> someTimeSeries = profile.getFlowMap().values().iterator().next();
+      List<Double> someTimeSeries = profile.getFlow().values().iterator().next();
       Integer nSamples = someTimeSeries.size();
         // assume all vtypes have same size time series!
       
       if (nSamples == 0) {
-        demandMap.getFlowMap().put(linkId, null);
+        demandMap.getFlow().put(linkId, null);
         continue;
       }
       
       Integer index = ProfileUtil.getIndex(interval, t0, dt, nSamples);
       
-      for (Entry<String,List<Double>> entryForVtype: profile.getFlowMap().entrySet()) {
+      for (Entry<String,List<Double>> entryForVtype: profile.getFlow().entrySet()) {
         String vtype = entryForVtype.getKey();
         List<Double> timeSeries = entryForVtype.getValue();
         
@@ -78,10 +78,10 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet i
           // what about stddev add/mult?
         }
         
-        Map<String, Double>demandMapAtLink = demandMap.getFlowMap().get(linkId);
+        Map<String, Double>demandMapAtLink = demandMap.getFlow().get(linkId);
         if (demandMapAtLink == null) {
           demandMapAtLink = new HashMap<String, Double>();
-          demandMap.getFlowMap().put(linkId, demandMapAtLink);
+          demandMap.getFlow().put(linkId, demandMapAtLink);
         }
         demandMapAtLink.put(vtype, flowAtTime);
       }
@@ -96,7 +96,7 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet i
    */
   public DemandProfile getDemandProfileAt(Node node) {
     if (null == getProfile()) {
-      setProfile(new HashMap<CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>());
+      setProfile(new HashMap<String ,edu.berkeley.path.model_elements_base.DemandProfile>());
     }
     
     return (DemandProfile)getProfile().get(node.getId());
@@ -107,7 +107,7 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet i
    */
   @SuppressWarnings("unchecked")
   public void setProfileMap(Map<String,DemandProfile> value) {
-    setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>)(Map<?,?>)value);
+    setProfile((Map<java.lang.String ,edu.berkeley.path.model_elements_base.DemandProfile>)(Map<?,?>)value);
   }
 
   /**
@@ -117,7 +117,7 @@ public class DemandSet extends edu.berkeley.path.model_elements_base.DemandSet i
   @SuppressWarnings("unchecked")
   public Map<String,DemandProfile> getProfileMap() {
     if (null == getProfile()) {
-      setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.DemandProfile>());
+      setProfile(new HashMap<java.lang.String, edu.berkeley.path.model_elements_base.DemandProfile>());
     }
     return (Map<String,DemandProfile>)(Map<?,?>)getProfile();
   }

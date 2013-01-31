@@ -78,7 +78,7 @@ public class FDSet extends edu.berkeley.path.model_elements_base.FDSet implement
    */
   @SuppressWarnings("unchecked")
   public void setProfileMap(Map<String,FDProfile> value) {
-    setProfile((Map<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>)(Map<?,?>)value);
+    setProfile((Map<java.lang.String,edu.berkeley.path.model_elements_base.FDProfile>)(Map<?,?>)value);
   }
 
   /**
@@ -88,7 +88,7 @@ public class FDSet extends edu.berkeley.path.model_elements_base.FDSet implement
   @SuppressWarnings("unchecked")
   public Map<String,FDProfile> getProfileMap() {
     if (null == getProfile()) {
-      setProfile(new HashMap<java.lang.CharSequence,edu.berkeley.path.model_elements_base.FDProfile>());
+      setProfile(new HashMap<java.lang.String,edu.berkeley.path.model_elements_base.FDProfile>());
     }
     return (Map<String,FDProfile>)(Map<?,?>)getProfile();
   }

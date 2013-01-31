@@ -49,14 +49,14 @@ public class VelocityMap extends edu.berkeley.path.model_elements_base.VelocityM
 	  getMetersPerSecond().put(id.toString(), val);
   }
   
-  public void setMetersPerSecondOnLink(CharSequence id, Double val) {
+  public void setMetersPerSecondOnLink(String id, Double val) {
     getMetersPerSecond().put(id, val);
   }
 
 	@Override
-	public Map<CharSequence, Double> getMetersPerSecond() {
+	public Map<String, Double> getMetersPerSecond() {
 		if (super.getMetersPerSecond() == null) {
-			super.setMetersPerSecond(new HashMap<CharSequence, Double>());
+			super.setMetersPerSecond(new HashMap<String, Double>());
 		}
 		return super.getMetersPerSecond();
 	}

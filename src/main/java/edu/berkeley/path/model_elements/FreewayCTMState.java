@@ -35,13 +35,13 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 	
 	@SuppressWarnings("unchecked")
 	public FreewayCTMState(
-			Map<CharSequence, FreewayLinkState> linkStateMap, 
-			Map<CharSequence, Double> originStateMap, 
-			Map<CharSequence, FreewayLinkFlowState> linkFlowStateMap) {
+			Map<String, FreewayLinkState> linkStateMap, 
+			Map<String, Double> originStateMap, 
+			Map<String, FreewayLinkFlowState> linkFlowStateMap) {
 		super(
-				(Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?, ?>) linkStateMap, 
+				(Map<String, edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?, ?>) linkStateMap, 
 				originStateMap,
-				(Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState>)(Map<?, ?>) linkFlowStateMap
+				(Map<String, edu.berkeley.path.model_elements_base.FreewayLinkFlowState>)(Map<?, ?>) linkFlowStateMap
 				);
 	}
 
@@ -52,9 +52,9 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 	 * @return Map from links to link states
 	 */
 	public Map<Link, FreewayLinkState> createLinkStateMap(Network network) {
-		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> charMap = super.getLinkState();
+		Map<String, edu.berkeley.path.model_elements_base.FreewayLinkState> charMap = super.getLinkState();
 		Map<Link, FreewayLinkState> map = new HashMap<Link, FreewayLinkState>(charMap.size());
-		for (Entry<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkState> e : charMap.entrySet()) {
+		for (Entry<String, edu.berkeley.path.model_elements_base.FreewayLinkState> e : charMap.entrySet()) {
 			map.put(network.getLinkById(e.getKey().toString()), (FreewayLinkState)e.getValue());
 		}
 		return map;
@@ -67,12 +67,12 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 	 * @return Map from links to link flow states
 	 */
 	public Map<Link, FreewayLinkFlowState> createLinkFlowStateMap(Network network) {
-		Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> charMap = super.getLinkFlowState();
+		Map<String, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> charMap = super.getLinkFlowState();
 		if (charMap == null)
 			return null;
 		
 		Map<Link, FreewayLinkFlowState> map = new HashMap<Link, FreewayLinkFlowState>(charMap.size());
-		for (Entry<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> e : charMap.entrySet()) {
+		for (Entry<String, edu.berkeley.path.model_elements_base.FreewayLinkFlowState> e : charMap.entrySet()) {
 			map.put(network.getLinkById(e.getKey().toString()), (FreewayLinkFlowState)e.getValue());		
 		}
 		
@@ -80,13 +80,13 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
 	}
 				
 	@SuppressWarnings("unchecked")
-	public Map<CharSequence, FreewayLinkFlowState> getLinkFlowStateMap() {
-		return (Map<CharSequence, FreewayLinkFlowState>) (Map<?, ?>) super.getLinkFlowState();
+	public Map<String, FreewayLinkFlowState> getLinkFlowStateMap() {
+		return (Map<String, FreewayLinkFlowState>) (Map<?, ?>) super.getLinkFlowState();
 	}
 
 	@SuppressWarnings("unchecked")
-	public void setLinkFlowStateMap(Map<CharSequence, FreewayLinkFlowState> map) {
-		super.setLinkFlowState((Map<CharSequence, edu.berkeley.path.model_elements_base.FreewayLinkFlowState>) (Map<?, ?>)map);
+	public void setLinkFlowStateMap(Map<String, FreewayLinkFlowState> map) {
+		super.setLinkFlowState((Map<String, edu.berkeley.path.model_elements_base.FreewayLinkFlowState>) (Map<?, ?>)map);
 	}
 
 	/**
@@ -126,16 +126,16 @@ public class FreewayCTMState extends edu.berkeley.path.model_elements_base.Freew
    * Gets the linkState map.
    **/
   @SuppressWarnings("unchecked")
-  public Map<CharSequence,FreewayLinkState> getLinkStateMap() {
-    return (Map<CharSequence,FreewayLinkState>)(Map<?,?>)getLinkState();
+  public Map<String,FreewayLinkState> getLinkStateMap() {
+    return (Map<String,FreewayLinkState>)(Map<?,?>)getLinkState();
   }
   
   /**
    * Sets the linkState map.
    **/
   @SuppressWarnings("unchecked")
-  public void setLinkStateMap(Map<CharSequence,FreewayLinkState> map) {
-		setLinkState((Map<CharSequence,edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?,?>)map);
+  public void setLinkStateMap(Map<String,FreewayLinkState> map) {
+		setLinkState((Map<String,edu.berkeley.path.model_elements_base.FreewayLinkState>)(Map<?,?>)map);
   }
 
 

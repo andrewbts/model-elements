@@ -31,24 +31,15 @@ import java.util.*;
 import org.joda.time.Interval;
 
 public class SplitRatioMap extends edu.berkeley.path.model_elements_base.SplitRatioMap implements SplitRatioMapProvider {
-  /**
-   * Set the ratio map. Same as setRatio(), but works with String keys.
-   */
-  @SuppressWarnings("unchecked")
-  public void setRatioMap(Map<String,Map<String,Map<String,Map<String,Double>>>> value) {
-    setRatio((Map<CharSequence,Map<CharSequence,Map<CharSequence,Map<CharSequence,Double>>>>)(Map<?,?>)value);
-  }
 
-  /**
-   * Get the ratio map. Same as getRatio(), but works with String keys.
-   * Never returns null (creates the map if it doesn't exist).
+	/**
+   * Get the ratio map. Never returns null (creates the map if it doesn't exist).
    */
-  @SuppressWarnings("unchecked")
   public Map<String,Map<String,Map<String,Map<String,Double>>>> getRatioMap() {
     if (null == getRatio()) {
-      setRatio(new HashMap<CharSequence,Map<CharSequence,Map<CharSequence,Map<CharSequence,Double>>>>());
+      setRatio(new HashMap<String,Map<String,Map<String,Map<String,Double>>>>());
     }
-    return (Map<String,Map<String,Map<String,Map<String,Double>>>>)(Map<?,?>)getRatio();
+    return getRatio();
   }
   
 	/**
