@@ -441,23 +441,17 @@ protocol CC {
    */
   
   record EnKFParams {
-    double confidenceDefault;
-    double confidenceHasMeasurement;
-    double confidenceNoMeasurement;
-    double confidenceMeasurementLifetime;
-    double localizationDistance;
-    boolean useLocalization;
-    double modelNoiseMean;
-    double modelNoiseStdev;
+    double pemsNoiseMean;
+    double pemsNoiseStdev;
+    array<int> PemsBlackList;
     double navteqNoiseMean;
     double navteqNoiseStdev;
     double navteqPercentage;
-    array<int> PemsBlackList;
-    double pemsNoiseMean;
-    double pemsNoiseStdev;
     double telenavNoiseMean;
     double telenavNoiseStdev;
     double telenavPercentage;
+    boolean useLocalization;
+    double localizationDistance;    
   }
   
   /**
