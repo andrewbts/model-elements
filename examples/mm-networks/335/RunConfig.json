@@ -35,6 +35,9 @@
     "initialEnsembleState": null, 
     "initialState": null, 
     "initialStateUncertainty": 0.0, 
+    "liveModeLag": {
+        "milliseconds": 60000
+    }, 
     "name": "MM nid 335", 
     "reportDirectory": "reports", 
     "reportEnsembleAfterCTM": true, 
