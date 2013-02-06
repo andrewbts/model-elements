@@ -681,19 +681,14 @@ protocol CC {
     string        id;
     string        name;
 
-    /**
-     * historical, live
-     **/
+    // historical or live mode
     string        runMode;
     
-    /**
-     * forecast, estimation
-     **/
+	// forecast (CTM) or estimation (CTM + EnKF)
     string        workflow;
     
-    /**
-    * probea, probeb, pems
-    **/
+    // probea, probeb, pems
+    // TODO: replace with individual booleans for each feed type
     string        feed;
 
     string        ctmType;
@@ -702,9 +697,7 @@ protocol CC {
     double        additiveModelNoiseMean;
     double        additiveModelNoiseStdDev;
     double        additiveVelocityFunctionNoiseMean;
-    double        additiveVelocityFunctionNoiseStdDev;
-    
-    double        initialDensityFraction;    
+    double        additiveVelocityFunctionNoiseStdDev;           
     
     string        enkfType;
     EnKFParams    enkfParams;
@@ -720,13 +713,15 @@ protocol CC {
     string		reportDirectory = "";
     
     // CTM time step, the smallest time step
-    Duration      dtCTM;
-    
-    // how often to run EnKF
-    Duration      dtEnKF;
+    Duration      dtCTM;    
+    // how often to run EnKF, integer multiple of CTM time step
+    Duration      dtEnKF;        
     
     DateTime      timeBegin;
     DateTime      timeEnd;
+    
+    // how long LIVE mode should try to lag behind real-time
+    Duration		liveModeLag;
     
     union {null, SensorSet}     sensorSet;
     
@@ -735,6 +730,8 @@ protocol CC {
     union {null, FreewayCTMState}             initialState;
     // additive noise to apply to the initial state ensemble
     double                                    initialStateUncertainty = 0.0;
+    // initial average density (as fraction of jam density) if no initial condition supplied
+    double		initialDensityFraction;
   }
 
 }
