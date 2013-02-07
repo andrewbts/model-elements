@@ -1,1 +1,82 @@
-{"id":"0","name":"MM nid 181","runMode":"HISTORICAL","workflow":"ESTIMATION","feed":"PEMS","ctmType":"Velocity","ensembleSize":150,"fdType":"Smulders","additiveModelNoiseMean":0.5,"additiveModelNoiseStdDev":2.0,"additiveVelocityFunctionNoiseMean":0.0,"additiveVelocityFunctionNoiseStdDev":0.0,"initialDensityFraction":0.01,"enkfType":"GLOBALJAMA","enkfParams":{"pemsNoiseMean":0.0,"pemsNoiseStdev":4.0,"PemsBlackList":[],"navteqNoiseMean":0.0,"navteqNoiseStdev":4.0,"navteqPercentage":100.0,"telenavNoiseMean":0.0,"telenavNoiseStdev":4.0,"telenavPercentage":100.0,"useLocalization":true,"localizationDistance":100.0},"dtOutput":{"milliseconds":30000},"reportStatisticsAfterCTM":false,"reportEnsembleAfterCTM":true,"reportStatisticsAfterEnKF":true,"reportEnsembleAfterEnKF":false,"reportToDB":true,"reportToDirectory":false,"reportDirectory":"reports","dtCTM":{"milliseconds":6000},"dtEnKF":{"milliseconds":30000},"timeBegin":{"milliseconds":0},"timeEnd":{"milliseconds":0},"sensorSet":{"edu.berkeley.path.model_elements_base.SensorSet":{"id":"10181","name":{"string":"10181"},"description":{"string":"PeMS sensors for MM nid 181, converted by mm-network-import"},"projectId":null,"sensors":[{"type":"Loop","entityId":{"string":"819568"},"measurementFeedId":{"string":"PeMS"},"linkId":"15390301","linkOffset":112.91081237792969,"laneNum":0.0,"healthStatus":1.0}],"modstamp":0}},"initialEnsembleState":null,"initialState":null,"initialStateUncertainty":0.0}
+{
+    "additiveModelNoiseMean": 0.5, 
+    "additiveModelNoiseStdDev": 2.0, 
+    "additiveVelocityFunctionNoiseMean": 0.0, 
+    "additiveVelocityFunctionNoiseStdDev": 0.0, 
+    "ctmType": "Velocity", 
+    "dtCTM": {
+        "milliseconds": 6000
+    }, 
+    "dtEnKF": {
+        "milliseconds": 30000
+    }, 
+    "dtOutput": {
+        "milliseconds": 30000
+    }, 
+    "enkfParams": {
+        "PemsBlackList": [], 
+        "localizationDistance": 100.0, 
+        "navteqNoiseMean": 0.0, 
+        "navteqNoiseStdev": 4.0, 
+        "navteqPercentage": 100.0, 
+        "pemsNoiseMean": 0.0, 
+        "pemsNoiseStdev": 4.0, 
+        "telenavNoiseMean": 0.0, 
+        "telenavNoiseStdev": 4.0, 
+        "telenavPercentage": 100.0, 
+        "useLocalization": true
+    }, 
+    "enkfType": "GLOBALJAMA", 
+    "ensembleSize": 150, 
+    "fdType": "Smulders", 
+    "feed": "PEMS", 
+    "id": "0", 
+    "initialDensityFraction": 0.01, 
+    "initialEnsembleState": null, 
+    "initialState": null, 
+    "initialStateUncertainty": 0.0, 
+    "name": "MM nid 181", 
+    "reportDirectory": "reports", 
+    "reportEnsembleAfterCTM": true, 
+    "reportEnsembleAfterEnKF": false, 
+    "reportStatisticsAfterCTM": false, 
+    "reportStatisticsAfterEnKF": true, 
+    "reportToDB": true, 
+    "reportToDirectory": false, 
+    "runMode": "HISTORICAL", 
+    "sensorSet": {
+        "edu.berkeley.path.model_elements_base.SensorSet": {
+            "description": {
+                "string": "PeMS sensors for MM nid 181, converted by mm-network-import"
+            }, 
+            "id": "10181", 
+            "modstamp": 0, 
+            "name": {
+                "string": "10181"
+            }, 
+            "projectId": null, 
+            "sensors": [
+                {
+                    "entityId": {
+                        "string": "819568"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15390301", 
+                    "linkOffset": 112.91081237792969, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }
+            ]
+        }
+    }, 
+    "timeBegin": {
+        "milliseconds": 0
+    }, 
+    "timeEnd": {
+        "milliseconds": 0
+    }, 
+    "workflow": "ESTIMATION"
+}
