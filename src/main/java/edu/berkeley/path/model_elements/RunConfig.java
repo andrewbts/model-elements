@@ -118,6 +118,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 
 		if (type.equals("HISTORICAL")) return RunMode.HISTORICAL;
 		if (type.equals("LIVE")) return RunMode.LIVE;
+		if (type.equals("HISTORICAL_LIVE")) return RunMode.HISTORICAL_LIVE;
 		
 		throw new UnsupportedOperationException("Unknown Run Mode type string '" + type + "' encountered.");
 	}
@@ -205,6 +206,9 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 			break;
 		case LIVE:
 			typeString = "LIVE";
+			break;
+		case HISTORICAL_LIVE:
+			typeString = "HISTORICAL_LIVE";
 			break;
 		default:
 			throw new IllegalArgumentException("Unknown RunMode " + type + ".");			
