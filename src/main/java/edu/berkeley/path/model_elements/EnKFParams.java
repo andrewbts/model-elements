@@ -39,8 +39,6 @@ public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams
 		EnKFParams params = new EnKFParams();
 
 		// Assign Default Mobile Millenium values for all attributes
-		params.setModelNoiseMean(0.5);
-		params.setModelNoiseStdev(2.0);
 		params.setPemsNoiseMean(0.0);
 		params.setPemsNoiseStdev(4.0);
 		params.setNavteqNoiseMean(0.0);
@@ -52,10 +50,6 @@ public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams
 		params.setNavteqPercentage(100.0);
 		params.setUseLocalization(true);
 		params.setLocalizationDistance(100.0);
-		params.setConfidenceNoMeasurement(0.0);
-		params.setConfidenceDefault(0.025);
-		params.setConfidenceHasMeasurement(0.5);
-		params.setConfidenceMeasurementLifetime(180.0);
 		
 		return params;
 
