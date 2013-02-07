@@ -719,7 +719,12 @@ protocol CC {
     boolean		reportToDirectory;
     string		reportDirectory = "";
     
-    Duration      dt;
+    // CTM time step, the smallest time step
+    Duration      dtCTM;
+    
+    // how often to run EnKF
+    Duration      dtEnKF;
+    
     DateTime      timeBegin;
     DateTime      timeEnd;
     
