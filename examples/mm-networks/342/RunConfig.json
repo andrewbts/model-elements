@@ -1,1 +1,449 @@
-{"id":"0","name":"MM nid 342","runMode":"HISTORICAL","workflow":"ESTIMATION","feed":"PEMS","ctmType":"Velocity","ensembleSize":150,"fdType":"Smulders","additiveModelNoiseMean":0.7707724342441162,"additiveModelNoiseStdDev":2.999999,"additiveVelocityFunctionNoiseMean":0.0,"additiveVelocityFunctionNoiseStdDev":0.0,"enkfType":"GLOBALJAMA","enkfParams":{"pemsNoiseMean":0.0,"pemsNoiseStdev":4.0,"PemsBlackList":[],"navteqNoiseMean":0.0,"navteqNoiseStdev":1.1748168652615236,"navteqPercentage":100.0,"telenavNoiseMean":0.0,"telenavNoiseStdev":0.3057161589731858,"telenavPercentage":100.0,"useLocalization":true,"localizationDistance":100.0},"dtOutput":{"milliseconds":30000},"reportStatisticsAfterCTM":false,"reportEnsembleAfterCTM":true,"reportStatisticsAfterEnKF":true,"reportEnsembleAfterEnKF":false,"reportToDB":true,"reportToDirectory":false,"reportDirectory":"reports","dtCTM":{"milliseconds":6000},"dtEnKF":{"milliseconds":30000},"timeBegin":{"milliseconds":1330956000000},"timeEnd":{"milliseconds":1331859600000},"liveModeLag":{"milliseconds":60000},"sensorSet":{"edu.berkeley.path.model_elements_base.SensorSet":{"id":"10342","name":{"string":"10342"},"description":{"string":"PeMS sensors for MM nid 342, converted by mm-network-import"},"projectId":null,"sensors":[{"type":"Loop","entityId":{"string":"401561"},"measurementFeedId":{"string":"PeMS"},"linkId":"8313402","linkOffset":101.09328206380206,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400539"},"measurementFeedId":{"string":"PeMS"},"linkId":"19083000","linkOffset":36.610660552978516,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400928"},"measurementFeedId":{"string":"PeMS"},"linkId":"10100401","linkOffset":126.64729614257811,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400419"},"measurementFeedId":{"string":"PeMS"},"linkId":"15093701","linkOffset":121.79998779296875,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400716"},"measurementFeedId":{"string":"PeMS"},"linkId":"12972700","linkOffset":124.99713134765625,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400761"},"measurementFeedId":{"string":"PeMS"},"linkId":"123801","linkOffset":155.5836385091146,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401003"},"measurementFeedId":{"string":"PeMS"},"linkId":"25913804","linkOffset":101.34565429687495,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401062"},"measurementFeedId":{"string":"PeMS"},"linkId":"32052201","linkOffset":34.18165079752603,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400640"},"measurementFeedId":{"string":"PeMS"},"linkId":"15094400","linkOffset":194.85179138183594,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400780"},"measurementFeedId":{"string":"PeMS"},"linkId":"15094404","linkOffset":185.57666015625,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400611"},"measurementFeedId":{"string":"PeMS"},"linkId":"15105503","linkOffset":80.78878784179688,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401613"},"measurementFeedId":{"string":"PeMS"},"linkId":"32052300","linkOffset":14.875410079956055,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400674"},"measurementFeedId":{"string":"PeMS"},"linkId":"25980501","linkOffset":99.36590576171875,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400662"},"measurementFeedId":{"string":"PeMS"},"linkId":"13035802","linkOffset":36.76787312825519,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400536"},"measurementFeedId":{"string":"PeMS"},"linkId":"15031003","linkOffset":19.414566040039062,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401888"},"measurementFeedId":{"string":"PeMS"},"linkId":"9754401","linkOffset":105.97661336263022,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400490"},"measurementFeedId":{"string":"PeMS"},"linkId":"15030500","linkOffset":124.58577728271484,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400041"},"measurementFeedId":{"string":"PeMS"},"linkId":"27840103","linkOffset":96.96989440917969,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400137"},"measurementFeedId":{"string":"PeMS"},"linkId":"4718702","linkOffset":1.7372029622395644,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400284"},"measurementFeedId":{"string":"PeMS"},"linkId":"27840101","linkOffset":94.07780456542969,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401545"},"measurementFeedId":{"string":"PeMS"},"linkId":"19122203","linkOffset":15.758651733398438,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401529"},"measurementFeedId":{"string":"PeMS"},"linkId":"32052203","linkOffset":158.48187255859375,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400165"},"measurementFeedId":{"string":"PeMS"},"linkId":"15093703","linkOffset":42.1165771484375,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400141"},"measurementFeedId":{"string":"PeMS"},"linkId":"18683600","linkOffset":63.699432373046875,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400685"},"measurementFeedId":{"string":"PeMS"},"linkId":"25913801","linkOffset":114.83287353515624,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400534"},"measurementFeedId":{"string":"PeMS"},"linkId":"4155803","linkOffset":118.08062744140625,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"401011"},"measurementFeedId":{"string":"PeMS"},"linkId":"4719001","linkOffset":190.1741180419922,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400488"},"measurementFeedId":{"string":"PeMS"},"linkId":"12973002","linkOffset":141.64752197265625,"laneNum":0.0,"healthStatus":1.0},{"type":"Loop","entityId":{"string":"400086"},"measurementFeedId":{"string":"PeMS"},"linkId":"15563700","linkOffset":60.899627685546875,"laneNum":0.0,"healthStatus":1.0}],"modstamp":0}},"initialEnsembleState":null,"initialState":null,"initialStateUncertainty":0.0,"initialDensityFraction":0.01}
+{
+    "additiveModelNoiseMean": 0.77077243424411623, 
+    "additiveModelNoiseStdDev": 2.9999989999999999, 
+    "additiveVelocityFunctionNoiseMean": 0.0, 
+    "additiveVelocityFunctionNoiseStdDev": 0.0, 
+    "ctmType": "Velocity", 
+    "dtCTM": {
+        "milliseconds": 6000
+    }, 
+    "dtEnKF": {
+        "milliseconds": 30000
+    }, 
+    "dtOutput": {
+        "milliseconds": 30000
+    }, 
+    "enkfParams": {
+        "PemsBlackList": [], 
+        "localizationDistance": 100.0, 
+        "navteqNoiseMean": 0.0, 
+        "navteqNoiseStdev": 1.1748168652615236, 
+        "navteqPercentage": 100.0, 
+        "pemsNoiseMean": 0.0, 
+        "pemsNoiseStdev": 4.0, 
+        "telenavNoiseMean": 0.0, 
+        "telenavNoiseStdev": 0.30571615897318583, 
+        "telenavPercentage": 100.0, 
+        "useLocalization": true
+    }, 
+    "enkfType": "GLOBALJAMA", 
+    "ensembleSize": 150, 
+    "fdType": "Smulders", 
+    "feed": "PEMS", 
+    "id": "0", 
+    "initialDensityFraction": 0.01, 
+    "initialEnsembleState": null, 
+    "initialState": null, 
+    "initialStateUncertainty": 0.0, 
+    "liveModeLag": {
+        "milliseconds": 60000
+    }, 
+    "name": "MM nid 342", 
+    "reportDirectory": "reports", 
+    "reportEnsembleAfterCTM": true, 
+    "reportEnsembleAfterEnKF": false, 
+    "reportStatisticsAfterCTM": false, 
+    "reportStatisticsAfterEnKF": true, 
+    "reportToDB": true, 
+    "reportToDirectory": false, 
+    "runMode": "HISTORICAL", 
+    "sensorSet": {
+        "edu.berkeley.path.model_elements_base.SensorSet": {
+            "description": {
+                "string": "PeMS sensors for MM nid 342, converted by mm-network-import"
+            }, 
+            "id": "10342", 
+            "modstamp": 0, 
+            "name": {
+                "string": "10342"
+            }, 
+            "projectId": null, 
+            "sensors": [
+                {
+                    "entityId": {
+                        "string": "401561"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "8313402", 
+                    "linkOffset": 101.09328206380206, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400539"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "19083000", 
+                    "linkOffset": 36.610660552978516, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400928"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "10100401", 
+                    "linkOffset": 126.64729614257811, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400419"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15093701", 
+                    "linkOffset": 121.79998779296875, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400716"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "12972700", 
+                    "linkOffset": 124.99713134765625, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400761"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "123801", 
+                    "linkOffset": 155.58363850911459, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401003"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "25913804", 
+                    "linkOffset": 101.34565429687495, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401062"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "32052201", 
+                    "linkOffset": 34.181650797526032, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400640"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15094400", 
+                    "linkOffset": 194.85179138183594, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400780"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15094404", 
+                    "linkOffset": 185.57666015625, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400611"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15105503", 
+                    "linkOffset": 80.788787841796875, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401613"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "32052300", 
+                    "linkOffset": 14.875410079956055, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400674"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "25980501", 
+                    "linkOffset": 99.36590576171875, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400662"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "13035802", 
+                    "linkOffset": 36.767873128255189, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400536"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15031003", 
+                    "linkOffset": 19.414566040039062, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401888"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "9754401", 
+                    "linkOffset": 105.97661336263022, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400490"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15030500", 
+                    "linkOffset": 124.58577728271484, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400041"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "27840103", 
+                    "linkOffset": 96.969894409179688, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400137"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "4718702", 
+                    "linkOffset": 1.7372029622395644, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400284"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "27840101", 
+                    "linkOffset": 94.077804565429688, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401545"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "19122203", 
+                    "linkOffset": 15.758651733398438, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401529"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "32052203", 
+                    "linkOffset": 158.48187255859375, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400165"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15093703", 
+                    "linkOffset": 42.1165771484375, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400141"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "18683600", 
+                    "linkOffset": 63.699432373046875, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400685"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "25913801", 
+                    "linkOffset": 114.83287353515624, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400534"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "4155803", 
+                    "linkOffset": 118.08062744140625, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "401011"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "4719001", 
+                    "linkOffset": 190.17411804199219, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400488"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "12973002", 
+                    "linkOffset": 141.64752197265625, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }, 
+                {
+                    "entityId": {
+                        "string": "400086"
+                    }, 
+                    "healthStatus": 1.0, 
+                    "laneNum": 0.0, 
+                    "linkId": "15563700", 
+                    "linkOffset": 60.899627685546875, 
+                    "measurementFeedId": {
+                        "string": "PeMS"
+                    }, 
+                    "type": "Loop"
+                }
+            ]
+        }
+    }, 
+    "timeBegin": {
+        "milliseconds": 1330956000000
+    }, 
+    "timeEnd": {
+        "milliseconds": 1331859600000
+    }, 
+    "workflow": "ESTIMATION"
+}

@@ -1,1 +1,3049 @@
-{"fd":{"31538700":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19083000":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"31538701":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"31538702":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19083101":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19083100":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"9754401":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"9754402":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052318":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052319":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"9754400":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052317":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15105503":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15105501":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15105502":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15105500":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"13035802":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"13035801":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"13035800":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122302":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122301":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122300":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052323":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"10100401":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052324":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"10100400":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052321":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052322":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052320":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"10100404":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"10100403":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"10100402":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052325":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052326":{"freeFlowSpeed":{"double":20.0},"criticalSpeed":{"double":18.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":0.22374145439999996},"jamDensity":{"double":0.124300808},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"123801":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"27840102":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"123800":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"27840103":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"27840100":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"27840101":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15031100":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15563700":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15563701":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"123802":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"23302804":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"23302805":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25913804":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25913803":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25913802":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25913801":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25913800":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"23302800":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"23302801":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"23302802":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"23302803":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052301":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052204":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052300":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052205":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052202":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052203":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052100":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052200":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"32052201":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"18683600":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25980501":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122203":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122200":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"25980500":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122201":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"19122202":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15093700":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15093701":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15093702":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15093703":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4155802":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4155801":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4155803":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4155800":{"freeFlowSpeed":{"double":29.057601928710938},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602804762144665},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15031000":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15031001":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"8313400":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.7003486971149446},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4719000":{"freeFlowSpeed":{"double":29.05759620666504},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602781984305503},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"8313402":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.7003486971149446},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"8313401":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.7003486971149446},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4719001":{"freeFlowSpeed":{"double":29.05759620666504},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602781984305503},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15031002":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15031003":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15094401":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15094402":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15094400":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15094405":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15094404":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15094403":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"9754000":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602797169532606},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"15030500":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"12973000":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"12973001":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"12973002":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"12973003":{"freeFlowSpeed":{"double":29.057600021362305},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.700349646191576},"jamDensity":{"double":0.62150404},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4718700":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"12972700":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"12972701":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4718702":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}},"4718701":{"freeFlowSpeed":{"double":29.057598114013672},"criticalSpeed":{"double":26.0},"congestionWaveSpeed":{"double":5.36448},"capacity":{"double":1.3602789576919556},"jamDensity":{"double":0.497203232},"capacityDrop":{"double":0.0},"freeFlowSpeedStd":{"double":0.0},"congestionWaveSpeedStd":{"double":0.0},"capacityStd":{"double":0.0}}}}
+{
+    "fd": {
+        "10100400": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "10100401": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "10100402": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "10100403": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "10100404": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "123800": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "123801": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "123802": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "12972700": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "12972701": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "12973000": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "12973001": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "12973002": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "12973003": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "13035800": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "13035801": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "13035802": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15030500": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15031000": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15031001": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15031002": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15031003": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15031100": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "15093700": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15093701": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15093702": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15093703": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15094400": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15094401": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15094402": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15094403": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15094404": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15094405": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15105500": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15105501": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15105502": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15105503": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "15563700": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "15563701": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "18683600": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "19083000": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "19083100": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "19083101": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "19122200": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "19122201": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "19122202": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "19122203": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "19122300": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "19122301": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "19122302": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "23302800": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "23302801": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "23302802": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "23302803": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "23302804": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "23302805": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "25913800": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "25913801": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "25913802": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "25913803": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "25913804": {
+            "capacity": {
+                "double": 1.7003496461915759
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "25980500": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "25980501": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "27840100": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "27840101": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "27840102": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "27840103": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "31538700": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "31538701": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "31538702": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052100": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052200": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052201": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052202": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052203": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052204": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052205": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052300": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052301": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "32052317": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052318": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052319": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052320": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052321": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052322": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052323": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052324": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052325": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "32052326": {
+            "capacity": {
+                "double": 0.22374145439999996
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 18.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 20.0
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.124300808
+            }
+        }, 
+        "4155800": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4155801": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4155802": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4155803": {
+            "capacity": {
+                "double": 1.3602804762144665
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057601928710938
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4718700": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4718701": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4718702": {
+            "capacity": {
+                "double": 1.3602789576919556
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4719000": {
+            "capacity": {
+                "double": 1.3602781984305503
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057596206665039
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "4719001": {
+            "capacity": {
+                "double": 1.3602781984305503
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057596206665039
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "8313400": {
+            "capacity": {
+                "double": 1.7003486971149446
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "8313401": {
+            "capacity": {
+                "double": 1.7003486971149446
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "8313402": {
+            "capacity": {
+                "double": 1.7003486971149446
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057598114013672
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.62150404000000004
+            }
+        }, 
+        "9754000": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "9754400": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "9754401": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }, 
+        "9754402": {
+            "capacity": {
+                "double": 1.3602797169532606
+            }, 
+            "capacityDrop": {
+                "double": 0.0
+            }, 
+            "capacityStd": {
+                "double": 0.0
+            }, 
+            "congestionWaveSpeed": {
+                "double": 5.3644800000000004
+            }, 
+            "congestionWaveSpeedStd": {
+                "double": 0.0
+            }, 
+            "criticalSpeed": {
+                "double": 26.0
+            }, 
+            "freeFlowSpeed": {
+                "double": 29.057600021362305
+            }, 
+            "freeFlowSpeedStd": {
+                "double": 0.0
+            }, 
+            "jamDensity": {
+                "double": 0.49720323199999999
+            }
+        }
+    }
+}
