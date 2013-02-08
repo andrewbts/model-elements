@@ -85,8 +85,8 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 		
 	@Override
-	public EnKFParams getEnkfParams() {
-		return (EnKFParams)super.getEnkfParams();
+	public EnKFConfig getEnkfConfig() {
+		return (EnKFConfig)super.getEnkfConfig();
 	}
 					
 	public RunMode getRunModeEnum() {

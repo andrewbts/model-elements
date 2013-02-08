@@ -440,7 +440,7 @@ protocol CC {
    * These objects correspond to the TBD Run tables.
    */
   
-  record EnKFParams {
+  record EnKFConfig {
   
   	// which implementation of EnKF to use (blas vs jama, local vs global)
   	string enkfType;
@@ -718,7 +718,7 @@ protocol CC {
     double        additiveVelocityFunctionNoiseMean;
     double        additiveVelocityFunctionNoiseStdDev;           
     
-    EnKFParams    enkfParams;
+    EnKFConfig    enkfConfig;
     
     // reporting
     Duration      dtOutput;

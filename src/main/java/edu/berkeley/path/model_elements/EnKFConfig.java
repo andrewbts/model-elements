@@ -28,9 +28,9 @@ package edu.berkeley.path.model_elements;
 
 import java.util.ArrayList;
 
-public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams {
+public class EnKFConfig extends	edu.berkeley.path.model_elements_base.EnKFConfig {
 	
-	public EnKFParams() {
+	public EnKFConfig() {
 		super();
 	}
 	
@@ -73,9 +73,9 @@ public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams
 		super.setEnkfType(typeString);
 	}
 
-	public static EnKFParams createWithMMDefaults() {
+	public static EnKFConfig createWithMMDefaults() {
 		
-		EnKFParams params = new EnKFParams();
+		EnKFConfig params = new EnKFConfig();
 
 		// Assign Default Mobile Millenium values for all attributes
 		params.setPemsNoiseMean(0.0);
