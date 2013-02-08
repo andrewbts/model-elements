@@ -4,23 +4,23 @@ Unless otherwise stated these scenarios are valid and should work for simulation
 
 
 28:
-MM network 28
+MM network 28 (cid = 1) from mmlivedb1
 
 28000001:
-Modified version of MM network 28 with some missing split ratios at junctions, to test automatic allocation matrix code in Freeway.
+Modified version of MM network 28 (cid = 1) from mmlivedb1 with some missing split ratios at junctions, to test automatic allocation matrix code in Freeway.
 
 179:
-MM network 179
+MM network 179 (cid = 1) from mmlivedb1
 
 181:
-MM network 181
+MM network 181 (cid = 1) from mmlivedb1
 
 183:
-MM network 183
+MM network 183 (cid = 1) from mmlivedb1
 
 249:
-MM network 249
+MM network 249 (cid = 1) from mmlivedb1
 
 335:
-MM network 335
+MM network 335 (cid = 4015) from mmlivedb1
 
