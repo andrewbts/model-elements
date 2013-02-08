@@ -454,6 +454,9 @@ protocol CC {
     double pemsNoiseStdev;
     array<int> PemsBlackList;
     
+    // accept map-matched probe measurements only if they have at least this probability assigned by PIF
+    double probeProbabilityThreshold;
+    
     // Navteq GPS probe data
     boolean includeNavteq;
     double navteqNoiseMean;
