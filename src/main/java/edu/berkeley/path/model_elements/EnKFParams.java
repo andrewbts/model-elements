@@ -33,6 +33,45 @@ public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams
 	public EnKFParams() {
 		super();
 	}
+	
+	/**
+	 * @return EnKF type (), an element of the EnKFType enum
+	 */
+	public EnKFType getEnKFTypeEnum() {
+		String type = super.getEnkfType().toString();
+
+		if (type.equals("SIMPLEAVERAGE")) return EnKFType.SIMPLEAVERAGE;
+		if (type.equals("GLOBALJAMA")) return EnKFType.GLOBALJAMA;
+		if (type.equals("GLOBALBLAS")) return EnKFType.GLOBALBLAS;
+		if (type.equals("LOCALJAMA")) return EnKFType.LOCALJAMA;
+		if (type.equals("LOCALBLAS")) return EnKFType.LOCALBLAS;
+		
+		throw new UnsupportedOperationException("Unknown EnKF type string '" + type + "' encountered.");
+	}
+	
+	public void setEnkfTypeEnum(EnKFType type) {
+		String typeString = null;
+		switch (type) {
+		case SIMPLEAVERAGE:
+			typeString = "SIMPLEAVERAGE";
+			break;
+		case GLOBALJAMA:
+			typeString = "GLOBALJAMA";
+			break;
+		case GLOBALBLAS:
+			typeString = "GLOBALBLAS";
+			break;
+		case LOCALJAMA:
+			typeString = "LOCALJAMA";
+			break;
+		case LOCALBLAS:
+			typeString = "LOCALBLAS";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown EnKF Type " + type + ".");			
+		}
+		super.setEnkfType(typeString);
+	}
 
 	public static EnKFParams createWithMMDefaults() {
 		
