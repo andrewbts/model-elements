@@ -1,0 +1,26 @@
+{
+    "description": {
+        "string": "PeMS sensors for MM nid 181, converted by mm-network-import"
+    }, 
+    "id": "10181", 
+    "modstamp": 0, 
+    "name": {
+        "string": "10181"
+    }, 
+    "projectId": null, 
+    "sensors": [
+        {
+            "entityId": {
+                "string": "819568"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15390301", 
+            "linkOffset": 112.91081237792969, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }
+    ]
+}

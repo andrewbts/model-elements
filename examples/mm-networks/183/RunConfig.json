@@ -50,20 +50,6 @@
     "reportToDB": true, 
     "reportToDirectory": false, 
     "runMode": "HISTORICAL", 
-    "sensorSet": {
-        "edu.berkeley.path.model_elements_base.SensorSet": {
-            "description": {
-                "string": "PeMS sensors for MM nid 183, converted by mm-network-import"
-            }, 
-            "id": "10183", 
-            "modstamp": 0, 
-            "name": {
-                "string": "10183"
-            }, 
-            "projectId": null, 
-            "sensors": []
-        }
-    }, 
     "timeBegin": {
         "milliseconds": 0
     }, 
