@@ -7,29 +7,32 @@
     "dtCTM": {
         "milliseconds": 6000
     }, 
-    "dtEnKF": {
-        "milliseconds": 30000
-    }, 
     "dtOutput": {
         "milliseconds": 30000
     }, 
-    "enkfParams": {
+    "enkfConfig": {
         "PemsBlackList": [], 
+        "dtEnKF": {
+            "milliseconds": 30000
+        }, 
+        "enkfType": "GLOBALJAMA", 
+        "includeNavteq": false, 
+        "includePeMS": true, 
+        "includeTelenav": false, 
         "localizationDistance": 100.0, 
         "navteqNoiseMean": 0.0, 
         "navteqNoiseStdev": 4.0, 
         "navteqPercentage": 100.0, 
         "pemsNoiseMean": 0.0, 
         "pemsNoiseStdev": 4.0, 
+        "probeProbabilityThreshold": 0.69999999999999996, 
         "telenavNoiseMean": 0.0, 
         "telenavNoiseStdev": 4.0, 
         "telenavPercentage": 100.0, 
         "useLocalization": true
     }, 
-    "enkfType": "GLOBALJAMA", 
     "ensembleSize": 150, 
     "fdType": "Smulders", 
-    "feed": "PEMS", 
     "id": "0", 
     "initialDensityFraction": 0.01, 
     "initialEnsembleState": null, 
@@ -47,34 +50,6 @@
     "reportToDB": true, 
     "reportToDirectory": false, 
     "runMode": "HISTORICAL", 
-    "sensorSet": {
-        "edu.berkeley.path.model_elements_base.SensorSet": {
-            "description": {
-                "string": "PeMS sensors for MM nid 181, converted by mm-network-import"
-            }, 
-            "id": "10181", 
-            "modstamp": 0, 
-            "name": {
-                "string": "10181"
-            }, 
-            "projectId": null, 
-            "sensors": [
-                {
-                    "entityId": {
-                        "string": "819568"
-                    }, 
-                    "healthStatus": 1.0, 
-                    "laneNum": 0.0, 
-                    "linkId": "15390301", 
-                    "linkOffset": 112.91081237792969, 
-                    "measurementFeedId": {
-                        "string": "PeMS"
-                    }, 
-                    "type": "Loop"
-                }
-            ]
-        }
-    }, 
     "timeBegin": {
         "milliseconds": 0
     }, 

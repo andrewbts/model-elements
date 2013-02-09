@@ -3,24 +3,68 @@ Index of numbered example scenarios, mainly derived from imported MM networks. U
 Unless otherwise stated these scenarios are valid and should work for simulation or estimation. Some scenarios may be deliberately invalid for the purposes of testing failure behaviours.
 
 
+Imported from mmlivedb1:
+
 28:
-MM network 28
+MM network 28 (cid = 1) from mmlivedb1
 
 28000001:
-Modified version of MM network 28 with some missing split ratios at junctions, to test automatic allocation matrix code in Freeway.
+Modified version of MM network 28 (cid = 1) from mmlivedb1 with some missing split ratios at junctions, to test automatic allocation matrix code in Freeway.
 
 179:
-MM network 179
+MM network 179 (cid = 1) from mmlivedb1
 
 181:
-MM network 181
+MM network 181 (cid = 1) from mmlivedb1
 
 183:
-MM network 183
+MM network 183 (cid = 1) from mmlivedb1
 
 249:
-MM network 249
+MM network 249 (cid = 1) from mmlivedb1
 
 335:
-MM network 335
+MM network 335 (cid = 4015) from mmlivedb1
+
+
+Imported from mmdevdb1:
+
+342:
+MM 880 network 342 (cid = 9172) from mmdevdb1
+
+343:
+MM 880 network 343 (cid = 9173) from mmdevdb1
+
+344:
+MM 880 network 344 (cid = 9174) from mmdevdb1
+
+345:
+MM 880 network 345 (cid = 9175) from mmdevdb1
+
+346:
+MM 880 network 346 (cid = 9176) from mmdevdb1
+
+347:
+MM 880 network 347 (cid = 9177) from mmdevdb1
+
+370:
+MM Ontario network 370 (cid = 9206) from mmdevdb1
+
+371:
+MM Ontario network 371 (cid = 9203) from mmdevdb1
+
+372:
+MM Ontario network 372 (cid = 9201) from mmdevdb1
+
+373:
+MM Ontario network 373 (cid = 9202) from mmdevdb1
+
+374:
+MM Ontario network 374 (cid = 9203) from mmdevdb1
+
+375:
+MM Ontario network 375 (cid = 9204) from mmdevdb1
+
+376:
+MM Ontario network 376 (cid = 9205) from mmdevdb1
 

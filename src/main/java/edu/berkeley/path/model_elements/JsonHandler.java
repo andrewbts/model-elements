@@ -131,5 +131,9 @@ public class JsonHandler {
 	public static RunConfig readRunConfigFromDirectory(String directory) throws IOException {
 		return readFromFile(RunConfig.SCHEMA$, directory + "/RunConfig.json");
 	}
+	
+	public static SensorSet readSensorSetFromDirectory(String directory) throws IOException {
+		return readFromFile(SensorSet.SCHEMA$, directory + "/SensorSet.json");
+	}
 
 }

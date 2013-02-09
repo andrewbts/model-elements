@@ -27,6 +27,7 @@
 package edu.berkeley.path.model_elements;
 
 public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
+	
 	public Long getLongId() {
 		return Long.parseLong(getId().toString());
 	}
@@ -84,35 +85,10 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	}
 		
 	@Override
-	public EnKFParams getEnkfParams() {
-		return (EnKFParams)super.getEnkfParams();
+	public EnKFConfig getEnkfConfig() {
+		return (EnKFConfig)super.getEnkfConfig();
 	}
-	
-	/**
-	 * @return EnKF type (), an element of the EnKFType enum
-	 */
-	public EnKFType getEnKFTypeEnum() {
-		String type = super.getEnkfType().toString();
-
-		if (type.equals("SIMPLEAVERAGE")) return EnKFType.SIMPLEAVERAGE;
-		if (type.equals("GLOBALJAMA")) return EnKFType.GLOBALJAMA;
-		if (type.equals("GLOBALBLAS")) return EnKFType.GLOBALBLAS;
-		if (type.equals("LOCALJAMA")) return EnKFType.LOCALJAMA;
-		if (type.equals("LOCALBLAS")) return EnKFType.LOCALBLAS;
-		
-		throw new UnsupportedOperationException("Unknown EnKF type string '" + type + "' encountered.");
-	}
-		
-	public Feed getFeedEnum() {
-		String type = super.getFeed().toString();
-
-		if (type.equals("PEMS")) return Feed.PEMS;
-		if (type.equals("PROBEA")) return Feed.PROBEA;
-		if (type.equals("PROBEB")) return Feed.PROBEB;
-		
-		throw new UnsupportedOperationException("Unknown Run Mode type string '" + type + "' encountered.");
-	}
-		
+					
 	public RunMode getRunModeEnum() {
 		String type = super.getRunMode().toString();
 
@@ -155,49 +131,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 		}
 		super.setCtmType(typeString);
 	}
-		
-	public void setEnkfTypeEnum(EnKFType type) {
-		String typeString = null;
-		switch (type) {
-		case SIMPLEAVERAGE:
-			typeString = "SIMPLEAVERAGE";
-			break;
-		case GLOBALJAMA:
-			typeString = "GLOBALJAMA";
-			break;
-		case GLOBALBLAS:
-			typeString = "GLOBALBLAS";
-			break;
-		case LOCALJAMA:
-			typeString = "LOCALJAMA";
-			break;
-		case LOCALBLAS:
-			typeString = "LOCALBLAS";
-			break;
-		default:
-			throw new IllegalArgumentException("Unknown EnKF Type " + type + ".");			
-		}
-		super.setEnkfType(typeString);
-	}
-		
-	public void setFeedEnum(Feed type) {
-		String typeString = null;
-		switch (type) {
-		case PEMS:
-			typeString = "PEMS";
-			break;
-		case PROBEA:
-			typeString = "PROBEA";
-			break;
-		case PROBEB:
-			typeString = "PROBEB";
-			break;
-		default:
-			throw new IllegalArgumentException("Unknown Feed " + type + ".");			
-		}
-		super.setFeed(typeString);
-	}
-		
+						
 	public void setRunModeEnum(RunMode type) {
 		String typeString = null;
 		switch (type) {
@@ -214,8 +148,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 			throw new IllegalArgumentException("Unknown RunMode " + type + ".");			
 		}
 		super.setRunMode(typeString);
-	}
-	
+	}	
 		
 	public void setWorkflowEnum(Workflow type) {
 		String typeString = null;
@@ -245,11 +178,6 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	@Override
 	public FreewayCTMState getInitialState() {
 		return (FreewayCTMState) super.getInitialState();
-	}
-
-	@Override
-	public SensorSet getSensorSet() {
-		return (SensorSet)super.getSensorSet();
 	}
 	
 }

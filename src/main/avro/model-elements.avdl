@@ -440,18 +440,39 @@ protocol CC {
    * These objects correspond to the TBD Run tables.
    */
   
-  record EnKFParams {
+  record EnKFConfig {
+  
+  	// which implementation of EnKF to use (blas vs jama, local vs global)
+  	string enkfType;
+  
+    // how often to run EnKF, should be integer multiple of CTM time step in RunConfig
+    Duration dtEnKF;        
+        
+    // PeMS loop detector data
+    boolean includePeMS;
     double pemsNoiseMean;
     double pemsNoiseStdev;
     array<int> PemsBlackList;
+    
+    // accept map-matched probe measurements only if they have at least this probability assigned by PIF
+    double probeProbabilityThreshold;
+    
+    // Navteq GPS probe data
+    boolean includeNavteq;
     double navteqNoiseMean;
     double navteqNoiseStdev;
     double navteqPercentage;
+    
+    // Telenav GPS probe data
+    boolean includeTelenav;
     double telenavNoiseMean;
     double telenavNoiseStdev;
     double telenavPercentage;
+    
+    // localized-EnKF approximation
     boolean useLocalization;
-    double localizationDistance;    
+    double localizationDistance;
+        
   }
   
   /**
@@ -687,20 +708,17 @@ protocol CC {
 	// forecast (CTM) or estimation (CTM + EnKF)
     string        workflow;
     
-    // probea, probeb, pems
-    // TODO: replace with individual booleans for each feed type
-    string        feed;
-
     string        ctmType;
-    int           ensembleSize;
-    string        fdType;
+    int           ensembleSize;    
     double        additiveModelNoiseMean;
     double        additiveModelNoiseStdDev;
+    
+    // velocity function (fundamental diagram)
+    string        fdType;
     double        additiveVelocityFunctionNoiseMean;
     double        additiveVelocityFunctionNoiseStdDev;           
     
-    string        enkfType;
-    EnKFParams    enkfParams;
+    EnKFConfig    enkfConfig;
     
     // reporting
     Duration      dtOutput;
@@ -714,16 +732,12 @@ protocol CC {
     
     // CTM time step, the smallest time step
     Duration      dtCTM;    
-    // how often to run EnKF, integer multiple of CTM time step
-    Duration      dtEnKF;        
     
     DateTime      timeBegin;
     DateTime      timeEnd;
     
     // how long LIVE mode should try to lag behind real-time
     Duration		liveModeLag;
-    
-    union {null, SensorSet}     sensorSet;
     
     // initial condition: specify either a single state, a whole ensemble, or none
     union {null, FreewayCTMEnsembleState}     initialEnsembleState;
@@ -732,6 +746,7 @@ protocol CC {
     double                                    initialStateUncertainty = 0.0;
     // initial average density (as fraction of jam density) if no initial condition supplied
     double		initialDensityFraction;
+    
   }
 
 }

@@ -62,4 +62,8 @@ public class MMNetworks {
 		return JsonHandler.readRunConfigFromDirectory(getNidDirectory(nid));
 	}
 	
+	public static SensorSet getSensorSet(int nid) throws IOException {
+		return JsonHandler.readSensorSetFromDirectory(getNidDirectory(nid));
+	}
+	
 }

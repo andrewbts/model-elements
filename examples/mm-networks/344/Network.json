@@ -1,0 +1,3862 @@
+{
+    "description": {
+        "string": "Mobile Millenium network 344, imported from PostgreSQL by mm-network-import tool."
+    }, 
+    "id": "0", 
+    "links": [
+        {
+            "beginId": "78580", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147483", 
+            "id": "27840100", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 207.50804138183594
+            }, 
+            "name": "27840100", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147483", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147484", 
+            "id": "27840101", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 207.50804138183594
+            }, 
+            "name": "27840101", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147484", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147485", 
+            "id": "27840102", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 207.50804138183594
+            }, 
+            "name": "27840102", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147485", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103635", 
+            "id": "27840103", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 207.50804138183594
+            }, 
+            "name": "27840103", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "93530", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147486", 
+            "id": "13035800", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 214.42213439941406
+            }, 
+            "name": "13035800", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147486", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147487", 
+            "id": "13035801", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 214.42213439941406
+            }, 
+            "name": "13035801", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147487", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "93529", 
+            "id": "13035802", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 214.42213439941406
+            }, 
+            "name": "13035802", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "93249", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147488", 
+            "id": "12973000", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 206.47515869140625
+            }, 
+            "name": "12973000", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147488", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147489", 
+            "id": "12973001", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 206.47515869140625
+            }, 
+            "name": "12973001", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147489", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147490", 
+            "id": "12973002", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 206.47515869140625
+            }, 
+            "name": "12973002", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147490", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "67795", 
+            "id": "12973003", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 206.47515869140625
+            }, 
+            "name": "12973003", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "119731", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "42804", 
+            "id": "19083000", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 326.416015625
+            }, 
+            "name": "19083000", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103634", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147491", 
+            "id": "15094400", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.92852783203125
+            }, 
+            "name": "15094400", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147491", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147492", 
+            "id": "15094401", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.92852783203125
+            }, 
+            "name": "15094401", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147492", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147493", 
+            "id": "15094402", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.92852783203125
+            }, 
+            "name": "15094402", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147493", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147494", 
+            "id": "15094403", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.92852783203125
+            }, 
+            "name": "15094403", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147494", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147495", 
+            "id": "15094404", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.92852783203125
+            }, 
+            "name": "15094404", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147495", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103642", 
+            "id": "15094405", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.92852783203125
+            }, 
+            "name": "15094405", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "76798", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147496", 
+            "id": "19083100", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 254.796875
+            }, 
+            "name": "19083100", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147496", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "119731", 
+            "id": "19083101", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 254.796875
+            }, 
+            "name": "19083101", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "42936", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147497", 
+            "id": "23302800", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 203.25382995605469
+            }, 
+            "name": "23302800", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147497", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147498", 
+            "id": "23302801", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 203.25382995605469
+            }, 
+            "name": "23302801", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147498", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147499", 
+            "id": "23302802", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 203.25382995605469
+            }, 
+            "name": "23302802", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147499", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147500", 
+            "id": "23302803", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 203.25382995605469
+            }, 
+            "name": "23302803", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147500", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147501", 
+            "id": "23302804", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 203.25382995605469
+            }, 
+            "name": "23302804", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147501", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "76802", 
+            "id": "23302805", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 203.25382995605469
+            }, 
+            "name": "23302805", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147481", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147502", 
+            "id": "32052200", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 185.59596252441406
+            }, 
+            "name": "32052200", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147502", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147503", 
+            "id": "32052201", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 185.59596252441406
+            }, 
+            "name": "32052201", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147503", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147504", 
+            "id": "32052202", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 185.59596252441406
+            }, 
+            "name": "32052202", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147504", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147505", 
+            "id": "32052203", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 185.59596252441406
+            }, 
+            "name": "32052203", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147505", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147506", 
+            "id": "32052204", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 185.59596252441406
+            }, 
+            "name": "32052204", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147506", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147482", 
+            "id": "32052205", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 185.59596252441406
+            }, 
+            "name": "32052205", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147482", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147507", 
+            "id": "32052300", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 190.95646667480469
+            }, 
+            "name": "32052300", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147507", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103095", 
+            "id": "32052301", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 190.95646667480469
+            }, 
+            "name": "32052301", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "42805", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147481", 
+            "id": "32052100", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 255.03369140625
+            }, 
+            "name": "32052100", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "12246", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147508", 
+            "id": "123800", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 200.50541687011719
+            }, 
+            "name": "123800", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147508", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147509", 
+            "id": "123801", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 200.50541687011719
+            }, 
+            "name": "123801", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147509", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "12245", 
+            "id": "123802", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 200.50541687011719
+            }, 
+            "name": "123802", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103642", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147510", 
+            "id": "15563700", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 177.46737670898438
+            }, 
+            "name": "15563700", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147510", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "105863", 
+            "id": "15563701", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 177.46737670898438
+            }, 
+            "name": "15563701", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "105863", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147511", 
+            "id": "25913800", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.16316223144531
+            }, 
+            "name": "25913800", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147511", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147512", 
+            "id": "25913801", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.16316223144531
+            }, 
+            "name": "25913801", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147512", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147513", 
+            "id": "25913802", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.16316223144531
+            }, 
+            "name": "25913802", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147513", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147514", 
+            "id": "25913803", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.16316223144531
+            }, 
+            "name": "25913803", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147514", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "105862", 
+            "id": "25913804", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.16316223144531
+            }, 
+            "name": "25913804", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "112854", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147515", 
+            "id": "31538700", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.83140563964844
+            }, 
+            "name": "31538700", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147515", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147516", 
+            "id": "31538701", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.83140563964844
+            }, 
+            "name": "31538701", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147516", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "12246", 
+            "id": "31538702", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.83140563964844
+            }, 
+            "name": "31538702", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "67796", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147517", 
+            "id": "15105500", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 179.21066284179688
+            }, 
+            "name": "15105500", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147517", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147518", 
+            "id": "15105501", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 179.21066284179688
+            }, 
+            "name": "15105501", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147518", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147519", 
+            "id": "15105502", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 179.21066284179688
+            }, 
+            "name": "15105502", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147519", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "49700", 
+            "id": "15105503", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 179.21066284179688
+            }, 
+            "name": "15105503", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "93529", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "112854", 
+            "id": "18683600", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 330.70883178710938
+            }, 
+            "name": "18683600", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "119814", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147520", 
+            "id": "19122200", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.56809997558594
+            }, 
+            "name": "19122200", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147520", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147521", 
+            "id": "19122201", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.56809997558594
+            }, 
+            "name": "19122201", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147521", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147522", 
+            "id": "19122202", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.56809997558594
+            }, 
+            "name": "19122202", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147522", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46386", 
+            "id": "19122203", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 186.56809997558594
+            }, 
+            "name": "19122203", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46387", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147523", 
+            "id": "25980500", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 181.809326171875
+            }, 
+            "name": "25980500", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147523", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "76797", 
+            "id": "25980501", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 181.809326171875
+            }, 
+            "name": "25980501", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46389", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147524", 
+            "id": "19122300", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 189.7645263671875
+            }, 
+            "name": "19122300", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147524", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147525", 
+            "id": "19122301", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 189.7645263671875
+            }, 
+            "name": "19122301", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147525", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "119814", 
+            "id": "19122302", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 189.7645263671875
+            }, 
+            "name": "19122302", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "12245", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "42936", 
+            "id": "15030500", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 341.6015625
+            }, 
+            "name": "15030500", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103095", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147526", 
+            "id": "15031000", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 191.80616760253906
+            }, 
+            "name": "15031000", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147526", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147527", 
+            "id": "15031001", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 191.80616760253906
+            }, 
+            "name": "15031001", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147527", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147528", 
+            "id": "15031002", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 191.80616760253906
+            }, 
+            "name": "15031002", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147528", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103096", 
+            "id": "15031003", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 191.80616760253906
+            }, 
+            "name": "15031003", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103096", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "93249", 
+            "id": "15031100", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 266.24993896484375
+            }, 
+            "name": "15031100", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "49700", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147529", 
+            "id": "10100400", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 194.01899719238281
+            }, 
+            "name": "10100400", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147529", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147530", 
+            "id": "10100401", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 194.01899719238281
+            }, 
+            "name": "10100401", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147530", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147531", 
+            "id": "10100402", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 194.01899719238281
+            }, 
+            "name": "10100402", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147531", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147532", 
+            "id": "10100403", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 194.01899719238281
+            }, 
+            "name": "10100403", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147532", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "78580", 
+            "id": "10100404", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 194.01899719238281
+            }, 
+            "name": "10100404", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46386", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147533", 
+            "id": "4719000", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 249.64964294433594
+            }, 
+            "name": "4719000", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057596206665039
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147533", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46387", 
+            "id": "4719001", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 249.64964294433594
+            }, 
+            "name": "4719001", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057596206665039
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "67795", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147534", 
+            "id": "8313400", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 192.55659484863281
+            }, 
+            "name": "8313400", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147534", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147535", 
+            "id": "8313401", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 192.55659484863281
+            }, 
+            "name": "8313401", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147535", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "67796", 
+            "id": "8313402", 
+            "laneCount": {
+                "double": 5.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 192.55659484863281
+            }, 
+            "name": "8313402", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46384", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147536", 
+            "id": "4718700", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.06507873535156
+            }, 
+            "name": "4718700", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147536", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147537", 
+            "id": "4718701", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.06507873535156
+            }, 
+            "name": "4718701", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147537", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46279", 
+            "id": "4718702", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 198.06507873535156
+            }, 
+            "name": "4718702", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "76802", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147538", 
+            "id": "9754400", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 175.02232360839844
+            }, 
+            "name": "9754400", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147538", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147539", 
+            "id": "9754401", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 175.02232360839844
+            }, 
+            "name": "9754401", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147539", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46384", 
+            "id": "9754402", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 175.02232360839844
+            }, 
+            "name": "9754402", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "76797", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "76798", 
+            "id": "9754000", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 279.01748657226562
+            }, 
+            "name": "9754000", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057600021362305
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "42804", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147540", 
+            "id": "4155800", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 190.75518798828125
+            }, 
+            "name": "4155800", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147540", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147541", 
+            "id": "4155801", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 190.75518798828125
+            }, 
+            "name": "4155801", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147541", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147542", 
+            "id": "4155802", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 190.75518798828125
+            }, 
+            "name": "4155802", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147542", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "42805", 
+            "id": "4155803", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 190.75518798828125
+            }, 
+            "name": "4155803", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057601928710938
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103635", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147543", 
+            "id": "15093700", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 184.5968017578125
+            }, 
+            "name": "15093700", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147543", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147544", 
+            "id": "15093701", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 184.5968017578125
+            }, 
+            "name": "15093701", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147544", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147545", 
+            "id": "15093702", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 184.5968017578125
+            }, 
+            "name": "15093702", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147545", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103634", 
+            "id": "15093703", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 184.5968017578125
+            }, 
+            "name": "15093703", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46279", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147546", 
+            "id": "12972700", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 187.3388671875
+            }, 
+            "name": "12972700", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147546", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46389", 
+            "id": "12972701", 
+            "laneCount": {
+                "double": 4.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 187.3388671875
+            }, 
+            "name": "12972701", 
+            "points": [], 
+            "speedLimit": {
+                "double": 29.057598114013672
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147547", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46387", 
+            "id": "32052302", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052302", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147548", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "93529", 
+            "id": "32052303", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052303", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147549", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "42805", 
+            "id": "32052304", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052304", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147550", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "93530", 
+            "id": "32052305", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052305", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147551", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "76797", 
+            "id": "32052306", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052306", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147552", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "42936", 
+            "id": "32052307", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052307", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147553", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46389", 
+            "id": "32052308", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052308", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147554", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "49700", 
+            "id": "32052309", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052309", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147555", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "67795", 
+            "id": "32052310", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052310", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147556", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103642", 
+            "id": "32052311", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052311", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147557", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "46279", 
+            "id": "32052312", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052312", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147558", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103096", 
+            "id": "32052313", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052313", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147559", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "103635", 
+            "id": "32052314", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052314", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147560", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "112854", 
+            "id": "32052315", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052315", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "147561", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "12245", 
+            "id": "32052316", 
+            "laneCount": {
+                "double": 0.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 0.0
+            }, 
+            "name": "32052316", 
+            "points": [], 
+            "speedLimit": {
+                "double": 0.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46386", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147562", 
+            "id": "32052317", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052317", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "46384", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147563", 
+            "id": "32052318", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052318", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "42804", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147564", 
+            "id": "32052319", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052319", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "93249", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147565", 
+            "id": "32052320", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052320", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103095", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147566", 
+            "id": "32052321", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052321", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "78580", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147567", 
+            "id": "32052322", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052322", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "103634", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147568", 
+            "id": "32052323", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052323", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "12246", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147569", 
+            "id": "32052324", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052324", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "105863", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147570", 
+            "id": "32052325", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052325", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "beginId": "105862", 
+            "detailLevel": {
+                "int": 1
+            }, 
+            "endId": "147571", 
+            "id": "32052326", 
+            "laneCount": {
+                "double": 1.0
+            }, 
+            "laneOffset": {
+                "int": 0
+            }, 
+            "length": {
+                "double": 100.0
+            }, 
+            "name": "32052326", 
+            "points": [], 
+            "speedLimit": {
+                "double": 20.0
+            }, 
+            "type": "Freeway"
+        }
+    ], 
+    "modstamp": 0, 
+    "name": "MM nid 344", 
+    "nodes": [
+        {
+            "id": "46386", 
+            "name": "46386", 
+            "point": {
+                "latitude": 37.560339999999997, 
+                "longitude": -122.03489999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "46387", 
+            "name": "46387", 
+            "point": {
+                "latitude": 37.563760000000002, 
+                "longitude": -122.03857000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "93529", 
+            "name": "93529", 
+            "point": {
+                "latitude": 37.523249999999997, 
+                "longitude": -121.98898
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "46384", 
+            "name": "46384", 
+            "point": {
+                "latitude": 37.543430000000001, 
+                "longitude": -122.02030000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "42805", 
+            "name": "42805", 
+            "point": {
+                "latitude": 37.581679999999999, 
+                "longitude": -122.04927000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "93530", 
+            "name": "93530", 
+            "point": {
+                "latitude": 37.520000000000003, 
+                "longitude": -121.98296999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "42804", 
+            "name": "42804", 
+            "point": {
+                "latitude": 37.575069999999997, 
+                "longitude": -122.04689999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "76798", 
+            "name": "76798", 
+            "point": {
+                "latitude": 37.568179999999998, 
+                "longitude": -122.04327000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "76797", 
+            "name": "76797", 
+            "point": {
+                "latitude": 37.56626, 
+                "longitude": -122.04123
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "42936", 
+            "name": "42936", 
+            "point": {
+                "latitude": 37.532400000000003, 
+                "longitude": -122.00673999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "46389", 
+            "name": "46389", 
+            "point": {
+                "latitude": 37.550930000000001, 
+                "longitude": -122.02591
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "76802", 
+            "name": "76802", 
+            "point": {
+                "latitude": 37.539380000000001, 
+                "longitude": -122.01723
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "93249", 
+            "name": "93249", 
+            "point": {
+                "latitude": 37.603679999999997, 
+                "longitude": -122.06435999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "49700", 
+            "name": "49700", 
+            "point": {
+                "latitude": 37.620289999999997, 
+                "longitude": -122.07622000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "67796", 
+            "name": "67796", 
+            "point": {
+                "latitude": 37.61468, 
+                "longitude": -122.0722
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "67795", 
+            "name": "67795", 
+            "point": {
+                "latitude": 37.610149999999997, 
+                "longitude": -122.06898
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "103095", 
+            "name": "103095", 
+            "point": {
+                "latitude": 37.595579999999998, 
+                "longitude": -122.05859
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "103642", 
+            "name": "103642", 
+            "point": {
+                "latitude": 37.649540000000002, 
+                "longitude": -122.09707
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "46279", 
+            "name": "46279", 
+            "point": {
+                "latitude": 37.548029999999997, 
+                "longitude": -122.02374
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "78580", 
+            "name": "78580", 
+            "point": {
+                "latitude": 37.627890000000001, 
+                "longitude": -122.08163999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "103096", 
+            "name": "103096", 
+            "point": {
+                "latitude": 37.601590000000002, 
+                "longitude": -122.06288000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "103634", 
+            "name": "103634", 
+            "point": {
+                "latitude": 37.640180000000001, 
+                "longitude": -122.09041000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "103635", 
+            "name": "103635", 
+            "point": {
+                "latitude": 37.634390000000003, 
+                "longitude": -122.08629000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "112854", 
+            "name": "112854", 
+            "point": {
+                "latitude": 37.524819999999998, 
+                "longitude": -121.99216
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "119814", 
+            "name": "119814", 
+            "point": {
+                "latitude": 37.555210000000002, 
+                "longitude": -122.02943999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "119731", 
+            "name": "119731", 
+            "point": {
+                "latitude": 37.572229999999998, 
+                "longitude": -122.04594
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "12245", 
+            "name": "12245", 
+            "point": {
+                "latitude": 37.530639999999998, 
+                "longitude": -122.00357
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "12246", 
+            "name": "12246", 
+            "point": {
+                "latitude": 37.527619999999999, 
+                "longitude": -121.99791999999999
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "105863", 
+            "name": "105863", 
+            "point": {
+                "latitude": 37.6524, 
+                "longitude": -122.09887000000001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147482", 
+            "name": "147482", 
+            "point": {
+                "latitude": 37.592590000000001, 
+                "longitude": -122.05645
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "105862", 
+            "name": "105862", 
+            "point": {
+                "latitude": 37.65992, 
+                "longitude": -122.10354
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147481", 
+            "name": "147481", 
+            "point": {
+                "latitude": 37.58379, 
+                "longitude": -122.0504
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147483", 
+            "name": "147483 (near link 27840100)", 
+            "point": {
+                "latitude": 37.629524115281278, 
+                "longitude": -122.08278246691461
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147484", 
+            "name": "147484 (near link 27840101)", 
+            "point": {
+                "latitude": 37.631153652652529, 
+                "longitude": -122.08393491539772
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147485", 
+            "name": "147485 (near link 27840102)", 
+            "point": {
+                "latitude": 37.632777204742453, 
+                "longitude": -122.08510064467957
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147486", 
+            "name": "147486 (near link 13035800)", 
+            "point": {
+                "latitude": 37.52120067797118, 
+                "longitude": -121.9848670763751
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147487", 
+            "name": "147487 (near link 13035801)", 
+            "point": {
+                "latitude": 37.522241353736327, 
+                "longitude": -121.98691034176787
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147488", 
+            "name": "147488 (near link 12973000)", 
+            "point": {
+                "latitude": 37.605307304939259, 
+                "longitude": -122.06549295811695
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147489", 
+            "name": "147489 (near link 12973001)", 
+            "point": {
+                "latitude": 37.606923258929108, 
+                "longitude": -122.06665139658692
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147490", 
+            "name": "147490 (near link 12973002)", 
+            "point": {
+                "latitude": 37.60853978850772, 
+                "longitude": -122.06780859202786
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147491", 
+            "name": "147491 (near link 15094400)", 
+            "point": {
+                "latitude": 37.641744926636214, 
+                "longitude": -122.09150900830963
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147492", 
+            "name": "147492 (near link 15094401)", 
+            "point": {
+                "latitude": 37.643300909586458, 
+                "longitude": -122.09262768886209
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147493", 
+            "name": "147493 (near link 15094402)", 
+            "point": {
+                "latitude": 37.644856508477098, 
+                "longitude": -122.09374720763955
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147494", 
+            "name": "147494 (near link 15094403)", 
+            "point": {
+                "latitude": 37.646416949249399, 
+                "longitude": -122.09485606312737
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147495", 
+            "name": "147495 (near link 15094404)", 
+            "point": {
+                "latitude": 37.647977985595354, 
+                "longitude": -122.0959636140544
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147496", 
+            "name": "147496 (near link 19083100)", 
+            "point": {
+                "latitude": 37.570129847970534, 
+                "longitude": -122.04478612883783
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147497", 
+            "name": "147497 (near link 23302800)", 
+            "point": {
+                "latitude": 37.533445022690188, 
+                "longitude": -122.00862860231587
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147498", 
+            "name": "147498 (near link 23302801)", 
+            "point": {
+                "latitude": 37.534475146403508, 
+                "longitude": -122.01052993258565
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147499", 
+            "name": "147499 (near link 23302802)", 
+            "point": {
+                "latitude": 37.535505270116836, 
+                "longitude": -122.01243126285543
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147500", 
+            "name": "147500 (near link 23302803)", 
+            "point": {
+                "latitude": 37.536579205348104, 
+                "longitude": -122.01429257361916
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147501", 
+            "name": "147501 (near link 23302804)", 
+            "point": {
+                "latitude": 37.537891611002159, 
+                "longitude": -122.01589268464261
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147502", 
+            "name": "147502 (near link 32052200)", 
+            "point": {
+                "latitude": 37.585283124208019, 
+                "longitude": -122.05134546519298
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147503", 
+            "name": "147503 (near link 32052201)", 
+            "point": {
+                "latitude": 37.586752399422728, 
+                "longitude": -122.05234867122525
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147504", 
+            "name": "147504 (near link 32052202)", 
+            "point": {
+                "latitude": 37.588229391926454, 
+                "longitude": -122.05333396192708
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147505", 
+            "name": "147505 (near link 32052203)", 
+            "point": {
+                "latitude": 37.589693917037877, 
+                "longitude": -122.05434800312982
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147506", 
+            "name": "147506 (near link 32052204)", 
+            "point": {
+                "latitude": 37.591148566646154, 
+                "longitude": -122.05538449239948
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147507", 
+            "name": "147507 (near link 32052300)", 
+            "point": {
+                "latitude": 37.59409498704288, 
+                "longitude": -122.05749805572202
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147508", 
+            "name": "147508 (near link 123800)", 
+            "point": {
+                "latitude": 37.528616158996307, 
+                "longitude": -121.99981234657132
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147509", 
+            "name": "147509 (near link 123801)", 
+            "point": {
+                "latitude": 37.529640502805805, 
+                "longitude": -122.00168059622723
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147510", 
+            "name": "147510 (near link 15563700)", 
+            "point": {
+                "latitude": 37.650969329956688, 
+                "longitude": -122.09797164524969
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147511", 
+            "name": "147511 (near link 25913800)", 
+            "point": {
+                "latitude": 37.653904524936912, 
+                "longitude": -122.09980322776977
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147512", 
+            "name": "147512 (near link 25913801)", 
+            "point": {
+                "latitude": 37.65541431615523, 
+                "longitude": -122.10072223112007
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147513", 
+            "name": "147513 (near link 25913802)", 
+            "point": {
+                "latitude": 37.656920165911963, 
+                "longitude": -122.10165125889874
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147514", 
+            "name": "147514 (near link 25913803)", 
+            "point": {
+                "latitude": 37.658416617916352, 
+                "longitude": -122.10260418824116
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147515", 
+            "name": "147515 (near link 31538700)", 
+            "point": {
+                "latitude": 37.525759136533523, 
+                "longitude": -121.99407571959806
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147516", 
+            "name": "147516 (near link 31538701)", 
+            "point": {
+                "latitude": 37.526703352969193, 
+                "longitude": -121.9959872380679
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147517", 
+            "name": "147517 (near link 15105500)", 
+            "point": {
+                "latitude": 37.616090675584026, 
+                "longitude": -122.07318782925066
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147518", 
+            "name": "147518 (near link 15105501)", 
+            "point": {
+                "latitude": 37.617491563473003, 
+                "longitude": -122.07419616622686
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147519", 
+            "name": "147519 (near link 15105502)", 
+            "point": {
+                "latitude": 37.618896706356686, 
+                "longitude": -122.07519615113625
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147520", 
+            "name": "147520 (near link 19122200)", 
+            "point": {
+                "latitude": 37.556503034588872, 
+                "longitude": -122.03078943239029
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147521", 
+            "name": "147521 (near link 19122201)", 
+            "point": {
+                "latitude": 37.557786941387164, 
+                "longitude": -122.03215234883771
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147522", 
+            "name": "147522 (near link 19122202)", 
+            "point": {
+                "latitude": 37.559070848185456, 
+                "longitude": -122.03351526528513
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147523", 
+            "name": "147523 (near link 25980500)", 
+            "point": {
+                "latitude": 37.565021646443867, 
+                "longitude": -122.03988272611345
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147524", 
+            "name": "147524 (near link 19122300)", 
+            "point": {
+                "latitude": 37.552386708853483, 
+                "longitude": -122.0270342662331
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147525", 
+            "name": "147525 (near link 19122301)", 
+            "point": {
+                "latitude": 37.553853801245594, 
+                "longitude": -122.02813648087493
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147526", 
+            "name": "147526 (near link 15031000)", 
+            "point": {
+                "latitude": 37.597091570794611, 
+                "longitude": -122.05964281787675
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147527", 
+            "name": "147527 (near link 15031001)", 
+            "point": {
+                "latitude": 37.59860546864104, 
+                "longitude": -122.06069030587435
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147528", 
+            "name": "147528 (near link 15031002)", 
+            "point": {
+                "latitude": 37.600103476664927, 
+                "longitude": -122.06177320852527
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147529", 
+            "name": "147529 (near link 10100400)", 
+            "point": {
+                "latitude": 37.621827258005652, 
+                "longitude": -122.07726611031001
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147530", 
+            "name": "147530 (near link 10100401)", 
+            "point": {
+                "latitude": 37.623344750093558, 
+                "longitude": -122.07835711277133
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147531", 
+            "name": "147531 (near link 10100402)", 
+            "point": {
+                "latitude": 37.624862613877696, 
+                "longitude": -122.07944731045363
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147532", 
+            "name": "147532 (near link 10100403)", 
+            "point": {
+                "latitude": 37.626380477661826, 
+                "longitude": -122.0805375081359
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147533", 
+            "name": "147533 (near link 4719000)", 
+            "point": {
+                "latitude": 37.562056620653323, 
+                "longitude": -122.03672621071415
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147534", 
+            "name": "147534 (near link 8313400)", 
+            "point": {
+                "latitude": 37.611667799657397, 
+                "longitude": -122.07003661843098
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147535", 
+            "name": "147535 (near link 8313401)", 
+            "point": {
+                "latitude": 37.613178092381929, 
+                "longitude": -122.07110976228722
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147536", 
+            "name": "147536 (near link 4718700)", 
+            "point": {
+                "latitude": 37.544971772003791, 
+                "longitude": -122.02142899139545
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147537", 
+            "name": "147537 (near link 4718701)", 
+            "point": {
+                "latitude": 37.546501924950704, 
+                "longitude": -122.02258206944347
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147538", 
+            "name": "147538 (near link 9754400)", 
+            "point": {
+                "latitude": 37.540742701179781, 
+                "longitude": -122.0182269069431
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147539", 
+            "name": "147539 (near link 9754401)", 
+            "point": {
+                "latitude": 37.542096154465376, 
+                "longitude": -122.01924323633338
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147540", 
+            "name": "147540 (near link 4155800)", 
+            "point": {
+                "latitude": 37.576730786188207, 
+                "longitude": -122.04745403733361
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147541", 
+            "name": "147541 (near link 4155801)", 
+            "point": {
+                "latitude": 37.578391878176653, 
+                "longitude": -122.04800822635221
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147542", 
+            "name": "147542 (near link 4155802)", 
+            "point": {
+                "latitude": 37.580039439236074, 
+                "longitude": -122.04862240215505
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147543", 
+            "name": "147543 (near link 15093700)", 
+            "point": {
+                "latitude": 37.635844811433458, 
+                "longitude": -122.08730398522111
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147544", 
+            "name": "147544 (near link 15093701)", 
+            "point": {
+                "latitude": 37.637293108116275, 
+                "longitude": -122.08833222190029
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147545", 
+            "name": "147545 (near link 15093702)", 
+            "point": {
+                "latitude": 37.638741506065017, 
+                "longitude": -122.08936025056347
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147546", 
+            "name": "147546 (near link 12972700)", 
+            "point": {
+                "latitude": 37.549484592865426, 
+                "longitude": -122.02481572637123
+            }, 
+            "type": "Freeway"
+        }, 
+        {
+            "id": "147547", 
+            "name": "147547", 
+            "point": {
+                "latitude": 37.563760000000002, 
+                "longitude": -122.03857000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147548", 
+            "name": "147548", 
+            "point": {
+                "latitude": 37.523249999999997, 
+                "longitude": -121.98898
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147549", 
+            "name": "147549", 
+            "point": {
+                "latitude": 37.581679999999999, 
+                "longitude": -122.04927000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147550", 
+            "name": "147550", 
+            "point": {
+                "latitude": 37.520000000000003, 
+                "longitude": -121.98296999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147551", 
+            "name": "147551", 
+            "point": {
+                "latitude": 37.56626, 
+                "longitude": -122.04123
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147552", 
+            "name": "147552", 
+            "point": {
+                "latitude": 37.532400000000003, 
+                "longitude": -122.00673999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147553", 
+            "name": "147553", 
+            "point": {
+                "latitude": 37.550930000000001, 
+                "longitude": -122.02591
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147554", 
+            "name": "147554", 
+            "point": {
+                "latitude": 37.620289999999997, 
+                "longitude": -122.07622000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147555", 
+            "name": "147555", 
+            "point": {
+                "latitude": 37.610149999999997, 
+                "longitude": -122.06898
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147556", 
+            "name": "147556", 
+            "point": {
+                "latitude": 37.649540000000002, 
+                "longitude": -122.09707
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147557", 
+            "name": "147557", 
+            "point": {
+                "latitude": 37.548029999999997, 
+                "longitude": -122.02374
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147558", 
+            "name": "147558", 
+            "point": {
+                "latitude": 37.601590000000002, 
+                "longitude": -122.06288000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147559", 
+            "name": "147559", 
+            "point": {
+                "latitude": 37.634390000000003, 
+                "longitude": -122.08629000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147560", 
+            "name": "147560", 
+            "point": {
+                "latitude": 37.524819999999998, 
+                "longitude": -121.99216
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147561", 
+            "name": "147561", 
+            "point": {
+                "latitude": 37.530639999999998, 
+                "longitude": -122.00357
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147562", 
+            "name": "147562", 
+            "point": {
+                "latitude": 37.560339999999997, 
+                "longitude": -122.03489999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147563", 
+            "name": "147563", 
+            "point": {
+                "latitude": 37.543430000000001, 
+                "longitude": -122.02030000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147564", 
+            "name": "147564", 
+            "point": {
+                "latitude": 37.575069999999997, 
+                "longitude": -122.04689999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147565", 
+            "name": "147565", 
+            "point": {
+                "latitude": 37.603679999999997, 
+                "longitude": -122.06435999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147566", 
+            "name": "147566", 
+            "point": {
+                "latitude": 37.595579999999998, 
+                "longitude": -122.05859
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147567", 
+            "name": "147567", 
+            "point": {
+                "latitude": 37.627890000000001, 
+                "longitude": -122.08163999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147568", 
+            "name": "147568", 
+            "point": {
+                "latitude": 37.640180000000001, 
+                "longitude": -122.09041000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147569", 
+            "name": "147569", 
+            "point": {
+                "latitude": 37.527619999999999, 
+                "longitude": -121.99791999999999
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147570", 
+            "name": "147570", 
+            "point": {
+                "latitude": 37.6524, 
+                "longitude": -122.09887000000001
+            }, 
+            "type": "Terminal"
+        }, 
+        {
+            "id": "147571", 
+            "name": "147571", 
+            "point": {
+                "latitude": 37.65992, 
+                "longitude": -122.10354
+            }, 
+            "type": "Terminal"
+        }
+    ], 
+    "projectId": null
+}

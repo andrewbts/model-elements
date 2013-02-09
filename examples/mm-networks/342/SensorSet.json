@@ -1,0 +1,390 @@
+{
+    "description": {
+        "string": "PeMS sensors for MM nid 342, converted by mm-network-import"
+    }, 
+    "id": "10342", 
+    "modstamp": 0, 
+    "name": {
+        "string": "10342"
+    }, 
+    "projectId": null, 
+    "sensors": [
+        {
+            "entityId": {
+                "string": "401561"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "8313402", 
+            "linkOffset": 101.09328206380206, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400539"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "19083000", 
+            "linkOffset": 36.610660552978516, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400928"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "10100401", 
+            "linkOffset": 126.64729614257811, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400419"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15093701", 
+            "linkOffset": 121.79998779296875, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400716"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "12972700", 
+            "linkOffset": 124.99713134765625, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400761"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "123801", 
+            "linkOffset": 155.58363850911459, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401003"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "25913804", 
+            "linkOffset": 101.34565429687495, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401062"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "32052201", 
+            "linkOffset": 34.181650797526032, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400640"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15094400", 
+            "linkOffset": 194.85179138183594, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400780"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15094404", 
+            "linkOffset": 185.57666015625, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400611"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15105503", 
+            "linkOffset": 80.788787841796875, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401613"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "32052300", 
+            "linkOffset": 14.875410079956055, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400674"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "25980501", 
+            "linkOffset": 99.36590576171875, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400662"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "13035802", 
+            "linkOffset": 36.767873128255189, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400536"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15031003", 
+            "linkOffset": 19.414566040039062, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401888"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "9754401", 
+            "linkOffset": 105.97661336263022, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400490"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15030500", 
+            "linkOffset": 124.58577728271484, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400041"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "27840103", 
+            "linkOffset": 96.969894409179688, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400137"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "4718702", 
+            "linkOffset": 1.7372029622395644, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400284"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "27840101", 
+            "linkOffset": 94.077804565429688, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401545"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "19122203", 
+            "linkOffset": 15.758651733398438, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401529"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "32052203", 
+            "linkOffset": 158.48187255859375, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400165"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15093703", 
+            "linkOffset": 42.1165771484375, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400141"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "18683600", 
+            "linkOffset": 63.699432373046875, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400685"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "25913801", 
+            "linkOffset": 114.83287353515624, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400534"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "4155803", 
+            "linkOffset": 118.08062744140625, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "401011"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "4719001", 
+            "linkOffset": 190.17411804199219, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400488"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "12973002", 
+            "linkOffset": 141.64752197265625, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400086"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "15563700", 
+            "linkOffset": 60.899627685546875, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }
+    ]
+}

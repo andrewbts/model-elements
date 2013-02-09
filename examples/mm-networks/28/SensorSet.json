@@ -1,0 +1,52 @@
+{
+    "description": {
+        "string": "PeMS sensors for MM nid 28, converted by mm-network-import"
+    }, 
+    "id": "10028", 
+    "modstamp": 0, 
+    "name": {
+        "string": "10028"
+    }, 
+    "projectId": null, 
+    "sensors": [
+        {
+            "entityId": {
+                "string": "400041"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "27840103", 
+            "linkOffset": 96.969894409179688, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400928"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "10100401", 
+            "linkOffset": 126.64729614257811, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }, 
+        {
+            "entityId": {
+                "string": "400284"
+            }, 
+            "healthStatus": 1.0, 
+            "laneNum": 0.0, 
+            "linkId": "27840101", 
+            "linkOffset": 94.077804565429688, 
+            "measurementFeedId": {
+                "string": "PeMS"
+            }, 
+            "type": "Loop"
+        }
+    ]
+}

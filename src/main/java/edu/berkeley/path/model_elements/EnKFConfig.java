@@ -28,15 +28,54 @@ package edu.berkeley.path.model_elements;
 
 import java.util.ArrayList;
 
-public class EnKFParams extends	edu.berkeley.path.model_elements_base.EnKFParams {
+public class EnKFConfig extends	edu.berkeley.path.model_elements_base.EnKFConfig {
 	
-	public EnKFParams() {
+	public EnKFConfig() {
 		super();
 	}
+	
+	/**
+	 * @return EnKF type (), an element of the EnKFType enum
+	 */
+	public EnKFType getEnKFTypeEnum() {
+		String type = super.getEnkfType().toString();
 
-	public static EnKFParams createWithMMDefaults() {
+		if (type.equals("SIMPLEAVERAGE")) return EnKFType.SIMPLEAVERAGE;
+		if (type.equals("GLOBALJAMA")) return EnKFType.GLOBALJAMA;
+		if (type.equals("GLOBALBLAS")) return EnKFType.GLOBALBLAS;
+		if (type.equals("LOCALJAMA")) return EnKFType.LOCALJAMA;
+		if (type.equals("LOCALBLAS")) return EnKFType.LOCALBLAS;
 		
-		EnKFParams params = new EnKFParams();
+		throw new UnsupportedOperationException("Unknown EnKF type string '" + type + "' encountered.");
+	}
+	
+	public void setEnkfTypeEnum(EnKFType type) {
+		String typeString = null;
+		switch (type) {
+		case SIMPLEAVERAGE:
+			typeString = "SIMPLEAVERAGE";
+			break;
+		case GLOBALJAMA:
+			typeString = "GLOBALJAMA";
+			break;
+		case GLOBALBLAS:
+			typeString = "GLOBALBLAS";
+			break;
+		case LOCALJAMA:
+			typeString = "LOCALJAMA";
+			break;
+		case LOCALBLAS:
+			typeString = "LOCALBLAS";
+			break;
+		default:
+			throw new IllegalArgumentException("Unknown EnKF Type " + type + ".");			
+		}
+		super.setEnkfType(typeString);
+	}
+
+	public static EnKFConfig createWithMMDefaults() {
+		
+		EnKFConfig params = new EnKFConfig();
 
 		// Assign Default Mobile Millenium values for all attributes
 		params.setPemsNoiseMean(0.0);

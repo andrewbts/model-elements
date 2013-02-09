@@ -1,0 +1,60 @@
+{
+    "additiveModelNoiseMean": 0.5, 
+    "additiveModelNoiseStdDev": 2.5, 
+    "additiveVelocityFunctionNoiseMean": 0.0, 
+    "additiveVelocityFunctionNoiseStdDev": 0.0, 
+    "ctmType": "Velocity", 
+    "dtCTM": {
+        "milliseconds": 6000
+    }, 
+    "dtOutput": {
+        "milliseconds": 30000
+    }, 
+    "enkfConfig": {
+        "PemsBlackList": [], 
+        "dtEnKF": {
+            "milliseconds": 30000
+        }, 
+        "enkfType": "GLOBALJAMA", 
+        "includeNavteq": false, 
+        "includePeMS": true, 
+        "includeTelenav": false, 
+        "localizationDistance": 100.0, 
+        "navteqNoiseMean": 0.0, 
+        "navteqNoiseStdev": 0.29999999999999999, 
+        "navteqPercentage": 100.0, 
+        "pemsNoiseMean": 0.0, 
+        "pemsNoiseStdev": 4.0, 
+        "probeProbabilityThreshold": 0.69999999999999996, 
+        "telenavNoiseMean": 0.0, 
+        "telenavNoiseStdev": 4.0, 
+        "telenavPercentage": 100.0, 
+        "useLocalization": true
+    }, 
+    "ensembleSize": 150, 
+    "fdType": "Smulders", 
+    "id": "0", 
+    "initialDensityFraction": 0.01, 
+    "initialEnsembleState": null, 
+    "initialState": null, 
+    "initialStateUncertainty": 0.0, 
+    "liveModeLag": {
+        "milliseconds": 60000
+    }, 
+    "name": "MM nid 373", 
+    "reportDirectory": "reports", 
+    "reportEnsembleAfterCTM": true, 
+    "reportEnsembleAfterEnKF": false, 
+    "reportStatisticsAfterCTM": false, 
+    "reportStatisticsAfterEnKF": true, 
+    "reportToDB": true, 
+    "reportToDirectory": false, 
+    "runMode": "HISTORICAL", 
+    "timeBegin": {
+        "milliseconds": 1333159200000
+    }, 
+    "timeEnd": {
+        "milliseconds": 1334300400000
+    }, 
+    "workflow": "ESTIMATION"
+}
