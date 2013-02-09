@@ -739,9 +739,6 @@ protocol CC {
     // how long LIVE mode should try to lag behind real-time
     Duration		liveModeLag;
     
-    // optional override of the PeMS sensor set in the Scenario
-    union {null, SensorSet}     sensorSet;
-    
     // initial condition: specify either a single state, a whole ensemble, or none
     union {null, FreewayCTMEnsembleState}     initialEnsembleState;
     union {null, FreewayCTMState}             initialState;

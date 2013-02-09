@@ -179,10 +179,5 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 	public FreewayCTMState getInitialState() {
 		return (FreewayCTMState) super.getInitialState();
 	}
-
-	@Override
-	public SensorSet getSensorSet() {
-		return (SensorSet)super.getSensorSet();
-	}
 	
 }
