@@ -433,13 +433,36 @@ protocol CC {
   }
   
   /**
+   * Estimation-Forecast config
+   *
+   * 
+  
+  /**
    * Context and Run Config section
    *
    * Configuration that applies to one run or a group of runs.
    *
    * These objects correspond to the TBD Run tables.
    */
+   
+  /**
+   * config specific to estimation-forecast runs in which "prediction" CTMs
+   * are spun off from the latest Estimated state periodically
+   */
+  record EstimationForecastConfig {
   
+    // how often to spin off a new forecast from the current estimated state
+    Duration dtEstimationForecastSpinoff;        
+  
+  	// how far ahead to forecast
+  	Duration forecastDuration;
+  	
+  	// how often to report forecasted state
+  	Duration dtEstimationForecastReport;  	    	
+  
+  }     
+  
+  // config specific to Estimation runs in which the EnKF is invoked
   record EnKFConfig {
   
   	// which implementation of EnKF to use (blas vs jama, local vs global)
@@ -546,6 +569,17 @@ protocol CC {
     boolean includesFlows;
       
 }
+
+
+	// record result statistics of a spun-off forecast run based on current estimated state
+	record FreewayStatisticsHistoryReport {
+		DateTime startTime;
+		Duration forecastDuration;
+		Duration dt;
+		array<FreewayCTMState> mean;
+		array<FreewayCTMState> stdDev;	
+	}
+
   
   record FreewayCTMEnsembleReport {
     long runId;
@@ -705,7 +739,7 @@ protocol CC {
     // historical or live mode
     string        runMode;
     
-	// forecast (CTM) or estimation (CTM + EnKF)
+	// forecast (CTM), estimation (CTM + EnKF), or estimation-forecast (CTM+EnKF with spinoff CTMs periodically)
     string        workflow;
     
     string        ctmType;
@@ -718,7 +752,9 @@ protocol CC {
     double        additiveVelocityFunctionNoiseMean;
     double        additiveVelocityFunctionNoiseStdDev;           
     
+    // configuration specific to certain run modes
     EnKFConfig    enkfConfig;
+    EstimationForecastConfig estimationForecastConfig;
     
     // reporting
     Duration      dtOutput;
@@ -726,6 +762,7 @@ protocol CC {
     boolean		reportEnsembleAfterCTM;
     boolean		reportStatisticsAfterEnKF;
     boolean		reportEnsembleAfterEnKF;
+    boolean 	reportStatisticsHistory;
     boolean		reportToDB;
     boolean		reportToDirectory;
     string		reportDirectory = "";
