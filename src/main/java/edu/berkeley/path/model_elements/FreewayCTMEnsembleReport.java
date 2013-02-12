@@ -34,4 +34,12 @@ public class FreewayCTMEnsembleReport extends edu.berkeley.path.model_elements_b
 	  public void setNetworkId(Long id) {
 	    setNetworkId(id.toString());
 	  }
+
+	@Override
+	public FreewayCTMEnsembleState getEnsembleState() {
+		return (FreewayCTMEnsembleState) super.getEnsembleState();
+	}
+	  
+	  
+	  
 }

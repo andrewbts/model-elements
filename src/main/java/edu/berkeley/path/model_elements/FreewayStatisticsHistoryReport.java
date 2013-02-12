@@ -50,4 +50,11 @@ public class FreewayStatisticsHistoryReport extends edu.berkeley.path.model_elem
 		setStdDev((List<edu.berkeley.path.model_elements_base.FreewayCTMState>)(List<?>)stdDevStates);
 	}
 
+	@Override
+	public DateTime getStartTime() {
+		return (DateTime) super.getStartTime();
+	}
+	
+	
+
 }
