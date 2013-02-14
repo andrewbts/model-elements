@@ -26,57 +26,6 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.FreewayCTMReport {
+public class EstimationForecastConfig extends edu.berkeley.path.model_elements_base.EstimationForecastConfig {
 
-	/**
-	 * Check whether in/out flow information is present for each link. Note
-	 * that this simply checks whether the map from links to flow information
-	 * exists, and does not check whether it includes a non-null entry for
-	 * every link.
-	 * @return Whether this report includes in/out flow information
-	 */
-	public boolean includesFlows() {
-		return (getMean().includesFlowMap());
-	}
-
-	@Override
-	public FreewayCTMState getMean() {
-		return (FreewayCTMState)super.getMean();
-	}
-	
-	@Override
-	public FreewayCTMState getStdDev() {
-		return (FreewayCTMState)super.getStdDev();
-	}
-	
-	 public Long getNetworkLongId() {
-		return Long.parseLong(getNetworkId().toString());
-	 }
-		  
-	 public void setNetworkId(Long id) {
-	    setNetworkId(id.toString());
-	 }
-
-	 /**
-	  * Gets the value of the 'time' field.
-	  */
-	 public org.joda.time.DateTime getJodaTime() {
-	    return (getTime()).toJoda();
-	 }
-
-	 /**
-	  * Sets the value of the 'time' field.
-	  * @param value the value to set.
-	  */
-	 public void setJodaTime(org.joda.time.DateTime value) {
-	    setTime(DateTime.fromJoda(value));
-	 }
-
-	@Override
-	public DateTime getTime() {
-		return (DateTime) super.getTime();
-	}
-	 
-	 
-	
 }

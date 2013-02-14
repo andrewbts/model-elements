@@ -32,6 +32,17 @@
         "useLocalization": true
     }, 
     "ensembleSize": 150, 
+    "estimationForecastConfig": {
+        "dtEstimationForecastReport": {
+            "milliseconds": 300000
+        }, 
+        "dtEstimationForecastSpinoff": {
+            "milliseconds": 60000
+        }, 
+        "forecastDuration": {
+            "milliseconds": 7200000
+        }
+    }, 
     "fdType": "Smulders", 
     "id": "0", 
     "initialDensityFraction": 0.01, 
@@ -47,6 +58,7 @@
     "reportEnsembleAfterEnKF": false, 
     "reportStatisticsAfterCTM": false, 
     "reportStatisticsAfterEnKF": true, 
+    "reportStatisticsHistory": false, 
     "reportToDB": true, 
     "reportToDirectory": false, 
     "runMode": "HISTORICAL", 

@@ -104,6 +104,7 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 
 		if (type.equals("ESTIMATION")) return Workflow.ESTIMATION;
 		if (type.equals("FORECAST")) return Workflow.FORECAST;
+		if (type.equals("ESTIMATION_FORECAST")) return Workflow.ESTIMATION_FORECAST; 
 		
 		throw new UnsupportedOperationException("Unknown Workflow string '" + type + "' encountered.");
 	}
@@ -158,6 +159,9 @@ public class RunConfig extends edu.berkeley.path.model_elements_base.RunConfig {
 			break;
 		case FORECAST:
 			typeString = "FORECAST";
+			break;
+		case ESTIMATION_FORECAST:
+			typeString = "ESTIMATION_FORECAST";
 			break;
 		default:
 			throw new IllegalArgumentException("Unknown Workflow " + type + ".");			

@@ -26,57 +26,35 @@
 
 package edu.berkeley.path.model_elements;
 
-public class FreewayCTMReport extends edu.berkeley.path.model_elements_base.FreewayCTMReport {
+import java.util.List;
 
-	/**
-	 * Check whether in/out flow information is present for each link. Note
-	 * that this simply checks whether the map from links to flow information
-	 * exists, and does not check whether it includes a non-null entry for
-	 * every link.
-	 * @return Whether this report includes in/out flow information
-	 */
-	public boolean includesFlows() {
-		return (getMean().includesFlowMap());
+public class FreewayStatisticsHistoryReport extends edu.berkeley.path.model_elements_base.FreewayStatisticsHistoryReport {
+	
+	@SuppressWarnings("unchecked")
+	public List<FreewayCTMState> getMeanStates() {
+		return (List<FreewayCTMState>)(List<?>)getMean();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void setMeanStates(List<FreewayCTMState> meanStates) {
+		setMean((List<edu.berkeley.path.model_elements_base.FreewayCTMState>)(List<?>)meanStates);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<FreewayCTMState> getStdDevStates() {
+		return (List<FreewayCTMState>)(List<?>)getStdDev();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void setStdDevStates(List<FreewayCTMState> stdDevStates) {
+		setStdDev((List<edu.berkeley.path.model_elements_base.FreewayCTMState>)(List<?>)stdDevStates);
 	}
 
 	@Override
-	public FreewayCTMState getMean() {
-		return (FreewayCTMState)super.getMean();
+	public DateTime getStartTime() {
+		return (DateTime) super.getStartTime();
 	}
 	
-	@Override
-	public FreewayCTMState getStdDev() {
-		return (FreewayCTMState)super.getStdDev();
-	}
 	
-	 public Long getNetworkLongId() {
-		return Long.parseLong(getNetworkId().toString());
-	 }
-		  
-	 public void setNetworkId(Long id) {
-	    setNetworkId(id.toString());
-	 }
 
-	 /**
-	  * Gets the value of the 'time' field.
-	  */
-	 public org.joda.time.DateTime getJodaTime() {
-	    return (getTime()).toJoda();
-	 }
-
-	 /**
-	  * Sets the value of the 'time' field.
-	  * @param value the value to set.
-	  */
-	 public void setJodaTime(org.joda.time.DateTime value) {
-	    setTime(DateTime.fromJoda(value));
-	 }
-
-	@Override
-	public DateTime getTime() {
-		return (DateTime) super.getTime();
-	}
-	 
-	 
-	
 }
