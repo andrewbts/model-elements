@@ -1,0 +1,12 @@
+{
+    "description": {
+        "string": "PeMS sensors for MM nid 384, converted by mm-network-import"
+    }, 
+    "id": "10384", 
+    "modstamp": 0, 
+    "name": {
+        "string": "10384"
+    }, 
+    "projectId": null, 
+    "sensors": []
+}
