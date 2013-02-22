@@ -480,6 +480,9 @@ protocol CC {
     // accept map-matched probe measurements only if they have at least this probability assigned by PIF
     double probeProbabilityThreshold;
     
+    // which run of PIF to fetch data from
+    int pifRunId;
+    
     // Navteq GPS probe data
     boolean includeNavteq;
     double navteqNoiseMean;
