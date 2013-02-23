@@ -480,6 +480,9 @@ protocol CC {
     // accept map-matched probe measurements only if they have at least this probability assigned by PIF
     double probeProbabilityThreshold;
     
+    // accept probe measurements only if their measured speed is at least this large (SI units)
+    double probeSpeedThreshold;
+    
     // which run of PIF to fetch data from
     int pifRunId;
     
