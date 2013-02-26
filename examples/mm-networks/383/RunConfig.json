@@ -1,6 +1,6 @@
 {
-    "additiveModelNoiseMean": 0.5, 
-    "additiveModelNoiseStdDev": 2.5, 
+    "additiveModelNoiseMean": 0.0, 
+    "additiveModelNoiseStdDev": 1.6399999999999999, 
     "additiveVelocityFunctionNoiseMean": 0.0, 
     "additiveVelocityFunctionNoiseStdDev": 0.0, 
     "ctmType": "Velocity", 
@@ -21,7 +21,7 @@
         "includeTelenav": false, 
         "localizationDistance": 100.0, 
         "navteqNoiseMean": 0.0, 
-        "navteqNoiseStdev": 2.1499999999999999, 
+        "navteqNoiseStdev": 3.3599999999999999, 
         "navteqPercentage": 100.0, 
         "pemsNoiseMean": 0.0, 
         "pemsNoiseStdev": 4.0, 
@@ -29,7 +29,7 @@
         "probeProbabilityThreshold": 0.69999999999999996, 
         "probeSpeedThreshold": 1.0, 
         "telenavNoiseMean": 0.0, 
-        "telenavNoiseStdev": 3.3999999999999999, 
+        "telenavNoiseStdev": 3.7200000000000002, 
         "telenavPercentage": 100.0, 
         "useLocalization": true
     }, 
@@ -54,7 +54,7 @@
     "liveModeLag": {
         "milliseconds": 60000
     }, 
-    "name": "MM nid 342", 
+    "name": "MM nid 383", 
     "reportDirectory": "reports", 
     "reportEnsembleAfterCTM": true, 
     "reportEnsembleAfterEnKF": false, 
@@ -65,10 +65,10 @@
     "reportToDirectory": false, 
     "runMode": "HISTORICAL", 
     "timeBegin": {
-        "milliseconds": 1330956000000
+        "milliseconds": 1335078000000
     }, 
     "timeEnd": {
-        "milliseconds": 1331859600000
+        "milliseconds": 1335250800000
     }, 
     "workflow": "ESTIMATION"
 }

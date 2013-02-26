@@ -31,7 +31,10 @@ public class DateTime extends edu.berkeley.path.model_elements_base.DateTime {
 	public static DateTime fromJoda(org.joda.time.DateTime joda) {
 		return new DateTime(joda.getMillis());
 	}
-
+	
+	/**
+	 * @param milliseconds Time in milliseconds since 1970 UTC
+	 */
 	public DateTime(long milliseconds) {
 		super(milliseconds);
 	}

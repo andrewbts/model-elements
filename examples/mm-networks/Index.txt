@@ -30,7 +30,7 @@ MM network 335 (cid = 4015) from mmlivedb1
 Imported from mmdevdb1:
 
 342:
-MM 880 network 342 (cid = 9172) from mmdevdb1
+MM 880 network 342 (cid = 9162) from mmdevdb1
 
 343:
 MM 880 network 343 (cid = 9173) from mmdevdb1
@@ -68,3 +68,8 @@ MM Ontario network 375 (cid = 9204) from mmdevdb1
 376:
 MM Ontario network 376 (cid = 9205) from mmdevdb1
 
+383:
+MM Ontario network 383 (cid = 40005) from mmdevdb1
+
+384:
+MM Ontario network 384 (cid = 40005) from mmdevdb1
