@@ -2,7 +2,7 @@
     "fd": {
         "10877600": {
             "capacity": {
-                "double": 1.7003505952680833
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -26,12 +26,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "10877601": {
             "capacity": {
-                "double": 1.7003505952680833
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -55,12 +55,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1203200": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -84,12 +84,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "1203201": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -113,12 +113,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "1203202": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -142,12 +142,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "12917300": {
             "capacity": {
-                "double": 1.7003505952680833
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -171,12 +171,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "12917301": {
             "capacity": {
-                "double": 1.7003505952680833
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -200,12 +200,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "12917302": {
             "capacity": {
-                "double": 1.7003505952680833
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -229,12 +229,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "12917303": {
             "capacity": {
-                "double": 1.7003505952680833
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -258,12 +258,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "15012300": {
             "capacity": {
-                "double": 2.0404207143217001
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -287,12 +287,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.74580484800000002
+                "double": 0.124300808
             }
         }, 
         "15394500": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -316,12 +316,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394501": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -345,12 +345,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394502": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -374,12 +374,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394503": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -403,12 +403,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394504": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -432,12 +432,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394900": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -461,12 +461,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394901": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -490,12 +490,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394902": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -519,12 +519,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394903": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -548,12 +548,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394904": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -577,12 +577,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15394905": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -606,12 +606,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395100": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -635,12 +635,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395101": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -664,12 +664,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395102": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -693,12 +693,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395103": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -722,12 +722,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395104": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -751,12 +751,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395105": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -780,12 +780,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395106": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -809,12 +809,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395107": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -838,12 +838,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395400": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -867,12 +867,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395401": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -896,12 +896,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395402": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -925,12 +925,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395403": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -954,12 +954,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395404": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -983,12 +983,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395405": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1012,12 +1012,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395406": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1041,12 +1041,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "15395700": {
             "capacity": {
-                "double": 1.7003496461915759
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1070,12 +1070,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "15395701": {
             "capacity": {
-                "double": 1.7003496461915759
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1099,12 +1099,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "15395702": {
             "capacity": {
-                "double": 1.7003496461915759
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1128,12 +1128,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "17677300": {
             "capacity": {
-                "double": 1.0202092182689668
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1157,12 +1157,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "17677301": {
             "capacity": {
-                "double": 1.0202092182689668
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1186,12 +1186,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "17677302": {
             "capacity": {
-                "double": 1.0202092182689668
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1215,12 +1215,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "1994000": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1244,12 +1244,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1994001": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1273,12 +1273,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1994002": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1302,12 +1302,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1994003": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1331,12 +1331,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1994004": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1360,12 +1360,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1994005": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1389,12 +1389,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "1994006": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1418,12 +1418,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "21560900": {
             "capacity": {
-                "double": 1.3602789576919556
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1447,12 +1447,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "21564600": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1476,12 +1476,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "21575100": {
             "capacity": {
-                "double": 2.0404184365379336
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1505,12 +1505,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.74580484800000002
+                "double": 0.124300808
             }
         }, 
         "22507900": {
             "capacity": {
-                "double": 1.7003496461915759
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1534,12 +1534,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "23608800": {
             "capacity": {
-                "double": 1.3602789576919556
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1563,12 +1563,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "23608801": {
             "capacity": {
-                "double": 1.3602789576919556
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1592,12 +1592,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "27200900": {
             "capacity": {
-                "double": 1.0202097877149456
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1621,12 +1621,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "27201900": {
             "capacity": {
-                "double": 1.0202103571608501
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1650,12 +1650,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "27201901": {
             "capacity": {
-                "double": 1.0202103571608501
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1679,12 +1679,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "29098300": {
             "capacity": {
-                "double": 1.0202097877149456
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1708,12 +1708,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.37290242400000001
+                "double": 0.124300808
             }
         }, 
         "31734100": {
             "capacity": {
-                "double": 1.3602789576919556
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1737,12 +1737,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31734101": {
             "capacity": {
-                "double": 1.3602789576919556
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1766,12 +1766,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969400": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1795,12 +1795,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969401": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1824,12 +1824,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969402": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1853,12 +1853,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969403": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1882,12 +1882,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969404": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1911,12 +1911,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969405": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1940,12 +1940,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969406": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1969,12 +1969,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969407": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -1998,12 +1998,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969500": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2027,12 +2027,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969501": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2056,12 +2056,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969502": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2085,12 +2085,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969503": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2114,12 +2114,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969504": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2143,12 +2143,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969505": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2172,7 +2172,7 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "31969517": {
@@ -2496,7 +2496,7 @@
         }, 
         "331500": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2520,12 +2520,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "331501": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2549,12 +2549,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "331502": {
             "capacity": {
-                "double": 1.3602804762144665
+                "double": 0.34007011905361662
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2578,12 +2578,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "8441200": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2607,12 +2607,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8441201": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2636,12 +2636,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8441202": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2665,12 +2665,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8441203": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2694,12 +2694,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8441204": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2723,12 +2723,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8441205": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2752,12 +2752,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8441206": {
             "capacity": {
-                "double": 1.7003486971149446
+                "double": 0.3400697394229889
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2781,7 +2781,7 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.62150404000000004
+                "double": 0.124300808
             }
         }, 
         "8442100": {
@@ -2815,7 +2815,7 @@
         }, 
         "9979400": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2839,12 +2839,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "9979401": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2868,12 +2868,12 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }, 
         "9979402": {
             "capacity": {
-                "double": 1.3602797169532606
+                "double": 0.34006992923831514
             }, 
             "capacityDrop": {
                 "double": 0.0
@@ -2897,7 +2897,7 @@
                 "double": 0.0
             }, 
             "jamDensity": {
-                "double": 0.49720323199999999
+                "double": 0.124300808
             }
         }
     }
