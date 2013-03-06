@@ -94,6 +94,40 @@ public class JsonHandler {
 		return(obj);
 
 	}
+
+
+	// THIS IS A A CHANGE MEANT TO BE THROWN AWAY AFTER THE ENTIRE FREEWAY MODEL ELEMENTS COLLECTION HAS BEEN
+	// CONVERTED TO MODEL OBJECTS AND THE PARAMTERS HAVE BEEN RATIONALIZED TO DETERMINE THEIR APPROPRIATENESS
+	// IN A PARAMETER FILE -V- A PART OF SCENARIO.
+
+
+	/**
+	 * Read model elements Freeway config from VIA
+	 * @param <T> Model elements type read, e.g. Network or Link
+	 * @param schema Avro schema. Should be T.SCHEMA$
+	 * @param dbString db string from the database
+	 * @return Model elements object of type T
+	 * @throws IOException
+	 */
+	public static <T extends GenericContainer> T readFromDBStream(Schema schema, String dbString) throws IOException {
+		
+		System.out.println("**** THIS function : readFromDBStream in file jasonHandler.java is DEPRECATED! ****");
+      
+		Schema schemaForReading = getDerivedSchema(schema);
+
+		DatumReader<T> reader = new SpecificDatumReader<T>(schemaForReading);
+
+		String fileContents = dbString ;
+
+		fileContents = fileContents.replaceAll("\"edu.berkeley.path.model_elements_base.", "\"edu.berkeley.path.model_elements.");
+		Decoder decoder = new DecoderFactory().jsonDecoder(schemaForReading, IOUtils.toInputStream(fileContents));				
+		
+		T obj = reader.read(null, decoder);
+		
+		return(obj);
+
+	}
+
 	
 	/**
 	 * Joel's trick to tell Avro to create/write model_elements classes instead of model_elements_base classes
