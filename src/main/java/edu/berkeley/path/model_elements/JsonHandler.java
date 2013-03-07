@@ -81,6 +81,8 @@ public class JsonHandler {
 	 */
 	public static <T extends GenericContainer> T readFromFile(Schema schema, String filename) throws IOException {
 		
+	  System.out.println("**** THIS function : readFromFile in file jasonHandler.java is DEPRECATED! ****");
+	  
 		Schema schemaForReading = getDerivedSchema(schema);
 
 		DatumReader<T> reader = new SpecificDatumReader<T>(schemaForReading);
@@ -102,30 +104,23 @@ public class JsonHandler {
 
 
 	/**
-	 * Read model elements Freeway config from VIA
+	 * Read model elements Freeway config from string passed 
 	 * @param <T> Model elements type read, e.g. Network or Link
 	 * @param schema Avro schema. Should be T.SCHEMA$
-	 * @param dbString db string from the database
+	 * @param jsonString JSON string from the database
 	 * @return Model elements object of type T
 	 * @throws IOException
 	 */
-	public static <T extends GenericContainer> T readFromDBStream(Schema schema, String dbString) throws IOException {
-		
-		System.out.println("**** THIS function : readFromDBStream in file jasonHandler.java is DEPRECATED! ****");
+	public static <T extends GenericContainer> T readFromString(Schema schema, String jsonString) throws IOException {
       
 		Schema schemaForReading = getDerivedSchema(schema);
 
 		DatumReader<T> reader = new SpecificDatumReader<T>(schemaForReading);
-
-		String fileContents = dbString ;
-
-		fileContents = fileContents.replaceAll("\"edu.berkeley.path.model_elements_base.", "\"edu.berkeley.path.model_elements.");
-		Decoder decoder = new DecoderFactory().jsonDecoder(schemaForReading, IOUtils.toInputStream(fileContents));				
+		Decoder decoder = new DecoderFactory().jsonDecoder(schemaForReading, jsonString);				
 		
 		T obj = reader.read(null, decoder);
 		
 		return(obj);
-
 	}
 
 	
